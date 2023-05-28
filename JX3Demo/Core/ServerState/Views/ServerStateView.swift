@@ -13,10 +13,17 @@ struct ServerStateView: View {
     
     var body: some View {
         ScrollView {
-            ForEach(vm.zoneServerStates.keys.sorted(), id: \.self) { key in
+            
+            ServerStateSectionView(title: "我的关注", servers: vm.pinServerStates)
+            
+            ForEach(vm.zoneServerStates.keys.sorted(by: ZoneType.compareZone), id: \.self) { key in
                 ServerStateSectionView(title: key, servers: vm.zoneServerStates[key])
             }
         }
+        .refreshable {
+            vm.loadServerStates()
+        }
+        .environmentObject(vm)
     }
 }
 

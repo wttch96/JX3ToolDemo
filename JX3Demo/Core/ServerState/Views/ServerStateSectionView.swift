@@ -19,14 +19,20 @@ struct ServerStateSectionView: View {
     var body: some View {
         VStack {
             Section(content: {
-                ForEach(servers, content: {server in
-                    ServerStateItemView(serverState: server)
-                        .padding(.horizontal, 10)
-                })
+                LazyVGrid(columns: [
+                    GridItem(.flexible()),
+                    GridItem(.flexible()),
+                    GridItem(.flexible())
+                ]) {
+                    ForEach(servers, content: {server in
+                        ServerStateItemView(serverState: server)
+                    })
+                }
+                .padding(.horizontal, 8)
             }, header: {
                 HStack {
                     Text(title)
-                        .font(.largeTitle)
+                        .font(.title)
                         .bold()
                     Spacer()
                 }

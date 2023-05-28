@@ -15,6 +15,8 @@ struct ServerState: Identifiable, Codable {
     let connectState: Bool
     let maintainTime: Int
     let heat: String
+    
+    var isPin: Bool?
 
     enum CodingKeys: String, CodingKey {
         case zoneName = "zone_name"
@@ -25,13 +27,62 @@ struct ServerState: Identifiable, Codable {
         case connectState = "connect_state"
         case maintainTime = "maintain_time"
         case heat
+        case isPin
     }
     
     var id: String {
         get { return zoneName + "/" + serverName }
     }
+    
+    var isPined: Bool {
+        get { return isPin ?? false }
+    }
 }
 
+// 服务器区域类型
+enum ZoneType : Int, CaseIterable, Comparable {
+    case doule = 1
+    case telecom = 2
+    case international = 3
+    case match = 4
+    case origin = 5
+    case unowned = 10
+    
+    var name: String {
+        switch self {
+        case .doule: return "双线"
+        case .telecom: return "电信"
+        case .international: return "國際"
+        case .match: return "比赛"
+        case .origin: return "缘起"
+        case .unowned: return "未知"
+        }
+    }
+    
+    static func < (lhs: Self, rhs: Self) -> Bool {
+        return lhs.rawValue < rhs.rawValue
+    }
+    
+    
+    static func zone(_ zoneName: String) -> ZoneType {
+        for zone in ZoneType.allCases {
+            if zoneName.contains(zone.name) {
+                return zone
+            }
+        }
+        return .unowned
+    }
+    
+    static func compareZone(lhs: String, rhs: String) -> Bool {
+        let z1 = ZoneType.zone(lhs)
+        let z2 = ZoneType.zone(rhs)
+        if z1 == z2 {
+            return lhs < rhs
+        }
+        
+        return z1 < z2
+    }
+}
 
 extension ServerState {
     var maintainDate: String {

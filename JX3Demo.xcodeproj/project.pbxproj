@@ -23,6 +23,8 @@
 		4992D1782A230B9D007EEFC2 /* ServerStateSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4992D1772A230B9D007EEFC2 /* ServerStateSectionView.swift */; };
 		4992D17B2A230DF3007EEFC2 /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4992D17A2A230DF3007EEFC2 /* ColorExtension.swift */; };
 		4992D17D2A2312A7007EEFC2 /* PreviewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4992D17C2A2312A7007EEFC2 /* PreviewExtension.swift */; };
+		4992D1822A234939007EEFC2 /* JX3.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4992D1802A234939007EEFC2 /* JX3.xcdatamodeld */; };
+		4992D1842A234D1C007EEFC2 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4992D1832A234D1C007EEFC2 /* CoreDataManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +64,8 @@
 		4992D1772A230B9D007EEFC2 /* ServerStateSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerStateSectionView.swift; sourceTree = "<group>"; };
 		4992D17A2A230DF3007EEFC2 /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
 		4992D17C2A2312A7007EEFC2 /* PreviewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewExtension.swift; sourceTree = "<group>"; };
+		4992D1812A234939007EEFC2 /* JX3.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = JX3.xcdatamodel; sourceTree = "<group>"; };
+		4992D1832A234D1C007EEFC2 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +125,7 @@
 				4992D13A2A2278DB007EEFC2 /* ContentView.swift */,
 				4992D13C2A2278DD007EEFC2 /* Assets.xcassets */,
 				4992D13E2A2278DD007EEFC2 /* Preview Content */,
+				4992D1802A234939007EEFC2 /* JX3.xcdatamodeld */,
 			);
 			path = JX3Demo;
 			sourceTree = "<group>";
@@ -205,6 +210,7 @@
 			isa = PBXGroup;
 			children = (
 				4992D1732A2300F4007EEFC2 /* NetworkManager.swift */,
+				4992D1832A234D1C007EEFC2 /* CoreDataManager.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -357,7 +363,9 @@
 				4992D16B2A22F7D4007EEFC2 /* ServerStateItemView.swift in Sources */,
 				4992D1712A22F884007EEFC2 /* ServerStateService.swift in Sources */,
 				4992D1692A22F7B8007EEFC2 /* ServerStateView.swift in Sources */,
+				4992D1822A234939007EEFC2 /* JX3.xcdatamodeld in Sources */,
 				4992D17D2A2312A7007EEFC2 /* PreviewExtension.swift in Sources */,
+				4992D1842A234D1C007EEFC2 /* CoreDataManager.swift in Sources */,
 				4992D17B2A230DF3007EEFC2 /* ColorExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -683,6 +691,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		4992D1802A234939007EEFC2 /* JX3.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				4992D1812A234939007EEFC2 /* JX3.xcdatamodel */,
+			);
+			currentVersion = 4992D1812A234939007EEFC2 /* JX3.xcdatamodel */;
+			path = JX3.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 4992D12D2A2278DB007EEFC2 /* Project object */;
 }

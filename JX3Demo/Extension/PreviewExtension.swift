@@ -13,5 +13,6 @@ extension PreviewProvider {
 }
 
 class Dev {
-    let serverState = ServerState(zoneName: "双线一区", serverName: "天鹅坪", ipAddress: "127.0.0.0", ipPort: "188", mainServer: "天鹅坪", connectState: true, maintainTime: 1683153483, heat: "7")
+    let serverState = ServerState(zoneName: "双线一区", serverName: "天鹅坪", ipAddress: "127.0.0.0", ipPort: "188", mainServer: "天鹅坪", connectState: true, maintainTime: 1683153483, heat: "7", isPin: true)
+    let serverState2 = ServerState(zoneName: "双线一区", serverName: "天鹅坪1", ipAddress: "127.0.0.0", ipPort: "188", mainServer: "天鹅坪", connectState: true, maintainTime: 1683153483, heat: "8", isPin: false)
 }
