@@ -14,6 +14,15 @@
 		4992D14A2A2278DD007EEFC2 /* JX3DemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4992D1492A2278DD007EEFC2 /* JX3DemoTests.swift */; };
 		4992D1542A2278DD007EEFC2 /* JX3DemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4992D1532A2278DD007EEFC2 /* JX3DemoUITests.swift */; };
 		4992D1562A2278DD007EEFC2 /* JX3DemoUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4992D1552A2278DD007EEFC2 /* JX3DemoUITestsLaunchTests.swift */; };
+		4992D1692A22F7B8007EEFC2 /* ServerStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4992D1682A22F7B8007EEFC2 /* ServerStateView.swift */; };
+		4992D16B2A22F7D4007EEFC2 /* ServerStateItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4992D16A2A22F7D4007EEFC2 /* ServerStateItemView.swift */; };
+		4992D16E2A22F839007EEFC2 /* ServerState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4992D16D2A22F839007EEFC2 /* ServerState.swift */; };
+		4992D1712A22F884007EEFC2 /* ServerStateService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4992D1702A22F884007EEFC2 /* ServerStateService.swift */; };
+		4992D1742A2300F4007EEFC2 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4992D1732A2300F4007EEFC2 /* NetworkManager.swift */; };
+		4992D1762A2303F6007EEFC2 /* ServerStateViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4992D1752A2303F6007EEFC2 /* ServerStateViewModel.swift */; };
+		4992D1782A230B9D007EEFC2 /* ServerStateSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4992D1772A230B9D007EEFC2 /* ServerStateSectionView.swift */; };
+		4992D17B2A230DF3007EEFC2 /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4992D17A2A230DF3007EEFC2 /* ColorExtension.swift */; };
+		4992D17D2A2312A7007EEFC2 /* PreviewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4992D17C2A2312A7007EEFC2 /* PreviewExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +53,15 @@
 		4992D14F2A2278DD007EEFC2 /* JX3DemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JX3DemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4992D1532A2278DD007EEFC2 /* JX3DemoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JX3DemoUITests.swift; sourceTree = "<group>"; };
 		4992D1552A2278DD007EEFC2 /* JX3DemoUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JX3DemoUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		4992D1682A22F7B8007EEFC2 /* ServerStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerStateView.swift; sourceTree = "<group>"; };
+		4992D16A2A22F7D4007EEFC2 /* ServerStateItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerStateItemView.swift; sourceTree = "<group>"; };
+		4992D16D2A22F839007EEFC2 /* ServerState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerState.swift; sourceTree = "<group>"; };
+		4992D1702A22F884007EEFC2 /* ServerStateService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerStateService.swift; sourceTree = "<group>"; };
+		4992D1732A2300F4007EEFC2 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		4992D1752A2303F6007EEFC2 /* ServerStateViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerStateViewModel.swift; sourceTree = "<group>"; };
+		4992D1772A230B9D007EEFC2 /* ServerStateSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerStateSectionView.swift; sourceTree = "<group>"; };
+		4992D17A2A230DF3007EEFC2 /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
+		4992D17C2A2312A7007EEFC2 /* PreviewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +112,11 @@
 		4992D1372A2278DB007EEFC2 /* JX3Demo */ = {
 			isa = PBXGroup;
 			children = (
+				4992D1792A230DE6007EEFC2 /* Extension */,
+				4992D1722A2300E6007EEFC2 /* Util */,
+				4992D16F2A22F84E007EEFC2 /* Services */,
+				4992D16C2A22F7F4007EEFC2 /* Entity */,
+				4992D1622A22F76F007EEFC2 /* Core */,
 				4992D1382A2278DB007EEFC2 /* JX3DemoApp.swift */,
 				4992D13A2A2278DB007EEFC2 /* ContentView.swift */,
 				4992D13C2A2278DD007EEFC2 /* Assets.xcassets */,
@@ -125,6 +148,74 @@
 				4992D1552A2278DD007EEFC2 /* JX3DemoUITestsLaunchTests.swift */,
 			);
 			path = JX3DemoUITests;
+			sourceTree = "<group>";
+		};
+		4992D1622A22F76F007EEFC2 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				4992D1632A22F777007EEFC2 /* ServerState */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		4992D1632A22F777007EEFC2 /* ServerState */ = {
+			isa = PBXGroup;
+			children = (
+				4992D1652A22F799007EEFC2 /* ViewModels */,
+				4992D1642A22F793007EEFC2 /* Views */,
+			);
+			path = ServerState;
+			sourceTree = "<group>";
+		};
+		4992D1642A22F793007EEFC2 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				4992D1682A22F7B8007EEFC2 /* ServerStateView.swift */,
+				4992D16A2A22F7D4007EEFC2 /* ServerStateItemView.swift */,
+				4992D1772A230B9D007EEFC2 /* ServerStateSectionView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		4992D1652A22F799007EEFC2 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				4992D1752A2303F6007EEFC2 /* ServerStateViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		4992D16C2A22F7F4007EEFC2 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				4992D16D2A22F839007EEFC2 /* ServerState.swift */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		4992D16F2A22F84E007EEFC2 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				4992D1702A22F884007EEFC2 /* ServerStateService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		4992D1722A2300E6007EEFC2 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				4992D1732A2300F4007EEFC2 /* NetworkManager.swift */,
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
+		4992D1792A230DE6007EEFC2 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				4992D17A2A230DF3007EEFC2 /* ColorExtension.swift */,
+				4992D17C2A2312A7007EEFC2 /* PreviewExtension.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -257,8 +348,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4992D1782A230B9D007EEFC2 /* ServerStateSectionView.swift in Sources */,
 				4992D13B2A2278DB007EEFC2 /* ContentView.swift in Sources */,
+				4992D1762A2303F6007EEFC2 /* ServerStateViewModel.swift in Sources */,
 				4992D1392A2278DB007EEFC2 /* JX3DemoApp.swift in Sources */,
+				4992D16E2A22F839007EEFC2 /* ServerState.swift in Sources */,
+				4992D1742A2300F4007EEFC2 /* NetworkManager.swift in Sources */,
+				4992D16B2A22F7D4007EEFC2 /* ServerStateItemView.swift in Sources */,
+				4992D1712A22F884007EEFC2 /* ServerStateService.swift in Sources */,
+				4992D1692A22F7B8007EEFC2 /* ServerStateView.swift in Sources */,
+				4992D17D2A2312A7007EEFC2 /* PreviewExtension.swift in Sources */,
+				4992D17B2A230DF3007EEFC2 /* ColorExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
