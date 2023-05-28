@@ -37,6 +37,13 @@
 		4992D1B22A23A5FC007EEFC2 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4992D1732A2300F4007EEFC2 /* NetworkManager.swift */; };
 		4992D1B52A23A6C1007EEFC2 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4992D1B42A23A6C1007EEFC2 /* NetworkService.swift */; };
 		4992D1B62A23A6C1007EEFC2 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4992D1B42A23A6C1007EEFC2 /* NetworkService.swift */; };
+		4992D1BE2A23C085007EEFC2 /* JX3MacAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4992D1BD2A23C085007EEFC2 /* JX3MacAppApp.swift */; };
+		4992D1C02A23C085007EEFC2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4992D1BF2A23C085007EEFC2 /* ContentView.swift */; };
+		4992D1C22A23C087007EEFC2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4992D1C12A23C087007EEFC2 /* Assets.xcassets */; };
+		4992D1C52A23C087007EEFC2 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4992D1C42A23C087007EEFC2 /* Preview Assets.xcassets */; };
+		4992D1D02A23C087007EEFC2 /* JX3MacAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4992D1CF2A23C087007EEFC2 /* JX3MacAppTests.swift */; };
+		4992D1DA2A23C087007EEFC2 /* JX3MacAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4992D1D92A23C087007EEFC2 /* JX3MacAppUITests.swift */; };
+		4992D1DC2A23C087007EEFC2 /* JX3MacAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4992D1DB2A23C087007EEFC2 /* JX3MacAppUITestsLaunchTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +67,20 @@
 			proxyType = 1;
 			remoteGlobalIDString = 4992D1882A2391DD007EEFC2;
 			remoteInfo = ServerStateWidgetExtension;
+		};
+		4992D1CC2A23C087007EEFC2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4992D12D2A2278DB007EEFC2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4992D1BA2A23C085007EEFC2;
+			remoteInfo = JX3MacApp;
+		};
+		4992D1D62A23C087007EEFC2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4992D12D2A2278DB007EEFC2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4992D1BA2A23C085007EEFC2;
+			remoteInfo = JX3MacApp;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -109,6 +130,17 @@
 		4992D1992A2391DF007EEFC2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4992D1A32A239B29007EEFC2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		4992D1B42A23A6C1007EEFC2 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		4992D1BB2A23C085007EEFC2 /* JX3MacApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JX3MacApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4992D1BD2A23C085007EEFC2 /* JX3MacAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JX3MacAppApp.swift; sourceTree = "<group>"; };
+		4992D1BF2A23C085007EEFC2 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		4992D1C12A23C087007EEFC2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		4992D1C42A23C087007EEFC2 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		4992D1C62A23C087007EEFC2 /* JX3MacApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = JX3MacApp.entitlements; sourceTree = "<group>"; };
+		4992D1CB2A23C087007EEFC2 /* JX3MacAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JX3MacAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		4992D1CF2A23C087007EEFC2 /* JX3MacAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JX3MacAppTests.swift; sourceTree = "<group>"; };
+		4992D1D52A23C087007EEFC2 /* JX3MacAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JX3MacAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		4992D1D92A23C087007EEFC2 /* JX3MacAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JX3MacAppUITests.swift; sourceTree = "<group>"; };
+		4992D1DB2A23C087007EEFC2 /* JX3MacAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JX3MacAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,6 +174,27 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		4992D1B82A23C085007EEFC2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4992D1C82A23C087007EEFC2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4992D1D22A23C087007EEFC2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -153,6 +206,9 @@
 				4992D1482A2278DD007EEFC2 /* JX3DemoTests */,
 				4992D1522A2278DD007EEFC2 /* JX3DemoUITests */,
 				4992D18F2A2391DD007EEFC2 /* ServerStateWidget */,
+				4992D1BC2A23C085007EEFC2 /* JX3MacApp */,
+				4992D1CE2A23C087007EEFC2 /* JX3MacAppTests */,
+				4992D1D82A23C087007EEFC2 /* JX3MacAppUITests */,
 				4992D18A2A2391DD007EEFC2 /* Frameworks */,
 				4992D1362A2278DB007EEFC2 /* Products */,
 			);
@@ -165,6 +221,9 @@
 				4992D1452A2278DD007EEFC2 /* JX3DemoTests.xctest */,
 				4992D14F2A2278DD007EEFC2 /* JX3DemoUITests.xctest */,
 				4992D1892A2391DD007EEFC2 /* ServerStateWidgetExtension.appex */,
+				4992D1BB2A23C085007EEFC2 /* JX3MacApp.app */,
+				4992D1CB2A23C087007EEFC2 /* JX3MacAppTests.xctest */,
+				4992D1D52A23C087007EEFC2 /* JX3MacAppUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -318,6 +377,43 @@
 			path = Util;
 			sourceTree = "<group>";
 		};
+		4992D1BC2A23C085007EEFC2 /* JX3MacApp */ = {
+			isa = PBXGroup;
+			children = (
+				4992D1BD2A23C085007EEFC2 /* JX3MacAppApp.swift */,
+				4992D1BF2A23C085007EEFC2 /* ContentView.swift */,
+				4992D1C12A23C087007EEFC2 /* Assets.xcassets */,
+				4992D1C62A23C087007EEFC2 /* JX3MacApp.entitlements */,
+				4992D1C32A23C087007EEFC2 /* Preview Content */,
+			);
+			path = JX3MacApp;
+			sourceTree = "<group>";
+		};
+		4992D1C32A23C087007EEFC2 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				4992D1C42A23C087007EEFC2 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		4992D1CE2A23C087007EEFC2 /* JX3MacAppTests */ = {
+			isa = PBXGroup;
+			children = (
+				4992D1CF2A23C087007EEFC2 /* JX3MacAppTests.swift */,
+			);
+			path = JX3MacAppTests;
+			sourceTree = "<group>";
+		};
+		4992D1D82A23C087007EEFC2 /* JX3MacAppUITests */ = {
+			isa = PBXGroup;
+			children = (
+				4992D1D92A23C087007EEFC2 /* JX3MacAppUITests.swift */,
+				4992D1DB2A23C087007EEFC2 /* JX3MacAppUITestsLaunchTests.swift */,
+			);
+			path = JX3MacAppUITests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -393,6 +489,59 @@
 			productReference = 4992D1892A2391DD007EEFC2 /* ServerStateWidgetExtension.appex */;
 			productType = "com.apple.product-type.app-extension";
 		};
+		4992D1BA2A23C085007EEFC2 /* JX3MacApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4992D1DD2A23C087007EEFC2 /* Build configuration list for PBXNativeTarget "JX3MacApp" */;
+			buildPhases = (
+				4992D1B72A23C085007EEFC2 /* Sources */,
+				4992D1B82A23C085007EEFC2 /* Frameworks */,
+				4992D1B92A23C085007EEFC2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = JX3MacApp;
+			productName = JX3MacApp;
+			productReference = 4992D1BB2A23C085007EEFC2 /* JX3MacApp.app */;
+			productType = "com.apple.product-type.application";
+		};
+		4992D1CA2A23C087007EEFC2 /* JX3MacAppTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4992D1E02A23C087007EEFC2 /* Build configuration list for PBXNativeTarget "JX3MacAppTests" */;
+			buildPhases = (
+				4992D1C72A23C087007EEFC2 /* Sources */,
+				4992D1C82A23C087007EEFC2 /* Frameworks */,
+				4992D1C92A23C087007EEFC2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4992D1CD2A23C087007EEFC2 /* PBXTargetDependency */,
+			);
+			name = JX3MacAppTests;
+			productName = JX3MacAppTests;
+			productReference = 4992D1CB2A23C087007EEFC2 /* JX3MacAppTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		4992D1D42A23C087007EEFC2 /* JX3MacAppUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4992D1E32A23C087007EEFC2 /* Build configuration list for PBXNativeTarget "JX3MacAppUITests" */;
+			buildPhases = (
+				4992D1D12A23C087007EEFC2 /* Sources */,
+				4992D1D22A23C087007EEFC2 /* Frameworks */,
+				4992D1D32A23C087007EEFC2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4992D1D72A23C087007EEFC2 /* PBXTargetDependency */,
+			);
+			name = JX3MacAppUITests;
+			productName = JX3MacAppUITests;
+			productReference = 4992D1D52A23C087007EEFC2 /* JX3MacAppUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -417,6 +566,17 @@
 					4992D1882A2391DD007EEFC2 = {
 						CreatedOnToolsVersion = 14.3;
 					};
+					4992D1BA2A23C085007EEFC2 = {
+						CreatedOnToolsVersion = 14.3;
+					};
+					4992D1CA2A23C087007EEFC2 = {
+						CreatedOnToolsVersion = 14.3;
+						TestTargetID = 4992D1BA2A23C085007EEFC2;
+					};
+					4992D1D42A23C087007EEFC2 = {
+						CreatedOnToolsVersion = 14.3;
+						TestTargetID = 4992D1BA2A23C085007EEFC2;
+					};
 				};
 			};
 			buildConfigurationList = 4992D1302A2278DB007EEFC2 /* Build configuration list for PBXProject "JX3Demo" */;
@@ -436,6 +596,9 @@
 				4992D1442A2278DD007EEFC2 /* JX3DemoTests */,
 				4992D14E2A2278DD007EEFC2 /* JX3DemoUITests */,
 				4992D1882A2391DD007EEFC2 /* ServerStateWidgetExtension */,
+				4992D1BA2A23C085007EEFC2 /* JX3MacApp */,
+				4992D1CA2A23C087007EEFC2 /* JX3MacAppTests */,
+				4992D1D42A23C087007EEFC2 /* JX3MacAppUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -469,6 +632,29 @@
 			buildActionMask = 2147483647;
 			files = (
 				4992D1982A2391DF007EEFC2 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4992D1B92A23C085007EEFC2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4992D1C52A23C087007EEFC2 /* Preview Assets.xcassets in Resources */,
+				4992D1C22A23C087007EEFC2 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4992D1C92A23C087007EEFC2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4992D1D32A23C087007EEFC2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -527,6 +713,32 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		4992D1B72A23C085007EEFC2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4992D1C02A23C085007EEFC2 /* ContentView.swift in Sources */,
+				4992D1BE2A23C085007EEFC2 /* JX3MacAppApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4992D1C72A23C087007EEFC2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4992D1D02A23C087007EEFC2 /* JX3MacAppTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4992D1D12A23C087007EEFC2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4992D1DC2A23C087007EEFC2 /* JX3MacAppUITestsLaunchTests.swift in Sources */,
+				4992D1DA2A23C087007EEFC2 /* JX3MacAppUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -544,6 +756,16 @@
 			isa = PBXTargetDependency;
 			target = 4992D1882A2391DD007EEFC2 /* ServerStateWidgetExtension */;
 			targetProxy = 4992D19C2A2391DF007EEFC2 /* PBXContainerItemProxy */;
+		};
+		4992D1CD2A23C087007EEFC2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4992D1BA2A23C085007EEFC2 /* JX3MacApp */;
+			targetProxy = 4992D1CC2A23C087007EEFC2 /* PBXContainerItemProxy */;
+		};
+		4992D1D72A23C087007EEFC2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4992D1BA2A23C085007EEFC2 /* JX3MacApp */;
+			targetProxy = 4992D1D62A23C087007EEFC2 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -854,6 +1076,142 @@
 			};
 			name = Release;
 		};
+		4992D1DE2A23C087007EEFC2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = JX3MacApp/JX3MacApp.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"JX3MacApp/Preview Content\"";
+				DEVELOPMENT_TEAM = MYB5299FCX;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 13.3;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.wttch.JX3MacApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		4992D1DF2A23C087007EEFC2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = JX3MacApp/JX3MacApp.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"JX3MacApp/Preview Content\"";
+				DEVELOPMENT_TEAM = MYB5299FCX;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 13.3;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.wttch.JX3MacApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		4992D1E12A23C087007EEFC2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = MYB5299FCX;
+				GENERATE_INFOPLIST_FILE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 13.3;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.wttch.JX3MacAppTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/JX3MacApp.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/JX3MacApp";
+			};
+			name = Debug;
+		};
+		4992D1E22A23C087007EEFC2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = MYB5299FCX;
+				GENERATE_INFOPLIST_FILE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 13.3;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.wttch.JX3MacAppTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/JX3MacApp.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/JX3MacApp";
+			};
+			name = Release;
+		};
+		4992D1E42A23C087007EEFC2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = MYB5299FCX;
+				GENERATE_INFOPLIST_FILE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 13.3;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.wttch.JX3MacAppUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = JX3MacApp;
+			};
+			name = Debug;
+		};
+		4992D1E52A23C087007EEFC2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = MYB5299FCX;
+				GENERATE_INFOPLIST_FILE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 13.3;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.wttch.JX3MacAppUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = JX3MacApp;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -898,6 +1256,33 @@
 			buildConfigurations = (
 				4992D1A02A2391DF007EEFC2 /* Debug */,
 				4992D1A12A2391DF007EEFC2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4992D1DD2A23C087007EEFC2 /* Build configuration list for PBXNativeTarget "JX3MacApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4992D1DE2A23C087007EEFC2 /* Debug */,
+				4992D1DF2A23C087007EEFC2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4992D1E02A23C087007EEFC2 /* Build configuration list for PBXNativeTarget "JX3MacAppTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4992D1E12A23C087007EEFC2 /* Debug */,
+				4992D1E22A23C087007EEFC2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4992D1E32A23C087007EEFC2 /* Build configuration list for PBXNativeTarget "JX3MacAppUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4992D1E42A23C087007EEFC2 /* Debug */,
+				4992D1E52A23C087007EEFC2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
