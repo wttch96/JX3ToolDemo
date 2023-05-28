@@ -25,6 +25,18 @@
 		4992D17D2A2312A7007EEFC2 /* PreviewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4992D17C2A2312A7007EEFC2 /* PreviewExtension.swift */; };
 		4992D1822A234939007EEFC2 /* JX3.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4992D1802A234939007EEFC2 /* JX3.xcdatamodeld */; };
 		4992D1842A234D1C007EEFC2 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4992D1832A234D1C007EEFC2 /* CoreDataManager.swift */; };
+		4992D18C2A2391DD007EEFC2 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4992D18B2A2391DD007EEFC2 /* WidgetKit.framework */; };
+		4992D18E2A2391DD007EEFC2 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4992D18D2A2391DD007EEFC2 /* SwiftUI.framework */; };
+		4992D1912A2391DD007EEFC2 /* ServerStateWidgetBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4992D1902A2391DD007EEFC2 /* ServerStateWidgetBundle.swift */; };
+		4992D1952A2391DD007EEFC2 /* ServerStateWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4992D1942A2391DD007EEFC2 /* ServerStateWidget.swift */; };
+		4992D1982A2391DF007EEFC2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4992D1972A2391DF007EEFC2 /* Assets.xcassets */; };
+		4992D19A2A2391DF007EEFC2 /* ServerStateWidget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 4992D1962A2391DD007EEFC2 /* ServerStateWidget.intentdefinition */; };
+		4992D19B2A2391DF007EEFC2 /* ServerStateWidget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 4992D1962A2391DD007EEFC2 /* ServerStateWidget.intentdefinition */; };
+		4992D19E2A2391DF007EEFC2 /* ServerStateWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 4992D1892A2391DD007EEFC2 /* ServerStateWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		4992D1AA2A23A355007EEFC2 /* ServerState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4992D16D2A22F839007EEFC2 /* ServerState.swift */; };
+		4992D1B22A23A5FC007EEFC2 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4992D1732A2300F4007EEFC2 /* NetworkManager.swift */; };
+		4992D1B52A23A6C1007EEFC2 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4992D1B42A23A6C1007EEFC2 /* NetworkService.swift */; };
+		4992D1B62A23A6C1007EEFC2 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4992D1B42A23A6C1007EEFC2 /* NetworkService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,7 +54,28 @@
 			remoteGlobalIDString = 4992D1342A2278DB007EEFC2;
 			remoteInfo = JX3Demo;
 		};
+		4992D19C2A2391DF007EEFC2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4992D12D2A2278DB007EEFC2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4992D1882A2391DD007EEFC2;
+			remoteInfo = ServerStateWidgetExtension;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		4992D1A22A2391DF007EEFC2 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				4992D19E2A2391DF007EEFC2 /* ServerStateWidgetExtension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		4992D1352A2278DB007EEFC2 /* JX3Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JX3Demo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -66,6 +99,16 @@
 		4992D17C2A2312A7007EEFC2 /* PreviewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewExtension.swift; sourceTree = "<group>"; };
 		4992D1812A234939007EEFC2 /* JX3.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = JX3.xcdatamodel; sourceTree = "<group>"; };
 		4992D1832A234D1C007EEFC2 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		4992D1892A2391DD007EEFC2 /* ServerStateWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = ServerStateWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		4992D18B2A2391DD007EEFC2 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		4992D18D2A2391DD007EEFC2 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		4992D1902A2391DD007EEFC2 /* ServerStateWidgetBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerStateWidgetBundle.swift; sourceTree = "<group>"; };
+		4992D1942A2391DD007EEFC2 /* ServerStateWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerStateWidget.swift; sourceTree = "<group>"; };
+		4992D1962A2391DD007EEFC2 /* ServerStateWidget.intentdefinition */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; path = ServerStateWidget.intentdefinition; sourceTree = "<group>"; };
+		4992D1972A2391DF007EEFC2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		4992D1992A2391DF007EEFC2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4992D1A32A239B29007EEFC2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		4992D1B42A23A6C1007EEFC2 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,15 +133,27 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		4992D1862A2391DD007EEFC2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4992D18E2A2391DD007EEFC2 /* SwiftUI.framework in Frameworks */,
+				4992D18C2A2391DD007EEFC2 /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
 		4992D12C2A2278DB007EEFC2 = {
 			isa = PBXGroup;
 			children = (
+				4992D1A42A23A2BD007EEFC2 /* JX3Base */,
 				4992D1372A2278DB007EEFC2 /* JX3Demo */,
 				4992D1482A2278DD007EEFC2 /* JX3DemoTests */,
 				4992D1522A2278DD007EEFC2 /* JX3DemoUITests */,
+				4992D18F2A2391DD007EEFC2 /* ServerStateWidget */,
+				4992D18A2A2391DD007EEFC2 /* Frameworks */,
 				4992D1362A2278DB007EEFC2 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -109,6 +164,7 @@
 				4992D1352A2278DB007EEFC2 /* JX3Demo.app */,
 				4992D1452A2278DD007EEFC2 /* JX3DemoTests.xctest */,
 				4992D14F2A2278DD007EEFC2 /* JX3DemoUITests.xctest */,
+				4992D1892A2391DD007EEFC2 /* ServerStateWidgetExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -116,10 +172,10 @@
 		4992D1372A2278DB007EEFC2 /* JX3Demo */ = {
 			isa = PBXGroup;
 			children = (
+				4992D1A32A239B29007EEFC2 /* Info.plist */,
+				4992D16F2A22F84E007EEFC2 /* Services */,
 				4992D1792A230DE6007EEFC2 /* Extension */,
 				4992D1722A2300E6007EEFC2 /* Util */,
-				4992D16F2A22F84E007EEFC2 /* Services */,
-				4992D16C2A22F7F4007EEFC2 /* Entity */,
 				4992D1622A22F76F007EEFC2 /* Core */,
 				4992D1382A2278DB007EEFC2 /* JX3DemoApp.swift */,
 				4992D13A2A2278DB007EEFC2 /* ContentView.swift */,
@@ -209,7 +265,6 @@
 		4992D1722A2300E6007EEFC2 /* Util */ = {
 			isa = PBXGroup;
 			children = (
-				4992D1732A2300F4007EEFC2 /* NetworkManager.swift */,
 				4992D1832A234D1C007EEFC2 /* CoreDataManager.swift */,
 			);
 			path = Util;
@@ -224,6 +279,45 @@
 			path = Extension;
 			sourceTree = "<group>";
 		};
+		4992D18A2A2391DD007EEFC2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4992D18B2A2391DD007EEFC2 /* WidgetKit.framework */,
+				4992D18D2A2391DD007EEFC2 /* SwiftUI.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4992D18F2A2391DD007EEFC2 /* ServerStateWidget */ = {
+			isa = PBXGroup;
+			children = (
+				4992D1B42A23A6C1007EEFC2 /* NetworkService.swift */,
+				4992D1902A2391DD007EEFC2 /* ServerStateWidgetBundle.swift */,
+				4992D1942A2391DD007EEFC2 /* ServerStateWidget.swift */,
+				4992D1962A2391DD007EEFC2 /* ServerStateWidget.intentdefinition */,
+				4992D1972A2391DF007EEFC2 /* Assets.xcassets */,
+				4992D1992A2391DF007EEFC2 /* Info.plist */,
+			);
+			path = ServerStateWidget;
+			sourceTree = "<group>";
+		};
+		4992D1A42A23A2BD007EEFC2 /* JX3Base */ = {
+			isa = PBXGroup;
+			children = (
+				4992D1B12A23A5EA007EEFC2 /* Util */,
+				4992D16C2A22F7F4007EEFC2 /* Entity */,
+			);
+			path = JX3Base;
+			sourceTree = "<group>";
+		};
+		4992D1B12A23A5EA007EEFC2 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				4992D1732A2300F4007EEFC2 /* NetworkManager.swift */,
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -234,10 +328,12 @@
 				4992D1312A2278DB007EEFC2 /* Sources */,
 				4992D1322A2278DB007EEFC2 /* Frameworks */,
 				4992D1332A2278DB007EEFC2 /* Resources */,
+				4992D1A22A2391DF007EEFC2 /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				4992D19D2A2391DF007EEFC2 /* PBXTargetDependency */,
 			);
 			name = JX3Demo;
 			productName = JX3Demo;
@@ -280,6 +376,23 @@
 			productReference = 4992D14F2A2278DD007EEFC2 /* JX3DemoUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
+		4992D1882A2391DD007EEFC2 /* ServerStateWidgetExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4992D19F2A2391DF007EEFC2 /* Build configuration list for PBXNativeTarget "ServerStateWidgetExtension" */;
+			buildPhases = (
+				4992D1852A2391DD007EEFC2 /* Sources */,
+				4992D1862A2391DD007EEFC2 /* Frameworks */,
+				4992D1872A2391DD007EEFC2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ServerStateWidgetExtension;
+			productName = ServerStateWidgetExtension;
+			productReference = 4992D1892A2391DD007EEFC2 /* ServerStateWidgetExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -301,6 +414,9 @@
 						CreatedOnToolsVersion = 14.3;
 						TestTargetID = 4992D1342A2278DB007EEFC2;
 					};
+					4992D1882A2391DD007EEFC2 = {
+						CreatedOnToolsVersion = 14.3;
+					};
 				};
 			};
 			buildConfigurationList = 4992D1302A2278DB007EEFC2 /* Build configuration list for PBXProject "JX3Demo" */;
@@ -319,6 +435,7 @@
 				4992D1342A2278DB007EEFC2 /* JX3Demo */,
 				4992D1442A2278DD007EEFC2 /* JX3DemoTests */,
 				4992D14E2A2278DD007EEFC2 /* JX3DemoUITests */,
+				4992D1882A2391DD007EEFC2 /* ServerStateWidgetExtension */,
 			);
 		};
 /* End PBXProject section */
@@ -347,6 +464,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		4992D1872A2391DD007EEFC2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4992D1982A2391DF007EEFC2 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -354,19 +479,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4992D17B2A230DF3007EEFC2 /* ColorExtension.swift in Sources */,
 				4992D1782A230B9D007EEFC2 /* ServerStateSectionView.swift in Sources */,
 				4992D13B2A2278DB007EEFC2 /* ContentView.swift in Sources */,
 				4992D1762A2303F6007EEFC2 /* ServerStateViewModel.swift in Sources */,
 				4992D1392A2278DB007EEFC2 /* JX3DemoApp.swift in Sources */,
 				4992D16E2A22F839007EEFC2 /* ServerState.swift in Sources */,
+				4992D19B2A2391DF007EEFC2 /* ServerStateWidget.intentdefinition in Sources */,
 				4992D1742A2300F4007EEFC2 /* NetworkManager.swift in Sources */,
 				4992D16B2A22F7D4007EEFC2 /* ServerStateItemView.swift in Sources */,
 				4992D1712A22F884007EEFC2 /* ServerStateService.swift in Sources */,
+				4992D1B52A23A6C1007EEFC2 /* NetworkService.swift in Sources */,
 				4992D1692A22F7B8007EEFC2 /* ServerStateView.swift in Sources */,
 				4992D1822A234939007EEFC2 /* JX3.xcdatamodeld in Sources */,
 				4992D17D2A2312A7007EEFC2 /* PreviewExtension.swift in Sources */,
 				4992D1842A234D1C007EEFC2 /* CoreDataManager.swift in Sources */,
-				4992D17B2A230DF3007EEFC2 /* ColorExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -387,6 +514,19 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		4992D1852A2391DD007EEFC2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4992D1B22A23A5FC007EEFC2 /* NetworkManager.swift in Sources */,
+				4992D1AA2A23A355007EEFC2 /* ServerState.swift in Sources */,
+				4992D1912A2391DD007EEFC2 /* ServerStateWidgetBundle.swift in Sources */,
+				4992D1952A2391DD007EEFC2 /* ServerStateWidget.swift in Sources */,
+				4992D1B62A23A6C1007EEFC2 /* NetworkService.swift in Sources */,
+				4992D19A2A2391DF007EEFC2 /* ServerStateWidget.intentdefinition in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -399,6 +539,11 @@
 			isa = PBXTargetDependency;
 			target = 4992D1342A2278DB007EEFC2 /* JX3Demo */;
 			targetProxy = 4992D1502A2278DD007EEFC2 /* PBXContainerItemProxy */;
+		};
+		4992D19D2A2391DF007EEFC2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4992D1882A2391DD007EEFC2 /* ServerStateWidgetExtension */;
+			targetProxy = 4992D19C2A2391DF007EEFC2 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -520,6 +665,7 @@
 		4992D15A2A2278DD007EEFC2 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -528,6 +674,7 @@
 				DEVELOPMENT_TEAM = MYB5299FCX;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = JX3Demo/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -549,6 +696,7 @@
 		4992D15B2A2278DD007EEFC2 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -557,6 +705,7 @@
 				DEVELOPMENT_TEAM = MYB5299FCX;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = JX3Demo/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -651,6 +800,60 @@
 			};
 			name = Release;
 		};
+		4992D1A02A2391DF007EEFC2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = MYB5299FCX;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ServerStateWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = ServerStateWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.wttch.JX3Demo.ServerStateWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		4992D1A12A2391DF007EEFC2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = MYB5299FCX;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ServerStateWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = ServerStateWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.wttch.JX3Demo.ServerStateWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -686,6 +889,15 @@
 			buildConfigurations = (
 				4992D1602A2278DD007EEFC2 /* Debug */,
 				4992D1612A2278DD007EEFC2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4992D19F2A2391DF007EEFC2 /* Build configuration list for PBXNativeTarget "ServerStateWidgetExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4992D1A02A2391DF007EEFC2 /* Debug */,
+				4992D1A12A2391DF007EEFC2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

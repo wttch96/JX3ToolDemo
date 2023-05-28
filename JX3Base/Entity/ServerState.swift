@@ -88,16 +88,6 @@ extension ServerState {
     var maintainDate: String {
         return Date(timeIntervalSince1970: Double(maintainTime)).formatted()
     }
-    
-    var color: Color {
-        switch heat {
-        case "8": return Color.theme.full
-        case "7": return Color.theme.busy
-        case "6": return Color.theme.open
-        default: return Color.theme.close
-        }
-    }
-    
     var state: String {
         switch heat {
         case "8": return "爆满"
@@ -107,3 +97,4 @@ extension ServerState {
         }
     }
 }
+

@@ -25,7 +25,7 @@ struct ServerStateItemView: View {
                 .font(.caption)
                 .padding(.horizontal, 10)
                 .padding(.vertical, 4)
-                .foregroundColor(serverState.color)
+                .foregroundColor(Color(serverState:serverState))
                 .background(
                     RoundedRectangle(cornerRadius: 10)
                         .foregroundColor(.white)
@@ -37,7 +37,7 @@ struct ServerStateItemView: View {
         .foregroundColor(.white)
         .background(
             RoundedRectangle(cornerRadius: 4)
-                .foregroundColor(serverState.color)
+                .foregroundColor(Color(serverState: serverState))
         )
         .onTapGesture {
             showDetail.toggle()
@@ -58,7 +58,7 @@ struct ServerStateItemView: View {
                         .padding(.vertical, 4)
                         .background(
                             RoundedRectangle(cornerRadius: 10)
-                                .foregroundColor(serverState.color)
+                                .foregroundColor(Color(serverState: serverState))
                         )
                     Spacer()
                     Image(systemName: serverState.isPined ? "pin.fill" : "pin.slash.fill")
