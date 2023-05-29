@@ -15,6 +15,6 @@ func logger(_ items: Any..., separator: String = " ", terminator: String = "\n")
 
 #if os(OSX)
 func logger(_ format: String, _ args: CVarArg...) {
-    NSLog(format, args)
+    print(format)
 }
 #endif

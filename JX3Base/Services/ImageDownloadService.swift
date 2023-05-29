@@ -24,6 +24,7 @@ class ImageDownloadService {
     private let urlString: String
     private let imageName: String
     private let folderName: String
+    private let httpMethod: String?
     
     var imageSubscriber: AnyCancellable?
     
@@ -32,10 +33,12 @@ class ImageDownloadService {
     ///   - urlString: 网络图片的 url
     ///   - imageName: 保存的文件名
     ///   - folderName: 保存文件名所在的文件夹
-    init(_ urlString: String, imageName: String, folderName: String) {
+    init(_ urlString: String, imageName: String, folderName: String, httpMethod: String? = nil) {
         self.urlString = urlString
         self.imageName = imageName
         self.folderName = folderName
+        self.httpMethod = httpMethod
+        loadImage()
     }
     
     /// 加载图片
@@ -53,7 +56,7 @@ class ImageDownloadService {
     /// 从网络下载图片并保存
     private func downloadImage() {
         guard let url = URL(string: urlString) else { return }
-        imageSubscriber = NetworkManager.downloadImage(url: url)
+        imageSubscriber = NetworkManager.downloadImage(url: url, httpMethod: httpMethod)
             .sink(receiveCompletion: NetworkManager.handleCompletion, receiveValue: { [weak self] returnedImage in
                 guard
                     let self = self,

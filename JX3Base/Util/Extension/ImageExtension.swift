@@ -9,19 +9,15 @@ import Foundation
 import SwiftUI
 
 #if os(OSX)
+import AppKit
 extension NSImage {
     func pngData() -> Data? {
         guard
-            let imageData = image.tiffRepresentation,
-            let imageResp = NSBitmapImageRep(data: imageData),
-            let url = getURLForFile(imageName, folderName: folderName)
+            let imageData = self.tiffRepresentation,
+            let imageResp = NSBitmapImageRep(data: imageData)
         else { return nil }
         
         return imageResp.representation(using: .png, properties: [:])
-    }
-    
-    init(data: Data) {
-        self.init(avatarData: NSData(data: data))
     }
 }
 #endif

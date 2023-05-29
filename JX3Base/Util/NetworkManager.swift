@@ -54,8 +54,8 @@ class NetworkManager {
     /// 生成一个从网络 ur l 下载图片的 Publisher
     /// - Parameter url: 网络 url
     /// - Returns: 可以从 url 下载图片的 Publisher
-    static func downloadImage(url: URL) -> AnyPublisher<UIImage?, Error> {
-        return downloadData(url: url, transform: { UIImage(data: $0) })
+    static func downloadImage(url: URL, httpMethod: String? = nil) -> AnyPublisher<UIImage?, Error> {
+        return downloadData(url: url, httpMethod: httpMethod, transform: { UIImage(data: $0) })
     }
     #endif
     
@@ -63,8 +63,8 @@ class NetworkManager {
     /// 生成一个从网络 ur l 下载图片的 Publisher
     /// - Parameter url: 网络 url
     /// - Returns: 可以从 url 下载图片的 Publisher
-    static func downloadImage(url: URL) -> AnyPublisher<NSImage, Error> {
-        return downloadData(url: url, transform: { NSImage(data: $0) })
+    static func downloadImage(url: URL, httpMethod: String? = nil) -> AnyPublisher<NSImage?, Error> {
+        return downloadData(url: url, httpMethod: httpMethod, transform: { NSImage(data: $0) })
     }
     #endif
     
@@ -72,8 +72,10 @@ class NetworkManager {
     /// 生成一个从网络 ur l 下载数据的 Publisher
     /// - Parameter url: 网络 url
     /// - Returns: 可以从 url 下载数据的 Publisher
-    static func downloadData<T>(url: URL, transform: @escaping (Data) throws -> T) -> AnyPublisher<T, Error> {
-        return URLSession.shared.dataTaskPublisher(for: url)
+    static func downloadData<T>(url: URL, httpMethod: String? = nil, transform: @escaping (Data) throws -> T) -> AnyPublisher<T, Error> {
+        var urlRequest = URLRequest(url: url)
+        urlRequest.httpMethod = httpMethod
+        return URLSession.shared.dataTaskPublisher(for: urlRequest)
             // 执行线程
             .subscribe(on: DispatchQueue.global(qos: .default))
             .tryMap{
