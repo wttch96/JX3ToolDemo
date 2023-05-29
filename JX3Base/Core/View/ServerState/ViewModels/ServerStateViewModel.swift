@@ -14,6 +14,8 @@ class ServerStateViewModel : ObservableObject {
     @Published var zoneServerStates: [String: [ServerState]] = [:]
     /// 关注的区服状态
     @Published var pinServerStates: [ServerState] = []
+    
+    @Published var allMainServerState: [ServerState] = []
     // 区服状态服务
     private let serverStateService = ServerStateService()
     private var cancellables = Set<AnyCancellable>()
@@ -44,6 +46,7 @@ class ServerStateViewModel : ObservableObject {
             .sink { [weak self] (serverStates, pinServerStates) in
                 self?.pinServerStates = []
                 self?.zoneServerStates = [:]
+                self?.allMainServerState = []
                 for var serverState in serverStates {
                     // 区服是否是已关注
                     serverState.isPin = pinServerStates.contains(where: { pinServerState in
@@ -57,6 +60,11 @@ class ServerStateViewModel : ObservableObject {
                         var states = self?.zoneServerStates[serverState.zoneName] ?? []
                         states.append(serverState)
                         self?.zoneServerStates[serverState.zoneName] = states
+                    }
+                    // 主要大区
+                    let zoneType = ZoneType.zone(serverState.zoneName)
+                    if zoneType == .doule || zoneType == .telecom {
+                        self?.allMainServerState.append(serverState)
                     }
                 }
             }

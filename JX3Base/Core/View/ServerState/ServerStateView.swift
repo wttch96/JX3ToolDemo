@@ -13,6 +13,17 @@ struct ServerStateView: View {
     
     var body: some View {
         ScrollView {
+            HStack {
+                JX3BoxIcon(id: 1)
+                JX3BoxIcon(id: 3)
+                JX3BoxIcon(id: 4)
+                JX3BoxIcon(id: 5)
+                JX3BoxIcon(id: 1)
+                JX3BoxIcon(id: 3)
+                JX3BoxIcon(id: 4)
+                JX3BoxIcon(id: 5)
+            }
+            
             
             ServerStateSectionView(title: "我的关注", servers: vm.pinServerStates)
             

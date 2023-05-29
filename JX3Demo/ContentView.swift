@@ -9,13 +9,46 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+        TabView {
+            NavigationStack {
+                NavigationLink(destination: {
+                    ServerStateView()
+                }, label: {
+                    DisplayBarView(iconName: "star.fill", title: "服务器状态", content: {
+                        ServerStateSimpleView()
+                    })
+                    .frame(height: 160)
+                })
+                Spacer()
+               }
+            .tabItem {
+                VStack {
+                    Image(systemName: "house.fill")
+                    Text("主页")
+                        .font(.caption)
+                }
+            }
+            NavigationStack {
+                NavigationLink {
+                    ScrollView {
+                        ForEach(0..<100) { _ in
+                            Text("aa")
+                        }
+                    }
+                } label: {
+                    ScrollView {
+                        ForEach(0..<100) { _ in
+                            Text("aa")
+                        }
+                    }
+                }
+
+            }
+            .navigationBarTitle("Home")
+            .tabItem {
+                Image(systemName: "star")
+            }
         }
-        .padding()
     }
 }
 

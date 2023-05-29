@@ -8,15 +8,8 @@
 import Foundation
 import SwiftUI
 
-#if os(iOS)
-import UIKit
-#endif
 
-#if os(OSX)
-import AppKit
-#endif
-
-
+/// 本地文件读取和保存的管理类
 class LocalFileManager {
     static let shared = LocalFileManager()
     private let fm = FileManager.default
@@ -40,6 +33,7 @@ class LocalFileManager {
         
         do {
             try data.write(to: url)
+            logger("Save png image ---> \(url.path)")
         } catch let error {
             logger("Error save image, image name : [\(url.path)], \(error.localizedDescription)")
         }
@@ -72,7 +66,7 @@ class LocalFileManager {
         guard
             let imageData = image.tiffRepresentation,
             let imageResp = NSBitmapImageRep(data: imageData),
-            let url = getURLForFile(imageName, folderName: folderName)
+            let url = getURLForFile(imageName, fileNameExtension: "png", folderName: folderName)
         else { return }
         
         if let imageData = imageResp.representation(using: .png, properties: [:]) {
@@ -101,23 +95,23 @@ class LocalFileManager {
     #endif
     
     // MARK: 通用
-    /// 根据给定文件夹名字获取其在 downloadsDircetory 下的 url 路径
+    /// 根据给定文件夹名字获取其在 documentDirectory 下的 url 路径
     /// - Parameter folderName: 文件夹名称
     /// - Returns: 给定文件夹名字其在 downloadsDircetory 下的 url
     func getURLForFolder(folderName: String) -> URL? {
         guard
-            let url = fm.urls(for: .downloadsDirectory, in: .userDomainMask).first
+            let url = fm.urls(for: .documentDirectory, in: .userDomainMask).first
         else { return nil }
         
         return url.appendingPathComponent(folderName)
     }
     
-    /// 根据给定的文件名、文件扩展名、文件夹名获取其在 downloadsDirectory 下的 url 路径
+    /// 根据给定的文件名、文件扩展名、文件夹名获取其在 documentDirectory 下的 url 路径
     /// - Parameters:
     ///   - fileName: 文件名
     ///   - fileNameExtension: 文件后缀，可以为空；如果不为空则拼接在文件名后面，⚠️不需要 "."
     ///   - folderName: 文件夹名
-    /// - Returns: 给定的文件名、文件扩展名、文件夹名拼接的在 downloadsDirectory 下的 url 路径
+    /// - Returns: 给定的文件名、文件扩展名、文件夹名拼接的在 documentDirectory 下的 url 路径
     func getURLForFile(_ fileName: String, fileNameExtension: String? = nil, folderName: String) -> URL? {
         guard
             let folderURL = getURLForFolder(folderName: folderName)

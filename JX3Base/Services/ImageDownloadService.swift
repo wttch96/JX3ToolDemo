@@ -10,6 +10,7 @@ import SwiftUI
 import Combine
 
 /// 图片下载、缓存服务
+/// 目前保存在 Documents 文件夹下，保存在 Downloads 文件夹下暂时好像不行（后面再修改）
 /// 根据文件名查看是否有缓存图片，如果有则加载，否则从网络下载并保存
 class ImageDownloadService {
     #if os(iOS)
@@ -49,7 +50,7 @@ class ImageDownloadService {
             logger("Retrived image(\(urlString) from FM!")
         } else {
             downloadImage()
-            logger("Download image\(urlString).")
+            logger("Download image \(urlString).")
         }
     }
     
