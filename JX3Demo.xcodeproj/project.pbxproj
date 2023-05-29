@@ -44,6 +44,18 @@
 		4992D1D02A23C087007EEFC2 /* JX3MacAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4992D1CF2A23C087007EEFC2 /* JX3MacAppTests.swift */; };
 		4992D1DA2A23C087007EEFC2 /* JX3MacAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4992D1D92A23C087007EEFC2 /* JX3MacAppUITests.swift */; };
 		4992D1DC2A23C087007EEFC2 /* JX3MacAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4992D1DB2A23C087007EEFC2 /* JX3MacAppUITestsLaunchTests.swift */; };
+		4992D1E72A23C45E007EEFC2 /* JX3Version.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4992D1E62A23C45E007EEFC2 /* JX3Version.swift */; };
+		4992D1E82A23C45E007EEFC2 /* JX3Version.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4992D1E62A23C45E007EEFC2 /* JX3Version.swift */; };
+		4992D1F02A248390007EEFC2 /* LocalFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4992D1EF2A248390007EEFC2 /* LocalFileManager.swift */; };
+		4992D1F12A248390007EEFC2 /* LocalFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4992D1EF2A248390007EEFC2 /* LocalFileManager.swift */; };
+		4992D1F22A2484FA007EEFC2 /* LocalFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4992D1EF2A248390007EEFC2 /* LocalFileManager.swift */; };
+		4992D1F42A248966007EEFC2 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4992D1F32A248966007EEFC2 /* Logger.swift */; };
+		4992D1F52A248966007EEFC2 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4992D1F32A248966007EEFC2 /* Logger.swift */; };
+		4992D1F62A248B2A007EEFC2 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4992D1F32A248966007EEFC2 /* Logger.swift */; };
+		4992D1F82A249C09007EEFC2 /* ImageDownloadService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4992D1F72A249C09007EEFC2 /* ImageDownloadService.swift */; };
+		4992D1F92A249C09007EEFC2 /* ImageDownloadService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4992D1F72A249C09007EEFC2 /* ImageDownloadService.swift */; };
+		4992D1FD2A24A133007EEFC2 /* ImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4992D1FC2A24A133007EEFC2 /* ImageExtension.swift */; };
+		4992D1FE2A24A133007EEFC2 /* ImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4992D1FC2A24A133007EEFC2 /* ImageExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -141,6 +153,11 @@
 		4992D1D52A23C087007EEFC2 /* JX3MacAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JX3MacAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4992D1D92A23C087007EEFC2 /* JX3MacAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JX3MacAppUITests.swift; sourceTree = "<group>"; };
 		4992D1DB2A23C087007EEFC2 /* JX3MacAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JX3MacAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		4992D1E62A23C45E007EEFC2 /* JX3Version.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JX3Version.swift; sourceTree = "<group>"; };
+		4992D1EF2A248390007EEFC2 /* LocalFileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalFileManager.swift; sourceTree = "<group>"; };
+		4992D1F32A248966007EEFC2 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
+		4992D1F72A249C09007EEFC2 /* ImageDownloadService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDownloadService.swift; sourceTree = "<group>"; };
+		4992D1FC2A24A133007EEFC2 /* ImageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -309,6 +326,7 @@
 			isa = PBXGroup;
 			children = (
 				4992D16D2A22F839007EEFC2 /* ServerState.swift */,
+				4992D1E62A23C45E007EEFC2 /* JX3Version.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -363,6 +381,7 @@
 		4992D1A42A23A2BD007EEFC2 /* JX3Base */ = {
 			isa = PBXGroup;
 			children = (
+				4992D1E92A23C487007EEFC2 /* Services */,
 				4992D1B12A23A5EA007EEFC2 /* Util */,
 				4992D16C2A22F7F4007EEFC2 /* Entity */,
 			);
@@ -372,7 +391,10 @@
 		4992D1B12A23A5EA007EEFC2 /* Util */ = {
 			isa = PBXGroup;
 			children = (
+				4992D1EE2A245B55007EEFC2 /* Extension */,
 				4992D1732A2300F4007EEFC2 /* NetworkManager.swift */,
+				4992D1EF2A248390007EEFC2 /* LocalFileManager.swift */,
+				4992D1F32A248966007EEFC2 /* Logger.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -412,6 +434,22 @@
 				4992D1DB2A23C087007EEFC2 /* JX3MacAppUITestsLaunchTests.swift */,
 			);
 			path = JX3MacAppUITests;
+			sourceTree = "<group>";
+		};
+		4992D1E92A23C487007EEFC2 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				4992D1F72A249C09007EEFC2 /* ImageDownloadService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		4992D1EE2A245B55007EEFC2 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				4992D1FC2A24A133007EEFC2 /* ImageExtension.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -668,14 +706,19 @@
 				4992D17B2A230DF3007EEFC2 /* ColorExtension.swift in Sources */,
 				4992D1782A230B9D007EEFC2 /* ServerStateSectionView.swift in Sources */,
 				4992D13B2A2278DB007EEFC2 /* ContentView.swift in Sources */,
+				4992D1FD2A24A133007EEFC2 /* ImageExtension.swift in Sources */,
 				4992D1762A2303F6007EEFC2 /* ServerStateViewModel.swift in Sources */,
+				4992D1F02A248390007EEFC2 /* LocalFileManager.swift in Sources */,
+				4992D1F82A249C09007EEFC2 /* ImageDownloadService.swift in Sources */,
 				4992D1392A2278DB007EEFC2 /* JX3DemoApp.swift in Sources */,
 				4992D16E2A22F839007EEFC2 /* ServerState.swift in Sources */,
+				4992D1E72A23C45E007EEFC2 /* JX3Version.swift in Sources */,
 				4992D19B2A2391DF007EEFC2 /* ServerStateWidget.intentdefinition in Sources */,
 				4992D1742A2300F4007EEFC2 /* NetworkManager.swift in Sources */,
 				4992D16B2A22F7D4007EEFC2 /* ServerStateItemView.swift in Sources */,
 				4992D1712A22F884007EEFC2 /* ServerStateService.swift in Sources */,
 				4992D1B52A23A6C1007EEFC2 /* NetworkService.swift in Sources */,
+				4992D1F42A248966007EEFC2 /* Logger.swift in Sources */,
 				4992D1692A22F7B8007EEFC2 /* ServerStateView.swift in Sources */,
 				4992D1822A234939007EEFC2 /* JX3.xcdatamodeld in Sources */,
 				4992D17D2A2312A7007EEFC2 /* PreviewExtension.swift in Sources */,
@@ -708,8 +751,13 @@
 				4992D1AA2A23A355007EEFC2 /* ServerState.swift in Sources */,
 				4992D1912A2391DD007EEFC2 /* ServerStateWidgetBundle.swift in Sources */,
 				4992D1952A2391DD007EEFC2 /* ServerStateWidget.swift in Sources */,
+				4992D1F52A248966007EEFC2 /* Logger.swift in Sources */,
+				4992D1E82A23C45E007EEFC2 /* JX3Version.swift in Sources */,
 				4992D1B62A23A6C1007EEFC2 /* NetworkService.swift in Sources */,
+				4992D1F92A249C09007EEFC2 /* ImageDownloadService.swift in Sources */,
 				4992D19A2A2391DF007EEFC2 /* ServerStateWidget.intentdefinition in Sources */,
+				4992D1FE2A24A133007EEFC2 /* ImageExtension.swift in Sources */,
+				4992D1F12A248390007EEFC2 /* LocalFileManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -717,6 +765,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4992D1F62A248B2A007EEFC2 /* Logger.swift in Sources */,
+				4992D1F22A2484FA007EEFC2 /* LocalFileManager.swift in Sources */,
 				4992D1C02A23C085007EEFC2 /* ContentView.swift in Sources */,
 				4992D1BE2A23C085007EEFC2 /* JX3MacAppApp.swift in Sources */,
 			);

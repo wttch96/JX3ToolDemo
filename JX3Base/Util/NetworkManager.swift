@@ -7,6 +7,7 @@
 
 import Foundation
 import Combine
+import SwiftUI
 
 // 网络数据下来管理类
 class NetworkManager {
@@ -45,6 +46,41 @@ class NetworkManager {
                 try handleURLResponse(output: $0, url: url)
             }
             .decode(type: type, decoder: JSONDecoder())
+            .receive(on: DispatchQueue.main)
+            .eraseToAnyPublisher()
+    }
+    
+    #if os(iOS)
+    /// 生成一个从网络 ur l 下载图片的 Publisher
+    /// - Parameter url: 网络 url
+    /// - Returns: 可以从 url 下载图片的 Publisher
+    static func downloadImage(url: URL) -> AnyPublisher<UIImage?, Error> {
+        return downloadData(url: url, transform: { UIImage(data: $0) })
+    }
+    #endif
+    
+    #if os(OSX)
+    /// 生成一个从网络 ur l 下载图片的 Publisher
+    /// - Parameter url: 网络 url
+    /// - Returns: 可以从 url 下载图片的 Publisher
+    static func downloadImage(url: URL) -> AnyPublisher<NSImage, Error> {
+        return downloadData(url: url, transform: { NSImage(data: $0) })
+    }
+    #endif
+    
+    
+    /// 生成一个从网络 ur l 下载数据的 Publisher
+    /// - Parameter url: 网络 url
+    /// - Returns: 可以从 url 下载数据的 Publisher
+    static func downloadData<T>(url: URL, transform: @escaping (Data) throws -> T) -> AnyPublisher<T, Error> {
+        return URLSession.shared.dataTaskPublisher(for: url)
+            // 执行线程
+            .subscribe(on: DispatchQueue.global(qos: .default))
+            .tryMap{
+                try handleURLResponse(output: $0, url: url)
+            }
+            .tryMap(transform)
+            // 接收线程
             .receive(on: DispatchQueue.main)
             .eraseToAnyPublisher()
     }
