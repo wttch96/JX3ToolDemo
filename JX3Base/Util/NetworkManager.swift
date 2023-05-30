@@ -69,6 +69,21 @@ class NetworkManager {
     #endif
     
     
+    static func downloadJsonData<T>(url: URL, httpMethod: String? = nil, type: T.Type) -> AnyPublisher<T, Error> where T: Decodable {
+        var urlRequest = URLRequest(url: url)
+        urlRequest.httpMethod = httpMethod
+        return URLSession.shared.dataTaskPublisher(for: urlRequest)
+            // 执行线程
+            .subscribe(on: DispatchQueue.global(qos: .default))
+            .tryMap{
+                try handleURLResponse(output: $0, url: url)
+            }
+            .decode(type: type, decoder: JSONDecoder())
+            // 接收线程
+            .receive(on: DispatchQueue.main)
+            .eraseToAnyPublisher()
+    }
+    
     /// 生成一个从网络 ur l 下载数据的 Publisher
     /// - Parameter url: 网络 url
     /// - Returns: 可以从 url 下载数据的 Publisher

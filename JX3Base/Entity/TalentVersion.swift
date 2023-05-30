@@ -7,15 +7,11 @@
 
 import Foundation
 
-struct JX3Version : Identifiable, Decodable {
+/// 奇穴版本
+struct TalentVersion : Identifiable, Hashable, Decodable {
     typealias ID = String
     var id: String {
         get { return version}
-    }
-    
-    init(dict: [String : String]) {
-        self.version = dict["version"]!
-        self.name = dict["name"]!
     }
     
     var version: String

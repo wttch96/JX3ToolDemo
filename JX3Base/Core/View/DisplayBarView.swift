@@ -34,8 +34,8 @@ struct DisplayBarView<Content>: View where Content: View {
         .padding()
         .background(
             RoundedRectangle(cornerRadius: 8)
-                .fill(.pink)
-                .shadow(color: .pink.opacity(0.6), radius: 8)
+                .fill(.bar)
+                // .shadow(color: .pink.opacity(0.6), radius: 8)
         )
         .padding()
     }

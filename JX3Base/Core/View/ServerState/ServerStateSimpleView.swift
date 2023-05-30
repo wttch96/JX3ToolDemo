@@ -9,34 +9,20 @@ import SwiftUI
 
 struct ServerStateSimpleView: View {
     @StateObject var vm = ServerStateViewModel()
+    // 列数量
+    @State private var columnCount: Int = 1
+    // 行数量
+    @State private var rowCount: Int = 1
+    
+    private let gridSize: Int = 36
+    
     var body: some View {
-        VStack {
-            GeometryReader { proxy in
-                LazyVGrid(
-                    columns: Array(repeating: GridItem(.flexible()), count: hCount(proxy))) {
-                        ForEach(vm.allMainServerState) { state in
-                            RoundedRectangle(cornerRadius: 4)
-                                .foregroundColor(Color(serverState: state))
-                                .frame(width: 24, height: 24)
-                                .onTapGesture {
-                                    print("\(state.serverName)")
-                                }
-                        }
-                    }
-                    .frame(maxHeight: CGFloat(vCount(proxy, vm.allMainServerState.count)) * 36)
-            }
+        AutoResizeLazyVGrid(vm.allMainServerState) { state in
+            RoundedRectangle(cornerRadius: 4)
+                .foregroundColor(Color(serverState: state))
+                .frame(width: 24, height: 24)
         }
     }
-    
-    private func vCount(_ proxy: GeometryProxy, _ total: Int) -> Int {
-        if hCount(proxy) == 0 { return 1 }
-        return total / hCount(proxy) + 1
-    }
-    
-    private func hCount(_ proxy: GeometryProxy) -> Int {
-        return Int(proxy.size.width) / 36
-    }
-    
 }
 
 struct ServerStateSimpleView_Previews: PreviewProvider {

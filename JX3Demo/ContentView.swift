@@ -14,13 +14,20 @@ struct ContentView: View {
                 NavigationLink(destination: {
                     ServerStateView()
                 }, label: {
-                    DisplayBarView(iconName: "star.fill", title: "服务器状态", content: {
+                    DisplayBarView(iconName: "desktopcomputer", title: "服务器状态", content: {
                         ServerStateSimpleView()
                     })
-                    .frame(height: 160)
+                })
+                NavigationLink(destination: {
+                    ServerStateView()
+                }, label: {
+                    DisplayBarView(iconName: "desktopcomputer", title: "服务器状态", content: {
+                        ServerStateSimpleView()
+                    })
                 })
                 Spacer()
-               }
+            }
+            .background(Color.theme1.background)
             .tabItem {
                 VStack {
                     Image(systemName: "house.fill")

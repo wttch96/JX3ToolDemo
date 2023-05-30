@@ -15,6 +15,23 @@
 		492D07602A250F4500826308 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4992D1832A234D1C007EEFC2 /* CoreDataManager.swift */; };
 		492D07622A250FB200826308 /* ServerStateSimpleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 492D07612A250FB200826308 /* ServerStateSimpleView.swift */; };
 		492D07632A250FB200826308 /* ServerStateSimpleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 492D07612A250FB200826308 /* ServerStateSimpleView.swift */; };
+		493023672A25D423006E81E4 /* ExtraPointService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 493023662A25D423006E81E4 /* ExtraPointService.swift */; };
+		493023692A25D423006E81E4 /* ExtraPointService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 493023662A25D423006E81E4 /* ExtraPointService.swift */; };
+		4933543F2A2611260044289B /* TalentVersionPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4933543D2A2611260044289B /* TalentVersionPicker.swift */; };
+		493354402A2611260044289B /* TalentVersionPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4933543D2A2611260044289B /* TalentVersionPicker.swift */; };
+		493354412A2611260044289B /* TalentVersionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4933543E2A2611260044289B /* TalentVersionViewModel.swift */; };
+		493354422A2611260044289B /* TalentVersionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4933543E2A2611260044289B /* TalentVersionViewModel.swift */; };
+		49563C692A261EF600AB8FAF /* AutoResizeLazyVGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49563C682A261EF600AB8FAF /* AutoResizeLazyVGrid.swift */; };
+		4965BA482A2616EF001D7E1B /* TalentPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4965BA472A2616EF001D7E1B /* TalentPicker.swift */; };
+		4965BA492A2616EF001D7E1B /* TalentPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4965BA472A2616EF001D7E1B /* TalentPicker.swift */; };
+		497467C12A2619BF00275A09 /* xf.json in Resources */ = {isa = PBXBuildFile; fileRef = 497467C02A2619BF00275A09 /* xf.json */; };
+		497467C22A2619BF00275A09 /* xf.json in Resources */ = {isa = PBXBuildFile; fileRef = 497467C02A2619BF00275A09 /* xf.json */; };
+		497467C42A2619DE00275A09 /* Kungfu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497467C32A2619DE00275A09 /* Kungfu.swift */; };
+		497467C52A2619DE00275A09 /* Kungfu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497467C32A2619DE00275A09 /* Kungfu.swift */; };
+		497467C72A261AC500275A09 /* BundleUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497467C62A261AC500275A09 /* BundleUtil.swift */; };
+		497467C82A261AC500275A09 /* BundleUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497467C62A261AC500275A09 /* BundleUtil.swift */; };
+		497467CA2A261C9900275A09 /* KungfuPickerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497467C92A261C9900275A09 /* KungfuPickerViewModel.swift */; };
+		497467CB2A261C9900275A09 /* KungfuPickerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497467C92A261C9900275A09 /* KungfuPickerViewModel.swift */; };
 		4992D1392A2278DB007EEFC2 /* JX3DemoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4992D1382A2278DB007EEFC2 /* JX3DemoApp.swift */; };
 		4992D13B2A2278DB007EEFC2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4992D13A2A2278DB007EEFC2 /* ContentView.swift */; };
 		4992D13D2A2278DD007EEFC2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4992D13C2A2278DD007EEFC2 /* Assets.xcassets */; };
@@ -51,8 +68,7 @@
 		4992D1D02A23C087007EEFC2 /* JX3MacAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4992D1CF2A23C087007EEFC2 /* JX3MacAppTests.swift */; };
 		4992D1DA2A23C087007EEFC2 /* JX3MacAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4992D1D92A23C087007EEFC2 /* JX3MacAppUITests.swift */; };
 		4992D1DC2A23C087007EEFC2 /* JX3MacAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4992D1DB2A23C087007EEFC2 /* JX3MacAppUITestsLaunchTests.swift */; };
-		4992D1E72A23C45E007EEFC2 /* JX3Version.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4992D1E62A23C45E007EEFC2 /* JX3Version.swift */; };
-		4992D1E82A23C45E007EEFC2 /* JX3Version.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4992D1E62A23C45E007EEFC2 /* JX3Version.swift */; };
+		4992D1E72A23C45E007EEFC2 /* TalentVersion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4992D1E62A23C45E007EEFC2 /* TalentVersion.swift */; };
 		4992D1F02A248390007EEFC2 /* LocalFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4992D1EF2A248390007EEFC2 /* LocalFileManager.swift */; };
 		4992D1F12A248390007EEFC2 /* LocalFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4992D1EF2A248390007EEFC2 /* LocalFileManager.swift */; };
 		4992D1F22A2484FA007EEFC2 /* LocalFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4992D1EF2A248390007EEFC2 /* LocalFileManager.swift */; };
@@ -86,6 +102,9 @@
 		4992D2212A24F9DA007EEFC2 /* CircleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4992D21F2A24F9DA007EEFC2 /* CircleButton.swift */; };
 		4992D2262A250021007EEFC2 /* DisplayBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4992D2252A250021007EEFC2 /* DisplayBarView.swift */; };
 		4992D2272A250021007EEFC2 /* DisplayBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4992D2252A250021007EEFC2 /* DisplayBarView.swift */; };
+		49DBCE172A2622A700C3BA2E /* AutoResizeLazyVGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49563C682A261EF600AB8FAF /* AutoResizeLazyVGrid.swift */; };
+		49DBCE192A2623B600C3BA2E /* KungfuPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DBCE182A2623B600C3BA2E /* KungfuPicker.swift */; };
+		49DBCE1A2A2623B600C3BA2E /* KungfuPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DBCE182A2623B600C3BA2E /* KungfuPicker.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -143,6 +162,15 @@
 /* Begin PBXFileReference section */
 		492D075C2A250F1A00826308 /* JX3.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = JX3.xcdatamodel; sourceTree = "<group>"; };
 		492D07612A250FB200826308 /* ServerStateSimpleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerStateSimpleView.swift; sourceTree = "<group>"; };
+		493023662A25D423006E81E4 /* ExtraPointService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtraPointService.swift; sourceTree = "<group>"; };
+		4933543D2A2611260044289B /* TalentVersionPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TalentVersionPicker.swift; path = JX3Base/Core/View/Talent/TalentVersionPicker.swift; sourceTree = SOURCE_ROOT; };
+		4933543E2A2611260044289B /* TalentVersionViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TalentVersionViewModel.swift; path = JX3Base/Core/View/Talent/TalentVersionViewModel.swift; sourceTree = SOURCE_ROOT; };
+		49563C682A261EF600AB8FAF /* AutoResizeLazyVGrid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoResizeLazyVGrid.swift; sourceTree = "<group>"; };
+		4965BA472A2616EF001D7E1B /* TalentPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TalentPicker.swift; sourceTree = "<group>"; };
+		497467C02A2619BF00275A09 /* xf.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = xf.json; sourceTree = "<group>"; };
+		497467C32A2619DE00275A09 /* Kungfu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Kungfu.swift; sourceTree = "<group>"; };
+		497467C62A261AC500275A09 /* BundleUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BundleUtil.swift; sourceTree = "<group>"; };
+		497467C92A261C9900275A09 /* KungfuPickerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KungfuPickerViewModel.swift; sourceTree = "<group>"; };
 		4992D1352A2278DB007EEFC2 /* JX3Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JX3Demo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4992D1382A2278DB007EEFC2 /* JX3DemoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JX3DemoApp.swift; sourceTree = "<group>"; };
 		4992D13A2A2278DB007EEFC2 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -184,7 +212,7 @@
 		4992D1D52A23C087007EEFC2 /* JX3MacAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JX3MacAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4992D1D92A23C087007EEFC2 /* JX3MacAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JX3MacAppUITests.swift; sourceTree = "<group>"; };
 		4992D1DB2A23C087007EEFC2 /* JX3MacAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JX3MacAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		4992D1E62A23C45E007EEFC2 /* JX3Version.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JX3Version.swift; sourceTree = "<group>"; };
+		4992D1E62A23C45E007EEFC2 /* TalentVersion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TalentVersion.swift; sourceTree = "<group>"; };
 		4992D1EF2A248390007EEFC2 /* LocalFileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalFileManager.swift; sourceTree = "<group>"; };
 		4992D1F32A248966007EEFC2 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 		4992D1F72A249C09007EEFC2 /* ImageDownloadService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDownloadService.swift; sourceTree = "<group>"; };
@@ -198,6 +226,7 @@
 		4992D21B2A24F8F7007EEFC2 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		4992D21F2A24F9DA007EEFC2 /* CircleButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleButton.swift; sourceTree = "<group>"; };
 		4992D2252A250021007EEFC2 /* DisplayBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayBarView.swift; sourceTree = "<group>"; };
+		49DBCE182A2623B600C3BA2E /* KungfuPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KungfuPicker.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -255,6 +284,34 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4930236A2A25D80C006E81E4 /* Talent */ = {
+			isa = PBXGroup;
+			children = (
+				4933543E2A2611260044289B /* TalentVersionViewModel.swift */,
+				4933543D2A2611260044289B /* TalentVersionPicker.swift */,
+				4965BA472A2616EF001D7E1B /* TalentPicker.swift */,
+			);
+			path = Talent;
+			sourceTree = "<group>";
+		};
+		49563C672A261DCD00AB8FAF /* Kungfu */ = {
+			isa = PBXGroup;
+			children = (
+				497467C92A261C9900275A09 /* KungfuPickerViewModel.swift */,
+				49DBCE182A2623B600C3BA2E /* KungfuPicker.swift */,
+			);
+			path = Kungfu;
+			sourceTree = "<group>";
+		};
+		497467BF2A26198D00275A09 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				497467C02A2619BF00275A09 /* xf.json */,
+				4992D2182A24F704007EEFC2 /* BaseAssets.xcassets */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
 		4992D12C2A2278DB007EEFC2 = {
 			isa = PBXGroup;
 			children = (
@@ -347,7 +404,8 @@
 			isa = PBXGroup;
 			children = (
 				4992D16D2A22F839007EEFC2 /* ServerState.swift */,
-				4992D1E62A23C45E007EEFC2 /* JX3Version.swift */,
+				4992D1E62A23C45E007EEFC2 /* TalentVersion.swift */,
+				497467C32A2619DE00275A09 /* Kungfu.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -386,12 +444,12 @@
 		4992D1A42A23A2BD007EEFC2 /* JX3Base */ = {
 			isa = PBXGroup;
 			children = (
+				497467BF2A26198D00275A09 /* Assets */,
 				492D075B2A250F1A00826308 /* JX3.xcdatamodeld */,
 				4992D21E2A24F989007EEFC2 /* Core */,
 				4992D1E92A23C487007EEFC2 /* Services */,
 				4992D1B12A23A5EA007EEFC2 /* Util */,
 				4992D16C2A22F7F4007EEFC2 /* Entity */,
-				4992D2182A24F704007EEFC2 /* BaseAssets.xcassets */,
 			);
 			path = JX3Base;
 			sourceTree = "<group>";
@@ -404,6 +462,7 @@
 				4992D1732A2300F4007EEFC2 /* NetworkManager.swift */,
 				4992D1EF2A248390007EEFC2 /* LocalFileManager.swift */,
 				4992D1F32A248966007EEFC2 /* Logger.swift */,
+				497467C62A261AC500275A09 /* BundleUtil.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -450,6 +509,7 @@
 			children = (
 				4992D1702A22F884007EEFC2 /* ServerStateService.swift */,
 				4992D1F72A249C09007EEFC2 /* ImageDownloadService.swift */,
+				493023662A25D423006E81E4 /* ExtraPointService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -469,6 +529,7 @@
 				4992D21F2A24F9DA007EEFC2 /* CircleButton.swift */,
 				4992D2032A24AFC4007EEFC2 /* ViewModel */,
 				4992D2002A24AFB6007EEFC2 /* JX3BoxIcon.swift */,
+				49563C682A261EF600AB8FAF /* AutoResizeLazyVGrid.swift */,
 			);
 			path = Component;
 			sourceTree = "<group>";
@@ -484,6 +545,8 @@
 		4992D20C2A24F03C007EEFC2 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				49563C672A261DCD00AB8FAF /* Kungfu */,
+				4930236A2A25D80C006E81E4 /* Talent */,
 				4992D1632A22F777007EEFC2 /* ServerState */,
 				4992D2252A250021007EEFC2 /* DisplayBarView.swift */,
 				4992D20D2A24F042007EEFC2 /* IconLibrary */,
@@ -713,6 +776,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4992D1402A2278DD007EEFC2 /* Preview Assets.xcassets in Resources */,
+				497467C12A2619BF00275A09 /* xf.json in Resources */,
 				4992D2192A24F704007EEFC2 /* BaseAssets.xcassets in Resources */,
 				4992D13D2A2278DD007EEFC2 /* Assets.xcassets in Resources */,
 			);
@@ -745,6 +809,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4992D1C52A23C087007EEFC2 /* Preview Assets.xcassets in Resources */,
+				497467C22A2619BF00275A09 /* xf.json in Resources */,
 				4992D21A2A24F704007EEFC2 /* BaseAssets.xcassets in Resources */,
 				4992D1C22A23C087007EEFC2 /* Assets.xcassets in Resources */,
 			);
@@ -778,17 +843,23 @@
 				4992D1782A230B9D007EEFC2 /* ServerStateSectionView.swift in Sources */,
 				4992D13B2A2278DB007EEFC2 /* ContentView.swift in Sources */,
 				4992D2052A24AFDC007EEFC2 /* JX3BoxIconViewModel.swift in Sources */,
+				4965BA482A2616EF001D7E1B /* TalentPicker.swift in Sources */,
 				4992D2262A250021007EEFC2 /* DisplayBarView.swift in Sources */,
 				4992D1FD2A24A133007EEFC2 /* ImageExtension.swift in Sources */,
 				4992D1762A2303F6007EEFC2 /* ServerStateViewModel.swift in Sources */,
+				49DBCE192A2623B600C3BA2E /* KungfuPicker.swift in Sources */,
 				4992D2122A24F2F1007EEFC2 /* LikedIconLibraryView.swift in Sources */,
 				4992D1F02A248390007EEFC2 /* LocalFileManager.swift in Sources */,
 				4992D1F82A249C09007EEFC2 /* ImageDownloadService.swift in Sources */,
 				4992D2162A24F32C007EEFC2 /* IconLibraryViewModel.swift in Sources */,
+				49563C692A261EF600AB8FAF /* AutoResizeLazyVGrid.swift in Sources */,
 				4992D1392A2278DB007EEFC2 /* JX3DemoApp.swift in Sources */,
 				4992D16E2A22F839007EEFC2 /* ServerState.swift in Sources */,
-				4992D1E72A23C45E007EEFC2 /* JX3Version.swift in Sources */,
+				497467C72A261AC500275A09 /* BundleUtil.swift in Sources */,
+				4992D1E72A23C45E007EEFC2 /* TalentVersion.swift in Sources */,
+				493023672A25D423006E81E4 /* ExtraPointService.swift in Sources */,
 				4992D19B2A2391DF007EEFC2 /* ServerStateWidget.intentdefinition in Sources */,
+				493354412A2611260044289B /* TalentVersionViewModel.swift in Sources */,
 				492D075D2A250F1A00826308 /* JX3.xcdatamodeld in Sources */,
 				4992D1742A2300F4007EEFC2 /* NetworkManager.swift in Sources */,
 				4992D16B2A22F7D4007EEFC2 /* ServerStateItemView.swift in Sources */,
@@ -796,8 +867,11 @@
 				4992D1712A22F884007EEFC2 /* ServerStateService.swift in Sources */,
 				4992D1B52A23A6C1007EEFC2 /* NetworkService.swift in Sources */,
 				4992D1F42A248966007EEFC2 /* Logger.swift in Sources */,
+				497467CA2A261C9900275A09 /* KungfuPickerViewModel.swift in Sources */,
 				4992D2202A24F9DA007EEFC2 /* CircleButton.swift in Sources */,
+				4933543F2A2611260044289B /* TalentVersionPicker.swift in Sources */,
 				4992D2012A24AFB6007EEFC2 /* JX3BoxIcon.swift in Sources */,
+				497467C42A2619DE00275A09 /* Kungfu.swift in Sources */,
 				4992D1692A22F7B8007EEFC2 /* ServerStateView.swift in Sources */,
 				4992D17D2A2312A7007EEFC2 /* PreviewExtension.swift in Sources */,
 			);
@@ -833,7 +907,6 @@
 				4992D1F52A248966007EEFC2 /* Logger.swift in Sources */,
 				4992D2062A24AFDC007EEFC2 /* JX3BoxIconViewModel.swift in Sources */,
 				492D074D2A250C4900826308 /* ServerStateService.swift in Sources */,
-				4992D1E82A23C45E007EEFC2 /* JX3Version.swift in Sources */,
 				4992D1B62A23A6C1007EEFC2 /* NetworkService.swift in Sources */,
 				4992D1F92A249C09007EEFC2 /* ImageDownloadService.swift in Sources */,
 				4992D19A2A2391DF007EEFC2 /* ServerStateWidget.intentdefinition in Sources */,
@@ -847,11 +920,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				497467CB2A261C9900275A09 /* KungfuPickerViewModel.swift in Sources */,
+				49DBCE1A2A2623B600C3BA2E /* KungfuPicker.swift in Sources */,
 				4992D20B2A24B3AF007EEFC2 /* NetworkManager.swift in Sources */,
 				4992D20A2A24B3AC007EEFC2 /* ImageExtension.swift in Sources */,
 				4992D2092A24B3A7007EEFC2 /* ImageDownloadService.swift in Sources */,
+				497467C52A2619DE00275A09 /* Kungfu.swift in Sources */,
+				493354422A2611260044289B /* TalentVersionViewModel.swift in Sources */,
 				492D07632A250FB200826308 /* ServerStateSimpleView.swift in Sources */,
+				49DBCE172A2622A700C3BA2E /* AutoResizeLazyVGrid.swift in Sources */,
+				493023692A25D423006E81E4 /* ExtraPointService.swift in Sources */,
 				4992D2132A24F2F1007EEFC2 /* LikedIconLibraryView.swift in Sources */,
+				4965BA492A2616EF001D7E1B /* TalentPicker.swift in Sources */,
 				4992D21D2A24F8F8007EEFC2 /* Color.swift in Sources */,
 				4992D2102A24F061007EEFC2 /* IconLibraryView.swift in Sources */,
 				4992D2082A24B3A3007EEFC2 /* JX3BoxIconViewModel.swift in Sources */,
@@ -859,10 +939,12 @@
 				4992D2272A250021007EEFC2 /* DisplayBarView.swift in Sources */,
 				4992D2072A24B39F007EEFC2 /* JX3BoxIcon.swift in Sources */,
 				4992D2172A24F32C007EEFC2 /* IconLibraryViewModel.swift in Sources */,
+				497467C82A261AC500275A09 /* BundleUtil.swift in Sources */,
 				492D075E2A250F1A00826308 /* JX3.xcdatamodeld in Sources */,
 				4992D1F62A248B2A007EEFC2 /* Logger.swift in Sources */,
 				492D074E2A250C4900826308 /* ServerStateService.swift in Sources */,
 				4992D1F22A2484FA007EEFC2 /* LocalFileManager.swift in Sources */,
+				493354402A2611260044289B /* TalentVersionPicker.swift in Sources */,
 				4992D1C02A23C085007EEFC2 /* ContentView.swift in Sources */,
 				4992D1BE2A23C085007EEFC2 /* JX3MacAppApp.swift in Sources */,
 			);

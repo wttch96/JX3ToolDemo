@@ -9,7 +9,7 @@ import Foundation
 import SwiftUI
 
 // MARK: - ServerState
-struct ServerState: Identifiable, Codable {
+struct ServerState: Identifiable, Codable, Comparable {
     let zoneName, serverName, ipAddress, ipPort: String
     let mainServer: String
     let connectState: Bool
@@ -36,6 +36,10 @@ struct ServerState: Identifiable, Codable {
     
     var isPined: Bool {
         get { return isPin ?? false }
+    }
+    
+    static func < (lhs: ServerState, rhs: ServerState) -> Bool {
+        return ZoneType.zone(lhs.zoneName) < ZoneType.zone(rhs.zoneName)
     }
 }
 
