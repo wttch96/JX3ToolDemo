@@ -9,8 +9,8 @@ import Foundation
 import SwiftUI
 import Combine
 
-/// 魔盒图标的 ViewModel
-class JX3BoxIconViewModel : ObservableObject, Identifiable {
+/// 网络图片（自动Cache）的 ViewModel
+class WebCacheableImageViewModel : ObservableObject {
     
     /// 适配 ios 和 osx 的图片
     #if os(iOS)
@@ -24,21 +24,19 @@ class JX3BoxIconViewModel : ObservableObject, Identifiable {
     
     // 图片下载服务
     private let imageService: ImageDownloadService
-    // id
-    let id: Int
     // 图标 url
     private let imageUrl: String
     // 图片名称
     private let imageName: String
     // 保存位置
-    private let folderName = "images/icons"
+    private let folderName: String
     
     private var cancellables = Set<AnyCancellable>()
-    
-    init(_ id: Int) {
-        self.id = id
-        self.imageUrl = "https://icon.jx3box.com/icon/\(id).png"
-        self.imageName = "\(id)"
+
+    init(url: String, folderName: String, imageName: String) {
+        self.folderName =  "images/caches/" + folderName
+        self.imageUrl = url
+        self.imageName = imageName
         
         imageService = ImageDownloadService(imageUrl, imageName: imageName, folderName: folderName)
         isLoading = true

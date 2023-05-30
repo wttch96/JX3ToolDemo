@@ -9,45 +9,13 @@ import SwiftUI
 
 /// 剑三魔盒的图标
 struct JX3BoxIcon: View {
-    @StateObject var vm : JX3BoxIconViewModel
     // 图标 id
     let id: Int
     
-    init(id: Int) {
-        self.id = id
-        self._vm = StateObject(wrappedValue: JX3BoxIconViewModel(id))
-    }
-    
-    
     var body: some View {
-        VStack {
-            if let image = vm.image {
-                imageView(image)
-                    .resizable()
-                    .scaledToFit()
-            } else {
-                if vm.isLoading {
-                    ProgressView()
-                } else {
-                    Image(systemName: "icloud.and.arrow.down")
-                        .resizable()
-                        .scaledToFit()
-                }
-            }
-        }
+        
+        WebCacheableImage(id, folderName: "jx3boxIcon", urlFormat: { "https://icon.jx3box.com/icon/\($0).png" }, fileNameFormat: { "\($0)" })
     }
-    
-    // MARK: 适配图片
-    #if os(iOS)
-    private func imageView(_ image: UIImage) -> Image {
-        Image(uiImage: image)
-    }
-    #endif
-    #if os(OSX)
-    private func imageView(_ image: NSImage) -> Image {
-        Image(nsImage: image)
-    }
-    #endif
 }
 
 struct JX3BoxIcon_Previews: PreviewProvider {
