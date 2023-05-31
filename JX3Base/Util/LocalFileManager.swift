@@ -28,7 +28,7 @@ class LocalFileManager {
         
         guard
             let data = image.pngData(),
-            let url = getURLForFile(imageName, folderName: folderName)
+            let url = getURLForFile(imageName, fileNameExtension: "png", folderName: folderName)
         else { return }
         
         do {

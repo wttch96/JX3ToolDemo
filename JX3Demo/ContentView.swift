@@ -27,7 +27,7 @@ struct ContentView: View {
                 })
                 Spacer()
             }
-            .background(Color.theme1.background)
+            .background(Color.theme.background)
             .tabItem {
                 VStack {
                     Image(systemName: "house.fill")

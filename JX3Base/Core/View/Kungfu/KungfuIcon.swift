@@ -26,6 +26,6 @@ struct KungfuIcon: View {
 
 struct KungfuIcon_Previews: PreviewProvider {
     static var previews: some View {
-        KungfuIcon(kungfu: Kungfu.common)
+        KungfuIcon(kungfu: .common)
     }
 }

@@ -38,7 +38,7 @@ class WebCacheableImageViewModel : ObservableObject {
         self.imageUrl = url
         self.imageName = imageName
         
-        imageService = ImageDownloadService(imageUrl, imageName: imageName, folderName: folderName)
+        imageService = ImageDownloadService(imageUrl, imageName: imageName, folderName: self.folderName)
         isLoading = true
         addSubscriber()
     }

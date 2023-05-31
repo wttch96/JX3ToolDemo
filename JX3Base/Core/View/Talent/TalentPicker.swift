@@ -10,9 +10,13 @@ import SwiftUI
 struct TalentPicker: View {
     
     @State private var version: TalentVersion? = nil
+    @State private var kungfu: Kungfu = .common
     
     var body: some View {
-        TalentVersionPicker(selectedVersion: $version)
+        VStack {
+            TalentVersionPicker(selectedVersion: $version)
+            KungfuPicker(selectedKungfu: $kungfu)
+        }
     }
 }
 

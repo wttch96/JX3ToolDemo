@@ -11,7 +11,8 @@ import SwiftUI
 struct JX3MacAppApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            // ContentView()
+            TalentPicker()
         }
     }
 }

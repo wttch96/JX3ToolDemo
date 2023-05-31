@@ -16,7 +16,7 @@ class KungfuLoaderViewModel: ObservableObject {
     
     func loadKungfus() {
         if let kungfuMap = BundleUtil.loadJson("xf.json", type: [String: Kungfu].self) {
-            kungfus = kungfuMap.values.map { $0 }
+            kungfus = kungfuMap.values.map { $0 }.filter { $0.name != "山居剑意" }.sorted()
         }
     }
 }

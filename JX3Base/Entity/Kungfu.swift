@@ -16,6 +16,17 @@ struct Kungfu: Identifiable, Decodable {
     let client: [String]
 }
 
-extension Kungfu {
+extension Kungfu: Comparable, Equatable, Hashable {
     static let common = Kungfu(id: 0, name: "通用", force: 0, kungfuId: 0, school: 0, client: [])
+    
+    static func <(lhs: Kungfu, rhs: Kungfu) -> Bool {
+        if lhs.school == rhs.school {
+            return lhs.kungfuId < rhs.kungfuId
+        }
+        return lhs.school < rhs.school
+    }
+    
+    static func ==(lhs: Kungfu, rhs: Kungfu) -> Bool {
+        return lhs.id == rhs.id
+    }
 }

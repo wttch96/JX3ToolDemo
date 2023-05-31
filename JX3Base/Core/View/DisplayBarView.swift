@@ -27,7 +27,7 @@ struct DisplayBarView<Content>: View where Content: View {
                 Text(title)
                 Spacer()
             }
-            .foregroundColor(Color.theme1.title)
+            .foregroundColor(Color.theme.title)
             .bold()
             view
         }
