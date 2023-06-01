@@ -33,5 +33,12 @@ class Theme {
     let close = Color("Close")
     let busy = Color("Busy")
     let full = Color("Full")
+    
+    // 心法
+    let kungfuIconBackground = Color("KungfuIconBackground")
+    
+    // 奇穴
+    let talentBackground = Color("TalentBackground")
+    let talentLabelBackground = Color("TalentLabelBackground")
 }
 

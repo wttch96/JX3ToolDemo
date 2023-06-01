@@ -12,7 +12,7 @@ class TalentVersionViewModel: ObservableObject {
     @Published var versions: [TalentVersion] = []
     @Published var isLoadidng: Bool = false
     
-    private let service = ExtraPointService()
+    private let service = TalentService()
     
     private var cancellables = Set<AnyCancellable>()
     

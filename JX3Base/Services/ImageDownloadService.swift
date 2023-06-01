@@ -22,40 +22,27 @@ class ImageDownloadService {
     
     private let fm = LocalFileManager.shared
     
-    private let urlString: String
-    private let imageName: String
-    private let folderName: String
-    private let httpMethod: String?
-    
     var imageSubscriber: AnyCancellable?
-    
-    /// 构造服务
-    /// - Parameters:
-    ///   - urlString: 网络图片的 url
-    ///   - imageName: 保存的文件名
-    ///   - folderName: 保存文件名所在的文件夹
-    init(_ urlString: String, imageName: String, folderName: String, httpMethod: String? = nil) {
-        self.urlString = urlString
-        self.imageName = imageName
-        self.folderName = folderName
-        self.httpMethod = httpMethod
-        loadImage()
-    }
     
     /// 加载图片
     /// 如果本次存在，则读取，否则则从网上下载
-    private func loadImage() {
+    /// - Parameters:
+    ///   - urlString: 下载路径
+    ///   - imageName: 保存用的文件名
+    ///   - folderName: 保存的路径位置
+    ///   - httpMethod: 下载文件的请求方式
+    public func loadImage(_ urlString: String, imageName: String, folderName: String, httpMethod: String? = nil) {
         if let savedImage = fm.loadPNGImage(imageName: imageName, folderName: folderName) {
             image = savedImage
             logger("Retrived image(\(urlString) from FM!")
         } else {
-            downloadImage()
+            downloadImage(urlString, imageName: imageName, folderName: folderName, httpMethod: httpMethod)
             logger("Download image \(urlString).")
         }
     }
     
     /// 从网络下载图片并保存
-    private func downloadImage() {
+    private func downloadImage(_ urlString: String, imageName: String, folderName: String, httpMethod: String? = nil) {
         guard let url = URL(string: urlString) else { return }
         imageSubscriber = NetworkManager.downloadImage(url: url, httpMethod: httpMethod)
             .sink(receiveCompletion: NetworkManager.handleCompletion, receiveValue: { [weak self] returnedImage in

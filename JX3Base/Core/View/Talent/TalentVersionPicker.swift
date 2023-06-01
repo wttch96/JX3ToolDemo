@@ -15,7 +15,7 @@ struct TalentVersionPicker: View {
     @Binding var selectedVersion: TalentVersion?
     
     var body: some View {
-        VStack {
+        ZStack {
             if vm.versions.isEmpty {
                 if vm.isLoadidng {
                     ProgressView()
@@ -29,7 +29,7 @@ struct TalentVersionPicker: View {
                     }
                 }
             } else {
-                Picker("选择版本", selection: $selectedVersion, content: {
+                Picker("选择心法", selection: $selectedVersion, content: {
                     ForEach(vm.versions) { version in
                         Text(version.name)
                             .tag(version as TalentVersion?)
@@ -37,6 +37,10 @@ struct TalentVersionPicker: View {
                 })
             }
         }
+        .padding(.horizontal)
+        .onChange(of: vm.versions, perform: { newValue in
+            selectedVersion = newValue.first
+        })
     }
 }
 

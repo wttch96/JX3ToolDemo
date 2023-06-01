@@ -43,7 +43,11 @@ struct AutoResizeLazyVGrid<T, ContentView>: View where ContentView: View, T: Ide
                 }
             }
         }
-        .frame(height: CGFloat(rowCount) * gridSize.height)
+        .frame(
+            // TODO 一行数据时按宽度显示
+            // width: gridSize.width * CGFloat(self.rowCount == 1 ? self.columnCount : self.data.count),
+            height: CGFloat(rowCount) * gridSize.height
+        )
     }
     
     
@@ -51,7 +55,13 @@ struct AutoResizeLazyVGrid<T, ContentView>: View where ContentView: View, T: Ide
         let columnCount = Int(proxy.size.width) / Int(gridSize.width)
         DispatchQueue.main.async {
             self.columnCount = columnCount
-            self.rowCount = (columnCount == 0) ? 1 : data.count / columnCount + 1
+            if columnCount == 0 {
+                self.rowCount = 0
+            } else if data.count % columnCount == 0 {
+                self.rowCount = data.count / columnCount
+            } else {
+                self.rowCount = data.count / columnCount + 1
+            }
         }
         return Array(repeating: GridItem(.flexible()), count: columnCount)
     }
@@ -79,5 +89,8 @@ struct AutoResizeLazyVGrid_Previews: PreviewProvider {
                     RoundedRectangle(cornerRadius: 4)
                 )
         }
+        .background(
+            Color.pink
+        )
     }
 }

@@ -8,15 +8,38 @@
 import SwiftUI
 
 struct TalentPicker: View {
+    @StateObject var vm: TalentPickerViewModel = TalentPickerViewModel()
     
-    @State private var version: TalentVersion? = nil
-    @State private var kungfu: Kungfu = .common
+    @State var seletedTalents: [String: Talent] = [:]
     
     var body: some View {
-        VStack {
-            TalentVersionPicker(selectedVersion: $version)
-            KungfuPicker(selectedKungfu: $kungfu)
+        NavigationStack {
+            ScrollView {
+                VStack(alignment: .leading, spacing: 20) {
+                    TalentVersionPicker(selectedVersion: $vm.version)
+                        .pickerStyle(.navigationLink)
+                    
+                    
+                    KungfuPicker(selectedKungfu: $vm.kungfu)
+                    
+                    AutoResizeLazyVGrid(vm.talents, gridSize: CGSize(width: 60, height: 80)) { level in
+                        TalentLevelView(talentLeve: level, seletedTalent: bindingTalent(for: level))
+                    }
+                    .background(
+                        RoundedRectangle(cornerRadius: 8)
+                            .foregroundColor(Color.theme.talentBackground)
+                    )
+                }
+                .padding()
+            }
         }
+    }
+    
+    private func bindingTalent(for level: TalentLevel) -> Binding<Talent> {
+        return .init(
+            get: { self.seletedTalents[level.id, default: level.talents.first!] },
+            set: { self.seletedTalents[level.id] = $0 }
+        )
     }
 }
 

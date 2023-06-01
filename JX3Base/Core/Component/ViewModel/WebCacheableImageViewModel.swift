@@ -24,23 +24,26 @@ class WebCacheableImageViewModel : ObservableObject {
     
     // 图片下载服务
     private let imageService: ImageDownloadService
-    // 图标 url
-    private let imageUrl: String
-    // 图片名称
-    private let imageName: String
-    // 保存位置
-    private let folderName: String
     
     private var cancellables = Set<AnyCancellable>()
 
-    init(url: String, folderName: String, imageName: String) {
-        self.folderName =  "images/caches/" + folderName
-        self.imageUrl = url
-        self.imageName = imageName
-        
-        imageService = ImageDownloadService(imageUrl, imageName: imageName, folderName: self.folderName)
-        isLoading = true
+    init() {
+        imageService = ImageDownloadService()
         addSubscriber()
+    }
+    
+    
+    /// 加载网络图片
+    /// - Parameters:
+    ///   - urlString: 网络图片的 url
+    ///   - imageName: 保存的文件名称
+    ///   - folderName: 保存的路径位置
+    ///   - httpMethod: 请求方式
+    public func loadImage(_ urlString: String, imageName: String, folderName: String, httpMethod: String? = nil) {
+        isLoading = true
+        
+        let folderName = "images/caches/" + folderName
+        imageService.loadImage(urlString, imageName: imageName, folderName: folderName, httpMethod: httpMethod)
     }
     
     /// 添加订阅，将下载器的 Publisher 和当前 ViewModel Publisher 结合

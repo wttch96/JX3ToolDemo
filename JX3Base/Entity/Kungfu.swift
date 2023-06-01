@@ -7,6 +7,7 @@
 
 import Foundation
 
+/// 心法
 struct Kungfu: Identifiable, Decodable {
     let id: Int
     let name: String
