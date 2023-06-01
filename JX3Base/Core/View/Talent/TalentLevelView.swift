@@ -18,19 +18,46 @@ struct TalentLevelView: View {
             TalentView(talent: seletedTalent)
                 .popover(isPresented: $showTalents) {
                     VStack {
-                        ForEach(talentLeve.talents) { item in
-                            HStack {
-                                TalentView(talent: item)
-                                Text(item.desc ?? "<none>")
+                        Text("第一重:\(seletedTalent.name)")
+                            .padding()
+                            .font(.title)
+                        ScrollView {
+                            VStack {
+                                ForEach(talentLeve.talents) { item in
+                                    HStack(alignment: .top) {
+                                        VStack {
+                                            TalentView(talent: item)
+//                                            Text(item.isSkill ? "主动招式" : "被动招式")
+//                                                .font(.caption)
+//                                                .foregroundColor(Color.white)
+                                            Spacer()
+                                        }
+                                        
+                                        VStack(alignment: .leading, spacing: 5) {
+                                            if let meta = item.meta {
+                                                Text(meta)
+                                            }
+                                            Text((item.desc ?? "<none>").replacing("<br/>", with: "\n"))
+                                            if let extend = item.extend {
+                                                Text(extend)
+                                            }
+                                        }
+                                        .font(.system(size: 12))
+                                        .foregroundColor(.yellow)
+                                        Spacer()
+                                    }
+                                    .frame(maxWidth: .infinity)
+                                    .onTapGesture {
+                                        seletedTalent = item
+                                        showTalents.toggle()
+                                    }
+                                }
                                 Spacer()
-                            }
-                            .onTapGesture {
-                                seletedTalent = item
-                                showTalents.toggle()
                             }
                         }
                     }
-                    .padding()
+                    .padding(.horizontal)
+                    .background(Color.theme.talentBackground)
                     .presentationDetents([.medium])
                 }
         }

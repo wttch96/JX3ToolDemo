@@ -34,6 +34,9 @@ class Theme {
     let busy = Color("Busy")
     let full = Color("Full")
     
+    let gold = Color("Gold")
+    let red = Color("Red")
+    
     // 心法
     let kungfuIconBackground = Color("KungfuIconBackground")
     

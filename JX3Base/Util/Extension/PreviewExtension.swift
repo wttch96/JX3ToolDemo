@@ -18,7 +18,7 @@ class Dev {
     
     let servers: [ServerState]
     
-    let talnet = Talent(id: "1", name: "测试测试", icon: nil, desc: "简述", order: "1", pos: 1, skill: 0, meta: nil, extend: nil)
+    let talnet = Talent(id: "1", name: "测试测试", icon: nil, desc: "简述<br/>建树啊饿哦俗套恶俗太好饿土豪扫榻黑嫂河图", order: "1", pos: 1, skill: 0, meta: nil, extend: nil)
     let talnet2 = Talent(id: "1", name: "测试", icon: 11840, desc: "简述", order: "1", pos: 1, skill: 1, meta: nil, extend: nil)
     let talnets: [Talent]
     

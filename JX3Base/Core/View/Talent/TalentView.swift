@@ -23,6 +23,7 @@ struct TalentView: View {
             }
             Text(talent?.name ?? "<none>")
                 .font(.caption)
+                .foregroundColor(Color.theme.gold)
         }
         .frame(width: 60, height: 72)
     }

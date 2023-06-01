@@ -33,7 +33,7 @@ class TalentPickerViewModel: ObservableObject {
             .combineLatest($kungfu)
             .sink { [weak self] talentLevelMap, kungfu in
                 if let talents = talentLevelMap[kungfu.name] {
-                    self?.talents = talents
+                    self?.talents = talents.sorted()
                 }
             }
             .store(in: &cancellables)
