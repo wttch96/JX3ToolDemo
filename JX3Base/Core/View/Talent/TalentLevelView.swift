@@ -13,6 +13,8 @@ struct TalentLevelView: View {
     
     @State private var showTalents = false
     
+    @Environment(\.debug) var debug
+    
     var body: some View {
         HStack(alignment: .top, spacing: 2) {
             TalentView(talent: seletedTalent)
@@ -40,6 +42,10 @@ struct TalentLevelView: View {
                                             Text((item.desc ?? "<none>").replacing("<br/>", with: "\n"))
                                             if let extend = item.extend {
                                                 Text(extend)
+                                            }
+                                            if debug {
+                                                Text("ID: \(item.id ?? "<none>")")
+                                                    .foregroundColor(.theme.red)
                                             }
                                         }
                                         .font(.system(size: 12))
@@ -70,5 +76,6 @@ struct TalentLevelView: View {
 struct TalentLevelView_Previews: PreviewProvider {
     static var previews: some View {
         TalentLevelView(talentLeve: TalentLevel(id: "1", talents: dev.talnets), seletedTalent: .constant(dev.talnet))
+            .environment(\.debug, true)
     }
 }

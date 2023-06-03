@@ -29,7 +29,7 @@ struct TalentVersionPicker: View {
                     }
                 }
             } else {
-                Picker("选择心法", selection: $selectedVersion, content: {
+                Picker("选择版本", selection: $selectedVersion, content: {
                     ForEach(vm.versions) { version in
                         Text(version.name)
                             .tag(version as TalentVersion?)
