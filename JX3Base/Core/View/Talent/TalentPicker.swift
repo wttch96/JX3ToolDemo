@@ -22,16 +22,22 @@ struct TalentPicker: View {
                     
                     KungfuPicker(selectedKungfu: $vm.kungfu)
                     
-                    AutoResizeLazyVGrid(vm.talents, gridSize: CGSize(width: 60, height: 80)) { level in
-                        TalentLevelView(talentLeve: level, seletedTalent: bindingTalent(for: level))
+                    if !vm.talents.isEmpty {
+                        AutoResizeLazyVGrid(vm.talents, gridSize: CGSize(width: 60, height: 80)) { level in
+                            TalentLevelView(talentLeve: level, seletedTalent: bindingTalent(for: level))
+                        }
+                        .background(
+                            RoundedRectangle(cornerRadius: 8)
+                                .foregroundColor(Color.theme.talentBackground)
+                        )
                     }
-                    .background(
-                        RoundedRectangle(cornerRadius: 8)
-                            .foregroundColor(Color.theme.talentBackground)
-                    )
+                    
                 }
                 .padding()
             }
+            .onChange(of: vm.kungfu, perform: { _ in
+                seletedTalents = [:]
+            })
         }
     }
     

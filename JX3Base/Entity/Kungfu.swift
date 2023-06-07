@@ -6,19 +6,22 @@
 //
 
 import Foundation
+import SwiftUI
 
-/// 心法
-struct Kungfu: Identifiable, Decodable {
+struct Kungfu: Identifiable {
     let id: Int
     let name: String
     let force: Int
     let kungfuId: Int
     let school: Int
     let client: [String]
+    
+    let attrs: [EquipAttribute]
+    let color: Color
 }
 
 extension Kungfu: Comparable, Equatable, Hashable {
-    static let common = Kungfu(id: 0, name: "通用", force: 0, kungfuId: 0, school: 0, client: [])
+    static let common = Kungfu(id: 0, name: "通用", force: 0, kungfuId: 0, school: 0, client: [], attrs: [], color: .accentColor)
     
     static func <(lhs: Kungfu, rhs: Kungfu) -> Bool {
         if lhs.school == rhs.school {

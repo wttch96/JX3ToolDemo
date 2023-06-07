@@ -9,7 +9,7 @@ import SwiftUI
 
 /// 心法选择器
 struct KungfuPicker: View {
-    @StateObject var vm = KungfuLoaderViewModel()
+    @StateObject private var vm = KungfuLoaderViewModel()
     @Binding var selectedKungfu: Kungfu
     
     @Namespace var namespace
@@ -25,7 +25,7 @@ struct KungfuPicker: View {
                     if selectedKungfu == item {
                         RoundedRectangle(cornerRadius: borderWidth)
                             .stroke(lineWidth: borderWidth)
-                            // 【⚠️】不能使用 opacity 必须要让视图存在/消失才能处罚 matchedGeometryEffect
+                            // 【⚠️】不能使用 opacity 必须要让视图存在/消失才能触发 matchedGeometryEffect
                             // .opacity(selectedKungfu == item ? 1 : 0)
                             .foregroundColor(.blue)
                             .matchedGeometryEffect(id: "border", in: self.namespace)

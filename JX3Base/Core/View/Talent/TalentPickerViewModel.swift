@@ -7,6 +7,7 @@
 
 import Foundation
 import Combine
+import SwiftUI
 
 class TalentPickerViewModel: ObservableObject {
     @Published var version: TalentVersion? = nil
