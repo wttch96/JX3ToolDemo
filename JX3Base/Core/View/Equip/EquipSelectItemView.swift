@@ -15,7 +15,7 @@ struct EquipSelectItemView: View {
     
     var body: some View {
         NavigationLink(destination: {
-            EquipPickerView(kungfu: kungfu, postion: position, selected: $selectedEquip)
+            EquipPickerView(kungfu: kungfu, position: position, selected: $selectedEquip)
         }, label: {
             VStack {
                 ZStack {

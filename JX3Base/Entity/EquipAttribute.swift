@@ -23,7 +23,7 @@ import Foundation
 enum EquipAttribute: String, CaseIterable {
     case surplus = "Surplus"
     case strain = "Strain"
-    case hasts = "Haste"
+    case haste = "Haste"
     case critical = "Critical"
     case criticalDamage = "CriticalDamage"
     case overcome = "Overcome"
@@ -37,6 +37,22 @@ enum EquipAttribute: String, CaseIterable {
 }
 
 extension EquipAttribute: Decodable {
-    
+    var label: String {
+        switch self {
+        case .surplus: return "破招"
+        case .strain: return "无双"
+        case .haste: return "加速"
+        case .critical: return "会心"
+        case .criticalDamage: return "会效"
+        case .overcome: return "破防"
+        case .hit: return "命中"
+        case .physicsShield: return "外防"
+        case .magicShield: return "内防"
+        case .dodge: return "闪避"
+        case .parry: return "招架"
+        case .toughness: return "御劲"
+        case .decritical: return "化劲"
+        }
+    }
 }
 

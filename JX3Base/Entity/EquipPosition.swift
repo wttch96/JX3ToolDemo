@@ -57,6 +57,24 @@ extension EquipPosition {
         }
     }
     
+    var value: Int {
+        switch self {
+        case .helm: return 3
+        case .chest: return 2
+        case .waist: return 6
+        case .bangle: return 10
+        case .pants: return 8
+        case .boots: return 9
+        case .amulet: return 4
+        case .pendant: return 7
+        case .ring1: return 5
+        case .ring2: return 5
+        case .meleeWeapon: return 0
+        case .meleeWeapon2: return 0
+        case .rangeWeapon: return 1
+        }
+    }
+    
     var label: String {
         return self == .meleeWeapon2 ? "重剑" : type.label
     }

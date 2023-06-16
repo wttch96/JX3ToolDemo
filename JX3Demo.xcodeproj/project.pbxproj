@@ -44,6 +44,14 @@
 		49536A1A2A30DF1D004FBBB1 /* AssetJsonDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49536A182A30DF1D004FBBB1 /* AssetJsonDataService.swift */; };
 		49536A1C2A30E83B004FBBB1 /* EquipHomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49536A1B2A30E83B004FBBB1 /* EquipHomeViewModel.swift */; };
 		49536A1D2A30E83B004FBBB1 /* EquipHomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49536A1B2A30E83B004FBBB1 /* EquipHomeViewModel.swift */; };
+		49536A1F2A31BB19004FBBB1 /* EquipSearchService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49536A1E2A31BB19004FBBB1 /* EquipSearchService.swift */; };
+		49536A202A31BB19004FBBB1 /* EquipSearchService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49536A1E2A31BB19004FBBB1 /* EquipSearchService.swift */; };
+		49536A222A31C214004FBBB1 /* BoxResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49536A212A31C214004FBBB1 /* BoxResponse.swift */; };
+		49536A232A31C214004FBBB1 /* BoxResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49536A212A31C214004FBBB1 /* BoxResponse.swift */; };
+		49536A252A31C47E004FBBB1 /* EquipPickerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49536A242A31C47E004FBBB1 /* EquipPickerViewModel.swift */; };
+		49536A262A31C47E004FBBB1 /* EquipPickerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49536A242A31C47E004FBBB1 /* EquipPickerViewModel.swift */; };
+		49536A282A31CCDD004FBBB1 /* mountEquip.json in Resources */ = {isa = PBXBuildFile; fileRef = 49536A272A31CCDD004FBBB1 /* mountEquip.json */; };
+		49536A292A31CCDD004FBBB1 /* mountEquip.json in Resources */ = {isa = PBXBuildFile; fileRef = 49536A272A31CCDD004FBBB1 /* mountEquip.json */; };
 		495410CF2A273DCE00AA6293 /* ServerStateViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4992D1752A2303F6007EEFC2 /* ServerStateViewModel.swift */; };
 		495410D02A273DCE00AA6293 /* ServerStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4992D1682A22F7B8007EEFC2 /* ServerStateView.swift */; };
 		495410D12A273DCE00AA6293 /* ServerStateItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4992D16A2A22F7D4007EEFC2 /* ServerStateItemView.swift */; };
@@ -63,6 +71,10 @@
 		495410E42A2AEA3C00AA6293 /* EnvironmentExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495410E32A2AEA3C00AA6293 /* EnvironmentExtension.swift */; };
 		495410E52A2AEA3C00AA6293 /* EnvironmentExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495410E32A2AEA3C00AA6293 /* EnvironmentExtension.swift */; };
 		49563C692A261EF600AB8FAF /* AutoResizeLazyVGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49563C682A261EF600AB8FAF /* AutoResizeLazyVGrid.swift */; };
+		495FD65B2A36FC5800A17FB0 /* PlainToggleStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495FD65A2A36FC5800A17FB0 /* PlainToggleStyle.swift */; };
+		495FD65C2A36FC5800A17FB0 /* PlainToggleStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495FD65A2A36FC5800A17FB0 /* PlainToggleStyle.swift */; };
+		495FD65F2A3B675200A17FB0 /* DutyType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495FD65E2A3B675200A17FB0 /* DutyType.swift */; };
+		495FD6602A3B675200A17FB0 /* DutyType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495FD65E2A3B675200A17FB0 /* DutyType.swift */; };
 		4965BA482A2616EF001D7E1B /* TalentPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4965BA472A2616EF001D7E1B /* TalentPicker.swift */; };
 		4965BA492A2616EF001D7E1B /* TalentPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4965BA472A2616EF001D7E1B /* TalentPicker.swift */; };
 		497467C12A2619BF00275A09 /* xf.json in Resources */ = {isa = PBXBuildFile; fileRef = 497467C02A2619BF00275A09 /* xf.json */; };
@@ -233,12 +245,18 @@
 		49536A152A30DEA8004FBBB1 /* xfAttrs.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = xfAttrs.json; sourceTree = "<group>"; };
 		49536A182A30DF1D004FBBB1 /* AssetJsonDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetJsonDataService.swift; sourceTree = "<group>"; };
 		49536A1B2A30E83B004FBBB1 /* EquipHomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipHomeViewModel.swift; sourceTree = "<group>"; };
+		49536A1E2A31BB19004FBBB1 /* EquipSearchService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipSearchService.swift; sourceTree = "<group>"; };
+		49536A212A31C214004FBBB1 /* BoxResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoxResponse.swift; sourceTree = "<group>"; };
+		49536A242A31C47E004FBBB1 /* EquipPickerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipPickerViewModel.swift; sourceTree = "<group>"; };
+		49536A272A31CCDD004FBBB1 /* mountEquip.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = mountEquip.json; sourceTree = "<group>"; };
 		495410D72A276D8B00AA6293 /* TalentPickerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TalentPickerViewModel.swift; sourceTree = "<group>"; };
 		495410DA2A276EF800AA6293 /* Talent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Talent.swift; sourceTree = "<group>"; };
 		495410DD2A27C23B00AA6293 /* TalentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TalentView.swift; sourceTree = "<group>"; };
 		495410E02A27C59E00AA6293 /* TalentLevelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TalentLevelView.swift; sourceTree = "<group>"; };
 		495410E32A2AEA3C00AA6293 /* EnvironmentExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnvironmentExtension.swift; sourceTree = "<group>"; };
 		49563C682A261EF600AB8FAF /* AutoResizeLazyVGrid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoResizeLazyVGrid.swift; sourceTree = "<group>"; };
+		495FD65A2A36FC5800A17FB0 /* PlainToggleStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlainToggleStyle.swift; sourceTree = "<group>"; };
+		495FD65E2A3B675200A17FB0 /* DutyType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DutyType.swift; sourceTree = "<group>"; };
 		4965BA472A2616EF001D7E1B /* TalentPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TalentPicker.swift; sourceTree = "<group>"; };
 		497467C02A2619BF00275A09 /* xf.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = xf.json; sourceTree = "<group>"; };
 		497467C32A2619DE00275A09 /* Kungfu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Kungfu.swift; sourceTree = "<group>"; };
@@ -383,6 +401,7 @@
 			children = (
 				49536A0B2A30BA2D004FBBB1 /* EquipEditViewModel.swift */,
 				49536A1B2A30E83B004FBBB1 /* EquipHomeViewModel.swift */,
+				49536A242A31C47E004FBBB1 /* EquipPickerViewModel.swift */,
 			);
 			path = ViemModel;
 			sourceTree = "<group>";
@@ -397,6 +416,14 @@
 			path = Kungfu;
 			sourceTree = "<group>";
 		};
+		495FD65D2A3B674100A17FB0 /* Enum */ = {
+			isa = PBXGroup;
+			children = (
+				495FD65E2A3B675200A17FB0 /* DutyType.swift */,
+			);
+			path = Enum;
+			sourceTree = "<group>";
+		};
 		497467BF2A26198D00275A09 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
@@ -405,6 +432,7 @@
 				4992D2182A24F704007EEFC2 /* BaseAssets.xcassets */,
 				499F5AD72A304C9C00A3C588 /* colors.json */,
 				49536A152A30DEA8004FBBB1 /* xfAttrs.json */,
+				49536A272A31CCDD004FBBB1 /* mountEquip.json */,
 			);
 			path = Assets;
 			sourceTree = "<group>";
@@ -499,6 +527,7 @@
 		4992D16C2A22F7F4007EEFC2 /* Entity */ = {
 			isa = PBXGroup;
 			children = (
+				495FD65D2A3B674100A17FB0 /* Enum */,
 				4992D16D2A22F839007EEFC2 /* ServerState.swift */,
 				4992D1E62A23C45E007EEFC2 /* TalentVersion.swift */,
 				497467C32A2619DE00275A09 /* Kungfu.swift */,
@@ -507,6 +536,7 @@
 				49536A022A30AD6B004FBBB1 /* EquipType.swift */,
 				49536A052A30AF1C004FBBB1 /* EquipPosition.swift */,
 				49536A122A30DDC1004FBBB1 /* EquipAttribute.swift */,
+				49536A212A31C214004FBBB1 /* BoxResponse.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -603,6 +633,7 @@
 				4992D1F72A249C09007EEFC2 /* ImageDownloadService.swift */,
 				493023662A25D423006E81E4 /* TalentService.swift */,
 				49536A182A30DF1D004FBBB1 /* AssetJsonDataService.swift */,
+				49536A1E2A31BB19004FBBB1 /* EquipSearchService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -628,6 +659,7 @@
 				49563C682A261EF600AB8FAF /* AutoResizeLazyVGrid.swift */,
 				49DBCE1B2A2625F800C3BA2E /* WebCacheableImage.swift */,
 				499F5ACB2A2F9D9800A3C588 /* CornersRectangle.swift */,
+				495FD65A2A36FC5800A17FB0 /* PlainToggleStyle.swift */,
 			);
 			path = Component;
 			sourceTree = "<group>";
@@ -907,6 +939,7 @@
 				4992D2192A24F704007EEFC2 /* BaseAssets.xcassets in Resources */,
 				499F5AD82A304C9C00A3C588 /* colors.json in Resources */,
 				499F5ACF2A2FA4B600A3C588 /* school.json in Resources */,
+				49536A282A31CCDD004FBBB1 /* mountEquip.json in Resources */,
 				4992D13D2A2278DD007EEFC2 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -943,6 +976,7 @@
 				4992D21A2A24F704007EEFC2 /* BaseAssets.xcassets in Resources */,
 				499F5AD92A304C9C00A3C588 /* colors.json in Resources */,
 				499F5AD02A2FA4B600A3C588 /* school.json in Resources */,
+				49536A292A31CCDD004FBBB1 /* mountEquip.json in Resources */,
 				4992D1C22A23C087007EEFC2 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -968,7 +1002,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				49536A222A31C214004FBBB1 /* BoxResponse.swift in Sources */,
 				49536A0C2A30BA2D004FBBB1 /* EquipEditViewModel.swift in Sources */,
+				495FD65B2A36FC5800A17FB0 /* PlainToggleStyle.swift in Sources */,
 				49536A132A30DDC1004FBBB1 /* EquipAttribute.swift in Sources */,
 				49536A102A30DAAB004FBBB1 /* EquipPickerView.swift in Sources */,
 				495410D82A276D8B00AA6293 /* TalentPickerViewModel.swift in Sources */,
@@ -986,10 +1022,12 @@
 				4992D1762A2303F6007EEFC2 /* ServerStateViewModel.swift in Sources */,
 				499F5ABB2A2B468200A3C588 /* TransitionExtension.swift in Sources */,
 				49DBCE192A2623B600C3BA2E /* KungfuPicker.swift in Sources */,
+				49536A1F2A31BB19004FBBB1 /* EquipSearchService.swift in Sources */,
 				4992D2122A24F2F1007EEFC2 /* LikedIconLibraryView.swift in Sources */,
 				495410DB2A276EF800AA6293 /* Talent.swift in Sources */,
 				4992D1F02A248390007EEFC2 /* LocalFileManager.swift in Sources */,
 				4992D1F82A249C09007EEFC2 /* ImageDownloadService.swift in Sources */,
+				49536A252A31C47E004FBBB1 /* EquipPickerViewModel.swift in Sources */,
 				4992D2162A24F32C007EEFC2 /* IconLibraryViewModel.swift in Sources */,
 				49563C692A261EF600AB8FAF /* AutoResizeLazyVGrid.swift in Sources */,
 				4992D1392A2278DB007EEFC2 /* JX3DemoApp.swift in Sources */,
@@ -1021,6 +1059,7 @@
 				4933543F2A2611260044289B /* TalentVersionPicker.swift in Sources */,
 				4992D2012A24AFB6007EEFC2 /* JX3BoxIcon.swift in Sources */,
 				49DBCE1C2A2625F800C3BA2E /* WebCacheableImage.swift in Sources */,
+				495FD65F2A3B675200A17FB0 /* DutyType.swift in Sources */,
 				491DB8342A26667700A40051 /* KungfuIcon.swift in Sources */,
 				497467C42A2619DE00275A09 /* Kungfu.swift in Sources */,
 				499F5AC92A2F954200A3C588 /* HomeView.swift in Sources */,
@@ -1074,9 +1113,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				495410CF2A273DCE00AA6293 /* ServerStateViewModel.swift in Sources */,
+				495FD6602A3B675200A17FB0 /* DutyType.swift in Sources */,
 				495410D02A273DCE00AA6293 /* ServerStateView.swift in Sources */,
 				49536A072A30AF1C004FBBB1 /* EquipPosition.swift in Sources */,
 				495410D12A273DCE00AA6293 /* ServerStateItemView.swift in Sources */,
+				49536A232A31C214004FBBB1 /* BoxResponse.swift in Sources */,
 				49536A1D2A30E83B004FBBB1 /* EquipHomeViewModel.swift in Sources */,
 				495410D22A273DCE00AA6293 /* ServerStateSectionView.swift in Sources */,
 				495410D32A273DCE00AA6293 /* CoreDataManager.swift in Sources */,
@@ -1105,6 +1146,7 @@
 				49DBCE1D2A2625F800C3BA2E /* WebCacheableImage.swift in Sources */,
 				4965BA492A2616EF001D7E1B /* TalentPicker.swift in Sources */,
 				491DB8352A26667700A40051 /* KungfuIcon.swift in Sources */,
+				49536A262A31C47E004FBBB1 /* EquipPickerViewModel.swift in Sources */,
 				49536A042A30AD6B004FBBB1 /* EquipType.swift in Sources */,
 				4992D21D2A24F8F8007EEFC2 /* Color.swift in Sources */,
 				4992D2102A24F061007EEFC2 /* IconLibraryView.swift in Sources */,
@@ -1115,7 +1157,9 @@
 				4992D2272A250021007EEFC2 /* DisplayBarView.swift in Sources */,
 				4992D2072A24B39F007EEFC2 /* JX3BoxIcon.swift in Sources */,
 				4992D2172A24F32C007EEFC2 /* IconLibraryViewModel.swift in Sources */,
+				495FD65C2A36FC5800A17FB0 /* PlainToggleStyle.swift in Sources */,
 				49536A1A2A30DF1D004FBBB1 /* AssetJsonDataService.swift in Sources */,
+				49536A202A31BB19004FBBB1 /* EquipSearchService.swift in Sources */,
 				497467C82A261AC500275A09 /* BundleUtil.swift in Sources */,
 				495410E52A2AEA3C00AA6293 /* EnvironmentExtension.swift in Sources */,
 				49536A112A30DAAB004FBBB1 /* EquipPickerView.swift in Sources */,

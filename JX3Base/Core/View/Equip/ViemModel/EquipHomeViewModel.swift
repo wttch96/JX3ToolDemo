@@ -16,9 +16,6 @@ class EquipHomeViewModel: ObservableObject {
     private var cancellables = Set<AnyCancellable>()
     
     init() {
-        service.$schoolData.sink { [weak self] schools in
-            self?.schools = schools
-        }
-        .store(in: &cancellables)
+        schools = service.schoolData
     }
 }

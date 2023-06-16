@@ -18,9 +18,6 @@ class KungfuLoaderViewModel: ObservableObject {
     private var cancellables = Set<AnyCancellable>()
     
     init() {
-        dataService.$kungfuData.sink { [weak self] kungfus  in
-            self?.kungfus = kungfus
-        }
-        .store(in: &cancellables)
+        self.kungfus = dataService.kungfuData
     }
 }
