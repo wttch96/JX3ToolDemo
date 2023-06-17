@@ -40,10 +40,8 @@
 		49536A142A30DDC1004FBBB1 /* EquipAttribute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49536A122A30DDC1004FBBB1 /* EquipAttribute.swift */; };
 		49536A162A30DEA8004FBBB1 /* xfAttrs.json in Resources */ = {isa = PBXBuildFile; fileRef = 49536A152A30DEA8004FBBB1 /* xfAttrs.json */; };
 		49536A172A30DEA8004FBBB1 /* xfAttrs.json in Resources */ = {isa = PBXBuildFile; fileRef = 49536A152A30DEA8004FBBB1 /* xfAttrs.json */; };
-		49536A192A30DF1D004FBBB1 /* AssetJsonDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49536A182A30DF1D004FBBB1 /* AssetJsonDataService.swift */; };
-		49536A1A2A30DF1D004FBBB1 /* AssetJsonDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49536A182A30DF1D004FBBB1 /* AssetJsonDataService.swift */; };
-		49536A1C2A30E83B004FBBB1 /* EquipHomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49536A1B2A30E83B004FBBB1 /* EquipHomeViewModel.swift */; };
-		49536A1D2A30E83B004FBBB1 /* EquipHomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49536A1B2A30E83B004FBBB1 /* EquipHomeViewModel.swift */; };
+		49536A192A30DF1D004FBBB1 /* AssetJsonDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49536A182A30DF1D004FBBB1 /* AssetJsonDataManager.swift */; };
+		49536A1A2A30DF1D004FBBB1 /* AssetJsonDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49536A182A30DF1D004FBBB1 /* AssetJsonDataManager.swift */; };
 		49536A1F2A31BB19004FBBB1 /* EquipSearchService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49536A1E2A31BB19004FBBB1 /* EquipSearchService.swift */; };
 		49536A202A31BB19004FBBB1 /* EquipSearchService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49536A1E2A31BB19004FBBB1 /* EquipSearchService.swift */; };
 		49536A222A31C214004FBBB1 /* BoxResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49536A212A31C214004FBBB1 /* BoxResponse.swift */; };
@@ -75,16 +73,16 @@
 		495FD65C2A36FC5800A17FB0 /* PlainToggleStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495FD65A2A36FC5800A17FB0 /* PlainToggleStyle.swift */; };
 		495FD65F2A3B675200A17FB0 /* DutyType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495FD65E2A3B675200A17FB0 /* DutyType.swift */; };
 		495FD6602A3B675200A17FB0 /* DutyType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495FD65E2A3B675200A17FB0 /* DutyType.swift */; };
+		495FD6622A3DF8C100A17FB0 /* MountEquip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495FD6612A3DF8C100A17FB0 /* MountEquip.swift */; };
+		495FD6632A3DF8C100A17FB0 /* MountEquip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495FD6612A3DF8C100A17FB0 /* MountEquip.swift */; };
 		4965BA482A2616EF001D7E1B /* TalentPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4965BA472A2616EF001D7E1B /* TalentPicker.swift */; };
 		4965BA492A2616EF001D7E1B /* TalentPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4965BA472A2616EF001D7E1B /* TalentPicker.swift */; };
 		497467C12A2619BF00275A09 /* xf.json in Resources */ = {isa = PBXBuildFile; fileRef = 497467C02A2619BF00275A09 /* xf.json */; };
 		497467C22A2619BF00275A09 /* xf.json in Resources */ = {isa = PBXBuildFile; fileRef = 497467C02A2619BF00275A09 /* xf.json */; };
-		497467C42A2619DE00275A09 /* Kungfu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497467C32A2619DE00275A09 /* Kungfu.swift */; };
-		497467C52A2619DE00275A09 /* Kungfu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497467C32A2619DE00275A09 /* Kungfu.swift */; };
+		497467C42A2619DE00275A09 /* Mount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497467C32A2619DE00275A09 /* Mount.swift */; };
+		497467C52A2619DE00275A09 /* Mount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497467C32A2619DE00275A09 /* Mount.swift */; };
 		497467C72A261AC500275A09 /* BundleUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497467C62A261AC500275A09 /* BundleUtil.swift */; };
 		497467C82A261AC500275A09 /* BundleUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497467C62A261AC500275A09 /* BundleUtil.swift */; };
-		497467CA2A261C9900275A09 /* KungfuPickerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497467C92A261C9900275A09 /* KungfuPickerViewModel.swift */; };
-		497467CB2A261C9900275A09 /* KungfuPickerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497467C92A261C9900275A09 /* KungfuPickerViewModel.swift */; };
 		4992D1392A2278DB007EEFC2 /* JX3DemoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4992D1382A2278DB007EEFC2 /* JX3DemoApp.swift */; };
 		4992D13B2A2278DB007EEFC2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4992D13A2A2278DB007EEFC2 /* ContentView.swift */; };
 		4992D13D2A2278DD007EEFC2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4992D13C2A2278DD007EEFC2 /* Assets.xcassets */; };
@@ -243,8 +241,7 @@
 		49536A0F2A30DAAB004FBBB1 /* EquipPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipPickerView.swift; sourceTree = "<group>"; };
 		49536A122A30DDC1004FBBB1 /* EquipAttribute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipAttribute.swift; sourceTree = "<group>"; };
 		49536A152A30DEA8004FBBB1 /* xfAttrs.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = xfAttrs.json; sourceTree = "<group>"; };
-		49536A182A30DF1D004FBBB1 /* AssetJsonDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetJsonDataService.swift; sourceTree = "<group>"; };
-		49536A1B2A30E83B004FBBB1 /* EquipHomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipHomeViewModel.swift; sourceTree = "<group>"; };
+		49536A182A30DF1D004FBBB1 /* AssetJsonDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetJsonDataManager.swift; sourceTree = "<group>"; };
 		49536A1E2A31BB19004FBBB1 /* EquipSearchService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipSearchService.swift; sourceTree = "<group>"; };
 		49536A212A31C214004FBBB1 /* BoxResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoxResponse.swift; sourceTree = "<group>"; };
 		49536A242A31C47E004FBBB1 /* EquipPickerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipPickerViewModel.swift; sourceTree = "<group>"; };
@@ -257,11 +254,11 @@
 		49563C682A261EF600AB8FAF /* AutoResizeLazyVGrid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoResizeLazyVGrid.swift; sourceTree = "<group>"; };
 		495FD65A2A36FC5800A17FB0 /* PlainToggleStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlainToggleStyle.swift; sourceTree = "<group>"; };
 		495FD65E2A3B675200A17FB0 /* DutyType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DutyType.swift; sourceTree = "<group>"; };
+		495FD6612A3DF8C100A17FB0 /* MountEquip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MountEquip.swift; sourceTree = "<group>"; };
 		4965BA472A2616EF001D7E1B /* TalentPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TalentPicker.swift; sourceTree = "<group>"; };
 		497467C02A2619BF00275A09 /* xf.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = xf.json; sourceTree = "<group>"; };
-		497467C32A2619DE00275A09 /* Kungfu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Kungfu.swift; sourceTree = "<group>"; };
+		497467C32A2619DE00275A09 /* Mount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mount.swift; sourceTree = "<group>"; };
 		497467C62A261AC500275A09 /* BundleUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BundleUtil.swift; sourceTree = "<group>"; };
-		497467C92A261C9900275A09 /* KungfuPickerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KungfuPickerViewModel.swift; sourceTree = "<group>"; };
 		4992D1352A2278DB007EEFC2 /* JX3Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JX3Demo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4992D1382A2278DB007EEFC2 /* JX3DemoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JX3DemoApp.swift; sourceTree = "<group>"; };
 		4992D13A2A2278DB007EEFC2 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -400,7 +397,6 @@
 			isa = PBXGroup;
 			children = (
 				49536A0B2A30BA2D004FBBB1 /* EquipEditViewModel.swift */,
-				49536A1B2A30E83B004FBBB1 /* EquipHomeViewModel.swift */,
 				49536A242A31C47E004FBBB1 /* EquipPickerViewModel.swift */,
 			);
 			path = ViemModel;
@@ -409,7 +405,6 @@
 		49563C672A261DCD00AB8FAF /* Kungfu */ = {
 			isa = PBXGroup;
 			children = (
-				497467C92A261C9900275A09 /* KungfuPickerViewModel.swift */,
 				49DBCE182A2623B600C3BA2E /* KungfuPicker.swift */,
 				491DB8332A26667700A40051 /* KungfuIcon.swift */,
 			);
@@ -419,6 +414,9 @@
 		495FD65D2A3B674100A17FB0 /* Enum */ = {
 			isa = PBXGroup;
 			children = (
+				49536A022A30AD6B004FBBB1 /* EquipType.swift */,
+				49536A052A30AF1C004FBBB1 /* EquipPosition.swift */,
+				49536A122A30DDC1004FBBB1 /* EquipAttribute.swift */,
 				495FD65E2A3B675200A17FB0 /* DutyType.swift */,
 			);
 			path = Enum;
@@ -530,13 +528,11 @@
 				495FD65D2A3B674100A17FB0 /* Enum */,
 				4992D16D2A22F839007EEFC2 /* ServerState.swift */,
 				4992D1E62A23C45E007EEFC2 /* TalentVersion.swift */,
-				497467C32A2619DE00275A09 /* Kungfu.swift */,
+				497467C32A2619DE00275A09 /* Mount.swift */,
 				495410DA2A276EF800AA6293 /* Talent.swift */,
 				499F5AD12A2FA4E300A3C588 /* School.swift */,
-				49536A022A30AD6B004FBBB1 /* EquipType.swift */,
-				49536A052A30AF1C004FBBB1 /* EquipPosition.swift */,
-				49536A122A30DDC1004FBBB1 /* EquipAttribute.swift */,
 				49536A212A31C214004FBBB1 /* BoxResponse.swift */,
+				495FD6612A3DF8C100A17FB0 /* MountEquip.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -632,7 +628,7 @@
 				4992D1702A22F884007EEFC2 /* ServerStateService.swift */,
 				4992D1F72A249C09007EEFC2 /* ImageDownloadService.swift */,
 				493023662A25D423006E81E4 /* TalentService.swift */,
-				49536A182A30DF1D004FBBB1 /* AssetJsonDataService.swift */,
+				49536A182A30DF1D004FBBB1 /* AssetJsonDataManager.swift */,
 				49536A1E2A31BB19004FBBB1 /* EquipSearchService.swift */,
 			);
 			path = Services;
@@ -1004,6 +1000,7 @@
 			files = (
 				49536A222A31C214004FBBB1 /* BoxResponse.swift in Sources */,
 				49536A0C2A30BA2D004FBBB1 /* EquipEditViewModel.swift in Sources */,
+				495FD6622A3DF8C100A17FB0 /* MountEquip.swift in Sources */,
 				495FD65B2A36FC5800A17FB0 /* PlainToggleStyle.swift in Sources */,
 				49536A132A30DDC1004FBBB1 /* EquipAttribute.swift in Sources */,
 				49536A102A30DAAB004FBBB1 /* EquipPickerView.swift in Sources */,
@@ -1049,19 +1046,17 @@
 				4992D21C2A24F8F7007EEFC2 /* Color.swift in Sources */,
 				4992D1712A22F884007EEFC2 /* ServerStateService.swift in Sources */,
 				4992D1B52A23A6C1007EEFC2 /* NetworkService.swift in Sources */,
-				49536A192A30DF1D004FBBB1 /* AssetJsonDataService.swift in Sources */,
+				49536A192A30DF1D004FBBB1 /* AssetJsonDataManager.swift in Sources */,
 				4992D1F42A248966007EEFC2 /* Logger.swift in Sources */,
-				497467CA2A261C9900275A09 /* KungfuPickerViewModel.swift in Sources */,
 				499F5ABF2A2D071B00A3C588 /* EquipHomeView.swift in Sources */,
 				4992D2202A24F9DA007EEFC2 /* CircleButton.swift in Sources */,
-				49536A1C2A30E83B004FBBB1 /* EquipHomeViewModel.swift in Sources */,
 				49536A032A30AD6B004FBBB1 /* EquipType.swift in Sources */,
 				4933543F2A2611260044289B /* TalentVersionPicker.swift in Sources */,
 				4992D2012A24AFB6007EEFC2 /* JX3BoxIcon.swift in Sources */,
 				49DBCE1C2A2625F800C3BA2E /* WebCacheableImage.swift in Sources */,
 				495FD65F2A3B675200A17FB0 /* DutyType.swift in Sources */,
 				491DB8342A26667700A40051 /* KungfuIcon.swift in Sources */,
-				497467C42A2619DE00275A09 /* Kungfu.swift in Sources */,
+				497467C42A2619DE00275A09 /* Mount.swift in Sources */,
 				499F5AC92A2F954200A3C588 /* HomeView.swift in Sources */,
 				4992D1692A22F7B8007EEFC2 /* ServerStateView.swift in Sources */,
 				4992D17D2A2312A7007EEFC2 /* PreviewExtension.swift in Sources */,
@@ -1118,7 +1113,6 @@
 				49536A072A30AF1C004FBBB1 /* EquipPosition.swift in Sources */,
 				495410D12A273DCE00AA6293 /* ServerStateItemView.swift in Sources */,
 				49536A232A31C214004FBBB1 /* BoxResponse.swift in Sources */,
-				49536A1D2A30E83B004FBBB1 /* EquipHomeViewModel.swift in Sources */,
 				495410D22A273DCE00AA6293 /* ServerStateSectionView.swift in Sources */,
 				495410D32A273DCE00AA6293 /* CoreDataManager.swift in Sources */,
 				495410D42A273DCE00AA6293 /* ServerState.swift in Sources */,
@@ -1126,13 +1120,13 @@
 				495410D52A273DCE00AA6293 /* TalentVersion.swift in Sources */,
 				495410D62A27405C00AA6293 /* PreviewExtension.swift in Sources */,
 				49536A0D2A30BA2D004FBBB1 /* EquipEditViewModel.swift in Sources */,
+				495FD6632A3DF8C100A17FB0 /* MountEquip.swift in Sources */,
 				495410D92A276D8B00AA6293 /* TalentPickerViewModel.swift in Sources */,
-				497467CB2A261C9900275A09 /* KungfuPickerViewModel.swift in Sources */,
 				49DBCE1A2A2623B600C3BA2E /* KungfuPicker.swift in Sources */,
 				4992D20B2A24B3AF007EEFC2 /* NetworkManager.swift in Sources */,
 				4992D20A2A24B3AC007EEFC2 /* ImageExtension.swift in Sources */,
 				4992D2092A24B3A7007EEFC2 /* ImageDownloadService.swift in Sources */,
-				497467C52A2619DE00275A09 /* Kungfu.swift in Sources */,
+				497467C52A2619DE00275A09 /* Mount.swift in Sources */,
 				49536A0A2A30B7B1004FBBB1 /* EquipSelectItemView.swift in Sources */,
 				495410E22A27C59E00AA6293 /* TalentLevelView.swift in Sources */,
 				493354422A2611260044289B /* TalentVersionViewModel.swift in Sources */,
@@ -1158,7 +1152,7 @@
 				4992D2072A24B39F007EEFC2 /* JX3BoxIcon.swift in Sources */,
 				4992D2172A24F32C007EEFC2 /* IconLibraryViewModel.swift in Sources */,
 				495FD65C2A36FC5800A17FB0 /* PlainToggleStyle.swift in Sources */,
-				49536A1A2A30DF1D004FBBB1 /* AssetJsonDataService.swift in Sources */,
+				49536A1A2A30DF1D004FBBB1 /* AssetJsonDataManager.swift in Sources */,
 				49536A202A31BB19004FBBB1 /* EquipSearchService.swift in Sources */,
 				497467C82A261AC500275A09 /* BundleUtil.swift in Sources */,
 				495410E52A2AEA3C00AA6293 /* EnvironmentExtension.swift in Sources */,

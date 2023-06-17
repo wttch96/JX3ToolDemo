@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct EquipEditView: View {
-    let kungfu: Kungfu
+    let kungfu: Mount
     @State private var vm = EquipEditViewModel()
     
     var body: some View {

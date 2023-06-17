@@ -9,7 +9,7 @@ import SwiftUI
 
 /// 心法图标
 struct KungfuIcon: View {
-    let kungfu: Kungfu
+    let kungfu: Mount
     let selected: Bool
     let borderWidth: CGFloat
     

@@ -9,15 +9,14 @@ import SwiftUI
 
 /// 心法选择器
 struct KungfuPicker: View {
-    @StateObject private var vm = KungfuLoaderViewModel()
-    @Binding var selectedKungfu: Kungfu
+    @Binding var selectedKungfu: Mount
     
     @Namespace var namespace
     
     private let borderWidth: CGFloat = 4
     
     var body: some View {
-        AutoResizeLazyVGrid(vm.kungfus, gridSize: CGSize(width: 60, height: 72), content: { item in
+        AutoResizeLazyVGrid(AssetJsonDataManager.shared.mounts, gridSize: CGSize(width: 60, height: 72), content: { item in
             VStack(alignment: .center) {
                 ZStack {
                     KungfuIcon(kungfu: item, selected: selectedKungfu == item, borderWidth: borderWidth)

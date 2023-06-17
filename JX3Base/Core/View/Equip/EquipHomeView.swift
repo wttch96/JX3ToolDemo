@@ -9,15 +9,13 @@ import SwiftUI
 import RangeSlider
 
 struct EquipHomeView: View {
-    @State var selectedKungfu: Kungfu = .common
-    
-    @StateObject private var vm = EquipHomeViewModel()
+    @State var selectedKungfu: Mount = .common
     
     var body: some View {
         NavigationStack{
             ScrollView {
                 VStack {
-                    ForEach(vm.schools) { school in
+                    ForEach(AssetJsonDataManager.shared.schools) { school in
                         ZStack {
                             CornersRectangle(topLeftBottomRight: 36, topRightBottomLeft: 12)
                                 .foregroundColor(school.color)
@@ -38,8 +36,8 @@ struct EquipHomeView: View {
                             HStack {
                                 Spacer()
                                 
-                                if !school.kungfus.isEmpty {
-                                    ForEach(school.kungfus) { kungfu in
+                                if !school.mounts.isEmpty {
+                                    ForEach(school.mounts) { kungfu in
                                         NavigationLink(destination: {
                                             EquipEditView(kungfu: kungfu)
                                         }, label: {

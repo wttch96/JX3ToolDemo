@@ -10,7 +10,7 @@ import RangeSlider
 import Combine
 
 struct EquipPickerView: View {
-    let kungfu: Kungfu
+    let kungfu: Mount
     let
 position: EquipPosition
     
@@ -25,7 +25,7 @@ position: EquipPosition
     
     
     
-    init(kungfu: Kungfu, position: EquipPosition, selected: Binding<Int?>) {
+    init(kungfu: Mount, position: EquipPosition, selected: Binding<Int?>) {
         self.kungfu = kungfu
         self.position = position
         self._selected = selected
@@ -125,7 +125,7 @@ position: EquipPosition
                 .foregroundColor(Color.accentColor)
         })
         .background(Color.gray.opacity(0.2))
-        .navigationTitle("\(kungfu.name)-\(position.label)")
+        .navigationTitle("\(kungfu.name)-\(position.label)-\(kungfu.equip?.duty.rawValue ?? "<未知>")")
         .sheet(isPresented: $showEquipListSheet, content: {
             ScrollView {
                 VStack {
@@ -142,19 +142,13 @@ position: EquipPosition
 struct EquipPickerView_Previews: PreviewProvider {
     static var previews: some View {
         EquipPickerView(
-            kungfu: Kungfu(
+            kungfu: Mount(
                 id: 10144,
                 name: "问水决",
                 force: 1,
                 kungfuId: 1,
                 school: 6,
-                client: ["client"],
-                attrs: [.critical, .criticalDamage, .decritical, .dodge, .hit, .magicShield, .overcome, .physicsShield],
-                color: .yellow,
-                schoolName: "藏剑",
-                shareSchool: ["苍云", "蓬莱"],
-                duty: .physics,
-                primaryAttribute: "身法"
+                client: ["client"]
             ), position: .amulet, selected: .constant(1)
         )
     }

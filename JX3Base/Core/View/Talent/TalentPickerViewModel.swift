@@ -11,7 +11,7 @@ import SwiftUI
 
 class TalentPickerViewModel: ObservableObject {
     @Published var version: TalentVersion? = nil
-    @Published var kungfu: Kungfu = .common
+    @Published var kungfu: Mount = .common
     @Published var talents: [TalentLevel] = []
     
     var cancellables = Set<AnyCancellable>()

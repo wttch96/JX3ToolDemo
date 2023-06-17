@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct EquipSelectItemView: View {
-    let kungfu: Kungfu
+    let kungfu: Mount
     let position: EquipPosition
     
     @Binding var selectedEquip: Int?
