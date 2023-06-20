@@ -30,6 +30,8 @@ class AssetJsonDataManager {
     public let mountId2EquipMap: [String: MountEquip]
     // mount.id -> EquipAttribute
     public let mountId2AttrsMap: [String: [EquipAttribute]]
+    
+    public let attrMap: [String: String]
 
     
     private init() {
@@ -40,6 +42,7 @@ class AssetJsonDataManager {
         self.mountId2AttrsMap = AssetJsonDataManager.loadMountAttribute()
         self.mounts = AssetJsonDataManager.loadMounts()
         self.schools = AssetJsonDataManager.loadSchool()
+        self.attrMap = AssetJsonDataManager.loadAttr()
     }
     
     
@@ -104,6 +107,18 @@ class AssetJsonDataManager {
             return mountEquipMap
         } else {
             logger("加载 mountEquip.json 失败!")
+            return [:]
+        }
+    }
+    
+    /// 加载 attr.json 文件
+    /// - Returns: <#description#>
+    private static func loadAttr() -> [String: String] {
+        if let attrMap = BundleUtil.loadJson("attr.json", type: [String: String].self) {
+            logger("加载 attr.json 成功!")
+            return attrMap
+        } else {
+            logger("加载 attr.json 失败!")
             return [:]
         }
     }

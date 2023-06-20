@@ -22,9 +22,18 @@ class Dev {
     let talnet2 = Talent(id: "1", name: "测试", icon: 11840, desc: "简述", order: "1", pos: 1, skill: 1, meta: nil, extend: nil)
     let talnets: [Talent]
     
+    let equip1: EquipDTO
+    let equip2: EquipDTO
+    
+    let mount1: Mount = Mount("问水诀")!
+    let mount2: Mount = Mount("冰心诀")!
+    
     init() {
         self.servers = [self.serverState, self.serverState2]
         self.talnets = [self.talnet, self.talnet2]
+        
+        self.equip1 = BundleUtil.loadJson("equip1.json", type: EquipDTO.self)!
+        self.equip2 = BundleUtil.loadJson("equip2.json", type: EquipDTO.self)!
     }
     
 }

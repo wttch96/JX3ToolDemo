@@ -21,7 +21,16 @@ class EquipPickerViewModel: ObservableObject {
         .store(in: &cancellables)
     }
     
-    func searchEquip(_ position: EquipPosition, minLevel: Int, maxLevel: Int, attrs: [EquipAttribute] = []) {
-        service.serachEquip(position, minLevel: minLevel, maxLevel: maxLevel, attrs: attrs)
+    func searchEquip(
+        _ position: EquipPosition,
+        minLevel: Int,
+        maxLevel: Int,
+        pvType: PvType = .all,
+        attrs: [EquipAttribute] = [],
+        duty: DutyType?,
+        belongSchool: [String] = [],
+        magicKind: [String] = []
+    ) {
+        service.serachEquip(position, minLevel: minLevel, maxLevel: maxLevel, pvType: pvType, attrs: attrs, duty: duty, belongSchool: belongSchool, magicKind: magicKind, page: 1, pageSize: 50, client: "std")
     }
 }

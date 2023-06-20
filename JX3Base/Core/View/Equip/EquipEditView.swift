@@ -83,6 +83,8 @@ struct EquipEditView: View {
 
 struct EquipEditView_Previews: PreviewProvider {
     static var previews: some View {
-        EquipEditView(kungfu: .common)
+        NavigationStack {
+            EquipEditView(kungfu: dev.mount1)
+        }
     }
 }

@@ -24,6 +24,11 @@
 		493354402A2611260044289B /* TalentVersionPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4933543D2A2611260044289B /* TalentVersionPicker.swift */; };
 		493354412A2611260044289B /* TalentVersionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4933543E2A2611260044289B /* TalentVersionViewModel.swift */; };
 		493354422A2611260044289B /* TalentVersionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4933543E2A2611260044289B /* TalentVersionViewModel.swift */; };
+		49504D7B2A416DDC00B93E90 /* RangeSlider in Frameworks */ = {isa = PBXBuildFile; productRef = 49504D7A2A416DDC00B93E90 /* RangeSlider */; };
+		49504D7D2A41C73E00B93E90 /* CheckBoxToggleStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49504D7C2A41C73E00B93E90 /* CheckBoxToggleStyle.swift */; };
+		49504D7E2A41C73E00B93E90 /* CheckBoxToggleStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49504D7C2A41C73E00B93E90 /* CheckBoxToggleStyle.swift */; };
+		49504D802A41CBA300B93E90 /* PvType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49504D7F2A41CBA300B93E90 /* PvType.swift */; };
+		49504D812A41CBA300B93E90 /* PvType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49504D7F2A41CBA300B93E90 /* PvType.swift */; };
 		49536A002A308987004FBBB1 /* EquipEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495369FF2A308987004FBBB1 /* EquipEditView.swift */; };
 		49536A012A308988004FBBB1 /* EquipEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495369FF2A308987004FBBB1 /* EquipEditView.swift */; };
 		49536A032A30AD6B004FBBB1 /* EquipType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49536A022A30AD6B004FBBB1 /* EquipType.swift */; };
@@ -75,6 +80,18 @@
 		495FD6602A3B675200A17FB0 /* DutyType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495FD65E2A3B675200A17FB0 /* DutyType.swift */; };
 		495FD6622A3DF8C100A17FB0 /* MountEquip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495FD6612A3DF8C100A17FB0 /* MountEquip.swift */; };
 		495FD6632A3DF8C100A17FB0 /* MountEquip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495FD6612A3DF8C100A17FB0 /* MountEquip.swift */; };
+		495FD6652A3E231700A17FB0 /* EquipQuality.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495FD6642A3E231700A17FB0 /* EquipQuality.swift */; };
+		495FD6662A3E231700A17FB0 /* EquipQuality.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495FD6642A3E231700A17FB0 /* EquipQuality.swift */; };
+		495FD66B2A3F581100A17FB0 /* attr.json in Resources */ = {isa = PBXBuildFile; fileRef = 495FD66A2A3F581100A17FB0 /* attr.json */; };
+		495FD66C2A3F581100A17FB0 /* attr.json in Resources */ = {isa = PBXBuildFile; fileRef = 495FD66A2A3F581100A17FB0 /* attr.json */; };
+		495FD66E2A3F593300A17FB0 /* EquipDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495FD66D2A3F593300A17FB0 /* EquipDTO.swift */; };
+		495FD66F2A3F593300A17FB0 /* EquipDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495FD66D2A3F593300A17FB0 /* EquipDTO.swift */; };
+		495FD6722A40308D00A17FB0 /* equip1.json in Resources */ = {isa = PBXBuildFile; fileRef = 495FD6712A40308D00A17FB0 /* equip1.json */; };
+		495FD6732A40308D00A17FB0 /* equip1.json in Resources */ = {isa = PBXBuildFile; fileRef = 495FD6712A40308D00A17FB0 /* equip1.json */; };
+		495FD6752A4030A900A17FB0 /* equip2.json in Resources */ = {isa = PBXBuildFile; fileRef = 495FD6742A4030A900A17FB0 /* equip2.json */; };
+		495FD6762A4030A900A17FB0 /* equip2.json in Resources */ = {isa = PBXBuildFile; fileRef = 495FD6742A4030A900A17FB0 /* equip2.json */; };
+		495FD6782A40336900A17FB0 /* EquipPickerOptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495FD6772A40336900A17FB0 /* EquipPickerOptionView.swift */; };
+		495FD6792A40336900A17FB0 /* EquipPickerOptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495FD6772A40336900A17FB0 /* EquipPickerOptionView.swift */; };
 		4965BA482A2616EF001D7E1B /* TalentPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4965BA472A2616EF001D7E1B /* TalentPicker.swift */; };
 		4965BA492A2616EF001D7E1B /* TalentPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4965BA472A2616EF001D7E1B /* TalentPicker.swift */; };
 		497467C12A2619BF00275A09 /* xf.json in Resources */ = {isa = PBXBuildFile; fileRef = 497467C02A2619BF00275A09 /* xf.json */; };
@@ -156,7 +173,6 @@
 		499F5ABC2A2B468200A3C588 /* TransitionExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499F5ABA2A2B468200A3C588 /* TransitionExtension.swift */; };
 		499F5ABF2A2D071B00A3C588 /* EquipHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499F5ABE2A2D071B00A3C588 /* EquipHomeView.swift */; };
 		499F5AC02A2D071B00A3C588 /* EquipHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499F5ABE2A2D071B00A3C588 /* EquipHomeView.swift */; };
-		499F5AC32A2D07D500A3C588 /* RangeSlider in Frameworks */ = {isa = PBXBuildFile; productRef = 499F5AC22A2D07D500A3C588 /* RangeSlider */; };
 		499F5AC92A2F954200A3C588 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499F5AC82A2F954200A3C588 /* HomeView.swift */; };
 		499F5ACA2A2F954200A3C588 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499F5AC82A2F954200A3C588 /* HomeView.swift */; };
 		499F5ACC2A2F9D9800A3C588 /* CornersRectangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499F5ACB2A2F9D9800A3C588 /* CornersRectangle.swift */; };
@@ -233,6 +249,8 @@
 		493023662A25D423006E81E4 /* TalentService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TalentService.swift; sourceTree = "<group>"; };
 		4933543D2A2611260044289B /* TalentVersionPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TalentVersionPicker.swift; path = JX3Base/Core/View/Talent/TalentVersionPicker.swift; sourceTree = SOURCE_ROOT; };
 		4933543E2A2611260044289B /* TalentVersionViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TalentVersionViewModel.swift; path = JX3Base/Core/View/Talent/TalentVersionViewModel.swift; sourceTree = SOURCE_ROOT; };
+		49504D7C2A41C73E00B93E90 /* CheckBoxToggleStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckBoxToggleStyle.swift; sourceTree = "<group>"; };
+		49504D7F2A41CBA300B93E90 /* PvType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PvType.swift; sourceTree = "<group>"; };
 		495369FF2A308987004FBBB1 /* EquipEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipEditView.swift; sourceTree = "<group>"; };
 		49536A022A30AD6B004FBBB1 /* EquipType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipType.swift; sourceTree = "<group>"; };
 		49536A052A30AF1C004FBBB1 /* EquipPosition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipPosition.swift; sourceTree = "<group>"; };
@@ -255,6 +273,12 @@
 		495FD65A2A36FC5800A17FB0 /* PlainToggleStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlainToggleStyle.swift; sourceTree = "<group>"; };
 		495FD65E2A3B675200A17FB0 /* DutyType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DutyType.swift; sourceTree = "<group>"; };
 		495FD6612A3DF8C100A17FB0 /* MountEquip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MountEquip.swift; sourceTree = "<group>"; };
+		495FD6642A3E231700A17FB0 /* EquipQuality.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipQuality.swift; sourceTree = "<group>"; };
+		495FD66A2A3F581100A17FB0 /* attr.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = attr.json; sourceTree = "<group>"; };
+		495FD66D2A3F593300A17FB0 /* EquipDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipDTO.swift; sourceTree = "<group>"; };
+		495FD6712A40308D00A17FB0 /* equip1.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = equip1.json; sourceTree = "<group>"; };
+		495FD6742A4030A900A17FB0 /* equip2.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = equip2.json; sourceTree = "<group>"; };
+		495FD6772A40336900A17FB0 /* EquipPickerOptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipPickerOptionView.swift; sourceTree = "<group>"; };
 		4965BA472A2616EF001D7E1B /* TalentPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TalentPicker.swift; sourceTree = "<group>"; };
 		497467C02A2619BF00275A09 /* xf.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = xf.json; sourceTree = "<group>"; };
 		497467C32A2619DE00275A09 /* Mount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mount.swift; sourceTree = "<group>"; };
@@ -329,7 +353,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				499F5AC32A2D07D500A3C588 /* RangeSlider in Frameworks */,
+				49504D7B2A416DDC00B93E90 /* RangeSlider in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -418,19 +442,32 @@
 				49536A052A30AF1C004FBBB1 /* EquipPosition.swift */,
 				49536A122A30DDC1004FBBB1 /* EquipAttribute.swift */,
 				495FD65E2A3B675200A17FB0 /* DutyType.swift */,
+				495FD6642A3E231700A17FB0 /* EquipQuality.swift */,
+				49504D7F2A41CBA300B93E90 /* PvType.swift */,
 			);
 			path = Enum;
+			sourceTree = "<group>";
+		};
+		495FD6702A40300800A17FB0 /* Previews */ = {
+			isa = PBXGroup;
+			children = (
+				495FD6712A40308D00A17FB0 /* equip1.json */,
+				495FD6742A4030A900A17FB0 /* equip2.json */,
+			);
+			path = Previews;
 			sourceTree = "<group>";
 		};
 		497467BF2A26198D00275A09 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				495FD6702A40300800A17FB0 /* Previews */,
 				499F5ACE2A2FA4B600A3C588 /* school.json */,
 				497467C02A2619BF00275A09 /* xf.json */,
 				4992D2182A24F704007EEFC2 /* BaseAssets.xcassets */,
 				499F5AD72A304C9C00A3C588 /* colors.json */,
 				49536A152A30DEA8004FBBB1 /* xfAttrs.json */,
 				49536A272A31CCDD004FBBB1 /* mountEquip.json */,
+				495FD66A2A3F581100A17FB0 /* attr.json */,
 			);
 			path = Assets;
 			sourceTree = "<group>";
@@ -533,6 +570,7 @@
 				499F5AD12A2FA4E300A3C588 /* School.swift */,
 				49536A212A31C214004FBBB1 /* BoxResponse.swift */,
 				495FD6612A3DF8C100A17FB0 /* MountEquip.swift */,
+				495FD66D2A3F593300A17FB0 /* EquipDTO.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -656,6 +694,7 @@
 				49DBCE1B2A2625F800C3BA2E /* WebCacheableImage.swift */,
 				499F5ACB2A2F9D9800A3C588 /* CornersRectangle.swift */,
 				495FD65A2A36FC5800A17FB0 /* PlainToggleStyle.swift */,
+				49504D7C2A41C73E00B93E90 /* CheckBoxToggleStyle.swift */,
 			);
 			path = Component;
 			sourceTree = "<group>";
@@ -717,6 +756,7 @@
 				495369FF2A308987004FBBB1 /* EquipEditView.swift */,
 				49536A082A30B7B1004FBBB1 /* EquipSelectItemView.swift */,
 				49536A0F2A30DAAB004FBBB1 /* EquipPickerView.swift */,
+				495FD6772A40336900A17FB0 /* EquipPickerOptionView.swift */,
 			);
 			path = Equip;
 			sourceTree = "<group>";
@@ -748,7 +788,7 @@
 			);
 			name = JX3Demo;
 			packageProductDependencies = (
-				499F5AC22A2D07D500A3C588 /* RangeSlider */,
+				49504D7A2A416DDC00B93E90 /* RangeSlider */,
 			);
 			productName = JX3Demo;
 			productReference = 4992D1352A2278DB007EEFC2 /* JX3Demo.app */;
@@ -907,7 +947,7 @@
 			);
 			mainGroup = 4992D12C2A2278DB007EEFC2;
 			packageReferences = (
-				499F5AC12A2D07D500A3C588 /* XCRemoteSwiftPackageReference "RangeSlider" */,
+				49504D792A416DDC00B93E90 /* XCRemoteSwiftPackageReference "RangeSlider" */,
 			);
 			productRefGroup = 4992D1362A2278DB007EEFC2 /* Products */;
 			projectDirPath = "";
@@ -929,10 +969,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				495FD6752A4030A900A17FB0 /* equip2.json in Resources */,
 				4992D1402A2278DD007EEFC2 /* Preview Assets.xcassets in Resources */,
 				497467C12A2619BF00275A09 /* xf.json in Resources */,
 				49536A162A30DEA8004FBBB1 /* xfAttrs.json in Resources */,
 				4992D2192A24F704007EEFC2 /* BaseAssets.xcassets in Resources */,
+				495FD6722A40308D00A17FB0 /* equip1.json in Resources */,
+				495FD66B2A3F581100A17FB0 /* attr.json in Resources */,
 				499F5AD82A304C9C00A3C588 /* colors.json in Resources */,
 				499F5ACF2A2FA4B600A3C588 /* school.json in Resources */,
 				49536A282A31CCDD004FBBB1 /* mountEquip.json in Resources */,
@@ -966,10 +1009,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				495FD6762A4030A900A17FB0 /* equip2.json in Resources */,
 				4992D1C52A23C087007EEFC2 /* Preview Assets.xcassets in Resources */,
 				497467C22A2619BF00275A09 /* xf.json in Resources */,
 				49536A172A30DEA8004FBBB1 /* xfAttrs.json in Resources */,
 				4992D21A2A24F704007EEFC2 /* BaseAssets.xcassets in Resources */,
+				495FD6732A40308D00A17FB0 /* equip1.json in Resources */,
+				495FD66C2A3F581100A17FB0 /* attr.json in Resources */,
 				499F5AD92A304C9C00A3C588 /* colors.json in Resources */,
 				499F5AD02A2FA4B600A3C588 /* school.json in Resources */,
 				49536A292A31CCDD004FBBB1 /* mountEquip.json in Resources */,
@@ -1001,6 +1047,7 @@
 				49536A222A31C214004FBBB1 /* BoxResponse.swift in Sources */,
 				49536A0C2A30BA2D004FBBB1 /* EquipEditViewModel.swift in Sources */,
 				495FD6622A3DF8C100A17FB0 /* MountEquip.swift in Sources */,
+				495FD6652A3E231700A17FB0 /* EquipQuality.swift in Sources */,
 				495FD65B2A36FC5800A17FB0 /* PlainToggleStyle.swift in Sources */,
 				49536A132A30DDC1004FBBB1 /* EquipAttribute.swift in Sources */,
 				49536A102A30DAAB004FBBB1 /* EquipPickerView.swift in Sources */,
@@ -1017,13 +1064,17 @@
 				4992D2262A250021007EEFC2 /* DisplayBarView.swift in Sources */,
 				4992D1FD2A24A133007EEFC2 /* ImageExtension.swift in Sources */,
 				4992D1762A2303F6007EEFC2 /* ServerStateViewModel.swift in Sources */,
+				495FD66E2A3F593300A17FB0 /* EquipDTO.swift in Sources */,
+				495FD6782A40336900A17FB0 /* EquipPickerOptionView.swift in Sources */,
 				499F5ABB2A2B468200A3C588 /* TransitionExtension.swift in Sources */,
 				49DBCE192A2623B600C3BA2E /* KungfuPicker.swift in Sources */,
 				49536A1F2A31BB19004FBBB1 /* EquipSearchService.swift in Sources */,
 				4992D2122A24F2F1007EEFC2 /* LikedIconLibraryView.swift in Sources */,
+				49504D7D2A41C73E00B93E90 /* CheckBoxToggleStyle.swift in Sources */,
 				495410DB2A276EF800AA6293 /* Talent.swift in Sources */,
 				4992D1F02A248390007EEFC2 /* LocalFileManager.swift in Sources */,
 				4992D1F82A249C09007EEFC2 /* ImageDownloadService.swift in Sources */,
+				49504D802A41CBA300B93E90 /* PvType.swift in Sources */,
 				49536A252A31C47E004FBBB1 /* EquipPickerViewModel.swift in Sources */,
 				4992D2162A24F32C007EEFC2 /* IconLibraryViewModel.swift in Sources */,
 				49563C692A261EF600AB8FAF /* AutoResizeLazyVGrid.swift in Sources */,
@@ -1111,6 +1162,7 @@
 				495FD6602A3B675200A17FB0 /* DutyType.swift in Sources */,
 				495410D02A273DCE00AA6293 /* ServerStateView.swift in Sources */,
 				49536A072A30AF1C004FBBB1 /* EquipPosition.swift in Sources */,
+				495FD6792A40336900A17FB0 /* EquipPickerOptionView.swift in Sources */,
 				495410D12A273DCE00AA6293 /* ServerStateItemView.swift in Sources */,
 				49536A232A31C214004FBBB1 /* BoxResponse.swift in Sources */,
 				495410D22A273DCE00AA6293 /* ServerStateSectionView.swift in Sources */,
@@ -1139,19 +1191,23 @@
 				499F5ABC2A2B468200A3C588 /* TransitionExtension.swift in Sources */,
 				49DBCE1D2A2625F800C3BA2E /* WebCacheableImage.swift in Sources */,
 				4965BA492A2616EF001D7E1B /* TalentPicker.swift in Sources */,
+				495FD66F2A3F593300A17FB0 /* EquipDTO.swift in Sources */,
 				491DB8352A26667700A40051 /* KungfuIcon.swift in Sources */,
 				49536A262A31C47E004FBBB1 /* EquipPickerViewModel.swift in Sources */,
 				49536A042A30AD6B004FBBB1 /* EquipType.swift in Sources */,
 				4992D21D2A24F8F8007EEFC2 /* Color.swift in Sources */,
 				4992D2102A24F061007EEFC2 /* IconLibraryView.swift in Sources */,
 				499F5ACD2A2F9D9800A3C588 /* CornersRectangle.swift in Sources */,
+				49504D812A41CBA300B93E90 /* PvType.swift in Sources */,
 				4992D2082A24B3A3007EEFC2 /* WebCacheableImageViewModel.swift in Sources */,
 				499F5AD32A2FA4E300A3C588 /* School.swift in Sources */,
 				4992D2212A24F9DA007EEFC2 /* CircleButton.swift in Sources */,
 				4992D2272A250021007EEFC2 /* DisplayBarView.swift in Sources */,
 				4992D2072A24B39F007EEFC2 /* JX3BoxIcon.swift in Sources */,
 				4992D2172A24F32C007EEFC2 /* IconLibraryViewModel.swift in Sources */,
+				49504D7E2A41C73E00B93E90 /* CheckBoxToggleStyle.swift in Sources */,
 				495FD65C2A36FC5800A17FB0 /* PlainToggleStyle.swift in Sources */,
+				495FD6662A3E231700A17FB0 /* EquipQuality.swift in Sources */,
 				49536A1A2A30DF1D004FBBB1 /* AssetJsonDataManager.swift in Sources */,
 				49536A202A31BB19004FBBB1 /* EquipSearchService.swift in Sources */,
 				497467C82A261AC500275A09 /* BundleUtil.swift in Sources */,
@@ -1738,20 +1794,20 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		499F5AC12A2D07D500A3C588 /* XCRemoteSwiftPackageReference "RangeSlider" */ = {
+		49504D792A416DDC00B93E90 /* XCRemoteSwiftPackageReference "RangeSlider" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "git@github.com:WttchSwift/RangeSlider.git";
+			repositoryURL = "https://github.com/WttchSwift/RangeSlider.git";
 			requirement = {
-				branch = develop;
-				kind = branch;
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.0.1;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		499F5AC22A2D07D500A3C588 /* RangeSlider */ = {
+		49504D7A2A416DDC00B93E90 /* RangeSlider */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 499F5AC12A2D07D500A3C588 /* XCRemoteSwiftPackageReference "RangeSlider" */;
+			package = 49504D792A416DDC00B93E90 /* XCRemoteSwiftPackageReference "RangeSlider" */;
 			productName = RangeSlider;
 		};
 /* End XCSwiftPackageProductDependency section */
