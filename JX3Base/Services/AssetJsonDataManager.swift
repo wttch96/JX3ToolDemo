@@ -30,19 +30,28 @@ class AssetJsonDataManager {
     public let mountId2EquipMap: [String: MountEquip]
     // mount.id -> EquipAttribute
     public let mountId2AttrsMap: [String: [EquipAttribute]]
-    
-    public let attrMap: [String: String]
+    // 装备属性 -> 对应的描述
+    public let equipAttrMap: [String: String]
+    // 装备属性 -> 对应的简短描述
+    public let attrBriefDescMap: [String: String]
+    // 装备属性 -> 对应的描述
+    public let attrDescMap: [String: String]
+    // 武器类型编号 -> 武器类型描述
+    public let weaponType: [String: String]
 
     
     private init() {
-        self.mountId2EquipMap = AssetJsonDataManager.loadMountEquip()
+        self.mountId2EquipMap = BundleUtil.loadJson("mountEquip.json", type: [String: MountEquip].self, defaultValue: [:])
         let colorMap = AssetJsonDataManager.loadColors()
         self.schoolColorMap = colorMap[KEY_COLORS_BY_SCHOOL_NAME, default: [:]]
         self.mountColorMap = colorMap[KEY_COLORS_BY_MOUNT_NAME, default: [:]]
-        self.mountId2AttrsMap = AssetJsonDataManager.loadMountAttribute()
+        self.mountId2AttrsMap = BundleUtil.loadJson("xfAttrs.json", type: [String: [EquipAttribute]].self, defaultValue: [:])
         self.mounts = AssetJsonDataManager.loadMounts()
         self.schools = AssetJsonDataManager.loadSchool()
-        self.attrMap = AssetJsonDataManager.loadAttr()
+        self.equipAttrMap = BundleUtil.loadJson("equipAttrDesc.json", type: [String: String].self, defaultValue: [:])
+        self.attrBriefDescMap = BundleUtil.loadJson("attrBriefDesc.json", type: [String: String].self, defaultValue: [:])
+        self.attrDescMap = BundleUtil.loadJson("attrDesc.json", type: [String: String].self, defaultValue: [:])
+        self.weaponType = BundleUtil.loadJson("weaponType.json", type: [String: String].self, defaultValue: [:])
     }
     
     
@@ -72,54 +81,11 @@ class AssetJsonDataManager {
     }
     
     
-    /// 加载 xfAttrs.json 心法对应的装备检索的属性
-    /// - Returns: 心法对应的装备检索的属性
-    private static func loadMountAttribute() -> [String: [EquipAttribute]] {
-        if let kungfuIdAttrsMap = BundleUtil.loadJson("xfAttrs.json", type: [String: [EquipAttribute]].self) {
-            logger("加载 xfAttrs.json 成功!")
-            return kungfuIdAttrsMap
-        } else {
-            logger("加载 xfAttrs.json 失败!")
-            return [:]
-        }
-    }
-    
-    
     /// 加载 color.json 文件
     /// 文件中包含门派和心法的颜色
     /// - Returns: 文件中的门派和心法的颜色
     private static func loadColors() -> [String: [String: Color]]  {
-        if let colorsMap = BundleUtil.loadJson("colors.json", type: [String: [String: String]].self) {
-            logger("加载 colors.json 成功!")
-            return colorsMap.mapValues({ values in values.mapValues({ Color(hex: $0) }) })
-        } else {
-            logger("加载 colors.json 失败!")
-            return [:]
-        }
-        
-    }
-    
-    /// 加载 mountEquip.json 文件
-    /// - Returns: mountId -> MountEquip 的映射关系
-    private static func loadMountEquip() -> [String: MountEquip] {
-        if let mountEquipMap = BundleUtil.loadJson("mountEquip.json", type: [String: MountEquip].self) {
-            logger("加载 mountEquip.json 成功!")
-            return mountEquipMap
-        } else {
-            logger("加载 mountEquip.json 失败!")
-            return [:]
-        }
-    }
-    
-    /// 加载 attr.json 文件
-    /// - Returns: <#description#>
-    private static func loadAttr() -> [String: String] {
-        if let attrMap = BundleUtil.loadJson("attr.json", type: [String: String].self) {
-            logger("加载 attr.json 成功!")
-            return attrMap
-        } else {
-            logger("加载 attr.json 失败!")
-            return [:]
-        }
+        let colorsMap = BundleUtil.loadJson("colors.json", type: [String: [String: String]].self, defaultValue: [:])
+        return colorsMap.mapValues({ values in values.mapValues({ Color(hex: $0) }) })
     }
 }

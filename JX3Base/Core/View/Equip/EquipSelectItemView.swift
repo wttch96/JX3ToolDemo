@@ -11,20 +11,27 @@ struct EquipSelectItemView: View {
     let kungfu: Mount
     let position: EquipPosition
     
-    @Binding var selectedEquip: Int?
+    @Binding var selectedEquip: EquipDTO?
     
     var body: some View {
         NavigationLink(destination: {
             EquipPickerView(kungfu: kungfu, position: position, selected: $selectedEquip)
         }, label: {
             VStack {
-                ZStack {
+                if let equip = self.selectedEquip,
+                   let iconId = Int(equip.iconId ?? "0") {
+                    VStack {
+                        JX3BoxIcon(id: iconId)
+                            .frame(width: 48, height: 48)
+                    }
+                    Text(equip.name)
+                        .foregroundColor(.black)
+                        .font(.caption)
+                } else{
                     Image(position.label)
                         .resizable()
                         .scaledToFit()
                         .frame(width: 48, height: 48)
-                }
-                if selectedEquip == nil {
                     Text(position.label)
                         .foregroundColor(.black)
                         .font(.caption)
@@ -38,6 +45,6 @@ struct EquipSelectItemView_Previews: PreviewProvider {
     static var previews: some View {
         EquipSelectItemView(
             kungfu: .common,
-            position: .amulet, selectedEquip: .constant(nil))
+            position: .amulet, selectedEquip: .constant(dev.equip1))
     }
 }

@@ -29,6 +29,30 @@
 		49504D7E2A41C73E00B93E90 /* CheckBoxToggleStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49504D7C2A41C73E00B93E90 /* CheckBoxToggleStyle.swift */; };
 		49504D802A41CBA300B93E90 /* PvType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49504D7F2A41CBA300B93E90 /* PvType.swift */; };
 		49504D812A41CBA300B93E90 /* PvType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49504D7F2A41CBA300B93E90 /* PvType.swift */; };
+		49504D832A42BE8900B93E90 /* weaponType.json in Resources */ = {isa = PBXBuildFile; fileRef = 49504D822A42BE8900B93E90 /* weaponType.json */; };
+		49504D842A42BE8900B93E90 /* weaponType.json in Resources */ = {isa = PBXBuildFile; fileRef = 49504D822A42BE8900B93E90 /* weaponType.json */; };
+		49504D862A42C26C00B93E90 /* attrBriefDesc.json in Resources */ = {isa = PBXBuildFile; fileRef = 49504D852A42C26C00B93E90 /* attrBriefDesc.json */; };
+		49504D872A42C26C00B93E90 /* attrBriefDesc.json in Resources */ = {isa = PBXBuildFile; fileRef = 49504D852A42C26C00B93E90 /* attrBriefDesc.json */; };
+		49504D892A42C32400B93E90 /* attrDesc.json in Resources */ = {isa = PBXBuildFile; fileRef = 49504D882A42C32400B93E90 /* attrDesc.json */; };
+		49504D8A2A42C32400B93E90 /* attrDesc.json in Resources */ = {isa = PBXBuildFile; fileRef = 49504D882A42C32400B93E90 /* attrDesc.json */; };
+		49504D8F2A42CD2F00B93E90 /* EquipDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49504D8E2A42CD2F00B93E90 /* EquipDetailView.swift */; };
+		49504D902A42CD2F00B93E90 /* EquipDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49504D8E2A42CD2F00B93E90 /* EquipDetailView.swift */; };
+		49504D922A42CED200B93E90 /* EquipSubType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49504D912A42CED200B93E90 /* EquipSubType.swift */; };
+		49504D932A42CED200B93E90 /* EquipSubType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49504D912A42CED200B93E90 /* EquipSubType.swift */; };
+		49504D952A42D10A00B93E90 /* weapon1.json in Resources */ = {isa = PBXBuildFile; fileRef = 49504D942A42D10A00B93E90 /* weapon1.json */; };
+		49504D962A42D10A00B93E90 /* weapon1.json in Resources */ = {isa = PBXBuildFile; fileRef = 49504D942A42D10A00B93E90 /* weapon1.json */; };
+		49504D982A42D42C00B93E90 /* CustomKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49504D972A42D42C00B93E90 /* CustomKey.swift */; };
+		49504D992A42D42C00B93E90 /* CustomKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49504D972A42D42C00B93E90 /* CustomKey.swift */; };
+		49504D9C2A42D46C00B93E90 /* EquipBaseType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49504D9B2A42D46C00B93E90 /* EquipBaseType.swift */; };
+		49504D9D2A42D46C00B93E90 /* EquipBaseType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49504D9B2A42D46C00B93E90 /* EquipBaseType.swift */; };
+		49504D9F2A44B45600B93E90 /* EquipMagicType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49504D9E2A44B45600B93E90 /* EquipMagicType.swift */; };
+		49504DA02A44B45600B93E90 /* EquipMagicType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49504D9E2A44B45600B93E90 /* EquipMagicType.swift */; };
+		49504DA52A44BB5D00B93E90 /* EquipScoreUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49504DA42A44BB5D00B93E90 /* EquipScoreUtil.swift */; };
+		49504DA62A44BB5D00B93E90 /* EquipScoreUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49504DA42A44BB5D00B93E90 /* EquipScoreUtil.swift */; };
+		49504DA82A44BDA600B93E90 /* GameText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49504DA72A44BDA600B93E90 /* GameText.swift */; };
+		49504DA92A44BDA600B93E90 /* GameText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49504DA72A44BDA600B93E90 /* GameText.swift */; };
+		49504DAB2A4763D700B93E90 /* DiamondAttribute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49504DAA2A4763D600B93E90 /* DiamondAttribute.swift */; };
+		49504DAC2A4763D700B93E90 /* DiamondAttribute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49504DAA2A4763D600B93E90 /* DiamondAttribute.swift */; };
 		49536A002A308987004FBBB1 /* EquipEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495369FF2A308987004FBBB1 /* EquipEditView.swift */; };
 		49536A012A308988004FBBB1 /* EquipEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495369FF2A308987004FBBB1 /* EquipEditView.swift */; };
 		49536A032A30AD6B004FBBB1 /* EquipType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49536A022A30AD6B004FBBB1 /* EquipType.swift */; };
@@ -82,8 +106,8 @@
 		495FD6632A3DF8C100A17FB0 /* MountEquip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495FD6612A3DF8C100A17FB0 /* MountEquip.swift */; };
 		495FD6652A3E231700A17FB0 /* EquipQuality.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495FD6642A3E231700A17FB0 /* EquipQuality.swift */; };
 		495FD6662A3E231700A17FB0 /* EquipQuality.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495FD6642A3E231700A17FB0 /* EquipQuality.swift */; };
-		495FD66B2A3F581100A17FB0 /* attr.json in Resources */ = {isa = PBXBuildFile; fileRef = 495FD66A2A3F581100A17FB0 /* attr.json */; };
-		495FD66C2A3F581100A17FB0 /* attr.json in Resources */ = {isa = PBXBuildFile; fileRef = 495FD66A2A3F581100A17FB0 /* attr.json */; };
+		495FD66B2A3F581100A17FB0 /* equipAttrDesc.json in Resources */ = {isa = PBXBuildFile; fileRef = 495FD66A2A3F581100A17FB0 /* equipAttrDesc.json */; };
+		495FD66C2A3F581100A17FB0 /* equipAttrDesc.json in Resources */ = {isa = PBXBuildFile; fileRef = 495FD66A2A3F581100A17FB0 /* equipAttrDesc.json */; };
 		495FD66E2A3F593300A17FB0 /* EquipDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495FD66D2A3F593300A17FB0 /* EquipDTO.swift */; };
 		495FD66F2A3F593300A17FB0 /* EquipDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495FD66D2A3F593300A17FB0 /* EquipDTO.swift */; };
 		495FD6722A40308D00A17FB0 /* equip1.json in Resources */ = {isa = PBXBuildFile; fileRef = 495FD6712A40308D00A17FB0 /* equip1.json */; };
@@ -251,6 +275,18 @@
 		4933543E2A2611260044289B /* TalentVersionViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TalentVersionViewModel.swift; path = JX3Base/Core/View/Talent/TalentVersionViewModel.swift; sourceTree = SOURCE_ROOT; };
 		49504D7C2A41C73E00B93E90 /* CheckBoxToggleStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckBoxToggleStyle.swift; sourceTree = "<group>"; };
 		49504D7F2A41CBA300B93E90 /* PvType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PvType.swift; sourceTree = "<group>"; };
+		49504D822A42BE8900B93E90 /* weaponType.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = weaponType.json; sourceTree = "<group>"; };
+		49504D852A42C26C00B93E90 /* attrBriefDesc.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = attrBriefDesc.json; sourceTree = "<group>"; };
+		49504D882A42C32400B93E90 /* attrDesc.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = attrDesc.json; sourceTree = "<group>"; };
+		49504D8E2A42CD2F00B93E90 /* EquipDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipDetailView.swift; sourceTree = "<group>"; };
+		49504D912A42CED200B93E90 /* EquipSubType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipSubType.swift; sourceTree = "<group>"; };
+		49504D942A42D10A00B93E90 /* weapon1.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = weapon1.json; sourceTree = "<group>"; };
+		49504D972A42D42C00B93E90 /* CustomKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomKey.swift; sourceTree = "<group>"; };
+		49504D9B2A42D46C00B93E90 /* EquipBaseType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipBaseType.swift; sourceTree = "<group>"; };
+		49504D9E2A44B45600B93E90 /* EquipMagicType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipMagicType.swift; sourceTree = "<group>"; };
+		49504DA42A44BB5D00B93E90 /* EquipScoreUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipScoreUtil.swift; sourceTree = "<group>"; };
+		49504DA72A44BDA600B93E90 /* GameText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameText.swift; sourceTree = "<group>"; };
+		49504DAA2A4763D600B93E90 /* DiamondAttribute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiamondAttribute.swift; sourceTree = "<group>"; };
 		495369FF2A308987004FBBB1 /* EquipEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipEditView.swift; sourceTree = "<group>"; };
 		49536A022A30AD6B004FBBB1 /* EquipType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipType.swift; sourceTree = "<group>"; };
 		49536A052A30AF1C004FBBB1 /* EquipPosition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipPosition.swift; sourceTree = "<group>"; };
@@ -274,7 +310,7 @@
 		495FD65E2A3B675200A17FB0 /* DutyType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DutyType.swift; sourceTree = "<group>"; };
 		495FD6612A3DF8C100A17FB0 /* MountEquip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MountEquip.swift; sourceTree = "<group>"; };
 		495FD6642A3E231700A17FB0 /* EquipQuality.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipQuality.swift; sourceTree = "<group>"; };
-		495FD66A2A3F581100A17FB0 /* attr.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = attr.json; sourceTree = "<group>"; };
+		495FD66A2A3F581100A17FB0 /* equipAttrDesc.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = equipAttrDesc.json; sourceTree = "<group>"; };
 		495FD66D2A3F593300A17FB0 /* EquipDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipDTO.swift; sourceTree = "<group>"; };
 		495FD6712A40308D00A17FB0 /* equip1.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = equip1.json; sourceTree = "<group>"; };
 		495FD6742A4030A900A17FB0 /* equip2.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = equip2.json; sourceTree = "<group>"; };
@@ -417,6 +453,17 @@
 			path = Talent;
 			sourceTree = "<group>";
 		};
+		49504D9A2A42D45300B93E90 /* Equip */ = {
+			isa = PBXGroup;
+			children = (
+				495FD66D2A3F593300A17FB0 /* EquipDTO.swift */,
+				49504D9B2A42D46C00B93E90 /* EquipBaseType.swift */,
+				49504D9E2A44B45600B93E90 /* EquipMagicType.swift */,
+				49504DAA2A4763D600B93E90 /* DiamondAttribute.swift */,
+			);
+			path = Equip;
+			sourceTree = "<group>";
+		};
 		49536A0E2A30BA7F004FBBB1 /* ViemModel */ = {
 			isa = PBXGroup;
 			children = (
@@ -444,6 +491,7 @@
 				495FD65E2A3B675200A17FB0 /* DutyType.swift */,
 				495FD6642A3E231700A17FB0 /* EquipQuality.swift */,
 				49504D7F2A41CBA300B93E90 /* PvType.swift */,
+				49504D912A42CED200B93E90 /* EquipSubType.swift */,
 			);
 			path = Enum;
 			sourceTree = "<group>";
@@ -453,6 +501,7 @@
 			children = (
 				495FD6712A40308D00A17FB0 /* equip1.json */,
 				495FD6742A4030A900A17FB0 /* equip2.json */,
+				49504D942A42D10A00B93E90 /* weapon1.json */,
 			);
 			path = Previews;
 			sourceTree = "<group>";
@@ -460,14 +509,17 @@
 		497467BF2A26198D00275A09 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				4992D2182A24F704007EEFC2 /* BaseAssets.xcassets */,
 				495FD6702A40300800A17FB0 /* Previews */,
 				499F5ACE2A2FA4B600A3C588 /* school.json */,
 				497467C02A2619BF00275A09 /* xf.json */,
-				4992D2182A24F704007EEFC2 /* BaseAssets.xcassets */,
 				499F5AD72A304C9C00A3C588 /* colors.json */,
 				49536A152A30DEA8004FBBB1 /* xfAttrs.json */,
 				49536A272A31CCDD004FBBB1 /* mountEquip.json */,
-				495FD66A2A3F581100A17FB0 /* attr.json */,
+				495FD66A2A3F581100A17FB0 /* equipAttrDesc.json */,
+				49504D882A42C32400B93E90 /* attrDesc.json */,
+				49504D852A42C26C00B93E90 /* attrBriefDesc.json */,
+				49504D822A42BE8900B93E90 /* weaponType.json */,
 			);
 			path = Assets;
 			sourceTree = "<group>";
@@ -562,6 +614,7 @@
 		4992D16C2A22F7F4007EEFC2 /* Entity */ = {
 			isa = PBXGroup;
 			children = (
+				49504D9A2A42D45300B93E90 /* Equip */,
 				495FD65D2A3B674100A17FB0 /* Enum */,
 				4992D16D2A22F839007EEFC2 /* ServerState.swift */,
 				4992D1E62A23C45E007EEFC2 /* TalentVersion.swift */,
@@ -570,7 +623,7 @@
 				499F5AD12A2FA4E300A3C588 /* School.swift */,
 				49536A212A31C214004FBBB1 /* BoxResponse.swift */,
 				495FD6612A3DF8C100A17FB0 /* MountEquip.swift */,
-				495FD66D2A3F593300A17FB0 /* EquipDTO.swift */,
+				49504D972A42D42C00B93E90 /* CustomKey.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -619,6 +672,7 @@
 				4992D1EF2A248390007EEFC2 /* LocalFileManager.swift */,
 				4992D1F32A248966007EEFC2 /* Logger.swift */,
 				497467C62A261AC500275A09 /* BundleUtil.swift */,
+				49504DA42A44BB5D00B93E90 /* EquipScoreUtil.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -717,6 +771,7 @@
 				4992D1632A22F777007EEFC2 /* ServerState */,
 				4992D2252A250021007EEFC2 /* DisplayBarView.swift */,
 				4992D20D2A24F042007EEFC2 /* IconLibrary */,
+				49504DA72A44BDA600B93E90 /* GameText.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -757,6 +812,7 @@
 				49536A082A30B7B1004FBBB1 /* EquipSelectItemView.swift */,
 				49536A0F2A30DAAB004FBBB1 /* EquipPickerView.swift */,
 				495FD6772A40336900A17FB0 /* EquipPickerOptionView.swift */,
+				49504D8E2A42CD2F00B93E90 /* EquipDetailView.swift */,
 			);
 			path = Equip;
 			sourceTree = "<group>";
@@ -971,11 +1027,15 @@
 			files = (
 				495FD6752A4030A900A17FB0 /* equip2.json in Resources */,
 				4992D1402A2278DD007EEFC2 /* Preview Assets.xcassets in Resources */,
+				49504D862A42C26C00B93E90 /* attrBriefDesc.json in Resources */,
 				497467C12A2619BF00275A09 /* xf.json in Resources */,
+				49504D832A42BE8900B93E90 /* weaponType.json in Resources */,
+				49504D892A42C32400B93E90 /* attrDesc.json in Resources */,
 				49536A162A30DEA8004FBBB1 /* xfAttrs.json in Resources */,
+				49504D952A42D10A00B93E90 /* weapon1.json in Resources */,
 				4992D2192A24F704007EEFC2 /* BaseAssets.xcassets in Resources */,
 				495FD6722A40308D00A17FB0 /* equip1.json in Resources */,
-				495FD66B2A3F581100A17FB0 /* attr.json in Resources */,
+				495FD66B2A3F581100A17FB0 /* equipAttrDesc.json in Resources */,
 				499F5AD82A304C9C00A3C588 /* colors.json in Resources */,
 				499F5ACF2A2FA4B600A3C588 /* school.json in Resources */,
 				49536A282A31CCDD004FBBB1 /* mountEquip.json in Resources */,
@@ -1011,11 +1071,15 @@
 			files = (
 				495FD6762A4030A900A17FB0 /* equip2.json in Resources */,
 				4992D1C52A23C087007EEFC2 /* Preview Assets.xcassets in Resources */,
+				49504D872A42C26C00B93E90 /* attrBriefDesc.json in Resources */,
 				497467C22A2619BF00275A09 /* xf.json in Resources */,
+				49504D842A42BE8900B93E90 /* weaponType.json in Resources */,
+				49504D8A2A42C32400B93E90 /* attrDesc.json in Resources */,
 				49536A172A30DEA8004FBBB1 /* xfAttrs.json in Resources */,
+				49504D962A42D10A00B93E90 /* weapon1.json in Resources */,
 				4992D21A2A24F704007EEFC2 /* BaseAssets.xcassets in Resources */,
 				495FD6732A40308D00A17FB0 /* equip1.json in Resources */,
-				495FD66C2A3F581100A17FB0 /* attr.json in Resources */,
+				495FD66C2A3F581100A17FB0 /* equipAttrDesc.json in Resources */,
 				499F5AD92A304C9C00A3C588 /* colors.json in Resources */,
 				499F5AD02A2FA4B600A3C588 /* school.json in Resources */,
 				49536A292A31CCDD004FBBB1 /* mountEquip.json in Resources */,
@@ -1046,6 +1110,7 @@
 			files = (
 				49536A222A31C214004FBBB1 /* BoxResponse.swift in Sources */,
 				49536A0C2A30BA2D004FBBB1 /* EquipEditViewModel.swift in Sources */,
+				49504D922A42CED200B93E90 /* EquipSubType.swift in Sources */,
 				495FD6622A3DF8C100A17FB0 /* MountEquip.swift in Sources */,
 				495FD6652A3E231700A17FB0 /* EquipQuality.swift in Sources */,
 				495FD65B2A36FC5800A17FB0 /* PlainToggleStyle.swift in Sources */,
@@ -1063,9 +1128,12 @@
 				49536A062A30AF1C004FBBB1 /* EquipPosition.swift in Sources */,
 				4992D2262A250021007EEFC2 /* DisplayBarView.swift in Sources */,
 				4992D1FD2A24A133007EEFC2 /* ImageExtension.swift in Sources */,
+				49504D8F2A42CD2F00B93E90 /* EquipDetailView.swift in Sources */,
 				4992D1762A2303F6007EEFC2 /* ServerStateViewModel.swift in Sources */,
+				49504D9F2A44B45600B93E90 /* EquipMagicType.swift in Sources */,
 				495FD66E2A3F593300A17FB0 /* EquipDTO.swift in Sources */,
 				495FD6782A40336900A17FB0 /* EquipPickerOptionView.swift in Sources */,
+				49504D9C2A42D46C00B93E90 /* EquipBaseType.swift in Sources */,
 				499F5ABB2A2B468200A3C588 /* TransitionExtension.swift in Sources */,
 				49DBCE192A2623B600C3BA2E /* KungfuPicker.swift in Sources */,
 				49536A1F2A31BB19004FBBB1 /* EquipSearchService.swift in Sources */,
@@ -1094,6 +1162,7 @@
 				492D075D2A250F1A00826308 /* JX3.xcdatamodeld in Sources */,
 				4992D1742A2300F4007EEFC2 /* NetworkManager.swift in Sources */,
 				4992D16B2A22F7D4007EEFC2 /* ServerStateItemView.swift in Sources */,
+				49504DA82A44BDA600B93E90 /* GameText.swift in Sources */,
 				4992D21C2A24F8F7007EEFC2 /* Color.swift in Sources */,
 				4992D1712A22F884007EEFC2 /* ServerStateService.swift in Sources */,
 				4992D1B52A23A6C1007EEFC2 /* NetworkService.swift in Sources */,
@@ -1109,7 +1178,10 @@
 				491DB8342A26667700A40051 /* KungfuIcon.swift in Sources */,
 				497467C42A2619DE00275A09 /* Mount.swift in Sources */,
 				499F5AC92A2F954200A3C588 /* HomeView.swift in Sources */,
+				49504DA52A44BB5D00B93E90 /* EquipScoreUtil.swift in Sources */,
 				4992D1692A22F7B8007EEFC2 /* ServerStateView.swift in Sources */,
+				49504D982A42D42C00B93E90 /* CustomKey.swift in Sources */,
+				49504DAB2A4763D700B93E90 /* DiamondAttribute.swift in Sources */,
 				4992D17D2A2312A7007EEFC2 /* PreviewExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1174,6 +1246,7 @@
 				49536A0D2A30BA2D004FBBB1 /* EquipEditViewModel.swift in Sources */,
 				495FD6632A3DF8C100A17FB0 /* MountEquip.swift in Sources */,
 				495410D92A276D8B00AA6293 /* TalentPickerViewModel.swift in Sources */,
+				49504DA02A44B45600B93E90 /* EquipMagicType.swift in Sources */,
 				49DBCE1A2A2623B600C3BA2E /* KungfuPicker.swift in Sources */,
 				4992D20B2A24B3AF007EEFC2 /* NetworkManager.swift in Sources */,
 				4992D20A2A24B3AC007EEFC2 /* ImageExtension.swift in Sources */,
@@ -1186,10 +1259,13 @@
 				49536A142A30DDC1004FBBB1 /* EquipAttribute.swift in Sources */,
 				49DBCE172A2622A700C3BA2E /* AutoResizeLazyVGrid.swift in Sources */,
 				493023692A25D423006E81E4 /* TalentService.swift in Sources */,
+				49504DA62A44BB5D00B93E90 /* EquipScoreUtil.swift in Sources */,
 				499F5ACA2A2F954200A3C588 /* HomeView.swift in Sources */,
 				4992D2132A24F2F1007EEFC2 /* LikedIconLibraryView.swift in Sources */,
+				49504D992A42D42C00B93E90 /* CustomKey.swift in Sources */,
 				499F5ABC2A2B468200A3C588 /* TransitionExtension.swift in Sources */,
 				49DBCE1D2A2625F800C3BA2E /* WebCacheableImage.swift in Sources */,
+				49504D932A42CED200B93E90 /* EquipSubType.swift in Sources */,
 				4965BA492A2616EF001D7E1B /* TalentPicker.swift in Sources */,
 				495FD66F2A3F593300A17FB0 /* EquipDTO.swift in Sources */,
 				491DB8352A26667700A40051 /* KungfuIcon.swift in Sources */,
@@ -1202,6 +1278,7 @@
 				4992D2082A24B3A3007EEFC2 /* WebCacheableImageViewModel.swift in Sources */,
 				499F5AD32A2FA4E300A3C588 /* School.swift in Sources */,
 				4992D2212A24F9DA007EEFC2 /* CircleButton.swift in Sources */,
+				49504DA92A44BDA600B93E90 /* GameText.swift in Sources */,
 				4992D2272A250021007EEFC2 /* DisplayBarView.swift in Sources */,
 				4992D2072A24B39F007EEFC2 /* JX3BoxIcon.swift in Sources */,
 				4992D2172A24F32C007EEFC2 /* IconLibraryViewModel.swift in Sources */,
@@ -1210,15 +1287,18 @@
 				495FD6662A3E231700A17FB0 /* EquipQuality.swift in Sources */,
 				49536A1A2A30DF1D004FBBB1 /* AssetJsonDataManager.swift in Sources */,
 				49536A202A31BB19004FBBB1 /* EquipSearchService.swift in Sources */,
+				49504D9D2A42D46C00B93E90 /* EquipBaseType.swift in Sources */,
 				497467C82A261AC500275A09 /* BundleUtil.swift in Sources */,
 				495410E52A2AEA3C00AA6293 /* EnvironmentExtension.swift in Sources */,
 				49536A112A30DAAB004FBBB1 /* EquipPickerView.swift in Sources */,
 				49536A012A308988004FBBB1 /* EquipEditView.swift in Sources */,
+				49504D902A42CD2F00B93E90 /* EquipDetailView.swift in Sources */,
 				492D075E2A250F1A00826308 /* JX3.xcdatamodeld in Sources */,
 				4992D1F62A248B2A007EEFC2 /* Logger.swift in Sources */,
 				495410DC2A276EF800AA6293 /* Talent.swift in Sources */,
 				492D074E2A250C4900826308 /* ServerStateService.swift in Sources */,
 				4992D1F22A2484FA007EEFC2 /* LocalFileManager.swift in Sources */,
+				49504DAC2A4763D700B93E90 /* DiamondAttribute.swift in Sources */,
 				493354402A2611260044289B /* TalentVersionPicker.swift in Sources */,
 				499F5AC02A2D071B00A3C588 /* EquipHomeView.swift in Sources */,
 				4992D1C02A23C085007EEFC2 /* ContentView.swift in Sources */,

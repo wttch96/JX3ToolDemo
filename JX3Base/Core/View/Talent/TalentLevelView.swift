@@ -63,7 +63,7 @@ struct TalentLevelView: View {
                         }
                     }
                     .padding(.horizontal)
-                    .background(Color.theme.talentBackground)
+                    .background(Color.theme.panel)
                     .presentationDetents([.medium])
                 }
         }

@@ -24,6 +24,7 @@ class Dev {
     
     let equip1: EquipDTO
     let equip2: EquipDTO
+    let weapon1: EquipDTO
     
     let mount1: Mount = Mount("问水诀")!
     let mount2: Mount = Mount("冰心诀")!
@@ -34,6 +35,7 @@ class Dev {
         
         self.equip1 = BundleUtil.loadJson("equip1.json", type: EquipDTO.self)!
         self.equip2 = BundleUtil.loadJson("equip2.json", type: EquipDTO.self)!
+        self.weapon1 = BundleUtil.loadJson("weapon1.json", type: EquipDTO.self)!
     }
     
 }

@@ -60,17 +60,23 @@ class EquipSearchService {
                 URLQueryItem(name: "attr", value: attrs.map({ $0.rawValue }).joined(separator: ","))
             )
         }
-        if !belongSchool.isEmpty {
+        if position == .meleeWeapon || position == .meleeWeapon2 {
             request?.queryItems?.append(
-                URLQueryItem(name: "BelongSchool", value: belongSchool.joined(separator: ","))
+                URLQueryItem(name: "DetailType", value: position == .meleeWeapon ? "2" : "9")
             )
-            logger("school:\(belongSchool.joined(separator: ","))")
-        }
-        if !magicKind.isEmpty {
-            request?.queryItems?.append(
-                URLQueryItem(name: "MagicKind", value: magicKind.joined(separator: ","))
-            )
-            logger("magic:\(magicKind.joined(separator: ","))")
+        } else {
+            if !belongSchool.isEmpty {
+                request?.queryItems?.append(
+                    URLQueryItem(name: "BelongSchool", value: belongSchool.joined(separator: ","))
+                )
+                logger("school:\(belongSchool.joined(separator: ","))")
+            }
+            if !magicKind.isEmpty {
+                request?.queryItems?.append(
+                    URLQueryItem(name: "MagicKind", value: magicKind.joined(separator: ","))
+                )
+                logger("magic:\(magicKind.joined(separator: ","))")
+            }
         }
         if let duty = duty {
             request?.queryItems?.append(

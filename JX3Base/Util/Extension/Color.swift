@@ -36,12 +36,16 @@ class Theme {
     
     let gold = Color("Gold")
     let red = Color("Red")
+    let textGreen = Color("TextGreen")
+    // 精炼
+    let strength = Color("Strength")
+    // 一些面板的背景颜色
+    let panel = Color("PanelBackground")
     
     // 心法
     let kungfuIconBackground = Color("KungfuIconBackground")
     
     // 奇穴
-    let talentBackground = Color("TalentBackground")
     let talentLabelBackground = Color("TalentLabelBackground")
 }
 

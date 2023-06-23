@@ -28,7 +28,7 @@ struct TalentPicker: View {
                         }
                         .background(
                             RoundedRectangle(cornerRadius: 8)
-                                .foregroundColor(Color.theme.talentBackground)
+                                .foregroundColor(Color.theme.panel)
                         )
                     }
                     

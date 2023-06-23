@@ -12,29 +12,19 @@ import SwiftUI
 struct PlainToggleStyle: ToggleStyle {
 
     public func makeBody(configuration: Configuration) -> some View {
-        if configuration.isOn {
-            configuration.label
-                .foregroundColor(.accentColor)
-                .padding()
-                .background {
-                    RoundedRectangle(cornerRadius: 8)
-                        .stroke(Color.accentColor, lineWidth: 2)
-                }
-                .onTapGesture {
-                    configuration.$isOn.wrappedValue.toggle()
-                }
-        } else {
-            configuration.label
-                .foregroundColor(.white)
-                .padding()
-                .background {
-                    RoundedRectangle(cornerRadius: 8)
-                        .foregroundColor(Color.gray)
-                }
-                .onTapGesture {
-                    configuration.$isOn.wrappedValue.toggle()
-                }
-        }
+        configuration.label
+            .foregroundColor(configuration.isOn ? .accentColor : .gray)
+            .padding(.horizontal, 16)
+            .padding(.vertical, 8)
+            .background {
+                RoundedRectangle(cornerRadius: 8)
+                    .foregroundColor(
+                        configuration.isOn ? Color.cyan.opacity(0.2) : Color.primary.opacity(0.1)
+                    )
+            }
+            .onTapGesture {
+                configuration.$isOn.wrappedValue.toggle()
+            }
     }
 }
 

@@ -6,10 +6,11 @@
 //
 
 import SwiftUI
+import Combine
 
 struct EquipEditView: View {
     let kungfu: Mount
-    @State private var vm = EquipEditViewModel()
+    @StateObject private var vm = EquipEditViewModel()
     
     var body: some View {
         VStack {
@@ -20,7 +21,7 @@ struct EquipEditView: View {
             ZStack {
                 VStack(spacing: 10) {
                     HStack {
-                        positionView(.helm)
+                        positionView1(.helm, selected: $vm.selectedEquip)
                         Spacer()
                         positionView(.bangle)
                     }
@@ -67,8 +68,11 @@ struct EquipEditView: View {
     private func positionView(_ position: EquipPosition) -> some View {
         EquipSelectItemView(kungfu: kungfu, position: position, selectedEquip: positionBinding(position))
     }
+    private func positionView1(_ position: EquipPosition, selected: Binding<EquipDTO?>) -> some View {
+        EquipSelectItemView(kungfu: kungfu, position: position, selectedEquip: selected)
+    }
     
-    private func positionBinding(_ position: EquipPosition) -> Binding<Int?> {
+    private func positionBinding(_ position: EquipPosition) -> Binding<EquipDTO?> {
         return Binding(get: {
             if let value = vm.seletedEquip[position] {
                 return value

@@ -1,0 +1,270 @@
+
+{
+            "ID": 34411,
+            "Name": "风霆肃",
+            "UiID": "200972",
+            "RepresentDec": null,
+            "RepresentID": "3604",
+            "ColorID": null,
+            "ColorID1": null,
+            "ColorID2": null,
+            "Genre": null,
+            "SubType": "0",
+            "DetailType": "2",
+            "Price": "1040215",
+            "Level": 9300,
+            "BindType": "3",
+            "MaxDurability": "5485",
+            "AbradeRate": "607",
+            "MaxExistTime": null,
+            "MaxExistAmount": "0",
+            "CanTrade": "1",
+            "CanDestroy": null,
+            "SetID": null,
+            "ScriptName": null,
+            "Quality": "5",
+            "Base1Type": "atMeleeWeaponDamageBase",
+            "Base1Min": "2603",
+            "Base1Max": "2603",
+            "Base2Type": "atMeleeWeaponDamageRand",
+            "Base2Min": "1736",
+            "Base2Max": "1736",
+            "Base3Type": "atMeleeWeaponAttackSpeedBase",
+            "Base3Min": "21",
+            "Base3Max": "21",
+            "Base4Type": null,
+            "Base4Min": null,
+            "Base4Max": null,
+            "Base5Type": null,
+            "Base5Min": null,
+            "Base5Max": null,
+            "Base6Type": null,
+            "Base6Min": null,
+            "Base6Max": null,
+            "Require1Type": "5",
+            "Require1Value": "120",
+            "Require2Type": null,
+            "Require2Value": null,
+            "Require3Type": null,
+            "Require3Value": null,
+            "Require4Type": null,
+            "Require4Value": null,
+            "Require5Type": null,
+            "Require5Value": null,
+            "Require6Type": null,
+            "Require6Value": null,
+            "Magic1Type": "55303",
+            "Magic2Type": "55333",
+            "Magic3Type": "55334",
+            "Magic4Type": "56516",
+            "Magic5Type": "56517",
+            "Magic6Type": "55308",
+            "Magic7Type": "23611",
+            "Magic8Type": "23612",
+            "Magic9Type": "56608",
+            "Magic10Type": "44033",
+            "Magic11Type": "0",
+            "Magic12Type": "0",
+            "SkillID": null,
+            "SkillLevel": null,
+            "BelongSchool": "纯阳",
+            "MagicKind": "外功",
+            "MagicType": "全能",
+            "GetType": "任务",
+            "_CATEGORY": null,
+            "CoolDownID": null,
+            "IconTag1": null,
+            "IconTag2": null,
+            "IsSpecialIcon": null,
+            "IsSpecialRepresent": null,
+            "CanSetColor": null,
+            "AucGenre": "1",
+            "AucSubType": "3",
+            "RequireCamp": "7",
+            "RequireProfessionID": null,
+            "RequireProfessionLevel": null,
+            "RequireProfessionBranch": null,
+            "PackageGenerType": null,
+            "PackageSubType": null,
+            "TargetType": null,
+            "EnchantRepresentID1": null,
+            "EnchantRepresentID2": "439",
+            "EnchantRepresentID3": null,
+            "EnchantRepresentID4": null,
+            "ExistType": null,
+            "DiamondTypeMask1": "17",
+            "DiamondAttributeID1": "3778",
+            "DiamondTypeMask2": "17",
+            "DiamondAttributeID2": "244",
+            "DiamondTypeMask3": "17",
+            "DiamondAttributeID3": "7582",
+            "EquipCoolDownID": "735",
+            "RecommendID": "18",
+            "MaxStrengthLevel": "8",
+            "CanApart": "0",
+            "MapBanUseItemMask": null,
+            "IgnoreBindMask": "0",
+            "CanExterior": "0",
+            "BelongForceMask": "16",
+            "Represent1": null,
+            "SpecialRepair": "0",
+            "CanChangeMagic": "0",
+            "GrowthTabIndex": null,
+            "NeedGrowthExp": null,
+            "CanShared": "0",
+            "MapBanTradeItemMask": null,
+            "MapCanExistItemMask": null,
+            "MapBanEquipItemMask": null,
+            "IsPVEEquip": "1",
+            "BelongMap": "橙武",
+            "_IsSpecialMagicType": "1",
+            "RepairPriceRebate": "512",
+            "_Magic1Type": {
+                "attr": [
+                    "atVitalityBase",
+                    "5581",
+                    "5581",
+                    null,
+                    null
+                ],
+                "label": ""
+            },
+            "_Magic2Type": {
+                "attr": [
+                    "atAgilityBase",
+                    "1082",
+                    "1082",
+                    null,
+                    null
+                ],
+                "label": ""
+            },
+            "_Magic3Type": {
+                "attr": [
+                    "atPhysicsAttackPowerBase",
+                    "3989",
+                    "3989",
+                    null,
+                    null
+                ],
+                "label": ""
+            },
+            "_Magic4Type": {
+                "attr": [
+                    "atPhysicsCriticalStrike",
+                    "4676",
+                    "4676",
+                    null,
+                    null
+                ],
+                "label": ""
+            },
+            "_Magic5Type": {
+                "attr": [
+                    "atPhysicsOvercomeBase",
+                    "4526",
+                    "4526",
+                    null,
+                    null
+                ],
+                "label": ""
+            },
+            "_Magic6Type": {
+                "attr": [
+                    "atHasteBase",
+                    "1509",
+                    "1509",
+                    null,
+                    null
+                ],
+                "label": ""
+            },
+            "_Magic7Type": {
+                "attr": [
+                    "atSetEquipmentRecipe",
+                    "1522",
+                    "1522",
+                    "1",
+                    "1"
+                ],
+                "label": "<text>text=\"装备：“无我无剑”伤害提高5%\" font=101 </text>"
+            },
+            "_Magic8Type": {
+                "attr": [
+                    "atSetEquipmentRecipe",
+                    "1523",
+                    "1523",
+                    "1",
+                    "1"
+                ],
+                "label": "<text>text=\"装备：“八荒归元”伤害提高5%\" font=101 </text>"
+            },
+            "_Magic9Type": {
+                "attr": [
+                    "atSkillEventHandler",
+                    "2419",
+                    "2419",
+                    "0",
+                    "0"
+                ],
+                "label": "<Text>text=\"装备：施展外功招式命中后，一定几率触发6秒内施展“八荒归元”无调息时间且附带持续伤害效果，最多叠加3层，持续30秒\" font=101 </text>"
+            },
+            "_Magic10Type": {
+                "attr": [
+                    "atSkillEventHandler",
+                    "1932",
+                    "1932",
+                    "0",
+                    "0"
+                ],
+                "label": "<Text>text=\"装备：施展“八荒归元”有几率额外造成一次少量伤害效果\\\\\" font=101 </text>"
+            },
+            "_Magic11Type": null,
+            "_Magic12Type": null,
+            "_DiamondAttributeID1": [
+                "atPhysicsAttackPowerBase",
+                "72",
+                "72",
+                "0",
+                "0"
+            ],
+            "_DiamondAttributeID2": [
+                "atAgilityBase",
+                "36",
+                "36",
+                null,
+                null
+            ],
+            "_DiamondAttributeID3": [
+                "atPhysicsOvercomeBase",
+                "161",
+                "161",
+                "0",
+                "0"
+            ],
+            "_AttrType": [
+                "atMeleeWeaponDamageBase",
+                "atMeleeWeaponDamageRand",
+                "atMeleeWeaponAttackSpeedBase",
+                "atPhysicsAttackPowerBase",
+                "atAgilityBase",
+                "atPhysicsOvercomeBase",
+                "atVitalityBase",
+                "atPhysicsCriticalStrike",
+                "atHasteBase",
+                "atSetEquipmentRecipe",
+                "atSkillEventHandler"
+            ],
+            "_PvType": "1",
+            "_IconID": "17800",
+            "_Duty": "1",
+            "_Attrs": [
+                "Haste",
+                "Critical",
+                "Overcome"
+            ],
+            "_SetAttrbs": null,
+            "_SetData": {},
+            "_SkillDesc": null,
+            "_isAwesome": 1
+        }
