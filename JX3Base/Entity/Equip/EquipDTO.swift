@@ -206,7 +206,7 @@ struct EquipDTO: Decodable, Identifiable {
     // 基础属性，主要是攻击力
     let baseTypes: [EquipBaseType?]
     // 装备的其他属性
-    let magicTypes : [EquipMagicType?]
+    let magicTypes : [EquipMagicType]
     
     let detailTypeValue : String?
     let subType: EquipSubType
@@ -353,10 +353,12 @@ extension EquipDTO {
         return baseTypes
     }
     // 从 json 中加载其他属性
-    private static func loadMagicTypes(from decoder: Decoder) throws -> [EquipMagicType?] {
-        var magicTypes: [EquipMagicType?] = Array(repeating: nil, count: 12)
-        for i in 0..<magicTypes.count {
-            magicTypes[i] = try EquipMagicType(decoder: decoder, index: i + 1)
+    private static func loadMagicTypes(from decoder: Decoder) throws -> [EquipMagicType] {
+        var magicTypes: [EquipMagicType] = []
+        for i in 0..<12 {
+            if let mt = try EquipMagicType(decoder: decoder, index: i + 1) {
+                magicTypes.append(mt)
+            }
         }
         return magicTypes
     }

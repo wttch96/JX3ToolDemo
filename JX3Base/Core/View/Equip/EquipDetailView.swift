@@ -102,27 +102,25 @@ struct EquipDetailView: View {
     
     @ViewBuilder
     private var magicInfoView: some View {
-        ForEach(0..<equip.magicTypes.count, id: \.hashValue) { i in
-            if let magic = equip.magicTypes[i] {
-                HStack(spacing: 0) {
-                    if magic.label.isEmpty {
-                        if i < 2 {
-                            Text(magic.briefDesc)
-                                .foregroundColor(.white)
-                                .bold()
-                        } else {
-                            Text(magic.attrDesc)
-                                .bold()
-                                .foregroundColor(.theme.textGreen)
-                        }
-                        Text(" (+\(magic.score(level: equip.maxStrengthLevel / 2, maxLevel: equip.maxStrengthLevel)))")
+        ForEach(equip.magicTypes) { magic in
+            HStack(spacing: 0) {
+                if magic.label.isEmpty {
+                    if magic.isPrimaryAttr {
+                        Text(magic.briefDesc)
+                            .foregroundColor(.white)
                             .bold()
-                            .foregroundColor(.theme.strength)
                     } else {
-                        JX3GameText(text: magic.label, color: EquipQuality._5.color)
+                        Text(magic.attrDesc)
+                            .bold()
+                            .foregroundColor(.theme.textGreen)
                     }
-                    Spacer()
+                    Text(" (+\(magic.score(level: equip.maxStrengthLevel / 2, maxLevel: equip.maxStrengthLevel)))")
+                        .bold()
+                        .foregroundColor(.theme.strength)
+                } else {
+                    JX3GameText(text: magic.label, color: EquipQuality._5.color)
                 }
+                Spacer()
             }
         }
     }
