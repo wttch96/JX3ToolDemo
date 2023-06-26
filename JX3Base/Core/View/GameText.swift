@@ -34,10 +34,8 @@ struct JX3GameText: View {
             let gameTextParse = GameTextXmlParse(text)
             for text in gameTextParse.styleTexts {
                 let textStr = "\(text.styles["text"]!)"
-                    .replacingOccurrences(of: "\\\\\\n", with: "\n")
-                    .replacingOccurrences(of: "\\\\n", with: "\n")
-                    .replacingOccurrences(of: "\\n", with: "\n")
-                    .replacingOccurrences(of: "\\\\\\\\$", with: "", options: .regularExpression, range: nil)
+                    .replacingOccurrences(of: "\\\\+n", with: "\n", options: .regularExpression, range: nil)
+                    .replacingOccurrences(of: "\\\\+$", with: "", options: .regularExpression, range: nil)
                 var t = text
                 t.styles["text"] = textStr.replacingOccurrences(of: "\n$", with: "", options: .regularExpression, range: nil)
                 line.append(t)

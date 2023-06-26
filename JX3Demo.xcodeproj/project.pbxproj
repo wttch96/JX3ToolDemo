@@ -53,6 +53,8 @@
 		49504DA92A44BDA600B93E90 /* GameText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49504DA72A44BDA600B93E90 /* GameText.swift */; };
 		49504DAB2A4763D700B93E90 /* DiamondAttribute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49504DAA2A4763D600B93E90 /* DiamondAttribute.swift */; };
 		49504DAC2A4763D700B93E90 /* DiamondAttribute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49504DAA2A4763D600B93E90 /* DiamondAttribute.swift */; };
+		49504DAE2A494E6900B93E90 /* EquipRequireType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49504DAD2A494E6900B93E90 /* EquipRequireType.swift */; };
+		49504DAF2A494E6900B93E90 /* EquipRequireType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49504DAD2A494E6900B93E90 /* EquipRequireType.swift */; };
 		49536A002A308987004FBBB1 /* EquipEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495369FF2A308987004FBBB1 /* EquipEditView.swift */; };
 		49536A012A308988004FBBB1 /* EquipEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495369FF2A308987004FBBB1 /* EquipEditView.swift */; };
 		49536A032A30AD6B004FBBB1 /* EquipType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49536A022A30AD6B004FBBB1 /* EquipType.swift */; };
@@ -287,6 +289,7 @@
 		49504DA42A44BB5D00B93E90 /* EquipScoreUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipScoreUtil.swift; sourceTree = "<group>"; };
 		49504DA72A44BDA600B93E90 /* GameText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameText.swift; sourceTree = "<group>"; };
 		49504DAA2A4763D600B93E90 /* DiamondAttribute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiamondAttribute.swift; sourceTree = "<group>"; };
+		49504DAD2A494E6900B93E90 /* EquipRequireType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipRequireType.swift; sourceTree = "<group>"; };
 		495369FF2A308987004FBBB1 /* EquipEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipEditView.swift; sourceTree = "<group>"; };
 		49536A022A30AD6B004FBBB1 /* EquipType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipType.swift; sourceTree = "<group>"; };
 		49536A052A30AF1C004FBBB1 /* EquipPosition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipPosition.swift; sourceTree = "<group>"; };
@@ -460,6 +463,7 @@
 				49504D9B2A42D46C00B93E90 /* EquipBaseType.swift */,
 				49504D9E2A44B45600B93E90 /* EquipMagicType.swift */,
 				49504DAA2A4763D600B93E90 /* DiamondAttribute.swift */,
+				49504DAD2A494E6900B93E90 /* EquipRequireType.swift */,
 			);
 			path = Equip;
 			sourceTree = "<group>";
@@ -1167,6 +1171,7 @@
 				4992D1712A22F884007EEFC2 /* ServerStateService.swift in Sources */,
 				4992D1B52A23A6C1007EEFC2 /* NetworkService.swift in Sources */,
 				49536A192A30DF1D004FBBB1 /* AssetJsonDataManager.swift in Sources */,
+				49504DAE2A494E6900B93E90 /* EquipRequireType.swift in Sources */,
 				4992D1F42A248966007EEFC2 /* Logger.swift in Sources */,
 				499F5ABF2A2D071B00A3C588 /* EquipHomeView.swift in Sources */,
 				4992D2202A24F9DA007EEFC2 /* CircleButton.swift in Sources */,
@@ -1279,6 +1284,7 @@
 				499F5AD32A2FA4E300A3C588 /* School.swift in Sources */,
 				4992D2212A24F9DA007EEFC2 /* CircleButton.swift in Sources */,
 				49504DA92A44BDA600B93E90 /* GameText.swift in Sources */,
+				49504DAF2A494E6900B93E90 /* EquipRequireType.swift in Sources */,
 				4992D2272A250021007EEFC2 /* DisplayBarView.swift in Sources */,
 				4992D2072A24B39F007EEFC2 /* JX3BoxIcon.swift in Sources */,
 				4992D2172A24F32C007EEFC2 /* IconLibraryViewModel.swift in Sources */,

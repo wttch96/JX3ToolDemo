@@ -203,13 +203,22 @@ struct EquipDTO: Decodable, Identifiable {
     let quality: EquipQuality
     let skillId: String?
     
+    // 基础属性，主要是攻击力
     let baseTypes: [EquipBaseType?]
+    // 装备的其他属性
     let magicTypes : [EquipMagicType?]
     
     let detailTypeValue : String?
     let subType: EquipSubType
+    // 五行石镶嵌
     let diamondAttributes: [DiamondAttribute]
+    // 装备需求
+    private let requireTypes: [EquipRequireType]
     
+    // 一些和武器攻击相关的属性
+    var attackBase: Int = 0
+    var attackRange: Int = 0
+    var attackSpeed: Double = 0
     
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
@@ -231,8 +240,21 @@ struct EquipDTO: Decodable, Identifiable {
         self.baseTypes = try EquipDTO.loadBaseTypes(from: decoder)
         self.magicTypes = try EquipDTO.loadMagicTypes(from: decoder)
         self.diamondAttributes = try EquipDTO.loadDiamondAttribute(from: decoder)
+        self.requireTypes = try EquipDTO.loadRequireTypes(from: decoder)
+        
+        if let base3Type = baseTypes[2] {
+            if base3Type.isBase {
+                attackBase = base3Type.baseMin
+            } else if base3Type.isRand, let base2Type = baseTypes[1] {
+                attackBase = base2Type.baseMin
+                attackRange = base3Type.baseMin
+            } else if base3Type.isSpeed, let base1Type = baseTypes[0], let base2Type = baseTypes[1] {
+                attackBase = base1Type.baseMin
+                attackRange = base2Type.baseMin
+                attackSpeed = Double(base3Type.baseMin) / 16
+            }
+        }
     }
-    
     
     enum CodingKeys: String, CodingKey {
         case id = "ID"
@@ -253,31 +275,76 @@ struct EquipDTO: Decodable, Identifiable {
 }
 
 
-// MARK: 一些扩展的判断属性
+// MARK: 扩展的判断属性
 extension EquipDTO {
+    // 是否为精简
     var isSimp: Bool {
         return belongSchool == "精简" || hasEffect
     }
-    
+    // 是否为特效武器
     var hasEffect: Bool {
         return skillId != nil || attrType.contains("atSetEquipmentRecipe") || attrType.contains("atSkillEventHandler")
     }
-    
+    // 最大精炼等级
     var maxStrengthLevel: Int {
         guard let maxStrengthLevelValue = self.maxStrengthLevelValue,
               let level = Int(maxStrengthLevelValue) else { return 6 }
         
         return level
     }
-    
-    var isWepaon : Bool {
+    // 是否为武器
+    var isWepaon: Bool {
         return subType == .PRIMARY_WEAPON || subType == .SENCONDARY_WEAPON
     }
-    
-    var detailType : String {
+    // 武器描述
+    var detailType: String {
         return AssetJsonDataManager.shared.weaponType[detailTypeValue ?? "", default: "未知武器: \(detailTypeValue ?? "")"]
     }
-    
+}
+
+// 装备需求
+extension EquipDTO {
+    // 需求等级
+    var requireLevel: Int? {
+        if let rt = requireTypes.first( where: { $0.type == "5" }) {
+            return Int(rt.value)
+        }
+        return nil
+    }
+    // 需求门派
+    var requireSchool: School? {
+        if let rt = requireTypes.first( where: { $0.type == "6" }) {
+            return School(id: Int(rt.value))
+        }
+        return nil
+    }
+    // 需求性别
+    var requireGender: Bool? {
+        if let rt = requireTypes.first( where: { $0.type == "7" }) {
+            return rt.value == "1"
+        }
+        return nil
+    }
+    // 需求阵营
+    var requireCamp: String? {
+        if let rt = requireTypes.first(where: { $0.type == "100" }) {
+            switch rt.value {
+            case "1": return "中立";
+            case "2": fallthrough
+            case "3": return "浩气盟";
+            case "4": fallthrough
+            case "5": return "恶人谷"
+            case "6": return "浩气盟，或恶人谷"
+            default: return nil
+            }
+        }
+        return nil
+    }
+}
+
+// MARK: 一些构造工具方法
+extension EquipDTO {
+    // 从 json 中加载武器攻击属性
     private static func loadBaseTypes(from decoder: Decoder) throws -> [EquipBaseType?] {
         var baseTypes: [EquipBaseType?] = Array(repeating: nil, count: 6)
         for i in 0..<baseTypes.count {
@@ -285,7 +352,7 @@ extension EquipDTO {
         }
         return baseTypes
     }
-    
+    // 从 json 中加载其他属性
     private static func loadMagicTypes(from decoder: Decoder) throws -> [EquipMagicType?] {
         var magicTypes: [EquipMagicType?] = Array(repeating: nil, count: 12)
         for i in 0..<magicTypes.count {
@@ -293,7 +360,7 @@ extension EquipDTO {
         }
         return magicTypes
     }
-    
+    // 从 json 中加载五行石镶嵌孔
     private static func loadDiamondAttribute(from decoder: Decoder) throws -> [DiamondAttribute] {
         var diamondAttributes: [DiamondAttribute] = []
         for i in 0..<3 {
@@ -302,5 +369,15 @@ extension EquipDTO {
             }
         }
         return diamondAttributes
+    }
+    // 从 json 中加载装备要求信息
+    private static func loadRequireTypes(from decoder: Decoder) throws -> [EquipRequireType] {
+        var requireTypes: [EquipRequireType] = []
+        for i in 1...6 {
+            if let rt = try EquipRequireType(from: decoder, index: i) {
+                requireTypes.append(rt)
+            }
+        }
+        return requireTypes
     }
 }

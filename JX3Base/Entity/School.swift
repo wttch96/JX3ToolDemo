@@ -38,6 +38,14 @@ struct School: Identifiable, Hashable, Equatable, Comparable, Decodable {
 }
 
 extension School {
+    init?(id: Int?) {
+        if let school = AssetJsonDataManager.shared.schools.first(where: { $0.id == id }) {
+            self = school
+        } else {
+            return nil
+        }
+    }
+    
     var color: Color {
         if let name = self.name {
             return AssetJsonDataManager.shared.schoolColorMap[name, default: .accentColor]

@@ -11,28 +11,27 @@ struct EquipDetailView: View {
     let equip: EquipDTO
     
     @State private var diamondAttributeLevels: [Int]
+    private let diamondAttributeCount: Int
 
     init(equip: EquipDTO) {
         self.equip = equip
-        self.diamondAttributeLevels = Array(repeating: 6, count: equip.diamondAttributes.count)
+        self.diamondAttributeCount = equip.diamondAttributes.count
+        self.diamondAttributeLevels = Array(repeating: 6, count: diamondAttributeCount)
     }
     
     var body: some View {
-        VStack(alignment: .leading, spacing: 10) {
+        VStack(alignment: .leading, spacing: 4) {
             header
             baseInfoView
             magicInfoView
+            embedding
             
-            VStack(alignment: .leading) {
-                ForEach(equip.diamondAttributes) { da in
-                    Text("[6]镶嵌孔：\(da.label) \(Int(da.embedValue(level: 6)))")
-                        .foregroundColor(.theme.textGreen)
-                }
-            }
-            
+            requireTypeView
             
             Spacer()
         }
+        .foregroundColor(.white)
+        .font(.headline)
         .padding()
         .background(Color.theme.panel)
     }
@@ -43,6 +42,8 @@ struct EquipDetailView: View {
             HStack {
                 Text(equip.name)
                     .foregroundColor(equip.quality.color)
+                    .font(.title3)
+                    .bold()
                 HStack {
                     HStack(spacing: 0) {
                         ForEach(1 ... equip.maxStrengthLevel, id: \.self) { l in
@@ -70,82 +71,92 @@ struct EquipDetailView: View {
                 }
             }
             .foregroundColor(.white)
-            .font(.title2)
         }
-        .font(.title3)
     }
     
     // MARK: 武器伤害
+    @ViewBuilder
     private var baseInfoView: some View {
-        var attackBase: Int = 0
-        var attackRange: Int = 0
-        var attackSpeed: Double = 0
-        if let base3Type = equip.baseTypes[2] {
-            if base3Type.isBase {
-                attackBase = base3Type.baseMin
-            } else if base3Type.isRand, let base2Type = equip.baseTypes[1] {
-                attackBase = base2Type.baseMin
-                attackRange = base3Type.baseMin
-            } else if base3Type.isSpeed, let base1Type = equip.baseTypes[0], let base2Type = equip.baseTypes[1] {
-                attackBase = base1Type.baseMin
-                attackRange = base2Type.baseMin
-                attackSpeed = Double(base3Type.baseMin) / 16
-            }
-        }
-        return VStack {
-            if equip.isWepaon {
-                if let base3Type = equip.baseTypes[2] {
-                    HStack(spacing: 0) {
-                        Text(base3Type.weaponDecs + " \(String(attackBase))")
-                        if base3Type.isRand || base3Type.isSpeed {
-                            Text(" - \(String(attackBase + attackRange))")
-                        }
-                        Spacer()
-                        if base3Type.isSpeed {
-                            Text("速度 \(String(format:"%.1f", attackSpeed))")
-                        }
+        if equip.isWepaon {
+            if let base3Type = equip.baseTypes[2] {
+                HStack(spacing: 0) {
+                    Text(base3Type.weaponDecs + " \(String(equip.attackBase))")
+                    if base3Type.isRand || base3Type.isSpeed {
+                        Text(" - \(String(equip.attackBase + equip.attackRange))")
                     }
+                    Spacer()
                     if base3Type.isSpeed {
-                        let apsDesc = "每秒伤害 \(String(format: "%.1f", Double(attackBase + attackRange / 2) / attackSpeed).replacingOccurrences(of: "\\.0$", with: "", options: .regularExpression))"
-                        HStack {
-                            Text(apsDesc)
-                            Spacer()
-                        }
+                        Text("速度 \(String(format:"%.1f", equip.attackSpeed))")
+                    }
+                }
+                if base3Type.isSpeed {
+                    let apsDesc = "每秒伤害 \(String(format: "%.1f", Double(equip.attackBase + equip.attackRange / 2) / equip.attackSpeed).replacingOccurrences(of: "\\.0$", with: "", options: .regularExpression))"
+                    HStack {
+                        Text(apsDesc)
+                        Spacer()
                     }
                 }
             }
         }
-        .foregroundColor(.white)
-        .font(.headline)
     }
     
+    @ViewBuilder
     private var magicInfoView: some View {
-        VStack {
-            ForEach(0..<equip.magicTypes.count, id: \.hashValue) { i in
-                if let magic = equip.magicTypes[i] {
-                    HStack(spacing: 0) {
-                        if magic.label.isEmpty {
-                            if i < 2 {
-                                Text(magic.briefDesc)
-                                    .foregroundColor(.white)
-                                    .bold()
-                            } else {
-                                Text(magic.attrDesc)
-                                    .bold()
-                                    .foregroundColor(.theme.textGreen)
-                            }
-                            Text(" (+\(magic.score(level: equip.maxStrengthLevel / 2, maxLevel: equip.maxStrengthLevel)))")
+        ForEach(0..<equip.magicTypes.count, id: \.hashValue) { i in
+            if let magic = equip.magicTypes[i] {
+                HStack(spacing: 0) {
+                    if magic.label.isEmpty {
+                        if i < 2 {
+                            Text(magic.briefDesc)
+                                .foregroundColor(.white)
                                 .bold()
-                                .foregroundColor(.theme.strength)
                         } else {
-                            JX3GameText(text: magic.label, color: .theme.gold)
+                            Text(magic.attrDesc)
+                                .bold()
+                                .foregroundColor(.theme.textGreen)
                         }
-                        Spacer()
+                        Text(" (+\(magic.score(level: equip.maxStrengthLevel / 2, maxLevel: equip.maxStrengthLevel)))")
+                            .bold()
+                            .foregroundColor(.theme.strength)
+                    } else {
+                        JX3GameText(text: magic.label, color: EquipQuality._5.color)
                     }
+                    Spacer()
                 }
             }
         }
-        .font(.headline)
+    }
+    
+    @ViewBuilder
+    private var embedding: some View {
+        ForEach(0..<diamondAttributeCount, id: \.self) { index in
+            let da = equip.diamondAttributes[index]
+            let level = diamondAttributeLevels[index]
+            HStack(spacing: 8) {
+                Image("Embedding\(level)")
+                    .resizable()
+                    .frame(width: 24, height: 24)
+                Text("镶嵌孔：\(da.label) \(Int(da.embedValue(level: level)))")
+                    .foregroundColor(.theme.textGreen)
+                Spacer()
+            }
+        }
+    }
+    
+    @ViewBuilder
+    var requireTypeView: some View {
+        if let requireLevel = equip.requireLevel {
+            Text("需求等级 \(requireLevel)")
+        }
+        if let requireSchool = equip.requireSchool {
+            Text("需要门派 \(requireSchool.name ?? "")")
+        }
+        if let requireGender = equip.requireGender {
+            Text("仅 \(requireGender ? "男性" : "女性") 可穿戴")
+        }
+        if let camp = equip.requireCamp {
+            Text("需要 \(camp)")
+        }
     }
 }
 
