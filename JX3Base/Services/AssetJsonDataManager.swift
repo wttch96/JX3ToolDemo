@@ -61,7 +61,7 @@ class AssetJsonDataManager {
         
         logger("加载 school.json 成功！")
         return schoolMap.map { (key: String, value: School) in
-            return School(id: value.id, name: key)
+            return School(id: value.id, name: key, forceId: value.forceId)
         }
         .sorted(by: { s1, s2 in
             s1.id < s2.id

@@ -10,14 +10,30 @@ import SwiftUI
 struct HomeView: View {
     var body: some View {
         NavigationStack {
-            
-            Color.gray
-                .mask({
-                    Image("1")
-                        .resizable()
-                        .scaledToFit()
-                })
-                .frame(width: 120, height: 120)
+            NavigationLink(destination: {
+                ServerStateView()
+            }, label: {
+                VStack {
+                    Text("服务器状态")
+                        .font(.title)
+                        .padding()
+                        .frame(maxWidth: .infinity)
+                        .background(Color.blue)
+                        .cornerRadius(14)
+                }
+            })
+            NavigationLink(destination: {
+                TalentPicker()
+            }, label: {
+                VStack {
+                    Text("奇穴模拟")
+                        .font(.title)
+                        .padding()
+                        .frame(maxWidth: .infinity)
+                        .background(Color.blue)
+                        .cornerRadius(14)
+                }
+            })
             NavigationLink(destination: {
                 EquipHomeView()
             }, label: {

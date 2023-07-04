@@ -13,6 +13,8 @@ struct EquipSelectItemView: View {
     
     @Binding var selectedEquip: EquipDTO?
     
+    private let size: CGFloat = 54
+    
     var body: some View {
         NavigationLink(destination: {
             EquipPickerView(kungfu: kungfu, position: position, selected: $selectedEquip)
@@ -20,22 +22,28 @@ struct EquipSelectItemView: View {
             VStack {
                 if let equip = self.selectedEquip,
                    let iconId = Int(equip.iconId ?? "0") {
-                    VStack {
+                    ZStack {
+                        Color.black
                         JX3BoxIcon(id: iconId)
-                            .frame(width: 48, height: 48)
+                        RoundedRectangle(cornerRadius: 2)
+                            .stroke(equip.quality.color.opacity(0.8), lineWidth: 3)
+                            .padding(3)
                     }
+                    .frame(width: size, height: size)
                     Text(equip.name)
-                        .foregroundColor(.black)
+                        .frame(maxWidth: 60)
+                        .foregroundColor(.gray)
                         .font(.caption)
                 } else{
                     Image(position.label)
                         .resizable()
                         .scaledToFit()
-                        .frame(width: 48, height: 48)
+                        .frame(width: size, height: size)
                     Text(position.label)
                         .foregroundColor(.black)
                         .font(.caption)
                 }
+                Spacer()
             }
         })
     }

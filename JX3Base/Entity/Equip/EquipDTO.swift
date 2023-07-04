@@ -214,6 +214,10 @@ struct EquipDTO: Decodable, Identifiable {
     let diamondAttributes: [DiamondAttribute]
     // 装备需求
     private let requireTypes: [EquipRequireType]
+    // 最大耐久度
+    let maxDurability: String?
+    // 来源
+    let getType: String?
     
     // 一些和武器攻击相关的属性
     var attackBase: Int = 0
@@ -236,6 +240,8 @@ struct EquipDTO: Decodable, Identifiable {
         self.skillId = try container.decodeIfPresent(String.self, forKey: .skillId)
         self.detailTypeValue = try container.decode(String.self, forKey: .detailTypeValue)
         self.subType = try container.decode(EquipSubType.self, forKey: .subType)
+        self.maxDurability = try container.decodeIfPresent(String.self, forKey: .maxDurability)
+        self.getType = try container.decodeIfPresent(String.self, forKey: .getType)
         
         self.baseTypes = try EquipDTO.loadBaseTypes(from: decoder)
         self.magicTypes = try EquipDTO.loadMagicTypes(from: decoder)
@@ -271,11 +277,13 @@ struct EquipDTO: Decodable, Identifiable {
         case skillId = "SkillID"
         case subType = "SubType"
         case detailTypeValue = "DetailType"
+        case maxDurability = "MaxDurability"
+        case getType = "GetType"
     }
 }
 
 
-// MARK: 扩展的判断属性
+// MARK: 扩展属性
 extension EquipDTO {
     // 是否为精简
     var isSimp: Bool {
@@ -302,7 +310,7 @@ extension EquipDTO {
     }
 }
 
-// 装备需求
+// MARK: 装备需求
 extension EquipDTO {
     // 需求等级
     var requireLevel: Int? {
@@ -314,7 +322,7 @@ extension EquipDTO {
     // 需求门派
     var requireSchool: School? {
         if let rt = requireTypes.first( where: { $0.type == "6" }) {
-            return School(id: Int(rt.value))
+            return School(forceId: Int(rt.value))
         }
         return nil
     }
@@ -341,8 +349,19 @@ extension EquipDTO {
         return nil
     }
 }
+// MARK: 装分
+extension EquipDTO {
+    // 装备基础装分
+    var equipScore: Int {
+        return ScoreUtil.getEquipScore(level: level, quality: quality.rawValue, position: subType.rawValue)
+    }
+    // 精炼品质分
+    func strengthLevelScore(strengthLevel: Int) -> Int {
+        return ScoreUtil.getGsStrengthScore(base: level, strengthLevel: strengthLevel)
+    }
+}
 
-// MARK: 一些构造工具方法
+// MARK: 构造工具方法
 extension EquipDTO {
     // 从 json 中加载武器攻击属性
     private static func loadBaseTypes(from decoder: Decoder) throws -> [EquipBaseType?] {

@@ -35,7 +35,7 @@ import Foundation
 //    return Math.floor(Math.floor(base) * coefficients);
 //}
 
-struct DiamondAttribute: Decodable, Identifiable {
+struct DiamondAttribute: Decodable, Identifiable, Hashable {
     let attr: String
     let base: Float
     let id: Int
@@ -51,6 +51,14 @@ struct DiamondAttribute: Decodable, Identifiable {
             return nil
         }
     }
+    
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(id)
+    }
+    
+    var hashValue: Int {
+        return id.hashValue
+    }
 }
 
 
@@ -58,6 +66,11 @@ extension DiamondAttribute {
     var label: String {
         return AssetJsonDataManager.shared.attrDescMap[attr] ?? ""
     }
+    
+    var briefLabel: String {
+        return AssetJsonDataManager.shared.attrBriefDescMap[attr] ?? ""
+    }
+    
     func embedValue(level: Int, client: String = "std") -> Float {
         var coefficients: Float = 0.0
         let level = Float(level)

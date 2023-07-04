@@ -40,7 +40,13 @@ extension EquipMagicType {
         return (AssetJsonDataManager.shared.attrBriefDescMap[attr[0] ?? ""] ?? "nil") + "+\(min)"
     }
     
+    /// 获取装备属性的强化分数
+    /// - Parameters:
+    ///   - level: 强化等级
+    ///   - maxLevel: 最大强化等级
+    /// - Returns: 装备属性的强化分数
     func score(level: Int, maxLevel: Int) -> Int {
-        return getStrengthScore(base: min, strengthLevel: maxLevel, equipLevel: level)
+        return ScoreUtil.getStrengthScore(base: min, strengthLevel: level, equipLevel: maxLevel)
     }
 }
+ 

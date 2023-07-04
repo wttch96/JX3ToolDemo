@@ -214,6 +214,10 @@
 		49DBCE1A2A2623B600C3BA2E /* KungfuPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DBCE182A2623B600C3BA2E /* KungfuPicker.swift */; };
 		49DBCE1C2A2625F800C3BA2E /* WebCacheableImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DBCE1B2A2625F800C3BA2E /* WebCacheableImage.swift */; };
 		49DBCE1D2A2625F800C3BA2E /* WebCacheableImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DBCE1B2A2625F800C3BA2E /* WebCacheableImage.swift */; };
+		49DDC4B42A532B03009F06A4 /* StarMarkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DDC4B32A532B03009F06A4 /* StarMarkView.swift */; };
+		49DDC4B52A532B03009F06A4 /* StarMarkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DDC4B32A532B03009F06A4 /* StarMarkView.swift */; };
+		49DDC4B72A541496009F06A4 /* NumberUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DDC4B62A541496009F06A4 /* NumberUtil.swift */; };
+		49DDC4B82A541496009F06A4 /* NumberUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DDC4B62A541496009F06A4 /* NumberUtil.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -385,6 +389,8 @@
 		499F5AD72A304C9C00A3C588 /* colors.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = colors.json; sourceTree = "<group>"; };
 		49DBCE182A2623B600C3BA2E /* KungfuPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KungfuPicker.swift; sourceTree = "<group>"; };
 		49DBCE1B2A2625F800C3BA2E /* WebCacheableImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebCacheableImage.swift; sourceTree = "<group>"; };
+		49DDC4B32A532B03009F06A4 /* StarMarkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarMarkView.swift; sourceTree = "<group>"; };
+		49DDC4B62A541496009F06A4 /* NumberUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberUtil.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -677,6 +683,7 @@
 				4992D1F32A248966007EEFC2 /* Logger.swift */,
 				497467C62A261AC500275A09 /* BundleUtil.swift */,
 				49504DA42A44BB5D00B93E90 /* EquipScoreUtil.swift */,
+				49DDC4B62A541496009F06A4 /* NumberUtil.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -753,6 +760,7 @@
 				499F5ACB2A2F9D9800A3C588 /* CornersRectangle.swift */,
 				495FD65A2A36FC5800A17FB0 /* PlainToggleStyle.swift */,
 				49504D7C2A41C73E00B93E90 /* CheckBoxToggleStyle.swift */,
+				49DDC4B32A532B03009F06A4 /* StarMarkView.swift */,
 			);
 			path = Component;
 			sourceTree = "<group>";
@@ -1144,6 +1152,7 @@
 				4992D2122A24F2F1007EEFC2 /* LikedIconLibraryView.swift in Sources */,
 				49504D7D2A41C73E00B93E90 /* CheckBoxToggleStyle.swift in Sources */,
 				495410DB2A276EF800AA6293 /* Talent.swift in Sources */,
+				49DDC4B72A541496009F06A4 /* NumberUtil.swift in Sources */,
 				4992D1F02A248390007EEFC2 /* LocalFileManager.swift in Sources */,
 				4992D1F82A249C09007EEFC2 /* ImageDownloadService.swift in Sources */,
 				49504D802A41CBA300B93E90 /* PvType.swift in Sources */,
@@ -1179,6 +1188,7 @@
 				4933543F2A2611260044289B /* TalentVersionPicker.swift in Sources */,
 				4992D2012A24AFB6007EEFC2 /* JX3BoxIcon.swift in Sources */,
 				49DBCE1C2A2625F800C3BA2E /* WebCacheableImage.swift in Sources */,
+				49DDC4B42A532B03009F06A4 /* StarMarkView.swift in Sources */,
 				495FD65F2A3B675200A17FB0 /* DutyType.swift in Sources */,
 				491DB8342A26667700A40051 /* KungfuIcon.swift in Sources */,
 				497467C42A2619DE00275A09 /* Mount.swift in Sources */,
@@ -1265,10 +1275,12 @@
 				49DBCE172A2622A700C3BA2E /* AutoResizeLazyVGrid.swift in Sources */,
 				493023692A25D423006E81E4 /* TalentService.swift in Sources */,
 				49504DA62A44BB5D00B93E90 /* EquipScoreUtil.swift in Sources */,
+				49DDC4B82A541496009F06A4 /* NumberUtil.swift in Sources */,
 				499F5ACA2A2F954200A3C588 /* HomeView.swift in Sources */,
 				4992D2132A24F2F1007EEFC2 /* LikedIconLibraryView.swift in Sources */,
 				49504D992A42D42C00B93E90 /* CustomKey.swift in Sources */,
 				499F5ABC2A2B468200A3C588 /* TransitionExtension.swift in Sources */,
+				49DDC4B52A532B03009F06A4 /* StarMarkView.swift in Sources */,
 				49DBCE1D2A2625F800C3BA2E /* WebCacheableImage.swift in Sources */,
 				49504D932A42CED200B93E90 /* EquipSubType.swift in Sources */,
 				4965BA492A2616EF001D7E1B /* TalentPicker.swift in Sources */,

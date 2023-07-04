@@ -9,16 +9,9 @@ import SwiftUI
 
 struct EquipDetailView: View {
     let equip: EquipDTO
-    
-    @State private var diamondAttributeLevels: [Int]
-    private let diamondAttributeCount: Int
+    let strengthLevel: Int
+    let diamondAttributeLevels: [DiamondAttribute: Int]
 
-    init(equip: EquipDTO) {
-        self.equip = equip
-        self.diamondAttributeCount = equip.diamondAttributes.count
-        self.diamondAttributeLevels = Array(repeating: 6, count: diamondAttributeCount)
-    }
-    
     var body: some View {
         VStack(alignment: .leading, spacing: 4) {
             header
@@ -28,7 +21,24 @@ struct EquipDetailView: View {
             
             requireTypeView
             
-            Spacer()
+            if let maxDurability = equip.maxDurability, maxDurability != "0" {
+                Text("耐久度：\(maxDurability)/\(maxDurability)")
+            }
+            HStack(spacing: 0) {
+                Text("品质等级：\(equip.level)")
+                    .foregroundColor(.yellow)
+                Text("(+\(equip.strengthLevelScore(strengthLevel: strengthLevel)))")
+                    .foregroundColor(.theme.strength)
+            }
+            HStack(spacing: 0) {
+                Text("装备分数：\(equip.equipScore)")
+                    .foregroundColor(EquipQuality._5.color)
+                Text("(+\(equip.strengthLevelScore(strengthLevel: strengthLevel)))")
+                    .foregroundColor(.theme.strength)
+            }
+            if let getType = equip.getType {
+                Text("装备来源：\(getType)")
+            }
         }
         .foregroundColor(.white)
         .font(.headline)
@@ -42,26 +52,22 @@ struct EquipDetailView: View {
             HStack {
                 Text(equip.name)
                     .foregroundColor(equip.quality.color)
-                    .font(.title3)
                     .bold()
-                HStack {
-                    HStack(spacing: 0) {
-                        ForEach(1 ... equip.maxStrengthLevel, id: \.self) { l in
-                            if l <= equip.maxStrengthLevel / 2 {
-                                Image(systemName: "star.fill")
-                                    .foregroundColor(.yellow)
-                            } else {
-                                Image(systemName: "star")
-                            }
+                HStack(spacing: 0) {
+                    ForEach(1 ... equip.maxStrengthLevel, id: \.self) { l in
+                        if l <= strengthLevel {
+                            Image(systemName: "star.fill")
+                                .foregroundColor(.yellow)
+                        } else {
+                            Image(systemName: "star")
                         }
                     }
-                    .font(.caption)
-                    
-                    Spacer()
-                    
-                    Text("精炼等级：\(equip.maxStrengthLevel/2)/\(equip.maxStrengthLevel)")
-                        .foregroundColor(.theme.strength)
                 }
+                .font(.caption)
+                
+                Spacer()
+//                Text("精炼等级：\(strengthLevel)/\(equip.maxStrengthLevel)")
+//                    .foregroundColor(.theme.strength)
             }
             HStack {
                 Text(equip.subType.name)
@@ -108,14 +114,11 @@ struct EquipDetailView: View {
                     if magic.isPrimaryAttr {
                         Text(magic.briefDesc)
                             .foregroundColor(.white)
-                            .bold()
                     } else {
                         Text(magic.attrDesc)
-                            .bold()
                             .foregroundColor(.theme.textGreen)
                     }
-                    Text(" (+\(magic.score(level: equip.maxStrengthLevel / 2, maxLevel: equip.maxStrengthLevel)))")
-                        .bold()
+                    Text(" (+\(magic.score(level: strengthLevel, maxLevel: equip.maxStrengthLevel)))")
                         .foregroundColor(.theme.strength)
                 } else {
                     JX3GameText(text: magic.label, color: EquipQuality._5.color)
@@ -127,15 +130,13 @@ struct EquipDetailView: View {
     
     @ViewBuilder
     private var embedding: some View {
-        ForEach(0..<diamondAttributeCount, id: \.self) { index in
-            let da = equip.diamondAttributes[index]
-            let level = diamondAttributeLevels[index]
+        ForEach(equip.diamondAttributes) { attr in
             HStack(spacing: 8) {
-                Image("Embedding\(level)")
+                Image("Embedding\(diamondAttributeLevels[attr, default: 0])")
                     .resizable()
                     .frame(width: 24, height: 24)
-                Text("镶嵌孔：\(da.label) \(Int(da.embedValue(level: level)))")
-                    .foregroundColor(.theme.textGreen)
+                Text("镶嵌孔：\(attr.label) \(Int(attr.embedValue(level: diamondAttributeLevels[attr] ?? 0)))")
+                    .foregroundColor( diamondAttributeLevels[attr, default: 0] == 0 ? .gray : .theme.textGreen)
                 Spacer()
             }
         }
@@ -160,6 +161,6 @@ struct EquipDetailView: View {
 
 struct EquipDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        EquipDetailView(equip: dev.weapon1)
+        EquipDetailView(equip: dev.weapon1, strengthLevel: 6, diamondAttributeLevels: [:])
     }
 }

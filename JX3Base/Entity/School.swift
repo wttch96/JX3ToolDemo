@@ -12,7 +12,7 @@ import SwiftUI
 struct School: Identifiable, Hashable, Equatable, Comparable, Decodable {
     let id: Int
     let name: String?
-    
+    let forceId: Int
     
     var hashValue: Int {
         return id.hashValue
@@ -34,12 +34,21 @@ struct School: Identifiable, Hashable, Equatable, Comparable, Decodable {
     enum CodingKeys: String, CodingKey {
         case id = "school_id"
         case name
+        case forceId = "force_id"
     }
 }
 
 extension School {
     init?(id: Int?) {
         if let school = AssetJsonDataManager.shared.schools.first(where: { $0.id == id }) {
+            self = school
+        } else {
+            return nil
+        }
+    }
+    
+    init?(forceId: Int?) {
+        if let school = AssetJsonDataManager.shared.schools.first(where: { $0.forceId == forceId }) {
             self = school
         } else {
             return nil

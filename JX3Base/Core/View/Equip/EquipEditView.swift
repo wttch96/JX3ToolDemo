@@ -17,7 +17,7 @@ struct EquipEditView: View {
             HStack {
                 
             }
-            .frame(height: 100)
+            .frame(height: 60)
             ZStack {
                 VStack(spacing: 10) {
                     HStack {
@@ -59,7 +59,7 @@ struct EquipEditView: View {
                     }
                     Spacer()
                 }
-                .padding()
+                .padding(.horizontal, 24)
             }
         }
         .navigationTitle("配装器")
