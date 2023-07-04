@@ -208,7 +208,7 @@ struct EquipPickerView: View {
                         titleView(title: "五行石镶嵌") {
                             ForEach(equip.diamondAttributes) { attr in
                                 Text("\(attr.briefLabel)")
-                                Image("Embedding\(embeddingStone[attr] ?? 6)")
+                                Image("Embedding\(embeddingStone[attr, default: 0])")
                                     .resizable()
                                     .frame(width: 36, height: 36)
                             }
@@ -345,24 +345,26 @@ struct EquipPickerView: View {
                         }
                 }
             }
-            .padding(.vertical, 24)
-            if let equip = selected {
-                ForEach(equip.diamondAttributes, content: { attr in
-                    VStack {
-                        Text("第\(attr.id)孔位: \(attr.label) \(Int(attr.embedValue(level: embeddingStone[attr] ?? 6)))")
-                        LazyVGrid(columns: Array(repeating: GridItem(.flexible()), count: 5), content: {
-                            ForEach(0..<9, id: \.self, content: { stoneLevel in
-                                Image("Embedding\(stoneLevel)")
-                                    .opacity(embeddingStone[attr] == stoneLevel ? 1 : 0.2)
-                                    .onTapGesture {
-                                        embeddingStone[attr] = stoneLevel
-                                    }
+            .padding(.vertical, 16)
+            ScrollView {
+                if let equip = selected {
+                    ForEach(equip.diamondAttributes, content: { attr in
+                        VStack {
+                            Text("第\(attr.id)孔位: \(attr.label) \(Int(attr.embedValue(level: embeddingStone[attr] ?? 6)))")
+                            LazyVGrid(columns: Array(repeating: GridItem(.flexible()), count: 5), content: {
+                                ForEach(0..<9, id: \.self, content: { stoneLevel in
+                                    Image("Embedding\(stoneLevel)")
+                                        .opacity(embeddingStone[attr] == stoneLevel ? 1 : 0.2)
+                                        .onTapGesture {
+                                            embeddingStone[attr] = stoneLevel
+                                        }
+                                })
                             })
-                        })
-                    }
-                })
+                        }
+                    })
+                }
+                Spacer()
             }
-            Spacer()
         }
         .presentationDetents([.medium])
     }

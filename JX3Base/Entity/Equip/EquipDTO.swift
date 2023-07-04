@@ -204,7 +204,7 @@ struct EquipDTO: Decodable, Identifiable {
     let skillId: String?
     
     // 基础属性，主要是攻击力
-    let baseTypes: [EquipBaseType?]
+    let baseTypes: [EquipBaseType]
     // 装备的其他属性
     let magicTypes : [EquipMagicType]
     
@@ -218,11 +218,6 @@ struct EquipDTO: Decodable, Identifiable {
     let maxDurability: String?
     // 来源
     let getType: String?
-    
-    // 一些和武器攻击相关的属性
-    var attackBase: Int = 0
-    var attackRange: Int = 0
-    var attackSpeed: Double = 0
     
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
@@ -247,19 +242,6 @@ struct EquipDTO: Decodable, Identifiable {
         self.magicTypes = try EquipDTO.loadMagicTypes(from: decoder)
         self.diamondAttributes = try EquipDTO.loadDiamondAttribute(from: decoder)
         self.requireTypes = try EquipDTO.loadRequireTypes(from: decoder)
-        
-        if let base3Type = baseTypes[2] {
-            if base3Type.isBase {
-                attackBase = base3Type.baseMin
-            } else if base3Type.isRand, let base2Type = baseTypes[1] {
-                attackBase = base2Type.baseMin
-                attackRange = base3Type.baseMin
-            } else if base3Type.isSpeed, let base1Type = baseTypes[0], let base2Type = baseTypes[1] {
-                attackBase = base1Type.baseMin
-                attackRange = base2Type.baseMin
-                attackSpeed = Double(base3Type.baseMin) / 16
-            }
-        }
     }
     
     enum CodingKeys: String, CodingKey {
@@ -307,6 +289,22 @@ extension EquipDTO {
     // 武器描述
     var detailType: String {
         return AssetJsonDataManager.shared.weaponType[detailTypeValue ?? "", default: "未知武器: \(detailTypeValue ?? "")"]
+    }
+}
+
+// MARK: 武器伤害计算
+extension EquipDTO {
+    // 获取武器攻击速度属性
+    var weaponSpeed: EquipBaseType? {
+        return baseTypes.first(where: { $0.isSpeed })
+    }
+    // 获取武器攻击力范围属性
+    var weaponRand: EquipBaseType? {
+        return baseTypes.first { $0.isRand }
+    }
+    // 获取武器基础攻击力属性
+    var weaponBase: EquipBaseType? {
+        return baseTypes.first(where: { $0.isBase })
     }
 }
 
@@ -364,10 +362,12 @@ extension EquipDTO {
 // MARK: 构造工具方法
 extension EquipDTO {
     // 从 json 中加载武器攻击属性
-    private static func loadBaseTypes(from decoder: Decoder) throws -> [EquipBaseType?] {
-        var baseTypes: [EquipBaseType?] = Array(repeating: nil, count: 6)
-        for i in 0..<baseTypes.count {
-            baseTypes[i] = try EquipBaseType(decoder: decoder, index: i + 1)
+    private static func loadBaseTypes(from decoder: Decoder) throws -> [EquipBaseType] {
+        var baseTypes: [EquipBaseType] = []
+        for i in 0..<6 {
+            if let type =  try EquipBaseType(decoder: decoder, index: i + 1) {
+                baseTypes.append(type)
+            }
         }
         return baseTypes
     }

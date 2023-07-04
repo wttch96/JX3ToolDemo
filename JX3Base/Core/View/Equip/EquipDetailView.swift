@@ -84,24 +84,33 @@ struct EquipDetailView: View {
     @ViewBuilder
     private var baseInfoView: some View {
         if equip.isWepaon {
-            if let base3Type = equip.baseTypes[2] {
-                HStack(spacing: 0) {
-                    Text(base3Type.weaponDecs + " \(String(equip.attackBase))")
-                    if base3Type.isRand || base3Type.isSpeed {
-                        Text(" - \(String(equip.attackBase + equip.attackRange))")
+            HStack(spacing: 0) {
+                if let weaponBase = equip.weaponBase {
+                    // 攻击力
+                    Text(weaponBase.weaponDecs + " \(weaponBase.baseMin)")
+                    if let weaponRand = equip.weaponRand {
+                        // 攻击距离
+                        Text(" - \(String(weaponBase.baseMin + weaponRand.baseMin))")
+                        if let weaponSpeed = equip.weaponSpeed {
+                            // 攻速
+                            Spacer()
+                            Text("速度 \(String(format:"%.1f", Double(weaponSpeed.baseMin) / 16))")
+                        }
                     }
+                }
+            }
+            if let weaponBase = equip.weaponBase, let weaponRand = equip.weaponRand, let weaponSpeed = equip.weaponSpeed {
+                let attackSpeed = Double(weaponSpeed.baseMin) / 16
+                let apsDesc = "每秒伤害 \(String(format: "%.1f", Double(weaponBase.baseMin + weaponRand.baseMin / 2) / attackSpeed).replacingOccurrences(of: "\\.0$", with: "", options: .regularExpression))"
+                HStack {
+                    Text(apsDesc)
                     Spacer()
-                    if base3Type.isSpeed {
-                        Text("速度 \(String(format:"%.1f", equip.attackSpeed))")
-                    }
                 }
-                if base3Type.isSpeed {
-                    let apsDesc = "每秒伤害 \(String(format: "%.1f", Double(equip.attackBase + equip.attackRange / 2) / equip.attackSpeed).replacingOccurrences(of: "\\.0$", with: "", options: .regularExpression))"
-                    HStack {
-                        Text(apsDesc)
-                        Spacer()
-                    }
-                }
+            }
+            // else 没有攻击属性
+        } else {
+            ForEach(equip.baseTypes) { type in
+                Text(type.labelDesc)
             }
         }
     }
@@ -132,9 +141,17 @@ struct EquipDetailView: View {
     private var embedding: some View {
         ForEach(equip.diamondAttributes) { attr in
             HStack(spacing: 8) {
-                Image("Embedding\(diamondAttributeLevels[attr, default: 0])")
-                    .resizable()
-                    .frame(width: 24, height: 24)
+                let level = diamondAttributeLevels[attr, default: 0]
+                if level == 0 {
+                    Image(systemName: "square")
+                        .resizable()
+                        .frame(width: 24, height: 24)
+                        .foregroundColor(.gray)
+                } else {
+                    Image("Embedding\(level)")
+                        .resizable()
+                        .frame(width: 24, height: 24)
+                }
                 Text("镶嵌孔：\(attr.label) \(Int(attr.embedValue(level: diamondAttributeLevels[attr] ?? 0)))")
                     .foregroundColor( diamondAttributeLevels[attr, default: 0] == 0 ? .gray : .theme.textGreen)
                 Spacer()
@@ -161,6 +178,11 @@ struct EquipDetailView: View {
 
 struct EquipDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        EquipDetailView(equip: dev.weapon1, strengthLevel: 6, diamondAttributeLevels: [:])
+        ScrollView {
+            VStack {
+                EquipDetailView(equip: dev.weapon1, strengthLevel: 6, diamondAttributeLevels: [:])
+                EquipDetailView(equip: dev.equip1, strengthLevel: 6, diamondAttributeLevels: [:])
+            }
+        }
     }
 }

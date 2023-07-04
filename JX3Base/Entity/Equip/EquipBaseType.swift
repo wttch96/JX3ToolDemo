@@ -7,23 +7,32 @@
 
 import Foundation
 
-struct EquipBaseType {
-    let rawValue: String?
-    private let baseMinValue: String?
-    private let baseMaxValue: String?
+struct EquipBaseType: Identifiable {
+    let rawValue: String
+    private let baseMinValue: String
+    private let baseMaxValue: String
     
-    init(decoder: Decoder, index: Int) throws {
+    init?(decoder: Decoder, index: Int) throws {
         let container = try decoder.container(keyedBy: CustomKey.self)
-        self.rawValue = try container.decodeIfPresent(String.self, forKey: CustomKey(stringValue: "Base\(index)Type"))
-        self.baseMinValue = try container.decodeIfPresent(String.self, forKey: CustomKey(stringValue: "Base\(index)Min"))
-        self.baseMaxValue = try container.decodeIfPresent(String.self, forKey: CustomKey(stringValue: "Base\(index)Max"))
+        if let rawValue = try container.decodeIfPresent(String.self, forKey: CustomKey(stringValue: "Base\(index)Type")),
+           let baseMinValue = try container.decodeIfPresent(String.self, forKey: CustomKey(stringValue: "Base\(index)Min")),
+           let baseMaxValue = try container.decodeIfPresent(String.self, forKey: CustomKey(stringValue: "Base\(index)Max")) {
+            self.rawValue = rawValue
+            self.baseMinValue = baseMinValue
+            self.baseMaxValue = baseMaxValue
+        } else {
+            return nil
+        }
+    }
+    
+    var id: String {
+        return rawValue
     }
 }
 
 extension EquipBaseType {
-    var label: String? { return rawValue }
-    var baseMin: Int { baseMinValue.flatMap{ Int($0) } ?? 0 }
-    var baseMax: Int { baseMinValue.flatMap{ Int($0) } ?? 0 }
+    var baseMin: Int { Int(baseMinValue) ?? 0 }
+    var baseMax: Int { Int(baseMaxValue) ?? 0 }
     
     var weaponDecs : String {
         return "\(isMelleWeaponSpeed ? "近身" : "远程")武器伤害提高 "
@@ -48,4 +57,9 @@ extension EquipBaseType {
     var isRandeWeaponSpeed : Bool {
         return "atRangeWeaponAttackSpeedBase" == rawValue
     }
+    // 简要描述
+    var labelDesc : String {
+        return (AssetJsonDataManager.shared.attrDescMap[rawValue, default: "nil"]) + "+\(baseMin)"
+    }
+    
 }

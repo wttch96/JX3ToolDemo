@@ -33,7 +33,7 @@ extension EquipMagicType {
     }
     
     var attrDesc : String {
-        return AssetJsonDataManager.shared.attrDescMap[attr[0] ?? ""] ?? "nil" + "\(min)"
+        return (AssetJsonDataManager.shared.attrDescMap[attr[0] ?? ""] ?? "nil") + "\(min)"
     }
     
     var briefDesc : String {
