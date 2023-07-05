@@ -220,6 +220,12 @@
 		49DDC4B82A541496009F06A4 /* NumberUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DDC4B62A541496009F06A4 /* NumberUtil.swift */; };
 		49FBA5A22A55D0FB0031F9B5 /* ClientType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FBA5A12A55D0FB0031F9B5 /* ClientType.swift */; };
 		49FBA5A32A55D0FB0031F9B5 /* ClientType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FBA5A12A55D0FB0031F9B5 /* ClientType.swift */; };
+		49FBA5A52A55E09E0031F9B5 /* EnchantService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FBA5A42A55E09E0031F9B5 /* EnchantService.swift */; };
+		49FBA5A62A55E09E0031F9B5 /* EnchantService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FBA5A42A55E09E0031F9B5 /* EnchantService.swift */; };
+		49FBA5A82A55E1E50031F9B5 /* Enchant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FBA5A72A55E1E50031F9B5 /* Enchant.swift */; };
+		49FBA5A92A55E1E50031F9B5 /* Enchant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FBA5A72A55E1E50031F9B5 /* Enchant.swift */; };
+		49FBA5AB2A55E3F30031F9B5 /* EquipEnchantPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FBA5AA2A55E3F20031F9B5 /* EquipEnchantPicker.swift */; };
+		49FBA5AC2A55E3F30031F9B5 /* EquipEnchantPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FBA5AA2A55E3F20031F9B5 /* EquipEnchantPicker.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -394,6 +400,9 @@
 		49DDC4B32A532B03009F06A4 /* StarMarkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarMarkView.swift; sourceTree = "<group>"; };
 		49DDC4B62A541496009F06A4 /* NumberUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberUtil.swift; sourceTree = "<group>"; };
 		49FBA5A12A55D0FB0031F9B5 /* ClientType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientType.swift; sourceTree = "<group>"; };
+		49FBA5A42A55E09E0031F9B5 /* EnchantService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnchantService.swift; sourceTree = "<group>"; };
+		49FBA5A72A55E1E50031F9B5 /* Enchant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enchant.swift; sourceTree = "<group>"; };
+		49FBA5AA2A55E3F20031F9B5 /* EquipEnchantPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipEnchantPicker.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -638,6 +647,7 @@
 				49536A212A31C214004FBBB1 /* BoxResponse.swift */,
 				495FD6612A3DF8C100A17FB0 /* MountEquip.swift */,
 				49504D972A42D42C00B93E90 /* CustomKey.swift */,
+				49FBA5A72A55E1E50031F9B5 /* Enchant.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -737,6 +747,7 @@
 				493023662A25D423006E81E4 /* TalentService.swift */,
 				49536A182A30DF1D004FBBB1 /* AssetJsonDataManager.swift */,
 				49536A1E2A31BB19004FBBB1 /* EquipSearchService.swift */,
+				49FBA5A42A55E09E0031F9B5 /* EnchantService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -829,6 +840,7 @@
 				49536A0F2A30DAAB004FBBB1 /* EquipPickerView.swift */,
 				495FD6772A40336900A17FB0 /* EquipPickerOptionView.swift */,
 				49504D8E2A42CD2F00B93E90 /* EquipDetailView.swift */,
+				49FBA5AA2A55E3F20031F9B5 /* EquipEnchantPicker.swift */,
 			);
 			path = Equip;
 			sourceTree = "<group>";
@@ -1125,11 +1137,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				49536A222A31C214004FBBB1 /* BoxResponse.swift in Sources */,
+				49FBA5A52A55E09E0031F9B5 /* EnchantService.swift in Sources */,
 				49536A0C2A30BA2D004FBBB1 /* EquipEditViewModel.swift in Sources */,
 				49504D922A42CED200B93E90 /* EquipSubType.swift in Sources */,
 				495FD6622A3DF8C100A17FB0 /* MountEquip.swift in Sources */,
+				49FBA5A82A55E1E50031F9B5 /* Enchant.swift in Sources */,
 				495FD6652A3E231700A17FB0 /* EquipQuality.swift in Sources */,
 				495FD65B2A36FC5800A17FB0 /* PlainToggleStyle.swift in Sources */,
+				49FBA5AB2A55E3F30031F9B5 /* EquipEnchantPicker.swift in Sources */,
 				49536A132A30DDC1004FBBB1 /* EquipAttribute.swift in Sources */,
 				49536A102A30DAAB004FBBB1 /* EquipPickerView.swift in Sources */,
 				495410D82A276D8B00AA6293 /* TalentPickerViewModel.swift in Sources */,
@@ -1250,6 +1265,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				49FBA5A92A55E1E50031F9B5 /* Enchant.swift in Sources */,
 				495410CF2A273DCE00AA6293 /* ServerStateViewModel.swift in Sources */,
 				495FD6602A3B675200A17FB0 /* DutyType.swift in Sources */,
 				495410D02A273DCE00AA6293 /* ServerStateView.swift in Sources */,
@@ -1271,6 +1287,7 @@
 				4992D20B2A24B3AF007EEFC2 /* NetworkManager.swift in Sources */,
 				4992D20A2A24B3AC007EEFC2 /* ImageExtension.swift in Sources */,
 				4992D2092A24B3A7007EEFC2 /* ImageDownloadService.swift in Sources */,
+				49FBA5AC2A55E3F30031F9B5 /* EquipEnchantPicker.swift in Sources */,
 				497467C52A2619DE00275A09 /* Mount.swift in Sources */,
 				49536A0A2A30B7B1004FBBB1 /* EquipSelectItemView.swift in Sources */,
 				495410E22A27C59E00AA6293 /* TalentLevelView.swift in Sources */,
@@ -1301,6 +1318,7 @@
 				4992D2082A24B3A3007EEFC2 /* WebCacheableImageViewModel.swift in Sources */,
 				499F5AD32A2FA4E300A3C588 /* School.swift in Sources */,
 				4992D2212A24F9DA007EEFC2 /* CircleButton.swift in Sources */,
+				49FBA5A62A55E09E0031F9B5 /* EnchantService.swift in Sources */,
 				49504DA92A44BDA600B93E90 /* GameText.swift in Sources */,
 				49504DAF2A494E6900B93E90 /* EquipRequireType.swift in Sources */,
 				4992D2272A250021007EEFC2 /* DisplayBarView.swift in Sources */,

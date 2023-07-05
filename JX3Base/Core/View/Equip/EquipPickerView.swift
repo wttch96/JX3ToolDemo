@@ -49,6 +49,7 @@ struct EquipPickerView: View {
     @State private var strengthLevel: Int = 1
     // 五行石镶嵌
     @State private var embeddingStone: [DiamondAttribute: Int]
+    @State private var enchant: Enchant? = nil
     
     @StateObject private var vm = EquipPickerViewModel()
     
@@ -181,6 +182,7 @@ struct EquipPickerView: View {
                     .onTapGesture(perform: {
                         showSheet =  .showEmbeddingStoneSheet
                     })
+                    EquipEnchantPicker(position: position.value, enchant: $enchant)
                 }
             }
             
