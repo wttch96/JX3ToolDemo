@@ -29,11 +29,13 @@ struct TalentVersionPicker: View {
                     }
                 }
             } else {
-                Picker("选择版本", selection: $selectedVersion, content: {
+                Picker(selection: $selectedVersion, content: {
                     ForEach(vm.versions) { version in
                         Text(version.name)
                             .tag(version as TalentVersion?)
                     }
+                }, label: {
+                    Text("选择版本")
                 })
             }
         }

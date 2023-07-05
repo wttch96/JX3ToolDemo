@@ -13,32 +13,28 @@ struct TalentPicker: View {
     @State var seletedTalents: [String: Talent] = [:]
     
     var body: some View {
-        NavigationStack {
-            ScrollView {
-                VStack(alignment: .leading, spacing: 20) {
-                    TalentVersionPicker(selectedVersion: $vm.version)
-                        .pickerStyle(.navigationLink)
-                    
-                    
-                    KungfuPicker(selectedKungfu: $vm.kungfu)
-                    
-                    if !vm.talents.isEmpty {
-                        AutoResizeLazyVGrid(vm.talents, gridSize: CGSize(width: 60, height: 80)) { level in
-                            TalentLevelView(talentLeve: level, seletedTalent: bindingTalent(for: level))
-                        }
-                        .background(
-                            RoundedRectangle(cornerRadius: 8)
-                                .foregroundColor(Color.theme.panel)
-                        )
+        List {
+            TalentVersionPicker(selectedVersion: $vm.version)
+            
+            
+            KungfuPicker(selectedKungfu: $vm.kungfu)
+            
+            Section {
+                if !vm.talents.isEmpty {
+                    AutoResizeLazyVGrid(vm.talents, gridSize: CGSize(width: 60, height: 80)) { level in
+                        TalentLevelView(talentLeve: level, seletedTalent: bindingTalent(for: level))
                     }
-                    
+                    .background(
+                        RoundedRectangle(cornerRadius: 8)
+                            .foregroundColor(Color.theme.panel)
+                    )
                 }
-                .padding()
             }
-            .onChange(of: vm.kungfu, perform: { _ in
-                seletedTalents = [:]
-            })
         }
+        .navigationTitle("\(vm.version?.name ?? "") - \(vm.kungfu.name)")
+        .onChange(of: vm.kungfu, perform: { _ in
+            seletedTalents = [:]
+        })
     }
     
     private func bindingTalent(for level: TalentLevel) -> Binding<Talent> {

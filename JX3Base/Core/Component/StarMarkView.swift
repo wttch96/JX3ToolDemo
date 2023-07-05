@@ -12,7 +12,7 @@ struct StarMarkView: View {
     @Binding var selectedCount: Int
     
     var body: some View {
-        HStack {
+        HStack(spacing: 3) {
             if selectedCount > 0 {
                 Image(systemName: "xmark.circle")
                     .foregroundColor(.red)

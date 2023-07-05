@@ -218,6 +218,8 @@
 		49DDC4B52A532B03009F06A4 /* StarMarkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DDC4B32A532B03009F06A4 /* StarMarkView.swift */; };
 		49DDC4B72A541496009F06A4 /* NumberUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DDC4B62A541496009F06A4 /* NumberUtil.swift */; };
 		49DDC4B82A541496009F06A4 /* NumberUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DDC4B62A541496009F06A4 /* NumberUtil.swift */; };
+		49FBA5A22A55D0FB0031F9B5 /* ClientType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FBA5A12A55D0FB0031F9B5 /* ClientType.swift */; };
+		49FBA5A32A55D0FB0031F9B5 /* ClientType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FBA5A12A55D0FB0031F9B5 /* ClientType.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -391,6 +393,7 @@
 		49DBCE1B2A2625F800C3BA2E /* WebCacheableImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebCacheableImage.swift; sourceTree = "<group>"; };
 		49DDC4B32A532B03009F06A4 /* StarMarkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarMarkView.swift; sourceTree = "<group>"; };
 		49DDC4B62A541496009F06A4 /* NumberUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberUtil.swift; sourceTree = "<group>"; };
+		49FBA5A12A55D0FB0031F9B5 /* ClientType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientType.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -502,6 +505,7 @@
 				495FD6642A3E231700A17FB0 /* EquipQuality.swift */,
 				49504D7F2A41CBA300B93E90 /* PvType.swift */,
 				49504D912A42CED200B93E90 /* EquipSubType.swift */,
+				49FBA5A12A55D0FB0031F9B5 /* ClientType.swift */,
 			);
 			path = Enum;
 			sourceTree = "<group>";
@@ -1148,6 +1152,7 @@
 				49504D9C2A42D46C00B93E90 /* EquipBaseType.swift in Sources */,
 				499F5ABB2A2B468200A3C588 /* TransitionExtension.swift in Sources */,
 				49DBCE192A2623B600C3BA2E /* KungfuPicker.swift in Sources */,
+				49FBA5A22A55D0FB0031F9B5 /* ClientType.swift in Sources */,
 				49536A1F2A31BB19004FBBB1 /* EquipSearchService.swift in Sources */,
 				4992D2122A24F2F1007EEFC2 /* LikedIconLibraryView.swift in Sources */,
 				49504D7D2A41C73E00B93E90 /* CheckBoxToggleStyle.swift in Sources */,
@@ -1273,6 +1278,7 @@
 				492D07632A250FB200826308 /* ServerStateSimpleView.swift in Sources */,
 				49536A142A30DDC1004FBBB1 /* EquipAttribute.swift in Sources */,
 				49DBCE172A2622A700C3BA2E /* AutoResizeLazyVGrid.swift in Sources */,
+				49FBA5A32A55D0FB0031F9B5 /* ClientType.swift in Sources */,
 				493023692A25D423006E81E4 /* TalentService.swift in Sources */,
 				49504DA62A44BB5D00B93E90 /* EquipScoreUtil.swift in Sources */,
 				49DDC4B82A541496009F06A4 /* NumberUtil.swift in Sources */,

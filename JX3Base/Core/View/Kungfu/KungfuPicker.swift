@@ -16,7 +16,7 @@ struct KungfuPicker: View {
     private let borderWidth: CGFloat = 4
     
     var body: some View {
-        AutoResizeLazyVGrid(AssetJsonDataManager.shared.mounts, gridSize: CGSize(width: 60, height: 72), content: { item in
+        AutoResizeLazyVGrid(AssetJsonDataManager.shared.mounts, gridSize: CGSize(width: 48, height: 60), content: { item in
             VStack(alignment: .center) {
                 ZStack {
                     KungfuIcon(kungfu: item, selected: selectedKungfu == item, borderWidth: borderWidth)
@@ -30,7 +30,7 @@ struct KungfuPicker: View {
                             .matchedGeometryEffect(id: "border", in: self.namespace)
                     }
                 }
-                .frame(width: 48, height: 48)
+                .frame(width: 36, height: 36)
                 Text(item.name)
                     .font(.system(size: 11))
                     .foregroundColor(selectedKungfu == item ? Color.theme.accent : Color.theme.secondaryText)

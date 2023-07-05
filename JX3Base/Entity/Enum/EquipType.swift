@@ -58,9 +58,10 @@ extension EquipType {
         case .amulet: return "项链"
         case .pendant: return "腰坠"
         case .ring: return "戒指"
-        case .meleeWeapon: return "武器"
-        case .rangeWeapon: return "暗器"
+        case .meleeWeapon: return "近身武器"
+        case .rangeWeapon: return "远程武器"
         case .ammoPouch: return "弹药"
         }
     }
+    
 }

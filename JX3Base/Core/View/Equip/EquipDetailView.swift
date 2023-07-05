@@ -30,6 +30,16 @@ struct EquipDetailView: View {
                 Text("(+\(equip.strengthLevelScore(strengthLevel: strengthLevel)))")
                     .foregroundColor(.theme.strength)
             }
+            
+            // 小附魔
+            HStack(spacing: 0) {
+                Image("EnhanceNone")
+                    .resizable()
+                    .frame(width: 16, height: 16)
+                Text("未强化")
+                    .foregroundColor(.gray)
+            }
+            
             HStack(spacing: 0) {
                 Text("装备分数：\(equip.equipScore)")
                     .foregroundColor(EquipQuality._5.color)
@@ -41,7 +51,7 @@ struct EquipDetailView: View {
             }
         }
         .foregroundColor(.white)
-        .font(.headline)
+        .font(.caption)
         .padding()
         .background(Color.theme.panel)
     }
@@ -54,20 +64,22 @@ struct EquipDetailView: View {
                     .foregroundColor(equip.quality.color)
                     .bold()
                 HStack(spacing: 0) {
-                    ForEach(1 ... equip.maxStrengthLevel, id: \.self) { l in
-                        if l <= strengthLevel {
-                            Image(systemName: "star.fill")
-                                .foregroundColor(.yellow)
-                        } else {
-                            Image(systemName: "star")
+                    if equip.maxStrengthLevel >= 1 {
+                        ForEach(1 ... equip.maxStrengthLevel, id: \.self) { l in
+                            if l <= strengthLevel {
+                                Image(systemName: "star.fill")
+                                    .foregroundColor(.yellow)
+                            } else {
+                                Image(systemName: "star")
+                            }
                         }
                     }
                 }
                 .font(.caption)
                 
                 Spacer()
-//                Text("精炼等级：\(strengthLevel)/\(equip.maxStrengthLevel)")
-//                    .foregroundColor(.theme.strength)
+                Text("精炼等级：\(strengthLevel)/\(equip.maxStrengthLevel)")
+                    .foregroundColor(.theme.strength)
             }
             HStack {
                 Text(equip.subType.name)
@@ -145,12 +157,12 @@ struct EquipDetailView: View {
                 if level == 0 {
                     Image(systemName: "square")
                         .resizable()
-                        .frame(width: 24, height: 24)
+                        .frame(width: 16, height: 16)
                         .foregroundColor(.gray)
                 } else {
                     Image("Embedding\(level)")
                         .resizable()
-                        .frame(width: 24, height: 24)
+                        .frame(width: 16, height: 16)
                 }
                 Text("镶嵌孔：\(attr.label) \(Int(attr.embedValue(level: diamondAttributeLevels[attr] ?? 0)))")
                     .foregroundColor( diamondAttributeLevels[attr, default: 0] == 0 ? .gray : .theme.textGreen)
