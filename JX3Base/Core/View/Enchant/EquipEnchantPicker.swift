@@ -25,13 +25,15 @@ private struct EquipEnchantSelectList: View {
             Section("", content: {
                 TextField("搜索", text: $vm.searchText)
             })
-            ForEach(vm.enchants, content: { enchant in
-                EnchantRowView(enchant: enchant)
-                .onTapGesture {
-                    self.enchant = enchant
-                    self.dismiss.callAsFunction()
-                }
-            })
+            Section {
+                ForEach(vm.enchants, content: { enchant in
+                    EnchantRowView(enchant: enchant)
+                        .onTapGesture {
+                            self.enchant = enchant
+                            self.dismiss.callAsFunction()
+                        }
+                })
+            }
         }
         .onAppear {
             vm.loadEnchant()
@@ -64,8 +66,7 @@ struct EquipEnchantPicker: View {
 
 struct EquipEnchantPicker_Previews: PreviewProvider {
     static var previews: some View {
-        List {
-            EquipEnchantPicker(position: EquipPosition.boots, enchant: .constant(nil))
-        }
+        EquipEnchantSelectList(position: EquipPosition.boots, enchant: .constant(nil))
+        EquipEnchantPicker(position: EquipPosition.boots, enchant: .constant(nil))
     }
 }
