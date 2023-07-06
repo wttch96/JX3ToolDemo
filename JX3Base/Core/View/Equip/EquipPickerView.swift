@@ -45,10 +45,15 @@ struct EquipPickerView: View {
     @State private var showSearchTextField: Bool = false
     @FocusState private var textFieldFocused: Bool
     @State private var searchName: String = ""
+    
+    // MARK: 强化
+    
+    // ⚠️：暂不整合为 ObservableObject 因为会导致 CPU 100% 卡死
     // 强化等级
     @State private var strengthLevel: Int = 1
     // 五行石镶嵌
     @State private var embeddingStone: [DiamondAttribute: Int]
+    // 小附魔
     @State private var enchant: Enchant? = nil
     
     @StateObject private var vm = EquipPickerViewModel()
@@ -183,12 +188,18 @@ struct EquipPickerView: View {
                         showSheet =  .showEmbeddingStoneSheet
                     })
                     
-                    EquipEnchantPicker(position: position, enchant: $enchant)
+                EquipEnchantPicker(position: position, enchant: $enchant)
                 }
             }
             
             if let equip = selected {
-                EquipDetailView(equip: equip, strengthLevel: strengthLevel, diamondAttributeLevels: self.embeddingStone)
+                Section {
+                    NavigationLink(destination: {
+                        EquipDetailView(equip: equip, strengthLevel: strengthLevel, diamondAttributeLevels: self.embeddingStone, enhance: enchant)
+                    }, label: {
+                        Text("查看装备详情")
+                    })
+                }
             }
         }
         .toolbar(content: {
@@ -264,8 +275,7 @@ struct EquipPickerView: View {
     
     // 装备选择的 sheet
     private var selectEquipSheet: some View {
-        ScrollView {
-            VStack {
+            List {
                 Text("选择装备")
                     .font(.title)
                 
@@ -284,7 +294,6 @@ struct EquipPickerView: View {
                 }
             }
             .padding()
-        }
         .presentationDetents([.large])
     }
     

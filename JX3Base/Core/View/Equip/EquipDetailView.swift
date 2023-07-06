@@ -11,7 +11,11 @@ struct EquipDetailView: View {
     let equip: EquipDTO
     let strengthLevel: Int
     let diamondAttributeLevels: [DiamondAttribute: Int]
+    let enhance: Enchant?
 
+    // 图标大小
+    private let iconSize: CGFloat = 16
+    
     var body: some View {
         VStack(alignment: .leading, spacing: 4) {
             header
@@ -24,36 +28,39 @@ struct EquipDetailView: View {
             if let maxDurability = equip.maxDurability, maxDurability != "0" {
                 Text("耐久度：\(maxDurability)/\(maxDurability)")
             }
+            
+            // 小附魔
+            HStack(spacing: 4) {
+                Image("Enhance\(enhance == nil ? "None" : "")")
+                    .resizable()
+                    .frame(width: iconSize, height: iconSize)
+                Text(enhance?.attriName ?? "未强化")
+                    .foregroundColor(enhance?.attriName == nil ? .gray : .blue)
+            }
+            
             HStack(spacing: 0) {
                 Text("品质等级：\(equip.level)")
                     .foregroundColor(.yellow)
                 Text("(+\(equip.strengthLevelScore(strengthLevel: strengthLevel)))")
                     .foregroundColor(.theme.strength)
             }
-            
-            // 小附魔
-            HStack(spacing: 0) {
-                Image("EnhanceNone")
-                    .resizable()
-                    .frame(width: 16, height: 16)
-                Text("未强化")
-                    .foregroundColor(.gray)
-            }
-            
             HStack(spacing: 0) {
                 Text("装备分数：\(equip.equipScore)")
                     .foregroundColor(EquipQuality._5.color)
                 Text("(+\(equip.strengthLevelScore(strengthLevel: strengthLevel)))")
                     .foregroundColor(.theme.strength)
             }
-            if let getType = equip.getType {
-                Text("装备来源：\(getType)")
-            }
+            
+//            if let getType = equip.getType {
+//                Text("装备来源：\(getType)")
+//            }
+            Spacer()
         }
         .foregroundColor(.white)
-        .font(.caption)
+        .font(.headline)
         .padding()
         .background(Color.theme.panel)
+        .navigationTitle(equip.name)
     }
     
     // MARK: 头部
@@ -149,20 +156,21 @@ struct EquipDetailView: View {
         }
     }
     
+    // MARK: 五行石镶嵌
     @ViewBuilder
     private var embedding: some View {
         ForEach(equip.diamondAttributes) { attr in
-            HStack(spacing: 8) {
+            HStack(spacing: 4) {
                 let level = diamondAttributeLevels[attr, default: 0]
                 if level == 0 {
                     Image(systemName: "square")
                         .resizable()
-                        .frame(width: 16, height: 16)
+                        .frame(width: iconSize, height: iconSize)
                         .foregroundColor(.gray)
                 } else {
                     Image("Embedding\(level)")
                         .resizable()
-                        .frame(width: 16, height: 16)
+                        .frame(width: iconSize, height: iconSize)
                 }
                 Text("镶嵌孔：\(attr.label) \(Int(attr.embedValue(level: diamondAttributeLevels[attr] ?? 0)))")
                     .foregroundColor( diamondAttributeLevels[attr, default: 0] == 0 ? .gray : .theme.textGreen)
@@ -190,11 +198,7 @@ struct EquipDetailView: View {
 
 struct EquipDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        ScrollView {
-            VStack {
-                EquipDetailView(equip: dev.weapon1, strengthLevel: 6, diamondAttributeLevels: [:])
-                EquipDetailView(equip: dev.equip1, strengthLevel: 6, diamondAttributeLevels: [:])
-            }
-        }
+        EquipDetailView(equip: dev.weapon1, strengthLevel: 6, diamondAttributeLevels: [:], enhance: nil)
+        EquipDetailView(equip: dev.equip1, strengthLevel: 6, diamondAttributeLevels: [:], enhance: dev.enchant1)
     }
 }
