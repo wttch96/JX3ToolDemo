@@ -17,7 +17,7 @@ class EnchantService {
     
     // subType = 1 小附魔
     // subType = 2 大附魔
-    func loadEnchant(position: Int, subType: Int = 1) {
+    func loadEnchant(position: Int, searchText: String?, subType: Int) {
         let urlString = "https://node.jx3box.com/enchant/primary"
         var url = URLComponents(string: urlString)
         url?.queryItems = [
@@ -25,6 +25,13 @@ class EnchantService {
             URLQueryItem(name: "position", value: "\(position)"),
             URLQueryItem(name: "subtype", value: "\(subType)")
         ]
+        
+        if subType == 1 {
+            // 小附魔
+            url?.queryItems?.append(URLQueryItem(name: "latest_enhance", value: "1"))
+        }
+        
+        url?.queryItems?.append(URLQueryItem(name: "search", value: searchText))
         
         if let url = url?.url {
             anyCancellable = NetworkManager.downloadJsonData(url: url, type: [Enchant].self)

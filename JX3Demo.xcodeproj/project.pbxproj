@@ -226,6 +226,12 @@
 		49FBA5A92A55E1E50031F9B5 /* Enchant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FBA5A72A55E1E50031F9B5 /* Enchant.swift */; };
 		49FBA5AB2A55E3F30031F9B5 /* EquipEnchantPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FBA5AA2A55E3F20031F9B5 /* EquipEnchantPicker.swift */; };
 		49FBA5AC2A55E3F30031F9B5 /* EquipEnchantPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FBA5AA2A55E3F20031F9B5 /* EquipEnchantPicker.swift */; };
+		49FBA5AF2A56F3370031F9B5 /* EnchantRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FBA5AE2A56F3370031F9B5 /* EnchantRowView.swift */; };
+		49FBA5B02A56F3370031F9B5 /* EnchantRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FBA5AE2A56F3370031F9B5 /* EnchantRowView.swift */; };
+		49FBA5B22A56F36F0031F9B5 /* enchant1.json in Resources */ = {isa = PBXBuildFile; fileRef = 49FBA5B12A56F36F0031F9B5 /* enchant1.json */; };
+		49FBA5B32A56F36F0031F9B5 /* enchant1.json in Resources */ = {isa = PBXBuildFile; fileRef = 49FBA5B12A56F36F0031F9B5 /* enchant1.json */; };
+		49FBA5B52A56FFA90031F9B5 /* EquipEnchantPickerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FBA5B42A56FFA90031F9B5 /* EquipEnchantPickerViewModel.swift */; };
+		49FBA5B62A56FFA90031F9B5 /* EquipEnchantPickerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FBA5B42A56FFA90031F9B5 /* EquipEnchantPickerViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -403,6 +409,9 @@
 		49FBA5A42A55E09E0031F9B5 /* EnchantService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnchantService.swift; sourceTree = "<group>"; };
 		49FBA5A72A55E1E50031F9B5 /* Enchant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enchant.swift; sourceTree = "<group>"; };
 		49FBA5AA2A55E3F20031F9B5 /* EquipEnchantPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipEnchantPicker.swift; sourceTree = "<group>"; };
+		49FBA5AE2A56F3370031F9B5 /* EnchantRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnchantRowView.swift; sourceTree = "<group>"; };
+		49FBA5B12A56F36F0031F9B5 /* enchant1.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = enchant1.json; sourceTree = "<group>"; };
+		49FBA5B42A56FFA90031F9B5 /* EquipEnchantPickerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipEnchantPickerViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -525,6 +534,7 @@
 				495FD6712A40308D00A17FB0 /* equip1.json */,
 				495FD6742A4030A900A17FB0 /* equip2.json */,
 				49504D942A42D10A00B93E90 /* weapon1.json */,
+				49FBA5B12A56F36F0031F9B5 /* enchant1.json */,
 			);
 			path = Previews;
 			sourceTree = "<group>";
@@ -791,6 +801,7 @@
 		4992D20C2A24F03C007EEFC2 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				49FBA5AD2A56F3130031F9B5 /* Enchant */,
 				499F5AC72A2F953700A3C588 /* Home */,
 				499F5ABD2A2D070300A3C588 /* Equip */,
 				49563C672A261DCD00AB8FAF /* Kungfu */,
@@ -840,7 +851,6 @@
 				49536A0F2A30DAAB004FBBB1 /* EquipPickerView.swift */,
 				495FD6772A40336900A17FB0 /* EquipPickerOptionView.swift */,
 				49504D8E2A42CD2F00B93E90 /* EquipDetailView.swift */,
-				49FBA5AA2A55E3F20031F9B5 /* EquipEnchantPicker.swift */,
 			);
 			path = Equip;
 			sourceTree = "<group>";
@@ -851,6 +861,16 @@
 				499F5AC82A2F954200A3C588 /* HomeView.swift */,
 			);
 			path = Home;
+			sourceTree = "<group>";
+		};
+		49FBA5AD2A56F3130031F9B5 /* Enchant */ = {
+			isa = PBXGroup;
+			children = (
+				49FBA5B42A56FFA90031F9B5 /* EquipEnchantPickerViewModel.swift */,
+				49FBA5AA2A55E3F20031F9B5 /* EquipEnchantPicker.swift */,
+				49FBA5AE2A56F3370031F9B5 /* EnchantRowView.swift */,
+			);
+			path = Enchant;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1060,6 +1080,7 @@
 				49504D832A42BE8900B93E90 /* weaponType.json in Resources */,
 				49504D892A42C32400B93E90 /* attrDesc.json in Resources */,
 				49536A162A30DEA8004FBBB1 /* xfAttrs.json in Resources */,
+				49FBA5B22A56F36F0031F9B5 /* enchant1.json in Resources */,
 				49504D952A42D10A00B93E90 /* weapon1.json in Resources */,
 				4992D2192A24F704007EEFC2 /* BaseAssets.xcassets in Resources */,
 				495FD6722A40308D00A17FB0 /* equip1.json in Resources */,
@@ -1104,6 +1125,7 @@
 				49504D842A42BE8900B93E90 /* weaponType.json in Resources */,
 				49504D8A2A42C32400B93E90 /* attrDesc.json in Resources */,
 				49536A172A30DEA8004FBBB1 /* xfAttrs.json in Resources */,
+				49FBA5B32A56F36F0031F9B5 /* enchant1.json in Resources */,
 				49504D962A42D10A00B93E90 /* weapon1.json in Resources */,
 				4992D21A2A24F704007EEFC2 /* BaseAssets.xcassets in Resources */,
 				495FD6732A40308D00A17FB0 /* equip1.json in Resources */,
@@ -1169,7 +1191,9 @@
 				49DBCE192A2623B600C3BA2E /* KungfuPicker.swift in Sources */,
 				49FBA5A22A55D0FB0031F9B5 /* ClientType.swift in Sources */,
 				49536A1F2A31BB19004FBBB1 /* EquipSearchService.swift in Sources */,
+				49FBA5B52A56FFA90031F9B5 /* EquipEnchantPickerViewModel.swift in Sources */,
 				4992D2122A24F2F1007EEFC2 /* LikedIconLibraryView.swift in Sources */,
+				49FBA5AF2A56F3370031F9B5 /* EnchantRowView.swift in Sources */,
 				49504D7D2A41C73E00B93E90 /* CheckBoxToggleStyle.swift in Sources */,
 				495410DB2A276EF800AA6293 /* Talent.swift in Sources */,
 				49DDC4B72A541496009F06A4 /* NumberUtil.swift in Sources */,
@@ -1265,6 +1289,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				49FBA5B02A56F3370031F9B5 /* EnchantRowView.swift in Sources */,
 				49FBA5A92A55E1E50031F9B5 /* Enchant.swift in Sources */,
 				495410CF2A273DCE00AA6293 /* ServerStateViewModel.swift in Sources */,
 				495FD6602A3B675200A17FB0 /* DutyType.swift in Sources */,
@@ -1303,6 +1328,7 @@
 				4992D2132A24F2F1007EEFC2 /* LikedIconLibraryView.swift in Sources */,
 				49504D992A42D42C00B93E90 /* CustomKey.swift in Sources */,
 				499F5ABC2A2B468200A3C588 /* TransitionExtension.swift in Sources */,
+				49FBA5B62A56FFA90031F9B5 /* EquipEnchantPickerViewModel.swift in Sources */,
 				49DDC4B52A532B03009F06A4 /* StarMarkView.swift in Sources */,
 				49DBCE1D2A2625F800C3BA2E /* WebCacheableImage.swift in Sources */,
 				49504D932A42CED200B93E90 /* EquipSubType.swift in Sources */,

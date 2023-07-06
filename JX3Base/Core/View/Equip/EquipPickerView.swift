@@ -182,7 +182,8 @@ struct EquipPickerView: View {
                     .onTapGesture(perform: {
                         showSheet =  .showEmbeddingStoneSheet
                     })
-                    EquipEnchantPicker(position: position.value, enchant: $enchant)
+                    
+                    EquipEnchantPicker(position: position, enchant: $enchant)
                 }
             }
             
