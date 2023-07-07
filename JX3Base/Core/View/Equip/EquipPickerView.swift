@@ -184,6 +184,7 @@ struct EquipPickerView: View {
             
             if let equip = selected {
                 EquipDetailView(equip: equip, strengthLevel: strengthLevel, diamondAttributeLevels: self.embeddingStone, enhance: enchant)
+                    .padding(-20)
             }
         }
         .listStyle(.grouped)
