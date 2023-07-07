@@ -21,6 +21,7 @@ class EquipSearchService {
     
     func serachEquip(
         _ position: EquipPosition,
+        name: String?,
         minLevel: Int,
         maxLevel: Int,
         pvType: PvType,
@@ -41,48 +42,57 @@ class EquipSearchService {
         let urlString = "https://node.jx3box.com/equip/\(type)"
         
         var request = URLComponents(string: urlString)
-        request?.queryItems = [
-            URLQueryItem(name: "min_level", value: "\(minLevel)"),
-            URLQueryItem(name: "max_level", value: "\(maxLevel)"),
-            URLQueryItem(name: "client", value: client),
-            URLQueryItem(name: "position", value: "\(position.value)"),
-            URLQueryItem(name: "pz", value: "1"),
-            URLQueryItem(name: "page", value: "\(page)"),
-            URLQueryItem(name: "per", value: "\(pageSize)")
-        ]
-        if pvType == .pve || pvType == .pvp {
-            request?.queryItems?.append(
-                URLQueryItem(name: "pv_type", value: pvType.rawValue)
-            )
-        }
-        if !attrs.isEmpty {
-            request?.queryItems?.append(
-                URLQueryItem(name: "attr", value: attrs.map({ $0.rawValue }).joined(separator: ","))
-            )
-        }
-        if position == .meleeWeapon || position == .meleeWeapon2 {
-            request?.queryItems?.append(
-                URLQueryItem(name: "DetailType", value: position == .meleeWeapon ? "2" : "9")
-            )
+        if let name = name, !name.isEmpty {
+            request?.queryItems = [
+                URLQueryItem(name: "name", value: name),
+                URLQueryItem(name: "client", value: client),
+                URLQueryItem(name: "position", value: "\(position.value)"),
+                URLQueryItem(name: "pz", value: "1")
+            ]
         } else {
-            if !belongSchool.isEmpty {
+            request?.queryItems = [
+                URLQueryItem(name: "min_level", value: "\(minLevel)"),
+                URLQueryItem(name: "max_level", value: "\(maxLevel)"),
+                URLQueryItem(name: "client", value: client),
+                URLQueryItem(name: "position", value: "\(position.value)"),
+                URLQueryItem(name: "pz", value: "1"),
+                URLQueryItem(name: "page", value: "\(page)"),
+                URLQueryItem(name: "per", value: "\(pageSize)")
+            ]
+            if pvType == .pve || pvType == .pvp {
                 request?.queryItems?.append(
-                    URLQueryItem(name: "BelongSchool", value: belongSchool.joined(separator: ","))
+                    URLQueryItem(name: "pv_type", value: pvType.rawValue)
                 )
-                logger("school:\(belongSchool.joined(separator: ","))")
             }
-            if !magicKind.isEmpty {
+            if !attrs.isEmpty {
                 request?.queryItems?.append(
-                    URLQueryItem(name: "MagicKind", value: magicKind.joined(separator: ","))
+                    URLQueryItem(name: "attr", value: attrs.map({ $0.rawValue }).joined(separator: ","))
                 )
-                logger("magic:\(magicKind.joined(separator: ","))")
             }
-        }
-        if let duty = duty {
-            request?.queryItems?.append(
-                URLQueryItem(name: "duty", value: "\(duty.value)")
-            )
-            logger("duty:\(duty.value)")
+            if position == .meleeWeapon || position == .meleeWeapon2 {
+                request?.queryItems?.append(
+                    URLQueryItem(name: "DetailType", value: position == .meleeWeapon ? "2" : "9")
+                )
+            } else {
+                if !belongSchool.isEmpty {
+                    request?.queryItems?.append(
+                        URLQueryItem(name: "BelongSchool", value: belongSchool.joined(separator: ","))
+                    )
+                    logger("school:\(belongSchool.joined(separator: ","))")
+                }
+                if !magicKind.isEmpty {
+                    request?.queryItems?.append(
+                        URLQueryItem(name: "MagicKind", value: magicKind.joined(separator: ","))
+                    )
+                    logger("magic:\(magicKind.joined(separator: ","))")
+                }
+            }
+            if let duty = duty {
+                request?.queryItems?.append(
+                    URLQueryItem(name: "duty", value: "\(duty.value)")
+                )
+                logger("duty:\(duty.value)")
+            }
         }
         if let url = request?.url {
             anyCancellable = NetworkManager.downloadJsonData(url: url, type: BoxResponse<EquipDTO>.self)

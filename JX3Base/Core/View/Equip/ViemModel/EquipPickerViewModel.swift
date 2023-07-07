@@ -23,6 +23,7 @@ class EquipPickerViewModel: ObservableObject {
     
     func searchEquip(
         _ position: EquipPosition,
+        name: String?,
         minLevel: Int,
         maxLevel: Int,
         pvType: PvType = .all,
@@ -31,6 +32,6 @@ class EquipPickerViewModel: ObservableObject {
         belongSchool: [String] = [],
         magicKind: [String] = []
     ) {
-        service.serachEquip(position, minLevel: minLevel, maxLevel: maxLevel, pvType: pvType, attrs: attrs, duty: duty, belongSchool: belongSchool, magicKind: magicKind, page: 1, pageSize: 50, client: "std")
+        service.serachEquip(position, name: name, minLevel: minLevel, maxLevel: maxLevel, pvType: pvType, attrs: attrs, duty: duty, belongSchool: belongSchool, magicKind: magicKind, page: 1, pageSize: 50, client: "std")
     }
 }

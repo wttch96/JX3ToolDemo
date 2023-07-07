@@ -61,8 +61,8 @@
 		49536A042A30AD6B004FBBB1 /* EquipType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49536A022A30AD6B004FBBB1 /* EquipType.swift */; };
 		49536A062A30AF1C004FBBB1 /* EquipPosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49536A052A30AF1C004FBBB1 /* EquipPosition.swift */; };
 		49536A072A30AF1C004FBBB1 /* EquipPosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49536A052A30AF1C004FBBB1 /* EquipPosition.swift */; };
-		49536A092A30B7B1004FBBB1 /* EquipSelectItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49536A082A30B7B1004FBBB1 /* EquipSelectItemView.swift */; };
-		49536A0A2A30B7B1004FBBB1 /* EquipSelectItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49536A082A30B7B1004FBBB1 /* EquipSelectItemView.swift */; };
+		49536A092A30B7B1004FBBB1 /* EquipSelectPositionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49536A082A30B7B1004FBBB1 /* EquipSelectPositionView.swift */; };
+		49536A0A2A30B7B1004FBBB1 /* EquipSelectPositionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49536A082A30B7B1004FBBB1 /* EquipSelectPositionView.swift */; };
 		49536A0C2A30BA2D004FBBB1 /* EquipEditViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49536A0B2A30BA2D004FBBB1 /* EquipEditViewModel.swift */; };
 		49536A0D2A30BA2D004FBBB1 /* EquipEditViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49536A0B2A30BA2D004FBBB1 /* EquipEditViewModel.swift */; };
 		49536A102A30DAAB004FBBB1 /* EquipPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49536A0F2A30DAAB004FBBB1 /* EquipPickerView.swift */; };
@@ -248,6 +248,8 @@
 		49FBA5CF2A581C660031F9B5 /* NavIconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FBA5CD2A581C660031F9B5 /* NavIconView.swift */; };
 		49FBA5D22A581DF30031F9B5 /* ToolNavItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FBA5D12A581DF30031F9B5 /* ToolNavItem.swift */; };
 		49FBA5D32A581DF30031F9B5 /* ToolNavItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FBA5D12A581DF30031F9B5 /* ToolNavItem.swift */; };
+		49FBA5D82A5830EC0031F9B5 /* EquipSelectlListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FBA5D72A5830EC0031F9B5 /* EquipSelectlListView.swift */; };
+		49FBA5D92A5830EC0031F9B5 /* EquipSelectlListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FBA5D72A5830EC0031F9B5 /* EquipSelectlListView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -327,7 +329,7 @@
 		495369FF2A308987004FBBB1 /* EquipEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipEditView.swift; sourceTree = "<group>"; };
 		49536A022A30AD6B004FBBB1 /* EquipType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipType.swift; sourceTree = "<group>"; };
 		49536A052A30AF1C004FBBB1 /* EquipPosition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipPosition.swift; sourceTree = "<group>"; };
-		49536A082A30B7B1004FBBB1 /* EquipSelectItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipSelectItemView.swift; sourceTree = "<group>"; };
+		49536A082A30B7B1004FBBB1 /* EquipSelectPositionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipSelectPositionView.swift; sourceTree = "<group>"; };
 		49536A0B2A30BA2D004FBBB1 /* EquipEditViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipEditViewModel.swift; sourceTree = "<group>"; };
 		49536A0F2A30DAAB004FBBB1 /* EquipPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipPickerView.swift; sourceTree = "<group>"; };
 		49536A122A30DDC1004FBBB1 /* EquipAttribute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipAttribute.swift; sourceTree = "<group>"; };
@@ -436,6 +438,7 @@
 		49FBA5CA2A5818660031F9B5 /* TabBarItemViewModifer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarItemViewModifer.swift; sourceTree = "<group>"; };
 		49FBA5CD2A581C660031F9B5 /* NavIconView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavIconView.swift; sourceTree = "<group>"; };
 		49FBA5D12A581DF30031F9B5 /* ToolNavItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolNavItem.swift; sourceTree = "<group>"; };
+		49FBA5D72A5830EC0031F9B5 /* EquipSelectlListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipSelectlListView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -873,10 +876,11 @@
 				49536A0E2A30BA7F004FBBB1 /* ViemModel */,
 				499F5ABE2A2D071B00A3C588 /* EquipHomeView.swift */,
 				495369FF2A308987004FBBB1 /* EquipEditView.swift */,
-				49536A082A30B7B1004FBBB1 /* EquipSelectItemView.swift */,
+				49536A082A30B7B1004FBBB1 /* EquipSelectPositionView.swift */,
 				49536A0F2A30DAAB004FBBB1 /* EquipPickerView.swift */,
 				495FD6772A40336900A17FB0 /* EquipPickerOptionView.swift */,
 				49504D8E2A42CD2F00B93E90 /* EquipDetailView.swift */,
+				49FBA5D72A5830EC0031F9B5 /* EquipSelectlListView.swift */,
 			);
 			path = Equip;
 			sourceTree = "<group>";
@@ -1211,6 +1215,7 @@
 				49536A0C2A30BA2D004FBBB1 /* EquipEditViewModel.swift in Sources */,
 				49504D922A42CED200B93E90 /* EquipSubType.swift in Sources */,
 				495FD6622A3DF8C100A17FB0 /* MountEquip.swift in Sources */,
+				49FBA5D82A5830EC0031F9B5 /* EquipSelectlListView.swift in Sources */,
 				49FBA5A82A55E1E50031F9B5 /* Enchant.swift in Sources */,
 				49FBA5CE2A581C660031F9B5 /* NavIconView.swift in Sources */,
 				495FD6652A3E231700A17FB0 /* EquipQuality.swift in Sources */,
@@ -1260,7 +1265,7 @@
 				49536A002A308987004FBBB1 /* EquipEditView.swift in Sources */,
 				495410DE2A27C23B00AA6293 /* TalentView.swift in Sources */,
 				499F5AD22A2FA4E300A3C588 /* School.swift in Sources */,
-				49536A092A30B7B1004FBBB1 /* EquipSelectItemView.swift in Sources */,
+				49536A092A30B7B1004FBBB1 /* EquipSelectPositionView.swift in Sources */,
 				497467C72A261AC500275A09 /* BundleUtil.swift in Sources */,
 				495410E42A2AEA3C00AA6293 /* EnvironmentExtension.swift in Sources */,
 				4992D1E72A23C45E007EEFC2 /* TalentVersion.swift in Sources */,
@@ -1370,7 +1375,7 @@
 				4992D2092A24B3A7007EEFC2 /* ImageDownloadService.swift in Sources */,
 				49FBA5AC2A55E3F30031F9B5 /* EquipEnchantPicker.swift in Sources */,
 				497467C52A2619DE00275A09 /* Mount.swift in Sources */,
-				49536A0A2A30B7B1004FBBB1 /* EquipSelectItemView.swift in Sources */,
+				49536A0A2A30B7B1004FBBB1 /* EquipSelectPositionView.swift in Sources */,
 				495410E22A27C59E00AA6293 /* TalentLevelView.swift in Sources */,
 				493354422A2611260044289B /* TalentVersionViewModel.swift in Sources */,
 				492D07632A250FB200826308 /* ServerStateSimpleView.swift in Sources */,
@@ -1432,6 +1437,7 @@
 				4992D1F22A2484FA007EEFC2 /* LocalFileManager.swift in Sources */,
 				49504DAC2A4763D700B93E90 /* DiamondAttribute.swift in Sources */,
 				493354402A2611260044289B /* TalentVersionPicker.swift in Sources */,
+				49FBA5D92A5830EC0031F9B5 /* EquipSelectlListView.swift in Sources */,
 				499F5AC02A2D071B00A3C588 /* EquipHomeView.swift in Sources */,
 				4992D1C02A23C085007EEFC2 /* ContentView.swift in Sources */,
 				4992D1BE2A23C085007EEFC2 /* JX3MacAppApp.swift in Sources */,

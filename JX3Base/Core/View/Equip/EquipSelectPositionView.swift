@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct EquipSelectItemView: View {
+struct EquipSelectPositionView: View {
     let kungfu: Mount
     let position: EquipPosition
     
@@ -51,7 +51,7 @@ struct EquipSelectItemView: View {
 
 struct EquipSelectItemView_Previews: PreviewProvider {
     static var previews: some View {
-        EquipSelectItemView(
+        EquipSelectPositionView(
             kungfu: .common,
             position: .amulet, selectedEquip: .constant(dev.equip1))
     }

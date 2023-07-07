@@ -10,7 +10,7 @@ import RangeSlider
 import Combine
 
 
-private enum OtherFilter: String, CaseIterable {
+enum OtherFilter: String, CaseIterable {
     case spareParts = "散件"
     case simplify = "精简"
     case school = "牌子"
@@ -18,7 +18,7 @@ private enum OtherFilter: String, CaseIterable {
     // case onlyMineSchool = "仅显示本门派"
 }
 
-private enum SheetType: Int, Identifiable {
+enum SheetType: Int, Identifiable {
     // 选择装备的 sheet
     case showSelectEquipListSheet = 1
     // 选择五行石镶嵌等级的 sheet
@@ -42,9 +42,6 @@ struct EquipPickerView: View {
     
     @State private var otherFilters: [OtherFilter] = [.spareParts, .simplify, .school]
     @State private var pvType: PvType = .all
-    @State private var showSearchTextField: Bool = false
-    @FocusState private var textFieldFocused: Bool
-    @State private var searchName: String = ""
     
     // MARK: 强化
     
@@ -139,34 +136,27 @@ struct EquipPickerView: View {
             })
             
             Section {
-                HStack {
-                    
-                    Text("选择装备")
-                    
-                    Spacer()
-                    if showSearchTextField {
-                        TextField(selected?.name ?? "输入装备名称可以直接搜索", text: $searchName)
-                            .frame(maxWidth: 160)
-                            .focused($textFieldFocused)
-                            .padding(.vertical, 2)
-                            .padding(.horizontal, 8)
-                            .background(
-                                RoundedRectangle(cornerRadius: 4)
-                                    .stroke(Color.accentColor)
-                            )
-                    } else {
-                        Text(selected?.name ?? "请选择")
-                            .foregroundColor(Color.accentColor)
-                            .onTapGesture(perform: {
-                                showSearchTextField.toggle()
-                                textFieldFocused.toggle()
-                            })
+                NavigationLink(destination: {
+                    EquipSelectlListView(
+                        kungfu: kungfu,
+                        position: position,
+                        attrItems: attrItems,
+                        level: level,
+                        otherFilters: otherFilters,
+                        pvType: pvType,
+                        selection: $selected
+                    )
+                }, label: {
+                    HStack {
+                        Text("选择装备")
+                        Spacer()
+                        if let equip = selected {
+                            Text("\(equip.name)")
+                                .font(.headline)
+                                .foregroundColor(equip.quality.color)
+                        }
                     }
-                    Image(systemName: "chevron.down")
-                        .onTapGesture(perform: {
-                            loadEquip()
-                        })
-                }
+                })
                 if let equip = self.selected {
                     HStack {
                         Text("精炼等级")
@@ -193,15 +183,10 @@ struct EquipPickerView: View {
             }
             
             if let equip = selected {
-                Section {
-                    NavigationLink(destination: {
-                        EquipDetailView(equip: equip, strengthLevel: strengthLevel, diamondAttributeLevels: self.embeddingStone, enhance: enchant)
-                    }, label: {
-                        Text("查看装备详情")
-                    })
-                }
+                EquipDetailView(equip: equip, strengthLevel: strengthLevel, diamondAttributeLevels: self.embeddingStone, enhance: enchant)
             }
         }
+        .listStyle(.grouped)
         .toolbar(content: {
             if selected != nil {
                 ToolbarItem {
@@ -216,48 +201,10 @@ struct EquipPickerView: View {
         })
         .navigationTitle("\(kungfu.name)-\(position.label)-\(selected?.name ?? "<none>")")
         .sheet(item: $showSheet, onDismiss: { showSheet = nil }, content: { item in
-            if item == .showSelectEquipListSheet {
-                selectEquipSheet
-            } else if item == .showEmbeddingStoneSheet {
+            if item == .showEmbeddingStoneSheet {
                 embeddingStoneSheet
             }
-        })    }
-    
-    private func loadEquip() {
-        var schools: [String] = []
-        var kinds: [String] = []
-        
-        if otherFilters.contains(.spareParts) {
-            schools.append("通用")
-            if let primaryAttr = kungfu.equip?.primaryAttribute {
-                kinds.append(primaryAttr)
-            }
-        }
-        if otherFilters.contains(.simplify) {
-            schools.append("精简")
-            if let duty = kungfu.equip?.duty.rawValue {
-                kinds.append(duty)
-            }
-        }
-        if otherFilters.contains(.school),
-           let schoolName = kungfu.equip?.schoolName{
-            schools.append(schoolName)
-            if let duty = kungfu.equip?.duty.rawValue,
-               !schools.contains(duty){
-                schools.append(duty)
-            }
-        }
-        
-        vm.searchEquip(
-            position,
-            minLevel: Int(level.lowerBound),
-            maxLevel: Int(level.upperBound),
-            pvType: pvType,
-            attrs: attrItems,
-            duty: kungfu.equip?.duty,
-            belongSchool: schools, magicKind: kinds)
-        
-        showSheet = .showSelectEquipListSheet
+        })
     }
     
     // 带行标题的视图
@@ -272,30 +219,6 @@ struct EquipPickerView: View {
     }
     
     // MARK: 子视图
-    
-    // 装备选择的 sheet
-    private var selectEquipSheet: some View {
-            List {
-                Text("选择装备")
-                    .font(.title)
-                
-                Rectangle()
-                    .stroke(Color.gray.opacity(0.2))
-                    .frame(height: 0.2)
-                    .padding(.horizontal)
-                
-                ForEach(vm.equips) { equip in
-                    EquipPickerOptionView(equip: equip)
-                        .background()
-                        .onTapGesture(perform: {
-                            selected = equip
-                            showSheet = nil
-                        })
-                }
-            }
-            .padding()
-        .presentationDetents([.large])
-    }
     
     // 五行石镶嵌选择的 sheet
     private var embeddingStoneSheet: some View {
