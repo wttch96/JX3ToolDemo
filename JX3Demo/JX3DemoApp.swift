@@ -11,7 +11,7 @@ import SwiftUI
 struct JX3DemoApp: App {
     var body: some Scene {
         WindowGroup {
-            HomeView()
+            AppTabBarView()
         }
     }
 }

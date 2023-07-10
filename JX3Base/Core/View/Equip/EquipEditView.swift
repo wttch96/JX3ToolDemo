@@ -66,10 +66,10 @@ struct EquipEditView: View {
     }
     
     private func positionView(_ position: EquipPosition) -> some View {
-        EquipSelectItemView(kungfu: kungfu, position: position, selectedEquip: positionBinding(position))
+        EquipSelectPositionView(kungfu: kungfu, position: position, selectedEquip: positionBinding(position))
     }
     private func positionView1(_ position: EquipPosition, selected: Binding<EquipDTO?>) -> some View {
-        EquipSelectItemView(kungfu: kungfu, position: position, selectedEquip: selected)
+        EquipSelectPositionView(kungfu: kungfu, position: position, selectedEquip: selected)
     }
     
     private func positionBinding(_ position: EquipPosition) -> Binding<EquipDTO?> {

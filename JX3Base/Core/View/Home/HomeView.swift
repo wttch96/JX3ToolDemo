@@ -9,44 +9,19 @@ import SwiftUI
 
 struct HomeView: View {
     var body: some View {
-        NavigationStack {
-            NavigationLink(destination: {
-                ServerStateView()
-            }, label: {
-                VStack {
-                    Text("服务器状态")
-                        .font(.title)
-                        .padding()
-                        .frame(maxWidth: .infinity)
-                        .background(Color.blue)
-                        .cornerRadius(14)
-                }
-            })
-            NavigationLink(destination: {
+        VStack {
+            BoxNewsCarouselView()
+            
+            LazyVGrid(columns: Array(repeating: GridItem(.flexible()), count: 4), content: {
                 TalentPicker()
-            }, label: {
-                VStack {
-                    Text("奇穴模拟")
-                        .font(.title)
-                        .padding()
-                        .frame(maxWidth: .infinity)
-                        .background(Color.blue)
-                        .cornerRadius(14)
-                }
-            })
-            NavigationLink(destination: {
+                    .toolNav(.talnetEditor)
                 EquipHomeView()
-            }, label: {
-                VStack {
-                    Text("配装器")
-                        .font(.title)
-                        .padding()
-                        .frame(maxWidth: .infinity)
-                        .background(Color.blue)
-                        .cornerRadius(14)
-                }
+                    .toolNav(.equipEditor)
             })
+            Spacer()
         }
+        .padding(.top, 48 )
+        .padding()
     }
 }
 

@@ -31,7 +31,6 @@ struct EquipPickerOptionView: View {
             Spacer()
             Text("\(equip.level)品")
         }
-        .padding(.horizontal)
     }
 }
 
