@@ -10,6 +10,8 @@ import SwiftUI
 struct HomeView: View {
     var body: some View {
         VStack {
+            BoxNewsCarouselView()
+            
             LazyVGrid(columns: Array(repeating: GridItem(.flexible()), count: 4), content: {
                 TalentPicker()
                     .toolNav(.talnetEditor)
@@ -18,6 +20,7 @@ struct HomeView: View {
             })
             Spacer()
         }
+        .padding(.top, 48 )
         .padding()
     }
 }

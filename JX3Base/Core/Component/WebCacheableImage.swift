@@ -34,7 +34,7 @@ struct WebCacheableImage<T>: View where T: Equatable {
     
     
     var body: some View {
-        VStack {
+        ZStack {
             if let image = vm.image {
                 // 图片已经下载
                 imageView(image)

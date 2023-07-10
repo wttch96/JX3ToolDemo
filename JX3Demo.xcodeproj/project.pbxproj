@@ -99,6 +99,7 @@
 		495410E22A27C59E00AA6293 /* TalentLevelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495410E02A27C59E00AA6293 /* TalentLevelView.swift */; };
 		495410E42A2AEA3C00AA6293 /* EnvironmentExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495410E32A2AEA3C00AA6293 /* EnvironmentExtension.swift */; };
 		495410E52A2AEA3C00AA6293 /* EnvironmentExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495410E32A2AEA3C00AA6293 /* EnvironmentExtension.swift */; };
+		495625D22A5C4DDD008D7F63 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495625D12A5C4DDD008D7F63 /* WebView.swift */; };
 		49563C692A261EF600AB8FAF /* AutoResizeLazyVGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49563C682A261EF600AB8FAF /* AutoResizeLazyVGrid.swift */; };
 		495FD65B2A36FC5800A17FB0 /* PlainToggleStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495FD65A2A36FC5800A17FB0 /* PlainToggleStyle.swift */; };
 		495FD65C2A36FC5800A17FB0 /* PlainToggleStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495FD65A2A36FC5800A17FB0 /* PlainToggleStyle.swift */; };
@@ -262,6 +263,20 @@
 		49FBA5E92A585AB50031F9B5 /* CustomNavLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FBA5E72A585AB50031F9B5 /* CustomNavLink.swift */; };
 		49FBA5EB2A585C8A0031F9B5 /* CustomNavBarPreferenceKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FBA5EA2A585C8A0031F9B5 /* CustomNavBarPreferenceKeys.swift */; };
 		49FBA5EC2A585C8A0031F9B5 /* CustomNavBarPreferenceKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FBA5EA2A585C8A0031F9B5 /* CustomNavBarPreferenceKeys.swift */; };
+		49FBA5EF2A5AA9870031F9B5 /* BoxWrapperResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FBA5EE2A5AA9870031F9B5 /* BoxWrapperResponse.swift */; };
+		49FBA5F02A5AA9870031F9B5 /* BoxWrapperResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FBA5EE2A5AA9870031F9B5 /* BoxWrapperResponse.swift */; };
+		49FBA5F22A5AAB000031F9B5 /* BoxNews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FBA5F12A5AAB000031F9B5 /* BoxNews.swift */; };
+		49FBA5F32A5AAB000031F9B5 /* BoxNews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FBA5F12A5AAB000031F9B5 /* BoxNews.swift */; };
+		49FBA5F52A5AB0E50031F9B5 /* CarouselView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FBA5F42A5AB0E50031F9B5 /* CarouselView.swift */; };
+		49FBA5F62A5AB0E50031F9B5 /* CarouselView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FBA5F42A5AB0E50031F9B5 /* CarouselView.swift */; };
+		49FBA5F82A5C388D0031F9B5 /* BoxNewsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FBA5F72A5C388D0031F9B5 /* BoxNewsService.swift */; };
+		49FBA5F92A5C388D0031F9B5 /* BoxNewsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FBA5F72A5C388D0031F9B5 /* BoxNewsService.swift */; };
+		49FBA5FB2A5C41B80031F9B5 /* news.json in Resources */ = {isa = PBXBuildFile; fileRef = 49FBA5FA2A5C41B80031F9B5 /* news.json */; };
+		49FBA5FC2A5C41B80031F9B5 /* news.json in Resources */ = {isa = PBXBuildFile; fileRef = 49FBA5FA2A5C41B80031F9B5 /* news.json */; };
+		49FBA5FF2A5C49B60031F9B5 /* BoxNewsCarouselView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FBA5FE2A5C49B60031F9B5 /* BoxNewsCarouselView.swift */; };
+		49FBA6002A5C49B60031F9B5 /* BoxNewsCarouselView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FBA5FE2A5C49B60031F9B5 /* BoxNewsCarouselView.swift */; };
+		49FBA6022A5C49C20031F9B5 /* BoxNewsCarouselViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FBA6012A5C49C20031F9B5 /* BoxNewsCarouselViewModel.swift */; };
+		49FBA6032A5C49C20031F9B5 /* BoxNewsCarouselViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FBA6012A5C49C20031F9B5 /* BoxNewsCarouselViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -356,6 +371,7 @@
 		495410DD2A27C23B00AA6293 /* TalentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TalentView.swift; sourceTree = "<group>"; };
 		495410E02A27C59E00AA6293 /* TalentLevelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TalentLevelView.swift; sourceTree = "<group>"; };
 		495410E32A2AEA3C00AA6293 /* EnvironmentExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnvironmentExtension.swift; sourceTree = "<group>"; };
+		495625D12A5C4DDD008D7F63 /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
 		49563C682A261EF600AB8FAF /* AutoResizeLazyVGrid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoResizeLazyVGrid.swift; sourceTree = "<group>"; };
 		495FD65A2A36FC5800A17FB0 /* PlainToggleStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlainToggleStyle.swift; sourceTree = "<group>"; };
 		495FD65E2A3B675200A17FB0 /* DutyType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DutyType.swift; sourceTree = "<group>"; };
@@ -457,6 +473,13 @@
 		49FBA5E42A58596A0031F9B5 /* CustomNavView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavView.swift; sourceTree = "<group>"; };
 		49FBA5E72A585AB50031F9B5 /* CustomNavLink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavLink.swift; sourceTree = "<group>"; };
 		49FBA5EA2A585C8A0031F9B5 /* CustomNavBarPreferenceKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavBarPreferenceKeys.swift; sourceTree = "<group>"; };
+		49FBA5EE2A5AA9870031F9B5 /* BoxWrapperResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoxWrapperResponse.swift; sourceTree = "<group>"; };
+		49FBA5F12A5AAB000031F9B5 /* BoxNews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoxNews.swift; sourceTree = "<group>"; };
+		49FBA5F42A5AB0E50031F9B5 /* CarouselView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselView.swift; sourceTree = "<group>"; };
+		49FBA5F72A5C388D0031F9B5 /* BoxNewsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoxNewsService.swift; sourceTree = "<group>"; };
+		49FBA5FA2A5C41B80031F9B5 /* news.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = news.json; sourceTree = "<group>"; };
+		49FBA5FE2A5C49B60031F9B5 /* BoxNewsCarouselView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoxNewsCarouselView.swift; sourceTree = "<group>"; };
+		49FBA6012A5C49C20031F9B5 /* BoxNewsCarouselViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoxNewsCarouselViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -580,6 +603,7 @@
 				495FD6742A4030A900A17FB0 /* equip2.json */,
 				49504D942A42D10A00B93E90 /* weapon1.json */,
 				49FBA5B12A56F36F0031F9B5 /* enchant1.json */,
+				49FBA5FA2A5C41B80031F9B5 /* news.json */,
 			);
 			path = Previews;
 			sourceTree = "<group>";
@@ -692,6 +716,7 @@
 		4992D16C2A22F7F4007EEFC2 /* Entity */ = {
 			isa = PBXGroup;
 			children = (
+				49FBA5ED2A5AA9700031F9B5 /* Resp */,
 				49504D9A2A42D45300B93E90 /* Equip */,
 				495FD65D2A3B674100A17FB0 /* Enum */,
 				4992D16D2A22F839007EEFC2 /* ServerState.swift */,
@@ -699,10 +724,10 @@
 				497467C32A2619DE00275A09 /* Mount.swift */,
 				495410DA2A276EF800AA6293 /* Talent.swift */,
 				499F5AD12A2FA4E300A3C588 /* School.swift */,
-				49536A212A31C214004FBBB1 /* BoxResponse.swift */,
 				495FD6612A3DF8C100A17FB0 /* MountEquip.swift */,
 				49504D972A42D42C00B93E90 /* CustomKey.swift */,
 				49FBA5A72A55E1E50031F9B5 /* Enchant.swift */,
+				49FBA5F12A5AAB000031F9B5 /* BoxNews.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -803,6 +828,7 @@
 				49536A182A30DF1D004FBBB1 /* AssetJsonDataManager.swift */,
 				49536A1E2A31BB19004FBBB1 /* EquipSearchService.swift */,
 				49FBA5A42A55E09E0031F9B5 /* EnchantService.swift */,
+				49FBA5F72A5C388D0031F9B5 /* BoxNewsService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -831,6 +857,7 @@
 				495FD65A2A36FC5800A17FB0 /* PlainToggleStyle.swift */,
 				49504D7C2A41C73E00B93E90 /* CheckBoxToggleStyle.swift */,
 				49DDC4B32A532B03009F06A4 /* StarMarkView.swift */,
+				49FBA5F42A5AB0E50031F9B5 /* CarouselView.swift */,
 			);
 			path = Component;
 			sourceTree = "<group>";
@@ -846,6 +873,7 @@
 		4992D20C2A24F03C007EEFC2 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				49FBA5FD2A5C49A80031F9B5 /* Carousel */,
 				49FBA5DA2A5855940031F9B5 /* Nav */,
 				49FBA5D02A581D910031F9B5 /* ToolNav */,
 				49FBA5C32A58180C0031F9B5 /* TabBar */,
@@ -885,6 +913,7 @@
 			children = (
 				4992D1FF2A24AF99007EEFC2 /* Component */,
 				4992D20C2A24F03C007EEFC2 /* View */,
+				495625D12A5C4DDD008D7F63 /* WebView.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -955,6 +984,24 @@
 				49FBA5EA2A585C8A0031F9B5 /* CustomNavBarPreferenceKeys.swift */,
 			);
 			path = Nav;
+			sourceTree = "<group>";
+		};
+		49FBA5ED2A5AA9700031F9B5 /* Resp */ = {
+			isa = PBXGroup;
+			children = (
+				49536A212A31C214004FBBB1 /* BoxResponse.swift */,
+				49FBA5EE2A5AA9870031F9B5 /* BoxWrapperResponse.swift */,
+			);
+			path = Resp;
+			sourceTree = "<group>";
+		};
+		49FBA5FD2A5C49A80031F9B5 /* Carousel */ = {
+			isa = PBXGroup;
+			children = (
+				49FBA5FE2A5C49B60031F9B5 /* BoxNewsCarouselView.swift */,
+				49FBA6012A5C49C20031F9B5 /* BoxNewsCarouselViewModel.swift */,
+			);
+			path = Carousel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1158,6 +1205,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				495FD6752A4030A900A17FB0 /* equip2.json in Resources */,
+				49FBA5FB2A5C41B80031F9B5 /* news.json in Resources */,
 				4992D1402A2278DD007EEFC2 /* Preview Assets.xcassets in Resources */,
 				49504D862A42C26C00B93E90 /* attrBriefDesc.json in Resources */,
 				497467C12A2619BF00275A09 /* xf.json in Resources */,
@@ -1203,6 +1251,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				495FD6762A4030A900A17FB0 /* equip2.json in Resources */,
+				49FBA5FC2A5C41B80031F9B5 /* news.json in Resources */,
 				4992D1C52A23C087007EEFC2 /* Preview Assets.xcassets in Resources */,
 				49504D872A42C26C00B93E90 /* attrBriefDesc.json in Resources */,
 				497467C22A2619BF00275A09 /* xf.json in Resources */,
@@ -1275,9 +1324,11 @@
 				4992D1762A2303F6007EEFC2 /* ServerStateViewModel.swift in Sources */,
 				49504D9F2A44B45600B93E90 /* EquipMagicType.swift in Sources */,
 				495FD66E2A3F593300A17FB0 /* EquipDTO.swift in Sources */,
+				495625D22A5C4DDD008D7F63 /* WebView.swift in Sources */,
 				49FBA5BE2A57FCF90031F9B5 /* CustomTabBarView.swift in Sources */,
 				495FD6782A40336900A17FB0 /* EquipPickerOptionView.swift in Sources */,
 				49504D9C2A42D46C00B93E90 /* EquipBaseType.swift in Sources */,
+				49FBA5F22A5AAB000031F9B5 /* BoxNews.swift in Sources */,
 				499F5ABB2A2B468200A3C588 /* TransitionExtension.swift in Sources */,
 				49FBA5C12A5801240031F9B5 /* CustomTabBarContainerView.swift in Sources */,
 				49DBCE192A2623B600C3BA2E /* KungfuPicker.swift in Sources */,
@@ -1298,7 +1349,9 @@
 				49563C692A261EF600AB8FAF /* AutoResizeLazyVGrid.swift in Sources */,
 				4992D1392A2278DB007EEFC2 /* JX3DemoApp.swift in Sources */,
 				4992D16E2A22F839007EEFC2 /* ServerState.swift in Sources */,
+				49FBA5F82A5C388D0031F9B5 /* BoxNewsService.swift in Sources */,
 				49536A002A308987004FBBB1 /* EquipEditView.swift in Sources */,
+				49FBA5F52A5AB0E50031F9B5 /* CarouselView.swift in Sources */,
 				495410DE2A27C23B00AA6293 /* TalentView.swift in Sources */,
 				499F5AD22A2FA4E300A3C588 /* School.swift in Sources */,
 				49536A092A30B7B1004FBBB1 /* EquipSelectPositionView.swift in Sources */,
@@ -1306,6 +1359,7 @@
 				495410E42A2AEA3C00AA6293 /* EnvironmentExtension.swift in Sources */,
 				4992D1E72A23C45E007EEFC2 /* TalentVersion.swift in Sources */,
 				493023672A25D423006E81E4 /* TalentService.swift in Sources */,
+				49FBA6022A5C49C20031F9B5 /* BoxNewsCarouselViewModel.swift in Sources */,
 				4992D19B2A2391DF007EEFC2 /* ServerStateWidget.intentdefinition in Sources */,
 				499F5ACC2A2F9D9800A3C588 /* CornersRectangle.swift in Sources */,
 				49FBA5E22A5858900031F9B5 /* NavBarView.swift in Sources */,
@@ -1330,6 +1384,8 @@
 				4992D2012A24AFB6007EEFC2 /* JX3BoxIcon.swift in Sources */,
 				49DBCE1C2A2625F800C3BA2E /* WebCacheableImage.swift in Sources */,
 				49DDC4B42A532B03009F06A4 /* StarMarkView.swift in Sources */,
+				49FBA5FF2A5C49B60031F9B5 /* BoxNewsCarouselView.swift in Sources */,
+				49FBA5EF2A5AA9870031F9B5 /* BoxWrapperResponse.swift in Sources */,
 				495FD65F2A3B675200A17FB0 /* DutyType.swift in Sources */,
 				491DB8342A26667700A40051 /* KungfuIcon.swift in Sources */,
 				497467C42A2619DE00275A09 /* Mount.swift in Sources */,
@@ -1398,18 +1454,22 @@
 				49FBA5E62A58596A0031F9B5 /* CustomNavView.swift in Sources */,
 				495410D12A273DCE00AA6293 /* ServerStateItemView.swift in Sources */,
 				49536A232A31C214004FBBB1 /* BoxResponse.swift in Sources */,
+				49FBA5F62A5AB0E50031F9B5 /* CarouselView.swift in Sources */,
 				495410D22A273DCE00AA6293 /* ServerStateSectionView.swift in Sources */,
 				495410D32A273DCE00AA6293 /* CoreDataManager.swift in Sources */,
+				49FBA5F92A5C388D0031F9B5 /* BoxNewsService.swift in Sources */,
 				495410D42A273DCE00AA6293 /* ServerState.swift in Sources */,
 				495410DF2A27C23B00AA6293 /* TalentView.swift in Sources */,
 				495410D52A273DCE00AA6293 /* TalentVersion.swift in Sources */,
 				495410D62A27405C00AA6293 /* PreviewExtension.swift in Sources */,
 				49536A0D2A30BA2D004FBBB1 /* EquipEditViewModel.swift in Sources */,
+				49FBA5F32A5AAB000031F9B5 /* BoxNews.swift in Sources */,
 				495FD6632A3DF8C100A17FB0 /* MountEquip.swift in Sources */,
 				495410D92A276D8B00AA6293 /* TalentPickerViewModel.swift in Sources */,
 				49504DA02A44B45600B93E90 /* EquipMagicType.swift in Sources */,
 				49DBCE1A2A2623B600C3BA2E /* KungfuPicker.swift in Sources */,
 				4992D20B2A24B3AF007EEFC2 /* NetworkManager.swift in Sources */,
+				49FBA6002A5C49B60031F9B5 /* BoxNewsCarouselView.swift in Sources */,
 				4992D20A2A24B3AC007EEFC2 /* ImageExtension.swift in Sources */,
 				4992D2092A24B3A7007EEFC2 /* ImageDownloadService.swift in Sources */,
 				49FBA5AC2A55E3F30031F9B5 /* EquipEnchantPicker.swift in Sources */,
@@ -1460,6 +1520,7 @@
 				495FD65C2A36FC5800A17FB0 /* PlainToggleStyle.swift in Sources */,
 				49FBA5BF2A57FCF90031F9B5 /* CustomTabBarView.swift in Sources */,
 				49FBA5C22A5801240031F9B5 /* CustomTabBarContainerView.swift in Sources */,
+				49FBA6032A5C49C20031F9B5 /* BoxNewsCarouselViewModel.swift in Sources */,
 				49FBA5E32A5858900031F9B5 /* NavBarView.swift in Sources */,
 				495FD6662A3E231700A17FB0 /* EquipQuality.swift in Sources */,
 				49536A1A2A30DF1D004FBBB1 /* AssetJsonDataManager.swift in Sources */,
@@ -1474,6 +1535,7 @@
 				49504D902A42CD2F00B93E90 /* EquipDetailView.swift in Sources */,
 				492D075E2A250F1A00826308 /* JX3.xcdatamodeld in Sources */,
 				49FBA5C62A58182B0031F9B5 /* TabBarItem.swift in Sources */,
+				49FBA5F02A5AA9870031F9B5 /* BoxWrapperResponse.swift in Sources */,
 				4992D1F62A248B2A007EEFC2 /* Logger.swift in Sources */,
 				49FBA5E02A5857990031F9B5 /* CustomNavBarContainerView.swift in Sources */,
 				495410DC2A276EF800AA6293 /* Talent.swift in Sources */,

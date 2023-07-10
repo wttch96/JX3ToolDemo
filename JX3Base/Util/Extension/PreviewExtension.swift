@@ -31,6 +31,8 @@ class Dev {
     
     let enchant1: Enchant
     
+    let news: [BoxNews]
+    
     init() {
         self.servers = [self.serverState, self.serverState2]
         self.talnets = [self.talnet, self.talnet2]
@@ -39,6 +41,8 @@ class Dev {
         self.equip2 = BundleUtil.loadJson("equip2.json", type: EquipDTO.self)!
         self.weapon1 = BundleUtil.loadJson("weapon1.json", type: EquipDTO.self)!
         self.enchant1 = BundleUtil.loadJson("enchant1.json", type: Enchant.self)!
+        
+        self.news = BundleUtil.loadJson("news.json", type: [BoxNews].self)!
     }
     
 }
