@@ -6,7 +6,7 @@
 //
 
 import SwiftUI
-import RangeSlider
+import WttchUI
 import Combine
 
 
@@ -42,9 +42,9 @@ struct EquipPickerView: View {
     
     @State private var otherFilters: [OtherFilter] = [.spareParts, .simplify, .school]
     @State private var pvType: PvType = .all
-
+    
     // MARK: 强化
-
+    
     // ⚠️：暂不整合为 ObservableObject 因为会导致 CPU 100% 卡死
     // 强化等级
     @State private var strengthLevel: Int = 1
@@ -220,7 +220,7 @@ struct EquipPickerView: View {
     }
     
     // MARK: 子视图
-
+    
     // 五行石镶嵌选择的 sheet
     private var embeddingStoneSheet: some View {
         VStack {

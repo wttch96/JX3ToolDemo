@@ -21,7 +21,7 @@ struct CarouselView<T: Identifiable, Content: View>: View {
     
     @State var curIndex = 0
     
-    private var timer = Timer.publish(every: 2, on: .main, in: .common).autoconnect()
+    private var timer = Timer.publish(every: 3, on: .main, in: .common).autoconnect()
     
     // 定时器动画中
     @State private var timerAnimating = false
@@ -37,30 +37,54 @@ struct CarouselView<T: Identifiable, Content: View>: View {
                     
                     content(item)
                         .scaledToFill()
+                        .background(Color.gray)
                         .frame(width: geo.size.width, height: geo.size.height)
                         .clipped()
                         .offset(x: distance(id) * geo.size.width + dragValue)
                         .zIndex(Double(data.count) - abs(distance(id)))
                 })
-            }
-            .gesture(DragGesture().onChanged({ value in
-                draging = true
-                dragValue = value.translation.width
-            }).onEnded({ value in
-                if value.translation.width > geo.size.width/2 {
-                    withAnimation(.spring()) {
-                        curIndex -= 1
-                        if curIndex == -1 {
-                            curIndex = 9
-                        }
-                        dragValue = 0
-                        draging = false
+                
+                VStack {
+                    Spacer()
+                    HStack(spacing: 10) {
+                        ForEach(0..<data.count, id: \.self, content: { index in
+                            RoundedRectangle(cornerRadius: 2)
+                                .fill(Color.white)
+                                .opacity(index == curIndex ? 1 : 0.4)
+                                .frame(width: 20, height: 4)
+                        })
                     }
-                } else {
+                    .padding(.bottom)
+                }
+                .zIndex(Double(data.count + 1))
+            }
+            .highPriorityGesture(DragGesture().onChanged({ value in
+                if !timerAnimating {
+                    draging = true
+                    dragValue = value.translation.width
+                }
+            }).onEnded({ value in
+                if draging {
+                    // 左边划 正
+                    // 右边划 负
+                    let tWidth = value.translation.width
                     withAnimation(.spring()) {
-                        curIndex += 1
-                        if curIndex == 10 {
-                            curIndex = 0
+                        if tWidth > 0 {
+                            if tWidth > geo.size.width / 2 {
+                                var next = curIndex - 1
+                                if next == -1 {
+                                    next = data.count - 1
+                                }
+                                curIndex = next
+                            }
+                        } else {
+                            if abs(tWidth) > geo.size.width / 2 {
+                                var next = curIndex + 1
+                                if next == data.count {
+                                    next = 0
+                                }
+                                curIndex = next
+                            }
                         }
                         dragValue = 0
                         draging = false
@@ -69,11 +93,16 @@ struct CarouselView<T: Identifiable, Content: View>: View {
             }))
         }
         .onReceive(timer, perform: { _ in
-            if !draging {
-                withAnimation(.linear(duration: 0.5)) {
+            timerAnimating = true
+            if !draging && !self.data.isEmpty {
+                let duration = 0.3
+                withAnimation(.linear(duration: duration)) {
                     self.curIndex += 1
                     self.curIndex %= self.data.count
                 }
+                DispatchQueue.main.asyncAfter(deadline: .now() + duration, execute: {
+                    timerAnimating = false
+                })
             }
         })
     }

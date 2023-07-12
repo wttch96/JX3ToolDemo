@@ -16,7 +16,7 @@ struct BoxNewsCarouselView: View {
             NavigationLink(destination: {
                 WebView(url: new.link)
             }, label: {
-                WebCacheableImage(new, folderName: "news", urlFormat: { $0.img }, fileNameFormat: { "\($0.id)" })
+                WebCacheableImage(new, folderName: "news", urlFormat: { "\($0.img)?x-oss-process=style/index_banner" }, fileNameFormat: { "\($0.id)" })
             })
         }
         .frame(width: 400, height: 200)
