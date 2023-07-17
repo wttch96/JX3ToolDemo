@@ -46,13 +46,16 @@ struct EquipSelectPositionView: View {
                 Spacer()
             }
         })
+        .buttonStyle(.plain)
     }
 }
 
 struct EquipSelectItemView_Previews: PreviewProvider {
     static var previews: some View {
-        EquipSelectPositionView(
-            kungfu: .common,
-            position: .amulet, selectedEquip: .constant(dev.equip1))
+        NavigationStack {
+            EquipSelectPositionView(
+                kungfu: .common,
+                position: .amulet, selectedEquip: .constant(dev.equip1))
+        }
     }
 }

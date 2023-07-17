@@ -1,35 +1,14 @@
 //
-//  EquipPickerView.swift
-//  JX3Demo
+//  EquipEditorPickerView.swift
+//  JX3MacApp
 //
-//  Created by Wttch on 2023/6/7.
+//  Created by Wttch on 2023/7/18.
 //
 
 import SwiftUI
 import WttchUI
-import Combine
 
-
-enum OtherFilter: String, CaseIterable {
-    case spareParts = "散件"
-    case simplify = "精简"
-    case school = "牌子"
-    // 默认只要本门派
-    // case onlyMineSchool = "仅显示本门派"
-}
-
-enum SheetType: Int, Identifiable {
-    // 选择装备的 sheet
-    case showSelectEquipListSheet = 1
-    // 选择五行石镶嵌等级的 sheet
-    case showEmbeddingStoneSheet = 2
-    
-    var id: Int {
-        return self.rawValue
-    }
-}
-
-struct EquipPickerView: View {
+struct EquipEditorPickerView: View {
     let kungfu: Mount
     let position: EquipPosition
     
@@ -265,12 +244,8 @@ struct EquipPickerView: View {
     }
 }
 
-struct EquipPickerView_Previews: PreviewProvider {
+struct EquipEditorPickerView_Previews: PreviewProvider {
     static var previews: some View {
-        NavigationStack {
-            EquipPickerView(
-                kungfu: dev.mount1, position: .helm, selected: .constant(dev.equip1)
-            )
-        }
+        EquipEditorPickerView(kungfu: dev.mount1, position: .amulet, selected: .constant(nil))
     }
 }

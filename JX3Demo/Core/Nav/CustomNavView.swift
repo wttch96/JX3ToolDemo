@@ -20,9 +20,9 @@ struct CustomNavView<Content: View>: View {
             CustomNavBarContainerView {
                 content
             }
-            .navigationBarHidden(true)
+            //.navigationBarHidden(true)
         }
-        .navigationViewStyle(StackNavigationViewStyle())
+        //.navigationViewStyle(StackNavigationViewStyle())
     }
 }
 

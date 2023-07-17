@@ -24,10 +24,13 @@ struct TalentPicker: View {
                     AutoResizeLazyVGrid(vm.talents, gridSize: CGSize(width: 60, height: 80)) { level in
                         TalentLevelView(talentLeve: level, seletedTalent: bindingTalent(for: level))
                     }
+                    .padding()
                     .background(
                         RoundedRectangle(cornerRadius: 8)
                             .foregroundColor(Color.theme.panel)
                     )
+                    .padding(.vertical, -12)
+                    .padding(.horizontal, -20)
                 }
             }
         }

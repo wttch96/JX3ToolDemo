@@ -11,6 +11,7 @@ struct HomeView: View {
     var body: some View {
         VStack {
             BoxNewsCarouselView()
+                .frame(maxHeight: 160)
             
             LazyVGrid(columns: Array(repeating: GridItem(.flexible()), count: 4), content: {
                 TalentPicker()
@@ -21,7 +22,6 @@ struct HomeView: View {
             Spacer()
         }
         .padding(.top, 48 )
-        .padding()
     }
 }
 

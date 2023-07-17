@@ -8,12 +8,25 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    @Environment(\.presentationMode) var presentationMode
     var body: some View {
-        VStack {
-            JX3BoxIcon(id: 1)
-            JX3BoxIcon(id: 3)
+        GeometryReader { geo in
+            NavigationSplitView(sidebar: {
+                
+            }, detail: {
+           
+                VStack {
+                    BoxNewsCarouselView(type: .common)
+                        .frame(height: 100)
+                    Spacer()
+                }
+                .frame(maxWidth: 200)
+            })
         }
-        .padding()
+        .toolbar(content: {
+            Text("XXX")
+        })
     }
 }
 

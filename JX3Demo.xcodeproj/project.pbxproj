@@ -195,6 +195,10 @@
 		4992D2212A24F9DA007EEFC2 /* CircleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4992D21F2A24F9DA007EEFC2 /* CircleButton.swift */; };
 		4992D2262A250021007EEFC2 /* DisplayBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4992D2252A250021007EEFC2 /* DisplayBarView.swift */; };
 		4992D2272A250021007EEFC2 /* DisplayBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4992D2252A250021007EEFC2 /* DisplayBarView.swift */; };
+		499A2FB52A65173300F10732 /* EquipEditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499A2FB42A65173300F10732 /* EquipEditorView.swift */; };
+		499A2FB82A65A56B00F10732 /* EquipEditorPositionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499A2FB72A65A56B00F10732 /* EquipEditorPositionView.swift */; };
+		499A2FBA2A65A62500F10732 /* EquipEditorNavView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499A2FB92A65A62500F10732 /* EquipEditorNavView.swift */; };
+		499A2FBC2A65A86B00F10732 /* EquipEditorPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499A2FBB2A65A86B00F10732 /* EquipEditorPickerView.swift */; };
 		499F5ABB2A2B468200A3C588 /* TransitionExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499F5ABA2A2B468200A3C588 /* TransitionExtension.swift */; };
 		499F5ABC2A2B468200A3C588 /* TransitionExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499F5ABA2A2B468200A3C588 /* TransitionExtension.swift */; };
 		499F5ABF2A2D071B00A3C588 /* EquipHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499F5ABE2A2D071B00A3C588 /* EquipHomeView.swift */; };
@@ -209,7 +213,10 @@
 		499F5AD32A2FA4E300A3C588 /* School.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499F5AD12A2FA4E300A3C588 /* School.swift */; };
 		499F5AD82A304C9C00A3C588 /* colors.json in Resources */ = {isa = PBXBuildFile; fileRef = 499F5AD72A304C9C00A3C588 /* colors.json */; };
 		499F5AD92A304C9C00A3C588 /* colors.json in Resources */ = {isa = PBXBuildFile; fileRef = 499F5AD72A304C9C00A3C588 /* colors.json */; };
-		49D7EB622A5ECFC00011A0B1 /* WttchUI in Frameworks */ = {isa = PBXBuildFile; productRef = 49D7EB612A5ECFC00011A0B1 /* WttchUI */; };
+		49D7EB8E2A606F180011A0B1 /* WttchUI in Frameworks */ = {isa = PBXBuildFile; productRef = 49D7EB8D2A606F180011A0B1 /* WttchUI */; };
+		49D7EB942A606F4B0011A0B1 /* WttchUI in Frameworks */ = {isa = PBXBuildFile; productRef = 49D7EB932A606F4B0011A0B1 /* WttchUI */; };
+		49D7EB952A62642A0011A0B1 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495625D12A5C4DDD008D7F63 /* WebView.swift */; };
+		49D7EB972A6284B90011A0B1 /* OpenUrlWewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D7EB962A6284B90011A0B1 /* OpenUrlWewView.swift */; };
 		49DBCE172A2622A700C3BA2E /* AutoResizeLazyVGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49563C682A261EF600AB8FAF /* AutoResizeLazyVGrid.swift */; };
 		49DBCE192A2623B600C3BA2E /* KungfuPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DBCE182A2623B600C3BA2E /* KungfuPicker.swift */; };
 		49DBCE1A2A2623B600C3BA2E /* KungfuPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DBCE182A2623B600C3BA2E /* KungfuPicker.swift */; };
@@ -267,8 +274,6 @@
 		49FBA5F02A5AA9870031F9B5 /* BoxWrapperResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FBA5EE2A5AA9870031F9B5 /* BoxWrapperResponse.swift */; };
 		49FBA5F22A5AAB000031F9B5 /* BoxNews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FBA5F12A5AAB000031F9B5 /* BoxNews.swift */; };
 		49FBA5F32A5AAB000031F9B5 /* BoxNews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FBA5F12A5AAB000031F9B5 /* BoxNews.swift */; };
-		49FBA5F52A5AB0E50031F9B5 /* CarouselView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FBA5F42A5AB0E50031F9B5 /* CarouselView.swift */; };
-		49FBA5F62A5AB0E50031F9B5 /* CarouselView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FBA5F42A5AB0E50031F9B5 /* CarouselView.swift */; };
 		49FBA5F82A5C388D0031F9B5 /* BoxNewsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FBA5F72A5C388D0031F9B5 /* BoxNewsService.swift */; };
 		49FBA5F92A5C388D0031F9B5 /* BoxNewsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FBA5F72A5C388D0031F9B5 /* BoxNewsService.swift */; };
 		49FBA5FB2A5C41B80031F9B5 /* news.json in Resources */ = {isa = PBXBuildFile; fileRef = 49FBA5FA2A5C41B80031F9B5 /* news.json */; };
@@ -440,6 +445,10 @@
 		4992D21B2A24F8F7007EEFC2 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		4992D21F2A24F9DA007EEFC2 /* CircleButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleButton.swift; sourceTree = "<group>"; };
 		4992D2252A250021007EEFC2 /* DisplayBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayBarView.swift; sourceTree = "<group>"; };
+		499A2FB42A65173300F10732 /* EquipEditorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipEditorView.swift; sourceTree = "<group>"; };
+		499A2FB72A65A56B00F10732 /* EquipEditorPositionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipEditorPositionView.swift; sourceTree = "<group>"; };
+		499A2FB92A65A62500F10732 /* EquipEditorNavView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipEditorNavView.swift; sourceTree = "<group>"; };
+		499A2FBB2A65A86B00F10732 /* EquipEditorPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipEditorPickerView.swift; sourceTree = "<group>"; };
 		499F5ABA2A2B468200A3C588 /* TransitionExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransitionExtension.swift; sourceTree = "<group>"; };
 		499F5ABE2A2D071B00A3C588 /* EquipHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipHomeView.swift; sourceTree = "<group>"; };
 		499F5AC82A2F954200A3C588 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -447,6 +456,9 @@
 		499F5ACE2A2FA4B600A3C588 /* school.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = school.json; sourceTree = "<group>"; };
 		499F5AD12A2FA4E300A3C588 /* School.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = School.swift; sourceTree = "<group>"; };
 		499F5AD72A304C9C00A3C588 /* colors.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = colors.json; sourceTree = "<group>"; };
+		49D7EB8C2A606EE20011A0B1 /* WttchUI */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = WttchUI; path = ../WttchUI; sourceTree = "<group>"; };
+		49D7EB962A6284B90011A0B1 /* OpenUrlWewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenUrlWewView.swift; sourceTree = "<group>"; };
+		49D7EB982A6287510011A0B1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		49DBCE182A2623B600C3BA2E /* KungfuPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KungfuPicker.swift; sourceTree = "<group>"; };
 		49DBCE1B2A2625F800C3BA2E /* WebCacheableImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebCacheableImage.swift; sourceTree = "<group>"; };
 		49DDC4B32A532B03009F06A4 /* StarMarkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarMarkView.swift; sourceTree = "<group>"; };
@@ -475,7 +487,6 @@
 		49FBA5EA2A585C8A0031F9B5 /* CustomNavBarPreferenceKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavBarPreferenceKeys.swift; sourceTree = "<group>"; };
 		49FBA5EE2A5AA9870031F9B5 /* BoxWrapperResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoxWrapperResponse.swift; sourceTree = "<group>"; };
 		49FBA5F12A5AAB000031F9B5 /* BoxNews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoxNews.swift; sourceTree = "<group>"; };
-		49FBA5F42A5AB0E50031F9B5 /* CarouselView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselView.swift; sourceTree = "<group>"; };
 		49FBA5F72A5C388D0031F9B5 /* BoxNewsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoxNewsService.swift; sourceTree = "<group>"; };
 		49FBA5FA2A5C41B80031F9B5 /* news.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = news.json; sourceTree = "<group>"; };
 		49FBA5FE2A5C49B60031F9B5 /* BoxNewsCarouselView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoxNewsCarouselView.swift; sourceTree = "<group>"; };
@@ -487,7 +498,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				49D7EB622A5ECFC00011A0B1 /* WttchUI in Frameworks */,
+				49D7EB8E2A606F180011A0B1 /* WttchUI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -518,6 +529,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				49D7EB942A606F4B0011A0B1 /* WttchUI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -629,6 +641,7 @@
 		4992D12C2A2278DB007EEFC2 = {
 			isa = PBXGroup;
 			children = (
+				49D7EB652A606D780011A0B1 /* Packages */,
 				4992D1A42A23A2BD007EEFC2 /* JX3Base */,
 				4992D1372A2278DB007EEFC2 /* JX3Demo */,
 				4992D1482A2278DD007EEFC2 /* JX3DemoTests */,
@@ -659,6 +672,7 @@
 		4992D1372A2278DB007EEFC2 /* JX3Demo */ = {
 			isa = PBXGroup;
 			children = (
+				499A2FAF2A63FE0D00F10732 /* Core */,
 				4992D1A32A239B29007EEFC2 /* Info.plist */,
 				4992D1382A2278DB007EEFC2 /* JX3DemoApp.swift */,
 				4992D13A2A2278DB007EEFC2 /* ContentView.swift */,
@@ -785,6 +799,9 @@
 		4992D1BC2A23C085007EEFC2 /* JX3MacApp */ = {
 			isa = PBXGroup;
 			children = (
+				499A2FB22A65172000F10732 /* Core */,
+				49D7EB982A6287510011A0B1 /* Info.plist */,
+				49D7EB962A6284B90011A0B1 /* OpenUrlWewView.swift */,
 				4992D1BD2A23C085007EEFC2 /* JX3MacAppApp.swift */,
 				4992D1BF2A23C085007EEFC2 /* ContentView.swift */,
 				4992D1C12A23C087007EEFC2 /* Assets.xcassets */,
@@ -857,7 +874,6 @@
 				495FD65A2A36FC5800A17FB0 /* PlainToggleStyle.swift */,
 				49504D7C2A41C73E00B93E90 /* CheckBoxToggleStyle.swift */,
 				49DDC4B32A532B03009F06A4 /* StarMarkView.swift */,
-				49FBA5F42A5AB0E50031F9B5 /* CarouselView.swift */,
 			);
 			path = Component;
 			sourceTree = "<group>";
@@ -874,11 +890,7 @@
 			isa = PBXGroup;
 			children = (
 				49FBA5FD2A5C49A80031F9B5 /* Carousel */,
-				49FBA5DA2A5855940031F9B5 /* Nav */,
-				49FBA5D02A581D910031F9B5 /* ToolNav */,
-				49FBA5C32A58180C0031F9B5 /* TabBar */,
 				49FBA5AD2A56F3130031F9B5 /* Enchant */,
-				499F5AC72A2F953700A3C588 /* Home */,
 				499F5ABD2A2D070300A3C588 /* Equip */,
 				49563C672A261DCD00AB8FAF /* Kungfu */,
 				4930236A2A25D80C006E81E4 /* Talent */,
@@ -918,6 +930,60 @@
 			path = Core;
 			sourceTree = "<group>";
 		};
+		499A2FAF2A63FE0D00F10732 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				499A2FB12A63FE2900F10732 /* Component */,
+				499A2FB02A63FE1400F10732 /* View */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		499A2FB02A63FE1400F10732 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				499F5AC72A2F953700A3C588 /* Home */,
+				49FBA5DA2A5855940031F9B5 /* Nav */,
+				49FBA5D02A581D910031F9B5 /* ToolNav */,
+				49FBA5C32A58180C0031F9B5 /* TabBar */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		499A2FB12A63FE2900F10732 /* Component */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Component;
+			sourceTree = "<group>";
+		};
+		499A2FB22A65172000F10732 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				499A2FB32A65172400F10732 /* View */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		499A2FB32A65172400F10732 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				499A2FB62A65243200F10732 /* EquipEditor */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		499A2FB62A65243200F10732 /* EquipEditor */ = {
+			isa = PBXGroup;
+			children = (
+				499A2FB42A65173300F10732 /* EquipEditorView.swift */,
+				499A2FB72A65A56B00F10732 /* EquipEditorPositionView.swift */,
+				499A2FB92A65A62500F10732 /* EquipEditorNavView.swift */,
+				499A2FBB2A65A86B00F10732 /* EquipEditorPickerView.swift */,
+			);
+			path = EquipEditor;
+			sourceTree = "<group>";
+		};
 		499F5ABD2A2D070300A3C588 /* Equip */ = {
 			isa = PBXGroup;
 			children = (
@@ -939,6 +1005,14 @@
 				499F5AC82A2F954200A3C588 /* HomeView.swift */,
 			);
 			path = Home;
+			sourceTree = "<group>";
+		};
+		49D7EB652A606D780011A0B1 /* Packages */ = {
+			isa = PBXGroup;
+			children = (
+				49D7EB8C2A606EE20011A0B1 /* WttchUI */,
+			);
+			name = Packages;
 			sourceTree = "<group>";
 		};
 		49FBA5AD2A56F3130031F9B5 /* Enchant */ = {
@@ -1023,7 +1097,7 @@
 			);
 			name = JX3Demo;
 			packageProductDependencies = (
-				49D7EB612A5ECFC00011A0B1 /* WttchUI */,
+				49D7EB8D2A606F180011A0B1 /* WttchUI */,
 			);
 			productName = JX3Demo;
 			productReference = 4992D1352A2278DB007EEFC2 /* JX3Demo.app */;
@@ -1095,6 +1169,9 @@
 			dependencies = (
 			);
 			name = JX3MacApp;
+			packageProductDependencies = (
+				49D7EB932A606F4B0011A0B1 /* WttchUI */,
+			);
 			productName = JX3MacApp;
 			productReference = 4992D1BB2A23C085007EEFC2 /* JX3MacApp.app */;
 			productType = "com.apple.product-type.application";
@@ -1182,7 +1259,6 @@
 			);
 			mainGroup = 4992D12C2A2278DB007EEFC2;
 			packageReferences = (
-				49D7EB602A5ECEB70011A0B1 /* XCRemoteSwiftPackageReference "WttchUI" */,
 			);
 			productRefGroup = 4992D1362A2278DB007EEFC2 /* Products */;
 			projectDirPath = "";
@@ -1351,7 +1427,6 @@
 				4992D16E2A22F839007EEFC2 /* ServerState.swift in Sources */,
 				49FBA5F82A5C388D0031F9B5 /* BoxNewsService.swift in Sources */,
 				49536A002A308987004FBBB1 /* EquipEditView.swift in Sources */,
-				49FBA5F52A5AB0E50031F9B5 /* CarouselView.swift in Sources */,
 				495410DE2A27C23B00AA6293 /* TalentView.swift in Sources */,
 				499F5AD22A2FA4E300A3C588 /* School.swift in Sources */,
 				49536A092A30B7B1004FBBB1 /* EquipSelectPositionView.swift in Sources */,
@@ -1444,17 +1519,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				49D7EB952A62642A0011A0B1 /* WebView.swift in Sources */,
 				49FBA5B02A56F3370031F9B5 /* EnchantRowView.swift in Sources */,
 				49FBA5A92A55E1E50031F9B5 /* Enchant.swift in Sources */,
 				495410CF2A273DCE00AA6293 /* ServerStateViewModel.swift in Sources */,
 				495FD6602A3B675200A17FB0 /* DutyType.swift in Sources */,
 				495410D02A273DCE00AA6293 /* ServerStateView.swift in Sources */,
+				499A2FBC2A65A86B00F10732 /* EquipEditorPickerView.swift in Sources */,
 				49536A072A30AF1C004FBBB1 /* EquipPosition.swift in Sources */,
 				495FD6792A40336900A17FB0 /* EquipPickerOptionView.swift in Sources */,
 				49FBA5E62A58596A0031F9B5 /* CustomNavView.swift in Sources */,
 				495410D12A273DCE00AA6293 /* ServerStateItemView.swift in Sources */,
 				49536A232A31C214004FBBB1 /* BoxResponse.swift in Sources */,
-				49FBA5F62A5AB0E50031F9B5 /* CarouselView.swift in Sources */,
 				495410D22A273DCE00AA6293 /* ServerStateSectionView.swift in Sources */,
 				495410D32A273DCE00AA6293 /* CoreDataManager.swift in Sources */,
 				49FBA5F92A5C388D0031F9B5 /* BoxNewsService.swift in Sources */,
@@ -1467,6 +1543,8 @@
 				495FD6632A3DF8C100A17FB0 /* MountEquip.swift in Sources */,
 				495410D92A276D8B00AA6293 /* TalentPickerViewModel.swift in Sources */,
 				49504DA02A44B45600B93E90 /* EquipMagicType.swift in Sources */,
+				499A2FB82A65A56B00F10732 /* EquipEditorPositionView.swift in Sources */,
+				499A2FB52A65173300F10732 /* EquipEditorView.swift in Sources */,
 				49DBCE1A2A2623B600C3BA2E /* KungfuPicker.swift in Sources */,
 				4992D20B2A24B3AF007EEFC2 /* NetworkManager.swift in Sources */,
 				49FBA6002A5C49B60031F9B5 /* BoxNewsCarouselView.swift in Sources */,
@@ -1491,6 +1569,7 @@
 				4992D2132A24F2F1007EEFC2 /* LikedIconLibraryView.swift in Sources */,
 				49504D992A42D42C00B93E90 /* CustomKey.swift in Sources */,
 				499F5ABC2A2B468200A3C588 /* TransitionExtension.swift in Sources */,
+				499A2FBA2A65A62500F10732 /* EquipEditorNavView.swift in Sources */,
 				49FBA5B62A56FFA90031F9B5 /* EquipEnchantPickerViewModel.swift in Sources */,
 				49DDC4B52A532B03009F06A4 /* StarMarkView.swift in Sources */,
 				49DBCE1D2A2625F800C3BA2E /* WebCacheableImage.swift in Sources */,
@@ -1502,6 +1581,7 @@
 				49FBA5DD2A5855C40031F9B5 /* CustomNavBarView.swift in Sources */,
 				49536A042A30AD6B004FBBB1 /* EquipType.swift in Sources */,
 				4992D21D2A24F8F8007EEFC2 /* Color.swift in Sources */,
+				49D7EB972A6284B90011A0B1 /* OpenUrlWewView.swift in Sources */,
 				4992D2102A24F061007EEFC2 /* IconLibraryView.swift in Sources */,
 				49FBA5D32A581DF30031F9B5 /* ToolNavItem.swift in Sources */,
 				499F5ACD2A2F9D9800A3C588 /* CornersRectangle.swift in Sources */,
@@ -1918,6 +1998,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = JX3MacApp/Info.plist;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1947,6 +2028,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = JX3MacApp/Info.plist;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2117,21 +2199,13 @@
 		};
 /* End XCConfigurationList section */
 
-/* Begin XCRemoteSwiftPackageReference section */
-		49D7EB602A5ECEB70011A0B1 /* XCRemoteSwiftPackageReference "WttchUI" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/WttchSwift/WttchUI.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 0.0.1;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
 /* Begin XCSwiftPackageProductDependency section */
-		49D7EB612A5ECFC00011A0B1 /* WttchUI */ = {
+		49D7EB8D2A606F180011A0B1 /* WttchUI */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 49D7EB602A5ECEB70011A0B1 /* XCRemoteSwiftPackageReference "WttchUI" */;
+			productName = WttchUI;
+		};
+		49D7EB932A606F4B0011A0B1 /* WttchUI */ = {
+			isa = XCSwiftPackageProductDependency;
 			productName = WttchUI;
 		};
 /* End XCSwiftPackageProductDependency section */

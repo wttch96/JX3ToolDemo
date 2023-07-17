@@ -12,7 +12,14 @@ struct JX3MacAppApp: App {
     var body: some Scene {
         WindowGroup {
             // ContentView()
-            TalentPicker()
+            EquipEditorView(mount: Mount("问水诀")!)
         }
+        
+        
+        WindowGroup(id: "WebWindowGroup") {
+            OpenUrlWewView()
+                // .handlesExternalEvents(preferring: Set(arrayLiteral: "WebWindowGroup"), allowing: Set(arrayLiteral: "*"))
+        }
+        .handlesExternalEvents(matching: Set(arrayLiteral: "WebWindowGroup"))
     }
 }

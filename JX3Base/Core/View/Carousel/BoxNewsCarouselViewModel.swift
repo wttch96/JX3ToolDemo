@@ -19,7 +19,9 @@ class BoxNewsCarouselViewModel: ObservableObject {
             self?.news = data
         }
         .store(in: &anyCancellables)
-        
-        service.loadNews()
+    }
+    
+    func loadNews(_ type: BoxNewsType) {
+        service.loadNews(type: type)
     }
 }

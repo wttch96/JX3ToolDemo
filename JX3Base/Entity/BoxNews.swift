@@ -28,15 +28,15 @@ import Foundation
 //"deleted_at": null
 struct BoxNews: Decodable, Identifiable {
     let id: Int
-    let sourceId: String
-    let sourceType: String
+    let sourceId: String?
+    let sourceType: String?
     let type: String
     let subtype: String?
     let client: String
     let title: String?
     let desc: String?
-    let author: String
-    let remark: String
+    let author: String?
+    let remark: String?
     let link: String
     let img: String
     let color: String?

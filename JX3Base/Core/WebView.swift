@@ -8,21 +8,50 @@
 import SwiftUI
 import WebKit
 
-struct WebView: UIViewRepresentable {
+struct WebView {
+    let url: URL?
     
-    let url: String
+    init(url: String) {
+        self.url = URL(string: url)
+    }
+    
+    init(url: URL) {
+        self.url = url
+    }
+    
+    private func loadWebView(_ view: WKWebView) {
+        if let url = url {
+            let request = URLRequest(url: url)
+            view.load(request)
+        }
+    }
+}
+
+#if os(iOS)
+extension WebView: UIViewRepresentable {
     
     func makeUIView(context: Context) -> WKWebView {
         return WKWebView()
     }
     
     func updateUIView(_ uiView: WKWebView, context: Context) {
-        if let url =  URL(string: url) {
-            let request = URLRequest(url: url)
-            uiView.load(request)
-        }
+        self.loadWebView(uiView)
     }
 }
+#endif
+
+#if os(OSX)
+extension WebView: NSViewRepresentable {
+    
+    func makeNSView(context: Context) -> WKWebView{
+        return WKWebView()
+    }
+    
+    func updateNSView(_ nsView: WKWebView, context: Context) {
+        self.loadWebView(nsView)
+    }
+}
+#endif
 
 struct WebView_Previews: PreviewProvider {
     static var previews: some View {

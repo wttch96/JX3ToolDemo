@@ -137,7 +137,7 @@ extension GameTextXmlParse: XMLParserDelegate {
     
     
     func parser(_ parser: XMLParser, parseErrorOccurred parseError: Error) {
-        logger(parseError)
+        // logger(parseError)
         logger("")
     }
 }

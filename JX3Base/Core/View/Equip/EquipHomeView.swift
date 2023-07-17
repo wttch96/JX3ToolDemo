@@ -6,7 +6,7 @@
 //
 
 import SwiftUI
-import RangeSlider
+import WttchUI
 
 struct EquipHomeView: View {
     @State var selectedKungfu: Mount = .common
