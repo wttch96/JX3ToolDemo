@@ -9,9 +9,9 @@ import SwiftUI
 
 struct EquipEditorNavView: View {
     let mount: Mount
-    @StateObject private var vm = EquipEditViewModel()
-    
     @Binding var selectedPosition: EquipPosition?
+    
+    let selectedEquips: [EquipPosition: StrengthEquip?]
     
     var body: some View {
         VStack {
@@ -22,7 +22,7 @@ struct EquipEditorNavView: View {
             ZStack {
                 VStack(spacing: 10) {
                     HStack {
-                        positionView1(.helm, selected: $vm.selectedEquip)
+                        positionView(.helm)
                         Spacer()
                         positionView(.bangle)
                     }
@@ -74,28 +74,14 @@ struct EquipEditorNavView: View {
                 selectedPosition = position
             }
     }
-    private func positionView1(_ position: EquipPosition, selected: Binding<EquipDTO?>) -> some View {
-        EquipEditorPositionView(mount: mount, position: position, selectedEquip: selected)
-            .onTapGesture {
-                selectedPosition = position
-            }
-    }
     
-    private func positionBinding(_ position: EquipPosition) -> Binding<EquipDTO?> {
-        return Binding(get: {
-            if let value = vm.seletedEquip[position] {
-                return value
-            } else {
-                return nil
-            }
-        }, set: { value in
-            vm.seletedEquip[position] = value
-        })
+    private func positionBinding(_ position: EquipPosition) -> StrengthEquip? {
+        return selectedEquips[position, default: nil]
     }
 }
 
 struct EquipEditorNavView_Previews: PreviewProvider {
     static var previews: some View {
-        EquipEditorNavView(mount: dev.mount1, selectedPosition: .constant(.amulet))
+        EquipEditorNavView(mount: dev.mount1, selectedPosition: .constant(.amulet), selectedEquips: [:])
     }
 }

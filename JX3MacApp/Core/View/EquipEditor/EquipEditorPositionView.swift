@@ -11,13 +11,17 @@ struct EquipEditorPositionView: View {
     let mount: Mount
     let position: EquipPosition
     
-    @Binding var selectedEquip: EquipDTO?
+    let selectedEquip: StrengthEquip?
+    
+    var equip: EquipDTO? {
+        return selectedEquip?.equip
+    }
     
     private let size: CGFloat = 54
     
     var body: some View {
         VStack {
-            if let equip = self.selectedEquip,
+            if let equip = self.equip,
                let iconId = Int(equip.iconId ?? "0") {
                 ZStack {
                     Color.black
@@ -27,7 +31,7 @@ struct EquipEditorPositionView: View {
                         .padding(3)
                 }
                 .frame(width: size, height: size)
-                Text(equip.name)
+                Text("\(equip.name) - \(selectedEquip?.strengthLevel ?? -1)")
                     .frame(maxWidth: 60)
                     .foregroundColor(.gray)
                     .font(.caption)
@@ -48,6 +52,6 @@ struct EquipEditorPositionView_Previews: PreviewProvider {
     static var previews: some View {
         EquipEditorPositionView(
             mount: .common,
-            position: .amulet, selectedEquip: .constant(dev.equip1))
+            position: .amulet, selectedEquip: StrengthEquip(equip: dev.equip1))
     }
 }

@@ -7,12 +7,17 @@
 
 import SwiftUI
 
+/// 配装器
 struct EquipEditorView: View {
+    // 心法
     let mount: Mount
     
+    // 要配装的位置
     @State private var selectedPosition: EquipPosition? = nil
-    @State private var selectedEquips: [EquipPosition: EquipDTO?] = [:]
     
+    
+    // 选择的装备
+    @State private var selectedEquips: [EquipPosition: StrengthEquip] = [:]
     var body: some View {
         NavigationSplitView(sidebar: {
             VStack {
@@ -26,19 +31,13 @@ struct EquipEditorView: View {
                         .frame(width: 24, height: 24)
                     Text(mount.name)
                 }
-                EquipEditorNavView(mount: mount, selectedPosition: $selectedPosition)
+                EquipEditorNavView(mount: mount, selectedPosition: $selectedPosition, selectedEquips: selectedEquips)
                 Spacer()
             }
             .padding(.horizontal)
         }, detail: {
-            HStack {
-                if let selectedPosition = self.selectedPosition {
-                    EquipEditorPickerView(kungfu: mount, position: selectedPosition, selected: .init(get: {
-                        return selectedEquips[selectedPosition, default: nil]
-                    }, set: { newValue in
-                        selectedEquips[selectedPosition] = newValue
-                    }))
-                }
+            if let selectedPosition = self.selectedPosition {
+                EquipEditorPickerView(kungfu: mount, position: selectedPosition, selected: $selectedEquips[selectedPosition])
             }
         })
         

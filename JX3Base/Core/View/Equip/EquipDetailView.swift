@@ -12,6 +12,17 @@ struct EquipDetailView: View {
     let strengthLevel: Int
     let diamondAttributeLevels: [DiamondAttribute: Int]
     let enhance: Enchant?
+    
+    init(equip: EquipDTO, strengthLevel: Int, diamondAttributeLevels: [DiamondAttribute : Int], enhance: Enchant?) {
+        self.equip = equip
+        self.strengthLevel = strengthLevel
+        self.diamondAttributeLevels = diamondAttributeLevels
+        self.enhance = enhance
+    }
+    
+    init(strengthEquip: StrengthEquip) {
+        self.init(equip: strengthEquip.equip, strengthLevel: strengthEquip.strengthLevel, diamondAttributeLevels: strengthEquip.embeddingStone, enhance: strengthEquip.enchant)
+    }
 
     // 图标大小
     private let iconSize: CGFloat = 16

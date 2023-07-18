@@ -199,6 +199,7 @@
 		499A2FB82A65A56B00F10732 /* EquipEditorPositionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499A2FB72A65A56B00F10732 /* EquipEditorPositionView.swift */; };
 		499A2FBA2A65A62500F10732 /* EquipEditorNavView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499A2FB92A65A62500F10732 /* EquipEditorNavView.swift */; };
 		499A2FBC2A65A86B00F10732 /* EquipEditorPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499A2FBB2A65A86B00F10732 /* EquipEditorPickerView.swift */; };
+		499A2FC12A666FE200F10732 /* StrengthEquip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499A2FC02A666FE200F10732 /* StrengthEquip.swift */; };
 		499F5ABB2A2B468200A3C588 /* TransitionExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499F5ABA2A2B468200A3C588 /* TransitionExtension.swift */; };
 		499F5ABC2A2B468200A3C588 /* TransitionExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499F5ABA2A2B468200A3C588 /* TransitionExtension.swift */; };
 		499F5ABF2A2D071B00A3C588 /* EquipHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499F5ABE2A2D071B00A3C588 /* EquipHomeView.swift */; };
@@ -449,6 +450,7 @@
 		499A2FB72A65A56B00F10732 /* EquipEditorPositionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipEditorPositionView.swift; sourceTree = "<group>"; };
 		499A2FB92A65A62500F10732 /* EquipEditorNavView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipEditorNavView.swift; sourceTree = "<group>"; };
 		499A2FBB2A65A86B00F10732 /* EquipEditorPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipEditorPickerView.swift; sourceTree = "<group>"; };
+		499A2FC02A666FE200F10732 /* StrengthEquip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StrengthEquip.swift; sourceTree = "<group>"; };
 		499F5ABA2A2B468200A3C588 /* TransitionExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransitionExtension.swift; sourceTree = "<group>"; };
 		499F5ABE2A2D071B00A3C588 /* EquipHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipHomeView.swift; sourceTree = "<group>"; };
 		499F5AC82A2F954200A3C588 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -571,6 +573,7 @@
 				49504D9E2A44B45600B93E90 /* EquipMagicType.swift */,
 				49504DAA2A4763D600B93E90 /* DiamondAttribute.swift */,
 				49504DAD2A494E6900B93E90 /* EquipRequireType.swift */,
+				499A2FC02A666FE200F10732 /* StrengthEquip.swift */,
 			);
 			path = Equip;
 			sourceTree = "<group>";
@@ -1587,6 +1590,7 @@
 				499F5ACD2A2F9D9800A3C588 /* CornersRectangle.swift in Sources */,
 				49504D812A41CBA300B93E90 /* PvType.swift in Sources */,
 				4992D2082A24B3A3007EEFC2 /* WebCacheableImageViewModel.swift in Sources */,
+				499A2FC12A666FE200F10732 /* StrengthEquip.swift in Sources */,
 				499F5AD32A2FA4E300A3C588 /* School.swift in Sources */,
 				4992D2212A24F9DA007EEFC2 /* CircleButton.swift in Sources */,
 				49FBA5A62A55E09E0031F9B5 /* EnchantService.swift in Sources */,
