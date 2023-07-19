@@ -78,22 +78,20 @@ class EquipSearchService {
                     request?.queryItems?.append(
                         URLQueryItem(name: "BelongSchool", value: belongSchool.joined(separator: ","))
                     )
-                    logger("school:\(belongSchool.joined(separator: ","))")
                 }
                 if !magicKind.isEmpty {
                     request?.queryItems?.append(
                         URLQueryItem(name: "MagicKind", value: magicKind.joined(separator: ","))
                     )
-                    logger("magic:\(magicKind.joined(separator: ","))")
                 }
             }
             if let duty = duty {
                 request?.queryItems?.append(
                     URLQueryItem(name: "duty", value: "\(duty.value)")
                 )
-                logger("duty:\(duty.value)")
             }
         }
+        logger(request?.url?.description ?? "None")
         if let url = request?.url {
             anyCancellable = NetworkManager.downloadJsonData(url: url, type: BoxResponse<EquipDTO>.self)
                 .sink(receiveCompletion: NetworkManager.handleCompletion, receiveValue: { [weak self] resp in

@@ -18,9 +18,20 @@ struct EquipSelectlListView: View {
     @Binding var selection: EquipDTO?
     
     @State private var searchText: String = ""
-    @StateObject private var vm = EquipPickerViewModel()
+    @StateObject private var vm: EquipPickerViewModel
     
     @Environment(\.dismiss) var dismiss
+    
+    init(kungfu: Mount, position: EquipPosition, attrItems: [EquipAttribute], level: ClosedRange<CGFloat>, otherFilters: [OtherFilter], pvType: PvType, selection: Binding<EquipDTO?>) {
+        self.kungfu = kungfu
+        self.position = position
+        self.attrItems = attrItems
+        self.level = level
+        self.otherFilters = otherFilters
+        self.pvType = pvType
+        self._selection = selection
+        self._vm = StateObject(wrappedValue: EquipPickerViewModel(mount: kungfu, position: position, attrItems: attrItems, level: level, otherFilters: otherFilters, pvType: pvType))
+    }
     
     var body: some View {
         List {
@@ -28,11 +39,11 @@ struct EquipSelectlListView: View {
                 HStack {
                     TextField("搜索", text: $searchText)
                         .onSubmit {
-                            loadEquip()
+                            vm.loadEquip()
                         }
                     
                     Button(action: {
-                        loadEquip()
+                        vm.loadEquip()
                     }, label: {
                         Image(systemName: "magnifyingglass")
                     })
@@ -49,46 +60,8 @@ struct EquipSelectlListView: View {
         }
         .navigationTitle("选择装备")
         .onAppear {
-            loadEquip()
+            vm.loadEquip()
         }
-    }
-    
-    //
-    private func loadEquip() {
-        var schools: [String] = []
-        var kinds: [String] = []
-        
-        if otherFilters.contains(.spareParts) {
-            schools.append("通用")
-            if let primaryAttr = kungfu.equip?.primaryAttribute {
-                kinds.append(primaryAttr)
-            }
-        }
-        if otherFilters.contains(.simplify) {
-            schools.append("精简")
-            if let duty = kungfu.equip?.duty.rawValue {
-                kinds.append(duty)
-            }
-        }
-        if otherFilters.contains(.school),
-           let schoolName = kungfu.equip?.schoolName{
-            schools.append(schoolName)
-            if let duty = kungfu.equip?.duty.rawValue,
-               !schools.contains(duty){
-                schools.append(duty)
-            }
-        }
-        
-        vm.searchEquip(
-            position,
-            name: searchText,
-            minLevel: Int(level.lowerBound),
-            maxLevel: Int(level.upperBound),
-            pvType: pvType,
-            attrs: attrItems,
-            duty: kungfu.equip?.duty,
-            belongSchool: schools, magicKind: kinds
-        )
     }
 }
 

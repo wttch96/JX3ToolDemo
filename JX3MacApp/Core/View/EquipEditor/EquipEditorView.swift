@@ -37,7 +37,7 @@ struct EquipEditorView: View {
             .padding(.horizontal)
         }, detail: {
             if let selectedPosition = self.selectedPosition {
-                EquipEditorPickerView(kungfu: mount, position: selectedPosition, selected: $selectedEquips[selectedPosition])
+                EquipEditorSelectView(kungfu: mount, position: selectedPosition, selected: $selectedEquips[selectedPosition])
             }
         })
         

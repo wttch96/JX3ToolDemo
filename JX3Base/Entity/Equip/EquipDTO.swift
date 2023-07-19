@@ -187,7 +187,7 @@ import Foundation
 //    "_SetData": {},
 //    "_SkillDesc": null,
 //    "_isAwesome": 1
-struct EquipDTO: Decodable, Identifiable {
+struct EquipDTO: Decodable {
     let id: Int
     let attrs: [EquipAttribute]
     let attrType: [String]
@@ -400,5 +400,19 @@ extension EquipDTO {
             }
         }
         return requireTypes
+    }
+}
+// MARK: Hash, Id
+extension EquipDTO: Hashable, Identifiable, Equatable {
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(id)
+    }
+    
+    var hashValue: Int {
+        return id.hashValue
+    }
+    
+    static func ==(lhs: EquipDTO, rhs: EquipDTO) -> Bool {
+        return lhs.id == rhs.id
     }
 }

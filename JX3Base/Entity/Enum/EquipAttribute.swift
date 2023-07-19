@@ -36,7 +36,11 @@ enum EquipAttribute: String, CaseIterable {
     case decritical = "Decritical"
 }
 
-extension EquipAttribute: Decodable {
+extension EquipAttribute: Decodable, Identifiable {
+    var id: String {
+        return rawValue
+    }
+    
     var label: String {
         switch self {
         case .surplus: return "破招"

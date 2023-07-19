@@ -53,8 +53,6 @@ struct EquipPickerView: View {
     // 小附魔
     @State private var enchant: Enchant? = nil
     
-    @StateObject private var vm = EquipPickerViewModel()
-    
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     
     init(kungfu: Mount, position: EquipPosition, selected: Binding<EquipDTO?>) {

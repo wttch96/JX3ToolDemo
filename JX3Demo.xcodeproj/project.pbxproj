@@ -198,8 +198,10 @@
 		499A2FB52A65173300F10732 /* EquipEditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499A2FB42A65173300F10732 /* EquipEditorView.swift */; };
 		499A2FB82A65A56B00F10732 /* EquipEditorPositionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499A2FB72A65A56B00F10732 /* EquipEditorPositionView.swift */; };
 		499A2FBA2A65A62500F10732 /* EquipEditorNavView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499A2FB92A65A62500F10732 /* EquipEditorNavView.swift */; };
-		499A2FBC2A65A86B00F10732 /* EquipEditorPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499A2FBB2A65A86B00F10732 /* EquipEditorPickerView.swift */; };
+		499A2FBC2A65A86B00F10732 /* EquipEditorSelectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499A2FBB2A65A86B00F10732 /* EquipEditorSelectView.swift */; };
 		499A2FC12A666FE200F10732 /* StrengthEquip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499A2FC02A666FE200F10732 /* StrengthEquip.swift */; };
+		499A2FC72A68613300F10732 /* EquipPickerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499A2FC62A68613300F10732 /* EquipPickerModel.swift */; };
+		499A2FC92A686AF300F10732 /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499A2FC82A686AF300F10732 /* Environment.swift */; };
 		499F5ABB2A2B468200A3C588 /* TransitionExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499F5ABA2A2B468200A3C588 /* TransitionExtension.swift */; };
 		499F5ABC2A2B468200A3C588 /* TransitionExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499F5ABA2A2B468200A3C588 /* TransitionExtension.swift */; };
 		499F5ABF2A2D071B00A3C588 /* EquipHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499F5ABE2A2D071B00A3C588 /* EquipHomeView.swift */; };
@@ -449,8 +451,10 @@
 		499A2FB42A65173300F10732 /* EquipEditorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipEditorView.swift; sourceTree = "<group>"; };
 		499A2FB72A65A56B00F10732 /* EquipEditorPositionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipEditorPositionView.swift; sourceTree = "<group>"; };
 		499A2FB92A65A62500F10732 /* EquipEditorNavView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipEditorNavView.swift; sourceTree = "<group>"; };
-		499A2FBB2A65A86B00F10732 /* EquipEditorPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipEditorPickerView.swift; sourceTree = "<group>"; };
+		499A2FBB2A65A86B00F10732 /* EquipEditorSelectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipEditorSelectView.swift; sourceTree = "<group>"; };
 		499A2FC02A666FE200F10732 /* StrengthEquip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StrengthEquip.swift; sourceTree = "<group>"; };
+		499A2FC62A68613300F10732 /* EquipPickerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipPickerModel.swift; sourceTree = "<group>"; };
+		499A2FC82A686AF300F10732 /* Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
 		499F5ABA2A2B468200A3C588 /* TransitionExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransitionExtension.swift; sourceTree = "<group>"; };
 		499F5ABE2A2D071B00A3C588 /* EquipHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipHomeView.swift; sourceTree = "<group>"; };
 		499F5AC82A2F954200A3C588 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -979,12 +983,22 @@
 		499A2FB62A65243200F10732 /* EquipEditor */ = {
 			isa = PBXGroup;
 			children = (
+				499A2FC52A68611D00F10732 /* ViewModel */,
 				499A2FB42A65173300F10732 /* EquipEditorView.swift */,
 				499A2FB72A65A56B00F10732 /* EquipEditorPositionView.swift */,
 				499A2FB92A65A62500F10732 /* EquipEditorNavView.swift */,
-				499A2FBB2A65A86B00F10732 /* EquipEditorPickerView.swift */,
+				499A2FBB2A65A86B00F10732 /* EquipEditorSelectView.swift */,
+				499A2FC82A686AF300F10732 /* Environment.swift */,
 			);
 			path = EquipEditor;
+			sourceTree = "<group>";
+		};
+		499A2FC52A68611D00F10732 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				499A2FC62A68613300F10732 /* EquipPickerModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		499F5ABD2A2D070300A3C588 /* Equip */ = {
@@ -1528,7 +1542,7 @@
 				495410CF2A273DCE00AA6293 /* ServerStateViewModel.swift in Sources */,
 				495FD6602A3B675200A17FB0 /* DutyType.swift in Sources */,
 				495410D02A273DCE00AA6293 /* ServerStateView.swift in Sources */,
-				499A2FBC2A65A86B00F10732 /* EquipEditorPickerView.swift in Sources */,
+				499A2FBC2A65A86B00F10732 /* EquipEditorSelectView.swift in Sources */,
 				49536A072A30AF1C004FBBB1 /* EquipPosition.swift in Sources */,
 				495FD6792A40336900A17FB0 /* EquipPickerOptionView.swift in Sources */,
 				49FBA5E62A58596A0031F9B5 /* CustomNavView.swift in Sources */,
@@ -1589,6 +1603,7 @@
 				49FBA5D32A581DF30031F9B5 /* ToolNavItem.swift in Sources */,
 				499F5ACD2A2F9D9800A3C588 /* CornersRectangle.swift in Sources */,
 				49504D812A41CBA300B93E90 /* PvType.swift in Sources */,
+				499A2FC92A686AF300F10732 /* Environment.swift in Sources */,
 				4992D2082A24B3A3007EEFC2 /* WebCacheableImageViewModel.swift in Sources */,
 				499A2FC12A666FE200F10732 /* StrengthEquip.swift in Sources */,
 				499F5AD32A2FA4E300A3C588 /* School.swift in Sources */,
@@ -1612,6 +1627,7 @@
 				49504D9D2A42D46C00B93E90 /* EquipBaseType.swift in Sources */,
 				497467C82A261AC500275A09 /* BundleUtil.swift in Sources */,
 				495410E52A2AEA3C00AA6293 /* EnvironmentExtension.swift in Sources */,
+				499A2FC72A68613300F10732 /* EquipPickerModel.swift in Sources */,
 				49536A112A30DAAB004FBBB1 /* EquipPickerView.swift in Sources */,
 				49FBA5BC2A57FBAA0031F9B5 /* AppTabBarView.swift in Sources */,
 				49FBA5EC2A585C8A0031F9B5 /* CustomNavBarPreferenceKeys.swift in Sources */,
