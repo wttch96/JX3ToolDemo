@@ -12,16 +12,18 @@ struct EquipDetailView: View {
     let strengthLevel: Int
     let diamondAttributeLevels: [DiamondAttribute: Int]
     let enhance: Enchant?
+    let enchant: Enchant?
     
-    init(equip: EquipDTO, strengthLevel: Int, diamondAttributeLevels: [DiamondAttribute : Int], enhance: Enchant?) {
+    init(equip: EquipDTO, strengthLevel: Int, diamondAttributeLevels: [DiamondAttribute : Int], enhance: Enchant?, enchant: Enchant?) {
         self.equip = equip
         self.strengthLevel = strengthLevel
         self.diamondAttributeLevels = diamondAttributeLevels
         self.enhance = enhance
+        self.enchant = enchant
     }
     
     init(strengthEquip: StrengthEquip) {
-        self.init(equip: strengthEquip.equip, strengthLevel: strengthEquip.strengthLevel, diamondAttributeLevels: strengthEquip.embeddingStone, enhance: strengthEquip.enchant)
+        self.init(equip: strengthEquip.equip, strengthLevel: strengthEquip.strengthLevel, diamondAttributeLevels: strengthEquip.embeddingStone, enhance: strengthEquip.enchance, enchant: strengthEquip.enchant)
     }
 
     // 图标大小
@@ -48,6 +50,17 @@ struct EquipDetailView: View {
                 Text(enhance?.attriName ?? "未强化")
                     .foregroundColor(enhance?.attriName == nil ? .gray : .blue)
             }
+            HStack(alignment: .top, spacing: 4) {
+                Image("Enchant\(enchant == nil ? "None" : "")")
+                    .resizable()
+                    .frame(width: iconSize, height: iconSize)
+                if let attriName = enchant?.boxAttriName {
+                    JX3GameText(text: attriName, color: EquipQuality._4.color)
+                } else {
+                    Text("未强化")
+                        .foregroundColor(.gray)
+                }
+            }
             
             HStack(spacing: 0) {
                 Text("品质等级：\(equip.level)")
@@ -65,7 +78,6 @@ struct EquipDetailView: View {
 //            if let getType = equip.getType {
 //                Text("装备来源：\(getType)")
 //            }
-            Spacer()
         }
         .foregroundColor(.white)
         .font(.headline)
@@ -209,7 +221,7 @@ struct EquipDetailView: View {
 
 struct EquipDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        EquipDetailView(equip: dev.weapon1, strengthLevel: 6, diamondAttributeLevels: [:], enhance: nil)
-        EquipDetailView(equip: dev.equip1, strengthLevel: 6, diamondAttributeLevels: [:], enhance: dev.enchant1)
+        EquipDetailView(equip: dev.weapon1, strengthLevel: 6, diamondAttributeLevels: [:], enhance: nil, enchant: nil)
+        EquipDetailView(equip: dev.equip1, strengthLevel: 6, diamondAttributeLevels: [:], enhance: dev.enchant1, enchant: nil)
     }
 }

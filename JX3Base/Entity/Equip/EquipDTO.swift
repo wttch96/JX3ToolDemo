@@ -218,6 +218,8 @@ struct EquipDTO: Decodable {
     let maxDurability: String?
     // 来源
     let getType: String?
+    // 装备类型: 伤、御、疗
+    let duty: String?
     
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
@@ -237,6 +239,7 @@ struct EquipDTO: Decodable {
         self.subType = try container.decode(EquipSubType.self, forKey: .subType)
         self.maxDurability = try container.decodeIfPresent(String.self, forKey: .maxDurability)
         self.getType = try container.decodeIfPresent(String.self, forKey: .getType)
+        self.duty = try container.decodeIfPresent(String.self, forKey: .duty)
         
         self.baseTypes = try EquipDTO.loadBaseTypes(from: decoder)
         self.magicTypes = try EquipDTO.loadMagicTypes(from: decoder)
@@ -261,6 +264,7 @@ struct EquipDTO: Decodable {
         case detailTypeValue = "DetailType"
         case maxDurability = "MaxDurability"
         case getType = "GetType"
+        case duty = "_Duty"
     }
 }
 

@@ -181,7 +181,7 @@ struct EquipPickerView: View {
             }
             
             if let equip = selected {
-                EquipDetailView(equip: equip, strengthLevel: strengthLevel, diamondAttributeLevels: self.embeddingStone, enhance: enchant)
+                EquipDetailView(equip: equip, strengthLevel: strengthLevel, diamondAttributeLevels: self.embeddingStone, enhance: enchant, enchant: nil)
                     .padding(-20)
             }
         }

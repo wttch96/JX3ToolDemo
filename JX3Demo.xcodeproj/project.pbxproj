@@ -202,6 +202,8 @@
 		499A2FC12A666FE200F10732 /* StrengthEquip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499A2FC02A666FE200F10732 /* StrengthEquip.swift */; };
 		499A2FC72A68613300F10732 /* EquipPickerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499A2FC62A68613300F10732 /* EquipPickerModel.swift */; };
 		499A2FC92A686AF300F10732 /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499A2FC82A686AF300F10732 /* Environment.swift */; };
+		499A2FCA2A69A49F00F10732 /* StrengthEquip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499A2FC02A666FE200F10732 /* StrengthEquip.swift */; };
+		499A2FCC2A6A5A6C00F10732 /* EnchantSubType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499A2FCB2A6A5A6C00F10732 /* EnchantSubType.swift */; };
 		499F5ABB2A2B468200A3C588 /* TransitionExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499F5ABA2A2B468200A3C588 /* TransitionExtension.swift */; };
 		499F5ABC2A2B468200A3C588 /* TransitionExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499F5ABA2A2B468200A3C588 /* TransitionExtension.swift */; };
 		499F5ABF2A2D071B00A3C588 /* EquipHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499F5ABE2A2D071B00A3C588 /* EquipHomeView.swift */; };
@@ -216,6 +218,10 @@
 		499F5AD32A2FA4E300A3C588 /* School.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499F5AD12A2FA4E300A3C588 /* School.swift */; };
 		499F5AD82A304C9C00A3C588 /* colors.json in Resources */ = {isa = PBXBuildFile; fileRef = 499F5AD72A304C9C00A3C588 /* colors.json */; };
 		499F5AD92A304C9C00A3C588 /* colors.json in Resources */ = {isa = PBXBuildFile; fileRef = 499F5AD72A304C9C00A3C588 /* colors.json */; };
+		49D348722A6AFA0A007751AB /* enchant_level_limit.json in Resources */ = {isa = PBXBuildFile; fileRef = 49D348712A6AFA0A007751AB /* enchant_level_limit.json */; };
+		49D348732A6AFA0A007751AB /* enchant_level_limit.json in Resources */ = {isa = PBXBuildFile; fileRef = 49D348712A6AFA0A007751AB /* enchant_level_limit.json */; };
+		49D348782A6AFBEC007751AB /* EquipDuty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D348772A6AFBEC007751AB /* EquipDuty.swift */; };
+		49D348792A6AFBEC007751AB /* EquipDuty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D348772A6AFBEC007751AB /* EquipDuty.swift */; };
 		49D7EB8E2A606F180011A0B1 /* WttchUI in Frameworks */ = {isa = PBXBuildFile; productRef = 49D7EB8D2A606F180011A0B1 /* WttchUI */; };
 		49D7EB942A606F4B0011A0B1 /* WttchUI in Frameworks */ = {isa = PBXBuildFile; productRef = 49D7EB932A606F4B0011A0B1 /* WttchUI */; };
 		49D7EB952A62642A0011A0B1 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495625D12A5C4DDD008D7F63 /* WebView.swift */; };
@@ -237,8 +243,6 @@
 		49FBA5A92A55E1E50031F9B5 /* Enchant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FBA5A72A55E1E50031F9B5 /* Enchant.swift */; };
 		49FBA5AB2A55E3F30031F9B5 /* EquipEnchantPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FBA5AA2A55E3F20031F9B5 /* EquipEnchantPicker.swift */; };
 		49FBA5AC2A55E3F30031F9B5 /* EquipEnchantPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FBA5AA2A55E3F20031F9B5 /* EquipEnchantPicker.swift */; };
-		49FBA5AF2A56F3370031F9B5 /* EnchantRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FBA5AE2A56F3370031F9B5 /* EnchantRowView.swift */; };
-		49FBA5B02A56F3370031F9B5 /* EnchantRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FBA5AE2A56F3370031F9B5 /* EnchantRowView.swift */; };
 		49FBA5B22A56F36F0031F9B5 /* enchant1.json in Resources */ = {isa = PBXBuildFile; fileRef = 49FBA5B12A56F36F0031F9B5 /* enchant1.json */; };
 		49FBA5B32A56F36F0031F9B5 /* enchant1.json in Resources */ = {isa = PBXBuildFile; fileRef = 49FBA5B12A56F36F0031F9B5 /* enchant1.json */; };
 		49FBA5B52A56FFA90031F9B5 /* EquipEnchantPickerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FBA5B42A56FFA90031F9B5 /* EquipEnchantPickerViewModel.swift */; };
@@ -455,6 +459,7 @@
 		499A2FC02A666FE200F10732 /* StrengthEquip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StrengthEquip.swift; sourceTree = "<group>"; };
 		499A2FC62A68613300F10732 /* EquipPickerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipPickerModel.swift; sourceTree = "<group>"; };
 		499A2FC82A686AF300F10732 /* Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
+		499A2FCB2A6A5A6C00F10732 /* EnchantSubType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnchantSubType.swift; sourceTree = "<group>"; };
 		499F5ABA2A2B468200A3C588 /* TransitionExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransitionExtension.swift; sourceTree = "<group>"; };
 		499F5ABE2A2D071B00A3C588 /* EquipHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipHomeView.swift; sourceTree = "<group>"; };
 		499F5AC82A2F954200A3C588 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -462,6 +467,8 @@
 		499F5ACE2A2FA4B600A3C588 /* school.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = school.json; sourceTree = "<group>"; };
 		499F5AD12A2FA4E300A3C588 /* School.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = School.swift; sourceTree = "<group>"; };
 		499F5AD72A304C9C00A3C588 /* colors.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = colors.json; sourceTree = "<group>"; };
+		49D348712A6AFA0A007751AB /* enchant_level_limit.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = enchant_level_limit.json; sourceTree = "<group>"; };
+		49D348772A6AFBEC007751AB /* EquipDuty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipDuty.swift; sourceTree = "<group>"; };
 		49D7EB8C2A606EE20011A0B1 /* WttchUI */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = WttchUI; path = ../WttchUI; sourceTree = "<group>"; };
 		49D7EB962A6284B90011A0B1 /* OpenUrlWewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenUrlWewView.swift; sourceTree = "<group>"; };
 		49D7EB982A6287510011A0B1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
@@ -473,7 +480,6 @@
 		49FBA5A42A55E09E0031F9B5 /* EnchantService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnchantService.swift; sourceTree = "<group>"; };
 		49FBA5A72A55E1E50031F9B5 /* Enchant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enchant.swift; sourceTree = "<group>"; };
 		49FBA5AA2A55E3F20031F9B5 /* EquipEnchantPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipEnchantPicker.swift; sourceTree = "<group>"; };
-		49FBA5AE2A56F3370031F9B5 /* EnchantRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnchantRowView.swift; sourceTree = "<group>"; };
 		49FBA5B12A56F36F0031F9B5 /* enchant1.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = enchant1.json; sourceTree = "<group>"; };
 		49FBA5B42A56FFA90031F9B5 /* EquipEnchantPickerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipEnchantPickerViewModel.swift; sourceTree = "<group>"; };
 		49FBA5BA2A57FBAA0031F9B5 /* AppTabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTabBarView.swift; sourceTree = "<group>"; };
@@ -578,6 +584,7 @@
 				49504DAA2A4763D600B93E90 /* DiamondAttribute.swift */,
 				49504DAD2A494E6900B93E90 /* EquipRequireType.swift */,
 				499A2FC02A666FE200F10732 /* StrengthEquip.swift */,
+				49D348772A6AFBEC007751AB /* EquipDuty.swift */,
 			);
 			path = Equip;
 			sourceTree = "<group>";
@@ -611,6 +618,7 @@
 				49504D7F2A41CBA300B93E90 /* PvType.swift */,
 				49504D912A42CED200B93E90 /* EquipSubType.swift */,
 				49FBA5A12A55D0FB0031F9B5 /* ClientType.swift */,
+				499A2FCB2A6A5A6C00F10732 /* EnchantSubType.swift */,
 			);
 			path = Enum;
 			sourceTree = "<group>";
@@ -641,6 +649,7 @@
 				49504D882A42C32400B93E90 /* attrDesc.json */,
 				49504D852A42C26C00B93E90 /* attrBriefDesc.json */,
 				49504D822A42BE8900B93E90 /* weaponType.json */,
+				49D348712A6AFA0A007751AB /* enchant_level_limit.json */,
 			);
 			path = Assets;
 			sourceTree = "<group>";
@@ -737,9 +746,9 @@
 		4992D16C2A22F7F4007EEFC2 /* Entity */ = {
 			isa = PBXGroup;
 			children = (
+				495FD65D2A3B674100A17FB0 /* Enum */,
 				49FBA5ED2A5AA9700031F9B5 /* Resp */,
 				49504D9A2A42D45300B93E90 /* Equip */,
-				495FD65D2A3B674100A17FB0 /* Enum */,
 				4992D16D2A22F839007EEFC2 /* ServerState.swift */,
 				4992D1E62A23C45E007EEFC2 /* TalentVersion.swift */,
 				497467C32A2619DE00275A09 /* Mount.swift */,
@@ -1037,7 +1046,6 @@
 			children = (
 				49FBA5B42A56FFA90031F9B5 /* EquipEnchantPickerViewModel.swift */,
 				49FBA5AA2A55E3F20031F9B5 /* EquipEnchantPicker.swift */,
-				49FBA5AE2A56F3370031F9B5 /* EnchantRowView.swift */,
 			);
 			path = Enchant;
 			sourceTree = "<group>";
@@ -1313,6 +1321,7 @@
 				499F5AD82A304C9C00A3C588 /* colors.json in Resources */,
 				499F5ACF2A2FA4B600A3C588 /* school.json in Resources */,
 				49536A282A31CCDD004FBBB1 /* mountEquip.json in Resources */,
+				49D348722A6AFA0A007751AB /* enchant_level_limit.json in Resources */,
 				4992D13D2A2278DD007EEFC2 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1359,6 +1368,7 @@
 				499F5AD92A304C9C00A3C588 /* colors.json in Resources */,
 				499F5AD02A2FA4B600A3C588 /* school.json in Resources */,
 				49536A292A31CCDD004FBBB1 /* mountEquip.json in Resources */,
+				49D348732A6AFA0A007751AB /* enchant_level_limit.json in Resources */,
 				4992D1C22A23C087007EEFC2 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1430,11 +1440,11 @@
 				49536A1F2A31BB19004FBBB1 /* EquipSearchService.swift in Sources */,
 				49FBA5B52A56FFA90031F9B5 /* EquipEnchantPickerViewModel.swift in Sources */,
 				4992D2122A24F2F1007EEFC2 /* LikedIconLibraryView.swift in Sources */,
-				49FBA5AF2A56F3370031F9B5 /* EnchantRowView.swift in Sources */,
 				49504D7D2A41C73E00B93E90 /* CheckBoxToggleStyle.swift in Sources */,
 				495410DB2A276EF800AA6293 /* Talent.swift in Sources */,
 				49DDC4B72A541496009F06A4 /* NumberUtil.swift in Sources */,
 				4992D1F02A248390007EEFC2 /* LocalFileManager.swift in Sources */,
+				499A2FCA2A69A49F00F10732 /* StrengthEquip.swift in Sources */,
 				4992D1F82A249C09007EEFC2 /* ImageDownloadService.swift in Sources */,
 				49504D802A41CBA300B93E90 /* PvType.swift in Sources */,
 				49536A252A31C47E004FBBB1 /* EquipPickerViewModel.swift in Sources */,
@@ -1472,6 +1482,7 @@
 				499F5ABF2A2D071B00A3C588 /* EquipHomeView.swift in Sources */,
 				4992D2202A24F9DA007EEFC2 /* CircleButton.swift in Sources */,
 				49536A032A30AD6B004FBBB1 /* EquipType.swift in Sources */,
+				49D348782A6AFBEC007751AB /* EquipDuty.swift in Sources */,
 				4933543F2A2611260044289B /* TalentVersionPicker.swift in Sources */,
 				4992D2012A24AFB6007EEFC2 /* JX3BoxIcon.swift in Sources */,
 				49DBCE1C2A2625F800C3BA2E /* WebCacheableImage.swift in Sources */,
@@ -1537,7 +1548,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				49D7EB952A62642A0011A0B1 /* WebView.swift in Sources */,
-				49FBA5B02A56F3370031F9B5 /* EnchantRowView.swift in Sources */,
 				49FBA5A92A55E1E50031F9B5 /* Enchant.swift in Sources */,
 				495410CF2A273DCE00AA6293 /* ServerStateViewModel.swift in Sources */,
 				495FD6602A3B675200A17FB0 /* DutyType.swift in Sources */,
@@ -1573,9 +1583,11 @@
 				495410E22A27C59E00AA6293 /* TalentLevelView.swift in Sources */,
 				49FBA5E92A585AB50031F9B5 /* CustomNavLink.swift in Sources */,
 				493354422A2611260044289B /* TalentVersionViewModel.swift in Sources */,
+				49D348792A6AFBEC007751AB /* EquipDuty.swift in Sources */,
 				492D07632A250FB200826308 /* ServerStateSimpleView.swift in Sources */,
 				49536A142A30DDC1004FBBB1 /* EquipAttribute.swift in Sources */,
 				49FBA5CF2A581C660031F9B5 /* NavIconView.swift in Sources */,
+				499A2FCC2A6A5A6C00F10732 /* EnchantSubType.swift in Sources */,
 				49FBA5C92A5818520031F9B5 /* TabBarPreferenceKey.swift in Sources */,
 				49DBCE172A2622A700C3BA2E /* AutoResizeLazyVGrid.swift in Sources */,
 				49FBA5A32A55D0FB0031F9B5 /* ClientType.swift in Sources */,

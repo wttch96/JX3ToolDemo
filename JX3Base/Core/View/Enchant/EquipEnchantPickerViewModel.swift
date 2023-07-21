@@ -9,8 +9,6 @@ import Foundation
 import Combine
 
 class EquipEnchantPickerViewModel: ObservableObject {
-    let position: EquipPosition
-    
     // 加载结果
     @Published var enchants: [Enchant] = []
     // 搜索
@@ -19,10 +17,7 @@ class EquipEnchantPickerViewModel: ObservableObject {
     private var service = EnchantService()
     private var cancellables = Set<AnyCancellable>()
     
-    
-    init(position: EquipPosition) {
-        self.position = position
-        
+    init() {
         service.$enchants.sink(receiveValue: { [weak self] data in
             self?.enchants = data
         })
@@ -30,12 +25,16 @@ class EquipEnchantPickerViewModel: ObservableObject {
         
         $searchText.debounce(for: .seconds(1), scheduler: DispatchQueue.main)
             .sink { [weak self] value in
-                self?.loadEnchant()
+                // self?.loadEnchant(.enchance, position: <#T##EquipPosition#>)
             }
             .store(in: &cancellables)
     }
     
-    func loadEnchant(subType: Int = 1) {
-        service.loadEnchant(position: position.value, searchText: searchText, subType: subType)
+    func loadEnchant(_ subType: EnchantSubType, position: EquipPosition) {
+        service.loadEnchant(position: position, searchText: searchText, subType: subType)
+    }
+    
+    func loadEnchant(_ text: String, position: EquipPosition, subType: EnchantSubType, equip: EquipDTO?) {
+        service.loadEnchant(position: position, searchText: text, subType: subType, equip: equip)
     }
 }

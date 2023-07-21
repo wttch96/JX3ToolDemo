@@ -38,6 +38,8 @@ class AssetJsonDataManager {
     public let attrDescMap: [String: String]
     // 武器类型编号 -> 武器类型描述
     public let weaponType: [String: String]
+    
+    public let enchantLevelLimit: [String: [String: Int]]
 
     
     private init() {
@@ -52,6 +54,7 @@ class AssetJsonDataManager {
         self.attrBriefDescMap = BundleUtil.loadJson("attrBriefDesc.json", type: [String: String].self, defaultValue: [:])
         self.attrDescMap = BundleUtil.loadJson("attrDesc.json", type: [String: String].self, defaultValue: [:])
         self.weaponType = BundleUtil.loadJson("weaponType.json", type: [String: String].self, defaultValue: [:])
+        self.enchantLevelLimit = BundleUtil.loadJson("enchant_level_limit.json", type: [String: [String: Int]].self, defaultValue: [:])
     }
     
     

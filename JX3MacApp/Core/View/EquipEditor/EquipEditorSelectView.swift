@@ -29,6 +29,8 @@ struct EquipEditorSelectView: View {
     // 五行石镶嵌
     @State private var embeddingStone: [DiamondAttribute: Int]
     // 小附魔
+    @State private var enchance: Enchant? = nil
+    // 大附魔
     @State private var enchant: Enchant? = nil
     
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
@@ -100,12 +102,12 @@ struct EquipEditorSelectView: View {
                             }
                             
                         }
+                        
+                        pickerView
                     })
                     
-                    pickerView
-                    
-                    if let equip = self.selected {
-                        Section("装备强化") {
+                    Section("装备强化", content: {
+                        if let equip = self.selected {
                             HStack {
                                 Text("精炼等级")
                                 Spacer()
@@ -126,9 +128,10 @@ struct EquipEditorSelectView: View {
                                 showSheet =  .showEmbeddingStoneSheet
                             })
                             
-                            EquipEnchantPicker(position: position, enchant: $enchant)
+                            EquipEnchantPicker(position: position, enchant: $enchance)
+                            EquipEnchantPicker(position: position, subType: .enchant ,enchant: $enchant, equip: selected?.equip)
                         }
-                    }
+                    })
                 }
                 .toolbar(content: {
                     if selected != nil {
@@ -157,6 +160,9 @@ struct EquipEditorSelectView: View {
             })
             .onChange(of: enchant, perform: {
                 selected = selected?.enchant($0)
+            })
+            .onChange(of: enchance, perform: {
+                selected = selected?.enchance($0)
             })
             .onChange(of: vm.searchText, perform: { _ in
                 var subscriptions = Set<AnyCancellable>()
@@ -263,47 +269,35 @@ struct EquipEditorSelectView: View {
     }
     
     private var pickerView: some View {
-        HStack {
-            Text("选择装备")
-            ZStack {
-                
-                TextField(selected?.equip.name ?? "需要跨门派类别时可直接输入名称快捷搜索", text: $vm.searchText)
-                    .textFieldStyle(.roundedBorder)
-                    .focused($textFieldFocus)
-                    .onChange(of: textFieldFocus) { newValue in
-                        showPop = newValue
-                        
-                        self.vm.loadEquip(mount: mount, position: position)
-                    }
-                HStack {
-                    Spacer()
-                    Image(systemName: "chevron.down")
-                        .padding(.trailing)
-                }
+        SearchableCustomPicker({ item in
+            if let item = item {
+                return item.name
+            } else {
+                return "需要跨门派类别时可直接输入名称快捷搜索"
             }
+        }, data: vm.equips, selection: .init(get: {
+            selected?.equip
+        }, set: { newValue in
+            if let newValue = newValue {
+                selected = StrengthEquip(equip: newValue)
+            } else {
+                selected = nil
+            }
+            strengthLevel = 0
+            embeddingStone = [:]
+            enchant = nil
+        }), content: { item in
+            if let equip = item {
+                EquipPickerOptionView(equip: equip)
+            } else {
+                Text("无")
+            }
+        }, label: {
+            Text("选择装备")
+        }) { searchText in
+            vm.loadEquip(mount: mount, position: position)
         }
-        .popover(isPresented: $showPop, attachmentAnchor: .point(.bottom), arrowEdge: .bottom, content: {
-            ScrollView(content: {
-                ForEach(vm.equips) { equip in
-                    EquipPickerOptionView(equip: equip)
-                        .padding(.horizontal)
-                        .background(.background)
-                        .onTapGesture {
-                            selected = StrengthEquip(equip: equip)
-                            
-                            strengthLevel = 0
-                            embeddingStone = [:]
-                            enchant = nil
-                            
-                            showPop.toggle()
-                            textFieldFocus.toggle()
-                            vm.searchText = ""
-                        }
-                }
-            })
-            .background(.background)
-            .frame(minWidth: 500, maxHeight: 400)
-        })
+            
         .onAppear {
             self.vm.loadEquip(mount: mount, position: position)
         }

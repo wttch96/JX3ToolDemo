@@ -6,67 +6,145 @@
 //
 
 import SwiftUI
+import WttchUI
 
-private struct EquipEnchantSelectList: View {
+struct EquipEnchantPicker: View {
     let position: EquipPosition
+    let subType: EnchantSubType
     @Binding var enchant: Enchant?
-    @StateObject private var vm: EquipEnchantPickerViewModel
+    let equip: EquipDTO?
     
-    @Environment(\.dismiss) var dismiss
+    @StateObject private var vm = EquipEnchantPickerViewModel()
+    @Environment(\.dismiss) private var dismiss
     
-    init(position: EquipPosition, enchant: Binding<Enchant?>) {
+    init(position: EquipPosition, subType: EnchantSubType = .enchance, enchant: Binding<Enchant?>, equip: EquipDTO? = nil) {
+        self.equip = equip
         self.position = position
+        self.subType = subType
         self._enchant = enchant
-        self._vm = StateObject(wrappedValue: EquipEnchantPickerViewModel(position: position))
     }
     
+    #if os(iOS)
     var body: some View {
+        NavigationLink(destination: {
+            enchantListView()
+        }, label: {
+            HStack {
+                Text(title)
+                Spacer()
+                if let enchant = enchant {
+                    enchantView(enchant: enchant, showAttr: false)
+                } else {
+                    Text("选择\(title)")
+                }
+            }
+        })
+    }
+    private func onListItemGesture(enchant: Enchant) {
+        self.enchant = enchant
+        self.dismiss.callAsFunction()
+    }
+    
+    private func enchantListView() -> some View {
         List {
             Section("", content: {
                 TextField("搜索", text: $vm.searchText)
             })
             Section {
                 ForEach(vm.enchants, content: { enchant in
-                    EnchantRowView(enchant: enchant)
+                    enchantView(enchant: enchant)
                         .onTapGesture {
-                            self.enchant = enchant
-                            self.dismiss.callAsFunction()
+                            onListItemGesture(enchant: enchant)
                         }
                 })
             }
         }
         .onAppear {
-            vm.loadEnchant()
+            vm.loadEnchant(.enchance, position: position)
         }
     }
-}
-
-struct EquipEnchantPicker: View {
-    let position: EquipPosition
-    @Binding var enchant: Enchant?
+    #endif
+    
+    #if os(OSX)
+    @State private var showPopover: Bool = false
     
     var body: some View {
-        NavigationStack {
-            NavigationLink(destination: {
-                EquipEnchantSelectList(position: position, enchant: $enchant)
-            }, label: {
-                HStack {
-                    Text("小附魔")
-                    Spacer()
-                    if let enchant = enchant {
-                        EnchantRowView(enchant: enchant, showAttri: false)
-                    } else {
-                        Text("选择小附魔")
-                    }
+        SearchableCustomPicker(
+            { enchant in
+                if let enchant = enchant {
+                    return enchant.name
+                } else {
+                    return "输入附魔名称可以搜索"
                 }
-            })
+            },
+            data: vm.enchants, selection: $enchant, content: { enchant in
+            ZStack {
+                if let enchant = enchant {
+                    enchantView(enchant: enchant)
+                } else {
+                    Text("无")
+                }
+            }
+        }, label: {
+            Text("选择\(title)")
+        }, searchCallback: { value in
+            vm.loadEnchant(value, position: position, subType: subType, equip: equip)
+        })
+        .onAppear{
+            vm.loadEnchant("", position: position, subType: subType, equip: equip)
         }
     }
+    
+    private func onListItemGesture(enchant: Enchant) {
+        self.enchant = enchant
+        showPopover.toggle()
+    }
+    #endif
+    
+    private func enchantView(enchant: Enchant, showAttr: Bool = true) -> some View {
+        HStack {
+            Text(enchant.name)
+                .bold()
+                .foregroundColor(nameColor(enchant))
+                .lineLimit(1)
+            if showAttr {
+                Spacer()
+                if let attriName = enchant.attriName {
+                    Text(attriName)
+                        .font(.caption)
+                }
+//                if let attriName = enchant.boxAttriName {
+//                    JX3GameText(text: attriName)
+//                }
+            }
+        }
+    }
+    
+    private func nameColor(_ enchant: Enchant) -> Color {
+        if subType == .enchance {
+            return enchant.quality?.color ?? .gray
+        } else {
+            return EquipQuality._4.color
+        }
+    }
+    
+    private var title: String {
+        if subType == .enchant {
+            return "大附魔"
+        } else {
+            return "小附魔"
+        }
+    }
+    
 }
 
 struct EquipEnchantPicker_Previews: PreviewProvider {
     static var previews: some View {
-        EquipEnchantSelectList(position: EquipPosition.boots, enchant: .constant(nil))
-        EquipEnchantPicker(position: EquipPosition.boots, enchant: .constant(nil))
+        NavigationStack {
+            List {
+                EquipEnchantPicker(position: EquipPosition.boots, enchant: .constant(nil))
+                EquipEnchantPicker(position: EquipPosition.boots, subType: .enchant, enchant: .constant(nil))
+            }
+        }
     }
 }
