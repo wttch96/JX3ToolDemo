@@ -90,6 +90,9 @@ struct EquipEnchantPicker: View {
         }, searchCallback: { value in
             vm.loadEnchant(value, position: position, subType: subType, equip: equip)
         })
+        .onChange(of: position, perform: { newValue in
+            vm.loadEnchant("", position: newValue, subType: subType, equip: equip)
+        })
         .onAppear{
             vm.loadEnchant("", position: position, subType: subType, equip: equip)
         }

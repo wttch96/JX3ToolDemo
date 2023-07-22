@@ -59,7 +59,7 @@ struct EquipEditorSelectView: View {
                 detailView
                     .frame(maxWidth: geo.size.width * 0.4)
                 List {
-                    Section("装备选择", content: {
+                    Section("装备(\(position.label))选择", content: {
                         attrPickerView
                         
                         HStack {
@@ -163,18 +163,6 @@ struct EquipEditorSelectView: View {
             })
             .onChange(of: enchance, perform: {
                 selected = selected?.enchance($0)
-            })
-            .onChange(of: vm.searchText, perform: { _ in
-                var subscriptions = Set<AnyCancellable>()
-            
-                let pub = PassthroughSubject<String, Never>()
-                pub
-                    .debounce(for: .seconds(1), scheduler: DispatchQueue.main)
-                    .collect()
-                    .sink { _ in
-                        self.vm.loadEquip(mount: mount, position: position)
-                    }
-                    .store(in: &subscriptions)
             })
         }
     }
@@ -293,13 +281,15 @@ struct EquipEditorSelectView: View {
                 Text("无")
             }
         }, label: {
-            Text("选择装备")
-        }) { searchText in
-            vm.loadEquip(mount: mount, position: position)
+            Text("选择\(position.label)")
+        }) { [self] searchText in
+            self.vm.loadEquip("", mount: mount, position: self.position)
         }
-            
+        .onChange(of: position, perform: { newValue in
+            self.vm.loadEquip("", mount: mount, position: newValue)
+        })
         .onAppear {
-            self.vm.loadEquip(mount: mount, position: position)
+            self.vm.loadEquip("", mount: mount, position: self.position)
         }
     }
 }

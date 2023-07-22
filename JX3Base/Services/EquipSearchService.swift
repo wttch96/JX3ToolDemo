@@ -40,7 +40,7 @@ class EquipSearchService {
         default: type = "weapon"
         }
         let urlString = "https://node.jx3box.com/equip/\(type)"
-        
+        logger("搜索装备:\(position.label)")
         var request = URLComponents(string: urlString)
         if let name = name, !name.isEmpty {
             request?.queryItems = [
