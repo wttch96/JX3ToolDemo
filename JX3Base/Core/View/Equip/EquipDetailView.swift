@@ -25,6 +25,10 @@ struct EquipDetailView: View {
     init(strengthEquip: StrengthEquip) {
         self.init(equip: strengthEquip.equip, strengthLevel: strengthEquip.strengthLevel, diamondAttributeLevels: strengthEquip.embeddingStone, enhance: strengthEquip.enchance, enchant: strengthEquip.enchant)
     }
+    
+    init(strengthEquip: StrengthedEquip) {
+        self.init(equip: strengthEquip.equip!, strengthLevel: strengthEquip.strengthLevel, diamondAttributeLevels: strengthEquip.embeddingStone, enhance: strengthEquip.enchance, enchant: strengthEquip.enchant)
+    }
 
     // 图标大小
     private let iconSize: CGFloat = 16

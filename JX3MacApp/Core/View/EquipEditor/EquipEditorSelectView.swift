@@ -16,22 +16,10 @@ struct EquipEditorSelectView: View {
     // 配装位置
     let position: EquipPosition
     
-    @Binding private var selected: StrengthEquip?
-    
     @StateObject private var vm = EquipPickerModel()
+    @StateObject private var strengthedEquip: StrengthedEquip = StrengthedEquip()
     // sheet 选择
     @State private var showSheet: SheetType? = nil
-    
-    // MARK: 强化
-    // ⚠️：暂不整合为 ObservableObject 因为会导致 CPU 100% 卡死
-    // 强化等级
-    @State private var strengthLevel: Int = 1
-    // 五行石镶嵌
-    @State private var embeddingStone: [DiamondAttribute: Int]
-    // 小附魔
-    @State private var enchance: Enchant? = nil
-    // 大附魔
-    @State private var enchant: Enchant? = nil
     
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     @FocusState private var textFieldFocus: Bool
@@ -40,16 +28,6 @@ struct EquipEditorSelectView: View {
     init(kungfu: Mount, position: EquipPosition, selected: Binding<StrengthEquip?>) {
         self.mount = kungfu
         self.position = position
-        self._selected = selected
-        if let equip = selected.wrappedValue?.equip {
-            self._embeddingStone = State(initialValue: equip.diamondAttributes.reduce(into: [:] as [DiamondAttribute: Int], { partialResult, attr in
-                    partialResult[attr] = 6
-                })
-            )
-        } else {
-            self._embeddingStone = State(initialValue: [:])
-        }
-        self.strengthLevel = selected.wrappedValue?.equip.maxStrengthLevel ?? 1
     }
     
     
@@ -107,19 +85,19 @@ struct EquipEditorSelectView: View {
                     })
                     
                     Section("装备强化", content: {
-                        if let equip = self.selected {
+                        if let equip = self.strengthedEquip.equip {
                             HStack {
                                 Text("精炼等级")
                                 Spacer()
-                                StarMarkView(maxCount: equip.equip.maxStrengthLevel, selectedCount: $strengthLevel)
+                                StarMarkView(maxCount: equip.maxStrengthLevel, selectedCount: $strengthedEquip.strengthLevel)
                             }
                             HStack {
                                 Text("五行石镶嵌")
                                 Spacer()
-                                ForEach(equip.equip.diamondAttributes) { attr in
+                                ForEach(equip.diamondAttributes) { attr in
                                     Text("\(attr.briefLabel)")
                                         .foregroundColor(.gray)
-                                    Image("Embedding\(embeddingStone[attr, default: 0])")
+                                    Image("Embedding\(strengthedEquip.embeddingStone[attr, default: 0])")
                                         .resizable()
                                         .frame(width: 18, height: 18)
                                 }
@@ -128,42 +106,30 @@ struct EquipEditorSelectView: View {
                                 showSheet =  .showEmbeddingStoneSheet
                             })
                             
-                            EquipEnchantPicker(position: position, enchant: $enchance)
-                            EquipEnchantPicker(position: position, subType: .enchant ,enchant: $enchant, equip: selected?.equip)
+                            EquipEnchantPicker(position: position, enchant: $strengthedEquip.enchance)
+                            EquipEnchantPicker(position: position, subType: .enchant ,enchant: $strengthedEquip.enchant, equip: strengthedEquip.equip)
                         }
                     })
                 }
                 .toolbar(content: {
-                    if selected != nil {
+                    if strengthedEquip.equip != nil {
                         ToolbarItem {
                             Text("卸下")
                                 .foregroundColor(Color.accentColor)
                                 .onTapGesture(perform: {
-                                    selected = nil
+                                    strengthedEquip.equip = nil
                                     presentationMode.wrappedValue.dismiss()
                                 })
                         }
                     }
                 })
-                .navigationTitle("\(mount.name)-\(position.label)-\(selected?.equip.name ?? "<none>")")
+                .navigationTitle("\(mount.name)-\(position.label)-\(strengthedEquip.equip?.name ?? "<none>")")
                 .sheet(item: $showSheet, onDismiss: { showSheet = nil }, content: { item in
                     if item == .showEmbeddingStoneSheet {
                         embeddingStoneSheet
                     }
                 })
             }
-            .onChange(of: strengthLevel, perform: {
-                selected = selected?.strengthLevel($0)
-            })
-            .onChange(of: embeddingStone, perform: {
-                selected = selected?.embeddingStone($0)
-            })
-            .onChange(of: enchant, perform: {
-                selected = selected?.enchant($0)
-            })
-            .onChange(of: enchance, perform: {
-                selected = selected?.enchance($0)
-            })
         }
     }
     
@@ -201,16 +167,16 @@ struct EquipEditorSelectView: View {
             }
             .padding(.vertical, 16)
             ScrollView {
-                if let equip = selected {
-                    ForEach(equip.equip.diamondAttributes, content: { attr in
+                if let equip = strengthedEquip.equip {
+                    ForEach(equip.diamondAttributes, content: { attr in
                         VStack {
-                            Text("第\(attr.id)孔位: \(attr.label) \(Int(attr.embedValue(level: embeddingStone[attr] ?? 6)))")
+                            Text("第\(attr.id)孔位: \(attr.label) \(Int(attr.embedValue(level: strengthedEquip.embeddingStone[attr] ?? 6)))")
                             LazyVGrid(columns: Array(repeating: GridItem(.flexible()), count: 9), content: {
                                 ForEach(0..<9, id: \.self, content: { stoneLevel in
                                     Image("Embedding\(stoneLevel)")
-                                        .opacity(embeddingStone[attr] == stoneLevel ? 1 : 0.2)
+                                        .opacity(strengthedEquip.embeddingStone[attr] == stoneLevel ? 1 : 0.2)
                                         .onTapGesture {
-                                            embeddingStone[attr] = stoneLevel
+                                            strengthedEquip.embeddingStone[attr] = stoneLevel
                                         }
                                 })
                             })
@@ -228,8 +194,8 @@ struct EquipEditorSelectView: View {
     // 装备详情
     private var detailView: some View {
         VStack {
-            if let equip = selected {
-                EquipDetailView(strengthEquip: equip)
+            if let _ = strengthedEquip.equip {
+                EquipDetailView(strengthEquip: strengthedEquip)
             } else {
                 EmptyView()
             }
@@ -264,16 +230,16 @@ struct EquipEditorSelectView: View {
                 return "需要跨门派类别时可直接输入名称快捷搜索"
             }
         }, data: vm.equips, selection: .init(get: {
-            selected?.equip
+            strengthedEquip.equip
         }, set: { newValue in
             if let newValue = newValue {
-                selected = StrengthEquip(equip: newValue)
+                strengthedEquip.equip = newValue
             } else {
-                selected = nil
+                strengthedEquip.equip = nil
             }
-            strengthLevel = 0
-            embeddingStone = [:]
-            enchant = nil
+            strengthedEquip.strengthLevel = 0
+            strengthedEquip.enchant = nil
+            strengthedEquip.enchance = nil
         }), content: { item in
             if let equip = item {
                 EquipPickerOptionView(equip: equip)
