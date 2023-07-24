@@ -60,6 +60,7 @@ struct Enchant: Identifiable, Decodable, Hashable {
     private let _quality: Int?
     let attriName: String?
     let boxAttriName: String?
+    let score: Int
     
     var quality: EquipQuality? {
         if let quality = _quality {
@@ -74,6 +75,7 @@ struct Enchant: Identifiable, Decodable, Hashable {
         case _quality = "_quality"
         case attriName = "AttriName"
         case boxAttriName = "_AttriName"
+        case score = "Score"
     }
     
     var hashValue: Int {

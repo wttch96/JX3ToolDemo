@@ -116,4 +116,21 @@ class ScoreUtil {
         let strengthCoefficient = strengthLevel * (0.7 + 0.3 * strengthLevel) / 200
         return Int(round(Float(base) * strengthCoefficient))
     }
+    
+    static let factorA: Float = 8.8
+    static let factorB: Float = 16.0
+    static let factorC: Float = 20.0
+    
+    static func stoneScore(_ diamondAttributes: [DiamondAttribute: Int]) -> Int {
+        var score: Float = 0.0
+        for key in diamondAttributes.keys {
+            let level = diamondAttributes[key, default: 0]
+            if level <= 5 {
+                score += Float(level) * 0.15 * 1.3 * factorA * factorB
+            } else {
+                score += (0.65 * Float(level) - 3.2) * 1.3 * factorA * factorB
+            }
+        }
+        return Int(score)
+    }
 }

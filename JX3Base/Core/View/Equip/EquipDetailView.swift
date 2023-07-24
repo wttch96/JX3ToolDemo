@@ -8,30 +8,24 @@
 import SwiftUI
 
 struct EquipDetailView: View {
-    let equip: EquipDTO
-    let strengthLevel: Int
-    let diamondAttributeLevels: [DiamondAttribute: Int]
-    let enhance: Enchant?
-    let enchant: Enchant?
+    @ObservedObject private var strengthEquip: StrengthedEquip
     
+    @available(*, deprecated, message: "弃用")
     init(equip: EquipDTO, strengthLevel: Int, diamondAttributeLevels: [DiamondAttribute : Int], enhance: Enchant?, enchant: Enchant?) {
-        self.equip = equip
-        self.strengthLevel = strengthLevel
-        self.diamondAttributeLevels = diamondAttributeLevels
-        self.enhance = enhance
-        self.enchant = enchant
-    }
-    
-    init(strengthEquip: StrengthEquip) {
-        self.init(equip: strengthEquip.equip, strengthLevel: strengthEquip.strengthLevel, diamondAttributeLevels: strengthEquip.embeddingStone, enhance: strengthEquip.enchance, enchant: strengthEquip.enchant)
+        self.strengthEquip = StrengthedEquip()
     }
     
     init(strengthEquip: StrengthedEquip) {
-        self.init(equip: strengthEquip.equip!, strengthLevel: strengthEquip.strengthLevel, diamondAttributeLevels: strengthEquip.embeddingStone, enhance: strengthEquip.enchance, enchant: strengthEquip.enchant)
+        self.strengthEquip = strengthEquip
     }
 
     // 图标大小
     private let iconSize: CGFloat = 16
+    
+    var equip: EquipDTO { return strengthEquip.equip! }
+    var enchance: Enchant? { return strengthEquip.enchance }
+    var enchant: Enchant? { return strengthEquip.enchant }
+    var diamondAttributeLevels: [DiamondAttribute: Int] { return strengthEquip.embeddingStone }
     
     var body: some View {
         VStack(alignment: .leading, spacing: 4) {
@@ -48,34 +42,31 @@ struct EquipDetailView: View {
             
             // 小附魔
             HStack(spacing: 4) {
-                Image("Enhance\(enhance == nil ? "None" : "")")
+                Image("Enhance\(enchance == nil ? "None" : "")")
                     .resizable()
                     .frame(width: iconSize, height: iconSize)
-                Text(enhance?.attriName ?? "未强化")
-                    .foregroundColor(enhance?.attriName == nil ? .gray : .blue)
+                Text(enchance?.attriName ?? "未强化")
+                    .foregroundColor(enchance?.attriName == nil ? .gray : .blue)
             }
             HStack(alignment: .top, spacing: 4) {
-                Image("Enchant\(enchant == nil ? "None" : "")")
-                    .resizable()
-                    .frame(width: iconSize, height: iconSize)
                 if let attriName = enchant?.boxAttriName {
+                    Image("Enchant")
+                        .resizable()
+                        .frame(width: iconSize, height: iconSize)
                     JX3GameText(text: attriName, color: EquipQuality._4.color)
-                } else {
-                    Text("未强化")
-                        .foregroundColor(.gray)
                 }
             }
             
             HStack(spacing: 0) {
                 Text("品质等级：\(equip.level)")
                     .foregroundColor(.yellow)
-                Text("(+\(equip.strengthLevelScore(strengthLevel: strengthLevel)))")
+                Text("(+\(equip.strengthLevelScore(strengthLevel: strengthEquip.strengthLevel)))")
                     .foregroundColor(.theme.strength)
             }
             HStack(spacing: 0) {
                 Text("装备分数：\(equip.equipScore)")
                     .foregroundColor(EquipQuality._5.color)
-                Text("(+\(equip.strengthLevelScore(strengthLevel: strengthLevel)))")
+                Text("(+\(ScoreUtil.getGsStrengthScore(base: equip.equipScore, strengthLevel: strengthEquip.strengthLevel))+\(extraScore))")
                     .foregroundColor(.theme.strength)
             }
             
@@ -100,7 +91,7 @@ struct EquipDetailView: View {
                 HStack(spacing: 0) {
                     if equip.maxStrengthLevel >= 1 {
                         ForEach(1 ... equip.maxStrengthLevel, id: \.self) { l in
-                            if l <= strengthLevel {
+                            if l <= strengthEquip.strengthLevel {
                                 Image(systemName: "star.fill")
                                     .foregroundColor(.yellow)
                             } else {
@@ -112,7 +103,7 @@ struct EquipDetailView: View {
                 .font(.caption)
                 
                 Spacer()
-                Text("精炼等级：\(strengthLevel)/\(equip.maxStrengthLevel)")
+                Text("精炼等级：\(strengthEquip.strengthLevel)/\(equip.maxStrengthLevel)")
                     .foregroundColor(.theme.strength)
             }
             HStack {
@@ -173,7 +164,7 @@ struct EquipDetailView: View {
                         Text(magic.attrDesc)
                             .foregroundColor(.theme.textGreen)
                     }
-                    Text(" (+\(magic.score(level: strengthLevel, maxLevel: equip.maxStrengthLevel)))")
+                    Text(" (+\(magic.score(level: strengthEquip.strengthLevel, maxLevel: equip.maxStrengthLevel)))")
                         .foregroundColor(.theme.strength)
                 } else {
                     JX3GameText(text: magic.label, color: EquipQuality._5.color)
@@ -220,6 +211,13 @@ struct EquipDetailView: View {
         if let camp = equip.requireCamp {
             Text("需要 \(camp)")
         }
+    }
+}
+
+extension EquipDetailView {
+    var extraScore: Int {
+        // 五行石分数 + 五彩石分数 + 小附魔分数 + 大附魔分数
+        return ScoreUtil.stoneScore(diamondAttributeLevels) + 0 + (enchance?.score ?? 0) + (enchant?.score ?? 0)
     }
 }
 

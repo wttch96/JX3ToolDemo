@@ -51,10 +51,24 @@ struct StrengthEquip {
         return StrengthEquip(equip: self.equip, strengthLevel: self.strengthLevel, embeddingStone: self.embeddingStone, enchance: enchance, enchant: self.enchant)
     }
 }
-//
-//extension StrengthEquip: Equatable {
-//    
-//    static func ==(lhs: StrengthEquip, rhs: StrengthEquip) -> Bool {
-//        return lhs.equip.id == rhs.equip.id
-//    }
-//}
+
+
+extension StrengthEquip: Equatable {
+    
+    static func ==(lhs: StrengthEquip, rhs: StrengthEquip) -> Bool {
+        return lhs.equip.id == rhs.equip.id
+    }
+    
+    // 五行石分数
+    var stoneScore: Int {
+        return ScoreUtil.stoneScore(embeddingStone)
+    }
+    
+    var enchanceScore: Int {
+        return enchance?.score ?? 0
+    }
+    
+    var enchantScore: Int {
+        return enchant?.score ?? 0
+    }
+}

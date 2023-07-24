@@ -69,26 +69,27 @@ struct EquipEnchantPicker: View {
     @State private var showPopover: Bool = false
     
     var body: some View {
-        SearchableCustomPicker(
-            { enchant in
-                if let enchant = enchant {
-                    return enchant.name
-                } else {
-                    return "输入附魔名称可以搜索"
-                }
-            },
-            data: vm.enchants, selection: $enchant, content: { enchant in
-            ZStack {
-                if let enchant = enchant {
-                    enchantView(enchant: enchant)
-                } else {
+        SearchablePicker(showPopover: $showPopover, content: {
+            ScrollView {
+                VStack {
                     Text("无")
+                        .onTapGesture {
+                            enchant = nil
+                            showPopover.toggle()
+                        }
+                    ForEach(vm.enchants) { enchant in
+                        enchantView(enchant: enchant)
+                            .onTapGesture {
+                                self.enchant = enchant
+                                showPopover.toggle()
+                            }
+                    }
                 }
             }
-        }, label: {
-            Text("选择\(title)")
-        }, searchCallback: { value in
-            vm.loadEnchant(value, position: position, subType: subType, equip: equip)
+            .frame(width: 400)
+            .frame( minHeight: 36, maxHeight: 600)
+        }, label: Text(title), title: enchant?.name ?? "输入附魔名称可以搜索", searchCallback: { newValue in
+            vm.loadEnchant(newValue, position: position, subType: subType, equip: equip)
         })
         .onChange(of: position, perform: { newValue in
             vm.loadEnchant("", position: newValue, subType: subType, equip: equip)
