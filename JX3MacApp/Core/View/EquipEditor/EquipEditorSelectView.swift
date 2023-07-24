@@ -16,8 +16,9 @@ struct EquipEditorSelectView: View {
     // 配装位置
     let position: EquipPosition
     
+    @Binding private var strengthedEquip: StrengthedEquip
+    
     @StateObject private var vm = EquipPickerModel()
-    @StateObject private var strengthedEquip: StrengthedEquip = StrengthedEquip()
     // sheet 选择
     @State private var showSheet: SheetType? = nil
     
@@ -25,9 +26,10 @@ struct EquipEditorSelectView: View {
     @FocusState private var textFieldFocus: Bool
     @State private var showPop: Bool = false
     
-    init(kungfu: Mount, position: EquipPosition, selected: Binding<StrengthEquip?>) {
+    init(kungfu: Mount, position: EquipPosition, selected: Binding<StrengthedEquip>) {
         self.mount = kungfu
         self.position = position
+        self._strengthedEquip = selected
     }
     
     
@@ -221,47 +223,59 @@ struct EquipEditorSelectView: View {
             Spacer()
         }
     }
-    
+    @State private var showEquipPopover: Bool = false
     private var pickerView: some View {
-        SearchableCustomPicker({ item in
-            if let item = item {
-                return item.name
-            } else {
-                return "需要跨门派类别时可直接输入名称快捷搜索"
+        SearchablePicker(showPopover: $showEquipPopover, content: {
+            ScrollView {
+                VStack {
+                    Text("无")
+                        .onTapGesture {
+                            strengthedEquip = StrengthedEquip()
+                            strengthedEquip.equip = nil
+                            strengthedEquip.strengthLevel = 0
+                            strengthedEquip.enchant = nil
+                            strengthedEquip.enchance = nil
+                            showEquipPopover.toggle()
+                        }
+                    ForEach(vm.equips) { equip in
+                        EquipPickerOptionView(equip: equip)
+                            .onTapGesture {
+                                strengthedEquip = StrengthedEquip()
+                                strengthedEquip.equip = equip
+                                strengthedEquip.strengthLevel = 0
+                                strengthedEquip.enchant = nil
+                                strengthedEquip.enchance = nil
+                                showEquipPopover.toggle()
+                            }
+                    }
+                    if vm.haveMoreEquip {
+                        Button("加载更多") {
+                            vm.page += 1
+                            vm.loadEquip(mount: mount)
+                        }
+                        .buttonStyle(.link)
+                    }
+                }
             }
-        }, data: vm.equips, selection: .init(get: {
-            strengthedEquip.equip
-        }, set: { newValue in
-            if let newValue = newValue {
-                strengthedEquip.equip = newValue
-            } else {
-                strengthedEquip.equip = nil
-            }
-            strengthedEquip.strengthLevel = 0
-            strengthedEquip.enchant = nil
-            strengthedEquip.enchance = nil
-        }), content: { item in
-            if let equip = item {
-                EquipPickerOptionView(equip: equip)
-            } else {
-                Text("无")
-            }
-        }, label: {
-            Text("选择\(position.label)")
-        }) { [self] searchText in
-            self.vm.loadEquip("", mount: mount, position: self.position)
-        }
+            .frame(width: 400, height: 600)
+        }, label: Text("选择\(position.label)"), title: strengthedEquip.equip?.name ?? "需要跨门派类别时可直接输入名称快捷搜索", searchCallback: { text in
+            vm.searchText = text
+            vm.reset()
+            vm.loadEquip(mount: mount)
+        })
         .onChange(of: position, perform: { newValue in
-            self.vm.loadEquip("", mount: mount, position: newValue)
+            vm.reset()
+            self.vm.position = newValue
         })
         .onAppear {
-            self.vm.loadEquip("", mount: mount, position: self.position)
+            vm.reset()
+            self.vm.position = position
         }
     }
 }
 
 struct EquipEditorPickerView_Previews: PreviewProvider {
     static var previews: some View {
-        EquipEditorSelectView(kungfu: dev.mount1, position: .amulet, selected: .constant(nil))
+        EquipEditorSelectView(kungfu: dev.mount1, position: .amulet, selected: .constant(StrengthedEquip()))
     }
 }

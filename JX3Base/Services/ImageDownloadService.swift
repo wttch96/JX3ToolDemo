@@ -34,7 +34,7 @@ class ImageDownloadService {
     public func loadImage(_ urlString: String, imageName: String, folderName: String, httpMethod: String? = nil) {
         if let savedImage = fm.loadPNGImage(imageName: imageName, folderName: folderName) {
             image = savedImage
-            logger("Retrived image(\(urlString) from FM!")
+            // logger("Retrived image(\(urlString) from FM!")
         } else {
             downloadImage(urlString, imageName: imageName, folderName: folderName, httpMethod: httpMethod)
             logger("Download image \(urlString).")

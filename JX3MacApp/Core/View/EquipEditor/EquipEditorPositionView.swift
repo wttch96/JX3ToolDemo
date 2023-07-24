@@ -11,10 +11,10 @@ struct EquipEditorPositionView: View {
     let mount: Mount
     let position: EquipPosition
     
-    let selectedEquip: StrengthEquip?
+    let selectedEquip: StrengthedEquip
     
     var equip: EquipDTO? {
-        return selectedEquip?.equip
+        return selectedEquip.equip
     }
     
     private let size: CGFloat = 54
@@ -31,7 +31,7 @@ struct EquipEditorPositionView: View {
                         .padding(3)
                 }
                 .frame(width: size, height: size)
-                Text("\(equip.name) - \(selectedEquip?.strengthLevel ?? -1)")
+                Text("\(equip.name) - \(selectedEquip.strengthLevel)")
                     .frame(maxWidth: 60)
                     .foregroundColor(.gray)
                     .font(.caption)
@@ -49,9 +49,16 @@ struct EquipEditorPositionView: View {
 }
 
 struct EquipEditorPositionView_Previews: PreviewProvider {
+    
+    static var equip: StrengthedEquip {
+        let ret = StrengthedEquip()
+        ret.equip = dev.equip1
+        return ret
+    }
+    
     static var previews: some View {
         EquipEditorPositionView(
             mount: .common,
-            position: .amulet, selectedEquip: StrengthEquip(equip: dev.equip1))
+            position: .amulet, selectedEquip: equip)
     }
 }

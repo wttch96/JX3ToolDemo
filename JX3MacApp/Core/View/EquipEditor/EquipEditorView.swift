@@ -17,7 +17,7 @@ struct EquipEditorView: View {
     
     
     // 选择的装备
-    @State private var selectedEquips: [EquipPosition: StrengthEquip] = [:]
+    @State private var selectedEquips: [EquipPosition: StrengthedEquip] = [:]
     var body: some View {
         NavigationSplitView(sidebar: {
             VStack {
@@ -37,7 +37,12 @@ struct EquipEditorView: View {
             .padding(.horizontal)
         }, detail: {
             if let selectedPosition = self.selectedPosition {
-                EquipEditorSelectView(kungfu: mount, position: selectedPosition, selected: $selectedEquips[selectedPosition])
+                EquipEditorSelectView(kungfu: mount, position: selectedPosition, selected: .init(get: {
+                    return selectedEquips[selectedPosition, default: StrengthedEquip()]
+                }, set: { newValue in
+                    print(newValue)
+                    selectedEquips[selectedPosition] = newValue
+                }))
             }
         })
         

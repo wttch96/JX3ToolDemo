@@ -11,7 +11,7 @@ struct EquipEditorNavView: View {
     let mount: Mount
     @Binding var selectedPosition: EquipPosition?
     
-    let selectedEquips: [EquipPosition: StrengthEquip?]
+    let selectedEquips: [EquipPosition: StrengthedEquip]
     
     var body: some View {
         VStack {
@@ -75,8 +75,8 @@ struct EquipEditorNavView: View {
             }
     }
     
-    private func positionBinding(_ position: EquipPosition) -> StrengthEquip? {
-        return selectedEquips[position, default: nil]
+    private func positionBinding(_ position: EquipPosition) -> StrengthedEquip {
+        return selectedEquips[position, default: StrengthedEquip()]
     }
 }
 

@@ -33,7 +33,7 @@ class EquipPickerViewModel: ObservableObject {
         
         service.$equips
             .sink(receiveValue: { [weak self] equips in
-                self?.equips = equips
+                // self?.equips = equips
             })
             .store(in: &cancellables)
         

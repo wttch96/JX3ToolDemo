@@ -11,7 +11,7 @@ import Combine
 
 class EquipSearchService {
     
-    @Published var equips: [EquipDTO] = []
+    @Published var equips: BoxResponse<EquipDTO>? = nil
     
     private var anyCancellable: AnyCancellable?
 
@@ -33,6 +33,7 @@ class EquipSearchService {
         pageSize: Int,
         client: String
     ) {
+        logger("搜索装备:\(position.label) \(name ?? "nil") 品质:\(minLevel)-\(maxLevel) 属性:\(attrs)")
         var type = ""
         switch position.aucGenre {
         case 3: type = "armor"
@@ -40,7 +41,6 @@ class EquipSearchService {
         default: type = "weapon"
         }
         let urlString = "https://node.jx3box.com/equip/\(type)"
-        logger("搜索装备:\(position.label)")
         var request = URLComponents(string: urlString)
         if let name = name, !name.isEmpty {
             request?.queryItems = [
@@ -91,12 +91,10 @@ class EquipSearchService {
                 )
             }
         }
-        logger(request?.url?.description ?? "None")
         if let url = request?.url {
             anyCancellable = NetworkManager.downloadJsonData(url: url, type: BoxResponse<EquipDTO>.self)
-                .sink(receiveCompletion: NetworkManager.handleCompletion, receiveValue: { [weak self] resp in
-                    self?.equips = resp.list
-                    self?.anyCancellable?.cancel()
+                .sink(receiveCompletion: NetworkManager.handleCompletion, receiveValue: { [weak self] resp in 
+                    self?.equips = resp
                 })
         }
     }
