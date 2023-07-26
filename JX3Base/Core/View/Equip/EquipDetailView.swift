@@ -11,15 +11,19 @@ struct EquipDetailView: View {
     // 一定要用 ObservedObject 不然不会刷新子视图
     @ObservedObject private var strengthEquip: StrengthedEquip
     
+    private let selectedEquips: [EquipPosition: StrengthedEquip]
+    
     @StateObject private var equipSetVm = EquipSetViewModel()
     
     @available(*, deprecated, message: "弃用")
     init(equip: EquipDTO, strengthLevel: Int, diamondAttributeLevels: [DiamondAttribute : Int], enhance: Enchant?, enchant: Enchant?) {
         self.strengthEquip = StrengthedEquip()
+        self.selectedEquips = [:]
     }
     
-    init(strengthEquip: StrengthedEquip) {
+    init(strengthEquip: StrengthedEquip, selectedEquips: [EquipPosition: StrengthedEquip]) {
         self.strengthEquip = strengthEquip
+        self.selectedEquips = selectedEquips
     }
 
     // 图标大小
@@ -178,18 +182,44 @@ struct EquipDetailView: View {
     // MARK: 套装
     @ViewBuilder
     private var equipSetView: some View {
-        VStack(alignment: .leading) {
+        VStack(alignment: .leading, spacing: 4) {
             if let equipSet = equipSetVm.set {
-                let activeCount = 0
-                Text("\(equipSet.name ?? "未知套")(\(activeCount)/\(equipSetVm.setList.count))")
+                Text("\(equipSet.name?.replacingOccurrences(of: "·", with: "・") ?? "未知套")(\(activeEquipSetCount)/\(equipSetVm.setList.count))")
                     .foregroundColor(.yellow)
                 
                 ForEach(equipSetVm.setList, content: { item in
-                    Text(item.name ?? "未知装备")
+                    Text(item.name?.replacingOccurrences(of: "·", with: "・") ?? "未知装备")
+                        .foregroundColor(containEquip(item) ? .yellow : .gray)
                 })
             }
         }
         .padding(.vertical)
+    }
+    
+    // 激活的套装数量
+    private var activeEquipSetCount: Int {
+        return selectedEquips.values.filter { equip in
+            equipSetVm.setList.contains { setList in
+                if let id = equip.equip?.id {
+                    return setList.id == id
+                } else {
+                    return false
+                }
+            }
+        }.count
+    }
+    
+    /// 判断配装列表中是否包含指定的套装项目
+    /// - Parameter setList: 套装项目
+    /// - Returns: 如果包含指定的套装项目则返回 true, 否则 false
+    private func containEquip(_ setList: EquipSetList) -> Bool {
+        return selectedEquips.values.contains(where: { equip in
+            if let id = equip.equip?.id {
+                return setList.id == id
+            } else {
+                return false
+            }
+        })
     }
     
     // MARK: 大小附魔

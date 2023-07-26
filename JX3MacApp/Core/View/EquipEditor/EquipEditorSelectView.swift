@@ -18,6 +18,8 @@ struct EquipEditorSelectView: View {
     
     @Binding private var strengthedEquip: StrengthedEquip
     
+    @Binding private var selectedEquips: [EquipPosition: StrengthedEquip]
+    
     @StateObject private var vm = EquipPickerModel()
     // sheet 选择
     @State private var showSheet: SheetType? = nil
@@ -26,10 +28,18 @@ struct EquipEditorSelectView: View {
     @FocusState private var textFieldFocus: Bool
     @State private var showPop: Bool = false
     
-    init(kungfu: Mount, position: EquipPosition, selected: Binding<StrengthedEquip>) {
+    init(kungfu: Mount, position: EquipPosition, selected: Binding<[EquipPosition: StrengthedEquip]>) {
         self.mount = kungfu
         self.position = position
-        self._strengthedEquip = selected
+        self._selectedEquips = selected
+        self._strengthedEquip = .init(
+            get: {
+                return selected.wrappedValue[position, default: StrengthedEquip()]
+            },
+            set: { newValue in
+                selected.wrappedValue[position] = newValue
+            }
+        )
     }
     
     
@@ -197,7 +207,7 @@ struct EquipEditorSelectView: View {
     private var detailView: some View {
         VStack {
             if let _ = strengthedEquip.equip {
-                EquipDetailView(strengthEquip: strengthedEquip)
+                EquipDetailView(strengthEquip: strengthedEquip, selectedEquips: selectedEquips)
             } else {
                 EmptyView()
             }
@@ -276,6 +286,6 @@ struct EquipEditorSelectView: View {
 
 struct EquipEditorPickerView_Previews: PreviewProvider {
     static var previews: some View {
-        EquipEditorSelectView(kungfu: dev.mount1, position: .amulet, selected: .constant(StrengthedEquip()))
+        EquipEditorSelectView(kungfu: dev.mount1, position: .amulet, selected: .constant([EquipPosition.amulet: StrengthedEquip()]))
     }
 }
