@@ -125,7 +125,7 @@ class ScoreUtil {
         var score: Float = 0.0
         for key in diamondAttributes.keys {
             let level = diamondAttributes[key, default: 0]
-            if level <= 5 {
+            if level <= 6 {
                 score += Float(level) * 0.15 * 1.3 * factorA * factorB
             } else {
                 score += (0.65 * Float(level) - 3.2) * 1.3 * factorA * factorB

@@ -8,7 +8,10 @@
 import SwiftUI
 
 struct EquipDetailView: View {
+    // 一定要用 ObservedObject 不然不会刷新子视图
     @ObservedObject private var strengthEquip: StrengthedEquip
+    
+    @StateObject private var equipSetVm = EquipSetViewModel()
     
     @available(*, deprecated, message: "弃用")
     init(equip: EquipDTO, strengthLevel: Int, diamondAttributeLevels: [DiamondAttribute : Int], enhance: Enchant?, enchant: Enchant?) {
@@ -40,22 +43,11 @@ struct EquipDetailView: View {
                 Text("耐久度：\(maxDurability)/\(maxDurability)")
             }
             
-            // 小附魔
-            HStack(spacing: 4) {
-                Image("Enhance\(enchance == nil ? "None" : "")")
-                    .resizable()
-                    .frame(width: iconSize, height: iconSize)
-                Text(enchance?.attriName ?? "未强化")
-                    .foregroundColor(enchance?.attriName == nil ? .gray : .blue)
-            }
-            HStack(alignment: .top, spacing: 4) {
-                if let attriName = enchant?.boxAttriName {
-                    Image("Enchant")
-                        .resizable()
-                        .frame(width: iconSize, height: iconSize)
-                    JX3GameText(text: attriName, color: EquipQuality._4.color)
-                }
-            }
+            // 大小附魔
+            enchantView
+            
+            // 套装
+            equipSetView
             
             HStack(spacing: 0) {
                 Text("品质等级：\(equip.level)")
@@ -79,6 +71,16 @@ struct EquipDetailView: View {
         .padding()
         .background(Color.theme.panel)
         .navigationTitle(equip.name)
+        .onAppear {
+            if let setId = strengthEquip.equip?.setId {
+                equipSetVm.loadEquipSet(setId)
+            }
+        }
+        .onChange(of: strengthEquip.equip) { newValue in
+            if let setId = newValue?.setId {
+                equipSetVm.loadEquipSet(setId)
+            }
+        }
     }
     
     // MARK: 头部
@@ -170,6 +172,43 @@ struct EquipDetailView: View {
                     JX3GameText(text: magic.label, color: EquipQuality._5.color)
                 }
                 Spacer()
+            }
+        }
+    }
+    // MARK: 套装
+    @ViewBuilder
+    private var equipSetView: some View {
+        VStack(alignment: .leading) {
+            if let equipSet = equipSetVm.set {
+                let activeCount = 0
+                Text("\(equipSet.name ?? "未知套")(\(activeCount)/\(equipSetVm.setList.count))")
+                    .foregroundColor(.yellow)
+                
+                ForEach(equipSetVm.setList, content: { item in
+                    Text(item.name ?? "未知装备")
+                })
+            }
+        }
+        .padding(.vertical)
+    }
+    
+    // MARK: 大小附魔
+    @ViewBuilder
+    private var enchantView: some View {
+        // 小附魔
+        HStack(spacing: 4) {
+            Image("Enhance\(enchance == nil ? "None" : "")")
+                .resizable()
+                .frame(width: iconSize, height: iconSize)
+            Text(enchance?.attriName ?? "未强化")
+                .foregroundColor(enchance?.attriName == nil ? .gray : .blue)
+        }
+        HStack(alignment: .top, spacing: 4) {
+            if let attriName = enchant?.boxAttriName {
+                Image("Enchant")
+                    .resizable()
+                    .frame(width: iconSize, height: iconSize)
+                JX3GameText(text: attriName, color: EquipQuality._4.color)
             }
         }
     }

@@ -26,6 +26,12 @@
 		493354422A2611260044289B /* TalentVersionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4933543E2A2611260044289B /* TalentVersionViewModel.swift */; };
 		494795CB2A6BEA3B006AA88F /* StrengthedEquip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494795CA2A6BEA3B006AA88F /* StrengthedEquip.swift */; };
 		494795CC2A6BEA3B006AA88F /* StrengthedEquip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494795CA2A6BEA3B006AA88F /* StrengthedEquip.swift */; };
+		494795CF2A6EF529006AA88F /* EquipSetDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494795CE2A6EF529006AA88F /* EquipSetDTO.swift */; };
+		494795D02A6EF781006AA88F /* EquipSetDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494795CE2A6EF529006AA88F /* EquipSetDTO.swift */; };
+		494795D22A6FE2C0006AA88F /* EquipSetService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494795D12A6FE2C0006AA88F /* EquipSetService.swift */; };
+		494795D42A6FE96E006AA88F /* EquipSetViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494795D32A6FE96E006AA88F /* EquipSetViewModel.swift */; };
+		494795D52A6FEA35006AA88F /* EquipSetViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494795D32A6FE96E006AA88F /* EquipSetViewModel.swift */; };
+		494795D62A6FEA38006AA88F /* EquipSetService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494795D12A6FE2C0006AA88F /* EquipSetService.swift */; };
 		49504D7D2A41C73E00B93E90 /* CheckBoxToggleStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49504D7C2A41C73E00B93E90 /* CheckBoxToggleStyle.swift */; };
 		49504D7E2A41C73E00B93E90 /* CheckBoxToggleStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49504D7C2A41C73E00B93E90 /* CheckBoxToggleStyle.swift */; };
 		49504D802A41CBA300B93E90 /* PvType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49504D7F2A41CBA300B93E90 /* PvType.swift */; };
@@ -353,6 +359,9 @@
 		4933543D2A2611260044289B /* TalentVersionPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TalentVersionPicker.swift; path = JX3Base/Core/View/Talent/TalentVersionPicker.swift; sourceTree = SOURCE_ROOT; };
 		4933543E2A2611260044289B /* TalentVersionViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TalentVersionViewModel.swift; path = JX3Base/Core/View/Talent/TalentVersionViewModel.swift; sourceTree = SOURCE_ROOT; };
 		494795CA2A6BEA3B006AA88F /* StrengthedEquip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StrengthedEquip.swift; sourceTree = "<group>"; };
+		494795CE2A6EF529006AA88F /* EquipSetDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipSetDTO.swift; sourceTree = "<group>"; };
+		494795D12A6FE2C0006AA88F /* EquipSetService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipSetService.swift; sourceTree = "<group>"; };
+		494795D32A6FE96E006AA88F /* EquipSetViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipSetViewModel.swift; sourceTree = "<group>"; };
 		49504D7C2A41C73E00B93E90 /* CheckBoxToggleStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckBoxToggleStyle.swift; sourceTree = "<group>"; };
 		49504D7F2A41CBA300B93E90 /* PvType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PvType.swift; sourceTree = "<group>"; };
 		49504D822A42BE8900B93E90 /* weaponType.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = weaponType.json; sourceTree = "<group>"; };
@@ -578,6 +587,14 @@
 			path = Talent;
 			sourceTree = "<group>";
 		};
+		494795CD2A6EF511006AA88F /* DTO */ = {
+			isa = PBXGroup;
+			children = (
+				494795CE2A6EF529006AA88F /* EquipSetDTO.swift */,
+			);
+			path = DTO;
+			sourceTree = "<group>";
+		};
 		49504D9A2A42D45300B93E90 /* Equip */ = {
 			isa = PBXGroup;
 			children = (
@@ -598,6 +615,7 @@
 				49536A0B2A30BA2D004FBBB1 /* EquipEditViewModel.swift */,
 				49536A242A31C47E004FBBB1 /* EquipPickerViewModel.swift */,
 				494795CA2A6BEA3B006AA88F /* StrengthedEquip.swift */,
+				494795D32A6FE96E006AA88F /* EquipSetViewModel.swift */,
 			);
 			path = ViemModel;
 			sourceTree = "<group>";
@@ -750,6 +768,7 @@
 		4992D16C2A22F7F4007EEFC2 /* Entity */ = {
 			isa = PBXGroup;
 			children = (
+				494795CD2A6EF511006AA88F /* DTO */,
 				495FD65D2A3B674100A17FB0 /* Enum */,
 				49FBA5ED2A5AA9700031F9B5 /* Resp */,
 				49504D9A2A42D45300B93E90 /* Equip */,
@@ -866,6 +885,7 @@
 				49536A1E2A31BB19004FBBB1 /* EquipSearchService.swift */,
 				49FBA5A42A55E09E0031F9B5 /* EnchantService.swift */,
 				49FBA5F72A5C388D0031F9B5 /* BoxNewsService.swift */,
+				494795D12A6FE2C0006AA88F /* EquipSetService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -1410,9 +1430,11 @@
 				495FD65B2A36FC5800A17FB0 /* PlainToggleStyle.swift in Sources */,
 				49FBA5AB2A55E3F30031F9B5 /* EquipEnchantPicker.swift in Sources */,
 				49536A132A30DDC1004FBBB1 /* EquipAttribute.swift in Sources */,
+				494795D42A6FE96E006AA88F /* EquipSetViewModel.swift in Sources */,
 				49536A102A30DAAB004FBBB1 /* EquipPickerView.swift in Sources */,
 				49FBA5DC2A5855C40031F9B5 /* CustomNavBarView.swift in Sources */,
 				495410D82A276D8B00AA6293 /* TalentPickerViewModel.swift in Sources */,
+				494795CF2A6EF529006AA88F /* EquipSetDTO.swift in Sources */,
 				4992D1842A234D1C007EEFC2 /* CoreDataManager.swift in Sources */,
 				49FBA5DF2A5857990031F9B5 /* CustomNavBarContainerView.swift in Sources */,
 				4992D20F2A24F061007EEFC2 /* IconLibraryView.swift in Sources */,
@@ -1499,6 +1521,7 @@
 				499F5AC92A2F954200A3C588 /* HomeView.swift in Sources */,
 				494795CB2A6BEA3B006AA88F /* StrengthedEquip.swift in Sources */,
 				49504DA52A44BB5D00B93E90 /* EquipScoreUtil.swift in Sources */,
+				494795D22A6FE2C0006AA88F /* EquipSetService.swift in Sources */,
 				4992D1692A22F7B8007EEFC2 /* ServerStateView.swift in Sources */,
 				49FBA5CB2A5818660031F9B5 /* TabBarItemViewModifer.swift in Sources */,
 				49504D982A42D42C00B93E90 /* CustomKey.swift in Sources */,
@@ -1581,6 +1604,7 @@
 				4992D20B2A24B3AF007EEFC2 /* NetworkManager.swift in Sources */,
 				49FBA6002A5C49B60031F9B5 /* BoxNewsCarouselView.swift in Sources */,
 				4992D20A2A24B3AC007EEFC2 /* ImageExtension.swift in Sources */,
+				494795D62A6FEA38006AA88F /* EquipSetService.swift in Sources */,
 				4992D2092A24B3A7007EEFC2 /* ImageDownloadService.swift in Sources */,
 				49FBA5AC2A55E3F30031F9B5 /* EquipEnchantPicker.swift in Sources */,
 				497467C52A2619DE00275A09 /* Mount.swift in Sources */,
@@ -1589,6 +1613,7 @@
 				49FBA5E92A585AB50031F9B5 /* CustomNavLink.swift in Sources */,
 				493354422A2611260044289B /* TalentVersionViewModel.swift in Sources */,
 				49D348792A6AFBEC007751AB /* EquipDuty.swift in Sources */,
+				494795D52A6FEA35006AA88F /* EquipSetViewModel.swift in Sources */,
 				492D07632A250FB200826308 /* ServerStateSimpleView.swift in Sources */,
 				49536A142A30DDC1004FBBB1 /* EquipAttribute.swift in Sources */,
 				49FBA5CF2A581C660031F9B5 /* NavIconView.swift in Sources */,
@@ -1627,6 +1652,7 @@
 				499F5AD32A2FA4E300A3C588 /* School.swift in Sources */,
 				4992D2212A24F9DA007EEFC2 /* CircleButton.swift in Sources */,
 				49FBA5A62A55E09E0031F9B5 /* EnchantService.swift in Sources */,
+				494795D02A6EF781006AA88F /* EquipSetDTO.swift in Sources */,
 				49504DA92A44BDA600B93E90 /* GameText.swift in Sources */,
 				49FBA5CC2A5818660031F9B5 /* TabBarItemViewModifer.swift in Sources */,
 				49504DAF2A494E6900B93E90 /* EquipRequireType.swift in Sources */,

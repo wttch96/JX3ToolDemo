@@ -120,7 +120,7 @@ class NetworkManager {
             break
         case .failure(let error):
             // 接收数据出现异常，或者响应状态不为成功(状态码为: 200..<300)
-            print("Download data error : \(error)")
+            logger("Download data error : \(error)")
         }
     }
 }
