@@ -222,6 +222,8 @@ struct EquipDTO: Decodable {
     let duty: String?
     // 套装id
     let setId: String?
+    // 套装属性
+    let setData: [Int: [EquipMagicType]]
     
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
@@ -243,6 +245,10 @@ struct EquipDTO: Decodable {
         self.getType = try container.decodeIfPresent(String.self, forKey: .getType)
         self.duty = try container.decodeIfPresent(String.self, forKey: .duty)
         self.setId = try container.decodeIfPresent(String.self, forKey: .setId)
+        
+        let setData = try container.decodeIfPresent([String: EquipMagicType?].self, forKey: .setData) ?? [:]
+        self.setData = EquipDTO.loadSetData(setData)
+        
         
         self.baseTypes = try EquipDTO.loadBaseTypes(from: decoder)
         self.magicTypes = try EquipDTO.loadMagicTypes(from: decoder)
@@ -269,6 +275,7 @@ struct EquipDTO: Decodable {
         case getType = "GetType"
         case duty = "_Duty"
         case setId = "SetID"
+        case setData = "_SetData"
     }
 }
 
@@ -408,6 +415,22 @@ extension EquipDTO {
             }
         }
         return requireTypes
+    }
+    // 处理一下套装信息
+    private static func loadSetData(_ setData: [String: EquipMagicType?]) -> [Int: [EquipMagicType]] {
+        var newSetData: [Int:[EquipMagicType]] = [:]
+        for i in 2...6 {
+            var setDataLevel: [EquipMagicType] = []
+            for j in 1...2 {
+                if let value = setData["\(i)_\(j)", default: nil] {
+                    setDataLevel.append(value)
+                }
+            }
+            if !setDataLevel.isEmpty {
+                newSetData[i] = setDataLevel
+            }
+        }
+        return newSetData
     }
 }
 // MARK: Hash, Id

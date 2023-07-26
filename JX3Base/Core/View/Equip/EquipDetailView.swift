@@ -182,6 +182,7 @@ struct EquipDetailView: View {
     // MARK: 套装
     @ViewBuilder
     private var equipSetView: some View {
+        // 套装
         VStack(alignment: .leading, spacing: 4) {
             if let equipSet = equipSetVm.set {
                 Text("\(equipSet.name?.replacingOccurrences(of: "·", with: "・") ?? "未知套")(\(activeEquipSetCount)/\(equipSetVm.setList.count))")
@@ -191,6 +192,32 @@ struct EquipDetailView: View {
                     Text(item.name?.replacingOccurrences(of: "·", with: "・") ?? "未知装备")
                         .foregroundColor(containEquip(item) ? .yellow : .gray)
                 })
+            }
+        }
+        .padding(.top)
+        // 套装加成
+        VStack(alignment: .leading, spacing: 4) {
+            ForEach(equip.setData.keys.sorted(), id: \.self) { key in
+                let value = equip.setData[key, default: []]
+                let color: Color = activeEquipSetCount >= key ? .yellow : .gray
+                HStack(spacing: 0) {
+                    Text("[\(key)]")
+                        .foregroundColor(color)
+                    if value.count >= 1 {
+                        let label = value[0].label
+                        if label.isEmpty {
+                            Text(value[0].attrDesc)
+                                .foregroundColor(color)
+                        } else {
+                            JX3GameText(text: value[0].label, color: color)
+                        }
+                    }
+                    if value.count == 2 {
+                        Text("，")
+                            .foregroundColor(color)
+                        JX3GameText(text: value[1].label, color: color)
+                    }
+                }
             }
         }
         .padding(.vertical)
