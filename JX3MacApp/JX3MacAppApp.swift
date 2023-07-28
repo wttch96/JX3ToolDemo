@@ -12,7 +12,7 @@ struct JX3MacAppApp: App {
     var body: some Scene {
         WindowGroup {
             // ContentView()
-            EquipEditorView(mount: Mount("问水诀")!)
+            EquipEditorView(mount: Mount("花间游")!)
         }
         
         

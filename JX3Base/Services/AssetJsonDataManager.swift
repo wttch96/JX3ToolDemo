@@ -38,8 +38,10 @@ class AssetJsonDataManager {
     public let attrDescMap: [String: String]
     // 武器类型编号 -> 武器类型描述
     public let weaponType: [String: String]
-    
+    // 大附魔可以附魔的装备品质
     public let enchantLevelLimit: [String: [String: Int]]
+    // 五彩石筛选选项
+    public let colorStoneOptions: ColorStoneOptions
 
     
     private init() {
@@ -55,6 +57,7 @@ class AssetJsonDataManager {
         self.attrDescMap = BundleUtil.loadJson("attrDesc.json", type: [String: String].self, defaultValue: [:])
         self.weaponType = BundleUtil.loadJson("weaponType.json", type: [String: String].self, defaultValue: [:])
         self.enchantLevelLimit = BundleUtil.loadJson("enchant_level_limit.json", type: [String: [String: Int]].self, defaultValue: [:])
+        self.colorStoneOptions = BundleUtil.loadJson("std_color_stone_option.json", type: ColorStoneOptions.self, defaultValue: ColorStoneOptions(t1box: [], t2box: [], t3box: []))
     }
     
     

@@ -118,8 +118,18 @@ struct EquipEditorSelectView: View {
                                 showSheet =  .showEmbeddingStoneSheet
                             })
                             
-                            EquipEnchantPicker(position: position, enchant: $strengthedEquip.enchance)
-                            EquipEnchantPicker(position: position, subType: .enchant ,enchant: $strengthedEquip.enchant, equip: strengthedEquip.equip)
+                            // 小附魔
+                            if position.haveEnhance {
+                                EquipEnchantPicker(position: position, enchant: $strengthedEquip.enchance)
+                            }
+                            // 大附魔
+                            if position.haveEnchant {
+                                EquipEnchantPicker(position: position, subType: .enchant ,enchant: $strengthedEquip.enchant, equip: strengthedEquip.equip)
+                            }
+                            // 五彩石
+                            if position == .meleeWeapon || position == .meleeWeapon2 {
+                                colorStonePickerView
+                            }
                         }
                     })
                 }
@@ -142,6 +152,30 @@ struct EquipEditorSelectView: View {
                     }
                 })
             }
+        }
+    }
+    
+    @State private var showColorStonePicker: Bool = false
+    
+    private var colorStonePickerView: some View {
+        HStack {
+            Text("五彩石镶嵌")
+            if let colorStone = strengthedEquip.colorStone {
+                JX3BoxIcon(id: Int(colorStone.icon) ?? 0)
+                    .frame(width: 36, height: 36)
+                Text(colorStone.name)
+                    .foregroundColor(colorStone.color)
+            }
+            Button("选择五彩石") {
+                showColorStonePicker.toggle()
+            }
+        }
+        .popover(isPresented: $showColorStonePicker, attachmentAnchor: .point(.bottom), arrowEdge: .bottom) {
+            ColorStonePicker(mount: mount, selection: $strengthedEquip.colorStone)
+                .frame(minWidth: 800, minHeight: 600)
+        }
+        .onChange(of: strengthedEquip.colorStone) { newValue in
+            showColorStonePicker.toggle()
         }
     }
     
@@ -245,6 +279,7 @@ struct EquipEditorSelectView: View {
                             strengthedEquip.strengthLevel = 0
                             strengthedEquip.enchant = nil
                             strengthedEquip.enchance = nil
+                            strengthedEquip.colorStone = nil
                             showEquipPopover.toggle()
                         }
                     ForEach(vm.equips) { equip in
@@ -255,6 +290,7 @@ struct EquipEditorSelectView: View {
                                 strengthedEquip.strengthLevel = 0
                                 strengthedEquip.enchant = nil
                                 strengthedEquip.enchance = nil
+                                strengthedEquip.colorStone = nil
                                 showEquipPopover.toggle()
                             }
                     }

@@ -20,6 +20,7 @@ class EquipSearchService {
     }
     
     func serachEquip(
+        _ mount: Mount,
         _ position: EquipPosition,
         name: String?,
         minLevel: Int,
@@ -71,7 +72,8 @@ class EquipSearchService {
             }
             if position == .meleeWeapon || position == .meleeWeapon2 {
                 request?.queryItems?.append(
-                    URLQueryItem(name: "DetailType", value: position == .meleeWeapon ? "2" : "9")
+                    // 第二武器只有藏剑 9
+                    URLQueryItem(name: "DetailType", value: position == .meleeWeapon ? mount.primaryWeaponType : "9")
                 )
             } else {
                 if !belongSchool.isEmpty {
@@ -91,6 +93,7 @@ class EquipSearchService {
                 )
             }
         }
+        logger(request?.url?.description ?? "")
         if let url = request?.url {
             anyCancellable = NetworkManager.downloadJsonData(url: url, type: BoxResponse<EquipDTO>.self)
                 .sink(receiveCompletion: NetworkManager.handleCompletion, receiveValue: { [weak self] resp in 

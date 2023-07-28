@@ -55,7 +55,7 @@ class EquipPickerViewModel: ObservableObject {
         belongSchool: [String] = [],
         magicKind: [String] = []
     ) {
-        service.serachEquip(position, name: name, minLevel: minLevel, maxLevel: maxLevel, pvType: pvType, attrs: attrs, duty: duty, belongSchool: belongSchool, magicKind: magicKind, page: 1, pageSize: 50, client: "std")
+        service.serachEquip(mount, position, name: name, minLevel: minLevel, maxLevel: maxLevel, pvType: pvType, attrs: attrs, duty: duty, belongSchool: belongSchool, magicKind: magicKind, page: 1, pageSize: 50, client: "std")
     }
     
     func loadEquip() {

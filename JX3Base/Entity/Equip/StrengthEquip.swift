@@ -17,6 +17,8 @@ struct StrengthEquip {
     let enchance: Enchant?
     // 大附魔
     let enchant: Enchant?
+    // 五彩石
+    let colorStone: ColorStone?
     
     
     init(equip: EquipDTO) {
@@ -25,6 +27,7 @@ struct StrengthEquip {
         self.embeddingStone = [:]
         self.enchant = nil
         self.enchance = nil
+        self.colorStone = nil
     }
     
     init(equip: EquipDTO, strengthLevel: Int, embeddingStone: [DiamondAttribute : Int], enchance: Enchant?, enchant: Enchant?) {
@@ -33,6 +36,7 @@ struct StrengthEquip {
         self.embeddingStone = embeddingStone
         self.enchance = enchance
         self.enchant = enchant
+        self.colorStone = nil
     }
     
     func strengthLevel(_ level: Int) -> StrengthEquip {

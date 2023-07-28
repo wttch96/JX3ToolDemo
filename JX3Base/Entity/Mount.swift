@@ -83,4 +83,9 @@ extension Mount {
     var attrs: [EquipAttribute] {
         return AssetJsonDataManager.shared.mountId2AttrsMap[idStr, default: []]
     }
+    
+    // 武器类型
+    var primaryWeaponType: String {
+        return equip!.primaryWeaponType
+    }
 }

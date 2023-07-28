@@ -134,6 +134,10 @@
 		497467C52A2619DE00275A09 /* Mount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497467C32A2619DE00275A09 /* Mount.swift */; };
 		497467C72A261AC500275A09 /* BundleUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497467C62A261AC500275A09 /* BundleUtil.swift */; };
 		497467C82A261AC500275A09 /* BundleUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497467C62A261AC500275A09 /* BundleUtil.swift */; };
+		4986054D2A72957B00C774E0 /* ColorStonePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4986054C2A72957B00C774E0 /* ColorStonePicker.swift */; };
+		4986054F2A72EDDC00C774E0 /* ColorStonePickerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4986054E2A72EDDC00C774E0 /* ColorStonePickerViewModel.swift */; };
+		498605512A72F28900C774E0 /* ColorStone.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498605502A72F28900C774E0 /* ColorStone.swift */; };
+		498605532A72F2E900C774E0 /* ColorStoneService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498605522A72F2E900C774E0 /* ColorStoneService.swift */; };
 		4992D1392A2278DB007EEFC2 /* JX3DemoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4992D1382A2278DB007EEFC2 /* JX3DemoApp.swift */; };
 		4992D13B2A2278DB007EEFC2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4992D13A2A2278DB007EEFC2 /* ContentView.swift */; };
 		4992D13D2A2278DD007EEFC2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4992D13C2A2278DD007EEFC2 /* Assets.xcassets */; };
@@ -209,7 +213,6 @@
 		499A2FBC2A65A86B00F10732 /* EquipEditorSelectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499A2FBB2A65A86B00F10732 /* EquipEditorSelectView.swift */; };
 		499A2FC12A666FE200F10732 /* StrengthEquip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499A2FC02A666FE200F10732 /* StrengthEquip.swift */; };
 		499A2FC72A68613300F10732 /* EquipPickerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499A2FC62A68613300F10732 /* EquipPickerModel.swift */; };
-		499A2FC92A686AF300F10732 /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499A2FC82A686AF300F10732 /* Environment.swift */; };
 		499A2FCA2A69A49F00F10732 /* StrengthEquip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499A2FC02A666FE200F10732 /* StrengthEquip.swift */; };
 		499A2FCC2A6A5A6C00F10732 /* EnchantSubType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499A2FCB2A6A5A6C00F10732 /* EnchantSubType.swift */; };
 		499F5ABB2A2B468200A3C588 /* TransitionExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499F5ABA2A2B468200A3C588 /* TransitionExtension.swift */; };
@@ -243,6 +246,10 @@
 		49DDC4B52A532B03009F06A4 /* StarMarkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DDC4B32A532B03009F06A4 /* StarMarkView.swift */; };
 		49DDC4B72A541496009F06A4 /* NumberUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DDC4B62A541496009F06A4 /* NumberUtil.swift */; };
 		49DDC4B82A541496009F06A4 /* NumberUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DDC4B62A541496009F06A4 /* NumberUtil.swift */; };
+		49EFC0AA2A7190AE007AD5E4 /* std_color_stone_option.json in Resources */ = {isa = PBXBuildFile; fileRef = 49EFC0A92A7190AE007AD5E4 /* std_color_stone_option.json */; };
+		49EFC0AB2A7190AE007AD5E4 /* std_color_stone_option.json in Resources */ = {isa = PBXBuildFile; fileRef = 49EFC0A92A7190AE007AD5E4 /* std_color_stone_option.json */; };
+		49EFC0AD2A7191FC007AD5E4 /* ColorStoneOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49EFC0AC2A7191FC007AD5E4 /* ColorStoneOption.swift */; };
+		49EFC0AE2A7191FC007AD5E4 /* ColorStoneOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49EFC0AC2A7191FC007AD5E4 /* ColorStoneOption.swift */; };
 		49FBA5A22A55D0FB0031F9B5 /* ClientType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FBA5A12A55D0FB0031F9B5 /* ClientType.swift */; };
 		49FBA5A32A55D0FB0031F9B5 /* ClientType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FBA5A12A55D0FB0031F9B5 /* ClientType.swift */; };
 		49FBA5A52A55E09E0031F9B5 /* EnchantService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FBA5A42A55E09E0031F9B5 /* EnchantService.swift */; };
@@ -410,6 +417,10 @@
 		497467C02A2619BF00275A09 /* xf.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = xf.json; sourceTree = "<group>"; };
 		497467C32A2619DE00275A09 /* Mount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mount.swift; sourceTree = "<group>"; };
 		497467C62A261AC500275A09 /* BundleUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BundleUtil.swift; sourceTree = "<group>"; };
+		4986054C2A72957B00C774E0 /* ColorStonePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorStonePicker.swift; sourceTree = "<group>"; };
+		4986054E2A72EDDC00C774E0 /* ColorStonePickerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorStonePickerViewModel.swift; sourceTree = "<group>"; };
+		498605502A72F28900C774E0 /* ColorStone.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorStone.swift; sourceTree = "<group>"; };
+		498605522A72F2E900C774E0 /* ColorStoneService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorStoneService.swift; sourceTree = "<group>"; };
 		4992D1352A2278DB007EEFC2 /* JX3Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JX3Demo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4992D1382A2278DB007EEFC2 /* JX3DemoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JX3DemoApp.swift; sourceTree = "<group>"; };
 		4992D13A2A2278DB007EEFC2 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -470,7 +481,6 @@
 		499A2FBB2A65A86B00F10732 /* EquipEditorSelectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipEditorSelectView.swift; sourceTree = "<group>"; };
 		499A2FC02A666FE200F10732 /* StrengthEquip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StrengthEquip.swift; sourceTree = "<group>"; };
 		499A2FC62A68613300F10732 /* EquipPickerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipPickerModel.swift; sourceTree = "<group>"; };
-		499A2FC82A686AF300F10732 /* Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
 		499A2FCB2A6A5A6C00F10732 /* EnchantSubType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnchantSubType.swift; sourceTree = "<group>"; };
 		499F5ABA2A2B468200A3C588 /* TransitionExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransitionExtension.swift; sourceTree = "<group>"; };
 		499F5ABE2A2D071B00A3C588 /* EquipHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipHomeView.swift; sourceTree = "<group>"; };
@@ -488,6 +498,8 @@
 		49DBCE1B2A2625F800C3BA2E /* WebCacheableImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebCacheableImage.swift; sourceTree = "<group>"; };
 		49DDC4B32A532B03009F06A4 /* StarMarkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarMarkView.swift; sourceTree = "<group>"; };
 		49DDC4B62A541496009F06A4 /* NumberUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberUtil.swift; sourceTree = "<group>"; };
+		49EFC0A92A7190AE007AD5E4 /* std_color_stone_option.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = std_color_stone_option.json; sourceTree = "<group>"; };
+		49EFC0AC2A7191FC007AD5E4 /* ColorStoneOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorStoneOption.swift; sourceTree = "<group>"; };
 		49FBA5A12A55D0FB0031F9B5 /* ClientType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientType.swift; sourceTree = "<group>"; };
 		49FBA5A42A55E09E0031F9B5 /* EnchantService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnchantService.swift; sourceTree = "<group>"; };
 		49FBA5A72A55E1E50031F9B5 /* Enchant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enchant.swift; sourceTree = "<group>"; };
@@ -598,13 +610,15 @@
 		49504D9A2A42D45300B93E90 /* Equip */ = {
 			isa = PBXGroup;
 			children = (
+				499A2FC02A666FE200F10732 /* StrengthEquip.swift */,
 				495FD66D2A3F593300A17FB0 /* EquipDTO.swift */,
 				49504D9B2A42D46C00B93E90 /* EquipBaseType.swift */,
 				49504D9E2A44B45600B93E90 /* EquipMagicType.swift */,
 				49504DAA2A4763D600B93E90 /* DiamondAttribute.swift */,
 				49504DAD2A494E6900B93E90 /* EquipRequireType.swift */,
-				499A2FC02A666FE200F10732 /* StrengthEquip.swift */,
 				49D348772A6AFBEC007751AB /* EquipDuty.swift */,
+				49EFC0AC2A7191FC007AD5E4 /* ColorStoneOption.swift */,
+				498605502A72F28900C774E0 /* ColorStone.swift */,
 			);
 			path = Equip;
 			sourceTree = "<group>";
@@ -672,6 +686,7 @@
 				49504D852A42C26C00B93E90 /* attrBriefDesc.json */,
 				49504D822A42BE8900B93E90 /* weaponType.json */,
 				49D348712A6AFA0A007751AB /* enchant_level_limit.json */,
+				49EFC0A92A7190AE007AD5E4 /* std_color_stone_option.json */,
 			);
 			path = Assets;
 			sourceTree = "<group>";
@@ -886,6 +901,7 @@
 				49FBA5A42A55E09E0031F9B5 /* EnchantService.swift */,
 				49FBA5F72A5C388D0031F9B5 /* BoxNewsService.swift */,
 				494795D12A6FE2C0006AA88F /* EquipSetService.swift */,
+				498605522A72F2E900C774E0 /* ColorStoneService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -1021,7 +1037,7 @@
 				499A2FB72A65A56B00F10732 /* EquipEditorPositionView.swift */,
 				499A2FB92A65A62500F10732 /* EquipEditorNavView.swift */,
 				499A2FBB2A65A86B00F10732 /* EquipEditorSelectView.swift */,
-				499A2FC82A686AF300F10732 /* Environment.swift */,
+				4986054C2A72957B00C774E0 /* ColorStonePicker.swift */,
 			);
 			path = EquipEditor;
 			sourceTree = "<group>";
@@ -1030,6 +1046,7 @@
 			isa = PBXGroup;
 			children = (
 				499A2FC62A68613300F10732 /* EquipPickerModel.swift */,
+				4986054E2A72EDDC00C774E0 /* ColorStonePickerViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -1342,6 +1359,7 @@
 				4992D2192A24F704007EEFC2 /* BaseAssets.xcassets in Resources */,
 				495FD6722A40308D00A17FB0 /* equip1.json in Resources */,
 				495FD66B2A3F581100A17FB0 /* equipAttrDesc.json in Resources */,
+				49EFC0AA2A7190AE007AD5E4 /* std_color_stone_option.json in Resources */,
 				499F5AD82A304C9C00A3C588 /* colors.json in Resources */,
 				499F5ACF2A2FA4B600A3C588 /* school.json in Resources */,
 				49536A282A31CCDD004FBBB1 /* mountEquip.json in Resources */,
@@ -1389,6 +1407,7 @@
 				4992D21A2A24F704007EEFC2 /* BaseAssets.xcassets in Resources */,
 				495FD6732A40308D00A17FB0 /* equip1.json in Resources */,
 				495FD66C2A3F581100A17FB0 /* equipAttrDesc.json in Resources */,
+				49EFC0AB2A7190AE007AD5E4 /* std_color_stone_option.json in Resources */,
 				499F5AD92A304C9C00A3C588 /* colors.json in Resources */,
 				499F5AD02A2FA4B600A3C588 /* school.json in Resources */,
 				49536A292A31CCDD004FBBB1 /* mountEquip.json in Resources */,
@@ -1468,6 +1487,7 @@
 				4992D2122A24F2F1007EEFC2 /* LikedIconLibraryView.swift in Sources */,
 				49504D7D2A41C73E00B93E90 /* CheckBoxToggleStyle.swift in Sources */,
 				495410DB2A276EF800AA6293 /* Talent.swift in Sources */,
+				49EFC0AD2A7191FC007AD5E4 /* ColorStoneOption.swift in Sources */,
 				49DDC4B72A541496009F06A4 /* NumberUtil.swift in Sources */,
 				4992D1F02A248390007EEFC2 /* LocalFileManager.swift in Sources */,
 				499A2FCA2A69A49F00F10732 /* StrengthEquip.swift in Sources */,
@@ -1590,13 +1610,16 @@
 				495410D32A273DCE00AA6293 /* CoreDataManager.swift in Sources */,
 				49FBA5F92A5C388D0031F9B5 /* BoxNewsService.swift in Sources */,
 				495410D42A273DCE00AA6293 /* ServerState.swift in Sources */,
+				498605512A72F28900C774E0 /* ColorStone.swift in Sources */,
 				495410DF2A27C23B00AA6293 /* TalentView.swift in Sources */,
 				495410D52A273DCE00AA6293 /* TalentVersion.swift in Sources */,
 				495410D62A27405C00AA6293 /* PreviewExtension.swift in Sources */,
 				49536A0D2A30BA2D004FBBB1 /* EquipEditViewModel.swift in Sources */,
 				49FBA5F32A5AAB000031F9B5 /* BoxNews.swift in Sources */,
+				49EFC0AE2A7191FC007AD5E4 /* ColorStoneOption.swift in Sources */,
 				495FD6632A3DF8C100A17FB0 /* MountEquip.swift in Sources */,
 				495410D92A276D8B00AA6293 /* TalentPickerViewModel.swift in Sources */,
+				4986054D2A72957B00C774E0 /* ColorStonePicker.swift in Sources */,
 				49504DA02A44B45600B93E90 /* EquipMagicType.swift in Sources */,
 				499A2FB82A65A56B00F10732 /* EquipEditorPositionView.swift in Sources */,
 				499A2FB52A65173300F10732 /* EquipEditorView.swift in Sources */,
@@ -1629,7 +1652,9 @@
 				4992D2132A24F2F1007EEFC2 /* LikedIconLibraryView.swift in Sources */,
 				49504D992A42D42C00B93E90 /* CustomKey.swift in Sources */,
 				499F5ABC2A2B468200A3C588 /* TransitionExtension.swift in Sources */,
+				4986054F2A72EDDC00C774E0 /* ColorStonePickerViewModel.swift in Sources */,
 				499A2FBA2A65A62500F10732 /* EquipEditorNavView.swift in Sources */,
+				498605532A72F2E900C774E0 /* ColorStoneService.swift in Sources */,
 				49FBA5B62A56FFA90031F9B5 /* EquipEnchantPickerViewModel.swift in Sources */,
 				49DDC4B52A532B03009F06A4 /* StarMarkView.swift in Sources */,
 				49DBCE1D2A2625F800C3BA2E /* WebCacheableImage.swift in Sources */,
@@ -1646,7 +1671,6 @@
 				49FBA5D32A581DF30031F9B5 /* ToolNavItem.swift in Sources */,
 				499F5ACD2A2F9D9800A3C588 /* CornersRectangle.swift in Sources */,
 				49504D812A41CBA300B93E90 /* PvType.swift in Sources */,
-				499A2FC92A686AF300F10732 /* Environment.swift in Sources */,
 				4992D2082A24B3A3007EEFC2 /* WebCacheableImageViewModel.swift in Sources */,
 				499A2FC12A666FE200F10732 /* StrengthEquip.swift in Sources */,
 				499F5AD32A2FA4E300A3C588 /* School.swift in Sources */,

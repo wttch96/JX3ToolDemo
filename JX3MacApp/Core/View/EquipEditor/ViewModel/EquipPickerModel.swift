@@ -54,6 +54,7 @@ class EquipPickerModel: ObservableObject {
     }
     
     func searchEquip(
+        _ mount: Mount,
         _ position: EquipPosition,
         name: String?,
         minLevel: Int,
@@ -64,7 +65,7 @@ class EquipPickerModel: ObservableObject {
         belongSchool: [String] = [],
         magicKind: [String] = []
     ) {
-        service.serachEquip(position, name: name, minLevel: minLevel, maxLevel: maxLevel, pvType: pvType, attrs: attrs, duty: duty, belongSchool: belongSchool, magicKind: magicKind, page: page, pageSize: pageSize, client: "std")
+        service.serachEquip(mount, position, name: name, minLevel: minLevel, maxLevel: maxLevel, pvType: pvType, attrs: attrs, duty: duty, belongSchool: belongSchool, magicKind: magicKind, page: page, pageSize: pageSize, client: "std")
     }
     
     func loadEquip(mount: Mount) {
@@ -94,6 +95,7 @@ class EquipPickerModel: ObservableObject {
         }
         
         searchEquip(
+            mount,
             self.position,
             name: searchText,
             minLevel: Int(level.lowerBound),

@@ -50,21 +50,13 @@ struct EquipDetailView: View {
             // 大小附魔
             enchantView
             
+            // 五彩石
+            colorStoneDetailView
+            
             // 套装
             equipSetView
             
-            HStack(spacing: 0) {
-                Text("品质等级：\(equip.level)")
-                    .foregroundColor(.yellow)
-                Text("(+\(equip.strengthLevelScore(strengthLevel: strengthEquip.strengthLevel)))")
-                    .foregroundColor(.theme.strength)
-            }
-            HStack(spacing: 0) {
-                Text("装备分数：\(equip.equipScore)")
-                    .foregroundColor(EquipQuality._5.color)
-                Text("(+\(ScoreUtil.getGsStrengthScore(base: equip.equipScore, strengthLevel: strengthEquip.strengthLevel))+\(extraScore))")
-                    .foregroundColor(.theme.strength)
-            }
+            extraView
             
 //            if let getType = equip.getType {
 //                Text("装备来源：\(getType)")
@@ -290,6 +282,39 @@ struct EquipDetailView: View {
                     .foregroundColor( diamondAttributeLevels[attr, default: 0] == 0 ? .gray : .theme.textGreen)
                 Spacer()
             }
+        }
+    }
+    
+    // MARK: 五彩石
+    @ViewBuilder
+    var colorStoneDetailView: some View {
+        if let colorStone = strengthEquip.colorStone {
+            HStack(alignment: .top) {
+                JX3BoxIcon(id: Int(colorStone.icon) ?? 0)
+                    .frame(width: 16, height: 16)
+                VStack(alignment: .leading, spacing: 4) {
+                    ForEach(colorStone.attributes) { attr in
+                        Text("\(attr.remark)\(attr.value1)")
+                            .foregroundColor(.theme.textGreen)
+                    }
+                }
+            }
+        }
+    }
+    
+    @ViewBuilder
+    var extraView: some View {
+        HStack(spacing: 0) {
+            Text("品质等级：\(equip.level)")
+                .foregroundColor(.yellow)
+            Text("(+\(equip.strengthLevelScore(strengthLevel: strengthEquip.strengthLevel)))")
+                .foregroundColor(.theme.strength)
+        }
+        HStack(spacing: 0) {
+            Text("装备分数：\(equip.equipScore)")
+                .foregroundColor(EquipQuality._5.color)
+            Text("(+\(ScoreUtil.getGsStrengthScore(base: equip.equipScore, strengthLevel: strengthEquip.strengthLevel))+\(extraScore))")
+                .foregroundColor(.theme.strength)
         }
     }
     

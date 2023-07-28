@@ -28,4 +28,6 @@ class StrengthedEquip: ObservableObject {
     @Published var enchance: Enchant? = nil
     // 大附魔
     @Published var enchant: Enchant? = nil
+    // 五彩石
+    @Published var colorStone: ColorStone? = nil
 }

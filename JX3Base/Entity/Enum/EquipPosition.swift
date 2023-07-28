@@ -116,7 +116,7 @@ extension EquipPosition {
     }
     
     // 位置是否可以小附魔
-    var enhance: Bool {
+    var haveEnhance: Bool {
         var enchanceMap: [ClientType: Bool] = [:]
         if self.type == .ring {
             enchanceMap = [.std: true, .origin: true]
@@ -128,7 +128,7 @@ extension EquipPosition {
     }
     
     // 位置是否可以大附魔
-    var enchant: Bool {
+    var haveEnchant: Bool {
         var enchantMap: [ClientType: Bool] = [:]
         if self == .pants || self.tabType == .weapon {
             // 裤子或武器
