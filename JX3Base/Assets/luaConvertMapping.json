@@ -1,0 +1,2918 @@
+
+{
+    "RUN_SPEED_BASE": {
+        "id": 1,
+        "AttributeSlot": "atRunSpeedBase",
+        "isValue": 1
+    },
+    "MOVE_SPEED_PERCENT": {
+        "id": 2,
+        "AttributeSlot": "atMoveSpeedPercent",
+        "isValue": 1
+    },
+    "MIN_RUN_SPEED": {
+        "id": 3,
+        "AttributeSlot": "atMinRunSpeed",
+        "isValue": 1
+    },
+    "MAX_RUN_SPEED": {
+        "id": 4,
+        "AttributeSlot": "atMaxRunSpeed",
+        "isValue": 1
+    },
+    "MAX_JUMP_COUNT": {
+        "id": 5,
+        "AttributeSlot": "atMaxJumpCount",
+        "isValue": 0
+    },
+    "SET_JUMP_COUNT": {
+        "id": 6,
+        "AttributeSlot": "atSetJumpCount",
+        "isValue": 0
+    },
+    "FLY_FLAG": {
+        "id": 7,
+        "AttributeSlot": "atFlyFlag",
+        "isValue": 0
+    },
+    "ON_TOWER_FLAG": {
+        "id": 8,
+        "AttributeSlot": "atOnTowerFlag",
+        "isValue": 0
+    },
+    "ON_PARACHUTE_FLAG": {
+        "id": 9,
+        "AttributeSlot": "atOnParachuteFlag",
+        "isValue": 0
+    },
+    "HORSE_ATTRIBUTE": {
+        "id": 10,
+        "AttributeSlot": "atHorseAttribute",
+        "isValue": 0
+    },
+    "HORSE_RUN_TYPE": {
+        "id": 11,
+        "AttributeSlot": "atHorseRunType",
+        "isValue": 0
+    },
+    "HEIGHT": {
+        "id": 12,
+        "AttributeSlot": "atHeight",
+        "isValue": 1
+    },
+    "TRANSFORM": {
+        "id": 13,
+        "AttributeSlot": "atTransform",
+        "isValue": 0
+    },
+    "GRAVITY_BASE": {
+        "id": 14,
+        "AttributeSlot": "atGravityBase",
+        "isValue": 1
+    },
+    "GRAVITY_PERCENT": {
+        "id": 15,
+        "AttributeSlot": "atGravityPercent",
+        "isValue": 1
+    },
+    "JUMP_SPEED_BASE": {
+        "id": 16,
+        "AttributeSlot": "atJumpSpeedBase",
+        "isValue": 1
+    },
+    "JUMP_SPEED_PERCENT": {
+        "id": 17,
+        "AttributeSlot": "atJumpSpeedPercent",
+        "isValue": 1
+    },
+    "HORSE_JUMP_SPEED_ADDITIONAL": {
+        "id": 18,
+        "AttributeSlot": "atHorseJumpSpeedAdditional",
+        "isValue": 1
+    },
+    "DROP_DEFENCE": {
+        "id": 19,
+        "AttributeSlot": "atDropDefence",
+        "isValue": 1
+    },
+    "DIVING_FRAME_BASE": {
+        "id": 20,
+        "AttributeSlot": "atDivingFrameBase",
+        "isValue": 1
+    },
+    "DIVING_FRAME_PERCENT": {
+        "id": 21,
+        "AttributeSlot": "atDivingFramePercent",
+        "isValue": 1
+    },
+    "WATER_FLY_ABILITY": {
+        "id": 22,
+        "AttributeSlot": "atWaterFlyAbility",
+        "isValue": 0
+    },
+    "CAN_NOT_JUMP": {
+        "id": 23,
+        "AttributeSlot": "atCanNotJump",
+        "isValue": 0
+    },
+    "STRENGTH_BASE": {
+        "id": 24,
+        "AttributeSlot": "atStrengthBase",
+        "isValue": 1
+    },
+    "STRENGTH_BASE_PERCENT_ADD": {
+        "id": 25,
+        "AttributeSlot": "atStrengthBasePercentAdd",
+        "isValue": 1
+    },
+    "AGILITY_BASE": {
+        "id": 26,
+        "AttributeSlot": "atAgilityBase",
+        "isValue": 1
+    },
+    "AGILITY_BASE_PERCENT_ADD": {
+        "id": 27,
+        "AttributeSlot": "atAgilityBasePercentAdd",
+        "isValue": 1
+    },
+    "VITALITY_BASE": {
+        "id": 28,
+        "AttributeSlot": "atVitalityBase",
+        "isValue": 1
+    },
+    "VITALITY_BASE_PERCENT_ADD": {
+        "id": 29,
+        "AttributeSlot": "atVitalityBasePercentAdd",
+        "isValue": 1
+    },
+    "SPIRIT_BASE": {
+        "id": 30,
+        "AttributeSlot": "atSpiritBase",
+        "isValue": 1
+    },
+    "SPIRIT_BASE_PERCENT_ADD": {
+        "id": 31,
+        "AttributeSlot": "atSpiritBasePercentAdd",
+        "isValue": 1
+    },
+    "SPUNK_BASE": {
+        "id": 32,
+        "AttributeSlot": "atSpunkBase",
+        "isValue": 1
+    },
+    "SPUNK_BASE_PERCENT_ADD": {
+        "id": 33,
+        "AttributeSlot": "atSpunkBasePercentAdd",
+        "isValue": 1
+    },
+    "HASTE_BASE": {
+        "id": 34,
+        "AttributeSlot": "atHasteBase",
+        "isValue": 1
+    },
+    "HASTE_BASE_PERCENT_ADD": {
+        "id": 35,
+        "AttributeSlot": "atHasteBasePercentAdd",
+        "isValue": 1
+    },
+    "UNLIMIT_HASTE_BASE_PERCENT_ADD": {
+        "id": 36,
+        "AttributeSlot": "atUnlimitHasteBasePercentAdd",
+        "isValue": 1
+    },
+    "TRANSMIT_TRAIN": {
+        "id": 37,
+        "AttributeSlot": "atTransmitTrain",
+        "isValue": 0
+    },
+    "MAX_TRAIN_VALUE": {
+        "id": 38,
+        "AttributeSlot": "atMaxTrainValue",
+        "isValue": 1
+    },
+    "BASE_VENATION_COF": {
+        "id": 39,
+        "AttributeSlot": "atBaseVenationCof",
+        "isValue": 1
+    },
+    "PHYSICS_VENATION_COF": {
+        "id": 40,
+        "AttributeSlot": "atPhysicsVenationCof",
+        "isValue": 1
+    },
+    "MAGIC_VENATION_COF": {
+        "id": 41,
+        "AttributeSlot": "atMagicVenationCof",
+        "isValue": 1
+    },
+    "ASSIST_VENATION_COF": {
+        "id": 42,
+        "AttributeSlot": "atAssistVenationCof",
+        "isValue": 1
+    },
+    "BASE_POTENTIAL_ADD": {
+        "id": 43,
+        "AttributeSlot": "atBasePotentialAdd",
+        "isValue": 1
+    },
+    "CURRENT_LIFE": {
+        "id": 44,
+        "AttributeSlot": "atCurrentLife",
+        "isValue": 1
+    },
+    "MAX_LIFE_BASE": {
+        "id": 45,
+        "AttributeSlot": "atMaxLifeBase",
+        "isValue": 1
+    },
+    "MAX_LIFE_PERCENT_ADD": {
+        "id": 46,
+        "AttributeSlot": "atMaxLifePercentAdd",
+        "isValue": 1
+    },
+    "MAX_LIFE_ADDITIONAL": {
+        "id": 47,
+        "AttributeSlot": "atMaxLifeAdditional",
+        "isValue": 1
+    },
+    "FINAL_MAX_LIFE_ADD_PERCENT": {
+        "id": 48,
+        "AttributeSlot": "atFinalMaxLifeAddPercent",
+        "isValue": 1
+    },
+    "LIFE_REPLENISH": {
+        "id": 49,
+        "AttributeSlot": "atLifeReplenish",
+        "isValue": 1
+    },
+    "LIFE_REPLENISH_PERCENT": {
+        "id": 50,
+        "AttributeSlot": "atLifeReplenishPercent",
+        "isValue": 1
+    },
+    "LIFE_REPLENISH_COEFFICIENT": {
+        "id": 51,
+        "AttributeSlot": "atLifeReplenishCoefficient",
+        "isValue": 1
+    },
+    "LIFE_REPLENISH_EXT": {
+        "id": 52,
+        "AttributeSlot": "atLifeReplenishExt",
+        "isValue": 1
+    },
+    "CURRENT_MANA": {
+        "id": 53,
+        "AttributeSlot": "atCurrentMana",
+        "isValue": 1
+    },
+    "MAX_MANA_BASE": {
+        "id": 54,
+        "AttributeSlot": "atMaxManaBase",
+        "isValue": 1
+    },
+    "MAX_MANA_PERCENT_ADD": {
+        "id": 55,
+        "AttributeSlot": "atMaxManaPercentAdd",
+        "isValue": 1
+    },
+    "MAX_MANA_ADDITIONAL": {
+        "id": 56,
+        "AttributeSlot": "atMaxManaAdditional",
+        "isValue": 1
+    },
+    "MANA_PERCENT_ADD": {
+        "id": 57,
+        "AttributeSlot": "atManaPercentAdd",
+        "isValue": 1
+    },
+    "MANA_REPLENISH": {
+        "id": 58,
+        "AttributeSlot": "atManaReplenish",
+        "isValue": 1
+    },
+    "MANA_REPLENISH_PERCENT": {
+        "id": 59,
+        "AttributeSlot": "atManaReplenishPercent",
+        "isValue": 1
+    },
+    "MANA_REPLENISH_COEFFICIENT": {
+        "id": 60,
+        "AttributeSlot": "atManaReplenishCoefficient",
+        "isValue": 1
+    },
+    "MANA_REPLENISH_EXT": {
+        "id": 61,
+        "AttributeSlot": "atManaReplenishExt",
+        "isValue": 1
+    },
+    "CURRENT_RAGE": {
+        "id": 62,
+        "AttributeSlot": "atCurrentRage",
+        "isValue": 1
+    },
+    "MAX_RAGE": {
+        "id": 63,
+        "AttributeSlot": "atMaxRage",
+        "isValue": 1
+    },
+    "RAGE_REPLENISH": {
+        "id": 64,
+        "AttributeSlot": "atRageReplenish",
+        "isValue": 1
+    },
+    "CURRENT_ENERGY": {
+        "id": 65,
+        "AttributeSlot": "atCurrentEnergy",
+        "isValue": 1
+    },
+    "MAX_ENERGY": {
+        "id": 66,
+        "AttributeSlot": "atMaxEnergy",
+        "isValue": 1
+    },
+    "ENERGY_REPLENISH": {
+        "id": 67,
+        "AttributeSlot": "atEnergyReplenish",
+        "isValue": 1
+    },
+    "SUN_POWER_VALUE": {
+        "id": 68,
+        "AttributeSlot": "atSunPowerValue",
+        "isValue": 1
+    },
+    "MOON_POWER_VALUE": {
+        "id": 69,
+        "AttributeSlot": "atMoonPowerValue",
+        "isValue": 1
+    },
+    "CURRENT_SUN_ENERGY": {
+        "id": 70,
+        "AttributeSlot": "atCurrentSunEnergy",
+        "isValue": 1
+    },
+    "MAX_SUN_ENERGY": {
+        "id": 71,
+        "AttributeSlot": "atMaxSunEnergy",
+        "isValue": 1
+    },
+    "SUN_ENERGY_ADD_PERCENT": {
+        "id": 72,
+        "AttributeSlot": "atSunEnergyAddPercent",
+        "isValue": 1
+    },
+    "SUN_ENERGY_REPLENISH": {
+        "id": 73,
+        "AttributeSlot": "atSunEnergyReplenish",
+        "isValue": 1
+    },
+    "SUN_ENERGY_FALL_OFF": {
+        "id": 74,
+        "AttributeSlot": "atSunEnergyFallOff",
+        "isValue": 1
+    },
+    "STOP_MAKE_SUN_POWER": {
+        "id": 75,
+        "AttributeSlot": "atStopMakeSunPower",
+        "isValue": 1
+    },
+    "CURRENT_MOON_ENERGY": {
+        "id": 76,
+        "AttributeSlot": "atCurrentMoonEnergy",
+        "isValue": 1
+    },
+    "MAX_MOON_ENERGY": {
+        "id": 77,
+        "AttributeSlot": "atMaxMoonEnergy",
+        "isValue": 1
+    },
+    "MOON_ENERGY_ADD_PERCENT": {
+        "id": 78,
+        "AttributeSlot": "atMoonEnergyAddPercent",
+        "isValue": 1
+    },
+    "MOON_ENERGY_REPLENISH": {
+        "id": 79,
+        "AttributeSlot": "atMoonEnergyReplenish",
+        "isValue": 1
+    },
+    "MOON_ENERGY_FALL_OFF": {
+        "id": 80,
+        "AttributeSlot": "atMoonEnergyFallOff",
+        "isValue": 1
+    },
+    "CURRENT_STAMINA": {
+        "id": 81,
+        "AttributeSlot": "atCurrentStamina",
+        "isValue": 1
+    },
+    "MAX_STAMINA": {
+        "id": 82,
+        "AttributeSlot": "atMaxStamina",
+        "isValue": 1
+    },
+    "CURRENT_THEW": {
+        "id": 83,
+        "AttributeSlot": "atCurrentThew",
+        "isValue": 1
+    },
+    "MAX_THEW": {
+        "id": 84,
+        "AttributeSlot": "atMaxThew",
+        "isValue": 1
+    },
+    "ACTIVE_THREAT_COEFFICIENT": {
+        "id": 85,
+        "AttributeSlot": "atActiveThreatCoefficient",
+        "isValue": 1
+    },
+    "PASSIVE_THREAT_COEFFICIENT": {
+        "id": 86,
+        "AttributeSlot": "atPassiveThreatCoefficient",
+        "isValue": 1
+    },
+    "DODGE": {
+        "id": 87,
+        "AttributeSlot": "atDodge",
+        "isValue": 1
+    },
+    "DODGE_BASE_RATE": {
+        "id": 88,
+        "AttributeSlot": "atDodgeBaseRate",
+        "isValue": 1
+    },
+    "PARRY_BASE_RATE": {
+        "id": 89,
+        "AttributeSlot": "atParryBaseRate",
+        "isValue": 1
+    },
+    "PARRY_BASE": {
+        "id": 90,
+        "AttributeSlot": "atParryBase",
+        "isValue": 1
+    },
+    "PARRY_PERCENT": {
+        "id": 91,
+        "AttributeSlot": "atParryPercent",
+        "isValue": 1
+    },
+    "PARRYVALUE_BASE": {
+        "id": 92,
+        "AttributeSlot": "atParryValueBase",
+        "isValue": 1
+    },
+    "PARRYVALUE_PERCENT": {
+        "id": 93,
+        "AttributeSlot": "atParryValuePercent",
+        "isValue": 1
+    },
+    "PARRY_VALUE_TO_MAGIC_SHIELD_COF": {
+        "id": 94,
+        "AttributeSlot": "atParryValueToMagicShieldCof",
+        "isValue": 1
+    },
+    "SENSE": {
+        "id": 95,
+        "AttributeSlot": "atSense",
+        "isValue": 1
+    },
+    "STRAIN_BASE": {
+        "id": 96,
+        "AttributeSlot": "atStrainBase",
+        "isValue": 1
+    },
+    "STRAIN_PERCENT": {
+        "id": 97,
+        "AttributeSlot": "atStrainPercent",
+        "isValue": 1
+    },
+    "STRAIN_RATE": {
+        "id": 98,
+        "AttributeSlot": "atStrainRate",
+        "isValue": 1
+    },
+    "TOUGHNESS_BASE_RATE": {
+        "id": 99,
+        "AttributeSlot": "atToughnessBaseRate",
+        "isValue": 1
+    },
+    "TOUGHNESS_BASE": {
+        "id": 100,
+        "AttributeSlot": "atToughnessBase",
+        "isValue": 1
+    },
+    "TOUGHNESS_PERCENT": {
+        "id": 101,
+        "AttributeSlot": "atToughnessPercent",
+        "isValue": 1
+    },
+    "DECRITICAL_DAMAGE_POWER_BASE_KILONUM_RATE": {
+        "id": 102,
+        "AttributeSlot": "atDecriticalDamagePowerBaseKiloNumRate",
+        "isValue": 1
+    },
+    "DECRITICAL_DAMAGE_POWER_BASE": {
+        "id": 103,
+        "AttributeSlot": "atDecriticalDamagePowerBase",
+        "isValue": 1
+    },
+    "DECRITICAL_DAMAGE_POWER_PERCENT": {
+        "id": 104,
+        "AttributeSlot": "atDecriticalDamagePowerPercent",
+        "isValue": 1
+    },
+    "POSITIVE_SHIELD": {
+        "id": 105,
+        "AttributeSlot": "atPositiveShield",
+        "isValue": 1
+    },
+    "NEGATIVE_SHIELD": {
+        "id": 106,
+        "AttributeSlot": "atNegativeShield",
+        "isValue": 1
+    },
+    "GLOBAL_RESIST_PERCENT": {
+        "id": 107,
+        "AttributeSlot": "atGlobalResistPercent",
+        "isValue": 1
+    },
+    "GLOBAL_BLOCK": {
+        "id": 108,
+        "AttributeSlot": "atGlobalBlock",
+        "isValue": 1
+    },
+    "GLOBAL_THERAPY_ABSORB": {
+        "id": 109,
+        "AttributeSlot": "atGlobalTherapyAbsorb",
+        "isValue": 1
+    },
+    "GLOBAL_THERAPY_ABSORB_BY_SELF_MAX_LIFE": {
+        "id": 110,
+        "AttributeSlot": "atGlobalTherapyAbsorbBySelfMaxLife",
+        "isValue": 1
+    },
+    "GLOBAL_DAMAGE_ABSORB": {
+        "id": 111,
+        "AttributeSlot": "atGlobalDamageAbsorb",
+        "isValue": 1
+    },
+    "GLOBAL_DAMAGE_ABSORB_BY_SELF_MAX_LIFE": {
+        "id": 112,
+        "AttributeSlot": "atGlobalDamageAbsorbBySelfMaxLife",
+        "isValue": 1
+    },
+    "GLOBAL_DAMAGE_ABSORB_BY_SELF_SPIRIT": {
+        "id": 113,
+        "AttributeSlot": "atGlobalDamageAbsorbBySelfSpirit",
+        "isValue": 1
+    },
+    "GLOBAL_DAMAGE_ABSORB_BY_SELF_AGILITY": {
+        "id": 114,
+        "AttributeSlot": "atGlobalDamageAbsorbBySelfAgility",
+        "isValue": 1
+    },
+    "GLOBAL_DAMAGE_ABSORB_BY_SELF_VITALITY": {
+        "id": 115,
+        "AttributeSlot": "atGlobalDamageAbsorbBySelfVitality",
+        "isValue": 1
+    },
+    "GLOBAL_DAMAGE_MANA_SHIELD": {
+        "id": 116,
+        "AttributeSlot": "atGlobalDamageManaShield",
+        "isValue": 1
+    },
+    "DAMAGE_TO_LIFE_FOR_SELF": {
+        "id": 117,
+        "AttributeSlot": "atDamageToLifeForSelf",
+        "isValue": 1
+    },
+    "DAMAGE_TO_MANA_FOR_SELF": {
+        "id": 118,
+        "AttributeSlot": "atDamageToManaForSelf",
+        "isValue": 1
+    },
+    "MAX_DAMAGE_TO_LIFE_VALUE": {
+        "id": 119,
+        "AttributeSlot": "atMaxDamageToLifeValue",
+        "isValue": 1
+    },
+    "MAX_DAMAGE_TO_MANA_VALUE": {
+        "id": 120,
+        "AttributeSlot": "atMaxDamageToManaValue",
+        "isValue": 1
+    },
+    "BEAT_BACK_RATE": {
+        "id": 121,
+        "AttributeSlot": "atBeatBackRate",
+        "isValue": 1
+    },
+    "KNOCKED_BACK_RATE": {
+        "id": 122,
+        "AttributeSlot": "atKnockedBackRate",
+        "isValue": 1
+    },
+    "KNOCKED_OFF_RATE": {
+        "id": 123,
+        "AttributeSlot": "atKnockedOffRate",
+        "isValue": 1
+    },
+    "KNOCKED_DOWN_RATE": {
+        "id": 124,
+        "AttributeSlot": "atKnockedDownRate",
+        "isValue": 1
+    },
+    "PULL_RATE": {
+        "id": 125,
+        "AttributeSlot": "atPullRate",
+        "isValue": 1
+    },
+    "IMMUNE_SKILL_MOVED": {
+        "id": 126,
+        "AttributeSlot": "atImmuneSkillMove",
+        "isValue": 1
+    },
+    "REPULSED_RATE": {
+        "id": 127,
+        "AttributeSlot": "atRepulsedRate",
+        "isValue": 1
+    },
+    "IMMORTAL": {
+        "id": 128,
+        "AttributeSlot": "atImmortal",
+        "isValue": 1
+    },
+    "MOUNTING_RATE": {
+        "id": 129,
+        "AttributeSlot": "atMountingRate",
+        "isValue": 1
+    },
+    "MELEE_WEAPON_DAMAGE_BASE": {
+        "id": 130,
+        "AttributeSlot": "atMeleeWeaponDamageBase",
+        "isValue": 1
+    },
+    "MELEE_WEAPON_DAMAGE_PERCENT": {
+        "id": 131,
+        "AttributeSlot": "atMeleeWeaponDamagePercent",
+        "isValue": 1
+    },
+    "MELEE_WEAPON_DAMAGE_RAND": {
+        "id": 132,
+        "AttributeSlot": "atMeleeWeaponDamageRand",
+        "isValue": 1
+    },
+    "MELEE_WEAPON_DAMAGE_RAND_PERCENT": {
+        "id": 133,
+        "AttributeSlot": "atMeleeWeaponDamageRandPercent",
+        "isValue": 1
+    },
+    "RANGE_WEAPON_DAMAGE_BASE": {
+        "id": 134,
+        "AttributeSlot": "atRangeWeaponDamageBase",
+        "isValue": 1
+    },
+    "RANGE_WEAPON_DAMAGE_PERCENT": {
+        "id": 135,
+        "AttributeSlot": "atRangeWeaponDamagePercent",
+        "isValue": 1
+    },
+    "RANGE_WEAPON_DAMAGE_RAND": {
+        "id": 136,
+        "AttributeSlot": "atRangeWeaponDamageRand",
+        "isValue": 1
+    },
+    "RANGE_WEAPON_DAMAGE_RAND_PERCENT": {
+        "id": 137,
+        "AttributeSlot": "atRangeWeaponDamageRandPercent",
+        "isValue": 1
+    },
+    "SKILL_PHYSICS_DAMAGE": {
+        "id": 138,
+        "AttributeSlot": "atSkillPhysicsDamage",
+        "isValue": 1
+    },
+    "SKILL_PHYSICS_DAMAGE_RAND": {
+        "id": 139,
+        "AttributeSlot": "atSkillPhysicsDamageRand",
+        "isValue": 1
+    },
+    "SKILL_PHYSICS_DAMAGE_PERCENT": {
+        "id": 140,
+        "AttributeSlot": "atSkillPhysicsDamagePercent",
+        "isValue": 1
+    },
+    "PHYSICS_DAMAGE_COEFFICIENT": {
+        "id": 141,
+        "AttributeSlot": "atPhysicsDamageCoefficient",
+        "isValue": 1
+    },
+    "PHYSICS_ATTACK_POWER_BASE": {
+        "id": 142,
+        "AttributeSlot": "atPhysicsAttackPowerBase",
+        "isValue": 1
+    },
+    "PHYSICS_ATTACK_POWER_PERCENT": {
+        "id": 143,
+        "AttributeSlot": "atPhysicsAttackPowerPercent",
+        "isValue": 1
+    },
+    "PHYSICS_HIT_BASE_RATE": {
+        "id": 144,
+        "AttributeSlot": "atPhysicsHitBaseRate",
+        "isValue": 1
+    },
+    "PHYSICS_HIT_VALUE": {
+        "id": 145,
+        "AttributeSlot": "atPhysicsHitValue",
+        "isValue": 1
+    },
+    "PHYSICS_CRITICAL_STRIKE_BASE_RATE": {
+        "id": 146,
+        "AttributeSlot": "atPhysicsCriticalStrikeBaseRate",
+        "isValue": 1
+    },
+    "PHYSICS_CRITICAL_STRIKE": {
+        "id": 147,
+        "AttributeSlot": "atPhysicsCriticalStrike",
+        "isValue": 1
+    },
+    "PHYSICS_CRITICAL_DAMAGE_POWER_BASE_KILONUM_RATE": {
+        "id": 148,
+        "AttributeSlot": "atPhysicsCriticalDamagePowerBaseKiloNumRate",
+        "isValue": 1
+    },
+    "PHYSICS_CRITICAL_DAMAGE_POWER_BASE": {
+        "id": 149,
+        "AttributeSlot": "atPhysicsCriticalDamagePowerBase",
+        "isValue": 1
+    },
+    "PHYSICS_CRITICAL_DAMAGE_POWER_PERCENT": {
+        "id": 150,
+        "AttributeSlot": "atPhysicsCriticalDamagePowerPercent",
+        "isValue": 1
+    },
+    "PHYSICS_OVERCOME_BASE": {
+        "id": 151,
+        "AttributeSlot": "atPhysicsOvercomeBase",
+        "isValue": 1
+    },
+    "PHYSICS_OVERCOME_PERCENT": {
+        "id": 152,
+        "AttributeSlot": "atPhysicsOvercomePercent",
+        "isValue": 1
+    },
+    "PHYSICS_RESIST_PERCENT": {
+        "id": 153,
+        "AttributeSlot": "atPhysicsResistPercent",
+        "isValue": 1
+    },
+    "PHYSICS_DEFENCE_ADD": {
+        "id": 154,
+        "AttributeSlot": "atPhysicsDefenceAdd",
+        "isValue": 1
+    },
+    "PHYSICS_DEFENCE_MAX": {
+        "id": 155,
+        "AttributeSlot": "atPhysicsDefenceMax",
+        "isValue": 1
+    },
+    "PHYSICS_SHIELD_BASE": {
+        "id": 156,
+        "AttributeSlot": "atPhysicsShieldBase",
+        "isValue": 1
+    },
+    "PHYSICS_SHIELD_PERCENT": {
+        "id": 157,
+        "AttributeSlot": "atPhysicsShieldPercent",
+        "isValue": 1
+    },
+    "PHYSICS_SHIELD_ADDITIONAL": {
+        "id": 158,
+        "AttributeSlot": "atPhysicsShieldAdditional",
+        "isValue": 1
+    },
+    "PHYSICS_REFLECTION": {
+        "id": 159,
+        "AttributeSlot": "atPhysicsReflection",
+        "isValue": 1
+    },
+    "PHYSICS_REFLECTION_PERCENT": {
+        "id": 160,
+        "AttributeSlot": "atPhysicsReflectionPercent",
+        "isValue": 1
+    },
+    "PHYSICS_BLOCK": {
+        "id": 161,
+        "AttributeSlot": "atPhysicsBlock",
+        "isValue": 1
+    },
+    "PHYSICS_DAMAGE_ABSORB": {
+        "id": 162,
+        "AttributeSlot": "atPhysicsDamageAbsorb",
+        "isValue": 1
+    },
+    "PHYSICS_DAMAGE_MANA_SHIELD": {
+        "id": 163,
+        "AttributeSlot": "atPhysicsDamageManaShield",
+        "isValue": 1
+    },
+    "ALL_TYPE_HIT_VALUE": {
+        "id": 164,
+        "AttributeSlot": "atAllTypeHitValue",
+        "isValue": 1
+    },
+    "ALL_TYPE_CRITICAL_STRIKE": {
+        "id": 165,
+        "AttributeSlot": "atAllTypeCriticalStrike",
+        "isValue": 1
+    },
+    "ALL_TYPE_CRITICAL_DAMAGE_POWER_BASE": {
+        "id": 166,
+        "AttributeSlot": "atAllTypeCriticalDamagePowerBase",
+        "isValue": 1
+    },
+    "SKILL_MAGIC_DAMAGE": {
+        "id": 167,
+        "AttributeSlot": "atSkillMagicDamage",
+        "isValue": 1
+    },
+    "MAGIC_ATTACK_POWER_BASE": {
+        "id": 168,
+        "AttributeSlot": "atMagicAttackPowerBase",
+        "isValue": 1
+    },
+    "MAGIC_ATTACK_POWER_PERCENT": {
+        "id": 169,
+        "AttributeSlot": "atMagicAttackPowerPercent",
+        "isValue": 1
+    },
+    "MAGIC_CRITICAL_STRIKE": {
+        "id": 170,
+        "AttributeSlot": "atMagicCriticalStrike",
+        "isValue": 1
+    },
+    "MAGIC_SHIELD": {
+        "id": 171,
+        "AttributeSlot": "atMagicShield",
+        "isValue": 1
+    },
+    "MAGIC_CRITICAL_DAMAGE_POWER_BASE_KILONUM_RATE": {
+        "id": 172,
+        "AttributeSlot": "atMagicCriticalDamagePowerBaseKiloNumRate",
+        "isValue": 1
+    },
+    "MAGIC_CRITICAL_DAMAGE_POWER_BASE": {
+        "id": 173,
+        "AttributeSlot": "atMagicCriticalDamagePowerBase",
+        "isValue": 1
+    },
+    "MAGIC_CRITICAL_DAMAGE_POWER_PERCENT": {
+        "id": 174,
+        "AttributeSlot": "atMagicCriticalDamagePowerPercent",
+        "isValue": 1
+    },
+    "MAGIC_OVERCOME": {
+        "id": 175,
+        "AttributeSlot": "atMagicOvercome",
+        "isValue": 1
+    },
+    "MAGIC_HIT_BASE_RATE": {
+        "id": 176,
+        "AttributeSlot": "atMagicHitBaseRate",
+        "isValue": 1
+    },
+    "MAGIC_HIT_VALUE": {
+        "id": 177,
+        "AttributeSlot": "atMagicHitValue",
+        "isValue": 1
+    },
+    "SKILL_SOLAR_DAMAGE": {
+        "id": 178,
+        "AttributeSlot": "atSkillSolarDamage",
+        "isValue": 1
+    },
+    "SKILL_SOLAR_DAMAGE_RAND": {
+        "id": 179,
+        "AttributeSlot": "atSkillSolarDamageRand",
+        "isValue": 1
+    },
+    "SKILL_SOLAR_DAMAGE_PERCENT": {
+        "id": 180,
+        "AttributeSlot": "atSkillSolarDamagePercent",
+        "isValue": 1
+    },
+    "SOLAR_DAMAGE_COEFFICIENT": {
+        "id": 181,
+        "AttributeSlot": "atSolarDamageCoefficient",
+        "isValue": 1
+    },
+    "SOLAR_ATTACK_POWER_BASE": {
+        "id": 182,
+        "AttributeSlot": "atSolarAttackPowerBase",
+        "isValue": 1
+    },
+    "SOLAR_ATTACK_POWER_PERCENT": {
+        "id": 183,
+        "AttributeSlot": "atSolarAttackPowerPercent",
+        "isValue": 1
+    },
+    "SOLAR_HIT_BASE_RATE": {
+        "id": 184,
+        "AttributeSlot": "atSolarHitBaseRate",
+        "isValue": 1
+    },
+    "SOLAR_HIT_VALUE": {
+        "id": 185,
+        "AttributeSlot": "atSolarHitValue",
+        "isValue": 1
+    },
+    "SOLAR_CRITICAL_STRIKE_BASE_RATE": {
+        "id": 186,
+        "AttributeSlot": "atSolarCriticalStrikeBaseRate",
+        "isValue": 1
+    },
+    "SOLAR_CRITICAL_STRIKE": {
+        "id": 187,
+        "AttributeSlot": "atSolarCriticalStrike",
+        "isValue": 1
+    },
+    "SOLAR_CRITICAL_DAMAGE_POWER_BASE_KILONUM_RATE": {
+        "id": 188,
+        "AttributeSlot": "atSolarCriticalDamagePowerBaseKiloNumRate",
+        "isValue": 1
+    },
+    "SOLAR_CRITICAL_DAMAGE_POWER_BASE": {
+        "id": 189,
+        "AttributeSlot": "atSolarCriticalDamagePowerBase",
+        "isValue": 1
+    },
+    "SOLAR_CRITICAL_DAMAGE_POWER_PERCENT": {
+        "id": 190,
+        "AttributeSlot": "atSolarCriticalDamagePowerPercent",
+        "isValue": 1
+    },
+    "SOLAR_OVERCOME_BASE": {
+        "id": 191,
+        "AttributeSlot": "atSolarOvercomeBase",
+        "isValue": 1
+    },
+    "SOLAR_OVERCOME_PERCENT": {
+        "id": 192,
+        "AttributeSlot": "atSolarOvercomePercent",
+        "isValue": 1
+    },
+    "SOLAR_MAGIC_RESIST_PERCENT": {
+        "id": 193,
+        "AttributeSlot": "atSolarMagicResistPercent",
+        "isValue": 1
+    },
+    "SOLAR_MAGIC_SHIELD_BASE": {
+        "id": 194,
+        "AttributeSlot": "atSolarMagicShieldBase",
+        "isValue": 1
+    },
+    "SOLAR_MAGIC_SHIELD_PERCENT": {
+        "id": 195,
+        "AttributeSlot": "atSolarMagicShieldPercent",
+        "isValue": 1
+    },
+    "SOLAR_MAGIC_REFLECTION": {
+        "id": 196,
+        "AttributeSlot": "atSolarMagicReflection",
+        "isValue": 1
+    },
+    "SOLAR_MAGIC_REFLECTION_PERCENT": {
+        "id": 197,
+        "AttributeSlot": "atSolarMagicReflectionPercent",
+        "isValue": 1
+    },
+    "SOLAR_MAGIC_BLOCK": {
+        "id": 198,
+        "AttributeSlot": "atSolarMagicBlock",
+        "isValue": 1
+    },
+    "SOLAR_DAMAGE_ABSORB": {
+        "id": 199,
+        "AttributeSlot": "atSolarDamageAbsorb",
+        "isValue": 1
+    },
+    "SOLAR_DAMAGE_MANA_SHIELD": {
+        "id": 200,
+        "AttributeSlot": "atSolarDamageManaShield",
+        "isValue": 1
+    },
+    "SKILL_NEUTRAL_DAMAGE": {
+        "id": 201,
+        "AttributeSlot": "atSkillNeutralDamage",
+        "isValue": 1
+    },
+    "SKILL_NEUTRAL_DAMAGE_RAND": {
+        "id": 202,
+        "AttributeSlot": "atSkillNeutralDamageRand",
+        "isValue": 1
+    },
+    "SKILL_NEUTRAL_DAMAGE_PERCENT": {
+        "id": 203,
+        "AttributeSlot": "atSkillNeutralDamagePercent",
+        "isValue": 1
+    },
+    "NEUTRAL_DAMAGE_COEFFICIENT": {
+        "id": 204,
+        "AttributeSlot": "atNeutralDamageCoefficient",
+        "isValue": 1
+    },
+    "NEUTRAL_ATTACK_POWER_BASE": {
+        "id": 205,
+        "AttributeSlot": "atNeutralAttackPowerBase",
+        "isValue": 1
+    },
+    "NEUTRAL_ATTACK_POWER_PERCNET": {
+        "id": 206,
+        "AttributeSlot": "atNeutralAttackPowerPercent",
+        "isValue": 1
+    },
+    "NEUTRAL_HIT_BASE_RATE": {
+        "id": 207,
+        "AttributeSlot": "atNeutralHitBaseRate",
+        "isValue": 1
+    },
+    "NEUTRAL_HIT_VALUE": {
+        "id": 208,
+        "AttributeSlot": "atNeutralHitValue",
+        "isValue": 1
+    },
+    "NEUTRAL_CRITICAL_STRIKE_BASE_RATE": {
+        "id": 209,
+        "AttributeSlot": "atNeutralCriticalStrikeBaseRate",
+        "isValue": 1
+    },
+    "NEUTRAL_CRITICAL_STRIKE": {
+        "id": 210,
+        "AttributeSlot": "atNeutralCriticalStrike",
+        "isValue": 1
+    },
+    "NEUTRAL_CRITICAL_DAMAGE_POWER_BASE_KILONUM_RATE": {
+        "id": 211,
+        "AttributeSlot": "atNeutralCriticalDamagePowerBaseKiloNumRate",
+        "isValue": 1
+    },
+    "NEUTRAL_CRITICAL_DAMAGE_POWER_BASE": {
+        "id": 212,
+        "AttributeSlot": "atNeutralCriticalDamagePowerBase",
+        "isValue": 1
+    },
+    "NEUTRAL_CRITICAL_DAMAGE_POWER_PERCENT": {
+        "id": 213,
+        "AttributeSlot": "atNeutralCriticalDamagePowerPercent",
+        "isValue": 1
+    },
+    "NEUTRAL_OVERCOME_BASE": {
+        "id": 214,
+        "AttributeSlot": "atNeutralOvercomeBase",
+        "isValue": 1
+    },
+    "NEUTRAL_OVERCOME_PERCENT": {
+        "id": 215,
+        "AttributeSlot": "atNeutralOvercomePercent",
+        "isValue": 1
+    },
+    "NEUTRAL_MAGIC_RESIST_PERCENT": {
+        "id": 216,
+        "AttributeSlot": "atNeutralMagicResistPercent",
+        "isValue": 1
+    },
+    "NEUTRAL_MAGIC_SHIELD_BASE": {
+        "id": 217,
+        "AttributeSlot": "atNeutralMagicShieldBase",
+        "isValue": 1
+    },
+    "NEUTRAL_MAGIC_SHIELD_PERCENT": {
+        "id": 218,
+        "AttributeSlot": "atNeutralMagicShieldPercent",
+        "isValue": 1
+    },
+    "NEUTRAL_MAGIC_REFLECTION": {
+        "id": 219,
+        "AttributeSlot": "atNeutralMagicReflection",
+        "isValue": 1
+    },
+    "NEUTRAL_MAGIC_REFLECTION_PERCENT": {
+        "id": 220,
+        "AttributeSlot": "atNeutralMagicReflectionPercent",
+        "isValue": 1
+    },
+    "NEUTRAL_MAGIC_BLOCK": {
+        "id": 221,
+        "AttributeSlot": "atNeutralMagicBlock",
+        "isValue": 1
+    },
+    "NEUTRAL_DAMAGE_ABSORB": {
+        "id": 222,
+        "AttributeSlot": "atNeutralDamageAbsorb",
+        "isValue": 1
+    },
+    "NEUTRAL_DAMAGE_MANA_SHIELD": {
+        "id": 223,
+        "AttributeSlot": "atNeutralDamageManaShield",
+        "isValue": 1
+    },
+    "SKILL_LUNAR_DAMAGE": {
+        "id": 224,
+        "AttributeSlot": "atSkillLunarDamage",
+        "isValue": 1
+    },
+    "SKILL_LUNAR_DAMAGE_RAND": {
+        "id": 225,
+        "AttributeSlot": "atSkillLunarDamageRand",
+        "isValue": 1
+    },
+    "SKILL_LUNAR_DAMAGE_PERCENT": {
+        "id": 226,
+        "AttributeSlot": "atSkillLunarDamagePercent",
+        "isValue": 1
+    },
+    "LUNAR_DAMAGE_COEFFICIENT": {
+        "id": 227,
+        "AttributeSlot": "atLunarDamageCoefficient",
+        "isValue": 1
+    },
+    "LUNAR_ATTACK_POWER_BASE": {
+        "id": 228,
+        "AttributeSlot": "atLunarAttackPowerBase",
+        "isValue": 1
+    },
+    "LUNAR_ATTACK_POWER_PERCENT": {
+        "id": 229,
+        "AttributeSlot": "atLunarAttackPowerPercent",
+        "isValue": 1
+    },
+    "LUNAR_HIT_BASE_RATE": {
+        "id": 230,
+        "AttributeSlot": "atLunarHitBaseRate",
+        "isValue": 1
+    },
+    "LUNAR_HIT_VALUE": {
+        "id": 231,
+        "AttributeSlot": "atLunarHitValue",
+        "isValue": 1
+    },
+    "LUNAR_CRITICAL_STRIKE_BASE_RATE": {
+        "id": 232,
+        "AttributeSlot": "atLunarCriticalStrikeBaseRate",
+        "isValue": 1
+    },
+    "LUNAR_CRITICAL_STRIKE": {
+        "id": 233,
+        "AttributeSlot": "atLunarCriticalStrike",
+        "isValue": 1
+    },
+    "LUNAR_CRITICAL_DAMAGE_POWER_BASE_KILONUM_RATE": {
+        "id": 234,
+        "AttributeSlot": "atLunarCriticalDamagePowerBaseKiloNumRate",
+        "isValue": 1
+    },
+    "LUNAR_CRITICAL_DAMAGE_POWER_BASE": {
+        "id": 235,
+        "AttributeSlot": "atLunarCriticalDamagePowerBase",
+        "isValue": 1
+    },
+    "LUNAR_CRITICAL_DAMAGE_POWER_PERCENT": {
+        "id": 236,
+        "AttributeSlot": "atLunarCriticalDamagePowerPercent",
+        "isValue": 1
+    },
+    "LUNAR_OVERCOME_BASE": {
+        "id": 237,
+        "AttributeSlot": "atLunarOvercomeBase",
+        "isValue": 1
+    },
+    "LUNAR_OVERCOME_PERCENT": {
+        "id": 238,
+        "AttributeSlot": "atLunarOvercomePercent",
+        "isValue": 1
+    },
+    "LUNAR_MAGIC_RESIST_PERCENT": {
+        "id": 239,
+        "AttributeSlot": "atLunarMagicResistPercent",
+        "isValue": 1
+    },
+    "LUNAR_MAGIC_SHIELD_BASE": {
+        "id": 240,
+        "AttributeSlot": "atLunarMagicShieldBase",
+        "isValue": 1
+    },
+    "LUNAR_MAGIC_SHIELD_PERCENT": {
+        "id": 241,
+        "AttributeSlot": "atLunarMagicShieldPercent",
+        "isValue": 1
+    },
+    "LUNAR_MAGIC_REFLECTION": {
+        "id": 242,
+        "AttributeSlot": "atLunarMagicReflection",
+        "isValue": 1
+    },
+    "LUNAR_MAGIC_REFLECTION_PERCENT": {
+        "id": 243,
+        "AttributeSlot": "atLunarMagicReflectionPercent",
+        "isValue": 1
+    },
+    "LUNAR_MAGIC_BLOCK": {
+        "id": 244,
+        "AttributeSlot": "atLunarMagicBlock",
+        "isValue": 1
+    },
+    "LUNAR_DAMAGE_ABSORB": {
+        "id": 245,
+        "AttributeSlot": "atLunarDamageAbsorb",
+        "isValue": 1
+    },
+    "LUNAR_DAMAGE_MANA_SHIELD": {
+        "id": 246,
+        "AttributeSlot": "atLunarDamageManaShield",
+        "isValue": 1
+    },
+    "SKILL_POISON_DAMAGE": {
+        "id": 247,
+        "AttributeSlot": "atSkillPoisonDamage",
+        "isValue": 1
+    },
+    "SKILL_POISON_DAMAGE_RAND": {
+        "id": 248,
+        "AttributeSlot": "atSkillPoisonDamageRand",
+        "isValue": 1
+    },
+    "SKILL_POISON_DAMAGE_PERCENT": {
+        "id": 249,
+        "AttributeSlot": "atSkillPoisonDamagePercent",
+        "isValue": 1
+    },
+    "POISON_DAMAGE_COEFFICIENT": {
+        "id": 250,
+        "AttributeSlot": "atPoisonDamageCoefficient",
+        "isValue": 1
+    },
+    "POISON_ATTACK_POWER_BASE": {
+        "id": 251,
+        "AttributeSlot": "atPoisonAttackPowerBase",
+        "isValue": 1
+    },
+    "POISON_ATTACK_POWER_PERCENT": {
+        "id": 252,
+        "AttributeSlot": "atPoisonAttackPowerPercent",
+        "isValue": 1
+    },
+    "POISON_HIT_BASE_RATE": {
+        "id": 253,
+        "AttributeSlot": "atPoisonHitBaseRate",
+        "isValue": 1
+    },
+    "POISON_HIT_VALUE": {
+        "id": 254,
+        "AttributeSlot": "atPoisonHitValue",
+        "isValue": 1
+    },
+    "POISON_CRITICAL_STRIKE_BASE_RATE": {
+        "id": 255,
+        "AttributeSlot": "atPoisonCriticalStrikeBaseRate",
+        "isValue": 1
+    },
+    "POISON_CRITICAL_STRIKE": {
+        "id": 256,
+        "AttributeSlot": "atPoisonCriticalStrike",
+        "isValue": 1
+    },
+    "POISON_CRITICAL_DAMAGE_POWER_BASE_KILONUM_RATE": {
+        "id": 257,
+        "AttributeSlot": "atPoisonCriticalDamagePowerBaseKiloNumRate",
+        "isValue": 1
+    },
+    "POISON_CRITICAL_DAMAGE_POWER_BASE": {
+        "id": 258,
+        "AttributeSlot": "atPoisonCriticalDamagePowerBase",
+        "isValue": 1
+    },
+    "POISON_CRITICAL_DAMAGE_POWER_PERCENT": {
+        "id": 259,
+        "AttributeSlot": "atPoisonCriticalDamagePowerPercent",
+        "isValue": 1
+    },
+    "POISON_OVERCOME_BASE": {
+        "id": 260,
+        "AttributeSlot": "atPoisonOvercomeBase",
+        "isValue": 1
+    },
+    "POISON_OVERCOME_PERCENT": {
+        "id": 261,
+        "AttributeSlot": "atPoisonOvercomePercent",
+        "isValue": 1
+    },
+    "POISON_MAGIC_RESIST_PERCENT": {
+        "id": 262,
+        "AttributeSlot": "atPoisonMagicResistPercent",
+        "isValue": 1
+    },
+    "POISON_MAGIC_SHIELD_BASE": {
+        "id": 263,
+        "AttributeSlot": "atPoisonMagicShieldBase",
+        "isValue": 1
+    },
+    "POISON_MAGIC_SHIELD_PERCENT": {
+        "id": 264,
+        "AttributeSlot": "atPoisonMagicShieldPercent",
+        "isValue": 1
+    },
+    "POISON_MAGIC_REFLECTION": {
+        "id": 265,
+        "AttributeSlot": "atPoisonMagicReflection",
+        "isValue": 1
+    },
+    "POISON_MAGIC_REFLECTION_PERCENT": {
+        "id": 266,
+        "AttributeSlot": "atPoisonMagicReflectionPercent",
+        "isValue": 1
+    },
+    "POISON_MAGIC_BLOCK": {
+        "id": 267,
+        "AttributeSlot": "atPoisonMagicBlock",
+        "isValue": 1
+    },
+    "POISON_DAMAGE_ABSORB": {
+        "id": 268,
+        "AttributeSlot": "atPoisonDamageAbsorb",
+        "isValue": 1
+    },
+    "POISON_DAMAGE_MANA_SHIELD": {
+        "id": 269,
+        "AttributeSlot": "atPoisonDamageManaShield",
+        "isValue": 1
+    },
+    "THERAPY_POWER_BASE": {
+        "id": 270,
+        "AttributeSlot": "atTherapyPowerBase",
+        "isValue": 1
+    },
+    "THERAPY_POWER_PERCENT": {
+        "id": 271,
+        "AttributeSlot": "atTherapyPowerPercent",
+        "isValue": 1
+    },
+    "SKILL_THERAPY": {
+        "id": 272,
+        "AttributeSlot": "atSkillTherapy",
+        "isValue": 1
+    },
+    "SKILL_THERAPY_RAND": {
+        "id": 273,
+        "AttributeSlot": "atSkillTherapyRand",
+        "isValue": 1
+    },
+    "SKILL_THERAPY_PERCENT": {
+        "id": 274,
+        "AttributeSlot": "atSkillTherapyPercent",
+        "isValue": 1
+    },
+    "THERAPY_COEFFICIENT": {
+        "id": 275,
+        "AttributeSlot": "atTherapyCoefficient",
+        "isValue": 1
+    },
+    "BE_THERAPY_COEFFICIENT": {
+        "id": 276,
+        "AttributeSlot": "atBeTherapyCoefficient",
+        "isValue": 1
+    },
+    "SKILL_ADAPTIVE_DAMAGE": {
+        "id": 277,
+        "AttributeSlot": "atSkillAdaptiveDamage",
+        "isValue": 1
+    },
+    "SKILL_ADAPTIVE_DAMAGE_RAND": {
+        "id": 278,
+        "AttributeSlot": "atSkillAdaptiveDamageRand",
+        "isValue": 1
+    },
+    "SOLAR_AND_LUNAR_ATTACK_POWER_BASE": {
+        "id": 279,
+        "AttributeSlot": "atSolarAndLunarAttackPowerBase",
+        "isValue": 1
+    },
+    "SOLAR_AND_LUNAR_HIT_VALUE": {
+        "id": 280,
+        "AttributeSlot": "atSolarAndLunarHitValue",
+        "isValue": 1
+    },
+    "SOLAR_AND_LUNAR_CRITICAL_STRIKE": {
+        "id": 281,
+        "AttributeSlot": "atSolarAndLunarCriticalStrike",
+        "isValue": 1
+    },
+    "SOLAR_AND_LUNAR_CRITICAL_DAMAGE_POWER_BASE": {
+        "id": 282,
+        "AttributeSlot": "atSolarAndLunarCriticalDamagePowerBase",
+        "isValue": 1
+    },
+    "SOLAR_AND_LUNAR_OVERCOME_BASE": {
+        "id": 283,
+        "AttributeSlot": "atSolarAndLunarOvercomeBase",
+        "isValue": 1
+    },
+    "NONE_WEAPON_ATTACK_SPEED_BASE": {
+        "id": 284,
+        "AttributeSlot": "atNoneWeaponAttackSpeedBase",
+        "isValue": 1
+    },
+    "MELEE_WEAPON_ATTACK_SPEED_BASE": {
+        "id": 285,
+        "AttributeSlot": "atMeleeWeaponAttackSpeedBase",
+        "isValue": 1
+    },
+    "MELEE_WEAPON_ATTACK_SPEED_PERCENT_ADD": {
+        "id": 286,
+        "AttributeSlot": "atMeleeWeaponAttackSpeedPercentAdd",
+        "isValue": 1
+    },
+    "MELEE_WEAPON_ATTACK_SPEED_ADDITIONAL": {
+        "id": 287,
+        "AttributeSlot": "atMeleeWeaponAttackSpeedAdditional",
+        "isValue": 1
+    },
+    "RANGE_WEAPON_ATTACK_SPEED_BASE": {
+        "id": 288,
+        "AttributeSlot": "atRangeWeaponAttackSpeedBase",
+        "isValue": 1
+    },
+    "RANGE_WEAPON_ATTACK_SPEED_PERCENT_ADD": {
+        "id": 289,
+        "AttributeSlot": "atRangeWeaponAttackSpeedPercentAdd",
+        "isValue": 1
+    },
+    "RANGE_WEAPON_ATTACK_SPEED_ADDITIONAL": {
+        "id": 290,
+        "AttributeSlot": "atRangeWeaponAttackSpeedAdditional",
+        "isValue": 1
+    },
+    "IGNORE_OTHER_ALARM_RANGE": {
+        "id": 291,
+        "AttributeSlot": "atIgnoreOtherAlarmRange",
+        "isValue": 1
+    },
+    "SELF_ALARM_RANGE_REVISE": {
+        "id": 292,
+        "AttributeSlot": "atSelfAlarmRangeRevise",
+        "isValue": 1
+    },
+    "OTHER_ALARM_RANGE_REVISE": {
+        "id": 293,
+        "AttributeSlot": "atOtherAlarmRangeRevise",
+        "isValue": 1
+    },
+    "DASH": {
+        "id": 295,
+        "AttributeSlot": "atDash",
+        "isValue": 0
+    },
+    "DASH_TO_POINT": {
+        "id": 296,
+        "AttributeSlot": "atDashToPoint",
+        "isValue": 0
+    },
+    "DASH_FORWARD": {
+        "id": 297,
+        "AttributeSlot": "atDashForward",
+        "isValue": 0
+    },
+    "DASH_BACKWARD": {
+        "id": 298,
+        "AttributeSlot": "atDashBackward",
+        "isValue": 0
+    },
+    "DASH_LEFT": {
+        "id": 299,
+        "AttributeSlot": "atDashLeft",
+        "isValue": 0
+    },
+    "DASH_RIGHT": {
+        "id": 300,
+        "AttributeSlot": "atDashRight",
+        "isValue": 0
+    },
+    "DASH_TO_DST_BACK": {
+        "id": 301,
+        "AttributeSlot": "atDashToDstBack",
+        "isValue": 0
+    },
+    "SKILL_MOVE": {
+        "id": 302,
+        "AttributeSlot": "atSkillMove",
+        "isValue": 0
+    },
+    "CATCH_PLAYER": {
+        "id": 303,
+        "AttributeSlot": "atCatchPlayer",
+        "isValue": 0
+    },
+    "HALT": {
+        "id": 304,
+        "AttributeSlot": "atHalt",
+        "isValue": 0
+    },
+    "FREEZE": {
+        "id": 305,
+        "AttributeSlot": "atFreeze",
+        "isValue": 0
+    },
+    "ENTRAP": {
+        "id": 306,
+        "AttributeSlot": "atEntrap",
+        "isValue": 0
+    },
+    "LOCKED_FACE": {
+        "id": 307,
+        "AttributeSlot": "atLockedFace",
+        "isValue": 0
+    },
+    "FEAR": {
+        "id": 308,
+        "AttributeSlot": "atFear",
+        "isValue": 0
+    },
+    "REVIVE": {
+        "id": 309,
+        "AttributeSlot": "atRevive",
+        "isValue": 0
+    },
+    "JUMP": {
+        "id": 310,
+        "AttributeSlot": "atJump",
+        "isValue": 0
+    },
+    "SIT": {
+        "id": 311,
+        "AttributeSlot": "atSit",
+        "isValue": 0
+    },
+    "DISARM": {
+        "id": 312,
+        "AttributeSlot": "atDisarm",
+        "isValue": 0
+    },
+    "DISABLE_MOVE_CTRL": {
+        "id": 313,
+        "AttributeSlot": "atDisableMoveCtrl",
+        "isValue": 0
+    },
+    "DISABLE_SELECT_TARGET": {
+        "id": 314,
+        "AttributeSlot": "atDisableSelectTarget",
+        "isValue": 0
+    },
+    "CALL_KNOCKED_BACK_EXHALE": {
+        "id": 315,
+        "AttributeSlot": "atCallKnockedBackExhale",
+        "isValue": 1
+    },
+    "CALL_KNOCKED_BACK_CONVERGENCE": {
+        "id": 316,
+        "AttributeSlot": "atCallKnockedBackConvergence",
+        "isValue": 1
+    },
+    "CALL_KNOCKED_BACK_RANDOM": {
+        "id": 317,
+        "AttributeSlot": "atCallKnockedBackRandom",
+        "isValue": 1
+    },
+    "CALL_KNOCKED_BACK_SRC_FACE": {
+        "id": 318,
+        "AttributeSlot": "atCallKnockedBackSrcFace",
+        "isValue": 1
+    },
+    "CALL_KNOCKED_OFF_PARABOLA": {
+        "id": 319,
+        "AttributeSlot": "atCallKnockedOffParabola",
+        "isValue": 1
+    },
+    "CALL_KNOCKED_DOWN": {
+        "id": 320,
+        "AttributeSlot": "atCallKnockedDown",
+        "isValue": 0
+    },
+    "CALL_ADD_KNOCKED_DOWN_FRAME": {
+        "id": 321,
+        "AttributeSlot": "atCallAddKnockedDownFrame",
+        "isValue": 0
+    },
+    "CALL_REPULSED": {
+        "id": 322,
+        "AttributeSlot": "atCallRepulsed",
+        "isValue": 0
+    },
+    "SURPLUS_VALUE_BASE": {
+        "id": 323,
+        "AttributeSlot": "atSurplusValueBase",
+        "isValue": 1
+    },
+    "SURPLUS_VALUE_ADD_PERCENT": {
+        "id": 324,
+        "AttributeSlot": "atSurplusValueAddPercent",
+        "isValue": 1
+    },
+    "CALL_SURPLUS_PHYSICS_DAMAGE": {
+        "id": 325,
+        "AttributeSlot": "atCallSurplusPhysicsDamage",
+        "isValue": 1
+    },
+    "CALL_SURPLUS_SOLAR_DAMAGE": {
+        "id": 326,
+        "AttributeSlot": "atCallSurplusSolarDamage",
+        "isValue": 1
+    },
+    "CALL_SURPLUS_NEUTRAL_DAMAGE": {
+        "id": 327,
+        "AttributeSlot": "atCallSurplusNeutralDamage",
+        "isValue": 1
+    },
+    "CALL_SURPLUS_LUNAR_DAMAGE": {
+        "id": 328,
+        "AttributeSlot": "atCallSurplusLunarDamage",
+        "isValue": 1
+    },
+    "CALL_SURPLUS_POISON_DAMAGE": {
+        "id": 329,
+        "AttributeSlot": "atCallSurplusPoisonDamage",
+        "isValue": 1
+    },
+    "CALL_THERAPY": {
+        "id": 330,
+        "AttributeSlot": "atCallTherapy",
+        "isValue": 1
+    },
+    "CALL_RECHARGEABLE_ABSORB_SHIELD_BY_THERAPY": {
+        "id": 331,
+        "AttributeSlot": "atCallRechargeableAbsorbShieldByTherapy",
+        "isValue": 1
+    },
+    "CALL_PHYSICS_DAMAGE": {
+        "id": 332,
+        "AttributeSlot": "atCallPhysicsDamage",
+        "isValue": 1
+    },
+    "CALL_SOLAR_DAMAGE": {
+        "id": 333,
+        "AttributeSlot": "atCallSolarDamage",
+        "isValue": 1
+    },
+    "CALL_NEUTRAL_DAMAGE": {
+        "id": 334,
+        "AttributeSlot": "atCallNeutralDamage",
+        "isValue": 1
+    },
+    "CALL_LUNAR_DAMAGE": {
+        "id": 335,
+        "AttributeSlot": "atCallLunarDamage",
+        "isValue": 1
+    },
+    "CALL_POISON_DAMAGE": {
+        "id": 336,
+        "AttributeSlot": "atCallPoisonDamage",
+        "isValue": 1
+    },
+    "CALL_ADAPTIVE_DAMAGE": {
+        "id": 337,
+        "AttributeSlot": "atCallAdaptiveDamage",
+        "isValue": 1
+    },
+    "CAST_SKILL_TARGET_SRC": {
+        "id": 338,
+        "AttributeSlot": "atCastSkillTargetSrc",
+        "isValue": 0
+    },
+    "CAST_SKILL_TARGET_DST": {
+        "id": 339,
+        "AttributeSlot": "atCastSkillTargetDst",
+        "isValue": 0
+    },
+    "SKILL_EVENT_HANDLER": {
+        "id": 340,
+        "AttributeSlot": "atSkillEventHandler",
+        "isValue": 0
+    },
+    "ACCUMULATE": {
+        "id": 341,
+        "AttributeSlot": "atAccumulate",
+        "isValue": 0
+    },
+    "CALL_BUFF": {
+        "id": 342,
+        "AttributeSlot": "atCallBuff",
+        "isValue": 0
+    },
+    "CALL_BUFF_STACK_2": {
+        "id": 343,
+        "AttributeSlot": "atCallBuffStack2",
+        "isValue": 0
+    },
+    "CALL_BUFF_STACK_3": {
+        "id": 344,
+        "AttributeSlot": "atCallBuffStack3",
+        "isValue": 0
+    },
+    "CALL_BUFF_STACK_4": {
+        "id": 345,
+        "AttributeSlot": "atCallBuffStack4",
+        "isValue": 0
+    },
+    "CALL_BUFF_STACK_5": {
+        "id": 346,
+        "AttributeSlot": "atCallBuffStack5",
+        "isValue": 0
+    },
+    "CALL_BUFF_STACK_6": {
+        "id": 347,
+        "AttributeSlot": "atCallBuffStack6",
+        "isValue": 0
+    },
+    "CALL_BUFF_STACK_7": {
+        "id": 348,
+        "AttributeSlot": "atCallBuffStack7",
+        "isValue": 0
+    },
+    "CALL_BUFF_STACK_8": {
+        "id": 349,
+        "AttributeSlot": "atCallBuffStack8",
+        "isValue": 0
+    },
+    "CALL_BUFF_ACCORDING_TO_ATTRACTION": {
+        "id": 350,
+        "AttributeSlot": "atCallBuffAccordingToAttraction",
+        "isValue": 0
+    },
+    "DETACH_SINGLE_BUFF": {
+        "id": 351,
+        "AttributeSlot": "atDetachSingleBuff",
+        "isValue": 0
+    },
+    "DETACH_MULTI_GROUP_BUFF": {
+        "id": 352,
+        "AttributeSlot": "atDetachMultiGroupBuff",
+        "isValue": 0
+    },
+    "DEL_SINGLE_BUFF_BY_FUNCTIONTYPE": {
+        "id": 353,
+        "AttributeSlot": "atDelSingleBuffByFunctionType",
+        "isValue": 0
+    },
+    "DEL_MULTI_GROUP_BUFF_BY_FUNCTIONTYPE": {
+        "id": 354,
+        "AttributeSlot": "atDelMultiGroupBuffByFunctionType",
+        "isValue": 0
+    },
+    "DEL_SINGLE_BUFF_BY_ID_AND_LEVEL": {
+        "id": 355,
+        "AttributeSlot": "atDelSingleBuffByIDAndLevel",
+        "isValue": 0
+    },
+    "DEL_SINGLE_GROUP_BUFF_BY_ID_AND_LEVEL": {
+        "id": 356,
+        "AttributeSlot": "atDelSingleGroupBuffByIDAndLevel",
+        "isValue": 0
+    },
+    "DEL_MULTI_GROUP_BUFF_BY_ID": {
+        "id": 357,
+        "AttributeSlot": "atDelMultiGroupBuffByID",
+        "isValue": 0
+    },
+    "MODIFY_THREAT": {
+        "id": 358,
+        "AttributeSlot": "atModifyThreat",
+        "isValue": 1
+    },
+    "MODIFY_ALL_THREATEN": {
+        "id": 359,
+        "AttributeSlot": "atModifyAllThreaten",
+        "isValue": 1
+    },
+    "MODIFY_THREAT_PERCENT": {
+        "id": 360,
+        "AttributeSlot": "atModifyThreatPercent",
+        "isValue": 1
+    },
+    "MODIFY_ALL_THREATEN_PERCENT": {
+        "id": 361,
+        "AttributeSlot": "atModifyAllThreatenPercent",
+        "isValue": 1
+    },
+    "SPOOF": {
+        "id": 362,
+        "AttributeSlot": "atSpoof",
+        "isValue": 0
+    },
+    "SILENCE": {
+        "id": 363,
+        "AttributeSlot": "atSilence",
+        "isValue": 0
+    },
+    "SILENCE_ALL": {
+        "id": 364,
+        "AttributeSlot": "atSilenceAll",
+        "isValue": 0
+    },
+    "IMMUNITY": {
+        "id": 365,
+        "AttributeSlot": "atImmunity",
+        "isValue": 0
+    },
+    "ADD_WEAK": {
+        "id": 366,
+        "AttributeSlot": "atAddWeak",
+        "isValue": 0
+    },
+    "SHIFT_WEAK": {
+        "id": 367,
+        "AttributeSlot": "atShiftWeak",
+        "isValue": 0
+    },
+    "ADD_WEAK_SHIELD": {
+        "id": 368,
+        "AttributeSlot": "atAddWeakShield",
+        "isValue": 0
+    },
+    "MODIFY_SKILL_CAST_FLAG": {
+        "id": 369,
+        "AttributeSlot": "atModifySkillCastFlag",
+        "isValue": 0
+    },
+    "EXECUTE_SCRIPT": {
+        "id": 370,
+        "AttributeSlot": "atExecuteScript",
+        "isValue": 0
+    },
+    "EXECUTE_SCRIPT_WITH_PARAM": {
+        "id": 371,
+        "AttributeSlot": "atExecuteScriptWithParam",
+        "isValue": 0
+    },
+    "PRINK_REPRESENT_ID": {
+        "id": 372,
+        "AttributeSlot": "atPrinkRepresentID",
+        "isValue": 0
+    },
+    "PRINK_MODEL": {
+        "id": 373,
+        "AttributeSlot": "atPrinkModel",
+        "isValue": 0
+    },
+    "PRINK_FORCE": {
+        "id": 374,
+        "AttributeSlot": "atPrinkForce",
+        "isValue": 0
+    },
+    "RIDE_HORSE": {
+        "id": 375,
+        "AttributeSlot": "atRideHorse",
+        "isValue": 0
+    },
+    "DO_ACTION": {
+        "id": 376,
+        "AttributeSlot": "atDoAction",
+        "isValue": 0
+    },
+    "ADD_EXP_PERCENT": {
+        "id": 377,
+        "AttributeSlot": "atAddExpPercent",
+        "isValue": 1
+    },
+    "ADD_EXP_PERCENT_BY_QUEST": {
+        "id": 378,
+        "AttributeSlot": "atAddExpPercentByQuest",
+        "isValue": 1
+    },
+    "ADD_EXP_PERCENT_BY_SCRIPT": {
+        "id": 379,
+        "AttributeSlot": "atAddExpPercentByScript",
+        "isValue": 1
+    },
+    "ADD_REPUTATION_PERCENT": {
+        "id": 380,
+        "AttributeSlot": "atAddReputationPercent",
+        "isValue": 1
+    },
+    "ADD_QUEST_REPUTATION_PERCENT": {
+        "id": 381,
+        "AttributeSlot": "atAddQuestReputationPercent",
+        "isValue": 1
+    },
+    "ADD_JUSTICE_PERCENT": {
+        "id": 382,
+        "AttributeSlot": "atAddJusticePercent",
+        "isValue": 1
+    },
+    "ADD_PRESTIGE_PERCENT": {
+        "id": 383,
+        "AttributeSlot": "atAddPrestigePercent",
+        "isValue": 1
+    },
+    "ADD_TRAIN_PERCENT": {
+        "id": 384,
+        "AttributeSlot": "atAddTrainPercent",
+        "isValue": 1
+    },
+    "DISABLE_ACQUIRE_TITLE_POINT": {
+        "id": 385,
+        "AttributeSlot": "atDisableAcquireTitlePoint",
+        "isValue": 0
+    },
+    "ADD_CONTRIBUTION_PERCENT_FOR_ALL": {
+        "id": 386,
+        "AttributeSlot": "atAddContributionPercentForAll",
+        "isValue": 1
+    },
+    "ADD_PRESTIGE_PERCENT_FOR_ALL": {
+        "id": 387,
+        "AttributeSlot": "atAddPrestigePercentForAll",
+        "isValue": 1
+    },
+    "EMPLOYER_CAST_SKILL_TARGET_SELF": {
+        "id": 388,
+        "AttributeSlot": "atEmployerCastSkillTargetSelf",
+        "isValue": 0
+    },
+    "EMPLOYER_CAST_SKILL_TARGET_DEST": {
+        "id": 389,
+        "AttributeSlot": "atEmployerCastSkillTargetDest",
+        "isValue": 0
+    },
+    "CLEAR_COOL_DOWN": {
+        "id": 390,
+        "AttributeSlot": "atClearCoolDown",
+        "isValue": 0
+    },
+    "RESET_COOL_DOWN": {
+        "id": 391,
+        "AttributeSlot": "atResetCoolDown",
+        "isValue": 0
+    },
+    "MODIFY_COOL_DOWN": {
+        "id": 392,
+        "AttributeSlot": "atModifyCoolDown",
+        "isValue": 1
+    },
+    "ADD_COOL_DOWN_INTERVAL": {
+        "id": 393,
+        "AttributeSlot": "atAddCoolDownInterval",
+        "isValue": 1
+    },
+    "TRANSFER_DAMAGE_TO_MANA_PERCENT": {
+        "id": 394,
+        "AttributeSlot": "atTransferDamageToManaPercent",
+        "isValue": 1
+    },
+    "MODIFY_COST_MANA_PERCENT": {
+        "id": 395,
+        "AttributeSlot": "atModifyCostManaPercent",
+        "isValue": 1
+    },
+    "MODIFY_COST_RAGE_PERCENT": {
+        "id": 396,
+        "AttributeSlot": "atModifyCostRagePercent",
+        "isValue": 1
+    },
+    "MODIFY_COST_ENERGY_PERCENT": {
+        "id": 397,
+        "AttributeSlot": "atModifyCostEnergyPercent",
+        "isValue": 1
+    },
+    "MODIFY_COST_SUN_ENERGY_PERCENT": {
+        "id": 398,
+        "AttributeSlot": "atModifyCostSunEnergyPercent",
+        "isValue": 1
+    },
+    "DIRECT_CAST_MASK": {
+        "id": 399,
+        "AttributeSlot": "atDirectCastMask",
+        "isValue": 0
+    },
+    "PULL": {
+        "id": 400,
+        "AttributeSlot": "atPull",
+        "isValue": 1
+    },
+    "PULL_Z": {
+        "id": 401,
+        "AttributeSlot": "atPullZ",
+        "isValue": 1
+    },
+    "TURN_TO_SRC": {
+        "id": 402,
+        "AttributeSlot": "atTurnToSrc",
+        "isValue": 0
+    },
+    "CONSUME_BUFF": {
+        "id": 403,
+        "AttributeSlot": "atConsumeBuff",
+        "isValue": 0
+    },
+    "TOP_THREAT": {
+        "id": 404,
+        "AttributeSlot": "atTopThreat",
+        "isValue": 0
+    },
+    "ZERO_THREAT": {
+        "id": 405,
+        "AttributeSlot": "atZeroThreat",
+        "isValue": 0
+    },
+    "FORMATION_EFFECT": {
+        "id": 406,
+        "AttributeSlot": "atFormationEffect",
+        "isValue": 0
+    },
+    "ADD_DAMAGE_BY_DST_MOVE_STATE": {
+        "id": 407,
+        "AttributeSlot": "atAddDamageByDstMoveState",
+        "isValue": 0
+    },
+    "TRANSFER_DAMAGE": {
+        "id": 408,
+        "AttributeSlot": "atTransferDamage",
+        "isValue": 1
+    },
+    "COPY_DAMAGE": {
+        "id": 409,
+        "AttributeSlot": "atCopyDamage",
+        "isValue": 1
+    },
+    "TRANSFER_THERAPY": {
+        "id": 410,
+        "AttributeSlot": "atTransferTherapy",
+        "isValue": 1
+    },
+    "TRANSFER_THREAT": {
+        "id": 412,
+        "AttributeSlot": "atTransferThreat",
+        "isValue": 1
+    },
+    "ADD_FELLOWSHIP_ATTRACTION": {
+        "id": 413,
+        "AttributeSlot": "atAddFellowshipAttraction",
+        "isValue": 0
+    },
+    "CALL_HELP": {
+        "id": 414,
+        "AttributeSlot": "atCallHelp",
+        "isValue": 0
+    },
+    "CALL_REQUEST": {
+        "id": 415,
+        "AttributeSlot": "atCallRequest",
+        "isValue": 0
+    },
+    "CATCH_CHARACTER": {
+        "id": 416,
+        "AttributeSlot": "atCatchCharacter",
+        "isValue": 0
+    },
+    "TRANSMISSION": {
+        "id": 417,
+        "AttributeSlot": "atTransmission",
+        "isValue": 0
+    },
+    "VITALITY_TO_PARRY_VALUE_COF": {
+        "id": 418,
+        "AttributeSlot": "atVitalityToParryValueCof",
+        "isValue": 1
+    },
+    "VITALITY_TO_MAX_LIFE_COF": {
+        "id": 419,
+        "AttributeSlot": "atVitalityToMaxLifeCof",
+        "isValue": 1
+    },
+    "VITALITY_TO_PHYSICS_ATTACK_POWER_COF": {
+        "id": 420,
+        "AttributeSlot": "atVitalityToPhysicsAttackPowerCof",
+        "isValue": 1
+    },
+    "VITALITY_TO_SOLAR_ATTACK_POWER_COF": {
+        "id": 421,
+        "AttributeSlot": "atVitalityToSolarAttackPowerCof",
+        "isValue": 1
+    },
+    "VITALITY_TO_LUNAR_ATTACK_POWER_COF": {
+        "id": 422,
+        "AttributeSlot": "atVitalityToLunarAttackPowerCof",
+        "isValue": 1
+    },
+    "VITALITY_TO_NEUTRAL_ATTACK_POWER_COF": {
+        "id": 423,
+        "AttributeSlot": "atVitalityToNeutralAttackPowerCof",
+        "isValue": 1
+    },
+    "VITALITY_TO_POISON_ATTACK_POWER_COF": {
+        "id": 424,
+        "AttributeSlot": "atVitalityToPoisonAttackPowerCof",
+        "isValue": 1
+    },
+    "VITALITY_TO_THERAPY_POWER_COF": {
+        "id": 425,
+        "AttributeSlot": "atVitalityToTherapyPowerCof",
+        "isValue": 1
+    },
+    "VITALITY_TO_PHYSICS_SHIELD_COF": {
+        "id": 426,
+        "AttributeSlot": "atVitalityToPhysicsShieldCof",
+        "isValue": 1
+    },
+    "VITALITY_TO_DODGE_COF": {
+        "id": 427,
+        "AttributeSlot": "atVitalityToDodgeCof",
+        "isValue": 1
+    },
+    "VITALITY_TO_PARRY_COF": {
+        "id": 428,
+        "AttributeSlot": "atVitalityToParryCof",
+        "isValue": 1
+    },
+    "VITALITY_TO_MAGIC_SHIELD_COF": {
+        "id": 429,
+        "AttributeSlot": "atVitalityToMagicShieldCof",
+        "isValue": 1
+    },
+    "VITALITY_TO_MAX_MANA_COF": {
+        "id": 430,
+        "AttributeSlot": "atVitalityToMaxManaCof",
+        "isValue": 1
+    },
+    "VITALITY_TO_PHYSICS_OVER_COME_COF": {
+        "id": 431,
+        "AttributeSlot": "atVitalityToPhysicsOverComeCof",
+        "isValue": 1
+    },
+    "VITALITY_TO_MAGIC_OVER_COME_COF": {
+        "id": 432,
+        "AttributeSlot": "atVitalityToMagicOverComeCof",
+        "isValue": 1
+    },
+    "VITALITY_TO_MAGIC_CRITICAL_STRIKE_COF": {
+        "id": 433,
+        "AttributeSlot": "atVitalityToMagicCriticalStrikeCof",
+        "isValue": 1
+    },
+    "SPIRIT_TO_MAX_MANA_COF": {
+        "id": 434,
+        "AttributeSlot": "atSpiritToMaxManaCof",
+        "isValue": 1
+    },
+    "SPIRIT_TO_MANA_REPLENISH_COF": {
+        "id": 435,
+        "AttributeSlot": "atSpiritToManaReplenishCof",
+        "isValue": 1
+    },
+    "SPIRIT_TO_THERAPY_POWER_COF": {
+        "id": 436,
+        "AttributeSlot": "atSpiritToTherapyPowerCof",
+        "isValue": 1
+    },
+    "SPIRIT_TO_PHYSICS_ATTACK_POWER_COF": {
+        "id": 437,
+        "AttributeSlot": "atSpiritToPhysicsAttackPowerCof",
+        "isValue": 1
+    },
+    "SPIRIT_TO_SOLAR_ATTACK_POWER_COF": {
+        "id": 438,
+        "AttributeSlot": "atSpiritToSolarAttackPowerCof",
+        "isValue": 1
+    },
+    "SPIRIT_TO_LUNAR_ATTACK_POWER_COF": {
+        "id": 439,
+        "AttributeSlot": "atSpiritToLunarAttackPowerCof",
+        "isValue": 1
+    },
+    "SPIRIT_TO_NEUTRAL_ATTACK_POWER_COF": {
+        "id": 440,
+        "AttributeSlot": "atSpiritToNeutralAttackPowerCof",
+        "isValue": 1
+    },
+    "SPIRIT_TO_POISON_ATTACK_POWER_COF": {
+        "id": 441,
+        "AttributeSlot": "atSpiritToPoisonAttackPowerCof",
+        "isValue": 1
+    },
+    "SPIRIT_TO_PHYSICS_CRITICAL_STRIKE_COF": {
+        "id": 442,
+        "AttributeSlot": "atSpiritToPhysicsCriticalStrikeCof",
+        "isValue": 1
+    },
+    "SPIRIT_TO_SOLAR_CRITICAL_STRIKE_COF": {
+        "id": 443,
+        "AttributeSlot": "atSpiritToSolarCriticalStrikeCof",
+        "isValue": 1
+    },
+    "SPIRIT_TO_LUNAR_CRITICAL_STRIKE_COF": {
+        "id": 444,
+        "AttributeSlot": "atSpiritToLunarCriticalStrikeCof",
+        "isValue": 1
+    },
+    "SPIRIT_TO_NEUTRAL_CRITICAL_STRIKE_COF": {
+        "id": 445,
+        "AttributeSlot": "atSpiritToNeutralCriticalStrikeCof",
+        "isValue": 1
+    },
+    "SPIRIT_TO_POISON_CRITICAL_STRIKE_COF": {
+        "id": 446,
+        "AttributeSlot": "atSpiritToPoisonCriticalStrikeCof",
+        "isValue": 1
+    },
+    "SPIRIT_TO_PHYSICS_CRITICAL_DAMAGE_POWER_COF": {
+        "id": 447,
+        "AttributeSlot": "atSpiritToPhysicsCriticalDamagePowerCof",
+        "isValue": 1
+    },
+    "SPIRIT_TO_SOLAR_CRITICAL_DAMAGE_POWER_COF": {
+        "id": 448,
+        "AttributeSlot": "atSpiritToSolarCriticalDamagePowerCof",
+        "isValue": 1
+    },
+    "SPIRIT_TO_LUNAR_CRITICAL_DAMAGE_POWER_COF": {
+        "id": 449,
+        "AttributeSlot": "atSpiritToLunarCriticalDamagePowerCof",
+        "isValue": 1
+    },
+    "SPIRIT_TO_NEUTRAL_CRITICAL_DAMAGE_POWER_COF": {
+        "id": 450,
+        "AttributeSlot": "atSpiritToNeutralCriticalDamagePowerCof",
+        "isValue": 1
+    },
+    "SPIRIT_TO_POISON_CRITICAL_DAMAGE_POWER_COF": {
+        "id": 451,
+        "AttributeSlot": "atSpiritToPoisonCriticalDamagePowerCof",
+        "isValue": 1
+    },
+    "LUNAR_ATTACK_POWER_TO_THERAPY_POWER_COF": {
+        "id": 452,
+        "AttributeSlot": "atLunarAttackPowerToTherapyPowerCof",
+        "isValue": 1
+    },
+    "THERAPY_POWER_TO_MAGIC_ATTACK_POWER_COF": {
+        "id": 453,
+        "AttributeSlot": "atTherapyPowerToMagicAttackPowerCof",
+        "isValue": 1
+    },
+    "THERAPY_POWER_TO_PHYSICS_ATTACK_POWER_COF": {
+        "id": 454,
+        "AttributeSlot": "atTherapyPowerToPhysicsAttackPowerCof",
+        "isValue": 1
+    },
+    "NEUTRAL_ATTACK_POWER_TO_THERAPY_POWER_COF": {
+        "id": 455,
+        "AttributeSlot": "atNeutralAttackPowerToTherapyPowerCof",
+        "isValue": 1
+    },
+    "SPIRIT_TO_SOLAR_MAGIC_SHIELD_COF": {
+        "id": 456,
+        "AttributeSlot": "atSpiritToSolarMagicShieldCof",
+        "isValue": 1
+    },
+    "SPIRIT_TO_LUNAR_MAGIC_SHIELD_COF": {
+        "id": 457,
+        "AttributeSlot": "atSpiritToLunarMagicShieldCof",
+        "isValue": 1
+    },
+    "SPIRIT_TO_NEUTRAL_MAGIC_SHIELD_COF": {
+        "id": 458,
+        "AttributeSlot": "atSpiritToNeutralMagicShieldCof",
+        "isValue": 1
+    },
+    "SPIRIT_TO_POISON_MAGIC_SHIELD_COF": {
+        "id": 459,
+        "AttributeSlot": "atSpiritToPoisonMagicShieldCof",
+        "isValue": 1
+    },
+    "SPIRIT_TO_POISON_OVERCOME_COF": {
+        "id": 460,
+        "AttributeSlot": "atSpiritToPoisonOvercomeCof",
+        "isValue": 1
+    },
+    "SPUNK_TO_MANA_REPLENISH_COF": {
+        "id": 461,
+        "AttributeSlot": "atSpunkToManaReplenishCof",
+        "isValue": 1
+    },
+    "SPUNK_TO_PHYSICS_ATTACK_POWER_COF": {
+        "id": 462,
+        "AttributeSlot": "atSpunkToPhysicsAttackPowerCof",
+        "isValue": 1
+    },
+    "SPUNK_TO_SOLAR_ATTACK_POWER_COF": {
+        "id": 463,
+        "AttributeSlot": "atSpunkToSolarAttackPowerCof",
+        "isValue": 1
+    },
+    "SPUNK_TO_LUNAR_ATTACK_POWER_COF": {
+        "id": 464,
+        "AttributeSlot": "atSpunkToLunarAttackPowerCof",
+        "isValue": 1
+    },
+    "SPUNK_TO_NEUTRAL_ATTACK_POWER_COF": {
+        "id": 465,
+        "AttributeSlot": "atSpunkToNeutralAttackPowerCof",
+        "isValue": 1
+    },
+    "SPUNK_TO_POISON_ATTACK_POWER_COF": {
+        "id": 466,
+        "AttributeSlot": "atSpunkToPoisonAttackPowerCof",
+        "isValue": 1
+    },
+    "SPUNK_TO_SOLAR_AND_LUNAR_ATTACK_POWER_COF": {
+        "id": 467,
+        "AttributeSlot": "atSpunkToSolarAndLunarAttackPowerCof",
+        "isValue": 1
+    },
+    "SPUNK_TO_SOLAR_CRITICAL_STRIKE_COF": {
+        "id": 468,
+        "AttributeSlot": "atSpunkToSolarCriticalStrikeCof",
+        "isValue": 1
+    },
+    "SPUNK_TO_SOLAR_CRITICAL_DAMAGE_POWER_COF": {
+        "id": 469,
+        "AttributeSlot": "atSpunkToSolarCriticalDamagePowerCof",
+        "isValue": 1
+    },
+    "SPUNK_TO_SOLAR_AND_LUNAR_CRITICAL_STRIKE_COF": {
+        "id": 470,
+        "AttributeSlot": "atSpunkToSolarAndLunarCriticalStrikeCof",
+        "isValue": 1
+    },
+    "SPUNK_TO_SOLAR_AND_LUNAR_CRITICAL_DAMAGE_POWER_COF": {
+        "id": 471,
+        "AttributeSlot": "atSpunkToSolarAndLunarCriticalDamagePowerCof",
+        "isValue": 1
+    },
+    "SPUNK_TO_PHYSICS_CRITICAL_STRIKE_COF": {
+        "id": 472,
+        "AttributeSlot": "atSpunkToPhysicsCriticalStrikeCof",
+        "isValue": 1
+    },
+    "SPUNK_TO_PHYSICS_CRITICAL_DAMAGE_POWER_COF": {
+        "id": 473,
+        "AttributeSlot": "atSpunkToPhysicsCriticalDamagePowerCof",
+        "isValue": 1
+    },
+    "SPUNK_TO_NEUTRAL_OVERCOME_COF": {
+        "id": 474,
+        "AttributeSlot": "atSpunkToNeutralOvercomeCof",
+        "isValue": 1
+    },
+    "SPUNK_TO_NEUTRAL_CRITICAL_STRIKE_COF": {
+        "id": 475,
+        "AttributeSlot": "atSpunkToNeutralCriticalStrikeCof",
+        "isValue": 1
+    },
+    "STRENGTH_TO_PHYSICS_CRITICAL_STRIKE_COF": {
+        "id": 476,
+        "AttributeSlot": "atStrengthToPhysicsCriticalStrikeCof",
+        "isValue": 1
+    },
+    "STRENGTH_TO_PHYSICS_ATTACK_POWER_COF": {
+        "id": 477,
+        "AttributeSlot": "atStrengthToPhysicsAttackPowerCof",
+        "isValue": 1
+    },
+    "STRENGTH_TO_PHYSICS_CRITICAL_DAMAGE_POWER_COF": {
+        "id": 478,
+        "AttributeSlot": "atStrengthToPhysicsCriticalDamagePowerCof",
+        "isValue": 1
+    },
+    "STRENGTH_TO_SOLAR_ATTACK_POWER_COF": {
+        "id": 479,
+        "AttributeSlot": "atStrengthToSolarAttackPowerCof",
+        "isValue": 1
+    },
+    "STRENGTH_TO_LUNAR_ATTACK_POWER_COF": {
+        "id": 480,
+        "AttributeSlot": "atStrengthToLunarAttackPowerCof",
+        "isValue": 1
+    },
+    "STRENGTH_TO_NEUTRAL_ATTACK_POWER_COF": {
+        "id": 481,
+        "AttributeSlot": "atStrengthToNeutralAttackPowerCof",
+        "isValue": 1
+    },
+    "STRENGTH_TO_POISON_ATTACK_POWER_COF": {
+        "id": 482,
+        "AttributeSlot": "atStrengthToPoisonAttackPowerCof",
+        "isValue": 1
+    },
+    "STRENGTH_TO_PHYSICS_OVERCOME_COF": {
+        "id": 483,
+        "AttributeSlot": "atStrengthToPhysicsOvercomeCof",
+        "isValue": 1
+    },
+    "AGILITY_TO_PHYSICS_CRITICAL_STRIKE_COF": {
+        "id": 484,
+        "AttributeSlot": "atAgilityToPhysicsCriticalStrikeCof",
+        "isValue": 1
+    },
+    "AGILITY_TO_PHYSICS_CRITICAL_DAMAGE_POWER_COF": {
+        "id": 485,
+        "AttributeSlot": "atAgilityToPhysicsCriticalDamagePowerCof",
+        "isValue": 1
+    },
+    "AGILITY_TO_POISON_CRITICAL_STRIKE_COF": {
+        "id": 486,
+        "AttributeSlot": "atAgilityToPoisonCriticalStrikeCof",
+        "isValue": 1
+    },
+    "AGILITY_TO_PHYSICS_ATTACK_POWER_COF": {
+        "id": 487,
+        "AttributeSlot": "atAgilityToPhysicsAttackPowerCof",
+        "isValue": 1
+    },
+    "AGILITY_TO_SOLAR_AND_LUNAR_ATTACK_POWER_COF": {
+        "id": 488,
+        "AttributeSlot": "atAgilityToSolarAndLunarAttackPowerCof",
+        "isValue": 1
+    },
+    "AGILITY_TO_PHYSICS_OVERCOME_COF": {
+        "id": 489,
+        "AttributeSlot": "atAgilityToPhysicsOvercomeCof",
+        "isValue": 1
+    },
+    "AGILITY_TO_DODGE_COF": {
+        "id": 490,
+        "AttributeSlot": "atAgilityToDodgeCof",
+        "isValue": 1
+    },
+    "AGILITY_TO_PARRY_COF": {
+        "id": 491,
+        "AttributeSlot": "atAgilityToParryCof",
+        "isValue": 1
+    },
+    "AGILITY_TO_PARRY_VALUE_COF": {
+        "id": 492,
+        "AttributeSlot": "atAgilityToParryValueCof",
+        "isValue": 1
+    },
+    "STEALTH": {
+        "id": 493,
+        "AttributeSlot": "atStealth",
+        "isValue": 0
+    },
+    "COUNTER_STEALTH": {
+        "id": 494,
+        "AttributeSlot": "atCounterStealth",
+        "isValue": 0
+    },
+    "COUNTER_STEALTH_RANGE": {
+        "id": 495,
+        "AttributeSlot": "atCounterStealthRange",
+        "isValue": 1
+    },
+    "TRANSPARENCY_VALUE": {
+        "id": 496,
+        "AttributeSlot": "atTransparencyValue",
+        "isValue": 1
+    },
+    "AUTO_SELECT_TARGET": {
+        "id": 497,
+        "AttributeSlot": "atAutoSelectTarget",
+        "isValue": 0
+    },
+    "CALL_MENTOR_BUFF": {
+        "id": 498,
+        "AttributeSlot": "atCallMentorBuff",
+        "isValue": 0
+    },
+    "MENTOR_FORMATION_EFFECT": {
+        "id": 499,
+        "AttributeSlot": "atMentorFormationEffect",
+        "isValue": 0
+    },
+    "ADJUST_PROFESSION_LEVEL": {
+        "id": 500,
+        "AttributeSlot": "atAdjustProfessionLevel",
+        "isValue": 1
+    },
+    "SET_USE_BIG_SWORD_FLAG": {
+        "id": 501,
+        "AttributeSlot": "atSetUseBigSwordFlag",
+        "isValue": 0
+    },
+    "CHANGE_CARRIER_STATE": {
+        "id": 502,
+        "AttributeSlot": "atChangeCarrierState",
+        "isValue": 0
+    },
+    "SET_INCOME_LIMIT_FLAG": {
+        "id": 503,
+        "AttributeSlot": "atSetIncomeLimitFlag",
+        "isValue": 0
+    },
+    "SET_SALE_LIMIT_FLAG": {
+        "id": 504,
+        "AttributeSlot": "atSetSaleLimitFlag",
+        "isValue": 0
+    },
+    "SET_DISABLE_SKILL_CAST_ON_ENTRAP_FLAG": {
+        "id": 505,
+        "AttributeSlot": "atSetDisableSkillCastOnEntrapFlag",
+        "isValue": 0
+    },
+    "SET_EQUIPMENT_RECIPE": {
+        "id": 506,
+        "AttributeSlot": "atSetEquipmentRecipe",
+        "isValue": 0
+    },
+    "SET_TALENT_RECIPE": {
+        "id": 507,
+        "AttributeSlot": "atSetTalentRecipe",
+        "isValue": 0
+    },
+    "TRANSFER_LIFE": {
+        "id": 508,
+        "AttributeSlot": "atTransferLife",
+        "isValue": 1
+    },
+    "TRANSFER_MANA": {
+        "id": 509,
+        "AttributeSlot": "atTransferMana",
+        "isValue": 1
+    },
+    "COPY_EFFECTIVE_THERAPY": {
+        "id": 510,
+        "AttributeSlot": "atCopyEffectiveTherapy",
+        "isValue": 0
+    },
+    "AUTO_SELECT_TARGET_BY_LIFELESS": {
+        "id": 511,
+        "AttributeSlot": "atAutoSelectTargetByLifeless",
+        "isValue": 1
+    },
+    "CAST_SUB_SKILL": {
+        "id": 512,
+        "AttributeSlot": "atCastSubSkill",
+        "isValue": 0
+    },
+    "CAST_SKILL": {
+        "id": 513,
+        "AttributeSlot": "atCastSkill",
+        "isValue": 0
+    },
+    "SET_DISABLE_TITLEPOINT_PRODUCE_FLAG": {
+        "id": 514,
+        "AttributeSlot": "atSetDisableTitlePointProduceFlag",
+        "isValue": 0
+    },
+    "ADD_SPRINT_POWER_MAX": {
+        "id": 515,
+        "AttributeSlot": "atAddSprintPowerMax",
+        "isValue": 1
+    },
+    "ADD_SPRINT_POWER_COST": {
+        "id": 516,
+        "AttributeSlot": "atAddSprintPowerCost",
+        "isValue": 1
+    },
+    "ADD_SPRINT_POWER_REVIVE": {
+        "id": 517,
+        "AttributeSlot": "atAddSprintPowerRevive",
+        "isValue": 1
+    },
+    "ADD_SPRINT_POWER_COST_ON_WALL": {
+        "id": 518,
+        "AttributeSlot": "atAddSprintPowerCostOnWall",
+        "isValue": 1
+    },
+    "ADD_SPRINT_POWER_COST_RUN_ON_WALL_EXTRA": {
+        "id": 520,
+        "AttributeSlot": "ataddSprintPowerCostRunOnWallExtra",
+        "isValue": 1
+    },
+    "ADD_SPRINT_POWER_COST_STAND_ON_WALL": {
+        "id": 521,
+        "AttributeSlot": "ataddSprintPowerCostStandOnWall",
+        "isValue": 1
+    },
+    "ADD_FLY_SPRINT_POWER_COST": {
+        "id": 522,
+        "AttributeSlot": "atAddFlySprintPowerCost",
+        "isValue": 1
+    },
+    "DISABLE_SPRINT_FLAG": {
+        "id": 523,
+        "AttributeSlot": "atDisableSprintFlag",
+        "isValue": 0
+    },
+    "DISABLE_SPRINT_POWER_COST": {
+        "id": 524,
+        "AttributeSlot": "atDisableSprintPowerCost",
+        "isValue": 1
+    },
+    "SPRINT_POWER_ADD_PERCENT": {
+        "id": 525,
+        "AttributeSlot": "atSprintPowerAddPercent",
+        "isValue": 1
+    },
+    "ADD_HORSE_SPRINT_POWER_MAX": {
+        "id": 526,
+        "AttributeSlot": "atAddHorseSprintPowerMax",
+        "isValue": 1
+    },
+    "ADD_HORSE_SPRINT_POWER_COST": {
+        "id": 527,
+        "AttributeSlot": "atAddHorseSprintPowerCost",
+        "isValue": 1
+    },
+    "ADD_HORSE_SPRINT_POWER_REVIVE": {
+        "id": 528,
+        "AttributeSlot": "atAddHorseSprintPowerRevive",
+        "isValue": 1
+    },
+    "ENABLE_DOUBLE_RIDE": {
+        "id": 529,
+        "AttributeSlot": "atEnableDoubleRide",
+        "isValue": 0
+    },
+    "HORSE_CAN_SWIM": {
+        "id": 530,
+        "AttributeSlot": "atHorseCanSwim",
+        "isValue": 0
+    },
+    "CHANGE_SKILL_ICON": {
+        "id": 531,
+        "AttributeSlot": "atChangeSkillIcon",
+        "isValue": 0
+    },
+    "CHANGE_NO_LIMIT_SKILL_ICON": {
+        "id": 532,
+        "AttributeSlot": "atNoLimitChangeSkillIcon",
+        "isValue": 0
+    },
+    "ADD_SCALE": {
+        "id": 533,
+        "AttributeSlot": "atAddScale",
+        "isValue": 1
+    },
+    "DISABLE_REVIVE": {
+        "id": 534,
+        "AttributeSlot": "atDisableRevive",
+        "isValue": 0
+    },
+    "DISABLE_TEAMWORK": {
+        "id": 535,
+        "AttributeSlot": "atDisableTeamwork",
+        "isValue": 0
+    },
+    "IMMUNITY_BEAT_BREAK": {
+        "id": 536,
+        "AttributeSlot": "atImmunityBeatBreak",
+        "isValue": 0
+    },
+    "ADD_TRANSPARENCY_VALUE": {
+        "id": 537,
+        "AttributeSlot": "atAddTransparencyValue",
+        "isValue": 1
+    },
+    "ALL_DAMAGE_ADD_PERCENT": {
+        "id": 538,
+        "AttributeSlot": "atAllDamageAddPercent",
+        "isValue": 1
+    },
+    "ALL_SHIELD_IGNORE_PERCENT": {
+        "id": 539,
+        "AttributeSlot": "atAllShieldIgnorePercent",
+        "isValue": 1
+    },
+    "NOT_IGNORE": {
+        "id": 540,
+        "AttributeSlot": "atNotIgnore",
+        "isValue": 0
+    },
+    "CATCH_DASH": {
+        "id": 541,
+        "AttributeSlot": "atCatchDash",
+        "isValue": 0
+    },
+    "CHANGE_POSE_STATE": {
+        "id": 542,
+        "AttributeSlot": "atChangePoseState",
+        "isValue": 0
+    },
+    "RECOVERY_SHIELD": {
+        "id": 543,
+        "AttributeSlot": "atRecoveryShield",
+        "isValue": 1
+    },
+    "MIRROR_SHIELD": {
+        "id": 544,
+        "AttributeSlot": "atMirrorShield",
+        "isValue": 1
+    },
+    "ADD_GLOBAL_ABSORB_SHIELD_BY_PARRY": {
+        "id": 545,
+        "AttributeSlot": "atAddGlobalAbsorbShieldByParry",
+        "isValue": 1
+    },
+    "ADD_GLOBAL_ABSORB_SHIELD_BY_PARRY_VALUE": {
+        "id": 546,
+        "AttributeSlot": "atAddGlobalAbsorbShieldByParryValue",
+        "isValue": 1
+    },
+    "ADD_SWIM_WATER_LINE_COF": {
+        "id": 547,
+        "AttributeSlot": "atAddSwimWaterLineCof",
+        "isValue": 1
+    },
+    "ADD_ENFORCE_WATER_FLOAT_COF": {
+        "id": 548,
+        "AttributeSlot": "atAddEnforceWaterFloatCof",
+        "isValue": 1
+    },
+    "PAUSE_CD_TIMER": {
+        "id": 549,
+        "AttributeSlot": "atPauseCDTimer",
+        "isValue": 0
+    },
+    "ACCELERATE_CD_TIMER": {
+        "id": 550,
+        "AttributeSlot": "atAccelerateCDTimer",
+        "isValue": 1
+    },
+    "EQUAL_DIVISION_TEAM_DAMAGE": {
+        "id": 551,
+        "AttributeSlot": "atEqualDivisionTeamDamage",
+        "isValue": 1
+    },
+    "EQUAL_DIVISION_TEAM_THREAPY": {
+        "id": 552,
+        "AttributeSlot": "atEqualDivisionTeamTherapy",
+        "isValue": 1
+    },
+    "IMMUNITY_CAST_ID": {
+        "id": 555,
+        "AttributeSlot": "atImmunityCastID",
+        "isValue": 0
+    },
+    "IGNORE_GRAVITY": {
+        "id": 556,
+        "AttributeSlot": "atIgnoreGravity",
+        "isValue": 0
+    },
+    "FIXED_DAMAGE_REDUCE_VALUE": {
+        "id": 557,
+        "AttributeSlot": "atFixedDamageReduceValue",
+        "isValue": 1
+    },
+    "REDUCE_DAMAGE_WHEN_LIFE_CHANGED": {
+        "id": 558,
+        "AttributeSlot": "atReduceDamageWhenLifeChanged",
+        "isValue": 1
+    },
+    "REDUCE_DAMAGE_WHEN_LIFE_LOW": {
+        "id": 559,
+        "AttributeSlot": "atReduceDamageWhenLifeLow",
+        "isValue": 1
+    },
+    "STEAL_BUFF": {
+        "id": 560,
+        "AttributeSlot": "atStealBuff",
+        "isValue": 0
+    },
+    "MARKED_BUSTUP_BY_GUARD": {
+        "id": 561,
+        "AttributeSlot": "atMarkedBustupByGuard",
+        "isValue": 0
+    },
+    "DRIFT_FLAG": {
+        "id": 562,
+        "AttributeSlot": "atDriftFlag",
+        "isValue": 0
+    },
+    "SET_SELECTABLE_TYPE": {
+        "id": 563,
+        "AttributeSlot": "atSetSelectableType",
+        "isValue": 0
+    },
+    "SET_HIT_REDUCE_RATE": {
+        "id": 564,
+        "AttributeSlot": "atSetHitReduceRate",
+        "isValue": 1
+    },
+    "BUFF_FUNCTION_DECAY": {
+        "id": 565,
+        "AttributeSlot": "atBuffFunctionDecay",
+        "isValue": 0
+    },
+    "WATER_FLOAT": {
+        "id": 566,
+        "AttributeSlot": "atWaterFloat",
+        "isValue": 0
+    },
+    "MODIFY_REFLECTION_PERCENT": {
+        "id": 570,
+        "AttributeSlot": "atModifyReflectionPercent",
+        "isValue": 1
+    },
+    "SET_PLAYER_UNCONTROLLABLE": {
+        "id": 571,
+        "AttributeSlot": "atSetPlayerUncontrollable",
+        "isValue": 0
+    },
+    "MAX_SKILL_REDIUS_ADD": {
+        "id": 572,
+        "AttributeSlot": "atMaxSkillRadiusAdd",
+        "isValue": 1
+    },
+    "SET_RELATION_ALL_ENEMY_EXCEPT_TEAM": {
+        "id": 573,
+        "AttributeSlot": "atSetRelationAllEnemyExceptTeam",
+        "isValue": 0
+    },
+    "DAMAGE_TO_MANA_FOR_DST": {
+        "id": 574,
+        "AttributeSlot": "atDamageToManaForDst",
+        "isValue": 1
+    },
+    "DAMAGE_TO_SPRINT_POWER_FOR_DST": {
+        "id": 575,
+        "AttributeSlot": "atDamageToSprintPowerForDst",
+        "isValue": 1
+    },
+    "REDUCE_AOE_DAMAGE_PERCENT": {
+        "id": 576,
+        "AttributeSlot": "atReduceAOEDamagePercent",
+        "isValue": 1
+    },
+    "GLOBAL_DAMGAGE_FACTOR": {
+        "id": 577,
+        "AttributeSlot": "atGlobalDamageFactor",
+        "isValue": 0
+    },
+    "DECAY_VELOCITY": {
+        "id": 578,
+        "AttributeSlot": "atDecayVelocity",
+        "isValue": 1
+    },
+    "HOLD_HORSE": {
+        "id": 579,
+        "AttributeSlot": "atHoldHorse",
+        "isValue": 0
+    },
+    "PRE_DIE_EXECUTE_SCRIPT": {
+        "id": 580,
+        "AttributeSlot": "atPreDieExecuteScript",
+        "isValue": 0
+    },
+    "SHIELD_TRANSFER": {
+        "id": 581,
+        "AttributeSlot": "atShieldTransfer",
+        "isValue": 1
+    },
+    "KNOCK_DOWN_TIME_RATE": {
+        "id": 582,
+        "AttributeSlot": "atKnockDownTimeRate",
+        "isValue": 1
+    },
+    "BLOCK_LONG_RANGE": {
+        "id": 586,
+        "AttributeSlot": "atBlockLongRange",
+        "isValue": 1
+    },
+    "ISOLATED": {
+        "id": 587,
+        "AttributeSlot": "atIsolated",
+        "isValue": 0
+    },
+    "SPECIAL_SKILL_MOVE": {
+        "id": 588,
+        "AttributeSlot": "atSpecialSkillMove",
+        "isValue": 0
+    },
+    "MODIFY_DIVING_COUNT": {
+        "id": 591,
+        "AttributeSlot": "atModifyDivingCount",
+        "isValue": 1
+    },
+    "STEAL_SOLAR_LUNAR_NEUTRAL_POSION_BUFF": {
+        "id": 592,
+        "AttributeSlot": "atStealSolarLunarNeutralPosionBuff",
+        "isValue": 0
+    },
+    "DST_NPC_DAMAGE_COEFFICIENT": {
+        "id": 593,
+        "AttributeSlot": "atDstNpcDamageCoefficient",
+        "isValue": 1
+    },
+    "DAMAGE_TO_THERAPY": {
+        "id": 594,
+        "AttributeSlot": "atDamageToTherapy",
+        "isValue": 1
+    },
+    "STOP": {
+        "id": 595,
+        "AttributeSlot": "atStop",
+        "isValue": 0
+    },
+    "STOP_XYZ": {
+        "id": 596,
+        "AttributeSlot": "atStopXYZ",
+        "isValue": 0
+    }
+}

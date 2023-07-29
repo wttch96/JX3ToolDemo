@@ -139,6 +139,9 @@
 		498605512A72F28900C774E0 /* ColorStone.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498605502A72F28900C774E0 /* ColorStone.swift */; };
 		498605532A72F2E900C774E0 /* ColorStoneService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498605522A72F2E900C774E0 /* ColorStoneService.swift */; };
 		498605552A74CC4600C774E0 /* EquipProgramme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498605542A74CC4600C774E0 /* EquipProgramme.swift */; };
+		498605572A75669300C774E0 /* mountRawAttributes.json in Resources */ = {isa = PBXBuildFile; fileRef = 498605562A75669300C774E0 /* mountRawAttributes.json */; };
+		498605592A75677100C774E0 /* mountExtraAttributes.json in Resources */ = {isa = PBXBuildFile; fileRef = 498605582A75677100C774E0 /* mountExtraAttributes.json */; };
+		4986055B2A7568A500C774E0 /* luaConvertMapping.json in Resources */ = {isa = PBXBuildFile; fileRef = 4986055A2A7568A500C774E0 /* luaConvertMapping.json */; };
 		4992D1392A2278DB007EEFC2 /* JX3DemoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4992D1382A2278DB007EEFC2 /* JX3DemoApp.swift */; };
 		4992D13B2A2278DB007EEFC2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4992D13A2A2278DB007EEFC2 /* ContentView.swift */; };
 		4992D13D2A2278DD007EEFC2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4992D13C2A2278DD007EEFC2 /* Assets.xcassets */; };
@@ -423,6 +426,9 @@
 		498605502A72F28900C774E0 /* ColorStone.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorStone.swift; sourceTree = "<group>"; };
 		498605522A72F2E900C774E0 /* ColorStoneService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorStoneService.swift; sourceTree = "<group>"; };
 		498605542A74CC4600C774E0 /* EquipProgramme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipProgramme.swift; sourceTree = "<group>"; };
+		498605562A75669300C774E0 /* mountRawAttributes.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = mountRawAttributes.json; sourceTree = "<group>"; };
+		498605582A75677100C774E0 /* mountExtraAttributes.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = mountExtraAttributes.json; sourceTree = "<group>"; };
+		4986055A2A7568A500C774E0 /* luaConvertMapping.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = luaConvertMapping.json; sourceTree = "<group>"; };
 		4992D1352A2278DB007EEFC2 /* JX3Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JX3Demo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4992D1382A2278DB007EEFC2 /* JX3DemoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JX3DemoApp.swift; sourceTree = "<group>"; };
 		4992D13A2A2278DB007EEFC2 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -690,6 +696,9 @@
 				49504D822A42BE8900B93E90 /* weaponType.json */,
 				49D348712A6AFA0A007751AB /* enchant_level_limit.json */,
 				49EFC0A92A7190AE007AD5E4 /* std_color_stone_option.json */,
+				498605562A75669300C774E0 /* mountRawAttributes.json */,
+				498605582A75677100C774E0 /* mountExtraAttributes.json */,
+				4986055A2A7568A500C774E0 /* luaConvertMapping.json */,
 			);
 			path = Assets;
 			sourceTree = "<group>";
@@ -1362,12 +1371,14 @@
 				4992D2192A24F704007EEFC2 /* BaseAssets.xcassets in Resources */,
 				495FD6722A40308D00A17FB0 /* equip1.json in Resources */,
 				495FD66B2A3F581100A17FB0 /* equipAttrDesc.json in Resources */,
+				4986055B2A7568A500C774E0 /* luaConvertMapping.json in Resources */,
 				49EFC0AA2A7190AE007AD5E4 /* std_color_stone_option.json in Resources */,
 				499F5AD82A304C9C00A3C588 /* colors.json in Resources */,
 				499F5ACF2A2FA4B600A3C588 /* school.json in Resources */,
 				49536A282A31CCDD004FBBB1 /* mountEquip.json in Resources */,
 				49D348722A6AFA0A007751AB /* enchant_level_limit.json in Resources */,
 				4992D13D2A2278DD007EEFC2 /* Assets.xcassets in Resources */,
+				498605592A75677100C774E0 /* mountExtraAttributes.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1415,6 +1426,7 @@
 				499F5AD02A2FA4B600A3C588 /* school.json in Resources */,
 				49536A292A31CCDD004FBBB1 /* mountEquip.json in Resources */,
 				49D348732A6AFA0A007751AB /* enchant_level_limit.json in Resources */,
+				498605572A75669300C774E0 /* mountRawAttributes.json in Resources */,
 				4992D1C22A23C087007EEFC2 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

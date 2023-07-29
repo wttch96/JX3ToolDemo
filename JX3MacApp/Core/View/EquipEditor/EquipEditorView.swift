@@ -17,7 +17,7 @@ struct EquipEditorView: View {
     
     
     // 选择的装备
-    @State private var equipProgramme = EquipProgramme()
+    @StateObject private var equipProgramme = EquipProgramme()
     
    
     var body: some View {
@@ -39,7 +39,7 @@ struct EquipEditorView: View {
             .padding(.horizontal)
         }, detail: {
             if let selectedPosition = self.selectedPosition {
-                EquipEditorSelectView(kungfu: mount, position: selectedPosition, selected: $equipProgramme)
+                EquipEditorSelectView(kungfu: mount, position: selectedPosition, selected: equipProgramme)
             }
         })
         
