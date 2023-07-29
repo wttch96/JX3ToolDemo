@@ -18,7 +18,7 @@ struct EquipEditorSelectView: View {
     
     @Binding private var strengthedEquip: StrengthedEquip
     
-    @Binding private var selectedEquips: [EquipPosition: StrengthedEquip]
+    @Binding private var equipProgramme: EquipProgramme
     
     @StateObject private var vm = EquipPickerModel()
     // sheet 选择
@@ -28,16 +28,16 @@ struct EquipEditorSelectView: View {
     @FocusState private var textFieldFocus: Bool
     @State private var showPop: Bool = false
     
-    init(kungfu: Mount, position: EquipPosition, selected: Binding<[EquipPosition: StrengthedEquip]>) {
+    init(kungfu: Mount, position: EquipPosition, selected: Binding<EquipProgramme>) {
         self.mount = kungfu
         self.position = position
-        self._selectedEquips = selected
+        self._equipProgramme = selected
         self._strengthedEquip = .init(
             get: {
-                return selected.wrappedValue[position, default: StrengthedEquip()]
+                return selected.wrappedValue.equips[position, default: StrengthedEquip()]
             },
             set: { newValue in
-                selected.wrappedValue[position] = newValue
+                selected.wrappedValue.equips[position] = newValue
             }
         )
     }
@@ -241,7 +241,7 @@ struct EquipEditorSelectView: View {
     private var detailView: some View {
         VStack {
             if let _ = strengthedEquip.equip {
-                EquipDetailView(strengthEquip: strengthedEquip, selectedEquips: selectedEquips)
+                EquipDetailView(strengthEquip: strengthedEquip, equipProgramme: equipProgramme)
             } else {
                 EmptyView()
             }
@@ -322,6 +322,6 @@ struct EquipEditorSelectView: View {
 
 struct EquipEditorPickerView_Previews: PreviewProvider {
     static var previews: some View {
-        EquipEditorSelectView(kungfu: dev.mount1, position: .amulet, selected: .constant([EquipPosition.amulet: StrengthedEquip()]))
+        EquipEditorSelectView(kungfu: dev.mount1, position: .amulet, selected: .constant(EquipProgramme()))
     }
 }

@@ -17,7 +17,7 @@ struct EquipEditorView: View {
     
     
     // 选择的装备
-    @State private var selectedEquips: [EquipPosition: StrengthedEquip] = [:]
+    @State private var equipProgramme = EquipProgramme()
     
    
     var body: some View {
@@ -33,13 +33,13 @@ struct EquipEditorView: View {
                         .frame(width: 24, height: 24)
                     Text(mount.name)
                 }
-                EquipEditorNavView(mount: mount, selectedPosition: $selectedPosition, selectedEquips: selectedEquips)
+                EquipEditorNavView(mount: mount, selectedPosition: $selectedPosition, equipProgramme: equipProgramme)
                 Spacer()
             }
             .padding(.horizontal)
         }, detail: {
             if let selectedPosition = self.selectedPosition {
-                EquipEditorSelectView(kungfu: mount, position: selectedPosition, selected: $selectedEquips)
+                EquipEditorSelectView(kungfu: mount, position: selectedPosition, selected: $equipProgramme)
             }
         })
         

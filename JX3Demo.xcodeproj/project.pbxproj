@@ -138,6 +138,7 @@
 		4986054F2A72EDDC00C774E0 /* ColorStonePickerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4986054E2A72EDDC00C774E0 /* ColorStonePickerViewModel.swift */; };
 		498605512A72F28900C774E0 /* ColorStone.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498605502A72F28900C774E0 /* ColorStone.swift */; };
 		498605532A72F2E900C774E0 /* ColorStoneService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498605522A72F2E900C774E0 /* ColorStoneService.swift */; };
+		498605552A74CC4600C774E0 /* EquipProgramme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498605542A74CC4600C774E0 /* EquipProgramme.swift */; };
 		4992D1392A2278DB007EEFC2 /* JX3DemoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4992D1382A2278DB007EEFC2 /* JX3DemoApp.swift */; };
 		4992D13B2A2278DB007EEFC2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4992D13A2A2278DB007EEFC2 /* ContentView.swift */; };
 		4992D13D2A2278DD007EEFC2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4992D13C2A2278DD007EEFC2 /* Assets.xcassets */; };
@@ -421,6 +422,7 @@
 		4986054E2A72EDDC00C774E0 /* ColorStonePickerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorStonePickerViewModel.swift; sourceTree = "<group>"; };
 		498605502A72F28900C774E0 /* ColorStone.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorStone.swift; sourceTree = "<group>"; };
 		498605522A72F2E900C774E0 /* ColorStoneService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorStoneService.swift; sourceTree = "<group>"; };
+		498605542A74CC4600C774E0 /* EquipProgramme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipProgramme.swift; sourceTree = "<group>"; };
 		4992D1352A2278DB007EEFC2 /* JX3Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JX3Demo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4992D1382A2278DB007EEFC2 /* JX3DemoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JX3DemoApp.swift; sourceTree = "<group>"; };
 		4992D13A2A2278DB007EEFC2 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -619,6 +621,7 @@
 				49D348772A6AFBEC007751AB /* EquipDuty.swift */,
 				49EFC0AC2A7191FC007AD5E4 /* ColorStoneOption.swift */,
 				498605502A72F28900C774E0 /* ColorStone.swift */,
+				498605542A74CC4600C774E0 /* EquipProgramme.swift */,
 			);
 			path = Equip;
 			sourceTree = "<group>";
@@ -1682,6 +1685,7 @@
 				49504DAF2A494E6900B93E90 /* EquipRequireType.swift in Sources */,
 				4992D2272A250021007EEFC2 /* DisplayBarView.swift in Sources */,
 				4992D2072A24B39F007EEFC2 /* JX3BoxIcon.swift in Sources */,
+				498605552A74CC4600C774E0 /* EquipProgramme.swift in Sources */,
 				4992D2172A24F32C007EEFC2 /* IconLibraryViewModel.swift in Sources */,
 				49504D7E2A41C73E00B93E90 /* CheckBoxToggleStyle.swift in Sources */,
 				495FD65C2A36FC5800A17FB0 /* PlainToggleStyle.swift in Sources */,

@@ -11,7 +11,7 @@ struct EquipEditorNavView: View {
     let mount: Mount
     @Binding var selectedPosition: EquipPosition?
     
-    let selectedEquips: [EquipPosition: StrengthedEquip]
+    @ObservedObject var equipProgramme: EquipProgramme
     
     var body: some View {
         VStack {
@@ -76,12 +76,12 @@ struct EquipEditorNavView: View {
     }
     
     private func positionBinding(_ position: EquipPosition) -> StrengthedEquip {
-        return selectedEquips[position, default: StrengthedEquip()]
+        return equipProgramme.equips[position, default: StrengthedEquip()]
     }
 }
 
 struct EquipEditorNavView_Previews: PreviewProvider {
     static var previews: some View {
-        EquipEditorNavView(mount: dev.mount1, selectedPosition: .constant(.amulet), selectedEquips: [:])
+        EquipEditorNavView(mount: dev.mount1, selectedPosition: .constant(.amulet), equipProgramme: EquipProgramme())
     }
 }

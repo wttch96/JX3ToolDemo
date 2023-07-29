@@ -133,4 +133,12 @@ class ScoreUtil {
         }
         return Int(score)
     }
+    
+    static func colorStoneScore(_ colorStone: ColorStone?) -> Int {
+        if let colorStone = colorStone {
+            return Int(round(3.5 * factorA * factorC * (Float(colorStone.level) ?? 0)))
+        } else {
+            return 0
+        }
+    }
 }
