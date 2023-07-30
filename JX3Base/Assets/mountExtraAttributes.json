@@ -1,0 +1,27 @@
+
+{
+    "10080": {
+        "剑舞BUFF409:21": [
+            {
+                "slot": "atLunarAttackPowerPercent",
+                "value": 210
+            },
+            {
+                "slot": "atTherapyPowerPercent",
+                "value": 210
+            }
+        ]
+    },
+    "10081": {
+        "剑舞BUFF409:21": [
+            {
+                "slot": "atLunarAttackPowerPercent",
+                "value": 210
+            },
+            {
+                "slot": "atTherapyPowerPercent",
+                "value": 210
+            }
+        ]
+    }
+}

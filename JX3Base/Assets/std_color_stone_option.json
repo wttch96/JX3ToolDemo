@@ -1,0 +1,1661 @@
+
+{
+        "t1box": [
+            {
+                "value": "atBasePotentialAdd",
+                "label": "固本",
+                "remark": "全属性",
+                "mounts": [ ]
+            },
+            {
+                "value": "atVitalityBase",
+                "label": "霸体",
+                "remark": "体质",
+                "mounts": [
+                    10028,
+                    10080,
+                    10176,
+                    10448,
+                    10002,
+                    10062,
+                    10243,
+                    10389
+                ]
+            },
+            {
+                "value": "atStrengthBase",
+                "label": "真刚",
+                "remark": "力道",
+                "mounts": [
+                    10026,
+                    10224,
+                    10268,
+                    10464,
+                    10698
+                ]
+            },
+            {
+                "value": "atAgilityBase",
+                "label": "瞬影",
+                "remark": "身法",
+                "mounts": [
+                    10015,
+                    10144,
+                    10145,
+                    10390,
+                    10533,
+                    10585
+                ]
+            },
+            {
+                "value": "atSpiritBase",
+                "label": "灵根",
+                "remark": "根骨",
+                "mounts": [
+                    10014,
+                    10028,
+                    10080,
+                    10081,
+                    10175,
+                    10176,
+                    10447,
+                    10448,
+                    10626,
+                    10627
+                ]
+            },
+            {
+                "value": "atSpunkBase",
+                "label": "真元",
+                "remark": "元气",
+                "mounts": [
+                    10003,
+                    10014,
+                    10021,
+                    10615
+                ]
+            },
+            {
+                "value": "atPhysicsAttackPowerBase",
+                "label": "锐刃",
+                "remark": "外功攻击",
+                "mounts": [
+                    10026,
+                    10268,
+                    10224,
+                    10015,
+                    10390,
+                    10533,
+                    10585,
+                    10464,
+                    10698,
+                    10145,
+                    10144
+                ]
+            },
+            {
+                "value": "atMagicAttackPowerBase",
+                "label": "激流",
+                "remark": "内功攻击",
+                "mounts": [
+                    10003,
+                    10002,
+                    10447,
+                    10081,
+                    10242,
+                    10243,
+                    10021,
+                    10014,
+                    10615,
+                    10175,
+                    10627,
+                    10225
+                ]
+            },
+            {
+                "value": "atSolarAttackPowerBase",
+                "label": "烈阳",
+                "remark": "阳性攻击",
+                "mounts": [
+                    10003,
+                    10002
+                ]
+            },
+            {
+                "value": "atNeutralAttackPowerBase",
+                "label": "雷鸣",
+                "remark": "混元攻击",
+                "mounts": [
+                    10014,
+                    10021,
+                    10615
+                ]
+            },
+            {
+                "value": "atLunarAttackPowerBase",
+                "label": "霜冷",
+                "remark": "阴性攻击",
+                "mounts": [
+                    10081,
+                    10447
+                ]
+            },
+            {
+                "value": "atPoisonAttackPowerBase",
+                "label": "鹤顶",
+                "remark": "毒性攻击",
+                "mounts": [
+                    10175,
+                    10225,
+                    10627
+                ]
+            },
+            {
+                "value": "atSolarAndLunarAttackPowerBase",
+                "label": "琉璃",
+                "remark": "阴阳攻击",
+                "mounts": [
+                    10003,
+                    10081,
+                    10242,
+                    10243,
+                    10447
+                ]
+            },
+            {
+                "value": "atPhysicsOvercomeBase",
+                "label": "斩铁",
+                "remark": "外功破防",
+                "mounts": [
+                    10015,
+                    10026,
+                    10144,
+                    10145,
+                    10224,
+                    10268,
+                    10390,
+                    10464,
+                    10698,
+                    10533,
+                    10585
+                ]
+            },
+            {
+                "value": "atMagicOvercome",
+                "label": "灭气",
+                "remark": "内功破防",
+                "mounts": [
+                    10003,
+                    10014,
+                    10021,
+                    10081,
+                    10175,
+                    10225,
+                    10242,
+                    10243,
+                    10447,
+                    10615,
+                    10627
+                ]
+            },
+            {
+                "value": "atSolarOvercomeBase",
+                "label": "日炎",
+                "remark": "阳性破防",
+                "mounts": [
+                    10003
+                ]
+            },
+            {
+                "value": "atNeutralOvercomeBase",
+                "label": "混沌",
+                "remark": "混元破防",
+                "mounts": [
+                    10014,
+                    10021,
+                    10615
+                ]
+            },
+            {
+                "value": "atLunarOvercomeBase",
+                "label": "冻髓",
+                "remark": "阴性破防",
+                "mounts": [
+                    10014,
+                    10021,
+                    10615
+                ]
+            },
+            {
+                "value": "atPoisonOvercomeBase",
+                "label": "腐心",
+                "remark": "毒性破防",
+                "mounts": [
+                    10175,
+                    10225,
+                    10627
+                ]
+            },
+            {
+                "value": "atSolarAndLunarOvercomeBase",
+                "label": "焚虚",
+                "remark": "阴阳破防",
+                "mounts": [
+                    10003,
+                    10081,
+                    10242,
+                    10243,
+                    10447
+                ]
+            },
+            {
+                "value": "atAllTypeCriticalStrike",
+                "label": "强击",
+                "remark": "全会心",
+                "mounts": [
+                    10003,
+                    10014,
+                    10015,
+                    10021,
+                    10026,
+                    10028,
+                    10080,
+                    10081,
+                    10144,
+                    10145,
+                    10175,
+                    10176,
+                    10224,
+                    10225,
+                    10242,
+                    10243,
+                    10268,
+                    10390,
+                    10447,
+                    10448,
+                    10464,
+                    10698,
+                    10533,
+                    10585,
+                    10615,
+                    10626,
+                    10627
+                ]
+            },
+            {
+                "value": "atPhysicsCriticalStrike",
+                "label": "见切",
+                "remark": "外功会心",
+                "mounts": [
+                    10015,
+                    10026,
+                    10144,
+                    10145,
+                    10224,
+                    10268,
+                    10390,
+                    10464,
+                    10698,
+                    10533,
+                    10585,
+                    10225
+                ]
+            },
+            {
+                "value": "atMagicCriticalStrike",
+                "label": "星见",
+                "remark": "内功会心",
+                "mounts": [
+                    10003,
+                    10014,
+                    10021,
+                    10028,
+                    10080,
+                    10081,
+                    10175,
+                    10176,
+                    10242,
+                    10243,
+                    10447,
+                    10448,
+                    10615,
+                    10626,
+                    10627
+                ]
+            },
+            {
+                "value": "atSolarCriticalStrike",
+                "label": "燎原",
+                "remark": "阳性会心",
+                "mounts": [
+                    10003
+                ]
+            },
+            {
+                "value": "atNeutralCriticalStrike",
+                "label": "融天",
+                "remark": "混元会心",
+                "mounts": [
+                    10014,
+                    10021,
+                    10615
+                ]
+            },
+            {
+                "value": "atLunarCriticalStrike",
+                "label": "化雪",
+                "remark": "阴性会心",
+                "mounts": [
+                    10080,
+                    10081,
+                    10447,
+                    10448
+                ]
+            },
+            {
+                "value": "atPoisonCriticalStrike",
+                "label": "蚀骨",
+                "remark": "毒性会心",
+                "mounts": [
+                    10175,
+                    10176,
+                    10626,
+                    10627
+                ]
+            },
+            {
+                "value": "atSolarAndLunarCriticalStrike",
+                "label": "虹卷",
+                "remark": "阴阳会心",
+                "mounts": [
+                    10003,
+                    10080,
+                    10081,
+                    10242,
+                    10243,
+                    10447,
+                    10448
+                ]
+            },
+            {
+                "value": "atPhysicsCriticalDamagePowerBase",
+                "label": "痛击",
+                "remark": "外功会效",
+                "mounts": [
+                    10015,
+                    10026,
+                    10144,
+                    10145,
+                    10224,
+                    10268,
+                    10390,
+                    10464,
+                    10698,
+                    10533,
+                    10585,
+                    10225
+                ]
+            },
+            {
+                "value": "atMagicCriticalDamagePowerBase",
+                "label": "月华",
+                "remark": "内功会效",
+                "mounts": [
+                    10003,
+                    10014,
+                    10021,
+                    10028,
+                    10080,
+                    10081,
+                    10175,
+                    10176,
+                    10242,
+                    10243,
+                    10447,
+                    10448,
+                    10615,
+                    10626,
+                    10627
+                ]
+            },
+            {
+                "value": "atSolarCriticalDamagePowerBase",
+                "label": "浴火",
+                "remark": "阳性会效",
+                "mounts": [
+                    10003
+                ]
+            },
+            {
+                "value": "atNeutralCriticalDamagePowerBase",
+                "label": "霹雳",
+                "remark": "混元会效",
+                "mounts": [
+                    10014,
+                    10021,
+                    10615
+                ]
+            },
+            {
+                "value": "atLunarCriticalDamagePowerBase",
+                "label": "杯雪",
+                "remark": "阴性会效",
+                "mounts": [
+                    10080,
+                    10081,
+                    10447,
+                    10448
+                ]
+            },
+            {
+                "value": "atPoisonCriticalDamagePowerBase",
+                "label": "穿石",
+                "remark": "毒性会效",
+                "mounts": [
+                    10175,
+                    10176,
+                    10626,
+                    10627
+                ]
+            },
+            {
+                "value": "atSolarAndLunarCriticalDamagePowerBase",
+                "label": "界影",
+                "remark": "阴阳会效",
+                "mounts": [
+                    10003,
+                    10081,
+                    10242,
+                    10243,
+                    10447
+                ]
+            },
+            {
+                "value": "atStrainBase",
+                "label": "无双",
+                "remark": "无双",
+                "mounts": [
+                    10003,
+                    10014,
+                    10015,
+                    10021,
+                    10026,
+                    10062,
+                    10081,
+                    10144,
+                    10145,
+                    10175,
+                    10224,
+                    10225,
+                    10242,
+                    10243,
+                    10268,
+                    10390,
+                    10447,
+                    10464,
+                    10698,
+                    10533,
+                    10585,
+                    10615,
+                    10627
+                ]
+            },
+            {
+                "value": "atSurplusValueBase",
+                "label": "破招",
+                "remark": "破招",
+                "mounts": [
+                    10003,
+                    10014,
+                    10015,
+                    10021,
+                    10026,
+                    10062,
+                    10081,
+                    10144,
+                    10145,
+                    10175,
+                    10224,
+                    10225,
+                    10242,
+                    10243,
+                    10268,
+                    10389,
+                    10390,
+                    10447,
+                    10464,
+                    10698,
+                    10533,
+                    10585,
+                    10615,
+                    10627
+                ]
+            },
+            {
+                "value": "atHasteBase",
+                "label": "急速",
+                "remark": "加速",
+                "mounts": [ ]
+            },
+            {
+                "value": "atTherapyPowerBase",
+                "label": "海纳",
+                "remark": "治疗",
+                "mounts": [
+                    10028,
+                    10080,
+                    10176,
+                    10448,
+                    10626
+                ]
+            },
+            {
+                "value": "atToughnessBase",
+                "label": "大御",
+                "remark": "御劲",
+                "mounts": [ ]
+            },
+            {
+                "value": "atDecriticalDamagePowerBase",
+                "label": "大化",
+                "remark": "化劲",
+                "mounts": [
+                    10003,
+                    10014,
+                    10021,
+                    10028,
+                    10080,
+                    10081,
+                    10175,
+                    10176,
+                    10242,
+                    10447,
+                    10448,
+                    10615,
+                    10626,
+                    10627
+                ]
+            },
+            {
+                "value": "atPhysicsShieldAdditional",
+                "label": "守御",
+                "remark": "外功防御",
+                "mounts": [
+                    10002,
+                    10062,
+                    10243,
+                    10389
+                ]
+            },
+            {
+                "value": "atMagicShield",
+                "label": "耐受",
+                "remark": "内功防御",
+                "mounts": [
+                    10002,
+                    10062,
+                    10243,
+                    10389
+                ]
+            },
+            {
+                "value": "atMaxLifeAdditional",
+                "label": "血魂",
+                "remark": "最大气血",
+                "mounts": [
+                    10002,
+                    10062,
+                    10243,
+                    10389
+                ]
+            },
+            {
+                "value": "atLifeReplenishExt",
+                "label": "回春",
+                "remark": "气血恢复",
+                "mounts": [
+                    10002,
+                    10062,
+                    10243,
+                    10389
+                ]
+            },
+            {
+                "value": "atParryBase",
+                "label": "不屈",
+                "remark": "招架",
+                "mounts": [
+                    10002,
+                    10062,
+                    10243,
+                    10389
+                ]
+            },
+            {
+                "value": "atParryValueBase",
+                "label": "破势",
+                "remark": "拆招",
+                "mounts": [
+                    10002,
+                    10062,
+                    10243,
+                    10389
+                ]
+            },
+            {
+                "value": "atDodge",
+                "label": "灵动",
+                "remark": "闪避",
+                "mounts": [
+                    10002,
+                    10062,
+                    10243,
+                    10389
+                ]
+            },
+            {
+                "value": "atManaReplenishExt",
+                "label": "潮生",
+                "remark": "内力恢复",
+                "mounts": [
+                    10002,
+                    10003,
+                    10014,
+                    10015,
+                    10021,
+                    10026,
+                    10028,
+                    10062,
+                    10080,
+                    10081,
+                    10175,
+                    10176,
+                    10268,
+                    10447,
+                    10448,
+                    10533,
+                    10585,
+                    10615,
+                    10626,
+                    10627
+                ]
+            }
+        ],
+        "t2box": [
+            {
+                "value": "atVitalityBasePercentAdd",
+                "label": "健体",
+                "remark": "体质（百分比）",
+                "mounts": [
+                    10028,
+                    10080,
+                    10176,
+                    10448,
+                    10002,
+                    10062,
+                    10243,
+                    10389
+                ]
+            },
+            {
+                "value": "atStrengthBasePercentAdd",
+                "label": "聚力",
+                "remark": "力道（百分比）",
+                "mounts": [
+                    10026,
+                    10224,
+                    10268,
+                    10464,
+                    10698
+                ]
+            },
+            {
+                "value": "atAgilityBasePercentAdd",
+                "label": "强身",
+                "remark": "身法（百分比）",
+                "mounts": [
+                    10015,
+                    10144,
+                    10145,
+                    10390,
+                    10533,
+                    10585
+                ]
+            },
+            {
+                "value": "atSpiritBasePercentAdd",
+                "label": "固筋",
+                "remark": "根骨（百分比）",
+                "mounts": [
+                    10014,
+                    10028,
+                    10080,
+                    10081,
+                    10175,
+                    10176,
+                    10447,
+                    10448,
+                    10626,
+                    10627
+                ]
+            },
+            {
+                "value": "atSpunkBasePercentAdd",
+                "label": "聚魂",
+                "remark": "元气（百分比）",
+                "mounts": [
+                    10003,
+                    10014,
+                    10021,
+                    10615
+                ]
+            },
+            {
+                "value": "atPhysicsAttackPowerBase",
+                "label": "锐刃",
+                "remark": "外功攻击",
+                "mounts": [
+                    10026,
+                    10268,
+                    10224,
+                    10015,
+                    10390,
+                    10533,
+                    10585,
+                    10464,
+                    10698,
+                    10145,
+                    10144
+                ]
+            },
+            {
+                "value": "atMagicAttackPowerBase",
+                "label": "激流",
+                "remark": "内功攻击",
+                "mounts": [
+                    10003,
+                    10002,
+                    10447,
+                    10081,
+                    10242,
+                    10243,
+                    10021,
+                    10014,
+                    10615,
+                    10175,
+                    10627,
+                    10225
+                ]
+            },
+            {
+                "value": "atSolarAttackPowerBase",
+                "label": "烈阳",
+                "remark": "阳性攻击",
+                "mounts": [
+                    10003,
+                    10002
+                ]
+            },
+            {
+                "value": "atNeutralAttackPowerBase",
+                "label": "雷鸣",
+                "remark": "混元攻击",
+                "mounts": [
+                    10014,
+                    10021,
+                    10615
+                ]
+            },
+            {
+                "value": "atLunarAttackPowerBase",
+                "label": "霜冷",
+                "remark": "阴性攻击",
+                "mounts": [
+                    10081,
+                    10447
+                ]
+            },
+            {
+                "value": "atPoisonAttackPowerBase",
+                "label": "鹤顶",
+                "remark": "毒性攻击",
+                "mounts": [
+                    10175,
+                    10225,
+                    10627
+                ]
+            },
+            {
+                "value": "atSolarAndLunarAttackPowerBase",
+                "label": "琉璃",
+                "remark": "阴阳攻击",
+                "mounts": [
+                    10003,
+                    10081,
+                    10242,
+                    10243,
+                    10447
+                ]
+            },
+            {
+                "value": "atPhysicsOvercomeBase",
+                "label": "斩铁",
+                "remark": "外功破防",
+                "mounts": [
+                    10015,
+                    10026,
+                    10144,
+                    10145,
+                    10224,
+                    10268,
+                    10390,
+                    10464,
+                    10698,
+                    10533,
+                    10585
+                ]
+            },
+            {
+                "value": "atMagicOvercome",
+                "label": "灭气",
+                "remark": "内功破防",
+                "mounts": [
+                    10003,
+                    10014,
+                    10021,
+                    10081,
+                    10175,
+                    10225,
+                    10242,
+                    10243,
+                    10447,
+                    10615,
+                    10627
+                ]
+            },
+            {
+                "value": "atSolarOvercomeBase",
+                "label": "日炎",
+                "remark": "阳性破防",
+                "mounts": [
+                    10003
+                ]
+            },
+            {
+                "value": "atNeutralOvercomeBase",
+                "label": "混沌",
+                "remark": "混元破防",
+                "mounts": [
+                    10014,
+                    10021,
+                    10615
+                ]
+            },
+            {
+                "value": "atLunarOvercomeBase",
+                "label": "冻髓",
+                "remark": "阴性破防",
+                "mounts": [
+                    10014,
+                    10447
+                ]
+            },
+            {
+                "value": "atPoisonOvercomeBase",
+                "label": "腐心",
+                "remark": "毒性破防",
+                "mounts": [
+                    10175,
+                    10225,
+                    10627
+                ]
+            },
+            {
+                "value": "atSolarAndLunarOvercomeBase",
+                "label": "焚虚",
+                "remark": "阴阳破防",
+                "mounts": [
+                    10003,
+                    10081,
+                    10242,
+                    10243,
+                    10447
+                ]
+            },
+            {
+                "value": "atPhysicsCriticalStrike",
+                "label": "见切",
+                "remark": "外功会心",
+                "mounts": [
+                    10015,
+                    10026,
+                    10144,
+                    10145,
+                    10224,
+                    10268,
+                    10390,
+                    10464,
+                    10698,
+                    10533,
+                    10585,
+                    10225
+                ]
+            },
+            {
+                "value": "atAllTypeCriticalDamagePowerBase",
+                "label": "刚烈",
+                "remark": "全会心效果",
+                "mounts": [
+                    10003,
+                    10014,
+                    10015,
+                    10021,
+                    10026,
+                    10028,
+                    10080,
+                    10081,
+                    10144,
+                    10145,
+                    10175,
+                    10176,
+                    10224,
+                    10225,
+                    10242,
+                    10243,
+                    10268,
+                    10390,
+                    10447,
+                    10448,
+                    10464,
+                    10698,
+                    10533,
+                    10585,
+                    10615,
+                    10626,
+                    10627
+                ]
+            },
+            {
+                "value": "atPhysicsCriticalDamagePowerBase",
+                "label": "痛击",
+                "remark": "外功会效",
+                "mounts": [
+                    10015,
+                    10026,
+                    10144,
+                    10145,
+                    10224,
+                    10268,
+                    10390,
+                    10464,
+                    10698,
+                    10533,
+                    10585,
+                    10225
+                ]
+            },
+            {
+                "value": "atMagicCriticalDamagePowerBase",
+                "label": "月华",
+                "remark": "内功会效",
+                "mounts": [
+                    10003,
+                    10014,
+                    10021,
+                    10028,
+                    10080,
+                    10081,
+                    10175,
+                    10176,
+                    10242,
+                    10243,
+                    10447,
+                    10448,
+                    10615,
+                    10626,
+                    10627
+                ]
+            },
+            {
+                "value": "atSolarCriticalDamagePowerBase",
+                "label": "浴火",
+                "remark": "阳性会效",
+                "mounts": [
+                    10003
+                ]
+            },
+            {
+                "value": "atNeutralCriticalDamagePowerBase",
+                "label": "霹雳",
+                "remark": "混元会效",
+                "mounts": [
+                    10014,
+                    10021,
+                    10615
+                ]
+            },
+            {
+                "value": "atLunarCriticalDamagePowerBase",
+                "label": "杯雪",
+                "remark": "阴性会效",
+                "mounts": [
+                    10080,
+                    10081,
+                    10447,
+                    10448
+                ]
+            },
+            {
+                "value": "atPoisonCriticalDamagePowerBase",
+                "label": "穿石",
+                "remark": "毒性会效",
+                "mounts": [
+                    10175,
+                    10176,
+                    10626,
+                    10627
+                ]
+            },
+            {
+                "value": "atSolarAndLunarCriticalDamagePowerBase",
+                "label": "界影",
+                "remark": "阴阳会效",
+                "mounts": [
+                    10003,
+                    10081,
+                    10242,
+                    10243,
+                    10447
+                ]
+            },
+            {
+                "value": "atHasteBase",
+                "label": "急速",
+                "remark": "加速",
+                "mounts": [ ]
+            },
+            {
+                "value": "atTherapyPowerBase",
+                "label": "海纳",
+                "remark": "治疗量",
+                "mounts": [
+                    10028,
+                    10080,
+                    10176,
+                    10448,
+                    10626
+                ]
+            },
+            {
+                "value": "atTherapyCoefficient",
+                "label": "妙手",
+                "remark": "治疗量（百分比）",
+                "mounts": [
+                    10028,
+                    10080,
+                    10176,
+                    10448,
+                    10626
+                ]
+            },
+            {
+                "value": "atToughnessBase",
+                "label": "大御",
+                "remark": "御劲",
+                "mounts": [ ]
+            },
+            {
+                "value": "atDecriticalDamagePowerBase",
+                "label": "大化",
+                "remark": "化劲",
+                "mounts": [
+                    10003,
+                    10014,
+                    10021,
+                    10028,
+                    10080,
+                    10081,
+                    10175,
+                    10176,
+                    10242,
+                    10447,
+                    10448,
+                    10615,
+                    10626,
+                    10627
+                ]
+            },
+            {
+                "value": "atPhysicsShieldAdditional",
+                "label": "守御",
+                "remark": "外功防御",
+                "mounts": [
+                    10002,
+                    10062,
+                    10243,
+                    10389
+                ]
+            },
+            {
+                "value": "atMagicShield",
+                "label": "耐受",
+                "remark": "内功防御",
+                "mounts": [
+                    10002,
+                    10062,
+                    10243,
+                    10389
+                ]
+            },
+            {
+                "value": "atMaxLifeAdditional",
+                "label": "血魂",
+                "remark": "最大气血",
+                "mounts": [
+                    10002,
+                    10062,
+                    10243,
+                    10389
+                ]
+            },
+            {
+                "value": "atParryValueBase",
+                "label": "破势",
+                "remark": "拆招",
+                "mounts": [
+                    10002,
+                    10062,
+                    10243,
+                    10389
+                ]
+            },
+            {
+                "value": "atDodge",
+                "label": "灵动",
+                "remark": "闪避",
+                "mounts": [
+                    10002,
+                    10062,
+                    10243,
+                    10389
+                ]
+            },
+            {
+                "value": "atActiveThreatCoefficient",
+                "label": "忘我",
+                "remark": "威胁值",
+                "mounts": [
+                    10002,
+                    10062,
+                    10243,
+                    10389
+                ]
+            },
+            {
+                "value": "atMoveSpeedPercent",
+                "label": "迅疾",
+                "remark": "移动速度",
+                "mounts": [ ]
+            },
+            {
+                "value": "atModifyCostManaPercent",
+                "label": "延绵",
+                "remark": "内力消耗降低（百分比）",
+                "mounts": [
+                    10002,
+                    10003,
+                    10014,
+                    10015,
+                    10021,
+                    10026,
+                    10028,
+                    10062,
+                    10080,
+                    10081,
+                    10175,
+                    10176,
+                    10268,
+                    10447,
+                    10448,
+                    10533,
+                    10585,
+                    10615,
+                    10626,
+                    10627
+                ]
+            },
+            {
+                "value": "atManaReplenishExt",
+                "label": "潮生",
+                "remark": "内力恢复",
+                "mounts": [
+                    10002,
+                    10003,
+                    10014,
+                    10015,
+                    10021,
+                    10026,
+                    10028,
+                    10062,
+                    10080,
+                    10081,
+                    10175,
+                    10176,
+                    10268,
+                    10447,
+                    10448,
+                    10533,
+                    10585,
+                    10615,
+                    10626,
+                    10627
+                ]
+            },
+            {
+                "value": "atDamageToLifeForSelf",
+                "label": "嗜血",
+                "remark": "生命偷取",
+                "mounts": [
+                    10002,
+                    10003,
+                    10014,
+                    10015,
+                    10021,
+                    10026,
+                    10062,
+                    10081,
+                    10144,
+                    10145,
+                    10175,
+                    10224,
+                    10225,
+                    10242,
+                    10243,
+                    10268,
+                    10389,
+                    10390,
+                    10447,
+                    10464,
+                    10698,
+                    10533,
+                    10585,
+                    10615,
+                    10627
+                ]
+            },
+            {
+                "value": "atBeTherapyCoefficient",
+                "label": "清源",
+                "remark": "承疗提升",
+                "mounts": [ ]
+            },
+            {
+                "value": "atGlobalResistPercent",
+                "label": "铁壁",
+                "remark": "通用减伤（百分比）",
+                "mounts": [ ]
+            }
+        ],
+        "t3box": [
+            {
+                "value": "atMeleeWeaponDamageBase",
+                "label": "狂攻",
+                "remark": "武器伤害",
+                "mounts": [
+                    10015,
+                    10026,
+                    10144,
+                    10145,
+                    10224,
+                    10268,
+                    10390,
+                    10464,
+                    10698,
+                    10533,
+                    10585
+                ]
+            },
+            {
+                "value": "atPhysicsAttackPowerBase",
+                "label": "锐刃",
+                "remark": "外功攻击",
+                "mounts": [
+                    10026,
+                    10268,
+                    10224,
+                    10015,
+                    10390,
+                    10533,
+                    10585,
+                    10464,
+                    10698,
+                    10145,
+                    10144
+                ]
+            },
+            {
+                "value": "atMagicAttackPowerBase",
+                "label": "激流",
+                "remark": "内功攻击",
+                "mounts": [
+                    10003,
+                    10002,
+                    10447,
+                    10081,
+                    10242,
+                    10243,
+                    10021,
+                    10014,
+                    10615,
+                    10175,
+                    10627,
+                    10225
+                ]
+            },
+            {
+                "value": "atSolarAttackPowerBase",
+                "label": "烈阳",
+                "remark": "阳性攻击",
+                "mounts": [
+                    10003,
+                    10002
+                ]
+            },
+            {
+                "value": "atNeutralAttackPowerBase",
+                "label": "雷鸣",
+                "remark": "混元攻击",
+                "mounts": [
+                    10014,
+                    10021,
+                    10615
+                ]
+            },
+            {
+                "value": "atLunarAttackPowerBase",
+                "label": "霜冷",
+                "remark": "阴性攻击",
+                "mounts": [
+                    10081,
+                    10447
+                ]
+            },
+            {
+                "value": "atPoisonAttackPowerBase",
+                "label": "鹤顶",
+                "remark": "毒性攻击",
+                "mounts": [
+                    10175,
+                    10225,
+                    10627
+                ]
+            },
+            {
+                "value": "atSolarAndLunarAttackPowerBase",
+                "label": "琉璃",
+                "remark": "阴阳攻击",
+                "mounts": [
+                    10003,
+                    10081,
+                    10242,
+                    10243,
+                    10447
+                ]
+            },
+            {
+                "value": "atPhysicsOvercomeBase",
+                "label": "斩铁",
+                "remark": "外功破防",
+                "mounts": [
+                    10015,
+                    10026,
+                    10144,
+                    10145,
+                    10224,
+                    10268,
+                    10390,
+                    10464,
+                    10698,
+                    10533,
+                    10585
+                ]
+            },
+            {
+                "value": "atMagicOvercome",
+                "label": "灭气",
+                "remark": "内功破防",
+                "mounts": [
+                    10003,
+                    10014,
+                    10021,
+                    10081,
+                    10175,
+                    10225,
+                    10242,
+                    10243,
+                    10447,
+                    10615,
+                    10627
+                ]
+            },
+            {
+                "value": "atSolarOvercomeBase",
+                "label": "日炎",
+                "remark": "阳性破防",
+                "mounts": [
+                    10003
+                ]
+            },
+            {
+                "value": "atNeutralOvercomeBase",
+                "label": "混沌",
+                "remark": "混元破防",
+                "mounts": [
+                    10014,
+                    10021,
+                    10615
+                ]
+            },
+            {
+                "value": "atLunarOvercomeBase",
+                "label": "冻髓",
+                "remark": "阴性破防",
+                "mounts": [
+                    10014,
+                    10021,
+                    10243,
+                    10615
+                ]
+            },
+            {
+                "value": "atPoisonOvercomeBase",
+                "label": "腐心",
+                "remark": "毒性破防",
+                "mounts": [
+                    10175,
+                    10225,
+                    10627
+                ]
+            },
+            {
+                "value": "atSolarAndLunarOvercomeBase",
+                "label": "焚虚",
+                "remark": "阴阳破防",
+                "mounts": [
+                    10003,
+                    10081,
+                    10242,
+                    10243,
+                    10447
+                ]
+            },
+            {
+                "value": "atPhysicsCriticalStrike",
+                "label": "见切",
+                "remark": "外功会心",
+                "mounts": [
+                    10015,
+                    10026,
+                    10144,
+                    10145,
+                    10224,
+                    10268,
+                    10390,
+                    10464,
+                    10698,
+                    10533,
+                    10585,
+                    10225
+                ]
+            },
+            {
+                "value": "atPhysicsCriticalDamagePowerBase",
+                "label": "痛击",
+                "remark": "外功会效",
+                "mounts": [
+                    10015,
+                    10026,
+                    10144,
+                    10145,
+                    10224,
+                    10268,
+                    10390,
+                    10464,
+                    10698,
+                    10533,
+                    10585,
+                    10225
+                ]
+            },
+            {
+                "value": "atMagicCriticalDamagePowerBase",
+                "label": "月华",
+                "remark": "内功会效",
+                "mounts": [
+                    10003,
+                    10014,
+                    10021,
+                    10028,
+                    10080,
+                    10081,
+                    10175,
+                    10176,
+                    10242,
+                    10243,
+                    10447,
+                    10448,
+                    10615,
+                    10626,
+                    10627
+                ]
+            },
+            {
+                "value": "atSolarCriticalDamagePowerBase",
+                "label": "浴火",
+                "remark": "阳性会效",
+                "mounts": [
+                    10003
+                ]
+            },
+            {
+                "value": "atNeutralCriticalDamagePowerBase",
+                "label": "霹雳",
+                "remark": "混元会效",
+                "mounts": [
+                    10014,
+                    10021,
+                    10615
+                ]
+            },
+            {
+                "value": "atLunarCriticalDamagePowerBase",
+                "label": "杯雪",
+                "remark": "阴性会效",
+                "mounts": [
+                    10080,
+                    10081,
+                    10447,
+                    10448
+                ]
+            },
+            {
+                "value": "atPoisonCriticalDamagePowerBase",
+                "label": "穿石",
+                "remark": "毒性会效",
+                "mounts": [
+                    10175,
+                    10176,
+                    10626,
+                    10627
+                ]
+            },
+            {
+                "value": "atSolarAndLunarCriticalDamagePowerBase",
+                "label": "界影",
+                "remark": "阴阳会效",
+                "mounts": [
+                    10003,
+                    10081,
+                    10242,
+                    10243,
+                    10447
+                ]
+            },
+            {
+                "value": "atTherapyPowerBase",
+                "label": "海纳",
+                "remark": "治疗量",
+                "mounts": [
+                    10028,
+                    10080,
+                    10176,
+                    10448,
+                    10626
+                ]
+            },
+            {
+                "value": "atMagicShield",
+                "label": "耐受",
+                "remark": "内功防御",
+                "mounts": [
+                    10002,
+                    10062,
+                    10243,
+                    10389
+                ]
+            },
+            {
+                "value": "atPhysicsShieldAdditional",
+                "label": "守御",
+                "remark": "外功防御",
+                "mounts": [
+                    10002,
+                    10062,
+                    10243,
+                    10389
+                ]
+            },
+            {
+                "value": "atMaxLifeAdditional",
+                "label": "血魂",
+                "remark": "最大气血",
+                "mounts": [
+                    10002,
+                    10062,
+                    10243,
+                    10389
+                ]
+            },
+            {
+                "value": "atParryValueBase",
+                "label": "破势",
+                "remark": "拆招",
+                "mounts": [
+                    10002,
+                    10062,
+                    10243,
+                    10389
+                ]
+            }
+        ]
+    }
