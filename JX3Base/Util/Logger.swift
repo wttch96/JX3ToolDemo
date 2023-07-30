@@ -6,6 +6,9 @@
 //
 
 import Foundation
+import Logging
+
+let logger = Logger(label: "com.wttch.JX3Base")
 
 #if os(iOS)
 func logger(_ items: Any..., separator: String = " ", terminator: String = "\n") {

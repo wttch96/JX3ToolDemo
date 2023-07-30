@@ -20,6 +20,13 @@ struct EquipEditorNavView: View {
             }
             .frame(height: 60)
             ZStack {
+                VStack {
+                    ForEach(equipProgramme.attributes?.attributes.keys.sorted() ?? [], id: \.self) { key in
+                        if let value = equipProgramme.attributes?.attributes[key] {
+                            Text("\(AssetJsonDataManager.shared.equipAttrMap[key, default: key]):\(value.value.tryIntFormat)")
+                        }
+                    }
+                }
                 VStack(spacing: 10) {
                     HStack {
                         positionView(.helm)
@@ -82,6 +89,6 @@ struct EquipEditorNavView: View {
 
 struct EquipEditorNavView_Previews: PreviewProvider {
     static var previews: some View {
-        EquipEditorNavView(mount: dev.mount1, selectedPosition: .constant(.amulet), equipProgramme: EquipProgramme())
+        EquipEditorNavView(mount: dev.mount1, selectedPosition: .constant(.amulet), equipProgramme: EquipProgramme(mount: dev.mount1))
     }
 }

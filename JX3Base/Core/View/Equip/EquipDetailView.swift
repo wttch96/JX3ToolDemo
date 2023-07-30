@@ -18,7 +18,7 @@ struct EquipDetailView: View {
     @available(*, deprecated, message: "弃用")
     init(equip: EquipDTO, strengthLevel: Int, diamondAttributeLevels: [DiamondAttribute : Int], enhance: Enchant?, enchant: Enchant?) {
         self.strengthEquip = StrengthedEquip()
-        self.equipProgramme = EquipProgramme()
+        self.equipProgramme = EquipProgramme(mount: Mount("问水诀")!)
     }
     
     init(strengthEquip: StrengthedEquip, equipProgramme: EquipProgramme) {

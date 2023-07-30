@@ -14,6 +14,8 @@ struct JX3GameText: View {
     
     var color: Color? = nil
     
+    @State var texts: [JX3StyleTextLine] = []
+    
     var body: some View {
         VStack(alignment: .leading, spacing: 0) {
             ForEach(texts, content: { textLine in
@@ -25,30 +27,34 @@ struct JX3GameText: View {
                 }
             })
         }
+        .onChange(of: text, perform: { newValue in
+            self.texts = calcTexts()
+        })
+        .onAppear {
+            self.texts = calcTexts()
+        }
     }
     
-    var texts: [JX3StyleTextLine] {
-        get {
-            var result: [JX3StyleTextLine] = []
-            var line : [JX3StyleText] = []
-            let gameTextParse = GameTextXmlParse(text)
-            for text in gameTextParse.styleTexts {
-                let textStr = "\(text.styles["text"]!)"
-                    .replacingOccurrences(of: "\\\\+n", with: "\n", options: .regularExpression, range: nil)
-                    .replacingOccurrences(of: "\\\\+$", with: "", options: .regularExpression, range: nil)
-                var t = text
-                t.styles["text"] = textStr.replacingOccurrences(of: "\n$", with: "", options: .regularExpression, range: nil)
-                line.append(t)
-                if textStr.hasSuffix("\n") {
-                    result.append(JX3StyleTextLine(id: text.id, texts: line))
-                    line = []
-                }
+    func calcTexts() -> [JX3StyleTextLine] {
+        var result: [JX3StyleTextLine] = []
+        var line : [JX3StyleText] = []
+        let gameTextParse = GameTextXmlParse(text)
+        for text in gameTextParse.styleTexts {
+            let textStr = "\(text.styles["text"]!)"
+                .replacingOccurrences(of: "\\\\+n", with: "\n", options: .regularExpression, range: nil)
+                .replacingOccurrences(of: "\\\\+$", with: "", options: .regularExpression, range: nil)
+            var t = text
+            t.styles["text"] = textStr.replacingOccurrences(of: "\n$", with: "", options: .regularExpression, range: nil)
+            line.append(t)
+            if textStr.hasSuffix("\n") {
+                result.append(JX3StyleTextLine(id: text.id, texts: line))
+                line = []
             }
-            if !line.isEmpty {
-                result.append(JX3StyleTextLine(id: -1, texts: line))
-            }
-            return result
         }
+        if !line.isEmpty {
+            result.append(JX3StyleTextLine(id: -1, texts: line))
+        }
+        return result
     }
     
     

@@ -1,0 +1,371 @@
+
+{
+    "10002": [
+        {
+            "skill_id": 5921,
+            "remark": "生缘",
+            "value": [
+                {
+                    "atSolarMagicShieldPercent": 205
+                },
+                {
+                    "atNeutralMagicShieldPercent": 205
+                },
+                {
+                    "atLunarMagicShieldPercent": 205
+                },
+                {
+                    "atPoisonMagicShieldPercent": 205
+                },
+                {
+                    "atPhysicsShieldPercent": 205
+                }
+            ]
+        },
+        {
+            "skill_id": 5930,
+            "remark": "明王身",
+            "value": [
+                {
+                    "atMaxLifePercentAdd": 220
+                }
+            ]
+        }
+    ],
+    "10003": [
+        {
+            "skill_id": 5930,
+            "remark": "明王身",
+            "value": [
+                {
+                    "atMaxLifePercentAdd": 220
+                }
+            ]
+        },
+        {
+            "skill_id": 6586,
+            "remark": "三生",
+            "value": [
+                {
+                    "atMagicAttackPowerPercent": 246
+                }
+            ]
+        }
+    ],
+    "10026": [
+        {
+            "skill_id": 21285,
+            "remark": "关山月",
+            "value": [
+                {
+                    "atStrengthBasePercentAdd": 102
+                },
+                {
+                    "atVitalityBasePercentAdd": 102
+                }
+            ]
+        }
+    ],
+    "10062": [
+        {
+            "skill_id": 5679,
+            "remark": "勤王",
+            "value": [
+                {
+                    "atSolarMagicShieldPercent": 205
+                },
+                {
+                    "atNeutralMagicShieldPercent": 205
+                },
+                {
+                    "atLunarMagicShieldPercent": 205
+                },
+                {
+                    "atPoisonMagicShieldPercent": 205
+                },
+                {
+                    "atPhysicsShieldPercent": 205
+                }
+            ]
+        },
+        {
+            "skill_id": 5695,
+            "remark": "望西京",
+            "value": [
+                {
+                    "atMaxLifePercentAdd": 102
+                },
+                {
+                    "atMaxManaPercentAdd": 102
+                }
+            ]
+        }
+    ],
+    "10080": [
+        {
+            "skill_id": 6566,
+            "remark": "霜风",
+            "value": [
+                {
+                    "atVitalityBasePercentAdd": 102
+                },
+                {
+                    "atSpiritBasePercentAdd": 102
+                },
+                {
+                    "atTherapyCoefficient": 103
+                }
+            ]
+        }
+    ],
+    "10081": [
+        {
+            "skill_id": 6566,
+            "remark": "霜风",
+            "value": [
+                {
+                    "atVitalityBasePercentAdd": 102
+                },
+                {
+                    "atSpiritBasePercentAdd": 102
+                },
+                {
+                    "atTherapyCoefficient": 103
+                }
+            ]
+        },
+        {
+            "skill_id": 6779,
+            "remark": "朝露",
+            "value": [
+                {
+                    "atLunarAttackPowerPercent": 100
+                }
+            ]
+        },
+        {
+            "skill_id": 14713,
+            "remark": "清涓",
+            "value": [
+                {
+                    "atPoisonOvercomePercent": 102
+                },
+                {
+                    "atLunarOvercomePercent": 102
+                },
+                {
+                    "atNeutralOvercomePercent": 102
+                },
+                {
+                    "atSolarOvercomePercent": 102
+                }
+            ]
+        }
+    ],
+    "10175": [
+        {
+            "skill_id": 6879,
+            "remark": "虫兽",
+            "value": [
+                {
+                    "atPoisonAttackPowerPercent": 154
+                },
+                {
+                    "atTherapyPowerPercent": 154
+                }
+            ]
+        }
+    ],
+    "10176": [
+        {
+            "skill_id": 6879,
+            "remark": "虫兽",
+            "value": [
+                {
+                    "atPoisonAttackPowerPercent": 154
+                },
+                {
+                    "atTherapyPowerPercent": 154
+                }
+            ]
+        }
+    ],
+    "10224": [
+        {
+            "skill_id": 25116,
+            "remark": "河桥养箭",
+            "value": [
+                {
+                    "atPhysicsHitBaseRate": 1000
+                }
+            ]
+        }
+    ],
+    "10243": [
+        {
+            "skill_id": 6898,
+            "remark": "超凡入圣",
+            "value": [
+                {
+                    "atMaxLifePercentAdd": 102
+                },
+                {
+                    "atBeTherapyCoefficient": 102
+                }
+            ]
+        }
+    ],
+    "10268": [
+        {
+            "skill_id": 6822,
+            "remark": "贞固",
+            "value": [
+                {
+                    "atStrengthBasePercentAdd": 102
+                },
+                {
+                    "atVitalityBasePercentAdd": 102
+                }
+            ]
+        }
+    ],
+    "10389": [
+        {
+            "skill_id": 13124,
+            "remark": "活血",
+            "value": [
+                {
+                    "atVitalityBasePercentAdd": 102
+                },
+                {
+                    "atBeTherapyCoefficient": 102
+                }
+            ]
+        },
+        {
+            "skill_id": 13366,
+            "remark": "从容",
+            "value": [
+                {
+                    "atPhysicsAttackPowerPercent": 205
+                }
+            ]
+        }
+    ],
+    "10390": [
+        {
+            "skill_id": 14903,
+            "remark": "活脉",
+            "value": [
+                {
+                    "atVitalityBasePercentAdd": 102
+                },
+                {
+                    "atAgilityBasePercentAdd": 102
+                }
+            ]
+        },
+        {
+            "skill_id": 13366,
+            "remark": "从容",
+            "value": [
+                {
+                    "atPhysicsAttackPowerPercent": 205
+                }
+            ]
+        },
+        {
+            "skill_id": 26723,
+            "remark": "用御",
+            "value": [
+                {
+                    "atHasteBasePercentAdd": 102
+                }
+            ]
+        }
+    ],
+    "10447": [
+        {
+            "skill_id": 14350,
+            "remark": "参莲",
+            "value": [
+                {
+                    "atLunarAttackPowerPercent": 102
+                }
+            ]
+        },
+        {
+            "skill_id": 14348,
+            "remark": "无尽藏",
+            "value": [
+                {
+                    "atMagicCriticalDamagePowerBaseKiloNumRate": 102
+                }
+            ]
+        }
+    ],
+    "10448": [
+        {
+            "skill_id": 14359,
+            "remark": "棋宫",
+            "value": [
+                {
+                    "atTherapyPowerPercent": 102
+                }
+            ]
+        }
+    ],
+    "10464": [
+        {
+            "skill_id": 16728,
+            "remark": "星火",
+            "value": [
+                {
+                    "atStrengthBasePercentAdd": 102
+                },
+                {
+                    "atVitalityBasePercentAdd": 102
+                }
+            ]
+        }
+    ],
+    "10585": [
+        {
+            "skill_id": 22583,
+            "remark": "王师",
+            "value": [
+                {
+                    "atMoveSpeedPercent": 103
+                },
+                {
+                    "atAgilityBasePercentAdd": 102
+                }
+            ]
+        }
+    ],
+    "10615": [
+        {
+            "skill_id": 25066,
+            "remark": "神元",
+            "value": [
+                {
+                    "atSpunkBasePercentAdd": 102
+                },
+                {
+                    "atVitalityBasePercentAdd": 102
+                }
+            ]
+        }
+    ],
+    "10698": [
+        {
+            "skill_id": 32578,
+            "remark": "强膂",
+            "value": [
+                {
+                    "atStrengthBasePercentAdd": 102
+                }
+            ]
+        }
+    ]
+}

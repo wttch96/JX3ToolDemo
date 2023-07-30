@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		491B894B2A758D83006EFAF7 /* systemAttributes.json in Resources */ = {isa = PBXBuildFile; fileRef = 491B894A2A758D83006EFAF7 /* systemAttributes.json */; };
+		491B894E2A761E9E006EFAF7 /* MountRawAttribute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 491B894D2A761E9E006EFAF7 /* MountRawAttribute.swift */; };
+		491B894F2A76202D006EFAF7 /* MountRawAttribute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 491B894D2A761E9E006EFAF7 /* MountRawAttribute.swift */; };
+		491B89542A7649F7006EFAF7 /* Logging in Frameworks */ = {isa = PBXBuildFile; productRef = 491B89532A7649F7006EFAF7 /* Logging */; };
+		491B89562A764A4D006EFAF7 /* Logging in Frameworks */ = {isa = PBXBuildFile; productRef = 491B89552A764A4D006EFAF7 /* Logging */; };
+		491B89582A764BEC006EFAF7 /* LuaConvertValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 491B89572A764BEC006EFAF7 /* LuaConvertValue.swift */; };
 		491DB8342A26667700A40051 /* KungfuIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 491DB8332A26667700A40051 /* KungfuIcon.swift */; };
 		491DB8352A26667700A40051 /* KungfuIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 491DB8332A26667700A40051 /* KungfuIcon.swift */; };
 		491DB8362A266B2F00A40051 /* WebCacheableImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DBCE1B2A2625F800C3BA2E /* WebCacheableImage.swift */; };
@@ -134,6 +140,11 @@
 		497467C52A2619DE00275A09 /* Mount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497467C32A2619DE00275A09 /* Mount.swift */; };
 		497467C72A261AC500275A09 /* BundleUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497467C62A261AC500275A09 /* BundleUtil.swift */; };
 		497467C82A261AC500275A09 /* BundleUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497467C62A261AC500275A09 /* BundleUtil.swift */; };
+		49842DA82A76507600F06B11 /* mountExtraAttributes.json in Resources */ = {isa = PBXBuildFile; fileRef = 498605582A75677100C774E0 /* mountExtraAttributes.json */; };
+		49842DA92A7650CF00F06B11 /* luaConvertMapping.json in Resources */ = {isa = PBXBuildFile; fileRef = 4986055A2A7568A500C774E0 /* luaConvertMapping.json */; };
+		49842DAB2A76545A00F06B11 /* MixValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49842DAA2A76545A00F06B11 /* MixValue.swift */; };
+		49842DAC2A76553000F06B11 /* MixValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49842DAA2A76545A00F06B11 /* MixValue.swift */; };
+		49842DAE2A765A8600F06B11 /* talnetPassive.json in Resources */ = {isa = PBXBuildFile; fileRef = 49842DAD2A765A8600F06B11 /* talnetPassive.json */; };
 		4986054D2A72957B00C774E0 /* ColorStonePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4986054C2A72957B00C774E0 /* ColorStonePicker.swift */; };
 		4986054F2A72EDDC00C774E0 /* ColorStonePickerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4986054E2A72EDDC00C774E0 /* ColorStonePickerViewModel.swift */; };
 		498605512A72F28900C774E0 /* ColorStone.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498605502A72F28900C774E0 /* ColorStone.swift */; };
@@ -142,6 +153,10 @@
 		498605572A75669300C774E0 /* mountRawAttributes.json in Resources */ = {isa = PBXBuildFile; fileRef = 498605562A75669300C774E0 /* mountRawAttributes.json */; };
 		498605592A75677100C774E0 /* mountExtraAttributes.json in Resources */ = {isa = PBXBuildFile; fileRef = 498605582A75677100C774E0 /* mountExtraAttributes.json */; };
 		4986055B2A7568A500C774E0 /* luaConvertMapping.json in Resources */ = {isa = PBXBuildFile; fileRef = 4986055A2A7568A500C774E0 /* luaConvertMapping.json */; };
+		4986055D2A7576F300C774E0 /* EquipProgrammeAttributeSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4986055C2A7576F300C774E0 /* EquipProgrammeAttributeSet.swift */; };
+		4986055E2A7576F300C774E0 /* EquipProgrammeAttributeSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4986055C2A7576F300C774E0 /* EquipProgrammeAttributeSet.swift */; };
+		498605602A7579B100C774E0 /* strengthableAttributes.json in Resources */ = {isa = PBXBuildFile; fileRef = 4986055F2A7579B100C774E0 /* strengthableAttributes.json */; };
+		498605612A7579B100C774E0 /* strengthableAttributes.json in Resources */ = {isa = PBXBuildFile; fileRef = 4986055F2A7579B100C774E0 /* strengthableAttributes.json */; };
 		4992D1392A2278DB007EEFC2 /* JX3DemoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4992D1382A2278DB007EEFC2 /* JX3DemoApp.swift */; };
 		4992D13B2A2278DB007EEFC2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4992D13A2A2278DB007EEFC2 /* ContentView.swift */; };
 		4992D13D2A2278DD007EEFC2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4992D13C2A2278DD007EEFC2 /* Assets.xcassets */; };
@@ -363,6 +378,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		491B894A2A758D83006EFAF7 /* systemAttributes.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = systemAttributes.json; sourceTree = "<group>"; };
+		491B894D2A761E9E006EFAF7 /* MountRawAttribute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MountRawAttribute.swift; sourceTree = "<group>"; };
+		491B89572A764BEC006EFAF7 /* LuaConvertValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LuaConvertValue.swift; sourceTree = "<group>"; };
 		491DB8332A26667700A40051 /* KungfuIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KungfuIcon.swift; sourceTree = "<group>"; };
 		492D075C2A250F1A00826308 /* JX3.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = JX3.xcdatamodel; sourceTree = "<group>"; };
 		492D07612A250FB200826308 /* ServerStateSimpleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerStateSimpleView.swift; sourceTree = "<group>"; };
@@ -421,6 +439,8 @@
 		497467C02A2619BF00275A09 /* xf.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = xf.json; sourceTree = "<group>"; };
 		497467C32A2619DE00275A09 /* Mount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mount.swift; sourceTree = "<group>"; };
 		497467C62A261AC500275A09 /* BundleUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BundleUtil.swift; sourceTree = "<group>"; };
+		49842DAA2A76545A00F06B11 /* MixValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MixValue.swift; sourceTree = "<group>"; };
+		49842DAD2A765A8600F06B11 /* talnetPassive.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = talnetPassive.json; sourceTree = "<group>"; };
 		4986054C2A72957B00C774E0 /* ColorStonePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorStonePicker.swift; sourceTree = "<group>"; };
 		4986054E2A72EDDC00C774E0 /* ColorStonePickerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorStonePickerViewModel.swift; sourceTree = "<group>"; };
 		498605502A72F28900C774E0 /* ColorStone.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorStone.swift; sourceTree = "<group>"; };
@@ -429,6 +449,8 @@
 		498605562A75669300C774E0 /* mountRawAttributes.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = mountRawAttributes.json; sourceTree = "<group>"; };
 		498605582A75677100C774E0 /* mountExtraAttributes.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = mountExtraAttributes.json; sourceTree = "<group>"; };
 		4986055A2A7568A500C774E0 /* luaConvertMapping.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = luaConvertMapping.json; sourceTree = "<group>"; };
+		4986055C2A7576F300C774E0 /* EquipProgrammeAttributeSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipProgrammeAttributeSet.swift; sourceTree = "<group>"; };
+		4986055F2A7579B100C774E0 /* strengthableAttributes.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = strengthableAttributes.json; sourceTree = "<group>"; };
 		4992D1352A2278DB007EEFC2 /* JX3Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JX3Demo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4992D1382A2278DB007EEFC2 /* JX3DemoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JX3DemoApp.swift; sourceTree = "<group>"; };
 		4992D13A2A2278DB007EEFC2 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -542,6 +564,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				491B89542A7649F7006EFAF7 /* Logging in Frameworks */,
 				49D7EB8E2A606F180011A0B1 /* WttchUI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -573,6 +596,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				491B89562A764A4D006EFAF7 /* Logging in Frameworks */,
 				49D7EB942A606F4B0011A0B1 /* WttchUI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -594,6 +618,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		491B894C2A761E86006EFAF7 /* Mount */ = {
+			isa = PBXGroup;
+			children = (
+				497467C32A2619DE00275A09 /* Mount.swift */,
+				491B894D2A761E9E006EFAF7 /* MountRawAttribute.swift */,
+			);
+			path = Mount;
+			sourceTree = "<group>";
+		};
 		4930236A2A25D80C006E81E4 /* Talent */ = {
 			isa = PBXGroup;
 			children = (
@@ -618,6 +651,7 @@
 		49504D9A2A42D45300B93E90 /* Equip */ = {
 			isa = PBXGroup;
 			children = (
+				494795CA2A6BEA3B006AA88F /* StrengthedEquip.swift */,
 				499A2FC02A666FE200F10732 /* StrengthEquip.swift */,
 				495FD66D2A3F593300A17FB0 /* EquipDTO.swift */,
 				49504D9B2A42D46C00B93E90 /* EquipBaseType.swift */,
@@ -628,6 +662,7 @@
 				49EFC0AC2A7191FC007AD5E4 /* ColorStoneOption.swift */,
 				498605502A72F28900C774E0 /* ColorStone.swift */,
 				498605542A74CC4600C774E0 /* EquipProgramme.swift */,
+				4986055C2A7576F300C774E0 /* EquipProgrammeAttributeSet.swift */,
 			);
 			path = Equip;
 			sourceTree = "<group>";
@@ -637,7 +672,6 @@
 			children = (
 				49536A0B2A30BA2D004FBBB1 /* EquipEditViewModel.swift */,
 				49536A242A31C47E004FBBB1 /* EquipPickerViewModel.swift */,
-				494795CA2A6BEA3B006AA88F /* StrengthedEquip.swift */,
 				494795D32A6FE96E006AA88F /* EquipSetViewModel.swift */,
 			);
 			path = ViemModel;
@@ -699,6 +733,9 @@
 				498605562A75669300C774E0 /* mountRawAttributes.json */,
 				498605582A75677100C774E0 /* mountExtraAttributes.json */,
 				4986055A2A7568A500C774E0 /* luaConvertMapping.json */,
+				4986055F2A7579B100C774E0 /* strengthableAttributes.json */,
+				491B894A2A758D83006EFAF7 /* systemAttributes.json */,
+				49842DAD2A765A8600F06B11 /* talnetPassive.json */,
 			);
 			path = Assets;
 			sourceTree = "<group>";
@@ -795,19 +832,21 @@
 		4992D16C2A22F7F4007EEFC2 /* Entity */ = {
 			isa = PBXGroup;
 			children = (
+				491B894C2A761E86006EFAF7 /* Mount */,
 				494795CD2A6EF511006AA88F /* DTO */,
 				495FD65D2A3B674100A17FB0 /* Enum */,
 				49FBA5ED2A5AA9700031F9B5 /* Resp */,
 				49504D9A2A42D45300B93E90 /* Equip */,
 				4992D16D2A22F839007EEFC2 /* ServerState.swift */,
 				4992D1E62A23C45E007EEFC2 /* TalentVersion.swift */,
-				497467C32A2619DE00275A09 /* Mount.swift */,
 				495410DA2A276EF800AA6293 /* Talent.swift */,
 				499F5AD12A2FA4E300A3C588 /* School.swift */,
 				495FD6612A3DF8C100A17FB0 /* MountEquip.swift */,
 				49504D972A42D42C00B93E90 /* CustomKey.swift */,
 				49FBA5A72A55E1E50031F9B5 /* Enchant.swift */,
 				49FBA5F12A5AAB000031F9B5 /* BoxNews.swift */,
+				491B89572A764BEC006EFAF7 /* LuaConvertValue.swift */,
+				49842DAA2A76545A00F06B11 /* MixValue.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -1176,6 +1215,7 @@
 			name = JX3Demo;
 			packageProductDependencies = (
 				49D7EB8D2A606F180011A0B1 /* WttchUI */,
+				491B89532A7649F7006EFAF7 /* Logging */,
 			);
 			productName = JX3Demo;
 			productReference = 4992D1352A2278DB007EEFC2 /* JX3Demo.app */;
@@ -1249,6 +1289,7 @@
 			name = JX3MacApp;
 			packageProductDependencies = (
 				49D7EB932A606F4B0011A0B1 /* WttchUI */,
+				491B89552A764A4D006EFAF7 /* Logging */,
 			);
 			productName = JX3MacApp;
 			productReference = 4992D1BB2A23C085007EEFC2 /* JX3MacApp.app */;
@@ -1337,6 +1378,7 @@
 			);
 			mainGroup = 4992D12C2A2278DB007EEFC2;
 			packageReferences = (
+				491B89522A7649F7006EFAF7 /* XCRemoteSwiftPackageReference "swift-log" */,
 			);
 			productRefGroup = 4992D1362A2278DB007EEFC2 /* Products */;
 			projectDirPath = "";
@@ -1364,15 +1406,18 @@
 				49504D862A42C26C00B93E90 /* attrBriefDesc.json in Resources */,
 				497467C12A2619BF00275A09 /* xf.json in Resources */,
 				49504D832A42BE8900B93E90 /* weaponType.json in Resources */,
+				491B894B2A758D83006EFAF7 /* systemAttributes.json in Resources */,
 				49504D892A42C32400B93E90 /* attrDesc.json in Resources */,
 				49536A162A30DEA8004FBBB1 /* xfAttrs.json in Resources */,
 				49FBA5B22A56F36F0031F9B5 /* enchant1.json in Resources */,
 				49504D952A42D10A00B93E90 /* weapon1.json in Resources */,
 				4992D2192A24F704007EEFC2 /* BaseAssets.xcassets in Resources */,
 				495FD6722A40308D00A17FB0 /* equip1.json in Resources */,
+				49842DAE2A765A8600F06B11 /* talnetPassive.json in Resources */,
 				495FD66B2A3F581100A17FB0 /* equipAttrDesc.json in Resources */,
 				4986055B2A7568A500C774E0 /* luaConvertMapping.json in Resources */,
 				49EFC0AA2A7190AE007AD5E4 /* std_color_stone_option.json in Resources */,
+				498605602A7579B100C774E0 /* strengthableAttributes.json in Resources */,
 				499F5AD82A304C9C00A3C588 /* colors.json in Resources */,
 				499F5ACF2A2FA4B600A3C588 /* school.json in Resources */,
 				49536A282A31CCDD004FBBB1 /* mountEquip.json in Resources */,
@@ -1409,6 +1454,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				495FD6762A4030A900A17FB0 /* equip2.json in Resources */,
+				498605612A7579B100C774E0 /* strengthableAttributes.json in Resources */,
 				49FBA5FC2A5C41B80031F9B5 /* news.json in Resources */,
 				4992D1C52A23C087007EEFC2 /* Preview Assets.xcassets in Resources */,
 				49504D872A42C26C00B93E90 /* attrBriefDesc.json in Resources */,
@@ -1426,6 +1472,8 @@
 				499F5AD02A2FA4B600A3C588 /* school.json in Resources */,
 				49536A292A31CCDD004FBBB1 /* mountEquip.json in Resources */,
 				49D348732A6AFA0A007751AB /* enchant_level_limit.json in Resources */,
+				49842DA92A7650CF00F06B11 /* luaConvertMapping.json in Resources */,
+				49842DA82A76507600F06B11 /* mountExtraAttributes.json in Resources */,
 				498605572A75669300C774E0 /* mountRawAttributes.json in Resources */,
 				4992D1C22A23C087007EEFC2 /* Assets.xcassets in Resources */,
 			);
@@ -1454,6 +1502,7 @@
 			files = (
 				49536A222A31C214004FBBB1 /* BoxResponse.swift in Sources */,
 				49FBA5A52A55E09E0031F9B5 /* EnchantService.swift in Sources */,
+				49842DAB2A76545A00F06B11 /* MixValue.swift in Sources */,
 				49536A0C2A30BA2D004FBBB1 /* EquipEditViewModel.swift in Sources */,
 				49504D922A42CED200B93E90 /* EquipSubType.swift in Sources */,
 				495FD6622A3DF8C100A17FB0 /* MountEquip.swift in Sources */,
@@ -1470,6 +1519,7 @@
 				495410D82A276D8B00AA6293 /* TalentPickerViewModel.swift in Sources */,
 				494795CF2A6EF529006AA88F /* EquipSetDTO.swift in Sources */,
 				4992D1842A234D1C007EEFC2 /* CoreDataManager.swift in Sources */,
+				4986055D2A7576F300C774E0 /* EquipProgrammeAttributeSet.swift in Sources */,
 				49FBA5DF2A5857990031F9B5 /* CustomNavBarContainerView.swift in Sources */,
 				4992D20F2A24F061007EEFC2 /* IconLibraryView.swift in Sources */,
 				492D07622A250FB200826308 /* ServerStateSimpleView.swift in Sources */,
@@ -1556,6 +1606,7 @@
 				499F5AC92A2F954200A3C588 /* HomeView.swift in Sources */,
 				494795CB2A6BEA3B006AA88F /* StrengthedEquip.swift in Sources */,
 				49504DA52A44BB5D00B93E90 /* EquipScoreUtil.swift in Sources */,
+				491B894E2A761E9E006EFAF7 /* MountRawAttribute.swift in Sources */,
 				494795D22A6FE2C0006AA88F /* EquipSetService.swift in Sources */,
 				4992D1692A22F7B8007EEFC2 /* ServerStateView.swift in Sources */,
 				49FBA5CB2A5818660031F9B5 /* TabBarItemViewModifer.swift in Sources */,
@@ -1630,10 +1681,12 @@
 				495410D52A273DCE00AA6293 /* TalentVersion.swift in Sources */,
 				495410D62A27405C00AA6293 /* PreviewExtension.swift in Sources */,
 				49536A0D2A30BA2D004FBBB1 /* EquipEditViewModel.swift in Sources */,
+				491B894F2A76202D006EFAF7 /* MountRawAttribute.swift in Sources */,
 				49FBA5F32A5AAB000031F9B5 /* BoxNews.swift in Sources */,
 				49EFC0AE2A7191FC007AD5E4 /* ColorStoneOption.swift in Sources */,
 				495FD6632A3DF8C100A17FB0 /* MountEquip.swift in Sources */,
 				495410D92A276D8B00AA6293 /* TalentPickerViewModel.swift in Sources */,
+				4986055E2A7576F300C774E0 /* EquipProgrammeAttributeSet.swift in Sources */,
 				4986054D2A72957B00C774E0 /* ColorStonePicker.swift in Sources */,
 				49504DA02A44B45600B93E90 /* EquipMagicType.swift in Sources */,
 				499A2FB82A65A56B00F10732 /* EquipEditorPositionView.swift in Sources */,
@@ -1673,9 +1726,11 @@
 				49FBA5B62A56FFA90031F9B5 /* EquipEnchantPickerViewModel.swift in Sources */,
 				49DDC4B52A532B03009F06A4 /* StarMarkView.swift in Sources */,
 				49DBCE1D2A2625F800C3BA2E /* WebCacheableImage.swift in Sources */,
+				49842DAC2A76553000F06B11 /* MixValue.swift in Sources */,
 				49504D932A42CED200B93E90 /* EquipSubType.swift in Sources */,
 				4965BA492A2616EF001D7E1B /* TalentPicker.swift in Sources */,
 				495FD66F2A3F593300A17FB0 /* EquipDTO.swift in Sources */,
+				491B89582A764BEC006EFAF7 /* LuaConvertValue.swift in Sources */,
 				491DB8352A26667700A40051 /* KungfuIcon.swift in Sources */,
 				49536A262A31C47E004FBBB1 /* EquipPickerViewModel.swift in Sources */,
 				49FBA5DD2A5855C40031F9B5 /* CustomNavBarView.swift in Sources */,
@@ -2303,7 +2358,28 @@
 		};
 /* End XCConfigurationList section */
 
+/* Begin XCRemoteSwiftPackageReference section */
+		491B89522A7649F7006EFAF7 /* XCRemoteSwiftPackageReference "swift-log" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/apple/swift-log";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
 /* Begin XCSwiftPackageProductDependency section */
+		491B89532A7649F7006EFAF7 /* Logging */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 491B89522A7649F7006EFAF7 /* XCRemoteSwiftPackageReference "swift-log" */;
+			productName = Logging;
+		};
+		491B89552A764A4D006EFAF7 /* Logging */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 491B89522A7649F7006EFAF7 /* XCRemoteSwiftPackageReference "swift-log" */;
+			productName = Logging;
+		};
 		49D7EB8D2A606F180011A0B1 /* WttchUI */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = WttchUI;

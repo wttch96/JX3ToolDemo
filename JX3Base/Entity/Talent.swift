@@ -57,6 +57,21 @@ struct Talent: Identifiable, Codable, Comparable, Equatable {
     static func == (lhs: Self, rhs: Self) -> Bool {
         return lhs.id == rhs.id
     }
+    
+    /// 解析所有的被动属性
+    var passiveAttributes: [String: Int] {
+        var ret: [String: Int] = [:]
+        AssetJsonDataManager.shared.talnetPassive.values.flatMap { $0 }.forEach { passive in
+            if String(passive.skillId) == self.id {
+                passive.value.forEach { values in
+                    values.forEach { (key: String, value: Int) in
+                        ret[key] = value
+                    }
+                }
+            }
+        }
+        return ret
+    }
 }
 
 /// 奇穴重数
@@ -66,5 +81,19 @@ struct TalentLevel: Identifiable, Comparable {
     
     static func < (lhs: Self, rhs: Self) -> Bool {
         return Int(lhs.id) ?? 0 < Int(rhs.id) ?? 0
+    }
+}
+
+
+// 奇穴被动属性加成
+struct TalnetPassive: Decodable {
+    let skillId: Int
+    let remark: String
+    let value: [[String: Int]]
+    
+    enum CodingKeys: String, CodingKey {
+        case skillId = "skill_id"
+        case remark
+        case value
     }
 }

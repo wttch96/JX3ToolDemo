@@ -17,7 +17,12 @@ struct EquipEditorView: View {
     
     
     // 选择的装备
-    @StateObject private var equipProgramme = EquipProgramme()
+    @StateObject private var equipProgramme: EquipProgramme
+    
+    init(mount: Mount) {
+        self.mount = mount
+        self._equipProgramme = StateObject(wrappedValue: EquipProgramme(mount: mount))
+    }
     
    
     var body: some View {
@@ -33,13 +38,18 @@ struct EquipEditorView: View {
                         .frame(width: 24, height: 24)
                     Text(mount.name)
                 }
+                let _ = logger("YYYYYY")
                 EquipEditorNavView(mount: mount, selectedPosition: $selectedPosition, equipProgramme: equipProgramme)
                 Spacer()
             }
             .padding(.horizontal)
         }, detail: {
+            let _ = logger("XXXXXX")
             if let selectedPosition = self.selectedPosition {
                 EquipEditorSelectView(kungfu: mount, position: selectedPosition, selected: equipProgramme)
+                    .onChange(of: equipProgramme.equips) { newValue in
+                        equipProgramme.calcAttributes()
+                    }
             }
         })
         

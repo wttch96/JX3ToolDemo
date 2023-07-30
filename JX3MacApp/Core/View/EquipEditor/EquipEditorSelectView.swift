@@ -322,6 +322,6 @@ struct EquipEditorSelectView: View {
 
 struct EquipEditorPickerView_Previews: PreviewProvider {
     static var previews: some View {
-        EquipEditorSelectView(kungfu: dev.mount1, position: .amulet, selected: EquipProgramme())
+        EquipEditorSelectView(kungfu: dev.mount1, position: .amulet, selected: EquipProgramme(mount: dev.mount1))
     }
 }

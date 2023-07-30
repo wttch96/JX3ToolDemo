@@ -42,6 +42,16 @@ class AssetJsonDataManager {
     public let enchantLevelLimit: [String: [String: Int]]
     // 五彩石筛选选项
     public let colorStoneOptions: ColorStoneOptions
+    // 可以强化的属性
+    public let strengthableAttributes: [String]
+    // 心法固定属性
+    public let mountId2MountRawAttribute: [String: MountRawAttribute]
+    // 心法扩展属性
+    public let mountId2MountExtraAttribute: [String: [String: [MountExtraAttribute]]]
+    // lua 属性转换为 通用属性转换的 map
+    public let luaConvertMapping: [String: LuaConvertValue]
+    // 奇穴被动属性加成
+    public let talnetPassive: [String: [TalnetPassive]]
 
     
     private init() {
@@ -58,6 +68,11 @@ class AssetJsonDataManager {
         self.weaponType = BundleUtil.loadJson("weaponType.json", type: [String: String].self, defaultValue: [:])
         self.enchantLevelLimit = BundleUtil.loadJson("enchant_level_limit.json", type: [String: [String: Int]].self, defaultValue: [:])
         self.colorStoneOptions = BundleUtil.loadJson("std_color_stone_option.json", type: ColorStoneOptions.self, defaultValue: ColorStoneOptions(t1box: [], t2box: [], t3box: []))
+        self.strengthableAttributes = BundleUtil.loadJson("strengthableAttributes.json", type: [String].self, defaultValue: [])
+        self.mountId2MountRawAttribute = BundleUtil.loadJson("mountRawAttributes.json", type: [String: MountRawAttribute].self, defaultValue: [:])
+        self.mountId2MountExtraAttribute = BundleUtil.loadJson("mountExtraAttributes.json", type: [String: [String: [MountExtraAttribute]]].self, defaultValue: [:])
+        self.luaConvertMapping = BundleUtil.loadJson("luaConvertMapping.json", type: [String: LuaConvertValue].self, defaultValue: [:])
+        self.talnetPassive = BundleUtil.loadJson("talnetPassive.json", type: [String: [TalnetPassive]].self, defaultValue: [:])
     }
     
     

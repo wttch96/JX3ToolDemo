@@ -31,3 +31,14 @@ class StrengthedEquip: ObservableObject {
     // 五彩石
     @Published var colorStone: ColorStone? = nil
 }
+
+extension StrengthedEquip: Equatable {
+    static func ==(lhs: StrengthedEquip, rhs: StrengthedEquip) -> Bool {
+        return lhs.equip == rhs.equip
+        && lhs.strengthLevel == rhs.strengthLevel
+        && lhs.embeddingStone == rhs.embeddingStone
+        && lhs.enchance == rhs.enchance
+        && lhs.enchant == rhs.enchant
+        && lhs.colorStone == rhs.colorStone
+    }
+}

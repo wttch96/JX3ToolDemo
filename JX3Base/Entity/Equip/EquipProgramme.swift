@@ -9,7 +9,23 @@ import Foundation
 
 // 配装方案
 class EquipProgramme: ObservableObject {
+    @Published var mount: Mount
     @Published var equips: [EquipPosition: StrengthedEquip] = [:]
+    
+    @Published var attributes: EquipProgrammeAttributeSet? = nil
+    
+    init(mount: Mount) {
+        self.mount = mount
+    }
+    
+    func calcAttributes() {
+        //  ⚠️：此处导致一直刷新 UI
+        logger("计算配装属性...")
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.2, execute: {
+            self.attributes = EquipProgrammeAttributeSet(equipProgramme: self)
+        })
+    }
+    
 }
 
 extension EquipProgramme {

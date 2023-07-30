@@ -51,3 +51,14 @@ extension Int {
         return Int.traditionalChineseMap[self, default: "\(self)"]
     }
 }
+
+extension Float {
+    var tryIntFormat: String {
+        let intValue = Int(self)
+        if abs(self - Float(intValue)) > 0 {
+            return "\(self)"
+        }
+        
+        return "\(intValue)"
+    }
+}
