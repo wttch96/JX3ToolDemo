@@ -30,6 +30,7 @@ class EquipProgrammeAttributeSet {
         for position in equipProgramme.equips.keys {
             if let strengthedEquip = equipProgramme.equips[position] {
                 if !((!useHeavy && position == .meleeWeapon2) || (useHeavy && position == .meleeWeapon)) {
+                    addEquipEmbeddingAttributes(strengthedEquip)
                     addEquipEnchantAttributes(strengthedEquip)
                     addEquipEnchanceAttributes(strengthedEquip)
                 }
@@ -40,6 +41,14 @@ class EquipProgrammeAttributeSet {
         addMagicAttr()
     }
     
+    /// 五行石镶嵌属性
+    private func addEquipEmbeddingAttributes(_ strengthedEquip: StrengthedEquip) {
+        for attr in strengthedEquip.embeddingStone.keys {
+            if let level = strengthedEquip.embeddingStone[attr] {
+                addAttribute(attr.attr, attr.embedValue(level: level))
+            }
+        }
+    }
     
     /// 添加装备小附魔属性
     private func addEquipEnchanceAttributes(_ strengthedEquip: StrengthedEquip) {

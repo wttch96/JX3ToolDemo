@@ -23,7 +23,7 @@ struct EquipEditorNavView: View {
                 VStack {
                     ForEach(equipProgramme.attributes?.attributes.keys.sorted() ?? [], id: \.self) { key in
                         if let value = equipProgramme.attributes?.attributes[key] {
-                            Text("\(AssetJsonDataManager.shared.equipAttrMap[key, default: key]):\(value.value.tryIntFormat)")
+                            Text("\(AssetJsonDataManager.shared.equipAttrMap[key, default: AssetJsonDataManager.shared.attrBriefDescMap[key, default: key]]):\(value.value.tryIntFormat)")
                         }
                     }
                 }
