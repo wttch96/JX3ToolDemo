@@ -27,11 +27,41 @@ class EquipProgrammeAttributeSet {
         attributes = [:]
         /// TODO ⚠️： 一些技能的处理，武器会导致不停刷新
         /// TODO 藏剑武器判断
+        for position in equipProgramme.equips.keys {
+            if let strengthedEquip = equipProgramme.equips[position] {
+                if !((!useHeavy && position == .meleeWeapon2) || (useHeavy && position == .meleeWeapon)) {
+                    addEquipEnchantAttributes(strengthedEquip)
+                    addEquipEnchanceAttributes(strengthedEquip)
+                }
+            }
+        }
         addMountAttribute()
         addBaseAttr()
         addMagicAttr()
     }
     
+    
+    /// 添加装备小附魔属性
+    private func addEquipEnchanceAttributes(_ strengthedEquip: StrengthedEquip) {
+        if let enchant = strengthedEquip.enchance {
+            for attr in enchant.attrMap.keys {
+                if let value = enchant.attrMap[attr] {
+                    addAttribute(attr, value)
+                }
+            }
+        }
+    }
+    
+    /// 添加装备大附魔属性
+    private func addEquipEnchantAttributes(_ strengthedEquip: StrengthedEquip) {
+        if let enchant = strengthedEquip.enchant {
+            for attr in enchant.attrMap.keys {
+                if let value = enchant.attrMap[attr] {
+                    addAttribute(attr, value)
+                }
+            }
+        }
+    }
     
     /// 计算心法属性
     private func addMountAttribute() {

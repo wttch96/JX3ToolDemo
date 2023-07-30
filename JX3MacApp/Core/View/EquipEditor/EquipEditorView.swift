@@ -19,6 +19,8 @@ struct EquipEditorView: View {
     // 选择的装备
     @StateObject private var equipProgramme: EquipProgramme
     
+    private let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
+    
     init(mount: Mount) {
         self.mount = mount
         self._equipProgramme = StateObject(wrappedValue: EquipProgramme(mount: mount))
@@ -38,18 +40,16 @@ struct EquipEditorView: View {
                         .frame(width: 24, height: 24)
                     Text(mount.name)
                 }
-                let _ = logger("YYYYYY")
                 EquipEditorNavView(mount: mount, selectedPosition: $selectedPosition, equipProgramme: equipProgramme)
                 Spacer()
             }
             .padding(.horizontal)
+            .onReceive(timer, perform: { _ in
+                equipProgramme.calcAttributes()
+            })
         }, detail: {
-            let _ = logger("XXXXXX")
             if let selectedPosition = self.selectedPosition {
                 EquipEditorSelectView(kungfu: mount, position: selectedPosition, selected: equipProgramme)
-                    .onChange(of: equipProgramme.equips) { newValue in
-                        equipProgramme.calcAttributes()
-                    }
             }
         })
         

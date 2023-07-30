@@ -114,7 +114,6 @@ class GameTextXmlParse: XMLParser {
         xmlString = xmlString.replacingOccurrences(of: "<[Tt]ext>(.*?)</text>", with: "<span $1></span>", options: .regularExpression, range: nil)
         // swift xml库解析时属性的值必须为带引号的
         xmlString  = xmlString.replacingOccurrences(of: "=(\\d+)", with: "='$1'", options: .regularExpression, range: nil)
-        logger(xmlString)
         super.init(data: xmlString.data(using: .utf8) ?? Data())
         self.delegate = self
         self.parse()

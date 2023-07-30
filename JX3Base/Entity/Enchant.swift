@@ -54,20 +54,19 @@ import Foundation
 //"_Attrs": null,
 //"_quality": null,
 //"_latest_enhance": null
-struct Enchant: Identifiable, Decodable, Hashable {
+struct Enchant: Identifiable, Decodable {
     let id: Int
     let name: String
     private let _quality: Int?
     let attriName: String?
     let boxAttriName: String?
     let score: Int
+    let attrs: [[String?]]?
     
-    var quality: EquipQuality? {
-        if let quality = _quality {
-            return EquipQuality.allCases.first(where: { $0.rawValue == "\(quality)"})
-        }
-        return nil
-    }
+    let attribute1: String?
+    let value1: String?
+    let value2: String?
+    
     
     enum CodingKeys: String, CodingKey {
         case id = "ID"
@@ -76,6 +75,36 @@ struct Enchant: Identifiable, Decodable, Hashable {
         case attriName = "AttriName"
         case boxAttriName = "_AttriName"
         case score = "Score"
+        case attrs = "_Attrs"
+    }
+    
+    init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        self.id = try container.decode(Int.self, forKey: .id)
+        self.name = try container.decode(String.self, forKey: .name)
+        self._quality = try container.decodeIfPresent(Int.self, forKey: ._quality)
+        self.attriName = try container.decodeIfPresent(String.self, forKey: .attriName)
+        self.boxAttriName = try container.decodeIfPresent(String.self, forKey: .boxAttriName)
+        self.score = try container.decode(Int.self, forKey: .score)
+        self.attrs = try container.decodeIfPresent([[String?]].self, forKey: .attrs)
+        
+        
+        
+        let container1 = try decoder.container(keyedBy: CustomKey.self)
+        attribute1 = try container1.decodeIfPresent(String.self, forKey: CustomKey(stringValue: "Attribute1ID"))
+        value1 = try container1.decodeIfPresent(String.self, forKey: CustomKey(stringValue: "Attribute1Value1"))
+        value2 = try container1.decodeIfPresent(String.self, forKey: CustomKey(stringValue: "Attribute1Value2"))
+    }
+    
+}
+
+extension Enchant: Hashable {
+    
+    var quality: EquipQuality? {
+        if let quality = _quality {
+            return EquipQuality.allCases.first(where: { $0.rawValue == "\(quality)"})
+        }
+        return nil
     }
     
     var hashValue: Int {
@@ -84,5 +113,22 @@ struct Enchant: Identifiable, Decodable, Hashable {
     
     func hash(into hasher: inout Hasher) {
         hasher.combine(id)
+    }
+    
+    /// 将属性转换为属性 Map
+    var attrMap: [String: Float] {
+        var ret: [String: Float] = [:]
+        for attr in attrs ?? [] {
+            if attr.count == 3, let type = attr[0], let valueStr = attr[1], let value = Float(valueStr) {
+                ret[type] = value
+            }
+        }
+        
+        // 小附魔
+        if let attr = attribute1, let value1 = value1, let intValue = Int(value1) {
+            ret[attr] = Float(intValue)
+        }
+        
+        return ret
     }
 }

@@ -20,7 +20,7 @@ class EquipProgramme: ObservableObject {
     
     func calcAttributes() {
         //  ⚠️：此处导致一直刷新 UI
-        logger("计算配装属性...")
+        logger.debug("计算配装属性...")
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.2, execute: {
             self.attributes = EquipProgrammeAttributeSet(equipProgramme: self)
         })

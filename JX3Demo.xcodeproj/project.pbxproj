@@ -145,6 +145,7 @@
 		49842DAB2A76545A00F06B11 /* MixValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49842DAA2A76545A00F06B11 /* MixValue.swift */; };
 		49842DAC2A76553000F06B11 /* MixValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49842DAA2A76545A00F06B11 /* MixValue.swift */; };
 		49842DAE2A765A8600F06B11 /* talnetPassive.json in Resources */ = {isa = PBXBuildFile; fileRef = 49842DAD2A765A8600F06B11 /* talnetPassive.json */; };
+		49842DAF2A76B32C00F06B11 /* talnetPassive.json in Resources */ = {isa = PBXBuildFile; fileRef = 49842DAD2A765A8600F06B11 /* talnetPassive.json */; };
 		4986054D2A72957B00C774E0 /* ColorStonePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4986054C2A72957B00C774E0 /* ColorStonePicker.swift */; };
 		4986054F2A72EDDC00C774E0 /* ColorStonePickerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4986054E2A72EDDC00C774E0 /* ColorStonePickerViewModel.swift */; };
 		498605512A72F28900C774E0 /* ColorStone.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498605502A72F28900C774E0 /* ColorStone.swift */; };
@@ -1466,6 +1467,7 @@
 				49504D962A42D10A00B93E90 /* weapon1.json in Resources */,
 				4992D21A2A24F704007EEFC2 /* BaseAssets.xcassets in Resources */,
 				495FD6732A40308D00A17FB0 /* equip1.json in Resources */,
+				49842DAF2A76B32C00F06B11 /* talnetPassive.json in Resources */,
 				495FD66C2A3F581100A17FB0 /* equipAttrDesc.json in Resources */,
 				49EFC0AB2A7190AE007AD5E4 /* std_color_stone_option.json in Resources */,
 				499F5AD92A304C9C00A3C588 /* colors.json in Resources */,
