@@ -30,6 +30,27 @@ class StrengthedEquip: ObservableObject {
     @Published var enchant: Enchant? = nil
     // 五彩石
     @Published var colorStone: ColorStone? = nil
+    
+    var totalScore: Int {
+        return (equip?.equipScore ?? 0) + strengthScore + extraScore
+    }
+    
+    /// 精炼装分
+    var strengthScore: Int {
+        if let equip = self.equip {
+            return ScoreUtil.getGsStrengthScore(base: equip.equipScore, strengthLevel: strengthLevel)
+        }
+        return 0
+    }
+    
+    /// 扩展分数
+    var extraScore: Int {
+        if let _ = self.equip {
+            // 五行石分数 + 五彩石分数 + 小附魔分数 + 大附魔分数
+            return ScoreUtil.stoneScore(embeddingStone) + ScoreUtil.colorStoneScore(colorStone) + (enchance?.score ?? 0) + (enchant?.score ?? 0)
+        }
+        return 0
+    }
 }
 
 extension StrengthedEquip: Equatable {

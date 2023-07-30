@@ -21,11 +21,15 @@ struct EquipEditorNavView: View {
             .frame(height: 60)
             ZStack {
                 VStack {
+                    Text("总装分:\(equipProgramme.totalScore)")
+                        .bold()
                     ForEach(equipProgramme.attributes?.attributes.keys.sorted() ?? [], id: \.self) { key in
                         if let value = equipProgramme.attributes?.attributes[key] {
                             Text("\(AssetJsonDataManager.shared.equipAttrMap[key, default: AssetJsonDataManager.shared.attrBriefDescMap[key, default: key]]):\(value.value.tryIntFormat)")
                         }
                     }
+                    
+                    Spacer()
                 }
                 VStack(spacing: 10) {
                     HStack {

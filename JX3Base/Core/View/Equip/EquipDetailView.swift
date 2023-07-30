@@ -315,7 +315,7 @@ struct EquipDetailView: View {
         HStack(spacing: 0) {
             Text("装备分数：\(equip.equipScore)")
                 .foregroundColor(EquipQuality._5.color)
-            Text("(+\(ScoreUtil.getGsStrengthScore(base: equip.equipScore, strengthLevel: strengthEquip.strengthLevel))+\(extraScore))")
+            Text("(+\(strengthEquip.strengthScore)+\(strengthEquip.extraScore))")
                 .foregroundColor(.theme.strength)
         }
     }
@@ -334,13 +334,6 @@ struct EquipDetailView: View {
         if let camp = equip.requireCamp {
             Text("需要 \(camp)")
         }
-    }
-}
-
-extension EquipDetailView {
-    var extraScore: Int {
-        // 五行石分数 + 五彩石分数 + 小附魔分数 + 大附魔分数
-        return ScoreUtil.stoneScore(diamondAttributeLevels) + ScoreUtil.colorStoneScore(strengthEquip.colorStone) + (enchance?.score ?? 0) + (enchant?.score ?? 0)
     }
 }
 

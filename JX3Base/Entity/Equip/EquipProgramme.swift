@@ -49,4 +49,20 @@ extension EquipProgramme {
     func actived(_ attr: ColorStoneAttribute) -> Bool {
         return stoneCount >= Int(attr.diamondCount) ?? 0 && stoneTotalLevel >= Int(attr.diamondIntensity) ?? 0
     }
+    
+    // 配装总装分
+    var totalScore: Int {
+        var score = 0
+        for pos in equips.keys {
+            if let strengthedEquip = equips[pos] {
+                if (pos == .meleeWeapon || pos == .meleeWeapon2) && mount.id == 10144{
+                    // 藏剑
+                    score += strengthedEquip.totalScore / 2
+                } else {
+                    score += strengthedEquip.totalScore
+                }
+            }
+        }
+        return score
+    }
 }
