@@ -153,6 +153,18 @@ struct EquipEditorSelectView: View {
                 })
             }
         }
+        .onAppear {
+            
+            let _ = self.strengthedEquip.$colorStone
+                .combineLatest(self.strengthedEquip.$equip)
+                .combineLatest(self.strengthedEquip.$embeddingStone)
+                .combineLatest(self.strengthedEquip.$enchance)
+                .combineLatest(self.strengthedEquip.$enchant)
+                .combineLatest(self.strengthedEquip.$strengthLevel)
+                .sink { _ in
+                    self.equipProgramme.calcAttributes()
+                }
+        }
     }
     
     @State private var showColorStonePicker: Bool = false

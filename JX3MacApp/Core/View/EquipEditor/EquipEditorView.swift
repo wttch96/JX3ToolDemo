@@ -14,12 +14,8 @@ struct EquipEditorView: View {
     
     // 要配装的位置
     @State private var selectedPosition: EquipPosition? = nil
-    
-    
     // 选择的装备
     @StateObject private var equipProgramme: EquipProgramme
-    
-    private let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
     
     init(mount: Mount) {
         self.mount = mount
@@ -44,9 +40,6 @@ struct EquipEditorView: View {
                 Spacer()
             }
             .padding(.horizontal)
-            .onReceive(timer, perform: { _ in
-                equipProgramme.calcAttributes()
-            })
         }, detail: {
             if let selectedPosition = self.selectedPosition {
                 EquipEditorSelectView(kungfu: mount, position: selectedPosition, selected: equipProgramme)
