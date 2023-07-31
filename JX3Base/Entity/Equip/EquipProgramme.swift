@@ -14,6 +14,8 @@ class EquipProgramme: ObservableObject {
     
     @Published var attributes: EquipProgrammeAttributeSet? = nil
     
+    var equipSet: Set<EquipSet> = Set()
+    
     init(mount: Mount) {
         self.mount = mount
     }
@@ -55,7 +57,7 @@ extension EquipProgramme {
         var score = 0
         for pos in equips.keys {
             if let strengthedEquip = equips[pos] {
-                if (pos == .meleeWeapon || pos == .meleeWeapon2) && mount.id == 10144{
+                if (pos == .meleeWeapon || pos == .meleeWeapon2) && mount.isWenShui {
                     // 藏剑
                     score += strengthedEquip.totalScore / 2
                 } else {

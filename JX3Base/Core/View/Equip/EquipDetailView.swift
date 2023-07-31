@@ -77,6 +77,11 @@ struct EquipDetailView: View {
                 equipSetVm.loadEquipSet(setId)
             }
         }
+        .onChange(of: equipSetVm.set) { newValue in
+            if let set = newValue {
+                self.equipProgramme.equipSet.insert(set)
+            }
+        }
     }
     
     // MARK: 头部

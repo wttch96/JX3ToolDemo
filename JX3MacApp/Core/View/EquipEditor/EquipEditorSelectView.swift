@@ -22,7 +22,8 @@ struct EquipEditorSelectView: View {
     
     @StateObject private var vm = EquipPickerModel()
     // sheet 选择
-    @State private var showSheet: SheetType? = nil
+    @State private var showSheet: Bool = false
+    @State private var diamounds: [DiamondAttribute: Int] = [:]
     
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     @FocusState private var textFieldFocus: Bool
@@ -115,7 +116,8 @@ struct EquipEditorSelectView: View {
                                 }
                             }
                             .onTapGesture(perform: {
-                                showSheet =  .showEmbeddingStoneSheet
+                                showSheet = true
+                                diamounds = strengthedEquip.embeddingStone
                             })
                             
                             // 小附魔
@@ -146,24 +148,25 @@ struct EquipEditorSelectView: View {
                     }
                 })
                 .navigationTitle("\(mount.name)-\(position.label)-\(strengthedEquip.equip?.name ?? "<none>")")
-                .sheet(item: $showSheet, onDismiss: { showSheet = nil }, content: { item in
-                    if item == .showEmbeddingStoneSheet {
-                        embeddingStoneSheet
-                    }
-                })
+                .sheet(isPresented: $showSheet) {
+                    embeddingStoneSheet
+                }
             }
         }
-        .onAppear {
-            
-            let _ = self.strengthedEquip.$colorStone
-                .combineLatest(self.strengthedEquip.$equip)
-                .combineLatest(self.strengthedEquip.$embeddingStone)
-                .combineLatest(self.strengthedEquip.$enchance)
-                .combineLatest(self.strengthedEquip.$enchant)
-                .combineLatest(self.strengthedEquip.$strengthLevel)
-                .sink { _ in
-                    self.equipProgramme.calcAttributes()
-                }
+        .onChange(of: strengthedEquip.equip) { _ in
+            self.equipProgramme.calcAttributes()
+        }
+        .onChange(of: strengthedEquip.strengthLevel) { _ in
+            self.equipProgramme.calcAttributes()
+        }
+        .onChange(of: strengthedEquip.enchance) { _ in
+            self.equipProgramme.calcAttributes()
+        }
+        .onChange(of: strengthedEquip.enchant) { _ in
+            self.equipProgramme.calcAttributes()
+        }
+        .onChange(of: strengthedEquip.embeddingStone) { _ in
+            self.equipProgramme.calcAttributes()
         }
     }
     
@@ -219,29 +222,27 @@ struct EquipEditorSelectView: View {
                         .padding(.horizontal, 16)
                         .foregroundColor(.accentColor)
                         .onTapGesture {
-                            showSheet = nil
+                            showSheet = false
+                            strengthedEquip.embeddingStone = diamounds
                         }
                 }
             }
             .padding(.vertical, 16)
             ScrollView {
-                if let equip = strengthedEquip.equip {
-                    ForEach(equip.diamondAttributes, content: { attr in
-                        VStack {
-                            Text("第\(attr.id)孔位: \(attr.label) \(Int(attr.embedValue(level: strengthedEquip.embeddingStone[attr] ?? 6)))")
-                            LazyVGrid(columns: Array(repeating: GridItem(.flexible()), count: 9), content: {
-                                ForEach(0..<9, id: \.self, content: { stoneLevel in
-                                    Image("Embedding\(stoneLevel)")
-                                        .opacity(strengthedEquip.embeddingStone[attr] == stoneLevel ? 1 : 0.2)
-                                        .onTapGesture {
-                                            strengthedEquip.embeddingStone[attr] = stoneLevel
-                                        }
-                                })
+                ForEach(strengthedEquip.equip?.diamondAttributes ?? [], content: { attr in
+                    VStack {
+                        Text("第\(attr.id)孔位: \(attr.label) \(Int(attr.embedValue(level: diamounds[attr] ?? 6)))")
+                        LazyVGrid(columns: Array(repeating: GridItem(.flexible()), count: 9), content: {
+                            ForEach(0..<9, id: \.self, content: { stoneLevel in
+                                Image("Embedding\(stoneLevel)")
+                                    .opacity(diamounds[attr] == stoneLevel ? 1 : 0.2)
+                                    .onTapGesture {
+                                        diamounds[attr] = stoneLevel
+                                    }
                             })
-                        }
-                    })
-                }
-                Spacer()
+                        })
+                    }
+                })
             }
             .padding()
             .frame(minWidth: 540)
@@ -288,10 +289,6 @@ struct EquipEditorSelectView: View {
                         .onTapGesture {
                             strengthedEquip = StrengthedEquip()
                             strengthedEquip.equip = nil
-                            strengthedEquip.strengthLevel = 0
-                            strengthedEquip.enchant = nil
-                            strengthedEquip.enchance = nil
-                            strengthedEquip.colorStone = nil
                             showEquipPopover.toggle()
                         }
                     ForEach(vm.equips) { equip in
@@ -299,10 +296,6 @@ struct EquipEditorSelectView: View {
                             .onTapGesture {
                                 strengthedEquip = StrengthedEquip()
                                 strengthedEquip.equip = equip
-                                strengthedEquip.strengthLevel = 0
-                                strengthedEquip.enchant = nil
-                                strengthedEquip.enchance = nil
-                                strengthedEquip.colorStone = nil
                                 showEquipPopover.toggle()
                             }
                     }

@@ -8,7 +8,8 @@
 import Foundation
 
 // 配装方案属性计算
-class EquipProgrammeAttributeSet {
+class EquipProgrammeAttributeSet: Identifiable, Equatable {
+    let id = UUID().uuidString
     let equipProgramme: EquipProgramme
     // 使用重剑
     let useHeavy: Bool
@@ -22,6 +23,9 @@ class EquipProgrammeAttributeSet {
         calc()
     }
     
+    static func == (lhs: EquipProgrammeAttributeSet, rhs: EquipProgrammeAttributeSet) -> Bool {
+        return lhs.id == rhs.id
+    }
     
     private func calc() {
         attributes = [:]
@@ -36,9 +40,39 @@ class EquipProgrammeAttributeSet {
                 }
             }
         }
+        addEquipSetAttributes()
         addMountAttribute()
         addBaseAttr()
         addMagicAttr()
+    }
+    /// 添加套装属性
+    private func addEquipSetAttributes() {
+        for equipSet in self.equipProgramme.equipSet {
+            // 统计
+            let activeEquips = self.equipProgramme.equips.values.filter { strengthedEquip in
+                if let equip = strengthedEquip.equip {
+                    return equip.setId == "\(equipSet.id)"
+                }
+                return false
+            }
+            let activeCount = activeEquips.count
+            logger.info("\(equipSet.name ?? "未知套")，激活数量：\(activeCount)")
+            // 找一个装备获取套装的属性
+            if let equip = activeEquips.first?.equip {
+                for i in 1...6 {
+                    if activeCount >= i {
+                        for attribute in equip.setData[i, default: []] {
+                            if let type = attribute.type {
+                                if AssetJsonDataManager.shared.equipAttrMap[type] != nil {
+                                    addAttribute(type, Float(attribute.min))
+                                    logger.info("添加套装属性: \(type): \(attribute.min)")
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
     
     /// 五行石镶嵌属性
@@ -75,7 +109,7 @@ class EquipProgrammeAttributeSet {
     /// 计算心法属性
     private func addMountAttribute() {
         var mount = equipProgramme.mount
-        if mount.id == 10144 && useHeavy {
+        if mount.isWenShui && useHeavy {
             if let newMount = Mount(id: 10145) {
                 mount = newMount
             } else {

@@ -27,6 +27,12 @@ struct EquipMagicType : Decodable, Identifiable {
 }
 
 extension EquipMagicType {
+    var type: String? {
+        if !attr.isEmpty {
+            return attr[0]
+        }
+        return nil
+    }
     // 是否是主要属性
     var isPrimaryAttr: Bool {
         return ["atVitalityBase", "atSpunkBase", "atSpiritBase", "atStrengthBase", "atAgilityBase"].contains(attr[0] ?? "")

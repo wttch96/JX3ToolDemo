@@ -15,9 +15,14 @@ class StrengthedEquip: ObservableObject {
                         partialResult[attr] = 6
                     }
                 )
+                self.strengthLevel = equip.maxStrengthLevel
             } else {
                 self.embeddingStone = [:]
+                self.strengthLevel = 0
             }
+            self.enchant = nil
+            self.enchance = nil
+            self.colorStone = nil
         }
     }
     // 强化等级

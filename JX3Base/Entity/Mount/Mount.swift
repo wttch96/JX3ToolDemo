@@ -69,6 +69,16 @@ extension Mount {
         return "\(id)"
     }
     
+    /// 是否为问水诀
+    var isWenShui: Bool {
+        return id == 10144
+    }
+    
+    /// 是否为山居剑意
+    var isShanJu: Bool {
+        return id == 10145
+    }
+    
     /// 心法检索装备时要用到的附加属性
     var equip: MountEquip? {
         return AssetJsonDataManager.shared.mountId2EquipMap[idStr]
