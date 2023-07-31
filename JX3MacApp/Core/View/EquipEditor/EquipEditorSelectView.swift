@@ -48,8 +48,6 @@ struct EquipEditorSelectView: View {
             .combineLatest(self.strengthedEquip.$enchance)
             .combineLatest(self.strengthedEquip.$enchant)
             .combineLatest(self.strengthedEquip.$colorStone)
-            .subscribe(on: DispatchQueue.global())
-            .debounce(for: .seconds(1), scheduler: DispatchQueue.main)
             .sink { [self] _ in
                 self.equipProgramme.calcAttributes()
             }
