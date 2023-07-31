@@ -69,4 +69,10 @@ struct MountSkillAttributeValue {
 struct MountExtraAttribute: Decodable {
     let slot: String
     let value: Int
+    
+    
+    /// 获取转换后的属性
+    var convertAttr: LuaConvertValue? {
+        return AssetJsonDataManager.shared.luaConvertMapping[slot]
+    }
 }

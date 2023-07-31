@@ -91,6 +91,20 @@ struct ColorStone: Decodable, Identifiable {
     }
 }
 
+extension ColorStone: Equatable {
+    var color: Color {
+        return EquipQuality(rawValue: "\(((Int(level) ?? 0) + 1) / 2 + 1)")?.color ?? .gray
+    }
+    
+    var briefRemark: String {
+        return attributes.map { $0.briefLabel }.joined(separator: "･")
+    }
+    
+    static func == (lhs: ColorStone, rhs: ColorStone) -> Bool {
+        return lhs.id == rhs.id && lhs.level == rhs.level
+    }
+}
+
 struct ColorStoneAttribute: Identifiable {
     let id: String
     let value1: String
@@ -115,20 +129,6 @@ struct ColorStoneAttribute: Identifiable {
     }
 }
 
-extension ColorStone: Equatable {
-    var color: Color {
-        return EquipQuality(rawValue: "\(((Int(level) ?? 0) + 1) / 2 + 1)")?.color ?? .gray
-    }
-    
-    var briefRemark: String {
-        return attributes.map { $0.briefLabel }.joined(separator: "･")
-    }
-    
-    static func == (lhs: ColorStone, rhs: ColorStone) -> Bool {
-        return lhs.id == rhs.id && lhs.level == rhs.level
-    }
-}
-
 extension ColorStoneAttribute {
     var briefLabel: String {
         return AssetJsonDataManager.shared.attrBriefDescMap[id, default: id]
@@ -136,5 +136,14 @@ extension ColorStoneAttribute {
     
     var remark: String {
         return AssetJsonDataManager.shared.attrDescMap[id, default: id]
+    }
+    
+    /// 判断是属性是否激活
+    /// - Parameters:
+    ///   - count: 配装五行石总数
+    ///   - level: 配装五行石等级
+    /// - Returns: 给定的等级和总数是否可以激活该属性
+    func actived(count: Int, level: Int) -> Bool {
+        return count >= Int(diamondCount) ?? 0 && level >= Int(diamondIntensity) ?? 0
     }
 }

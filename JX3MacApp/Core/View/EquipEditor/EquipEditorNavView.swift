@@ -13,7 +13,7 @@ struct EquipEditorNavView: View {
     
     @ObservedObject var equipProgramme: EquipProgramme
     
-    @State var attributes: EquipProgrammeAttributeSet? = nil
+    @State private var attributes: EquipProgrammeAttributeSet? = nil
     
     var body: some View {
         VStack {
@@ -23,6 +23,10 @@ struct EquipEditorNavView: View {
             .frame(height: 60)
             ZStack {
                 VStack {
+                    if mount.isWenShui {
+                        Toggle(equipProgramme.userHeary ? "重剑" : "轻剑", isOn: $equipProgramme.userHeary)
+                            .toggleStyle(.switch)
+                    }
                     Text("总装分:\(equipProgramme.totalScore)")
                         .bold()
                     ForEach(attributes?.attributes.keys.sorted() ?? [], id: \.self) { key in

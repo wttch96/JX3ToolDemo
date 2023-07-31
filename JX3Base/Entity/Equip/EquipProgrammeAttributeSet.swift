@@ -44,6 +44,7 @@ class EquipProgrammeAttributeSet: Identifiable, Equatable {
         addEquipSetAttributes()
         addMountAttribute()
     }
+    
     /// 添加套装属性
     private func addEquipSetAttributes() {
         for equipSet in self.equipProgramme.equipSet {
@@ -107,16 +108,14 @@ class EquipProgrammeAttributeSet: Identifiable, Equatable {
     
     /// 计算心法属性
     private func addMountAttribute() {
-        var mount = equipProgramme.mount
+        // 不直接修改 mount 进行获取(山居没有心法, 已经过滤了)
+        let mount = equipProgramme.mount
+        var mountId = mount.idStr
         if mount.isWenShui && useHeavy {
-            if let newMount = Mount(id: 10145) {
-                mount = newMount
-            } else {
-                logger.warning("⚠️：无法加载重剑心法:\(10145), 停止计算心法属性！")
-                return
-            }
+            mountId = "10145"
         }
-        mount.rawAttribute?.skillAttributes.forEach({ attr in
+        let mountRawAttribute = AssetJsonDataManager.shared.mountId2MountRawAttribute[mountId]
+        mountRawAttribute?.skillAttributes.forEach({ attr in
             if let convertAttr = attr.convertAttr {
                 if convertAttr.isValue == 1 {
                     let param1Value = attr.param1?.value ?? 0.0
@@ -126,6 +125,23 @@ class EquipProgrammeAttributeSet: Identifiable, Equatable {
                 }
             }
         })
+        
+        // 心法扩展属性计算
+        if let mountExtraAttribute = AssetJsonDataManager.shared.mountId2MountExtraAttribute[mountId] {
+            for key in mountExtraAttribute.keys {
+                if let values = mountExtraAttribute[key] {
+                    for extraAttr in values {
+                        if let convertAttr = extraAttr.convertAttr {
+                            if convertAttr.isValue == 1 {
+                                let value = Float(extraAttr.value)
+                                addAttribute(convertAttr.slot, value)
+                            }
+                        }
+                    }
+                    logger.info("计算心法扩展属性[\(key)]")
+                }
+            }
+        }
     }
     
     /// 属性基础属性
@@ -136,6 +152,21 @@ class EquipProgrammeAttributeSet: Identifiable, Equatable {
             }
             equip.magicTypes.forEach { magicType in
                 addAttribute(magicType.attr[0] ?? "", Float(magicType.min + magicType.score(level: strengthedEquip.strengthLevel, maxLevel: equip.maxStrengthLevel)))
+            }
+        }
+    }
+    
+    /// 添加五彩石属性
+    private func addColorStoneAttribute() {
+        if let  equip = useHeavy ? equipProgramme.equips[.meleeWeapon2] : equipProgramme.equips[.meleeWeapon] {
+            if let colorStone = equip.colorStone {
+                let activeStoneCount = equipProgramme.stoneCount(useHeavy)
+                let activeStoneLevel = equipProgramme.stoneTotalLevel(useHeavy)
+                for attr in colorStone.attributes {
+                    if attr.actived(count: activeStoneCount, level: activeStoneLevel) {
+                        addAttribute(attr.id, Float(attr.value1) ?? 0.0)
+                    }
+                }
             }
         }
     }

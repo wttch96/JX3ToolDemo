@@ -98,16 +98,4 @@ extension Mount {
     var primaryWeaponType: String {
         return equip!.primaryWeaponType
     }
-    
-    // 心法固定属性
-    var rawAttribute: MountRawAttribute? {
-        return AssetJsonDataManager.shared.mountId2MountRawAttribute[idStr]
-    }
-    
-    // 心法扩展属性
-    var extraAttribute: [MountExtraAttribute] {
-        return AssetJsonDataManager.shared.mountId2MountExtraAttribute[idStr, default: [:]].flatMap { (key: String, value: [MountExtraAttribute]) in
-            value
-        }
-    }
 }
