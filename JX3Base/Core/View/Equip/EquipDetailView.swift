@@ -303,7 +303,7 @@ struct EquipDetailView: View {
                 VStack(alignment: .leading, spacing: 4) {
                     ForEach(colorStone.attributes) { attr in
                         Text("\(attr.remark)\(attr.value1)")
-                            .foregroundColor(equipProgramme.actived(attr) ? .theme.textGreen : .gray)
+                            .foregroundColor(equipProgramme.actived(attr, useHeary: strengthEquip.equip?.detailTypeValue == "9") ? .theme.textGreen : .gray)
                     }
                 }
             }

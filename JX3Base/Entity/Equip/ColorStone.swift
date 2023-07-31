@@ -144,6 +144,6 @@ extension ColorStoneAttribute {
     ///   - level: 配装五行石等级
     /// - Returns: 给定的等级和总数是否可以激活该属性
     func actived(count: Int, level: Int) -> Bool {
-        return count >= Int(diamondCount) ?? 0 && level >= Int(diamondIntensity) ?? 0
+        return (count >= Int(diamondCount) ?? 0) && (level >= Int(diamondIntensity) ?? 0)
     }
 }

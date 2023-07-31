@@ -24,7 +24,7 @@ struct EquipEditorNavView: View {
             ZStack {
                 VStack {
                     if mount.isWenShui {
-                        Toggle(equipProgramme.userHeary ? "重剑" : "轻剑", isOn: $equipProgramme.userHeary)
+                        Toggle(equipProgramme.useHeary ? "重剑" : "轻剑", isOn: $equipProgramme.useHeary)
                             .toggleStyle(.switch)
                     }
                     Text("总装分:\(equipProgramme.totalScore)")

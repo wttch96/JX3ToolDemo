@@ -48,7 +48,7 @@ struct EquipEditorSelectView: View {
             .combineLatest(self.strengthedEquip.$enchance)
             .combineLatest(self.strengthedEquip.$enchant)
             .combineLatest(self.strengthedEquip.$colorStone)
-            .combineLatest(self.equipProgramme.$userHeary)
+            .combineLatest(self.equipProgramme.$useHeary)
             .sink { [self] _ in
                 self.equipProgramme.calcAttributes()
             }
