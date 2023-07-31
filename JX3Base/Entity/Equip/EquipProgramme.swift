@@ -25,6 +25,7 @@ class EquipProgramme: ObservableObject {
         logger.info("计算配装属性...")
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.2, execute: {
             self.attributes = EquipProgrammeAttributeSet(equipProgramme: self)
+            logger.info("计算配装属性完成✅")
         })
     }
     

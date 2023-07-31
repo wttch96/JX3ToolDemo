@@ -34,6 +34,7 @@ class EquipProgrammeAttributeSet: Identifiable, Equatable {
         for position in equipProgramme.equips.keys {
             if let strengthedEquip = equipProgramme.equips[position] {
                 if !((!useHeavy && position == .meleeWeapon2) || (useHeavy && position == .meleeWeapon)) {
+                    addEquipBaseAttribute(strengthedEquip)
                     addEquipEmbeddingAttributes(strengthedEquip)
                     addEquipEnchantAttributes(strengthedEquip)
                     addEquipEnchanceAttributes(strengthedEquip)
@@ -42,8 +43,6 @@ class EquipProgrammeAttributeSet: Identifiable, Equatable {
         }
         addEquipSetAttributes()
         addMountAttribute()
-        addBaseAttr()
-        addMagicAttr()
     }
     /// 添加套装属性
     private func addEquipSetAttributes() {
@@ -129,22 +128,14 @@ class EquipProgrammeAttributeSet: Identifiable, Equatable {
         })
     }
     
-    private func addBaseAttr() {
-        equipProgramme.equips.values.forEach { strengthedEquip in
-            if let equip = strengthedEquip.equip {
-                equip.baseTypes.forEach { baseType in
-                    addAttribute(baseType.rawValue, Float(baseType.baseMin))
-                }
+    /// 属性基础属性
+    private func addEquipBaseAttribute(_ strengthedEquip: StrengthedEquip) {
+        if let equip = strengthedEquip.equip {
+            equip.baseTypes.forEach { baseType in
+                addAttribute(baseType.rawValue, Float(baseType.baseMin))
             }
-        }
-    }
-    
-    private func addMagicAttr() {
-        equipProgramme.equips.values.forEach { strengthedEquip in
-            if let equip = strengthedEquip.equip {
-                equip.magicTypes.forEach { magicType in
-                    addAttribute(magicType.attr[0] ?? "", Float(magicType.min + magicType.score(level: strengthedEquip.strengthLevel, maxLevel: equip.maxStrengthLevel)))
-                }
+            equip.magicTypes.forEach { magicType in
+                addAttribute(magicType.attr[0] ?? "", Float(magicType.min + magicType.score(level: strengthedEquip.strengthLevel, maxLevel: equip.maxStrengthLevel)))
             }
         }
     }
