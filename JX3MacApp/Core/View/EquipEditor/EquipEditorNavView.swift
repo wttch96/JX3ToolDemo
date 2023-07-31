@@ -13,6 +13,8 @@ struct EquipEditorNavView: View {
     
     @ObservedObject var equipProgramme: EquipProgramme
     
+    @State var attributes: EquipProgrammeAttributeSet? = nil
+    
     var body: some View {
         VStack {
             HStack {
@@ -23,8 +25,8 @@ struct EquipEditorNavView: View {
                 VStack {
                     Text("总装分:\(equipProgramme.totalScore)")
                         .bold()
-                    ForEach(equipProgramme.attributes?.attributes.keys.sorted() ?? [], id: \.self) { key in
-                        if let value = equipProgramme.attributes?.attributes[key] {
+                    ForEach(attributes?.attributes.keys.sorted() ?? [], id: \.self) { key in
+                        if let value = attributes?.attributes[key] {
                             Text("\(AssetJsonDataManager.shared.equipAttrMap[key, default: AssetJsonDataManager.shared.attrBriefDescMap[key, default: key]]):\(value.value.tryIntFormat)")
                         }
                     }
@@ -77,6 +79,14 @@ struct EquipEditorNavView: View {
             }
         }
         .navigationTitle("配装器")
+        .onAppear {
+            let _ = equipProgramme.publisher
+                .subscribe(on: DispatchQueue.global())
+                .receive(on: DispatchQueue.main)
+                .sink { attributeSet in
+                    self.attributes = attributeSet
+                }
+        }
     }
     
     private func positionView(_ position: EquipPosition) -> some View {

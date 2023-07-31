@@ -79,6 +79,7 @@ struct EquipDetailView: View {
         }
         .onChange(of: equipSetVm.set) { newValue in
             if let set = newValue {
+                // 添加套装
                 self.equipProgramme.equipSet.insert(set)
             }
         }

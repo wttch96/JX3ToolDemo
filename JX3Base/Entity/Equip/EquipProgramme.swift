@@ -6,13 +6,14 @@
 //
 
 import Foundation
+import Combine
 
 // 配装方案
 class EquipProgramme: ObservableObject {
     @Published var mount: Mount
     @Published var equips: [EquipPosition: StrengthedEquip] = [:]
     
-    @Published var attributes: EquipProgrammeAttributeSet? = nil
+    var publisher = PassthroughSubject<EquipProgrammeAttributeSet, Never>()
     
     var equipSet: Set<EquipSet> = Set()
     
@@ -23,10 +24,10 @@ class EquipProgramme: ObservableObject {
     func calcAttributes() {
         //  ⚠️：此处导致一直刷新 UI
         logger.info("计算配装属性...")
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.2, execute: {
-            self.attributes = EquipProgrammeAttributeSet(equipProgramme: self)
-            logger.info("计算配装属性完成✅")
-        })
+        
+        let attributes = EquipProgrammeAttributeSet(equipProgramme: self)
+        publisher.send(attributes)
+        logger.info("计算配装属性完成✅")
     }
     
 }

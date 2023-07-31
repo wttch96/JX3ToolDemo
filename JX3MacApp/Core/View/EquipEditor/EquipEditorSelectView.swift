@@ -41,6 +41,18 @@ struct EquipEditorSelectView: View {
                 selected.equips[position] = newValue
             }
         )
+        
+        let _ = self.strengthedEquip.$equip
+            .combineLatest(self.strengthedEquip.$strengthLevel)
+            .combineLatest(self.strengthedEquip.$embeddingStone)
+            .combineLatest(self.strengthedEquip.$enchance)
+            .combineLatest(self.strengthedEquip.$enchant)
+            .combineLatest(self.strengthedEquip.$colorStone)
+            .subscribe(on: DispatchQueue.global())
+            .debounce(for: .seconds(1), scheduler: DispatchQueue.main)
+            .sink { [self] _ in
+                self.equipProgramme.calcAttributes()
+            }
     }
     
     
@@ -152,21 +164,6 @@ struct EquipEditorSelectView: View {
                     embeddingStoneSheet
                 }
             }
-        }
-        .onChange(of: strengthedEquip.equip) { _ in
-            self.equipProgramme.calcAttributes()
-        }
-        .onChange(of: strengthedEquip.strengthLevel) { _ in
-            self.equipProgramme.calcAttributes()
-        }
-        .onChange(of: strengthedEquip.enchance) { _ in
-            self.equipProgramme.calcAttributes()
-        }
-        .onChange(of: strengthedEquip.enchant) { _ in
-            self.equipProgramme.calcAttributes()
-        }
-        .onChange(of: strengthedEquip.embeddingStone) { _ in
-            self.equipProgramme.calcAttributes()
         }
     }
     
