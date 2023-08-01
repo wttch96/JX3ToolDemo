@@ -12,8 +12,10 @@ import Combine
 class EquipProgramme: ObservableObject {
     @Published var mount: Mount
     @Published var equips: [EquipPosition: StrengthedEquip] = [:]
+    @Published var talents: [Talent] = []
     
     @Published var useHeary: Bool = false
+    
     
     var publisher = PassthroughSubject<EquipProgrammeAttributeSet, Never>()
     
@@ -25,11 +27,11 @@ class EquipProgramme: ObservableObject {
     
     func calcAttributes() {
         //  ⚠️：此处导致一直刷新 UI
-        logger.info("计算配装属性...")
+        logger.info("⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️计算配装属性...")
         
         let attributes = EquipProgrammeAttributeSet(equipProgramme: self, useHeavy: useHeary)
         publisher.send(attributes)
-        logger.info("计算配装属性完成✅")
+        logger.info("⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️计算配装属性完成✅")
     }
     
 }

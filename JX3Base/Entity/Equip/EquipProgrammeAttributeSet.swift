@@ -42,7 +42,12 @@ class EquipProgrammeAttributeSet: Identifiable, Equatable {
             }
         }
         addEquipSetAttributes()
+        addColorStoneAttribute()
+        addSystemAttributes()
         addMountAttribute()
+        addAdditionalAttributes()
+        addTalentAttributes()
+        addBaseAttributes()
     }
     
     /// 添加套装属性
@@ -56,7 +61,6 @@ class EquipProgrammeAttributeSet: Identifiable, Equatable {
                 return false
             }
             let activeCount = activeEquips.count
-            logger.info("\(equipSet.name ?? "未知套")，激活数量：\(activeCount)")
             // 找一个装备获取套装的属性
             if let equip = activeEquips.first?.equip {
                 for i in 1...6 {
@@ -65,7 +69,7 @@ class EquipProgrammeAttributeSet: Identifiable, Equatable {
                             if let type = attribute.type {
                                 if AssetJsonDataManager.shared.equipAttrMap[type] != nil {
                                     addAttribute(type, Float(attribute.min))
-                                    logger.info("添加套装属性: \(type): \(attribute.min)")
+                                    logger.info("添加套装属性: \(equipSet.name ?? "未知套")，激活数量：\(activeCount): \(type) \(attribute.min)")
                                 }
                             }
                         }
@@ -79,7 +83,10 @@ class EquipProgrammeAttributeSet: Identifiable, Equatable {
     private func addEquipEmbeddingAttributes(_ strengthedEquip: StrengthedEquip) {
         for attr in strengthedEquip.embeddingStone.keys {
             if let level = strengthedEquip.embeddingStone[attr] {
-                addAttribute(attr.attr, attr.embedValue(level: level))
+                let type = attr.attr
+                let value = attr.embedValue(level: level)
+                addAttribute(type, value)
+                logger.debug("\(strengthedEquip.equip?.name ?? "nil") 五行石属性: \(type) \(value)")
             }
         }
     }
@@ -90,6 +97,7 @@ class EquipProgrammeAttributeSet: Identifiable, Equatable {
             for attr in enchant.attrMap.keys {
                 if let value = enchant.attrMap[attr] {
                     addAttribute(attr, value)
+                    logger.debug("\(strengthedEquip.equip?.name ?? "未知装备") 小附魔属性: \(attr) \(value)")
                 }
             }
         }
@@ -101,6 +109,7 @@ class EquipProgrammeAttributeSet: Identifiable, Equatable {
             for attr in enchant.attrMap.keys {
                 if let value = enchant.attrMap[attr] {
                     addAttribute(attr, value)
+                    logger.debug("\(strengthedEquip.equip?.name ?? "未知装备") 大附魔属性: \(attr) \(value)")
                 }
             }
         }
@@ -149,9 +158,14 @@ class EquipProgrammeAttributeSet: Identifiable, Equatable {
         if let equip = strengthedEquip.equip {
             equip.baseTypes.forEach { baseType in
                 addAttribute(baseType.rawValue, Float(baseType.baseMin))
+                logger.debug("\(equip.name) 基础属性: \(baseType.rawValue) \(baseType.baseMin)")
             }
             equip.magicTypes.forEach { magicType in
-                addAttribute(magicType.attr[0] ?? "", Float(magicType.min + magicType.score(level: strengthedEquip.strengthLevel, maxLevel: equip.maxStrengthLevel)))
+                if let type = magicType.attr[0] {
+                    let value = Float(magicType.min + magicType.score(level: strengthedEquip.strengthLevel, maxLevel: equip.maxStrengthLevel))
+                    addAttribute(type, value)
+                    logger.debug("\(equip.name) 基础属性: \(type) \(value)")
+                }
             }
         }
     }
@@ -168,6 +182,42 @@ class EquipProgrammeAttributeSet: Identifiable, Equatable {
                     }
                 }
             }
+        }
+    }
+    
+    /// 添加系统属性
+    private func addSystemAttributes() {
+        for key in AssetJsonDataManager.shared.systemAttributes.keys {
+            if let value = AssetJsonDataManager.shared.systemAttributes[key] {
+                addAttribute(key, value)
+            }
+        }
+    }
+    
+    /// 添加公共额外属性
+    private func addAdditionalAttributes() {
+        let mountNoAdditionalAttrs = ["10002", "10062", "10243", "10389"]
+        let additionalAttrs: [String: Float] = ["atDecriticalDamagePowerBaseKiloNumRate": 100]
+        if !mountNoAdditionalAttrs.contains(equipProgramme.mount.idStr) {
+            additionalAttrs.forEach { (key: String, value: Float) in
+                addAttribute(key, value)
+            }
+        }
+    }
+    
+    /// 添加奇穴属性
+    private func addTalentAttributes() {
+        for talent in equipProgramme.talents {
+            talent.passiveAttributes.forEach { (key: String, value: Int) in
+                addAttribute(key, Float(value))
+            }
+        }
+    }
+    
+    /// 添加120等级基础属性?
+    private func addBaseAttributes() {
+        AssetJsonDataManager.shared.levelData.forEach { (key: String, value: Int) in
+            addAttribute(key, Float(value))
         }
     }
     

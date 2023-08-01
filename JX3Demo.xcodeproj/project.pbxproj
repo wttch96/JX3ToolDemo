@@ -249,6 +249,8 @@
 		499F5AD32A2FA4E300A3C588 /* School.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499F5AD12A2FA4E300A3C588 /* School.swift */; };
 		499F5AD82A304C9C00A3C588 /* colors.json in Resources */ = {isa = PBXBuildFile; fileRef = 499F5AD72A304C9C00A3C588 /* colors.json */; };
 		499F5AD92A304C9C00A3C588 /* colors.json in Resources */ = {isa = PBXBuildFile; fileRef = 499F5AD72A304C9C00A3C588 /* colors.json */; };
+		49A0EB272A7982920074C952 /* levelData.json in Resources */ = {isa = PBXBuildFile; fileRef = 49A0EB262A7982920074C952 /* levelData.json */; };
+		49A0EB282A7982920074C952 /* levelData.json in Resources */ = {isa = PBXBuildFile; fileRef = 49A0EB262A7982920074C952 /* levelData.json */; };
 		49D348722A6AFA0A007751AB /* enchant_level_limit.json in Resources */ = {isa = PBXBuildFile; fileRef = 49D348712A6AFA0A007751AB /* enchant_level_limit.json */; };
 		49D348732A6AFA0A007751AB /* enchant_level_limit.json in Resources */ = {isa = PBXBuildFile; fileRef = 49D348712A6AFA0A007751AB /* enchant_level_limit.json */; };
 		49D348782A6AFBEC007751AB /* EquipDuty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D348772A6AFBEC007751AB /* EquipDuty.swift */; };
@@ -520,6 +522,7 @@
 		499F5ACE2A2FA4B600A3C588 /* school.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = school.json; sourceTree = "<group>"; };
 		499F5AD12A2FA4E300A3C588 /* School.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = School.swift; sourceTree = "<group>"; };
 		499F5AD72A304C9C00A3C588 /* colors.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = colors.json; sourceTree = "<group>"; };
+		49A0EB262A7982920074C952 /* levelData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = levelData.json; sourceTree = "<group>"; };
 		49D348712A6AFA0A007751AB /* enchant_level_limit.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = enchant_level_limit.json; sourceTree = "<group>"; };
 		49D348772A6AFBEC007751AB /* EquipDuty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipDuty.swift; sourceTree = "<group>"; };
 		49D7EB8C2A606EE20011A0B1 /* WttchUI */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = WttchUI; path = ../WttchUI; sourceTree = "<group>"; };
@@ -737,6 +740,7 @@
 				4986055F2A7579B100C774E0 /* strengthableAttributes.json */,
 				491B894A2A758D83006EFAF7 /* systemAttributes.json */,
 				49842DAD2A765A8600F06B11 /* talnetPassive.json */,
+				49A0EB262A7982920074C952 /* levelData.json */,
 			);
 			path = Assets;
 			sourceTree = "<group>";
@@ -1401,6 +1405,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				49A0EB272A7982920074C952 /* levelData.json in Resources */,
 				495FD6752A4030A900A17FB0 /* equip2.json in Resources */,
 				49FBA5FB2A5C41B80031F9B5 /* news.json in Resources */,
 				4992D1402A2278DD007EEFC2 /* Preview Assets.xcassets in Resources */,
@@ -1454,6 +1459,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				49A0EB282A7982920074C952 /* levelData.json in Resources */,
 				495FD6762A4030A900A17FB0 /* equip2.json in Resources */,
 				498605612A7579B100C774E0 /* strengthableAttributes.json in Resources */,
 				49FBA5FC2A5C41B80031F9B5 /* news.json in Resources */,

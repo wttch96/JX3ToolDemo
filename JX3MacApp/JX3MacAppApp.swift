@@ -9,6 +9,11 @@ import SwiftUI
 
 @main
 struct JX3MacAppApp: App {
+    
+    init() {
+        logger.logLevel = .debug
+    }
+    
     var body: some Scene {
         WindowGroup {
             // ContentView()

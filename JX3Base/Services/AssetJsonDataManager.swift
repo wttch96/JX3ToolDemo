@@ -52,6 +52,10 @@ class AssetJsonDataManager {
     public let luaConvertMapping: [String: LuaConvertValue]
     // 奇穴被动属性加成
     public let talnetPassive: [String: [TalnetPassive]]
+    // 系统属性，主要用于主属性的转换
+    public let systemAttributes: [String: Float]
+    // levelData
+    public let levelData: [String: Int]
 
     
     private init() {
@@ -73,6 +77,8 @@ class AssetJsonDataManager {
         self.mountId2MountExtraAttribute = BundleUtil.loadJson("mountExtraAttributes.json", type: [String: [String: [MountExtraAttribute]]].self, defaultValue: [:])
         self.luaConvertMapping = BundleUtil.loadJson("luaConvertMapping.json", type: [String: LuaConvertValue].self, defaultValue: [:])
         self.talnetPassive = BundleUtil.loadJson("talnetPassive.json", type: [String: [TalnetPassive]].self, defaultValue: [:])
+        self.systemAttributes = BundleUtil.loadJson("systemAttributes.json", type: [String: Float].self, defaultValue: [:])
+        self.levelData = BundleUtil.loadJson("levelData.json", type: [String: Int].self, defaultValue: [:])
     }
     
     
