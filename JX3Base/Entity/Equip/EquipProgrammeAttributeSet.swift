@@ -16,10 +16,13 @@ class EquipProgrammeAttributeSet: Identifiable, Equatable {
     
     // 计算属性结果
     var attributes: [String: EquipProgrammeAttributeValue] = [:]
+    var panelAttrs: [String: Float] = [:]
+    var finalAttrs: [String: Float] = [:]
     
     init(equipProgramme: EquipProgramme, useHeavy: Bool = false) {
         self.equipProgramme = equipProgramme
         self.useHeavy = useHeavy
+        statistics()
         calc()
     }
     
@@ -27,7 +30,8 @@ class EquipProgrammeAttributeSet: Identifiable, Equatable {
         return lhs.id == rhs.id
     }
     
-    private func calc() {
+    // 统计
+    private func statistics() {
         attributes = [:]
         /// TODO ⚠️： 一些技能的处理，武器会导致不停刷新
         /// TODO 藏剑武器判断
@@ -50,6 +54,22 @@ class EquipProgrammeAttributeSet: Identifiable, Equatable {
         addBaseAttributes()
     }
     
+    private func calc() {
+        panelAttrs = [:]
+        finalAttrs = [:]
+        // 体质
+        calcVitality()
+        // 身法
+        let _ = calcPrimaryAttribute("Agility")
+        // 根骨
+        let _ = calcPrimaryAttribute("Spirit")
+        // 元气
+        let _ = calcPrimaryAttribute("Spunk")
+        // 力道
+        let _ = calcPrimaryAttribute("Strength")
+    }
+    
+    // MARK: 添加属性
     /// 添加套装属性
     private func addEquipSetAttributes() {
         for equipSet in self.equipProgramme.equipSet {
@@ -226,9 +246,76 @@ class EquipProgrammeAttributeSet: Identifiable, Equatable {
         let newValue = attributeValue.value + value
         self.attributes[type] = EquipProgrammeAttributeValue(value: newValue)
     }
+    
+    private func getAttribute(_ type: String, isFloat: Bool = false) -> Float {
+        let ret = attributes[type]?.value ?? 0.0
+        return isFloat ? ret : Float(Int(ret))
+    }
+    
+    private func getAttributeConvert(_ from: Float, cofType: String) -> Float {
+        let cof = getAttribute(cofType, isFloat: true)
+        return floor(from * cof / 1024)
+    }
+    
+    // MARK: 计算数值
+    
+    private func calcPrimaryAttribute(_ primary: String) -> Float {
+        // 全属性增加
+        let basePotential = getAttribute("atBasePotentialAdd")
+        let primaryValue = getAttribute("at\(primary)Base")
+        let primaryAddPercent = getAttribute("at\(primary)BasePercentAdd")
+        let ret = (basePotential + primaryValue).mul(primaryAddPercent)
+        let label = AssetJsonDataManager.shared.attrBriefDescMap["at\(primary)Base", default: primary]
+        logger.debug("主属性[\(label)]:\(ret) = (\(basePotential) + \(primaryValue)) * \(1 + primaryAddPercent)")
+        panelAttrs.add(primary, ret)
+        finalAttrs.add("at\(primary)", ret)
+        return ret
+    }
+    
+    private func calcVitality() {
+        // 体质(面板体质 最终体质)
+        let vitality = calcPrimaryAttribute("Vitality")
+        // 气血值提高
+        let atPanelVitalityAddMaxHealth = vitality * 10
+        logger.debug("气血值提高[\(atPanelVitalityAddMaxHealth)] = \(vitality) * 10")
+        // 基础气血最大值
+        let maxLifeBase = getAttribute("atMaxLifeBase")
+        let atPanelMaxHealthBase = atPanelVitalityAddMaxHealth + maxLifeBase
+        logger.debug("基础气血最大值[\(atPanelMaxHealthBase)] = \(atPanelVitalityAddMaxHealth) + \(maxLifeBase)")
+        // 最终气血最大值
+        let maxLifePercentAdd = getAttribute("atMaxLifePercentAdd")
+        let maxLife = atPanelMaxHealthBase.mul(maxLifePercentAdd)
+        logger.debug("最终气血基础值[\(maxLife)] = \(atPanelMaxHealthBase) * (1 + \(maxLifePercentAdd))")
+        let maxLifeAdditional = getAttribute("atMaxLifeAdditional")
+        let maxLifeAddPercent = getAttribute("atFinalMaxLifeAddPercent")
+        let maxAdditionalBaseHealth = (maxLife + maxLifeAdditional).mul(maxLifeAddPercent)
+        logger.debug("最终气血最大值[\(maxAdditionalBaseHealth)] = (\(maxLife) + \(maxLifeAdditional)) * (1 + \(maxLifeAddPercent))")
+        let vitalityToMaxLife = getAttributeConvert(vitality, cofType: "atVitalityToMaxLifeCof")
+        logger.debug("体质转换气血[\(vitalityToMaxLife)] cof = \(getAttribute("atVitalityToMaxLifeCof"))")
+        let ret = maxAdditionalBaseHealth + vitalityToMaxLife
+        logger.debug("最终气血[\(ret)]")
+        panelAttrs.add("MaxHealth", ret)
+    }
 }
 
 // 属性值
 struct EquipProgrammeAttributeValue {
     var value: Float
+}
+
+
+fileprivate extension Float {
+    func mul(_ addPercent: Float, base: Float = 1024) -> Float {
+        return self * (1 + addPercent / base)
+    }
+    
+    func mulKiloBase(_ addPercent: Float) -> Float {
+        return mul(addPercent, base: 1000)
+    }
+}
+
+fileprivate extension Dictionary where Key == String, Value == Float {
+    mutating func add(_ key: String, _ addValue: Float) {
+        self[key] = self[key, default: 0] + addValue
+    }
 }

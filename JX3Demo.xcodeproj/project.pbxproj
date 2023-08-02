@@ -251,6 +251,7 @@
 		499F5AD92A304C9C00A3C588 /* colors.json in Resources */ = {isa = PBXBuildFile; fileRef = 499F5AD72A304C9C00A3C588 /* colors.json */; };
 		49A0EB272A7982920074C952 /* levelData.json in Resources */ = {isa = PBXBuildFile; fileRef = 49A0EB262A7982920074C952 /* levelData.json */; };
 		49A0EB282A7982920074C952 /* levelData.json in Resources */ = {isa = PBXBuildFile; fileRef = 49A0EB262A7982920074C952 /* levelData.json */; };
+		49A0EB292A7A08080074C952 /* systemAttributes.json in Resources */ = {isa = PBXBuildFile; fileRef = 491B894A2A758D83006EFAF7 /* systemAttributes.json */; };
 		49D348722A6AFA0A007751AB /* enchant_level_limit.json in Resources */ = {isa = PBXBuildFile; fileRef = 49D348712A6AFA0A007751AB /* enchant_level_limit.json */; };
 		49D348732A6AFA0A007751AB /* enchant_level_limit.json in Resources */ = {isa = PBXBuildFile; fileRef = 49D348712A6AFA0A007751AB /* enchant_level_limit.json */; };
 		49D348782A6AFBEC007751AB /* EquipDuty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D348772A6AFBEC007751AB /* EquipDuty.swift */; };
@@ -1470,6 +1471,7 @@
 				49504D8A2A42C32400B93E90 /* attrDesc.json in Resources */,
 				49536A172A30DEA8004FBBB1 /* xfAttrs.json in Resources */,
 				49FBA5B32A56F36F0031F9B5 /* enchant1.json in Resources */,
+				49A0EB292A7A08080074C952 /* systemAttributes.json in Resources */,
 				49504D962A42D10A00B93E90 /* weapon1.json in Resources */,
 				4992D21A2A24F704007EEFC2 /* BaseAssets.xcassets in Resources */,
 				495FD6732A40308D00A17FB0 /* equip1.json in Resources */,

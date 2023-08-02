@@ -131,7 +131,7 @@ class ScoreUtil {
                 score += (0.65 * Float(level) - 3.2) * 1.3 * factorA * factorB
             }
         }
-        return Int(score)
+        return Int(round(score))
     }
     
     static func colorStoneScore(_ colorStone: ColorStone?) -> Int {
