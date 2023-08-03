@@ -10,12 +10,30 @@ import WttchUI
 import Combine
 
 
-enum OtherFilter: String, CaseIterable {
+public enum OtherFilter: String, CaseIterable {
     case spareParts = "散件"
     case simplify = "精简"
     case school = "牌子"
     // 默认只要本门派
     // case onlyMineSchool = "仅显示本门派"
+}
+
+extension Array : RawRepresentable where Element == OtherFilter {
+    public typealias RawValue = String
+    
+    public init?(rawValue: String) {
+        var ret: [OtherFilter] = []
+        for i in rawValue.split(separator: ",") {
+            if let filter = OtherFilter(rawValue: i.base) {
+                ret.append(filter)
+            }
+        }
+        self.init(ret)
+    }
+    
+    public var rawValue: String {
+        return self.map({ $0.rawValue }).joined(separator: ",")
+    }
 }
 
 enum SheetType: Int, Identifiable {

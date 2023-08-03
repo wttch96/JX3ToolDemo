@@ -5,7 +5,7 @@
 //  Created by Wttch on 2023/7/20.
 //
 
-import Foundation
+import SwiftUI
 import Combine
 
 class EquipPickerModel: ObservableObject {
@@ -14,11 +14,11 @@ class EquipPickerModel: ObservableObject {
     // 属性搜索
     @Published var attrItems: [EquipAttribute] = []
     // 装备品质
-    @Published var level: ClosedRange<CGFloat> = 9000...12000
+    @AppStorage("EquipPickerLevel") var level: ClosedRange<CGFloat> = 9000...12000
     // 其他过滤
-    @Published var otherFilters: [OtherFilter] = [.spareParts, .simplify, .school]
+    @AppStorage("EquipPickerFilter") var otherFilters: [OtherFilter] = [.spareParts, .simplify, .school]
     // pv 类型
-    @Published var pvType: PvType = .all
+    @AppStorage("EquipPickerPvType") var pvType: PvType = .all
     // 装备名称搜索
     @Published var searchText: String = ""
     // 页
@@ -111,5 +111,24 @@ class EquipPickerModel: ObservableObject {
     func reset() {
         page = 1
         haveMoreEquip = false
+    }
+}
+
+
+extension ClosedRange: RawRepresentable where Bound == CGFloat {
+    public typealias RawValue = String
+    
+    public init?(rawValue: String) {
+        let split = rawValue.split(separator: ",")
+        if split.count == 2 {
+            if let low = Float(split[0]), let up = Float(split[1]) {
+                self = CGFloat(low)...CGFloat(up)
+            }
+        }
+        return nil
+    }
+    
+    public var rawValue: String {
+        return "\(lowerBound),\(upperBound)"
     }
 }
