@@ -16,8 +16,12 @@ class EquipProgrammeAttributeSet: Identifiable, Equatable {
     
     // 计算属性结果
     var attributes: [String: EquipProgrammeAttributeValue] = [:]
+    // 面板展示的属性
     var panelAttrs: [String: Float] = [:]
+    // 最终计算的属性
     var finalAttrs: [String: Float] = [:]
+    // 所有可以进行 cof 转换的属性
+    var convertCofs: [ConvertCofKey: Float] = [:]
     
     init(equipProgramme: EquipProgramme, useHeavy: Bool = false) {
         self.equipProgramme = equipProgramme
@@ -57,6 +61,9 @@ class EquipProgrammeAttributeSet: Identifiable, Equatable {
     private func calc() {
         panelAttrs = [:]
         finalAttrs = [:]
+        // 提取所有的 cof 属性
+        initConvertCofAttribute()
+        
         // 体质
         calcVitality()
         // 身法
@@ -67,6 +74,8 @@ class EquipProgrammeAttributeSet: Identifiable, Equatable {
         let _ = calcPrimaryAttribute("Spunk")
         // 力道
         let _ = calcPrimaryAttribute("Strength")
+        
+        calcAttackPower()
     }
     
     // MARK: 添加属性
@@ -251,10 +260,12 @@ class EquipProgrammeAttributeSet: Identifiable, Equatable {
         let ret = attributes[type]?.value ?? 0.0
         return isFloat ? ret : Float(Int(ret))
     }
-    
-    private func getAttributeConvert(_ from: Float, cofType: String) -> Float {
-        let cof = getAttribute(cofType, isFloat: true)
-        return floor(from * cof / 1024)
+
+    /// 获取最终数值中的属性
+    /// - Parameter type: 属性的键值
+    /// - Returns: 最终属性中的值
+    private func getFinalAttribute(_ type: String) -> Float {
+        return finalAttrs[type, default: 0]
     }
     
     // MARK: 计算数值
@@ -272,6 +283,7 @@ class EquipProgrammeAttributeSet: Identifiable, Equatable {
         return ret
     }
     
+    /// 计算气血值
     private func calcVitality() {
         // 体质(面板体质 最终体质)
         let vitality = calcPrimaryAttribute("Vitality")
@@ -290,12 +302,109 @@ class EquipProgrammeAttributeSet: Identifiable, Equatable {
         let maxLifeAddPercent = getAttribute("atFinalMaxLifeAddPercent")
         let maxAdditionalBaseHealth = (maxLife + maxLifeAdditional).mul(maxLifeAddPercent)
         logger.debug("最终气血最大值[\(maxAdditionalBaseHealth)] = (\(maxLife) + \(maxLifeAdditional)) * (1 + \(maxLifeAddPercent))")
-        let vitalityToMaxLife = getAttributeConvert(vitality, cofType: "atVitalityToMaxLifeCof")
+        let vitalityToMaxLife = getCofValue(from: "Vitality", to: "MaxLife")
         logger.debug("体质转换气血[\(vitalityToMaxLife)] cof = \(getAttribute("atVitalityToMaxLifeCof"))")
         let ret = maxAdditionalBaseHealth + vitalityToMaxLife
         logger.debug("最终气血[\(ret)]")
         panelAttrs.add("MaxHealth", ret)
     }
+    
+    /// 计算攻击力
+    /// - Parameters:
+    ///   - type: 计算的攻击力类型
+    ///   - additional: 附加的基础攻击力
+    ///   - typeDesc: logger 描述
+    private func calcAttackPower(_ type: String, _ additional: Float..., typeDesc: String) {
+        let base = getAttribute("at\(type)Base")
+        let cofConvert = calcAllCofValue(dest: type, isSystem: true)
+        let panalBase = base + cofConvert + additional.reduce(into: 0, { partialResult, value in
+            partialResult += value
+        })
+        logger.debug("🗡️基础\(typeDesc)攻击: \(panalBase)")
+        panelAttrs.add("\(type)Base", panalBase)
+        
+        let mountAddConvert = calcAllCofValue(dest: type)
+        let baseWithPercent = panalBase.mul(getAttribute("at\(type)Percent"))
+        let final = baseWithPercent + mountAddConvert
+        logger.debug("🗡️最终\(typeDesc)攻击: \(final)")
+        panelAttrs.add(type, final)
+        finalAttrs.add("at\(type)", final)
+    }
+    
+    private func calcAttackPower() {
+        // 外功攻击
+        calcAttackPower("PhysicsAttackPower", typeDesc: "外功")
+        // 阴阳基础
+        let atSolarAndLunarAttackPowerBase = getAttribute("atSolarAndLunarAttackPowerBase")
+        // 魔法基础
+        let atMagicAttackPowerBase = getAttribute("atMagicAttackPowerBase")
+        // 阴性攻击
+        calcAttackPower("LunarAttackPower", atSolarAndLunarAttackPowerBase, atMagicAttackPowerBase, typeDesc: "阴性")
+        // 阳性攻击
+        calcAttackPower("SolarAttackPower", atSolarAndLunarAttackPowerBase, atMagicAttackPowerBase, typeDesc: "阳性")
+        // 混元攻击
+        calcAttackPower("NeutralAttackPower", atMagicAttackPowerBase, typeDesc: "混元")
+        // 毒性攻击
+        calcAttackPower("PoisonAttackPower", atMagicAttackPowerBase, typeDesc: "毒性")
+    }
+    
+    // MARK: 属性转换
+    // 此处定义两种属性转化：
+    // 系统转化节点 - 即系统固定的属性转化，同一版本固定持久存在，命名为atSystem{Base}To{Dest}Cof
+    // 常规转化节点 - 即其他属性转化，动态存在，可能来源心法或奇穴等，命名为at{Base}To{Dest}Cof
+    
+    /// 提取所有的可以进行属性转换和数值
+    private func initConvertCofAttribute() {
+        self.convertCofs = [:]
+        for key in attributes.keys {
+            if key.hasSuffix("Cof") {
+                let regex = /at(.*?)To(.*?)Cof/
+                if let match = try? regex.wholeMatch(in: key) {
+                    let cofKey = ConvertCofKey(from: String(match.1), cof: String(match.2))
+                    self.convertCofs[cofKey] = getAttribute(key, isFloat: true)
+                }
+            }
+        }
+    }
+    
+    /// 获取 cof 转换后的值
+    /// from 从 finalAttrs 中获取
+    /// - Parameters:
+    ///   - from: 数据来源键
+    ///   - to: 要转换成的数据键
+    ///   - isSystem: 是否是 System 的转换, 例如: atSystemSpiritToSolarCriticalStrikeCof
+    /// - Returns: cof 转换后的数值
+    private func getCofValue(from: String, to: String, isSystem: Bool = false) -> Float {
+        let key = ConvertCofKey(from: "\(isSystem ? "System" : "")\(from)", cof: to)
+        if let cofValue = convertCofs[key] {
+            let fromValue = getFinalAttribute("at\(from)")
+            let ret = floor(fromValue * cofValue / 1024)
+            logger.debug("🔄属性转换\(isSystem ? "[⚠️:System]" : "")[\(from)➡️\(to)] : \(fromValue)➡️\(ret)")
+            return ret
+        }
+        
+        return 0
+    }
+    
+    /// 获取所有可以转换为指定属性的转换后的数值。
+    /// 从 convertCofs 中获取所有可以转换为 dest 的属性，并从 finalAttrs 获取原属性的值进行计算后求和。
+    /// - Parameter dest: 要转换的属性名称
+    /// - Parameter isSystem: 原属性是否包含为 system 开头的属性
+    /// - Returns: 所有可以转换为该属性的值转换后的值的和
+    private func calcAllCofValue(dest: String, isSystem: Bool = false) -> Float {
+        let keys = convertCofs.keys.filter { $0.cof == dest }
+        var ret: Float = 0
+        for key in keys {
+            if key.from.hasPrefix("System") && isSystem {
+                ret += getCofValue(from: key.from.replacingOccurrences(of: "System", with: ""), to: key.cof, isSystem: true)
+            }
+            if !key.from.hasPrefix("System") && !isSystem {
+                ret += getCofValue(from: key.from, to: key.cof)
+            }
+        }
+        return ret
+    }
+    
 }
 
 // 属性值
@@ -317,5 +426,24 @@ fileprivate extension Float {
 fileprivate extension Dictionary where Key == String, Value == Float {
     mutating func add(_ key: String, _ addValue: Float) {
         self[key] = self[key, default: 0] + addValue
+    }
+}
+
+struct ConvertCofKey: Equatable, Hashable {
+    let from: String
+    let cof: String
+    
+    static func ==(lhs: ConvertCofKey, rhs: ConvertCofKey) -> Bool {
+        return lhs.cof == rhs.cof
+        && lhs.from == rhs.from
+    }
+    
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(from)
+        hasher.combine(cof)
+    }
+    
+    var hashValue: Int {
+        return from.hashValue + cof.hashValue
     }
 }

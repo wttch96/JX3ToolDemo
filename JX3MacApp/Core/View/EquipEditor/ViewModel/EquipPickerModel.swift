@@ -14,7 +14,7 @@ class EquipPickerModel: ObservableObject {
     // 属性搜索
     @Published var attrItems: [EquipAttribute] = []
     // 装备品质
-    @AppStorage("EquipPickerLevel") var level: ClosedRange<CGFloat> = 9000...12000
+    @AppStorage("EquipPickerLevel") var level: ClosedRange<CGFloat> = 11000...13000
     // 其他过滤
     @AppStorage("EquipPickerFilter") var otherFilters: [OtherFilter] = [.spareParts, .simplify, .school]
     // pv 类型
@@ -129,6 +129,6 @@ extension ClosedRange: RawRepresentable where Bound == CGFloat {
     }
     
     public var rawValue: String {
-        return "\(lowerBound),\(upperBound)"
+        return "\(Int(lowerBound)),\(Int(upperBound))"
     }
 }
