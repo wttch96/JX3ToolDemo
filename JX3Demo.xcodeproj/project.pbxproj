@@ -235,6 +235,8 @@
 		499A2FC72A68613300F10732 /* EquipPickerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499A2FC62A68613300F10732 /* EquipPickerModel.swift */; };
 		499A2FCA2A69A49F00F10732 /* StrengthEquip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499A2FC02A666FE200F10732 /* StrengthEquip.swift */; };
 		499A2FCC2A6A5A6C00F10732 /* EnchantSubType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499A2FCB2A6A5A6C00F10732 /* EnchantSubType.swift */; };
+		499C8C482A7EAEFF00925F71 /* levelConst.json in Resources */ = {isa = PBXBuildFile; fileRef = 499C8C472A7EAEFF00925F71 /* levelConst.json */; };
+		499C8C492A7EAEFF00925F71 /* levelConst.json in Resources */ = {isa = PBXBuildFile; fileRef = 499C8C472A7EAEFF00925F71 /* levelConst.json */; };
 		499F5ABB2A2B468200A3C588 /* TransitionExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499F5ABA2A2B468200A3C588 /* TransitionExtension.swift */; };
 		499F5ABC2A2B468200A3C588 /* TransitionExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499F5ABA2A2B468200A3C588 /* TransitionExtension.swift */; };
 		499F5ABF2A2D071B00A3C588 /* EquipHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499F5ABE2A2D071B00A3C588 /* EquipHomeView.swift */; };
@@ -516,6 +518,7 @@
 		499A2FC02A666FE200F10732 /* StrengthEquip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StrengthEquip.swift; sourceTree = "<group>"; };
 		499A2FC62A68613300F10732 /* EquipPickerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipPickerModel.swift; sourceTree = "<group>"; };
 		499A2FCB2A6A5A6C00F10732 /* EnchantSubType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnchantSubType.swift; sourceTree = "<group>"; };
+		499C8C472A7EAEFF00925F71 /* levelConst.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = levelConst.json; sourceTree = "<group>"; };
 		499F5ABA2A2B468200A3C588 /* TransitionExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransitionExtension.swift; sourceTree = "<group>"; };
 		499F5ABE2A2D071B00A3C588 /* EquipHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipHomeView.swift; sourceTree = "<group>"; };
 		499F5AC82A2F954200A3C588 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -742,6 +745,7 @@
 				491B894A2A758D83006EFAF7 /* systemAttributes.json */,
 				49842DAD2A765A8600F06B11 /* talnetPassive.json */,
 				49A0EB262A7982920074C952 /* levelData.json */,
+				499C8C472A7EAEFF00925F71 /* levelConst.json */,
 			);
 			path = Assets;
 			sourceTree = "<group>";
@@ -1412,6 +1416,7 @@
 				4992D1402A2278DD007EEFC2 /* Preview Assets.xcassets in Resources */,
 				49504D862A42C26C00B93E90 /* attrBriefDesc.json in Resources */,
 				497467C12A2619BF00275A09 /* xf.json in Resources */,
+				499C8C482A7EAEFF00925F71 /* levelConst.json in Resources */,
 				49504D832A42BE8900B93E90 /* weaponType.json in Resources */,
 				491B894B2A758D83006EFAF7 /* systemAttributes.json in Resources */,
 				49504D892A42C32400B93E90 /* attrDesc.json in Resources */,
@@ -1474,6 +1479,7 @@
 				49A0EB292A7A08080074C952 /* systemAttributes.json in Resources */,
 				49504D962A42D10A00B93E90 /* weapon1.json in Resources */,
 				4992D21A2A24F704007EEFC2 /* BaseAssets.xcassets in Resources */,
+				499C8C492A7EAEFF00925F71 /* levelConst.json in Resources */,
 				495FD6732A40308D00A17FB0 /* equip1.json in Resources */,
 				49842DAF2A76B32C00F06B11 /* talnetPassive.json in Resources */,
 				495FD66C2A3F581100A17FB0 /* equipAttrDesc.json in Resources */,

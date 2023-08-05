@@ -76,6 +76,8 @@ class EquipProgrammeAttributeSet: Identifiable, Equatable {
         let _ = calcPrimaryAttribute("Strength")
         
         calcAttackPower()
+        calcTherapyPower()
+        calcCriticalStrike()
     }
     
     // MARK: 添加属性
@@ -320,32 +322,74 @@ class EquipProgrammeAttributeSet: Identifiable, Equatable {
         let panalBase = base + cofConvert + additional.reduce(into: 0, { partialResult, value in
             partialResult += value
         })
-        logger.debug("🗡️基础\(typeDesc)攻击: \(panalBase)")
+        logger.debug("🗡️基础\(typeDesc): \(panalBase)")
         panelAttrs.add("\(type)Base", panalBase)
         
         let mountAddConvert = calcAllCofValue(dest: type)
         let baseWithPercent = panalBase.mul(getAttribute("at\(type)Percent"))
         let final = baseWithPercent + mountAddConvert
-        logger.debug("🗡️最终\(typeDesc)攻击: \(final)")
+        logger.debug("🗡️最终\(typeDesc): \(final)")
         panelAttrs.add(type, final)
         finalAttrs.add("at\(type)", final)
     }
     
+    // MARK: 计算攻击力
     private func calcAttackPower() {
         // 外功攻击
-        calcAttackPower("PhysicsAttackPower", typeDesc: "外功")
+        calcAttackPower("PhysicsAttackPower", typeDesc: "外功攻击")
         // 阴阳基础
         let atSolarAndLunarAttackPowerBase = getAttribute("atSolarAndLunarAttackPowerBase")
         // 魔法基础
         let atMagicAttackPowerBase = getAttribute("atMagicAttackPowerBase")
         // 阴性攻击
-        calcAttackPower("LunarAttackPower", atSolarAndLunarAttackPowerBase, atMagicAttackPowerBase, typeDesc: "阴性")
+        calcAttackPower("LunarAttackPower", atSolarAndLunarAttackPowerBase, atMagicAttackPowerBase, typeDesc: "阴性攻击")
         // 阳性攻击
-        calcAttackPower("SolarAttackPower", atSolarAndLunarAttackPowerBase, atMagicAttackPowerBase, typeDesc: "阳性")
+        calcAttackPower("SolarAttackPower", atSolarAndLunarAttackPowerBase, atMagicAttackPowerBase, typeDesc: "阳性攻击")
         // 混元攻击
-        calcAttackPower("NeutralAttackPower", atMagicAttackPowerBase, typeDesc: "混元")
+        calcAttackPower("NeutralAttackPower", atMagicAttackPowerBase, typeDesc: "混元攻击")
         // 毒性攻击
-        calcAttackPower("PoisonAttackPower", atMagicAttackPowerBase, typeDesc: "毒性")
+        calcAttackPower("PoisonAttackPower", atMagicAttackPowerBase, typeDesc: "毒性攻击")
+    }
+    
+    // MARK: 计算治疗
+    private func calcTherapyPower() {
+        calcAttackPower("TherapyPower", typeDesc: "治疗")
+    }
+    
+    // MARK: 计算会心
+    private func calcCriticalStrike(_ type:String, _ additional: Float..., typeDesc: String) {
+        let base = getAttribute("at\(type)CriticalStrike")
+        let all = getAttribute("atAllTypeCriticalStrike")
+        let criticalStrikeLevel = base + all + additional.reduce(into: 0, { partialResult, value in
+            partialResult += value
+        }) + calcAllCofValue(dest: "\(type)CriticalStrike") + calcAllCofValue(dest: "\(type)CriticalStrike", isSystem: true)
+        panelAttrs.add("\(type)CriticalStrike", criticalStrikeLevel)
+        finalAttrs.add("at\(type)CriticalStrike", criticalStrikeLevel)
+        logger.debug("\(typeDesc)会心等级: \(criticalStrikeLevel)")
+        
+        let levelConst = AssetJsonDataManager.shared.levelConst
+        let fCriticalStrikeParam = levelConst["fCriticalStrikeParam", default: 0]
+        let nLevelCoefficient = levelConst["nLevelCoefficient", default: 0]
+        
+        let criticalStrikePercent = criticalStrikeLevel / (fCriticalStrikeParam * nLevelCoefficient) + getAttribute("at\(type)CriticalStrikeBaseRate") / 10000
+        panelAttrs.add("\(type)CriticalStrikeRate", criticalStrikePercent)
+        logger.debug("\(typeDesc)会心百分比: \(String(format: "%.02f", criticalStrikePercent * 100))")
+    }
+    
+    private func calcCriticalStrike() {
+        // 外功会心
+        calcCriticalStrike("Physics", typeDesc: "外功")
+        let atMagicCriticalStrike = getAttribute("atMagicCriticalStrike")
+        let atSolarAndLunarCriticalStrike = getAttribute("atSolarAndLunarCriticalStrike")
+        
+        calcCriticalStrike("Lunar", atMagicCriticalStrike, atSolarAndLunarCriticalStrike, typeDesc: "阴性")
+        
+        calcCriticalStrike("Solar", atMagicCriticalStrike, atSolarAndLunarCriticalStrike, typeDesc: "阳性")
+        
+        calcCriticalStrike("Neutral", atMagicCriticalStrike, typeDesc: "混元")
+        
+        calcCriticalStrike("Poison", atMagicCriticalStrike, typeDesc: "毒性")
+        
     }
     
     // MARK: 属性转换
