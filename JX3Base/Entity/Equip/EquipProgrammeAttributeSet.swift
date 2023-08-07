@@ -22,6 +22,8 @@ class EquipProgrammeAttributeSet: Identifiable, Equatable {
     var finalAttrs: [String: Float] = [:]
     // 所有可以进行 cof 转换的属性
     var convertCofs: [ConvertCofKey: Float] = [:]
+    // 所有伤害类型
+    let primaryTypes = ["Physics", "Lunar", "Solar", "Neutral", "Poison"]
     
     init(equipProgramme: EquipProgramme, useHeavy: Bool = false) {
         self.equipProgramme = equipProgramme
@@ -78,6 +80,7 @@ class EquipProgrammeAttributeSet: Identifiable, Equatable {
         calcAttackPower()
         calcTherapyPower()
         calcCriticalStrike()
+        calcCriticalDamagePower()
     }
     
     // MARK: 添加属性
@@ -311,6 +314,8 @@ class EquipProgrammeAttributeSet: Identifiable, Equatable {
         panelAttrs.add("MaxHealth", ret)
     }
     
+    // MARK: 计算攻击力
+    
     /// 计算攻击力
     /// - Parameters:
     ///   - type: 计算的攻击力类型
@@ -333,7 +338,6 @@ class EquipProgrammeAttributeSet: Identifiable, Equatable {
         finalAttrs.add("at\(type)", final)
     }
     
-    // MARK: 计算攻击力
     private func calcAttackPower() {
         // 外功攻击
         calcAttackPower("PhysicsAttackPower", typeDesc: "外功攻击")
@@ -365,7 +369,6 @@ class EquipProgrammeAttributeSet: Identifiable, Equatable {
         }) + calcAllCofValue(dest: "\(type)CriticalStrike") + calcAllCofValue(dest: "\(type)CriticalStrike", isSystem: true)
         panelAttrs.add("\(type)CriticalStrike", criticalStrikeLevel)
         finalAttrs.add("at\(type)CriticalStrike", criticalStrikeLevel)
-        logger.debug("\(typeDesc)会心等级: \(criticalStrikeLevel)")
         
         let levelConst = AssetJsonDataManager.shared.levelConst
         let fCriticalStrikeParam = levelConst["fCriticalStrikeParam", default: 0]
@@ -373,7 +376,7 @@ class EquipProgrammeAttributeSet: Identifiable, Equatable {
         
         let criticalStrikePercent = criticalStrikeLevel / (fCriticalStrikeParam * nLevelCoefficient) + getAttribute("at\(type)CriticalStrikeBaseRate") / 10000
         panelAttrs.add("\(type)CriticalStrikeRate", criticalStrikePercent)
-        logger.debug("\(typeDesc)会心百分比: \(String(format: "%.02f", criticalStrikePercent * 100))")
+        logger.debug("\(typeDesc)会心等级: \(criticalStrikeLevel) 会心百分比: \(String(format: "%.02f", criticalStrikePercent * 100))")
     }
     
     private func calcCriticalStrike() {
@@ -390,6 +393,38 @@ class EquipProgrammeAttributeSet: Identifiable, Equatable {
         
         calcCriticalStrike("Poison", atMagicCriticalStrike, typeDesc: "毒性")
         
+    }
+    
+    // MARK: 会心效果
+    private func calcCriticalDamagePower(_ type: String) {
+        // 全属性会效
+        let base = type.typeExtensions.reduce(into: 0, { partialResult, newType in
+            partialResult += getAttribute("at\(type)CriticalDamagePowerBase")
+        }) + calcAllCofValue(dest: "\(type)CriticalDamagePower")
+        panelAttrs.add("\(type)CriticalDamagePower", base)
+        logger.debug("\(type.typeDesc)会效等级: \(base)")
+        
+        let levelConst = AssetJsonDataManager.shared.levelConst
+        let fPlayerCriticalCof = levelConst["fPlayerCriticalCof", default: 0]
+        let fCriticalStrikePowerParam = levelConst["fCriticalStrikePowerParam", default: 0]
+        let nLevelCoefficient = levelConst["nLevelCoefficient", default: 0]
+        
+        let percentWithKiloBase = base.mul(getAttribute("at\(type)CriticalDamagePowerPercent"))
+        let percent = percentWithKiloBase.mul(getAttribute("at\(type)CriticalDamagePowerBaseKiloNumRate"), base: 1000)
+        
+        // 额外百分比
+        let baseKiloNumRate = type == "Physics" ? 0 : getAttribute("atMagicCriticalDamagePowerBaseKiloNumRate")
+        
+        let panelPercent = (fPlayerCriticalCof + 1) + percent / (fCriticalStrikePowerParam * nLevelCoefficient) + baseKiloNumRate / 10000
+        panelAttrs.add("\(type)CriticalDamagePowerPercent", panelPercent)
+        finalAttrs.add("at\(type)CriticalDamagePowerPercent", panelPercent)
+        logger.debug("\(type.typeDesc)会效百分比: \(String(format: "%.02f%%", panelPercent * 100))")
+    }
+    
+    private func calcCriticalDamagePower() {
+        for type in primaryTypes {
+            calcCriticalDamagePower(type)
+        }
     }
     
     // MARK: 属性转换
@@ -489,5 +524,34 @@ struct ConvertCofKey: Equatable, Hashable {
     
     var hashValue: Int {
         return from.hashValue + cof.hashValue
+    }
+}
+
+
+fileprivate extension String {
+    // 类型描述
+    var typeDesc: String {
+        switch self {
+        case "Physics": return "外功"
+        case "Lunar": return "阴性"
+        case "Solar": return "阳性"
+        case "Neutral": return "混元"
+        case "Poison": return "毒性"
+        default: return self
+        }
+    }
+    
+    // 类型可以用来计算的附加属性。比如
+    // Physics -> Physics, AllType
+    // Lunar -> Lunar, Magic, AllType, SolarAndLunar
+    var typeExtensions: [String] {
+        switch self {
+        case "Physics": return [self, "AllType"]
+        case "Lunar": return [self, "AllType", "SolarAndLunar", "Magic"]
+        case "Solar": return [self, "AllType", "SolarAndLunar", "Magic"]
+        case "Neutral": return [self, "AllType", "Magic"]
+        case "Poison": return [self, "AllType", "Magic"]
+        default: return [self]
+        }
     }
 }
