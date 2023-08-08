@@ -314,59 +314,48 @@ class EquipProgrammeAttributeSet: Identifiable, Equatable {
         panelAttrs.add("MaxHealth", ret)
     }
     
-    // MARK: 计算攻击力
+    // MARK: 计算攻击力/奶量
     
-    /// 计算攻击力
+    /// 计算攻击力/奶量
     /// - Parameters:
-    ///   - type: 计算的攻击力类型
-    ///   - additional: 附加的基础攻击力
-    ///   - typeDesc: logger 描述
-    private func calcAttackPower(_ type: String, _ additional: Float..., typeDesc: String) {
-        let base = getAttribute("at\(type)Base")
-        let cofConvert = calcAllCofValue(dest: type, isSystem: true)
-        let panalBase = base + cofConvert + additional.reduce(into: 0, { partialResult, value in
-            partialResult += value
-        })
-        logger.debug("🗡️基础\(typeDesc): \(panalBase)")
-        panelAttrs.add("\(type)Base", panalBase)
+    ///   - type: 计算的攻击力/奶量类型
+    private func calcPower(_ type: String, isTherapy: Bool = false) {
+        let additionType = "\(isTherapy ? "" : "Attack")Power"
+        let base = allCalcType(type).reduce(into: 0) { partialResult, calcType in
+            partialResult += getAttribute("at\(calcType)\(additionType)Base")
+        } + calcAllCofValue(dest: "\(type)\(additionType)", isSystem: true)
         
-        let mountAddConvert = calcAllCofValue(dest: type)
-        let baseWithPercent = panalBase.mul(getAttribute("at\(type)Percent"))
+        panelAttrs.add("\(type)\(additionType)Base", base)
+        
+        let mountAddConvert = calcAllCofValue(dest: "\(type)\(additionType)")
+        let baseWithPercent = base.mul(getAttribute("at\(type)\(additionType)Percent"))
         let final = baseWithPercent + mountAddConvert
-        logger.debug("🗡️最终\(typeDesc): \(final)")
-        panelAttrs.add(type, final)
-        finalAttrs.add("at\(type)", final)
+        
+        panelAttrs.add("\(type)\(additionType)", final)
+        finalAttrs.add("at\(type)\(additionType)", final)
+        
+        let typeDesc = "\(typeDesc(type))\(isTherapy ? "" : "攻击")"
+        logger.debug("🗡️基础\(typeDesc): \(base) 最终\(typeDesc): \(final)")
     }
     
     private func calcAttackPower() {
-        // 外功攻击
-        calcAttackPower("PhysicsAttackPower", typeDesc: "外功攻击")
-        // 阴阳基础
-        let atSolarAndLunarAttackPowerBase = getAttribute("atSolarAndLunarAttackPowerBase")
-        // 魔法基础
-        let atMagicAttackPowerBase = getAttribute("atMagicAttackPowerBase")
-        // 阴性攻击
-        calcAttackPower("LunarAttackPower", atSolarAndLunarAttackPowerBase, atMagicAttackPowerBase, typeDesc: "阴性攻击")
-        // 阳性攻击
-        calcAttackPower("SolarAttackPower", atSolarAndLunarAttackPowerBase, atMagicAttackPowerBase, typeDesc: "阳性攻击")
-        // 混元攻击
-        calcAttackPower("NeutralAttackPower", atMagicAttackPowerBase, typeDesc: "混元攻击")
-        // 毒性攻击
-        calcAttackPower("PoisonAttackPower", atMagicAttackPowerBase, typeDesc: "毒性攻击")
+        for type in primaryTypes {
+            calcPower(type)
+        }
     }
     
     // MARK: 计算治疗
     private func calcTherapyPower() {
-        calcAttackPower("TherapyPower", typeDesc: "治疗")
+        calcPower("Therapy", isTherapy: true)
     }
     
     // MARK: 计算会心
-    private func calcCriticalStrike(_ type:String, _ additional: Float..., typeDesc: String) {
-        let base = getAttribute("at\(type)CriticalStrike")
-        let all = getAttribute("atAllTypeCriticalStrike")
-        let criticalStrikeLevel = base + all + additional.reduce(into: 0, { partialResult, value in
-            partialResult += value
-        }) + calcAllCofValue(dest: "\(type)CriticalStrike") + calcAllCofValue(dest: "\(type)CriticalStrike", isSystem: true)
+    private func calcCriticalStrike(_ type:String) {
+        let base = allCalcType(type).reduce(into: 0) { partialResult, calcType in
+            partialResult += getAttribute("at\(type)CriticalStrike")
+        }
+        let criticalStrikeLevel = base + calcAllCofValue(dest: "\(type)CriticalStrike") + calcAllCofValue(dest: "\(type)CriticalStrike", isSystem: true)
+        
         panelAttrs.add("\(type)CriticalStrike", criticalStrikeLevel)
         finalAttrs.add("at\(type)CriticalStrike", criticalStrikeLevel)
         
@@ -376,33 +365,22 @@ class EquipProgrammeAttributeSet: Identifiable, Equatable {
         
         let criticalStrikePercent = criticalStrikeLevel / (fCriticalStrikeParam * nLevelCoefficient) + getAttribute("at\(type)CriticalStrikeBaseRate") / 10000
         panelAttrs.add("\(type)CriticalStrikeRate", criticalStrikePercent)
-        logger.debug("\(typeDesc)会心等级: \(criticalStrikeLevel) 会心百分比: \(String(format: "%.02f", criticalStrikePercent * 100))")
+        logger.debug("\(typeDesc(type))会心等级: \(criticalStrikeLevel) 会心百分比: \(String(format: "%.02f", criticalStrikePercent * 100))")
     }
     
     private func calcCriticalStrike() {
-        // 外功会心
-        calcCriticalStrike("Physics", typeDesc: "外功")
-        let atMagicCriticalStrike = getAttribute("atMagicCriticalStrike")
-        let atSolarAndLunarCriticalStrike = getAttribute("atSolarAndLunarCriticalStrike")
-        
-        calcCriticalStrike("Lunar", atMagicCriticalStrike, atSolarAndLunarCriticalStrike, typeDesc: "阴性")
-        
-        calcCriticalStrike("Solar", atMagicCriticalStrike, atSolarAndLunarCriticalStrike, typeDesc: "阳性")
-        
-        calcCriticalStrike("Neutral", atMagicCriticalStrike, typeDesc: "混元")
-        
-        calcCriticalStrike("Poison", atMagicCriticalStrike, typeDesc: "毒性")
-        
+        for type in primaryTypes {
+            calcCriticalStrike(type)
+        }
     }
     
     // MARK: 会心效果
     private func calcCriticalDamagePower(_ type: String) {
         // 全属性会效
-        let base = type.typeExtensions.reduce(into: 0, { partialResult, newType in
+        let base = allCalcType(type).reduce(into: 0, { partialResult, newType in
             partialResult += getAttribute("at\(type)CriticalDamagePowerBase")
         }) + calcAllCofValue(dest: "\(type)CriticalDamagePower")
         panelAttrs.add("\(type)CriticalDamagePower", base)
-        logger.debug("\(type.typeDesc)会效等级: \(base)")
         
         let levelConst = AssetJsonDataManager.shared.levelConst
         let fPlayerCriticalCof = levelConst["fPlayerCriticalCof", default: 0]
@@ -418,7 +396,7 @@ class EquipProgrammeAttributeSet: Identifiable, Equatable {
         let panelPercent = (fPlayerCriticalCof + 1) + percent / (fCriticalStrikePowerParam * nLevelCoefficient) + baseKiloNumRate / 10000
         panelAttrs.add("\(type)CriticalDamagePowerPercent", panelPercent)
         finalAttrs.add("at\(type)CriticalDamagePowerPercent", panelPercent)
-        logger.debug("\(type.typeDesc)会效百分比: \(String(format: "%.02f%%", panelPercent * 100))")
+        logger.debug("\(typeDesc(type))会效等级: \(base) 会效百分比: \(String(format: "%.02f%%", panelPercent * 100))")
     }
     
     private func calcCriticalDamagePower() {
@@ -484,6 +462,34 @@ class EquipProgrammeAttributeSet: Identifiable, Equatable {
         return ret
     }
     
+    
+    
+    // 类型可以用来计算的附加属性。比如
+    // Physics -> Physics, AllType
+    // Lunar -> Lunar, Magic, AllType, SolarAndLunar
+    private func allCalcType(_ type: String) -> [String] {
+        switch type {
+        case "Physics": return [type, "AllType"]
+        case "Lunar": return [type, "AllType", "SolarAndLunar", "Magic"]
+        case "Solar": return [type, "AllType", "SolarAndLunar", "Magic"]
+        case "Neutral": return [type, "AllType", "Magic"]
+        case "Poison": return [type, "AllType", "Magic"]
+        default: return [type]
+        }
+    }
+    
+    // 伤害类型描述
+    private func typeDesc(_ type: String) -> String {
+        switch type {
+        case "Physics": return "外功"
+        case "Lunar": return "阴性"
+        case "Solar": return "阳性"
+        case "Neutral": return "混元"
+        case "Poison": return "毒性"
+        case "Therapy": return "治疗"
+        default: return type
+        }
+    }
 }
 
 // 属性值
@@ -524,34 +530,5 @@ struct ConvertCofKey: Equatable, Hashable {
     
     var hashValue: Int {
         return from.hashValue + cof.hashValue
-    }
-}
-
-
-fileprivate extension String {
-    // 类型描述
-    var typeDesc: String {
-        switch self {
-        case "Physics": return "外功"
-        case "Lunar": return "阴性"
-        case "Solar": return "阳性"
-        case "Neutral": return "混元"
-        case "Poison": return "毒性"
-        default: return self
-        }
-    }
-    
-    // 类型可以用来计算的附加属性。比如
-    // Physics -> Physics, AllType
-    // Lunar -> Lunar, Magic, AllType, SolarAndLunar
-    var typeExtensions: [String] {
-        switch self {
-        case "Physics": return [self, "AllType"]
-        case "Lunar": return [self, "AllType", "SolarAndLunar", "Magic"]
-        case "Solar": return [self, "AllType", "SolarAndLunar", "Magic"]
-        case "Neutral": return [self, "AllType", "Magic"]
-        case "Poison": return [self, "AllType", "Magic"]
-        default: return [self]
-        }
     }
 }
