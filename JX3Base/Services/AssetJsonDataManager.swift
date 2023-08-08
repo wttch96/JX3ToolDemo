@@ -57,7 +57,7 @@ class AssetJsonDataManager {
     // levelData
     public let levelData: [String: Int]
     // levelConst
-    public let levelConst: [String: Float]
+    public let levelConst: LevelConst
     // 面板属性
     public let panelAttrDescMap: [String: PanelAttrDesc]
 
@@ -83,7 +83,7 @@ class AssetJsonDataManager {
         self.talnetPassive = BundleUtil.loadJson("talnetPassive.json", type: [String: [TalnetPassive]].self, defaultValue: [:])
         self.systemAttributes = BundleUtil.loadJson("systemAttributes.json", type: [String: Float].self, defaultValue: [:])
         self.levelData = BundleUtil.loadJson("levelData.json", type: [String: Int].self, defaultValue: [:])
-        self.levelConst = BundleUtil.loadJson("levelConst.json", type: [String: Float].self, defaultValue: [:])
+        self.levelConst = BundleUtil.loadJson("levelConst.json", type: LevelConst.self, defaultValue: LevelConst.shared)
         self.panelAttrDescMap = BundleUtil.loadJson("attr_desc_panel.json", type: [String: PanelAttrDesc].self, defaultValue: [:])
     }
     

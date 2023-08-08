@@ -241,6 +241,8 @@
 		499C8C4F2A8220FC00925F71 /* attr_desc_panel.json in Resources */ = {isa = PBXBuildFile; fileRef = 499C8C4D2A8220FC00925F71 /* attr_desc_panel.json */; };
 		499C8C512A82214700925F71 /* PanelAttrDesc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499C8C502A82214700925F71 /* PanelAttrDesc.swift */; };
 		499C8C522A82214700925F71 /* PanelAttrDesc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499C8C502A82214700925F71 /* PanelAttrDesc.swift */; };
+		499C8C542A82640400925F71 /* LevelConst.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499C8C532A82640400925F71 /* LevelConst.swift */; };
+		499C8C552A82640400925F71 /* LevelConst.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499C8C532A82640400925F71 /* LevelConst.swift */; };
 		499F5ABB2A2B468200A3C588 /* TransitionExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499F5ABA2A2B468200A3C588 /* TransitionExtension.swift */; };
 		499F5ABC2A2B468200A3C588 /* TransitionExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499F5ABA2A2B468200A3C588 /* TransitionExtension.swift */; };
 		499F5ABF2A2D071B00A3C588 /* EquipHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499F5ABE2A2D071B00A3C588 /* EquipHomeView.swift */; };
@@ -525,6 +527,7 @@
 		499C8C472A7EAEFF00925F71 /* levelConst.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = levelConst.json; sourceTree = "<group>"; };
 		499C8C4D2A8220FC00925F71 /* attr_desc_panel.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = attr_desc_panel.json; sourceTree = "<group>"; };
 		499C8C502A82214700925F71 /* PanelAttrDesc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PanelAttrDesc.swift; sourceTree = "<group>"; };
+		499C8C532A82640400925F71 /* LevelConst.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelConst.swift; sourceTree = "<group>"; };
 		499F5ABA2A2B468200A3C588 /* TransitionExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransitionExtension.swift; sourceTree = "<group>"; };
 		499F5ABE2A2D071B00A3C588 /* EquipHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipHomeView.swift; sourceTree = "<group>"; };
 		499F5AC82A2F954200A3C588 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -865,6 +868,7 @@
 				491B89572A764BEC006EFAF7 /* LuaConvertValue.swift */,
 				49842DAA2A76545A00F06B11 /* MixValue.swift */,
 				499C8C502A82214700925F71 /* PanelAttrDesc.swift */,
+				499C8C532A82640400925F71 /* LevelConst.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -1552,6 +1556,7 @@
 				495410E12A27C59E00AA6293 /* TalentLevelView.swift in Sources */,
 				4992D1782A230B9D007EEFC2 /* ServerStateSectionView.swift in Sources */,
 				4992D13B2A2278DB007EEFC2 /* ContentView.swift in Sources */,
+				499C8C542A82640400925F71 /* LevelConst.swift in Sources */,
 				499C8C512A82214700925F71 /* PanelAttrDesc.swift in Sources */,
 				4992D2052A24AFDC007EEFC2 /* WebCacheableImageViewModel.swift in Sources */,
 				49FBA5EB2A585C8A0031F9B5 /* CustomNavBarPreferenceKeys.swift in Sources */,
@@ -1739,6 +1744,7 @@
 				499A2FCC2A6A5A6C00F10732 /* EnchantSubType.swift in Sources */,
 				49FBA5C92A5818520031F9B5 /* TabBarPreferenceKey.swift in Sources */,
 				49DBCE172A2622A700C3BA2E /* AutoResizeLazyVGrid.swift in Sources */,
+				499C8C552A82640400925F71 /* LevelConst.swift in Sources */,
 				49FBA5A32A55D0FB0031F9B5 /* ClientType.swift in Sources */,
 				493023692A25D423006E81E4 /* TalentService.swift in Sources */,
 				49504DA62A44BB5D00B93E90 /* EquipScoreUtil.swift in Sources */,

@@ -361,10 +361,8 @@ class EquipProgrammeAttributeSet: Identifiable, Equatable {
         finalAttrs.add("at\(type)CriticalStrike", criticalStrikeLevel)
         
         let levelConst = AssetJsonDataManager.shared.levelConst
-        let fCriticalStrikeParam = levelConst["fCriticalStrikeParam", default: 0]
-        let nLevelCoefficient = levelConst["nLevelCoefficient", default: 0]
         
-        let criticalStrikePercent = criticalStrikeLevel / (fCriticalStrikeParam * nLevelCoefficient) + getAttribute("at\(type)CriticalStrikeBaseRate") / 10000
+        let criticalStrikePercent = criticalStrikeLevel / (levelConst.fCriticalStrikeParam * levelConst.nLevelCoefficient) + getAttribute("at\(type)CriticalStrikeBaseRate") / 10000
         panelAttrs.add("\(type)CriticalStrikeRate", criticalStrikePercent)
         logger.debug("\(typeDesc(type))会心等级: \(criticalStrikeLevel) 会心百分比: \(String(format: "%.02f", criticalStrikePercent * 100))")
     }
@@ -383,18 +381,14 @@ class EquipProgrammeAttributeSet: Identifiable, Equatable {
         }) + calcAllCofValue(dest: "\(type)CriticalDamagePower")
         panelAttrs.add("\(type)CriticalDamagePower", base)
         
-        let levelConst = AssetJsonDataManager.shared.levelConst
-        let fPlayerCriticalCof = levelConst["fPlayerCriticalCof", default: 0]
-        let fCriticalStrikePowerParam = levelConst["fCriticalStrikePowerParam", default: 0]
-        let nLevelCoefficient = levelConst["nLevelCoefficient", default: 0]
         
         let percentWithKiloBase = base.mul(getAttribute("at\(type)CriticalDamagePowerPercent"))
         let percent = percentWithKiloBase.mul(getAttribute("at\(type)CriticalDamagePowerBaseKiloNumRate"), base: 1000)
         
         // 额外百分比
         let baseKiloNumRate = type == "Physics" ? 0 : getAttribute("atMagicCriticalDamagePowerBaseKiloNumRate")
-        
-        let panelPercent = (fPlayerCriticalCof + 1) + percent / (fCriticalStrikePowerParam * nLevelCoefficient) + baseKiloNumRate / 10000
+        let levelConst = AssetJsonDataManager.shared.levelConst
+        let panelPercent = (levelConst.fPlayerCriticalCof + 1) + percent / (levelConst.fCriticalStrikePowerParam * levelConst.nLevelCoefficient) + baseKiloNumRate / 10000
         panelAttrs.add("\(type)CriticalDamagePowerPercent", panelPercent)
         finalAttrs.add("at\(type)CriticalDamagePowerPercent", panelPercent)
         logger.debug("\(typeDesc(type))会效等级: \(base) 会效百分比: \(String(format: "%.02f%%", panelPercent * 100))")
@@ -418,13 +412,11 @@ class EquipProgrammeAttributeSet: Identifiable, Equatable {
         panelAttrs.add("\(type)Overcome", panelOvercome)
         
         let levelConst = AssetJsonDataManager.shared.levelConst
-        let fOvercomeParam = levelConst["fOvercomeParam", default: 0]
-        let nLevelCoefficient = levelConst["nLevelCoefficient", default: 0]
         
-        let overcomePercent = panelOvercome.mul(getAttribute("at\(type)OvercomePercent")) / (fOvercomeParam * nLevelCoefficient)
+        let overcomePercent = panelOvercome.mul(getAttribute("at\(type)OvercomePercent")) / (levelConst.fOvercomeParam * levelConst.nLevelCoefficient)
         panelAttrs.add("\(type)OvercomePercent", overcomePercent)
         finalAttrs.add("at\(type)OvercomePercent", overcomePercent)
-        
+         
         logger.debug("\(typeDesc(type))基础破防: \(base) 破防等级: \(panelOvercome) 破防百分比: \(String(format: "%.02f%%", overcomePercent * 100))")
     }
     
@@ -432,6 +424,18 @@ class EquipProgrammeAttributeSet: Identifiable, Equatable {
         for type in primaryTypes {
             calcOvercome(type)
         }
+    }
+    
+    // MARK: 加速
+    private func calcHaste() {
+        let hasteBase = getAttribute("atHasteBase")
+        panelAttrs.add("Haste", hasteBase)
+        finalAttrs.add("atHaste", hasteBase)
+        
+        let levelConst = AssetJsonDataManager.shared.levelConst
+        
+        let hastePercent = hasteBase / (levelConst.fHasteRate * levelConst.nLevelCoefficient) + getAttribute("atHasteBasePercentAdd") / 1024
+        panelAttrs.add("HastePercent", hastePercent)
     }
     
     // MARK: 属性转换
