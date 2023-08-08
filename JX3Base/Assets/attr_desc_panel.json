@@ -1,0 +1,543 @@
+{
+    "Vitality": {
+        "name": "体质",
+        "isPercent": 0,
+        "default": 0
+    },
+    "Agility": {
+        "name": "身法",
+        "isPercent": 0,
+        "default": 0
+    },
+    "Spirit": {
+        "name": "根骨",
+        "isPercent": 0,
+        "default": 0
+    },
+    "Spunk": {
+        "name": "元气",
+        "isPercent": 0,
+        "default": 0
+    },
+    "Strength": {
+        "name": "力道",
+        "isPercent": 0,
+        "default": 0
+    },
+    "PhysicsAttackPowerBase": {
+        "name": "基础攻击",
+        "popname": "基础外功攻击",
+        "isPercent": 0,
+        "default": 1
+    },
+    "PhysicsAttackPower": {
+        "name": "攻击力",
+        "popname": "最终外功攻击",
+        "isPercent": 0,
+        "default": 1
+    },
+    "LunarAttackPowerBase": {
+        "name": "基础攻击",
+        "popname": "基础阴性内功攻击",
+        "isPercent": 0,
+        "default": 1
+    },
+    "LunarAttackPower": {
+        "name": "攻击力",
+        "popname": "最终阴性内功攻击",
+        "isPercent": 0,
+        "default": 1
+    },
+    "SolarAttackPowerBase": {
+        "name": "基础攻击",
+        "popname": "基础阳性内功攻击",
+        "isPercent": 0,
+        "default": 1
+    },
+    "SolarAttackPower": {
+        "name": "攻击力",
+        "popname": "最终阳性内功攻击",
+        "isPercent": 0,
+        "default": 1
+    },
+    "NeutralAttackPowerBase": {
+        "name": "基础攻击",
+        "popname": "基础混元内功攻击",
+        "isPercent": 0,
+        "default": 1
+    },
+    "NeutralAttackPower": {
+        "name": "攻击力",
+        "popname": "最终混元内功攻击",
+        "isPercent": 0,
+        "default": 1
+    },
+    "PoisonAttackPowerBase": {
+        "name": "基础攻击",
+        "popname": "基础毒性内功攻击",
+        "isPercent": 0,
+        "default": 1
+    },
+    "PoisonAttackPower": {
+        "name": "攻击力",
+        "popname": "最终毒性内功攻击",
+        "isPercent": 0,
+        "default": 1
+    },
+    "TherapyPowerBase": {
+        "name": "基础治疗",
+        "isPercent": 0,
+        "default": 0
+    },
+    "TherapyPower": {
+        "name": "治疗量",
+        "isPercent": 0,
+        "default": 1
+    },
+    "PhysicsHit": {
+        "name": "外功命中等级",
+        "popname": "外功命中等级",
+        "isPercent": 0,
+        "default": 1
+    },
+    "PhysicsHitPercent": {
+        "name": "命中",
+        "popname": "对同等级目标命中几率",
+        "isPercent": 1,
+        "default": 1
+    },
+    "LunarHit": {
+        "name": "阴性命中等级",
+        "popname": "阴性命中等级",
+        "isPercent": 0,
+        "default": 1
+    },
+    "LunarHitPercent": {
+        "name": "命中",
+        "popname": "对同等级目标命中几率",
+        "isPercent": 1,
+        "default": 1
+    },
+    "SolarHit": {
+        "name": "阳性命中等级",
+        "popname": "阳性命中等级",
+        "isPercent": 0,
+        "default": 1
+    },
+    "SolarHitPercent": {
+        "name": "命中",
+        "popname": "对同等级目标命中几率",
+        "isPercent": 1,
+        "default": 1
+    },
+    "NeutralHit": {
+        "name": "混元命中等级",
+        "popname": "混元命中等级",
+        "isPercent": 0,
+        "default": 1
+    },
+    "NeutralHitPercent": {
+        "name": "命中",
+        "popname": "对同等级目标命中几率",
+        "isPercent": 1,
+        "default": 1
+    },
+    "PoisonHit": {
+        "name": "毒性命中等级",
+        "popname": "毒性命中等级",
+        "isPercent": 0,
+        "default": 1
+    },
+    "PoisonHitPercent": {
+        "name": "命中",
+        "popname": "对同等级目标命中几率",
+        "isPercent": 1,
+        "default": 1
+    },
+    "PhysicsCriticalStrike": {
+        "name": "外功会心等级",
+        "popname": "外功会心等级",
+        "isPercent": 0,
+        "default": 0
+    },
+    "PhysicsCriticalStrikeRate": {
+        "name": "会心",
+        "popname": "提高对同等级目标会心几率",
+        "isPercent": 1,
+        "default": 1
+    },
+    "LunarCriticalStrike": {
+        "name": "阴性会心等级",
+        "popname": "阴性会心等级",
+        "isPercent": 0,
+        "default": 0
+    },
+    "LunarCriticalStrikeRate": {
+        "name": "会心",
+        "popname": "提高对同等级目标会心几率",
+        "isPercent": 1,
+        "default": 1
+    },
+    "SolarCriticalStrike": {
+        "name": "阳性会心等级",
+        "popname": "阳性会心等级",
+        "isPercent": 0,
+        "default": 0
+    },
+    "SolarCriticalStrikeRate": {
+        "name": "会心",
+        "popname": "提高对同等级目标会心几率",
+        "isPercent": 1,
+        "default": 1
+    },
+    "NeutralCriticalStrike": {
+        "name": "混元会心等级",
+        "popname": "混元会心等级",
+        "isPercent": 0,
+        "default": 0
+    },
+    "NeutralCriticalStrikeRate": {
+        "name": "会心",
+        "popname": "提高对同等级目标会心几率",
+        "isPercent": 1,
+        "default": 1
+    },
+    "PoisonCriticalStrike": {
+        "name": "毒性会心等级",
+        "popname": "毒性会心等级",
+        "isPercent": 0,
+        "default": 0
+    },
+    "PoisonCriticalStrikeRate": {
+        "name": "会心",
+        "popname": "提高对同等级目标会心几率",
+        "isPercent": 1,
+        "default": 1
+    },
+    "PhysicsCriticalDamagePower": {
+        "name": "外功",
+        "isPercent": 0,
+        "default": 0
+    },
+    "PhysicsCriticalDamagePowerPercent": {
+        "name": "会心效果",
+        "popname": "最终外功内功会心效果",
+        "isPercent": 1,
+        "default": 1
+    },
+    "LunarCriticalDamagePower": {
+        "name": "阴性",
+        "isPercent": 0,
+        "default": 0
+    },
+    "LunarCriticalDamagePowerPercent": {
+        "name": "会心效果",
+        "popname": "最终阴性内功会心效果",
+        "isPercent": 1,
+        "default": 1
+    },
+    "SolarCriticalDamagePower": {
+        "name": "阳性",
+        "isPercent": 0,
+        "default": 0
+    },
+    "SolarCriticalDamagePowerPercent": {
+        "name": "会心效果",
+        "popname": "最终阳性内功会心效果",
+        "isPercent": 1,
+        "default": 1
+    },
+    "NeutralCriticalDamagePower": {
+        "name": "混元",
+        "isPercent": 0,
+        "default": 0
+    },
+    "NeutralCriticalDamagePowerPercent": {
+        "name": "会心效果",
+        "popname": "最终混元内功会心效果",
+        "isPercent": 1,
+        "default": 1
+    },
+    "PoisonCriticalDamagePower": {
+        "name": "毒性",
+        "isPercent": 0,
+        "default": 0
+    },
+    "PoisonCriticalDamagePowerPercent": {
+        "name": "会心效果",
+        "popname": "最终毒性内功会心效果",
+        "isPercent": 1,
+        "default": 1
+    },
+    "PhysicsOvercome": {
+        "name": "外功破防等级",
+        "popname": "最终外功破防",
+        "isPercent": 0,
+        "default": 1
+    },
+    "PhysicsOvercomeBase": {
+        "name": "外功破防等级",
+        "popname": "基础外功破防",
+        "isPercent": 0,
+        "default": 0
+    },
+    "PhysicsOvercomePercent": {
+        "name": "破防",
+        "popname": "自身对同等级目标外功伤害提升",
+        "isPercent": 1,
+        "default": 1
+    },
+    "LunarOvercome": {
+        "name": "阴性破防等级",
+        "popname": "最终阴性内功破防",
+        "isPercent": 0,
+        "default": 1
+    },
+    "LunarOvercomeBase": {
+        "name": "阴性破防等级",
+        "popname": "基础阴性内功破防",
+        "isPercent": 0,
+        "default": 0
+    },
+    "LunarOvercomePercent": {
+        "name": "破防",
+        "popname": "自身对同等级目标阴性内功伤害提升",
+        "isPercent": 1,
+        "default": 1
+    },
+    "SolarOvercome": {
+        "name": "阳性破防等级",
+        "popname": "最终阳性内功破防",
+        "isPercent": 0,
+        "default": 1
+    },
+    "SolarOvercomeBase": {
+        "name": "阳性破防等级",
+        "popname": "基础阳性内功破防",
+        "isPercent": 0,
+        "default": 0
+    },
+    "SolarOvercomePercent": {
+        "name": "破防",
+        "popname": "自身对同等级目标阳性内功伤害提升",
+        "isPercent": 1,
+        "default": 1
+    },
+    "NeutralOvercome": {
+        "name": "混元破防等级",
+        "popname": "最终混元内功破防",
+        "isPercent": 0,
+        "default": 1
+    },
+    "NeutralOvercomeBase": {
+        "name": "混元破防等级",
+        "popname": "基础混元内功破防",
+        "isPercent": 0,
+        "default": 0
+    },
+    "NeutralOvercomePercent": {
+        "name": "破防",
+        "popname": "自身对同等级目标混元内功伤害提升",
+        "isPercent": 1,
+        "default": 1
+    },
+    "PoisonOvercome": {
+        "name": "毒性破防等级",
+        "popname": "最终毒性内功破防",
+        "isPercent": 0,
+        "default": 1
+    },
+    "PoisonOvercomeBase": {
+        "name": "毒性破防等级",
+        "popname": "基础毒性内功破防",
+        "isPercent": 0,
+        "default": 0
+    },
+    "PoisonOvercomePercent": {
+        "name": "破防",
+        "popname": "自身对同等级目标毒性内功伤害提升",
+        "isPercent": 1,
+        "default": 1
+    },
+    "Haste": {
+        "name": "加速",
+        "popname": "加速等级",
+        "isPercent": 0,
+        "default": 1
+    },
+    "HastePercent": {
+        "name": "加速率",
+        "isPercent": 1,
+        "default": 1
+    },
+    "Strain": {
+        "name": "无双等级",
+        "isPercent": 0,
+        "default": 1
+    },
+    "StrainPercent": {
+        "name": "无双",
+        "popname": "对同等级秘境首领伤害提高",
+        "isPercent": 1,
+        "default": 1
+    },
+    "SurplusValue": {
+        "name": "破招",
+        "isPercent": 0,
+        "default": 1
+    },
+    "SurplusValuePercent": {
+        "name": "破招",
+        "popname": "破招值",
+        "isPercent": 1,
+        "default": 0
+    },
+    "PhysicsShieldBase": {
+        "name": "基础外功防御等级",
+        "isPercent": 0,
+        "default": 0
+    },
+    "PhysicsShield": {
+        "name": "外防等级",
+        "popname": "最终外功防御等级",
+        "isPercent": 0,
+        "default": 0
+    },
+    "PhysicsShieldPercent": {
+        "name": "外功防御",
+        "popname": "同等级目标对你的外功伤害降低",
+        "isPercent": 1,
+        "default": 1
+    },
+    "LunarShieldBase": {
+        "name": "基础阴性内防等级",
+        "isPercent": 0,
+        "default": 0
+    },
+    "LunarShield": {
+        "name": "阴性内防等级",
+        "popname": "最终阴性内功防御等级",
+        "isPercent": 0,
+        "default": 0
+    },
+    "LunarShieldPercent": {
+        "name": "内功防御",
+        "popname": "同等级目标对你的阴性内功伤害降低",
+        "isPercent": 1,
+        "default": 1
+    },
+    "SolarShieldBase": {
+        "name": "基础阳性内防等级",
+        "isPercent": 0,
+        "default": 0
+    },
+    "SolarShield": {
+        "name": "阳性内防等级",
+        "popname": "最终阳性内功防御等级",
+        "isPercent": 0,
+        "default": 0
+    },
+    "SolarShieldPercent": {
+        "name": "内功防御",
+        "popname": "同等级目标对你的阳性内功伤害降低",
+        "isPercent": 1,
+        "default": 1
+    },
+    "NeutralShieldBase": {
+        "name": "基础混元内防等级",
+        "isPercent": 0,
+        "default": 0
+    },
+    "NeutralShield": {
+        "name": "混元内防等级",
+        "popname": "最终混元内功防御等级",
+        "isPercent": 0,
+        "default": 0
+    },
+    "NeutralShieldPercent": {
+        "name": "内功防御",
+        "popname": "同等级目标对你的混元性内功伤害降低",
+        "isPercent": 1,
+        "default": 1
+    },
+    "PoisonShieldBase": {
+        "name": "基础毒性内防等级",
+        "isPercent": 0,
+        "default": 0
+    },
+    "PoisonShield": {
+        "name": "毒性内防等级",
+        "popname": "最终毒性内功防御等级",
+        "isPercent": 0,
+        "default": 0
+    },
+    "PoisonShieldPercent": {
+        "name": "内功防御",
+        "popname": "同等级目标对你的毒性内功伤害降低",
+        "isPercent": 1,
+        "default": 1
+    },
+    "Dodge": {
+        "name": "闪躲等级",
+        "isPercent": 0,
+        "default": 0
+    },
+    "DodgePercent": {
+        "name": "闪躲",
+        "isPercent": 1,
+        "default": 1
+    },
+    "Parry": {
+        "name": "招架等级",
+        "isPercent": 0,
+        "default": 0
+    },
+    "ParryPercent": {
+        "name": "招架",
+        "isPercent": 1,
+        "default": 1
+    },
+    "ParryValue": {
+        "name": "拆招",
+        "isPercent": 0,
+        "default": 1
+    },
+    "Toughness": {
+        "name": "御劲等级",
+        "popname": "御劲等级提高",
+        "isPercent": 0,
+        "default": 0
+    },
+    "ToughnessDefCriticalPercent": {
+        "name": "御劲",
+        "popname": "被同等级目标会心攻击的几率降低",
+        "isPercent": 1,
+        "default": 1
+    },
+    "ToughnessDecirDamagePercent": {
+        "name": "御劲减会伤",
+        "popname": "被同等级目标会心攻击时受到的额外伤害降低",
+        "isPercent": 1,
+        "default": 0
+    },
+    "DecriticalDamage": {
+        "name": "化劲等级",
+        "isPercent": 0,
+        "default": 0
+    },
+    "DecriticalDamagePercent": {
+        "name": "化劲",
+        "isPercent": 1,
+        "default": 1
+    },
+    "MaxHealth": {
+        "name": "最大气血值",
+        "isPercent": 0,
+        "default": 1
+    },
+    "ActiveThreatCoefficient": {
+        "name": "招式威胁值",
+        "isPercent": 0,
+        "default": 0
+    }
+}

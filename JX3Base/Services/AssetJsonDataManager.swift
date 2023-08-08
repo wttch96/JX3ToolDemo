@@ -58,6 +58,8 @@ class AssetJsonDataManager {
     public let levelData: [String: Int]
     // levelConst
     public let levelConst: [String: Float]
+    // 面板属性
+    public let panelAttrDescMap: [String: PanelAttrDesc]
 
     
     private init() {
@@ -82,6 +84,7 @@ class AssetJsonDataManager {
         self.systemAttributes = BundleUtil.loadJson("systemAttributes.json", type: [String: Float].self, defaultValue: [:])
         self.levelData = BundleUtil.loadJson("levelData.json", type: [String: Int].self, defaultValue: [:])
         self.levelConst = BundleUtil.loadJson("levelConst.json", type: [String: Float].self, defaultValue: [:])
+        self.panelAttrDescMap = BundleUtil.loadJson("attr_desc_panel.json", type: [String: PanelAttrDesc].self, defaultValue: [:])
     }
     
     

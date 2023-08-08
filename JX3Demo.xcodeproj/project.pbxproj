@@ -237,6 +237,10 @@
 		499A2FCC2A6A5A6C00F10732 /* EnchantSubType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499A2FCB2A6A5A6C00F10732 /* EnchantSubType.swift */; };
 		499C8C482A7EAEFF00925F71 /* levelConst.json in Resources */ = {isa = PBXBuildFile; fileRef = 499C8C472A7EAEFF00925F71 /* levelConst.json */; };
 		499C8C492A7EAEFF00925F71 /* levelConst.json in Resources */ = {isa = PBXBuildFile; fileRef = 499C8C472A7EAEFF00925F71 /* levelConst.json */; };
+		499C8C4E2A8220FC00925F71 /* attr_desc_panel.json in Resources */ = {isa = PBXBuildFile; fileRef = 499C8C4D2A8220FC00925F71 /* attr_desc_panel.json */; };
+		499C8C4F2A8220FC00925F71 /* attr_desc_panel.json in Resources */ = {isa = PBXBuildFile; fileRef = 499C8C4D2A8220FC00925F71 /* attr_desc_panel.json */; };
+		499C8C512A82214700925F71 /* PanelAttrDesc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499C8C502A82214700925F71 /* PanelAttrDesc.swift */; };
+		499C8C522A82214700925F71 /* PanelAttrDesc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499C8C502A82214700925F71 /* PanelAttrDesc.swift */; };
 		499F5ABB2A2B468200A3C588 /* TransitionExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499F5ABA2A2B468200A3C588 /* TransitionExtension.swift */; };
 		499F5ABC2A2B468200A3C588 /* TransitionExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499F5ABA2A2B468200A3C588 /* TransitionExtension.swift */; };
 		499F5ABF2A2D071B00A3C588 /* EquipHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499F5ABE2A2D071B00A3C588 /* EquipHomeView.swift */; };
@@ -519,6 +523,8 @@
 		499A2FC62A68613300F10732 /* EquipPickerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipPickerModel.swift; sourceTree = "<group>"; };
 		499A2FCB2A6A5A6C00F10732 /* EnchantSubType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnchantSubType.swift; sourceTree = "<group>"; };
 		499C8C472A7EAEFF00925F71 /* levelConst.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = levelConst.json; sourceTree = "<group>"; };
+		499C8C4D2A8220FC00925F71 /* attr_desc_panel.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = attr_desc_panel.json; sourceTree = "<group>"; };
+		499C8C502A82214700925F71 /* PanelAttrDesc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PanelAttrDesc.swift; sourceTree = "<group>"; };
 		499F5ABA2A2B468200A3C588 /* TransitionExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransitionExtension.swift; sourceTree = "<group>"; };
 		499F5ABE2A2D071B00A3C588 /* EquipHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipHomeView.swift; sourceTree = "<group>"; };
 		499F5AC82A2F954200A3C588 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -746,6 +752,7 @@
 				49842DAD2A765A8600F06B11 /* talnetPassive.json */,
 				49A0EB262A7982920074C952 /* levelData.json */,
 				499C8C472A7EAEFF00925F71 /* levelConst.json */,
+				499C8C4D2A8220FC00925F71 /* attr_desc_panel.json */,
 			);
 			path = Assets;
 			sourceTree = "<group>";
@@ -857,6 +864,7 @@
 				49FBA5F12A5AAB000031F9B5 /* BoxNews.swift */,
 				491B89572A764BEC006EFAF7 /* LuaConvertValue.swift */,
 				49842DAA2A76545A00F06B11 /* MixValue.swift */,
+				499C8C502A82214700925F71 /* PanelAttrDesc.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -1416,6 +1424,7 @@
 				4992D1402A2278DD007EEFC2 /* Preview Assets.xcassets in Resources */,
 				49504D862A42C26C00B93E90 /* attrBriefDesc.json in Resources */,
 				497467C12A2619BF00275A09 /* xf.json in Resources */,
+				499C8C4E2A8220FC00925F71 /* attr_desc_panel.json in Resources */,
 				499C8C482A7EAEFF00925F71 /* levelConst.json in Resources */,
 				49504D832A42BE8900B93E90 /* weaponType.json in Resources */,
 				491B894B2A758D83006EFAF7 /* systemAttributes.json in Resources */,
@@ -1469,6 +1478,7 @@
 				495FD6762A4030A900A17FB0 /* equip2.json in Resources */,
 				498605612A7579B100C774E0 /* strengthableAttributes.json in Resources */,
 				49FBA5FC2A5C41B80031F9B5 /* news.json in Resources */,
+				499C8C4F2A8220FC00925F71 /* attr_desc_panel.json in Resources */,
 				4992D1C52A23C087007EEFC2 /* Preview Assets.xcassets in Resources */,
 				49504D872A42C26C00B93E90 /* attrBriefDesc.json in Resources */,
 				497467C22A2619BF00275A09 /* xf.json in Resources */,
@@ -1542,6 +1552,7 @@
 				495410E12A27C59E00AA6293 /* TalentLevelView.swift in Sources */,
 				4992D1782A230B9D007EEFC2 /* ServerStateSectionView.swift in Sources */,
 				4992D13B2A2278DB007EEFC2 /* ContentView.swift in Sources */,
+				499C8C512A82214700925F71 /* PanelAttrDesc.swift in Sources */,
 				4992D2052A24AFDC007EEFC2 /* WebCacheableImageViewModel.swift in Sources */,
 				49FBA5EB2A585C8A0031F9B5 /* CustomNavBarPreferenceKeys.swift in Sources */,
 				4965BA482A2616EF001D7E1B /* TalentPicker.swift in Sources */,
@@ -1707,6 +1718,7 @@
 				49504DA02A44B45600B93E90 /* EquipMagicType.swift in Sources */,
 				499A2FB82A65A56B00F10732 /* EquipEditorPositionView.swift in Sources */,
 				499A2FB52A65173300F10732 /* EquipEditorView.swift in Sources */,
+				499C8C522A82214700925F71 /* PanelAttrDesc.swift in Sources */,
 				49DBCE1A2A2623B600C3BA2E /* KungfuPicker.swift in Sources */,
 				4992D20B2A24B3AF007EEFC2 /* NetworkManager.swift in Sources */,
 				49FBA6002A5C49B60031F9B5 /* BoxNewsCarouselView.swift in Sources */,

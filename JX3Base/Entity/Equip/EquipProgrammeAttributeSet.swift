@@ -81,6 +81,7 @@ class EquipProgrammeAttributeSet: Identifiable, Equatable {
         calcTherapyPower()
         calcCriticalStrike()
         calcCriticalDamagePower()
+        calcOvercome()
     }
     
     // MARK: 添加属性
@@ -402,6 +403,34 @@ class EquipProgrammeAttributeSet: Identifiable, Equatable {
     private func calcCriticalDamagePower() {
         for type in primaryTypes {
             calcCriticalDamagePower(type)
+        }
+    }
+    
+    // MARK: 破防
+    private func calcOvercome(_ type: String) {
+        // 基础破防
+        let base = allCalcType(type).reduce(into: 0) { partialResult, calcType in
+            partialResult += getAttribute("at\(calcType)OvercomeBase")
+        } + calcAllCofValue(dest: "\(type)Overcome", isSystem: true)
+        panelAttrs.add("\(type)OvercomeBase", base)
+        
+        let panelOvercome = base + calcAllCofValue(dest: "\(type)Overcome")
+        panelAttrs.add("\(type)Overcome", panelOvercome)
+        
+        let levelConst = AssetJsonDataManager.shared.levelConst
+        let fOvercomeParam = levelConst["fOvercomeParam", default: 0]
+        let nLevelCoefficient = levelConst["nLevelCoefficient", default: 0]
+        
+        let overcomePercent = panelOvercome.mul(getAttribute("at\(type)OvercomePercent")) / (fOvercomeParam * nLevelCoefficient)
+        panelAttrs.add("\(type)OvercomePercent", overcomePercent)
+        finalAttrs.add("at\(type)OvercomePercent", overcomePercent)
+        
+        logger.debug("\(typeDesc(type))基础破防: \(base) 破防等级: \(panelOvercome) 破防百分比: \(String(format: "%.02f%%", overcomePercent * 100))")
+    }
+    
+    private func calcOvercome() {
+        for type in primaryTypes {
+            calcOvercome(type)
         }
     }
     
