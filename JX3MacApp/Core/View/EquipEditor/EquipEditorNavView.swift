@@ -13,7 +13,19 @@ struct EquipEditorNavView: View {
     
     @ObservedObject var equipProgramme: EquipProgramme
     
-    @State private var attributes: EquipProgrammeAttributeSet? = nil
+    @State private var attributes: EquipProgrammeAttributeSet
+    
+    init(mount: Mount, selectedPosition: Binding<EquipPosition?>, equipProgramme: EquipProgramme) {
+        self.mount = mount
+        self._selectedPosition = selectedPosition
+        self._equipProgramme = ObservedObject(wrappedValue: equipProgramme)
+        self._attributes = State(initialValue: EquipProgrammeAttributeSet(equipProgramme: equipProgramme))
+    }
+    
+    private let base = ["Vitality", "Agility", "Spirit", "Spunk", "Strength"]
+    private let attack = ["PoisonHitPercent", "Haste"]
+    
+    @State private var showPanelRows: Bool = false
     
     var body: some View {
         VStack {
@@ -22,7 +34,7 @@ struct EquipEditorNavView: View {
             }
             .frame(height: 60)
             ZStack {
-                VStack {
+                VStack{
                     if mount.isWenShui {
                         Toggle(equipProgramme.useHeary ? "重剑" : "轻剑", isOn: $equipProgramme.useHeary)
                             .toggleStyle(.switch)
@@ -30,15 +42,25 @@ struct EquipEditorNavView: View {
                     Text("总装分:\(equipProgramme.totalScore)")
                         .bold()
                     ScrollView {
-                        ForEach(attributes?.panelAttrs.keys.sorted() ?? [], id: \.self) { key in
-                            if let value = attributes?.panelAttrs[key] {
-                                Text("\(AssetJsonDataManager.shared.panelAttrDescMap[key]?.name ?? key):\(value.tryIntFormat)")
+                        VStack(spacing: 4) {
+                            ForEach(PanelAttributeGroup.groups) { group in
+                                Section(group.title, content: {
+                                    ForEach(group.child, content: { row in
+                                        PanelAttributeRowView(row, attributes: attributes)
+                                    })
+                                })
                             }
                         }
-                        
+//
+//                        ForEach(attributes.panelAttrs.keys.sorted(), id: \.self) { key in
+//                            if let value = attributes.panelAttrs[key] {
+//                                Text("\(AssetJsonDataManager.shared.panelAttrDescMap[key]?.name ?? key):\(value.tryIntFormat)")
+//                            }
+//                        }
                     }
+
                 }
-                .offset(y: -100)
+                .frame(maxWidth: 240)
                 VStack(spacing: 10) {
                     HStack {
                         positionView(.helm)

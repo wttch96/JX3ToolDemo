@@ -18,6 +18,8 @@ class EquipProgrammeAttributeSet: Identifiable, Equatable {
     var attributes: [String: EquipProgrammeAttributeValue] = [:]
     // 面板展示的属性
     var panelAttrs: [String: Float] = [:]
+    
+    var panelAttributes: [PannelAttributeType: Float] = [:]
     // 最终计算的属性
     var finalAttrs: [String: Float] = [:]
     // 所有可以进行 cof 转换的属性
@@ -71,14 +73,24 @@ class EquipProgrammeAttributeSet: Identifiable, Equatable {
         
         // 体质
         calcVitality()
-        // 身法
-        let _ = calcPrimaryAttribute("Agility")
         // 根骨
-        let _ = calcPrimaryAttribute("Spirit")
-        // 元气
-        let _ = calcPrimaryAttribute("Spunk")
+        let spirit = calcPrimaryAttribute("Spirit")
+        panelAttributes.add(.spirit, spirit)
+        panelAttributes.add(.spiritToMagicCriticalStrike, calcAllCofValue(dest: "NeutralCriticalStrike", isSystem: true)) // 没有内功会心使用 Neutral 代替
         // 力道
-        let _ = calcPrimaryAttribute("Strength")
+        let strength = calcPrimaryAttribute("Strength")
+        panelAttributes.add(.strength, strength)
+        panelAttributes.add(.strengthToAttack, calcAllCofValue(dest: "PhysicsAttackPower", isSystem: true))
+        panelAttributes.add(.strengthToOvercome, calcAllCofValue(dest: "PhysicsOvercome", isSystem: true))
+        // 身法
+        let agility = calcPrimaryAttribute("Agility")
+        panelAttributes.add(.agility, agility)
+        panelAttributes.add(.agilityToCriticalStrike, calcAllCofValue(dest: "PhysicsCriticalStrike", isSystem: true))
+        // 元气
+        let spunk = calcPrimaryAttribute("Spunk")
+        panelAttributes.add(.spunk, spunk)
+        panelAttributes.add(.spunkToAttack, calcAllCofValue(dest: "NeutralAttackPower", isSystem: true))
+        panelAttributes.add(.spunkToOvercome, calcAllCofValue(dest: "NeutralOvercome", isSystem: true))
         
         calcAttackPower()
         calcTherapyPower()
@@ -331,6 +343,11 @@ class EquipProgrammeAttributeSet: Identifiable, Equatable {
         let ret = maxAdditionalBaseHealth + vitalityToMaxLife
         logger.debug("最终气血[\(ret)]")
         panelAttrs.add("MaxHealth", ret)
+        
+        panelAttributes.add(.vitality, vitality)
+        panelAttributes.add(.vitalityToHealth, floor(atPanelVitalityAddMaxHealth))
+        panelAttributes.add(.vitalityMaxHealth, floor(atPanelMaxHealthBase))
+        panelAttributes.add(.vitalityFinalMaxHealth, floor(maxAdditionalBaseHealth))
     }
     
     // MARK: 计算攻击力/奶量
@@ -672,8 +689,8 @@ fileprivate extension Float {
     }
 }
 
-fileprivate extension Dictionary where Key == String, Value == Float {
-    mutating func add(_ key: String, _ addValue: Float) {
+fileprivate extension Dictionary where Key: Hashable, Value == Float {
+    mutating func add(_ key: Key, _ addValue: Float) {
         self[key] = self[key, default: 0] + addValue
     }
 }

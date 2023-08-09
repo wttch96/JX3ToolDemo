@@ -30,6 +30,8 @@
 		493354402A2611260044289B /* TalentVersionPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4933543D2A2611260044289B /* TalentVersionPicker.swift */; };
 		493354412A2611260044289B /* TalentVersionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4933543E2A2611260044289B /* TalentVersionViewModel.swift */; };
 		493354422A2611260044289B /* TalentVersionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4933543E2A2611260044289B /* TalentVersionViewModel.swift */; };
+		4937FDCF2A83FCA7001B6AFA /* PanelAttributeRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4937FDCE2A83FCA7001B6AFA /* PanelAttributeRowView.swift */; };
+		4937FDD02A83FF99001B6AFA /* PanelAttributeRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4937FDCE2A83FCA7001B6AFA /* PanelAttributeRowView.swift */; };
 		494795CB2A6BEA3B006AA88F /* StrengthedEquip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494795CA2A6BEA3B006AA88F /* StrengthedEquip.swift */; };
 		494795CC2A6BEA3B006AA88F /* StrengthedEquip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494795CA2A6BEA3B006AA88F /* StrengthedEquip.swift */; };
 		494795CF2A6EF529006AA88F /* EquipSetDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494795CE2A6EF529006AA88F /* EquipSetDTO.swift */; };
@@ -243,6 +245,8 @@
 		499C8C522A82214700925F71 /* PanelAttrDesc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499C8C502A82214700925F71 /* PanelAttrDesc.swift */; };
 		499C8C542A82640400925F71 /* LevelConst.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499C8C532A82640400925F71 /* LevelConst.swift */; };
 		499C8C552A82640400925F71 /* LevelConst.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499C8C532A82640400925F71 /* LevelConst.swift */; };
+		499C8C572A83F22200925F71 /* PanelAttributeType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499C8C562A83F22200925F71 /* PanelAttributeType.swift */; };
+		499C8C582A83F22200925F71 /* PanelAttributeType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499C8C562A83F22200925F71 /* PanelAttributeType.swift */; };
 		499F5ABB2A2B468200A3C588 /* TransitionExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499F5ABA2A2B468200A3C588 /* TransitionExtension.swift */; };
 		499F5ABC2A2B468200A3C588 /* TransitionExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499F5ABA2A2B468200A3C588 /* TransitionExtension.swift */; };
 		499F5ABF2A2D071B00A3C588 /* EquipHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499F5ABE2A2D071B00A3C588 /* EquipHomeView.swift */; };
@@ -399,6 +403,7 @@
 		493023662A25D423006E81E4 /* TalentService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TalentService.swift; sourceTree = "<group>"; };
 		4933543D2A2611260044289B /* TalentVersionPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TalentVersionPicker.swift; path = JX3Base/Core/View/Talent/TalentVersionPicker.swift; sourceTree = SOURCE_ROOT; };
 		4933543E2A2611260044289B /* TalentVersionViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TalentVersionViewModel.swift; path = JX3Base/Core/View/Talent/TalentVersionViewModel.swift; sourceTree = SOURCE_ROOT; };
+		4937FDCE2A83FCA7001B6AFA /* PanelAttributeRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PanelAttributeRowView.swift; sourceTree = "<group>"; };
 		494795CA2A6BEA3B006AA88F /* StrengthedEquip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StrengthedEquip.swift; sourceTree = "<group>"; };
 		494795CE2A6EF529006AA88F /* EquipSetDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipSetDTO.swift; sourceTree = "<group>"; };
 		494795D12A6FE2C0006AA88F /* EquipSetService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipSetService.swift; sourceTree = "<group>"; };
@@ -528,6 +533,7 @@
 		499C8C4D2A8220FC00925F71 /* attr_desc_panel.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = attr_desc_panel.json; sourceTree = "<group>"; };
 		499C8C502A82214700925F71 /* PanelAttrDesc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PanelAttrDesc.swift; sourceTree = "<group>"; };
 		499C8C532A82640400925F71 /* LevelConst.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelConst.swift; sourceTree = "<group>"; };
+		499C8C562A83F22200925F71 /* PanelAttributeType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PanelAttributeType.swift; sourceTree = "<group>"; };
 		499F5ABA2A2B468200A3C588 /* TransitionExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransitionExtension.swift; sourceTree = "<group>"; };
 		499F5ABE2A2D071B00A3C588 /* EquipHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipHomeView.swift; sourceTree = "<group>"; };
 		499F5AC82A2F954200A3C588 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -715,6 +721,7 @@
 				49504D912A42CED200B93E90 /* EquipSubType.swift */,
 				49FBA5A12A55D0FB0031F9B5 /* ClientType.swift */,
 				499A2FCB2A6A5A6C00F10732 /* EnchantSubType.swift */,
+				499C8C562A83F22200925F71 /* PanelAttributeType.swift */,
 			);
 			path = Enum;
 			sourceTree = "<group>";
@@ -1018,6 +1025,7 @@
 		4992D20C2A24F03C007EEFC2 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				499C8C592A83FA9C00925F71 /* Panel */,
 				49FBA5FD2A5C49A80031F9B5 /* Carousel */,
 				49FBA5AD2A56F3130031F9B5 /* Enchant */,
 				499F5ABD2A2D070300A3C588 /* Equip */,
@@ -1122,6 +1130,14 @@
 				4986054E2A72EDDC00C774E0 /* ColorStonePickerViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		499C8C592A83FA9C00925F71 /* Panel */ = {
+			isa = PBXGroup;
+			children = (
+				4937FDCE2A83FCA7001B6AFA /* PanelAttributeRowView.swift */,
+			);
+			path = Panel;
 			sourceTree = "<group>";
 		};
 		499F5ABD2A2D070300A3C588 /* Equip */ = {
@@ -1589,6 +1605,7 @@
 				4992D1F02A248390007EEFC2 /* LocalFileManager.swift in Sources */,
 				499A2FCA2A69A49F00F10732 /* StrengthEquip.swift in Sources */,
 				4992D1F82A249C09007EEFC2 /* ImageDownloadService.swift in Sources */,
+				4937FDCF2A83FCA7001B6AFA /* PanelAttributeRowView.swift in Sources */,
 				49504D802A41CBA300B93E90 /* PvType.swift in Sources */,
 				49536A252A31C47E004FBBB1 /* EquipPickerViewModel.swift in Sources */,
 				4992D2162A24F32C007EEFC2 /* IconLibraryViewModel.swift in Sources */,
@@ -1613,6 +1630,7 @@
 				492D075D2A250F1A00826308 /* JX3.xcdatamodeld in Sources */,
 				4992D1742A2300F4007EEFC2 /* NetworkManager.swift in Sources */,
 				4992D16B2A22F7D4007EEFC2 /* ServerStateItemView.swift in Sources */,
+				499C8C572A83F22200925F71 /* PanelAttributeType.swift in Sources */,
 				49504DA82A44BDA600B93E90 /* GameText.swift in Sources */,
 				4992D21C2A24F8F7007EEFC2 /* Color.swift in Sources */,
 				4992D1712A22F884007EEFC2 /* ServerStateService.swift in Sources */,
@@ -1750,6 +1768,7 @@
 				49504DA62A44BB5D00B93E90 /* EquipScoreUtil.swift in Sources */,
 				49DDC4B82A541496009F06A4 /* NumberUtil.swift in Sources */,
 				494795CC2A6BEA3B006AA88F /* StrengthedEquip.swift in Sources */,
+				499C8C582A83F22200925F71 /* PanelAttributeType.swift in Sources */,
 				499F5ACA2A2F954200A3C588 /* HomeView.swift in Sources */,
 				4992D2132A24F2F1007EEFC2 /* LikedIconLibraryView.swift in Sources */,
 				49504D992A42D42C00B93E90 /* CustomKey.swift in Sources */,
@@ -1801,6 +1820,7 @@
 				497467C82A261AC500275A09 /* BundleUtil.swift in Sources */,
 				495410E52A2AEA3C00AA6293 /* EnvironmentExtension.swift in Sources */,
 				499A2FC72A68613300F10732 /* EquipPickerModel.swift in Sources */,
+				4937FDD02A83FF99001B6AFA /* PanelAttributeRowView.swift in Sources */,
 				49536A112A30DAAB004FBBB1 /* EquipPickerView.swift in Sources */,
 				49FBA5BC2A57FBAA0031F9B5 /* AppTabBarView.swift in Sources */,
 				49FBA5EC2A585C8A0031F9B5 /* CustomNavBarPreferenceKeys.swift in Sources */,
