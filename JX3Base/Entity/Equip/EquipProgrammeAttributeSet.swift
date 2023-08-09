@@ -82,6 +82,8 @@ class EquipProgrammeAttributeSet: Identifiable, Equatable {
         calcCriticalStrike()
         calcCriticalDamagePower()
         calcOvercome()
+        calcHaste()
+        calcStrain()
     }
     
     // MARK: 添加属性
@@ -436,6 +438,21 @@ class EquipProgrammeAttributeSet: Identifiable, Equatable {
         
         let hastePercent = hasteBase / (levelConst.fHasteRate * levelConst.nLevelCoefficient) + getAttribute("atHasteBasePercentAdd") / 1024
         panelAttrs.add("HastePercent", hastePercent)
+        
+        logger.debug("加速等级: \(hasteBase) 加速百分比:\(String(format: "%.02f%%", hastePercent))")
+    }
+    
+    // MARK: 无双
+    private func calcStrain() {
+        let strainBase = getAttribute("atStrainBase").mul(getAttribute("atStrainPercent"))
+        panelAttrs.add("Strain", strainBase)
+        
+        let levelConst = AssetJsonDataManager.shared.levelConst
+        let strainPercent = strainBase / (levelConst.fInsightParam * levelConst.nLevelCoefficient) + getAttribute("atStrainRate")
+        panelAttrs.add("StrainPercent", strainPercent)
+        finalAttrs.add("atStrain", strainPercent)
+        
+        logger.debug("无双等级: \(strainBase) 无双百分比: \(String(format: "%.02f%%", strainPercent * 100))")
     }
     
     // MARK: 属性转换
