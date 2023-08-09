@@ -25,6 +25,8 @@ class EquipProgrammeAttributeSet: Identifiable, Equatable {
     // 所有伤害类型
     let primaryTypes = ["Physics", "Lunar", "Solar", "Neutral", "Poison"]
     
+    private let levelConst = AssetJsonDataManager.shared.levelConst
+    
     init(equipProgramme: EquipProgramme, useHeavy: Bool = false) {
         self.equipProgramme = equipProgramme
         self.useHeavy = useHeavy
@@ -60,6 +62,7 @@ class EquipProgrammeAttributeSet: Identifiable, Equatable {
         addBaseAttributes()
     }
     
+    // MARK: 计算面板属性
     private func calc() {
         panelAttrs = [:]
         finalAttrs = [:]
@@ -84,6 +87,19 @@ class EquipProgrammeAttributeSet: Identifiable, Equatable {
         calcOvercome()
         calcHaste()
         calcStrain()
+        calcSurplusValue()
+        calcPhysicsShield()
+        calcMagicShield()
+        calcDodge()
+        calcParry()
+        calcParryValue()
+        calcToughness()
+        calcDecriticalDamage()
+        
+        panelAttrs.add("MeleeWeaponAttackSpeed", getAttribute("atMeleeWeaponAttackSpeedBase"))
+        panelAttrs.add("MeleeWeaponDamage", getAttribute("atMeleeWeaponDamageBase"))
+        panelAttrs.add("MeleeWeaponDamageRand", getAttribute("atMeleeWeaponDamageRand"))
+        panelAttrs.add("ActiveThreatCoefficient", getAttribute("atActiveThreatCoefficient"))
     }
     
     // MARK: 添加属性
@@ -362,8 +378,6 @@ class EquipProgrammeAttributeSet: Identifiable, Equatable {
         panelAttrs.add("\(type)CriticalStrike", criticalStrikeLevel)
         finalAttrs.add("at\(type)CriticalStrike", criticalStrikeLevel)
         
-        let levelConst = AssetJsonDataManager.shared.levelConst
-        
         let criticalStrikePercent = criticalStrikeLevel / (levelConst.fCriticalStrikeParam * levelConst.nLevelCoefficient) + getAttribute("at\(type)CriticalStrikeBaseRate") / 10000
         panelAttrs.add("\(type)CriticalStrikeRate", criticalStrikePercent)
         logger.debug("\(typeDesc(type))会心等级: \(criticalStrikeLevel) 会心百分比: \(String(format: "%.02f", criticalStrikePercent * 100))")
@@ -389,7 +403,6 @@ class EquipProgrammeAttributeSet: Identifiable, Equatable {
         
         // 额外百分比
         let baseKiloNumRate = type == "Physics" ? 0 : getAttribute("atMagicCriticalDamagePowerBaseKiloNumRate")
-        let levelConst = AssetJsonDataManager.shared.levelConst
         let panelPercent = (levelConst.fPlayerCriticalCof + 1) + percent / (levelConst.fCriticalStrikePowerParam * levelConst.nLevelCoefficient) + baseKiloNumRate / 10000
         panelAttrs.add("\(type)CriticalDamagePowerPercent", panelPercent)
         finalAttrs.add("at\(type)CriticalDamagePowerPercent", panelPercent)
@@ -413,8 +426,6 @@ class EquipProgrammeAttributeSet: Identifiable, Equatable {
         let panelOvercome = base + calcAllCofValue(dest: "\(type)Overcome")
         panelAttrs.add("\(type)Overcome", panelOvercome)
         
-        let levelConst = AssetJsonDataManager.shared.levelConst
-        
         let overcomePercent = panelOvercome.mul(getAttribute("at\(type)OvercomePercent")) / (levelConst.fOvercomeParam * levelConst.nLevelCoefficient)
         panelAttrs.add("\(type)OvercomePercent", overcomePercent)
         finalAttrs.add("at\(type)OvercomePercent", overcomePercent)
@@ -434,12 +445,10 @@ class EquipProgrammeAttributeSet: Identifiable, Equatable {
         panelAttrs.add("Haste", hasteBase)
         finalAttrs.add("atHaste", hasteBase)
         
-        let levelConst = AssetJsonDataManager.shared.levelConst
-        
         let hastePercent = hasteBase / (levelConst.fHasteRate * levelConst.nLevelCoefficient) + getAttribute("atHasteBasePercentAdd") / 1024
         panelAttrs.add("HastePercent", hastePercent)
         
-        logger.debug("加速等级: \(hasteBase) 加速百分比:\(String(format: "%.02f%%", hastePercent))")
+        logger.debug("加速等级: \(hasteBase) 加速百分比:\(String(format: "%.02f%%", hastePercent * 100))")
     }
     
     // MARK: 无双
@@ -447,12 +456,117 @@ class EquipProgrammeAttributeSet: Identifiable, Equatable {
         let strainBase = getAttribute("atStrainBase").mul(getAttribute("atStrainPercent"))
         panelAttrs.add("Strain", strainBase)
         
-        let levelConst = AssetJsonDataManager.shared.levelConst
         let strainPercent = strainBase / (levelConst.fInsightParam * levelConst.nLevelCoefficient) + getAttribute("atStrainRate")
         panelAttrs.add("StrainPercent", strainPercent)
         finalAttrs.add("atStrain", strainPercent)
         
         logger.debug("无双等级: \(strainBase) 无双百分比: \(String(format: "%.02f%%", strainPercent * 100))")
+    }
+    
+    // MARK: 破招
+    private func calcSurplusValue() {
+        let surplusValueBase = getAttribute("atSurplusValueBase").mul(getAttribute("atSurplusValuePercent"))
+        panelAttrs.add("SurplusValue", surplusValueBase)
+        
+        let surplusValuePercent = surplusValueBase / (levelConst.fInsightParam * levelConst.nLevelCoefficient)
+        panelAttrs.add("SurplusValuePercent", surplusValuePercent)
+        finalAttrs.add("atSurplusValue", surplusValuePercent)
+        
+        logger.debug("破招等级: \(surplusValueBase) 破招百分比: \(String(format: "%.02f%%", surplusValuePercent * 100))")
+    }
+    
+    // MARK: 外防
+    private func calcPhysicsShield() {
+        let base = getAttribute("atPhysicsShieldBase")
+        panelAttrs.add("PhysicsShieldBase", base)
+        
+        let final = base.mul(getAttribute("atPhysicsShieldPercent")) + getAttribute("atPhysicsShieldAdditional") + calcAllCofValue(dest: "PhysicsShield")
+        panelAttrs.add("PhysicsShield", final)
+        let finalPercent = final / (final + levelConst.fPhysicsShieldParam * levelConst.nLevelCoefficient)
+        panelAttrs.add("PhysicsShieldPercent", finalPercent)
+        
+        logger.debug("基础外防: \(base) 最终外防等级: \(final) 最终外防百分比: \(String(format: "%.02f%%", finalPercent * 100))")
+    }
+    
+    // MARK: 内防
+    private func calcMagicShield(_ type: String) {
+        let base = getAttribute("atMagicShield") + getAttribute("at\(type)MagicShieldBase")
+        panelAttrs.add("\(type)ShieldBase", base)
+        
+        let final = base.mul(getAttribute("at\(type)MagicShieldPercent")) + calcAllCofValue(dest: "MagicShield") + calcAllCofValue(dest: "\(type)MagicShield")
+        panelAttrs.add("\(type)Shield", final)
+        let finalPercent = final / (final + levelConst.fMagicShieldParam * levelConst.nLevelCoefficient)
+        panelAttrs.add("\(type)ShieldPercent", finalPercent)
+        
+        let typeDesc = typeDesc(type)
+        logger.debug("基础\(typeDesc)防御: \(base) 最终\(typeDesc)防御: \(final) 最终\(typeDesc)防御: \(String(format: "%.02f%%", finalPercent * 100))")
+    }
+    
+    private func calcMagicShield() {
+        for type in primaryTypes {
+            if type != "Physics" {
+                calcMagicShield(type)
+            }
+        }
+    }
+    
+    // MARK: 闪避
+    private func calcDodge() {
+        let base = getAttribute("atDodge") + calcAllCofValue(dest: "Dodge")
+        let panelDodge = base.mul(0, base: 1000)
+        panelAttrs.add("Dodge", panelDodge)
+        let dodgePercent = panelDodge / (panelDodge + levelConst.fDodgeParam * levelConst.nLevelCoefficient) + getAttribute("atDodgeBaseRate") / 10000
+        panelAttrs.add("DodgePercent", dodgePercent)
+        
+        logger.debug("闪避等级: \(panelDodge) 闪避百分比: \(String(format: "%.02f%%", dodgePercent * 100))")
+    }
+    
+    // MARK: 招架
+    private func calcParry() {
+        let base = getAttribute("atParryBase") + calcAllCofValue(dest: "Parry")
+        let pannelParry = base.mul(0, base: 1000)
+        panelAttrs.add("Parry", pannelParry)
+        let parryPercent = pannelParry / (pannelParry + levelConst.fParryParam * levelConst.nLevelCoefficient) + getAttribute("atDodgeBaseRate") / 10000
+        panelAttrs.add("ParryPercent", parryPercent)
+        
+        logger.debug("招架等级: \(pannelParry) 招架百分比: \(String(format: "%.02f%%", parryPercent * 100))")
+    }
+    
+    // MARK: 拆招
+    private func calcParryValue() {
+        let base = getAttribute("atParryValueBase") + calcAllCofValue(dest: "ParryValue")
+        let pannelParryValue = base.mul(getAttribute("atParryValuePercent"))
+        
+        panelAttrs.add("ParryValue", pannelParryValue)
+        
+        logger.debug("拆招等级: \(pannelParryValue)")
+    }
+    
+    // MARK: 御劲
+    private func calcToughness() {
+        let toughness = getAttribute("atToughnessBase").mul(getAttribute("atToughnessBaseRate"), base: 1000).mul(getAttribute("atToughnessPercent"))
+        panelAttrs.add("Toughness", toughness)
+        
+        // 减会心
+        let toughnessDefCriticalPercent = toughness / (levelConst.fDefCriticalStrikeParam * levelConst.nLevelCoefficient)
+        panelAttrs.add("ToughnessDefCriticalPercent", toughnessDefCriticalPercent)
+        
+        // 减会伤
+        let toughnessDecirDamagePercent = toughness / (levelConst.fToughnessDecirDamageCof * levelConst.nLevelCoefficient)
+        panelAttrs.add("ToughnessDecirDamagePercent", toughnessDecirDamagePercent)
+        
+        logger.debug("御劲等级: \(toughness) 御劲减会心百分比: \(String(format: "%.02f%%", toughnessDefCriticalPercent * 100)) 御劲减会伤百分比: \(String(format: "%.02f%%", toughnessDecirDamagePercent * 100))")
+    }
+    
+    // MARK: 化劲
+    private func calcDecriticalDamage() {
+        let base = getAttribute("atDecriticalDamagePowerBase").mul(getAttribute("atDecriticalDamagePowerPercent"))
+        panelAttrs.add("DecriticalDamage", base)
+        
+        let percent = base / (levelConst.fDecriticalStrikePowerParam * levelConst.nLevelCoefficient + base) + getAttribute("atDecriticalDamagePowerBaseKiloNumRate") / 1000
+        panelAttrs.add("DecriticalDamagePercent", percent)
+        
+        logger.debug("化劲等级: \(base) 化劲百分比: \(String(format: "%.02f%%", percent * 100))")
     }
     
     // MARK: 属性转换

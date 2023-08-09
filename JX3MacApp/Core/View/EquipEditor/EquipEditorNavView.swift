@@ -29,13 +29,14 @@ struct EquipEditorNavView: View {
                     }
                     Text("总装分:\(equipProgramme.totalScore)")
                         .bold()
-                    ForEach(attributes?.panelAttrs.keys.sorted() ?? [], id: \.self) { key in
-                        if let value = attributes?.panelAttrs[key] {
-                            Text("\(AssetJsonDataManager.shared.panelAttrDescMap[key]?.name ?? key):\(value.tryIntFormat)")
+                    ScrollView {
+                        ForEach(attributes?.panelAttrs.keys.sorted() ?? [], id: \.self) { key in
+                            if let value = attributes?.panelAttrs[key] {
+                                Text("\(AssetJsonDataManager.shared.panelAttrDescMap[key]?.name ?? key):\(value.tryIntFormat)")
+                            }
                         }
+                        
                     }
-                    
-                    Spacer()
                 }
                 .offset(y: -100)
                 VStack(spacing: 10) {
