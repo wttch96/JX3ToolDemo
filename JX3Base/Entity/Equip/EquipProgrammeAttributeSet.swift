@@ -399,8 +399,8 @@ class EquipProgrammeAttributeSet: Identifiable, Equatable {
     
     // MARK: 计算会心
     private func calcCriticalStrike(_ type:String) {
-        let base = allCalcType(type).reduce(into: 0) { partialResult, calcType in
-            partialResult += getAttribute("at\(type)CriticalStrike")
+        let base: Float = allCalcType(type).reduce(into: 0.0) { partialResult, calcType in
+            partialResult += getAttribute("at\(calcType)CriticalStrike")
         }
         let criticalStrikeLevel = base + calcAllCofValue(dest: "\(type)CriticalStrike") + calcAllCofValue(dest: "\(type)CriticalStrike", isSystem: true)
         
@@ -410,6 +410,12 @@ class EquipProgrammeAttributeSet: Identifiable, Equatable {
         let criticalStrikePercent = criticalStrikeLevel / (levelConst.fCriticalStrikeParam * levelConst.nLevelCoefficient) + getAttribute("at\(type)CriticalStrikeBaseRate") / 10000
         panelAttrs.add("\(type)CriticalStrikeRate", criticalStrikePercent)
         logger.debug("\(typeDesc(type))会心等级: \(criticalStrikeLevel) 会心百分比: \(String(format: "%.02f", criticalStrikePercent * 100))")
+        
+        panelAttributes.add(.init(rawValue: "\(type)CriticalStrike")!, criticalStrikeLevel)
+        panelAttributes.add(.init(rawValue: "\(type)CriticalStrikeRate")!, criticalStrikePercent)
+        
+        panelAttributes[.CriticalStrike] = max(panelAttributes[.CriticalStrike, default: 0], criticalStrikeLevel)
+        panelAttributes[.CriticalStrikeRate] = max(panelAttributes[.CriticalStrikeRate, default: 0], criticalStrikePercent)
     }
     
     private func calcCriticalStrike() {

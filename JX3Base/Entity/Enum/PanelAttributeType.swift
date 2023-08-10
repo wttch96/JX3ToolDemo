@@ -87,6 +87,20 @@ enum PannelAttributeType: String, Identifiable, Decodable {
     // 治疗量
     case therapy = "Therapy"
     case therapyBase = "TherapyBase"
+    // 会心
+    case CriticalStrike
+    case CriticalStrikeRate
+    case PhysicsCriticalStrike
+    case PhysicsCriticalStrikeRate
+    case LunarCriticalStrike
+    case LunarCriticalStrikeRate
+    case SolarCriticalStrike
+    case SolarCriticalStrikeRate
+    case NeutralCriticalStrike
+    case NeutralCriticalStrikeRate
+    case PoisonCriticalStrike
+    case PoisonCriticalStrikeRate
+    
     
     var id: String {
         return self.rawValue

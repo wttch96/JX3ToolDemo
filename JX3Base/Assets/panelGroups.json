@@ -164,6 +164,60 @@
                         "isPercent": false
                     }]
                 ]
+            },
+            {
+                "header": {
+                    "type": "CriticalStrikeRate",
+                    "desc": "会心",
+                    "isPercent": true
+                },
+                "child": [
+                    [{
+                        "type": "PhysicsCriticalStrike",
+                        "desc": "外功会心等级",
+                        "isPercent": false
+                    }, {
+                        "type": "PhysicsCriticalStrikeRate",
+                        "desc": "外功会心几率",
+                        "isPercent": true
+                    }],
+                    [{
+                        "type": "LunarCriticalStrike",
+                        "desc": "阴性内功会心等级",
+                        "isPercent": false
+                    }, {
+                        "type": "LunarCriticalStrikeRate",
+                        "desc": "阴性内功会心几率",
+                        "isPercent": true
+                    }],
+                    [{
+                        "type": "SolarCriticalStrike",
+                        "desc": "阳性内功会心等级",
+                        "isPercent": false
+                    }, {
+                        "type": "SolarCriticalStrikeRate",
+                        "desc": "阳性内功会心几率",
+                        "isPercent": true
+                    }],
+                    [{
+                        "type": "NeutralCriticalStrike",
+                        "desc": "混元内功会心等级",
+                        "isPercent": false
+                    }, {
+                        "type": "NeutralCriticalStrikeRate",
+                        "desc": "混元内功会心几率",
+                        "isPercent": true
+                    }],
+                    [{
+                        "type": "PoisonCriticalStrike",
+                        "desc": "毒性内功会心等级",
+                        "isPercent": false
+                    }, {
+                        "type": "PoisonCriticalStrikeRate",
+                        "desc": "毒性内功会心几率",
+                        "isPercent": true
+                    }]
+                ]
             }
         ]
     }

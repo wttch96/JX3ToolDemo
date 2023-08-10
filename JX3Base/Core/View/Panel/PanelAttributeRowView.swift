@@ -24,16 +24,22 @@ struct PanelAttributeView: View {
     var body: some View {
         ZStack {
             if onlyText {
-                Text("\(attr.desc)\(attributes.panelAttributes[attr.type]?.tryIntFormat ?? "")")
+                Text("\(attr.desc)\(valueText)")
             } else {
                 HStack {
                     Text(attr.desc)
                     Spacer()
-                    if let value = attributes.panelAttributes[attr.type] {
-                        Text("\(value.tryIntFormat)")
-                    }
+                    Text(valueText)
                 }
             }
+        }
+    }
+    
+    private var valueText: String {
+        if attr.isPercent {
+            return String(format: "%.02f%%", attributes.panelAttributes[attr.type, default: 0] * 100)
+        } else {
+            return attributes.panelAttributes[attr.type]?.tryIntFormat ?? ""
         }
     }
 }
