@@ -380,6 +380,9 @@ class EquipProgrammeAttributeSet: Identifiable, Equatable {
             // TODO 最大值攻击力作为面板显示的值
             let attackMax = max(panelAttributes[.attack, default: 0], final)
             panelAttributes[.attack] = attackMax
+        } else {
+            panelAttributes.add(.therapyBase, base)
+            panelAttributes.add(.therapy, final)
         }
     }
     

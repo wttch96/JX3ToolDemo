@@ -150,6 +150,20 @@
                         "isPercent": false
                     }]
                 ]
+            },
+            {
+                "header": {
+                    "type": "Therapy",
+                    "desc": "治疗量",
+                    "isPercent": false
+                },
+                "child": [
+                    [{
+                        "type": "TherapyBase",
+                        "desc": "基础治疗量",
+                        "isPercent": false
+                    }]
+                ]
             }
         ]
     }

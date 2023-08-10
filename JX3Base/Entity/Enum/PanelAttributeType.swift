@@ -72,6 +72,7 @@ enum PannelAttributeType: String, Identifiable, Decodable {
     case spunkToOvercome = "SpunkToOvercome"
     
     // MARK: 伤害
+    // 攻击力
     case attack = "Attack"
     case physicsAttack = "PhysicsAttack"
     case physicsFinalAttack = "PhysicsFinalAttack"
@@ -83,6 +84,9 @@ enum PannelAttributeType: String, Identifiable, Decodable {
     case neutralFinalAttack = "NeutralFinalAttack"
     case poisonAttack = "PoisonAttack"
     case poisonFinalAttack = "PoisonFinalAttack"
+    // 治疗量
+    case therapy = "Therapy"
+    case therapyBase = "TherapyBase"
     
     var id: String {
         return self.rawValue
