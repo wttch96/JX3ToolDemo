@@ -1,0 +1,156 @@
+[
+    {
+        "title": "基础",
+        "child": [
+            {
+                "header": {
+                    "type": "Vitality",
+                    "desc": "体质",
+                    "isPercent": false
+                },
+                "child": [[
+                    {
+                        "type": "VitalityToHealth",
+                        "desc": "气血值提高",
+                        "isPercent": false
+                    }],
+                    [{
+                        "type": "VitalityToMaxHealth",
+                        "desc": "基础气血最大值为",
+                        "isPercent": false
+                    }],
+                    [{
+                        "type": "VitalityToFinalMaxHealth",
+                        "desc": "最终气血最大值为",
+                        "isPercent": false
+                    }]
+                ]
+            },
+            {
+                "header": {
+                    "type": "Spirit",
+                    "desc": "根骨",
+                    "isPercent": false
+                },
+                "child": [
+                    [{
+                        "type": "SpiritToMagicCriticalStrike",
+                        "desc": "内功会心等级提高",
+                        "isPercent": false
+                    }]
+                ]
+            },
+            {
+                "header": {
+                    "type": "Strength",
+                    "desc": "力道",
+                    "isPercent": false
+                },
+                "child": [
+                    [{
+                        "type": "StrengthToAttack",
+                        "desc": "外功攻击提高",
+                        "isPercent": false
+                    },
+                    {
+                        "type": "StrengthToOvercome",
+                        "desc": "外功破防提高",
+                        "isPercent": false
+                    }]
+                ]
+            },
+            {
+                "header": {
+                    "type": "Agility",
+                    "desc": "身法",
+                    "isPercent": false
+                },
+                "child": [
+                    [{
+                        "type": "Agility",
+                        "desc": "外功会心等级提高",
+                        "isPercent": false
+                    }]
+                ]
+            },
+            {
+                "header": {
+                    "type": "Spunk",
+                    "desc": "元气",
+                    "isPercent": false
+                },
+                "child": [
+                    [{
+                        "type": "SpunkToAttack",
+                        "desc": "内功攻击提升",
+                        "isPercent": false
+                    },
+                    {
+                        "type": "SpunkToOvercome",
+                        "desc": "内功破防提高",
+                        "isPercent": false
+                    }]
+                ]
+            }
+        ]
+    },
+    {
+        "title": "伤害",
+        "child": [
+            {
+                "header": {
+                    "type": "Attack",
+                    "desc": "攻击力",
+                    "isPercent": false
+                },
+                "child": [
+                    [{
+                        "type": "PhysicsAttack",
+                        "desc": "基础外功攻击",
+                        "isPercent": false
+                    },{
+                        "type": "PhysicsFinalAttack",
+                        "desc": "最终外功攻击",
+                        "isPercent": false
+                    }],
+                    [{
+                        "type": "LunarAttack",
+                        "desc": "基础阴性内功攻击",
+                        "isPercent": false
+                    },{
+                        "type": "LunarFinalAttack",
+                        "desc": "最终阴性内功攻击",
+                        "isPercent": false
+                    }],
+                    [{
+                        "type": "SolarAttack",
+                        "desc": "基础阳性内功攻击",
+                        "isPercent": false
+                    },{
+                        "type": "SolarFinalAttack",
+                        "desc": "最终阳性内功攻击",
+                        "isPercent": false
+                    }],
+                    [{
+                        "type": "NeutralAttack",
+                        "desc": "基础混元内功攻击",
+                        "isPercent": false
+                    },{
+                        "type": "NeutralFinalAttack",
+                        "desc": "最终混元内功攻击",
+                        "isPercent": false
+                    }],
+                    [{
+                        "type": "PoisonAttack",
+                        "desc": "基础毒性内功攻击",
+                        "isPercent": false
+                    },{
+                        "type": "PoisonFinalAttack",
+                        "desc": "最终毒性内功攻击",
+                        "isPercent": false
+                    }]
+                ]
+            }
+        ]
+    }
+]

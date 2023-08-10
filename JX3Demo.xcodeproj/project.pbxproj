@@ -32,6 +32,9 @@
 		493354422A2611260044289B /* TalentVersionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4933543E2A2611260044289B /* TalentVersionViewModel.swift */; };
 		4937FDCF2A83FCA7001B6AFA /* PanelAttributeRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4937FDCE2A83FCA7001B6AFA /* PanelAttributeRowView.swift */; };
 		4937FDD02A83FF99001B6AFA /* PanelAttributeRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4937FDCE2A83FCA7001B6AFA /* PanelAttributeRowView.swift */; };
+		4937FDD22A84FF4F001B6AFA /* DamageType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4937FDD12A84FF4F001B6AFA /* DamageType.swift */; };
+		4937FDD42A8501C6001B6AFA /* panelGroups.json in Resources */ = {isa = PBXBuildFile; fileRef = 4937FDD32A8501C6001B6AFA /* panelGroups.json */; };
+		4937FDD52A8503A1001B6AFA /* panelGroups.json in Resources */ = {isa = PBXBuildFile; fileRef = 4937FDD32A8501C6001B6AFA /* panelGroups.json */; };
 		494795CB2A6BEA3B006AA88F /* StrengthedEquip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494795CA2A6BEA3B006AA88F /* StrengthedEquip.swift */; };
 		494795CC2A6BEA3B006AA88F /* StrengthedEquip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494795CA2A6BEA3B006AA88F /* StrengthedEquip.swift */; };
 		494795CF2A6EF529006AA88F /* EquipSetDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494795CE2A6EF529006AA88F /* EquipSetDTO.swift */; };
@@ -404,6 +407,8 @@
 		4933543D2A2611260044289B /* TalentVersionPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TalentVersionPicker.swift; path = JX3Base/Core/View/Talent/TalentVersionPicker.swift; sourceTree = SOURCE_ROOT; };
 		4933543E2A2611260044289B /* TalentVersionViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TalentVersionViewModel.swift; path = JX3Base/Core/View/Talent/TalentVersionViewModel.swift; sourceTree = SOURCE_ROOT; };
 		4937FDCE2A83FCA7001B6AFA /* PanelAttributeRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PanelAttributeRowView.swift; sourceTree = "<group>"; };
+		4937FDD12A84FF4F001B6AFA /* DamageType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DamageType.swift; sourceTree = "<group>"; };
+		4937FDD32A8501C6001B6AFA /* panelGroups.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = panelGroups.json; sourceTree = "<group>"; };
 		494795CA2A6BEA3B006AA88F /* StrengthedEquip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StrengthedEquip.swift; sourceTree = "<group>"; };
 		494795CE2A6EF529006AA88F /* EquipSetDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipSetDTO.swift; sourceTree = "<group>"; };
 		494795D12A6FE2C0006AA88F /* EquipSetService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipSetService.swift; sourceTree = "<group>"; };
@@ -722,6 +727,7 @@
 				49FBA5A12A55D0FB0031F9B5 /* ClientType.swift */,
 				499A2FCB2A6A5A6C00F10732 /* EnchantSubType.swift */,
 				499C8C562A83F22200925F71 /* PanelAttributeType.swift */,
+				4937FDD12A84FF4F001B6AFA /* DamageType.swift */,
 			);
 			path = Enum;
 			sourceTree = "<group>";
@@ -763,6 +769,7 @@
 				49A0EB262A7982920074C952 /* levelData.json */,
 				499C8C472A7EAEFF00925F71 /* levelConst.json */,
 				499C8C4D2A8220FC00925F71 /* attr_desc_panel.json */,
+				4937FDD32A8501C6001B6AFA /* panelGroups.json */,
 			);
 			path = Assets;
 			sourceTree = "<group>";
@@ -1458,6 +1465,7 @@
 				495FD66B2A3F581100A17FB0 /* equipAttrDesc.json in Resources */,
 				4986055B2A7568A500C774E0 /* luaConvertMapping.json in Resources */,
 				49EFC0AA2A7190AE007AD5E4 /* std_color_stone_option.json in Resources */,
+				4937FDD42A8501C6001B6AFA /* panelGroups.json in Resources */,
 				498605602A7579B100C774E0 /* strengthableAttributes.json in Resources */,
 				499F5AD82A304C9C00A3C588 /* colors.json in Resources */,
 				499F5ACF2A2FA4B600A3C588 /* school.json in Resources */,
@@ -1505,6 +1513,7 @@
 				49504D842A42BE8900B93E90 /* weaponType.json in Resources */,
 				49504D8A2A42C32400B93E90 /* attrDesc.json in Resources */,
 				49536A172A30DEA8004FBBB1 /* xfAttrs.json in Resources */,
+				4937FDD52A8503A1001B6AFA /* panelGroups.json in Resources */,
 				49FBA5B32A56F36F0031F9B5 /* enchant1.json in Resources */,
 				49A0EB292A7A08080074C952 /* systemAttributes.json in Resources */,
 				49504D962A42D10A00B93E90 /* weapon1.json in Resources */,
@@ -1643,6 +1652,7 @@
 				499F5ABF2A2D071B00A3C588 /* EquipHomeView.swift in Sources */,
 				4992D2202A24F9DA007EEFC2 /* CircleButton.swift in Sources */,
 				49536A032A30AD6B004FBBB1 /* EquipType.swift in Sources */,
+				4937FDD22A84FF4F001B6AFA /* DamageType.swift in Sources */,
 				49D348782A6AFBEC007751AB /* EquipDuty.swift in Sources */,
 				4933543F2A2611260044289B /* TalentVersionPicker.swift in Sources */,
 				4992D2012A24AFB6007EEFC2 /* JX3BoxIcon.swift in Sources */,

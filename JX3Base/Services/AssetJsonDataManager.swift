@@ -60,6 +60,8 @@ class AssetJsonDataManager {
     public let levelConst: LevelConst
     // 面板属性
     public let panelAttrDescMap: [String: PanelAttrDesc]
+    // 面板属性配置
+    public let pannelAttributeGroup: [PanelAttributeGroup]
 
     
     private init() {
@@ -85,6 +87,7 @@ class AssetJsonDataManager {
         self.levelData = BundleUtil.loadJson("levelData.json", type: [String: Int].self, defaultValue: [:])
         self.levelConst = BundleUtil.loadJson("levelConst.json", type: LevelConst.self, defaultValue: LevelConst.shared)
         self.panelAttrDescMap = BundleUtil.loadJson("attr_desc_panel.json", type: [String: PanelAttrDesc].self, defaultValue: [:])
+        self.pannelAttributeGroup = BundleUtil.loadJson("panelGroups.json", type: [PanelAttributeGroup].self, defaultValue: [])
     }
     
     

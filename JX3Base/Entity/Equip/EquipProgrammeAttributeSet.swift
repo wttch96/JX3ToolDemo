@@ -346,8 +346,8 @@ class EquipProgrammeAttributeSet: Identifiable, Equatable {
         
         panelAttributes.add(.vitality, vitality)
         panelAttributes.add(.vitalityToHealth, floor(atPanelVitalityAddMaxHealth))
-        panelAttributes.add(.vitalityMaxHealth, floor(atPanelMaxHealthBase))
-        panelAttributes.add(.vitalityFinalMaxHealth, floor(maxAdditionalBaseHealth))
+        panelAttributes.add(.vitalityToMaxHealth, floor(atPanelMaxHealthBase))
+        panelAttributes.add(.vitalityToFinalMaxHealth, floor(maxAdditionalBaseHealth))
     }
     
     // MARK: 计算攻击力/奶量
@@ -372,6 +372,15 @@ class EquipProgrammeAttributeSet: Identifiable, Equatable {
         
         let typeDesc = "\(typeDesc(type))\(isTherapy ? "" : "攻击")"
         logger.debug("🗡️基础\(typeDesc): \(base) 最终\(typeDesc): \(final)")
+        
+        if !isTherapy {
+            panelAttributes.add(.init(rawValue: "\(type)Attack")!, base)
+            panelAttributes.add(.init(rawValue: "\(type)FinalAttack")!, final)
+            
+            // TODO 最大值攻击力作为面板显示的值
+            let attackMax = max(panelAttributes[.attack, default: 0], final)
+            panelAttributes[.attack] = attackMax
+        }
     }
     
     private func calcAttackPower() {

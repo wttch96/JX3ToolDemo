@@ -43,12 +43,8 @@ struct EquipEditorNavView: View {
                         .bold()
                     ScrollView {
                         VStack(spacing: 4) {
-                            ForEach(PanelAttributeGroup.groups) { group in
-                                Section(group.title, content: {
-                                    ForEach(group.child, content: { row in
-                                        PanelAttributeRowView(row, attributes: attributes)
-                                    })
-                                })
+                            ForEach(AssetJsonDataManager.shared.pannelAttributeGroup) { group in
+                                PanelAttributeGroupView(group: group, attributes: attributes)
                             }
                         }
 //

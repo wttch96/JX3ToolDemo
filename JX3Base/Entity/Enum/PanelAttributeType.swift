@@ -7,35 +7,25 @@
 
 import Foundation
 
-struct PanelAttributeGroup: Identifiable {
+struct PanelAttributeGroup: Identifiable, Decodable {
     let title: String
     let child: [PanelAttributeRow]
     
     var id: String {
         return title
     }
-    
-    static let groups: [PanelAttributeGroup] = [
-        PanelAttributeGroup(title: "基础", child: [.vitality, .spirit, .strength, .agility, .spunk]),
-    ]
 }
 
-struct PanelAttributeRow: Identifiable {
+struct PanelAttributeRow: Identifiable, Decodable {
     let header: PanelAttribute
-    let child: [PanelAttribute]
+    let child: [[PanelAttribute]]
     
     var id: String {
         return header.id
     }
-    
-    static let vitality = PanelAttributeRow(header: .vitality, child: [.vitalityToHealth, .vitalityMaxHealth, .vitalityFinalMaxHealth])
-    static let spirit = PanelAttributeRow(header: .spirit, child: [.spiritToMagicCriticalStrike])
-    static let strength = PanelAttributeRow(header: .strength, child: [.strengthToAttack, .strengthToOvercome])
-    static let agility = PanelAttributeRow(header: .agility, child: [.agilityToCriticalStrike])
-    static let spunk = PanelAttributeRow(header: .spunk, child: [.spunkToAttack, .spunkToOvercome])
 }
 
-struct PanelAttribute: Identifiable {
+struct PanelAttribute: Identifiable, Decodable {
     let type: PannelAttributeType
     let desc: String
     let isPercent: Bool
@@ -49,57 +39,61 @@ struct PanelAttribute: Identifiable {
     var id: String {
         return type.id
     }
-    
-    static let vitality = PanelAttribute(.vitality, desc: "体质")
-    static let vitalityToHealth = PanelAttribute(.vitalityToHealth, desc: "气血值提高")
-    static let vitalityMaxHealth = PanelAttribute(.vitalityMaxHealth, desc: "基础气血最大值为")
-    static let vitalityFinalMaxHealth = PanelAttribute(.vitalityFinalMaxHealth, desc: "最终气血最大值为")
-    
-    static let spirit = PanelAttribute(.spirit, desc: "根骨")
-    static let spiritToMagicCriticalStrike = PanelAttribute(.spiritToMagicCriticalStrike, desc: "内功会心等级提高")
-    
-    static let strength = PanelAttribute(.strength, desc: "力道")
-    static let strengthToAttack = PanelAttribute(.strengthToAttack, desc: "外功攻击提高")
-    static let strengthToOvercome = PanelAttribute(.strengthToOvercome, desc: "外功破防提高")
-    
-    static let agility = PanelAttribute(.agility, desc: "身法")
-    static let agilityToCriticalStrike = PanelAttribute(.agilityToCriticalStrike, desc: "外功会心等级提高")
-    
-    static let spunk = PanelAttribute(.spunk, desc: "元气")
-    static let spunkToAttack = PanelAttribute(.spunkToAttack, desc: "内功攻击提高")
-    static let spunkToOvercome = PanelAttribute(.spunkToOvercome, desc: "内功破防提高")
 }
 
 /// 属性
-enum PannelAttributeType: String, Identifiable {
+enum PannelAttributeType: String, Identifiable, Decodable {
+    // MARK: 基础
     /// 体质
     case vitality = "Vitality"
     /// 体质气血值提升
-    case vitalityToHealth
+    case vitalityToHealth = "VitalityToHealth"
     /// 基础气血最大值
-    case vitalityMaxHealth
+    case vitalityToMaxHealth = "VitalityToMaxHealth"
     /// 最终气血最大值
-    case vitalityFinalMaxHealth
+    case vitalityToFinalMaxHealth = "VitalityToFinalMaxHealth"
 
     /// 根骨
     case spirit = "Spirit"
-    case spiritToMagicCriticalStrike
+    case spiritToMagicCriticalStrike = "SpiritToMagicCriticalStrike"
     
     /// 力道
     case strength = "Strength"
-    case strengthToAttack
-    case strengthToOvercome
+    case strengthToAttack = "StrengthToAttack"
+    case strengthToOvercome = "StrengthToOvercome"
     
     /// 身法
     case agility = "Agility"
-    case agilityToCriticalStrike
+    case agilityToCriticalStrike = "AgilityToCriticalStrike"
     
     /// 元气
     case spunk = "Spunk"
-    case spunkToAttack
-    case spunkToOvercome
+    case spunkToAttack = "SpunkToAttack"
+    case spunkToOvercome = "SpunkToOvercome"
+    
+    // MARK: 伤害
+    case attack = "Attack"
+    case physicsAttack = "PhysicsAttack"
+    case physicsFinalAttack = "PhysicsFinalAttack"
+    case lunarAttack = "LunarAttack"
+    case lunarFinalAttack = "LunarFinalAttack"
+    case solarAttack = "SolarAttack"
+    case solarFinalAttack = "SolarFinalAttack"
+    case neutralAttack = "NeutralAttack"
+    case neutralFinalAttack = "NeutralFinalAttack"
+    case poisonAttack = "PoisonAttack"
+    case poisonFinalAttack = "PoisonFinalAttack"
     
     var id: String {
         return self.rawValue
+    }
+    
+    init(from decoder: Decoder) throws {
+        let rawValue = try decoder.singleValueContainer().decode(String.self)
+        if let type = PannelAttributeType.init(rawValue: rawValue) {
+            self = type
+        } else {
+            fatalError("初始化 PanelAttributeType.json 错误")
+        }
     }
 }

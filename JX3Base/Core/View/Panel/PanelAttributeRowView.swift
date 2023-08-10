@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+
 struct PanelAttributeView: View {
     let attributes: EquipProgrammeAttributeSet
     let attr: PanelAttribute
@@ -34,8 +35,6 @@ struct PanelAttributeView: View {
                 }
             }
         }
-        .padding(.horizontal)
-        .foregroundColor(isHeader ? Color.theme.gold : .white)
     }
 }
 
@@ -58,11 +57,38 @@ struct PanelAttributeRowView: View {
         .popover(isPresented: $showPanelRows, attachmentAnchor: .point(.trailing), arrowEdge: .trailing, content: {
             VStack(alignment: .leading, spacing: 4) {
                 PanelAttributeView(row.header, attributes: attributes, isHeader: true)
-                ForEach(row.child) { attr in
-                    PanelAttributeView(attr, attributes: attributes)
+                    .foregroundColor(.theme.gold)
+                ForEach(row.child, id: \.first?.id) { attrRow in
+                    HStack(spacing: 4, content: {
+                        ForEach(attrRow) { attr in
+                            PanelAttributeView(attr, attributes: attributes)
+                        }
+                    })
                 }
             }
+            .padding(.horizontal)
             .padding(.vertical)
+        })
+    }
+}
+
+struct PanelAttributeGroupView: View {
+    let group: PanelAttributeGroup
+    let attributes: EquipProgrammeAttributeSet
+    
+    init(group: PanelAttributeGroup, attributes: EquipProgrammeAttributeSet) {
+        self.group = group
+        self.attributes = attributes
+    }
+    
+    var body: some View {
+        Section(content: {
+            ForEach(group.child, content: { row in
+                PanelAttributeRowView(row, attributes: attributes)
+            })
+        }, header: {
+            Text(group.title)
+                .foregroundColor(.theme.gold)
         })
     }
 }

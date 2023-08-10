@@ -18,6 +18,7 @@ struct JX3MacAppApp: App {
         WindowGroup {
             // ContentView()
             EquipEditorView(mount: Mount("问水诀")!)
+            // EquipEditorView(mount: Mount("天罗诡道")!)
             // EquipEditorView(mount: Mount("明尊琉璃体")!)
             // EquipEditorView(mount: Mount("铁骨衣")!)
             // EquipEditorView(mount: Mount("洗髓经")!)
