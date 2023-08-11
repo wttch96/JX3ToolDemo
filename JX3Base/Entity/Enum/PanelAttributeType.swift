@@ -151,6 +151,22 @@ enum PannelAttributeType: String, Identifiable, Decodable {
     case PoisonMagicShieldBase
     case PoisonMagicShield
     case PoisonMagicShieldPercent
+    // MARK: 闪、招、拆、御、化
+    // 闪躲
+    case Dodge
+    case DodgePercent
+    // 招架
+    case Parry
+    case ParryPercent
+    // 拆招
+    case ParryValue
+    // 御劲
+    case Toughness
+    case ToughnessDefCriticalPercent
+    case ToughnessDecirDamagePercent
+    // 化劲
+    case DecriticalDamage
+    case DecriticalDamagePercent
     
     
     

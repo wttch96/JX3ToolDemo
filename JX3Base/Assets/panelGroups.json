@@ -276,7 +276,7 @@
             {
                 "header": {
                     "type": "HastePercent",
-                    "desc": "加速率",
+                    "desc": "加速",
                     "isPercent": true
                 },
                 "child": [
@@ -378,7 +378,7 @@
             {
                 "header": {
                     "type": "PhysicsShieldPercent",
-                    "desc": "外防",
+                    "desc": "外功防御",
                     "isPercent": true
                 },
                 "child": [
@@ -400,7 +400,7 @@
             {
                 "header": {
                     "type": "MagicShieldPercent",
-                    "desc": "内防",
+                    "desc": "内功防御",
                     "isPercent": true
                 },
                 "child": [
@@ -457,6 +457,80 @@
                         "isPercent": true
                     }]
                 ]
+            },
+            {
+                "header": {
+                    "type": "DodgePercent",
+                    "desc": "闪躲",
+                    "isPercent": true
+                },
+                "child": [
+                    [{
+                        "type": "Dodge",
+                        "desc": "闪躲等级",
+                        "isPercent": false
+                    },{
+                        "type": "DodgePercent",
+                        "desc": "闪躲概率",
+                        "isPercent": true
+                    } ]
+                ]
+            },
+            {
+                "header": {
+                    "type": "ParryPercent",
+                    "desc": "招架",
+                    "isPercent": true
+                },
+                "child": [
+                    [{
+                        "type": "Parry",
+                        "desc": "招架等级",
+                        "isPercent": false
+                    }, {
+                        "type": "ParryPercent",
+                        "desc": "招架",
+                        "isPercent": true
+                    }]
+                ]
+            },
+            {
+                "header": {
+                    "type": "ParryValue",
+                    "desc": "拆招",
+                    "isPercent": false
+                },
+                "child": []
+            },
+            {
+                "header": {
+                    "type": "ToughnessDefCriticalPercent",
+                    "desc": "御劲",
+                    "isPercent": true
+                },
+                "child": [
+                    [{
+                        "type": "Toughness",
+                        "desc": "御劲等级提高",
+                        "isPercent": false
+                    },{
+                        "type": "ToughnessDefCriticalPercent",
+                        "desc": "被同等级目标会心攻击的几率降低",
+                        "isPercent": true
+                    },{
+                        "type": "ToughnessDecirDamagePercent",
+                        "desc": "被同等级目标会心攻击时受到的额外伤害降低",
+                        "isPercent": true
+                    }]
+                ]
+            },
+            {
+                "header": {
+                    "type": "DecriticalDamagePercent",
+                    "desc": "化劲",
+                    "isPercent": true
+                },
+                "child": []
             }
         ]
     }

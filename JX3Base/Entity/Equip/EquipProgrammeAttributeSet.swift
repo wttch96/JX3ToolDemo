@@ -580,6 +580,9 @@ class EquipProgrammeAttributeSet: Identifiable, Equatable {
         panelAttrs.add("DodgePercent", dodgePercent)
         
         logger.debug("闪避等级: \(panelDodge) 闪避百分比: \(String(format: "%.02f%%", dodgePercent * 100))")
+        
+        panelAttributes.add(.Dodge, panelDodge)
+        panelAttributes.add(.DodgePercent, dodgePercent)
     }
     
     // MARK: 招架
@@ -591,6 +594,9 @@ class EquipProgrammeAttributeSet: Identifiable, Equatable {
         panelAttrs.add("ParryPercent", parryPercent)
         
         logger.debug("招架等级: \(pannelParry) 招架百分比: \(String(format: "%.02f%%", parryPercent * 100))")
+        
+        panelAttributes.add(.Parry, pannelParry)
+        panelAttributes.add(.ParryPercent, parryPercent)
     }
     
     // MARK: 拆招
@@ -601,6 +607,7 @@ class EquipProgrammeAttributeSet: Identifiable, Equatable {
         panelAttrs.add("ParryValue", pannelParryValue)
         
         logger.debug("拆招等级: \(pannelParryValue)")
+        panelAttributes.add(.ParryValue, pannelParryValue)
     }
     
     // MARK: 御劲
@@ -617,6 +624,10 @@ class EquipProgrammeAttributeSet: Identifiable, Equatable {
         panelAttrs.add("ToughnessDecirDamagePercent", toughnessDecirDamagePercent)
         
         logger.debug("御劲等级: \(toughness) 御劲减会心百分比: \(String(format: "%.02f%%", toughnessDefCriticalPercent * 100)) 御劲减会伤百分比: \(String(format: "%.02f%%", toughnessDecirDamagePercent * 100))")
+        
+        panelAttributes.add(.Toughness, toughness)
+        panelAttributes.add(.ToughnessDefCriticalPercent, toughnessDefCriticalPercent)
+        panelAttributes.add(.ToughnessDecirDamagePercent, toughnessDecirDamagePercent)
     }
     
     // MARK: 化劲
@@ -628,6 +639,8 @@ class EquipProgrammeAttributeSet: Identifiable, Equatable {
         panelAttrs.add("DecriticalDamagePercent", percent)
         
         logger.debug("化劲等级: \(base) 化劲百分比: \(String(format: "%.02f%%", percent * 100))")
+        panelAttributes.add(.DecriticalDamage, base)
+        panelAttributes.add(.DecriticalDamagePercent, percent)
     }
     
     // MARK: 属性转换
