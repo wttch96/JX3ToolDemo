@@ -372,5 +372,31 @@
                 "child": []
             }
         ]
+    }, {
+        "title": "防御",
+        "child": [
+            {
+                "header": {
+                    "type": "PhysicsShieldPercent",
+                    "desc": "外防",
+                    "isPercent": true
+                },
+                "child": [
+                    [{
+                        "type": "PhysicsShieldBase",
+                        "desc": "基础外功防御等级",
+                        "isPercent": false
+                    }, {
+                        "type": "PhysicsShield",
+                        "desc": "最终外功防御等级",
+                        "isPercent": false
+                    }, {
+                        "type": "PhysicsShieldPercent",
+                        "desc": "同等级目标对你的外功伤害降低",
+                        "isPercent": true
+                    }]
+                ]
+            }
+        ]
     }
 ]

@@ -537,6 +537,10 @@ class EquipProgrammeAttributeSet: Identifiable, Equatable {
         panelAttrs.add("PhysicsShieldPercent", finalPercent)
         
         logger.debug("基础外防: \(base) 最终外防等级: \(final) 最终外防百分比: \(String(format: "%.02f%%", finalPercent * 100))")
+        
+        panelAttributes.add(.PhysicsShieldPercent, finalPercent)
+        panelAttributes.add(.PhysicsShieldBase, base)
+        panelAttributes.add(.PhysicsShield, final)
     }
     
     // MARK: 内防

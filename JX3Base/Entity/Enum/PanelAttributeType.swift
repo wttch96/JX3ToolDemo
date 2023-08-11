@@ -133,6 +133,10 @@ enum PannelAttributeType: String, Identifiable, Decodable {
     // MARK: 破招
     case SurplusValue
     case SurplusValuePercent
+    // MARK: 防御
+    case PhysicsShieldBase
+    case PhysicsShield
+    case PhysicsShieldPercent
     
     
     var id: String {
