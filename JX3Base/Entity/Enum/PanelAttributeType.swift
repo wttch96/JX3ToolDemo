@@ -124,6 +124,16 @@ enum PannelAttributeType: String, Identifiable, Decodable {
     case NeutralOvercomePercent
     case PoisonOvercome
     case PoisonOvercomePercent
+    // MARK: 加速
+    case Haste
+    case HastePercent
+    // MARK: 无双
+    case Strain
+    case StrainPercent
+    // MARK: 破招
+    case SurplusValue
+    case SurplusValuePercent
+    
     
     var id: String {
         return self.rawValue

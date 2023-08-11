@@ -492,6 +492,9 @@ class EquipProgrammeAttributeSet: Identifiable, Equatable {
         panelAttrs.add("HastePercent", hastePercent)
         
         logger.debug("加速等级: \(hasteBase) 加速百分比:\(String(format: "%.02f%%", hastePercent * 100))")
+        
+        panelAttributes.add(.Haste, hasteBase)
+        panelAttributes.add(.HastePercent, hastePercent)
     }
     
     // MARK: 无双
@@ -504,6 +507,9 @@ class EquipProgrammeAttributeSet: Identifiable, Equatable {
         finalAttrs.add("atStrain", strainPercent)
         
         logger.debug("无双等级: \(strainBase) 无双百分比: \(String(format: "%.02f%%", strainPercent * 100))")
+        
+        panelAttributes.add(.Strain, strainBase)
+        panelAttributes.add(.StrainPercent, strainPercent)
     }
     
     // MARK: 破招
@@ -516,6 +522,8 @@ class EquipProgrammeAttributeSet: Identifiable, Equatable {
         finalAttrs.add("atSurplusValue", surplusValuePercent)
         
         logger.debug("破招等级: \(surplusValueBase) 破招百分比: \(String(format: "%.02f%%", surplusValuePercent * 100))")
+        
+        panelAttributes.add(.SurplusValue, surplusValueBase)
     }
     
     // MARK: 外防

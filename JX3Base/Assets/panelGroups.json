@@ -275,6 +275,24 @@
             },
             {
                 "header": {
+                    "type": "HastePercent",
+                    "desc": "加速率",
+                    "isPercent": true
+                },
+                "child": [
+                    [{
+                        "type": "Haste",
+                        "desc": "加速等级",
+                        "isPercent": false
+                    }, {
+                        "type": "HastePercent",
+                        "desc": "加速率",
+                        "isPercent": true
+                    }]
+                ]
+            },
+            {
+                "header": {
                     "type": "OvercomePercent",
                     "desc": "破防",
                     "isPercent": true
@@ -326,6 +344,32 @@
                         "isPercent": true
                     }]
                 ]
+            },
+            {
+                "header": {
+                    "type": "Strain",
+                    "desc": "无双",
+                    "isPercent": false
+                },
+                "child": [
+                    [{
+                        "type": "Strain",
+                        "desc": "无双等级",
+                        "isPercent": false
+                    }, {
+                        "type": "StrainPercent",
+                        "desc": "对同等级秘境首领伤害提高",
+                        "isPercent": true
+                    }]
+                ]
+            },
+            {
+                "header": {
+                    "type": "SurplusValue",
+                    "desc": "破招",
+                    "isPercent": false
+                },
+                "child": []
             }
         ]
     }
