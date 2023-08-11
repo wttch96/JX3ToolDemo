@@ -442,6 +442,10 @@ class EquipProgrammeAttributeSet: Identifiable, Equatable {
         panelAttrs.add("\(type)CriticalDamagePowerPercent", panelPercent)
         finalAttrs.add("at\(type)CriticalDamagePowerPercent", panelPercent)
         logger.debug("\(typeDesc(type))会效等级: \(base) 会效百分比: \(String(format: "%.02f%%", panelPercent * 100))")
+        
+        panelAttributes.storeMax(.CriticalDamagePowerPercent, panelPercent)
+        panelAttributes.add(.init(rawValue: "\(type)CriticalDamagePower")!, base)
+        panelAttributes.add(.init(rawValue: "\(type)CriticalDamagePowerPercent")!, panelPercent)
     }
     
     private func calcCriticalDamagePower() {
@@ -466,6 +470,10 @@ class EquipProgrammeAttributeSet: Identifiable, Equatable {
         finalAttrs.add("at\(type)OvercomePercent", overcomePercent)
          
         logger.debug("\(typeDesc(type))基础破防: \(base) 破防等级: \(panelOvercome) 破防百分比: \(String(format: "%.02f%%", overcomePercent * 100))")
+        
+        panelAttributes.storeMax(.init(rawValue: "OvercomePercent")!, overcomePercent)
+        panelAttributes.add(.init(rawValue: "\(type)Overcome")!, panelOvercome)
+        panelAttributes.add(.init(rawValue: "\(type)OvercomePercent")!, overcomePercent)
     }
     
     private func calcOvercome() {
@@ -710,6 +718,11 @@ fileprivate extension Float {
 fileprivate extension Dictionary where Key: Hashable, Value == Float {
     mutating func add(_ key: Key, _ addValue: Float) {
         self[key] = self[key, default: 0] + addValue
+    }
+    
+    mutating func storeMax(_ key: Key, _ value: Float) {
+        let oldValue = self[key, default: 0]
+        self[key] = oldValue > value ? oldValue : value
     }
 }
 

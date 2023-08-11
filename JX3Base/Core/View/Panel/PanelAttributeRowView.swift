@@ -37,7 +37,7 @@ struct PanelAttributeView: View {
     
     private var valueText: String {
         if attr.isPercent {
-            return String(format: "%.02f%%", attributes.panelAttributes[attr.type, default: 0] * 100)
+            return String(format: "%.2f%%", attributes.panelAttributes[attr.type, default: 0] * 100)
         } else {
             return attributes.panelAttributes[attr.type]?.tryIntFormat ?? ""
         }

@@ -218,6 +218,114 @@
                         "isPercent": true
                     }]
                 ]
+            },
+            {
+                "header": {
+                    "type": "CriticalDamagePowerPercent",
+                    "desc": "会心效果",
+                    "isPercent": true
+                },
+                "child": [
+                    [{
+                        "type": "PhysicsCriticalDamagePower",
+                        "desc": "外功会心效果等级",
+                        "isPercent": false
+                    },{
+                        "type": "PhysicsCriticalDamagePowerPercent",
+                        "desc": "外功会心效果",
+                        "isPercent": true
+                    }],
+                    [{
+                        "type": "LunarCriticalDamagePower",
+                        "desc": "阴性内功会心效果等级",
+                        "isPercent": false
+                    },{
+                        "type": "LunarCriticalDamagePowerPercent",
+                        "desc": "阴性内功会心效果",
+                        "isPercent": true
+                    }],
+                    [{
+                        "type": "SolarCriticalDamagePower",
+                        "desc": "阳性内功会心效果等级",
+                        "isPercent": false
+                    },{
+                        "type": "SolarCriticalDamagePowerPercent",
+                        "desc": "阳性内功会心效果",
+                        "isPercent": true
+                    }],
+                    [{
+                        "type": "NeutralCriticalDamagePower",
+                        "desc": "混元内功会心效果等级",
+                        "isPercent": false
+                    },{
+                        "type": "NeutralCriticalDamagePowerPercent",
+                        "desc": "混元内功会心效果",
+                        "isPercent": true
+                    }],
+                    [{
+                        "type": "PoisonCriticalDamagePower",
+                        "desc": "毒性内功会心效果等级",
+                        "isPercent": false
+                    },{
+                        "type": "PoisonCriticalDamagePowerPercent",
+                        "desc": "毒性内功会心效果",
+                        "isPercent": true
+                    }]
+                ]
+            },
+            {
+                "header": {
+                    "type": "OvercomePercent",
+                    "desc": "破防",
+                    "isPercent": true
+                },
+                "child": [
+                    [{
+                        "type": "PhysicsOvercome",
+                        "desc": "外功破防等级",
+                        "isPercent": false
+                    },{
+                        "type": "PhysicsOvercomePercent",
+                        "desc": "外功破防",
+                        "isPercent": true
+                    }],
+                    [{
+                        "type": "LunarOvercome",
+                        "desc": "阴性内功破防等级",
+                        "isPercent": false
+                    },{
+                        "type": "LunarOvercomePercent",
+                        "desc": "阴性内功破防",
+                        "isPercent": true
+                    }],
+                    [{
+                        "type": "SolarOvercome",
+                        "desc": "阳性内功破防等级",
+                        "isPercent": false
+                    },{
+                        "type": "SolarOvercomePercent",
+                        "desc": "阳性内功破防",
+                        "isPercent": true
+                    }],
+                    [{
+                        "type": "NeutralOvercome",
+                        "desc": "混元内功破防等级",
+                        "isPercent": false
+                    },{
+                        "type": "NeutralOvercomePercent",
+                        "desc": "混元内功破防",
+                        "isPercent": true
+                    }],
+                    [{
+                        "type": "PoisonOvercome",
+                        "desc": "毒性内功破防等级",
+                        "isPercent": false
+                    },{
+                        "type": "PoisonOvercomePercent",
+                        "desc": "毒性内功破防",
+                        "isPercent": true
+                    }]
+                ]
             }
         ]
     }

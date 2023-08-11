@@ -56,7 +56,7 @@ struct EquipEditorNavView: View {
                     }
 
                 }
-                .frame(maxWidth: 240)
+                .frame(maxWidth: 160)
                 VStack(spacing: 10) {
                     HStack {
                         positionView(.helm)

@@ -72,7 +72,6 @@ enum PannelAttributeType: String, Identifiable, Decodable {
     case spunkToOvercome = "SpunkToOvercome"
     
     // MARK: 伤害
-    // 攻击力
     case attack = "Attack"
     case physicsAttack = "PhysicsAttack"
     case physicsFinalAttack = "PhysicsFinalAttack"
@@ -87,7 +86,7 @@ enum PannelAttributeType: String, Identifiable, Decodable {
     // 治疗量
     case therapy = "Therapy"
     case therapyBase = "TherapyBase"
-    // 会心
+    // MARK: 会心
     case CriticalStrike
     case CriticalStrikeRate
     case PhysicsCriticalStrike
@@ -100,7 +99,31 @@ enum PannelAttributeType: String, Identifiable, Decodable {
     case NeutralCriticalStrikeRate
     case PoisonCriticalStrike
     case PoisonCriticalStrikeRate
-    
+    // MARK: 会效
+    case CriticalDamagePower
+    case CriticalDamagePowerPercent
+    case PhysicsCriticalDamagePower
+    case PhysicsCriticalDamagePowerPercent
+    case LunarCriticalDamagePower
+    case LunarCriticalDamagePowerPercent
+    case SolarCriticalDamagePower
+    case SolarCriticalDamagePowerPercent
+    case NeutralCriticalDamagePower
+    case NeutralCriticalDamagePowerPercent
+    case PoisonCriticalDamagePower
+    case PoisonCriticalDamagePowerPercent
+    // MARK: 破防
+    case OvercomePercent
+    case PhysicsOvercome
+    case PhysicsOvercomePercent
+    case LunarOvercome
+    case LunarOvercomePercent
+    case SolarOvercome
+    case SolarOvercomePercent
+    case NeutralOvercome
+    case NeutralOvercomePercent
+    case PoisonOvercome
+    case PoisonOvercomePercent
     
     var id: String {
         return self.rawValue
