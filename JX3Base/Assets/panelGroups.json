@@ -384,15 +384,76 @@
                 "child": [
                     [{
                         "type": "PhysicsShieldBase",
-                        "desc": "基础外功防御等级",
+                        "desc": "基础外功防御等级提升",
                         "isPercent": false
                     }, {
                         "type": "PhysicsShield",
-                        "desc": "最终外功防御等级",
+                        "desc": "最终外功防御等级提升",
                         "isPercent": false
                     }, {
                         "type": "PhysicsShieldPercent",
                         "desc": "同等级目标对你的外功伤害降低",
+                        "isPercent": true
+                    }]
+                ]
+            },
+            {
+                "header": {
+                    "type": "MagicShieldPercent",
+                    "desc": "内防",
+                    "isPercent": true
+                },
+                "child": [
+                    [{
+                        "type": "LunarMagicShieldBase",
+                        "desc": "基础阴性内功防御等级提升",
+                        "isPercent": false
+                    }, {
+                        "type": "LunarMagicShield",
+                        "desc": "最终阴性内功防御等级提升",
+                        "isPercent": false
+                    }, {
+                        "type": "LunarMagicShieldPercent",
+                        "desc": "同等级目标对你的阴性内功伤害降低",
+                        "isPercent": true
+                    }],
+                    [{
+                        "type": "SolarMagicShieldBase",
+                        "desc": "基础阳性内功防御等级提升",
+                        "isPercent": false
+                    }, {
+                        "type": "SolarMagicShield",
+                        "desc": "最终阳性内功防御等级提升",
+                        "isPercent": false
+                    }, {
+                        "type": "SolarMagicShieldPercent",
+                        "desc": "同等级目标对你的阳性内功伤害降低",
+                        "isPercent": true
+                    }],
+                    [{
+                        "type": "NeutralMagicShieldBase",
+                        "desc": "基础混元内功防御等级提升",
+                        "isPercent": false
+                    }, {
+                        "type": "NeutralMagicShield",
+                        "desc": "最终混元内功防御等级提升",
+                        "isPercent": false
+                    }, {
+                        "type": "NeutralMagicShieldPercent",
+                        "desc": "同等级目标对你的混元内功伤害降低",
+                        "isPercent": true
+                    }],
+                    [{
+                        "type": "PoisonMagicShieldBase",
+                        "desc": "基础毒性内功防御等级提升",
+                        "isPercent": false
+                    }, {
+                        "type": "PoisonMagicShield",
+                        "desc": "最终毒性内功防御等级提升",
+                        "isPercent": false
+                    }, {
+                        "type": "PoisonMagicShieldPercent",
+                        "desc": "同等级目标对你的毒性内功伤害降低",
                         "isPercent": true
                     }]
                 ]

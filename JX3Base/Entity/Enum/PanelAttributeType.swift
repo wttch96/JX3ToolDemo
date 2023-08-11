@@ -137,6 +137,21 @@ enum PannelAttributeType: String, Identifiable, Decodable {
     case PhysicsShieldBase
     case PhysicsShield
     case PhysicsShieldPercent
+    // MARK: 内防
+    case MagicShieldPercent
+    case LunarMagicShieldBase
+    case LunarMagicShield
+    case LunarMagicShieldPercent
+    case SolarMagicShieldBase
+    case SolarMagicShield
+    case SolarMagicShieldPercent
+    case NeutralMagicShieldBase
+    case NeutralMagicShield
+    case NeutralMagicShieldPercent
+    case PoisonMagicShieldBase
+    case PoisonMagicShield
+    case PoisonMagicShieldPercent
+    
     
     
     var id: String {

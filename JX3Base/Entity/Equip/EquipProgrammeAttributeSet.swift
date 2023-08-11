@@ -555,6 +555,12 @@ class EquipProgrammeAttributeSet: Identifiable, Equatable {
         
         let typeDesc = typeDesc(type)
         logger.debug("基础\(typeDesc)防御: \(base) 最终\(typeDesc)防御: \(final) 最终\(typeDesc)防御: \(String(format: "%.02f%%", finalPercent * 100))")
+        
+        panelAttributes.add(.init(rawValue: "\(type)MagicShieldBase")!, base)
+        panelAttributes.add(.init(rawValue: "\(type)MagicShield")!, final)
+        panelAttributes.add(.init(rawValue: "\(type)MagicShieldPercent")!, finalPercent)
+        
+        panelAttributes.storeMax(.MagicShieldPercent, finalPercent)
     }
     
     private func calcMagicShield() {
