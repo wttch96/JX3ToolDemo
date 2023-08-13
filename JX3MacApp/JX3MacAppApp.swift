@@ -16,8 +16,12 @@ struct JX3MacAppApp: App {
     
     var body: some Scene {
         WindowGroup {
+            EquipProgrammeListView()
+        }
+        WindowGroup(id: "EquipEditor") {
             // ContentView()
-            EquipEditorView(mount: Mount("问水诀")!)
+            EquipProgrammeWindow()
+                .navigationTitle("配装器")
             // EquipEditorView(mount: Mount("花间游")!)
             // EquipEditorView(mount: Mount("天罗诡道")!)
             // EquipEditorView(mount: Mount("明尊琉璃体")!)
@@ -26,12 +30,14 @@ struct JX3MacAppApp: App {
             // EquipEditorView(mount: Mount("北傲诀")!)
             // EquipEditorView(mount: Mount("离经易道")!)
         }
-        
+        .handlesExternalEvents(matching: Set(arrayLiteral: "EquipEditor"))
+
         
         WindowGroup(id: "WebWindowGroup") {
             OpenUrlWewView()
                 // .handlesExternalEvents(preferring: Set(arrayLiteral: "WebWindowGroup"), allowing: Set(arrayLiteral: "*"))
         }
         .handlesExternalEvents(matching: Set(arrayLiteral: "WebWindowGroup"))
+
     }
 }

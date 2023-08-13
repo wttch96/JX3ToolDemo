@@ -35,6 +35,9 @@
 		4937FDD22A84FF4F001B6AFA /* DamageType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4937FDD12A84FF4F001B6AFA /* DamageType.swift */; };
 		4937FDD42A8501C6001B6AFA /* panelGroups.json in Resources */ = {isa = PBXBuildFile; fileRef = 4937FDD32A8501C6001B6AFA /* panelGroups.json */; };
 		4937FDD52A8503A1001B6AFA /* panelGroups.json in Resources */ = {isa = PBXBuildFile; fileRef = 4937FDD32A8501C6001B6AFA /* panelGroups.json */; };
+		4937FDD72A87E2DB001B6AFA /* EquipProgrammeListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4937FDD62A87E2DB001B6AFA /* EquipProgrammeListView.swift */; };
+		4937FDD92A8948CB001B6AFA /* EquipProgrammeRecordService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4937FDD82A8948CB001B6AFA /* EquipProgrammeRecordService.swift */; };
+		4937FDDC2A89550E001B6AFA /* EquipProgrammeWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4937FDDB2A89550E001B6AFA /* EquipProgrammeWindow.swift */; };
 		494795CB2A6BEA3B006AA88F /* StrengthedEquip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494795CA2A6BEA3B006AA88F /* StrengthedEquip.swift */; };
 		494795CC2A6BEA3B006AA88F /* StrengthedEquip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494795CA2A6BEA3B006AA88F /* StrengthedEquip.swift */; };
 		494795CF2A6EF529006AA88F /* EquipSetDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494795CE2A6EF529006AA88F /* EquipSetDTO.swift */; };
@@ -409,6 +412,9 @@
 		4937FDCE2A83FCA7001B6AFA /* PanelAttributeRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PanelAttributeRowView.swift; sourceTree = "<group>"; };
 		4937FDD12A84FF4F001B6AFA /* DamageType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DamageType.swift; sourceTree = "<group>"; };
 		4937FDD32A8501C6001B6AFA /* panelGroups.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = panelGroups.json; sourceTree = "<group>"; };
+		4937FDD62A87E2DB001B6AFA /* EquipProgrammeListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipProgrammeListView.swift; sourceTree = "<group>"; };
+		4937FDD82A8948CB001B6AFA /* EquipProgrammeRecordService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipProgrammeRecordService.swift; sourceTree = "<group>"; };
+		4937FDDB2A89550E001B6AFA /* EquipProgrammeWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipProgrammeWindow.swift; sourceTree = "<group>"; };
 		494795CA2A6BEA3B006AA88F /* StrengthedEquip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StrengthedEquip.swift; sourceTree = "<group>"; };
 		494795CE2A6EF529006AA88F /* EquipSetDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipSetDTO.swift; sourceTree = "<group>"; };
 		494795D12A6FE2C0006AA88F /* EquipSetService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipSetService.swift; sourceTree = "<group>"; };
@@ -666,6 +672,14 @@
 				495410E02A27C59E00AA6293 /* TalentLevelView.swift */,
 			);
 			path = Talent;
+			sourceTree = "<group>";
+		};
+		4937FDDA2A8954F9001B6AFA /* Window */ = {
+			isa = PBXGroup;
+			children = (
+				4937FDDB2A89550E001B6AFA /* EquipProgrammeWindow.swift */,
+			);
+			path = Window;
 			sourceTree = "<group>";
 		};
 		494795CD2A6EF511006AA88F /* DTO */ = {
@@ -989,6 +1003,7 @@
 				49FBA5F72A5C388D0031F9B5 /* BoxNewsService.swift */,
 				494795D12A6FE2C0006AA88F /* EquipSetService.swift */,
 				498605522A72F2E900C774E0 /* ColorStoneService.swift */,
+				4937FDD82A8948CB001B6AFA /* EquipProgrammeRecordService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -1104,6 +1119,7 @@
 		499A2FB22A65172000F10732 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				4937FDDA2A8954F9001B6AFA /* Window */,
 				499A2FB32A65172400F10732 /* View */,
 			);
 			path = Core;
@@ -1126,6 +1142,7 @@
 				499A2FB92A65A62500F10732 /* EquipEditorNavView.swift */,
 				499A2FBB2A65A86B00F10732 /* EquipEditorSelectView.swift */,
 				4986054C2A72957B00C774E0 /* ColorStonePicker.swift */,
+				4937FDD62A87E2DB001B6AFA /* EquipProgrammeListView.swift */,
 			);
 			path = EquipEditor;
 			sourceTree = "<group>";
@@ -1736,6 +1753,7 @@
 				495410D32A273DCE00AA6293 /* CoreDataManager.swift in Sources */,
 				49FBA5F92A5C388D0031F9B5 /* BoxNewsService.swift in Sources */,
 				495410D42A273DCE00AA6293 /* ServerState.swift in Sources */,
+				4937FDDC2A89550E001B6AFA /* EquipProgrammeWindow.swift in Sources */,
 				498605512A72F28900C774E0 /* ColorStone.swift in Sources */,
 				495410DF2A27C23B00AA6293 /* TalentView.swift in Sources */,
 				495410D52A273DCE00AA6293 /* TalentVersion.swift in Sources */,
@@ -1743,6 +1761,7 @@
 				49536A0D2A30BA2D004FBBB1 /* EquipEditViewModel.swift in Sources */,
 				491B894F2A76202D006EFAF7 /* MountRawAttribute.swift in Sources */,
 				49FBA5F32A5AAB000031F9B5 /* BoxNews.swift in Sources */,
+				4937FDD92A8948CB001B6AFA /* EquipProgrammeRecordService.swift in Sources */,
 				49EFC0AE2A7191FC007AD5E4 /* ColorStoneOption.swift in Sources */,
 				495FD6632A3DF8C100A17FB0 /* MountEquip.swift in Sources */,
 				495410D92A276D8B00AA6293 /* TalentPickerViewModel.swift in Sources */,
@@ -1815,6 +1834,7 @@
 				49504DAF2A494E6900B93E90 /* EquipRequireType.swift in Sources */,
 				4992D2272A250021007EEFC2 /* DisplayBarView.swift in Sources */,
 				4992D2072A24B39F007EEFC2 /* JX3BoxIcon.swift in Sources */,
+				4937FDD72A87E2DB001B6AFA /* EquipProgrammeListView.swift in Sources */,
 				498605552A74CC4600C774E0 /* EquipProgramme.swift in Sources */,
 				4992D2172A24F32C007EEFC2 /* IconLibraryViewModel.swift in Sources */,
 				49504D7E2A41C73E00B93E90 /* CheckBoxToggleStyle.swift in Sources */,
