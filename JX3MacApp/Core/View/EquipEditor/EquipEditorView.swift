@@ -11,15 +11,25 @@ import SwiftUI
 struct EquipEditorView: View {
     // 心法
     let mount: Mount
+    let record: EquipProgrammeRecord?
     
     // 要配装的位置
     @State private var selectedPosition: EquipPosition? = nil
     // 选择的装备
     @StateObject private var equipProgramme: EquipProgramme
     
-    init(mount: Mount) {
+    private let service = EquipProgrammeRecordService()
+    
+    init(mount: Mount, record: EquipProgrammeRecord? = nil) {
         self.mount = mount
+        self.record = record
         self._equipProgramme = StateObject(wrappedValue: EquipProgramme(mount: mount))
+        
+        if let jsonData = record?.jsonData, !jsonData.isEmpty,
+           let jsonData = jsonData.data(using: .utf8) {
+           //let equips = try? JSONDecoder().decode([EquipPosition: StrengthedEquip].self, from: jsonData) {
+            // self.equipProgramme.equips = equips
+        }
     }
     
    
@@ -45,6 +55,14 @@ struct EquipEditorView: View {
                 EquipEditorSelectView(kungfu: mount, position: selectedPosition, selected: equipProgramme)
             }
         })
+        .toolbar {
+            ToolbarItem {
+                Button("保存") {
+                    if let record = record {
+                    }
+                }
+            }
+        }
         
     }
 }

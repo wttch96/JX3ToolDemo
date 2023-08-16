@@ -8,7 +8,7 @@
 import Foundation
 import SwiftUI
 
-enum EquipQuality: String, Decodable, CaseIterable {
+enum EquipQuality: String, Codable, CaseIterable {
     case _0 = "0"
     case _1 = "1"
     case _2 = "2"

@@ -447,3 +447,42 @@ extension EquipDTO: Hashable, Identifiable, Equatable {
         return lhs.id == rhs.id
     }
 }
+
+struct Equip {
+    let id: Int
+    let attrs: [EquipAttribute]
+    let attrType: [String]
+    let belongSchool: String?
+    let name: String
+    let uuid: String
+    let representId: String?
+    let iconId: String?
+    let level: Int
+    // 最大强化等级
+    let maxStrengthLevelValue: String?
+    // 品质
+    let quality: EquipQuality
+    let skillId: String?
+    
+    // 基础属性，主要是攻击力
+    let baseTypes: [EquipBaseType]
+    // 装备的其他属性
+    let magicTypes : [EquipMagicType]
+    
+    let detailTypeValue : String?
+    let subType: EquipSubType
+    // 五行石镶嵌
+    let diamondAttributes: [DiamondAttribute]
+    // 装备需求
+    private let requireTypes: [EquipRequireType]
+    // 最大耐久度
+    let maxDurability: String?
+    // 来源
+    let getType: String?
+    // 装备类型: 伤、御、疗
+    let duty: String?
+    // 套装id
+    let setId: String?
+    // 套装属性
+    let setData: [Int: [EquipMagicType]]
+}

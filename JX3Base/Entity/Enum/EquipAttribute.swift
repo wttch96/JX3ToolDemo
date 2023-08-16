@@ -36,7 +36,7 @@ enum EquipAttribute: String, CaseIterable {
     case decritical = "Decritical"
 }
 
-extension EquipAttribute: Decodable, Identifiable {
+extension EquipAttribute: Codable, Identifiable {
     var id: String {
         return rawValue
     }
