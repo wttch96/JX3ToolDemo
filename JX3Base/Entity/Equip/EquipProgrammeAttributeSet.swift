@@ -222,8 +222,8 @@ class EquipProgrammeAttributeSet: Identifiable, Equatable {
     private func addEquipBaseAttribute(_ strengthedEquip: StrengthedEquip) {
         if let equip = strengthedEquip.equip {
             equip.baseTypes.forEach { baseType in
-                addAttribute(baseType.rawValue, Float(baseType.baseMin))
-                logger.debug("\(equip.name) 基础属性: \(baseType.rawValue) \(baseType.baseMin)")
+                addAttribute(baseType.type, Float(baseType.baseMin))
+                logger.debug("\(equip.name) 基础属性: \(baseType.type) \(baseType.baseMin)")
             }
             equip.magicTypes.forEach { magicType in
                 if let type = magicType.attr[0] {

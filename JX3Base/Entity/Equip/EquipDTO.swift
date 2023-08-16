@@ -204,7 +204,7 @@ struct EquipDTO: Decodable {
     let skillId: String?
     
     // 基础属性，主要是攻击力
-    let baseTypes: [EquipBaseType]
+    let baseTypes: [EquipBaseAttribute]
     // 装备的其他属性
     let magicTypes : [EquipMagicType]
     
@@ -310,16 +310,16 @@ extension EquipDTO {
 // MARK: 武器伤害计算
 extension EquipDTO {
     // 获取武器攻击速度属性
-    var weaponSpeed: EquipBaseType? {
-        return baseTypes.first(where: { $0.isSpeed })
+    var weaponSpeed: EquipBaseAttribute? {
+        return baseTypes.first(where: { $0.isWeaponSpeed })
     }
     // 获取武器攻击力范围属性
-    var weaponRand: EquipBaseType? {
-        return baseTypes.first { $0.isRand }
+    var weaponRand: EquipBaseAttribute? {
+        return baseTypes.first { $0.isWeaponRand }
     }
     // 获取武器基础攻击力属性
-    var weaponBase: EquipBaseType? {
-        return baseTypes.first(where: { $0.isBase })
+    var weaponBase: EquipBaseAttribute? {
+        return baseTypes.first(where: { $0.isWeaponBase })
     }
 }
 
@@ -377,10 +377,10 @@ extension EquipDTO {
 // MARK: 构造工具方法
 extension EquipDTO {
     // 从 json 中加载武器攻击属性
-    private static func loadBaseTypes(from decoder: Decoder) throws -> [EquipBaseType] {
-        var baseTypes: [EquipBaseType] = []
+    private static func loadBaseTypes(from decoder: Decoder) throws -> [EquipBaseAttribute] {
+        var baseTypes: [EquipBaseAttribute] = []
         for i in 0..<6 {
-            if let type =  try EquipBaseType(decoder: decoder, index: i + 1) {
+            if let type =  try EquipBaseAttribute(decoder: decoder, index: i + 1) {
                 baseTypes.append(type)
             }
         }
@@ -465,7 +465,7 @@ struct Equip {
     let skillId: String?
     
     // 基础属性，主要是攻击力
-    let baseTypes: [EquipBaseType]
+    let baseTypes: [EquipBaseAttribute]
     // 装备的其他属性
     let magicTypes : [EquipMagicType]
     

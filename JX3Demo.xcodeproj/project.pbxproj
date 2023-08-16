@@ -64,8 +64,8 @@
 		49504D962A42D10A00B93E90 /* weapon1.json in Resources */ = {isa = PBXBuildFile; fileRef = 49504D942A42D10A00B93E90 /* weapon1.json */; };
 		49504D982A42D42C00B93E90 /* CustomKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49504D972A42D42C00B93E90 /* CustomKey.swift */; };
 		49504D992A42D42C00B93E90 /* CustomKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49504D972A42D42C00B93E90 /* CustomKey.swift */; };
-		49504D9C2A42D46C00B93E90 /* EquipBaseType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49504D9B2A42D46C00B93E90 /* EquipBaseType.swift */; };
-		49504D9D2A42D46C00B93E90 /* EquipBaseType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49504D9B2A42D46C00B93E90 /* EquipBaseType.swift */; };
+		49504D9C2A42D46C00B93E90 /* EquipBaseAttribute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49504D9B2A42D46C00B93E90 /* EquipBaseAttribute.swift */; };
+		49504D9D2A42D46C00B93E90 /* EquipBaseAttribute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49504D9B2A42D46C00B93E90 /* EquipBaseAttribute.swift */; };
 		49504D9F2A44B45600B93E90 /* EquipMagicType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49504D9E2A44B45600B93E90 /* EquipMagicType.swift */; };
 		49504DA02A44B45600B93E90 /* EquipMagicType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49504D9E2A44B45600B93E90 /* EquipMagicType.swift */; };
 		49504DA52A44BB5D00B93E90 /* EquipScoreUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49504DA42A44BB5D00B93E90 /* EquipScoreUtil.swift */; };
@@ -428,7 +428,7 @@
 		49504D912A42CED200B93E90 /* EquipSubType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipSubType.swift; sourceTree = "<group>"; };
 		49504D942A42D10A00B93E90 /* weapon1.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = weapon1.json; sourceTree = "<group>"; };
 		49504D972A42D42C00B93E90 /* CustomKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomKey.swift; sourceTree = "<group>"; };
-		49504D9B2A42D46C00B93E90 /* EquipBaseType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipBaseType.swift; sourceTree = "<group>"; };
+		49504D9B2A42D46C00B93E90 /* EquipBaseAttribute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipBaseAttribute.swift; sourceTree = "<group>"; };
 		49504D9E2A44B45600B93E90 /* EquipMagicType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipMagicType.swift; sourceTree = "<group>"; };
 		49504DA42A44BB5D00B93E90 /* EquipScoreUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipScoreUtil.swift; sourceTree = "<group>"; };
 		49504DA72A44BDA600B93E90 /* GameText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameText.swift; sourceTree = "<group>"; };
@@ -696,7 +696,7 @@
 				494795CA2A6BEA3B006AA88F /* StrengthedEquip.swift */,
 				499A2FC02A666FE200F10732 /* StrengthEquip.swift */,
 				495FD66D2A3F593300A17FB0 /* EquipDTO.swift */,
-				49504D9B2A42D46C00B93E90 /* EquipBaseType.swift */,
+				49504D9B2A42D46C00B93E90 /* EquipBaseAttribute.swift */,
 				49504D9E2A44B45600B93E90 /* EquipMagicType.swift */,
 				49504DAA2A4763D600B93E90 /* DiamondAttribute.swift */,
 				49504DAD2A494E6900B93E90 /* EquipRequireType.swift */,
@@ -1614,7 +1614,7 @@
 				495625D22A5C4DDD008D7F63 /* WebView.swift in Sources */,
 				49FBA5BE2A57FCF90031F9B5 /* CustomTabBarView.swift in Sources */,
 				495FD6782A40336900A17FB0 /* EquipPickerOptionView.swift in Sources */,
-				49504D9C2A42D46C00B93E90 /* EquipBaseType.swift in Sources */,
+				49504D9C2A42D46C00B93E90 /* EquipBaseAttribute.swift in Sources */,
 				49FBA5F22A5AAB000031F9B5 /* BoxNews.swift in Sources */,
 				499F5ABB2A2B468200A3C588 /* TransitionExtension.swift in Sources */,
 				49FBA5C12A5801240031F9B5 /* CustomTabBarContainerView.swift in Sources */,
@@ -1846,7 +1846,7 @@
 				495FD6662A3E231700A17FB0 /* EquipQuality.swift in Sources */,
 				49536A1A2A30DF1D004FBBB1 /* AssetJsonDataManager.swift in Sources */,
 				49536A202A31BB19004FBBB1 /* EquipSearchService.swift in Sources */,
-				49504D9D2A42D46C00B93E90 /* EquipBaseType.swift in Sources */,
+				49504D9D2A42D46C00B93E90 /* EquipBaseAttribute.swift in Sources */,
 				497467C82A261AC500275A09 /* BundleUtil.swift in Sources */,
 				495410E52A2AEA3C00AA6293 /* EnvironmentExtension.swift in Sources */,
 				499A2FC72A68613300F10732 /* EquipPickerModel.swift in Sources */,
