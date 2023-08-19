@@ -131,11 +131,10 @@ class EquipProgrammeAttributeSet: Identifiable, Equatable {
                 for i in 1...6 {
                     if activeCount >= i {
                         for attribute in equip.setData[i, default: []] {
-                            if let type = attribute.type {
-                                if AssetJsonDataManager.shared.equipAttrMap[type] != nil {
-                                    addAttribute(type, Float(attribute.min))
-                                    logger.info("添加套装属性: \(equipSet.name ?? "未知套")，激活数量：\(activeCount): \(type) \(attribute.min)")
-                                }
+                            let type = attribute.type
+                            if AssetJsonDataManager.shared.equipAttrMap[type] != nil {
+                                addAttribute(type, Float(attribute.min))
+                                logger.info("添加套装属性: \(equipSet.name ?? "未知套")，激活数量：\(activeCount): \(type) \(attribute.min)")
                             }
                         }
                     }
@@ -226,11 +225,10 @@ class EquipProgrammeAttributeSet: Identifiable, Equatable {
                 logger.debug("\(equip.name) 基础属性: \(baseType.type) \(baseType.baseMin)")
             }
             equip.magicTypes.forEach { magicType in
-                if let type = magicType.attr[0] {
-                    let value = Float(magicType.min + magicType.score(level: strengthedEquip.strengthLevel, maxLevel: equip.maxStrengthLevel))
-                    addAttribute(type, value)
-                    logger.debug("\(equip.name) 基础属性: \(type) \(value)")
-                }
+                let type = magicType.type
+                let value = Float(magicType.min + magicType.score(level: strengthedEquip.strengthLevel, maxLevel: equip.maxStrengthLevel))
+                addAttribute(type, value)
+                logger.debug("\(equip.name) 基础属性: \(type) \(value)")
             }
         }
     }

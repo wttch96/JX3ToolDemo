@@ -66,8 +66,8 @@
 		49504D992A42D42C00B93E90 /* CustomKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49504D972A42D42C00B93E90 /* CustomKey.swift */; };
 		49504D9C2A42D46C00B93E90 /* EquipBaseAttribute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49504D9B2A42D46C00B93E90 /* EquipBaseAttribute.swift */; };
 		49504D9D2A42D46C00B93E90 /* EquipBaseAttribute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49504D9B2A42D46C00B93E90 /* EquipBaseAttribute.swift */; };
-		49504D9F2A44B45600B93E90 /* EquipMagicType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49504D9E2A44B45600B93E90 /* EquipMagicType.swift */; };
-		49504DA02A44B45600B93E90 /* EquipMagicType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49504D9E2A44B45600B93E90 /* EquipMagicType.swift */; };
+		49504D9F2A44B45600B93E90 /* EquipMagicAttribute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49504D9E2A44B45600B93E90 /* EquipMagicAttribute.swift */; };
+		49504DA02A44B45600B93E90 /* EquipMagicAttribute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49504D9E2A44B45600B93E90 /* EquipMagicAttribute.swift */; };
 		49504DA52A44BB5D00B93E90 /* EquipScoreUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49504DA42A44BB5D00B93E90 /* EquipScoreUtil.swift */; };
 		49504DA62A44BB5D00B93E90 /* EquipScoreUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49504DA42A44BB5D00B93E90 /* EquipScoreUtil.swift */; };
 		49504DA82A44BDA600B93E90 /* GameText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49504DA72A44BDA600B93E90 /* GameText.swift */; };
@@ -429,7 +429,7 @@
 		49504D942A42D10A00B93E90 /* weapon1.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = weapon1.json; sourceTree = "<group>"; };
 		49504D972A42D42C00B93E90 /* CustomKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomKey.swift; sourceTree = "<group>"; };
 		49504D9B2A42D46C00B93E90 /* EquipBaseAttribute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipBaseAttribute.swift; sourceTree = "<group>"; };
-		49504D9E2A44B45600B93E90 /* EquipMagicType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipMagicType.swift; sourceTree = "<group>"; };
+		49504D9E2A44B45600B93E90 /* EquipMagicAttribute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipMagicAttribute.swift; sourceTree = "<group>"; };
 		49504DA42A44BB5D00B93E90 /* EquipScoreUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipScoreUtil.swift; sourceTree = "<group>"; };
 		49504DA72A44BDA600B93E90 /* GameText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameText.swift; sourceTree = "<group>"; };
 		49504DAA2A4763D600B93E90 /* DiamondAttribute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiamondAttribute.swift; sourceTree = "<group>"; };
@@ -697,7 +697,7 @@
 				499A2FC02A666FE200F10732 /* StrengthEquip.swift */,
 				495FD66D2A3F593300A17FB0 /* EquipDTO.swift */,
 				49504D9B2A42D46C00B93E90 /* EquipBaseAttribute.swift */,
-				49504D9E2A44B45600B93E90 /* EquipMagicType.swift */,
+				49504D9E2A44B45600B93E90 /* EquipMagicAttribute.swift */,
 				49504DAA2A4763D600B93E90 /* DiamondAttribute.swift */,
 				49504DAD2A494E6900B93E90 /* EquipRequireType.swift */,
 				49D348772A6AFBEC007751AB /* EquipDuty.swift */,
@@ -1609,7 +1609,7 @@
 				4992D1FD2A24A133007EEFC2 /* ImageExtension.swift in Sources */,
 				49504D8F2A42CD2F00B93E90 /* EquipDetailView.swift in Sources */,
 				4992D1762A2303F6007EEFC2 /* ServerStateViewModel.swift in Sources */,
-				49504D9F2A44B45600B93E90 /* EquipMagicType.swift in Sources */,
+				49504D9F2A44B45600B93E90 /* EquipMagicAttribute.swift in Sources */,
 				495FD66E2A3F593300A17FB0 /* EquipDTO.swift in Sources */,
 				495625D22A5C4DDD008D7F63 /* WebView.swift in Sources */,
 				49FBA5BE2A57FCF90031F9B5 /* CustomTabBarView.swift in Sources */,
@@ -1767,7 +1767,7 @@
 				495410D92A276D8B00AA6293 /* TalentPickerViewModel.swift in Sources */,
 				4986055E2A7576F300C774E0 /* EquipProgrammeAttributeSet.swift in Sources */,
 				4986054D2A72957B00C774E0 /* ColorStonePicker.swift in Sources */,
-				49504DA02A44B45600B93E90 /* EquipMagicType.swift in Sources */,
+				49504DA02A44B45600B93E90 /* EquipMagicAttribute.swift in Sources */,
 				499A2FB82A65A56B00F10732 /* EquipEditorPositionView.swift in Sources */,
 				499A2FB52A65173300F10732 /* EquipEditorView.swift in Sources */,
 				499C8C522A82214700925F71 /* PanelAttrDesc.swift in Sources */,

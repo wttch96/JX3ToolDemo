@@ -206,7 +206,7 @@ struct EquipDTO: Decodable {
     // 基础属性，主要是攻击力
     let baseTypes: [EquipBaseAttribute]
     // 装备的其他属性
-    let magicTypes : [EquipMagicType]
+    let magicTypes : [EquipMagicAttribute]
     
     let detailTypeValue : String?
     let subType: EquipSubType
@@ -223,7 +223,7 @@ struct EquipDTO: Decodable {
     // 套装id
     let setId: String?
     // 套装属性
-    let setData: [Int: [EquipMagicType]]
+    let setData: [Int: [EquipMagicAttribute]]
     
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
@@ -246,7 +246,7 @@ struct EquipDTO: Decodable {
         self.duty = try container.decodeIfPresent(String.self, forKey: .duty)
         self.setId = try container.decodeIfPresent(String.self, forKey: .setId)
         
-        let setData = try container.decodeIfPresent([String: EquipMagicType?].self, forKey: .setData) ?? [:]
+        let setData = try container.decodeIfPresent([String: EquipMagicAttributeDTO?].self, forKey: .setData) ?? [:]
         self.setData = EquipDTO.loadSetData(setData)
         
         
@@ -387,10 +387,10 @@ extension EquipDTO {
         return baseTypes
     }
     // 从 json 中加载其他属性
-    private static func loadMagicTypes(from decoder: Decoder) throws -> [EquipMagicType] {
-        var magicTypes: [EquipMagicType] = []
+    private static func loadMagicTypes(from decoder: Decoder) throws -> [EquipMagicAttribute] {
+        var magicTypes: [EquipMagicAttribute] = []
         for i in 0..<12 {
-            if let mt = try EquipMagicType(decoder: decoder, index: i + 1) {
+            if let mt = try EquipMagicAttributeDTO(decoder: decoder, index: i + 1)?.toAttribute() {
                 magicTypes.append(mt)
             }
         }
@@ -417,13 +417,14 @@ extension EquipDTO {
         return requireTypes
     }
     // 处理一下套装信息
-    private static func loadSetData(_ setData: [String: EquipMagicType?]) -> [Int: [EquipMagicType]] {
-        var newSetData: [Int:[EquipMagicType]] = [:]
+    private static func loadSetData(_ setData: [String: EquipMagicAttributeDTO?]) -> [Int: [EquipMagicAttribute]] {
+        var newSetData: [Int:[EquipMagicAttribute]] = [:]
         for i in 2...6 {
-            var setDataLevel: [EquipMagicType] = []
+            var setDataLevel: [EquipMagicAttribute] = []
             for j in 1...2 {
-                if let value = setData["\(i)_\(j)", default: nil] {
-                    setDataLevel.append(value)
+                if let value = setData["\(i)_\(j)", default: nil],
+                   let attribute = value.toAttribute() {
+                    setDataLevel.append(attribute)
                 }
             }
             if !setDataLevel.isEmpty {
@@ -467,7 +468,7 @@ struct Equip {
     // 基础属性，主要是攻击力
     let baseTypes: [EquipBaseAttribute]
     // 装备的其他属性
-    let magicTypes : [EquipMagicType]
+    let magicTypes : [EquipMagicAttribute]
     
     let detailTypeValue : String?
     let subType: EquipSubType
@@ -484,5 +485,5 @@ struct Equip {
     // 套装id
     let setId: String?
     // 套装属性
-    let setData: [Int: [EquipMagicType]]
+    let setData: [Int: [EquipMagicAttribute]]
 }
