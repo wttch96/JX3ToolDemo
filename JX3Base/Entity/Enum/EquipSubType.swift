@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum EquipSubType : String, CaseIterable, Decodable {
+enum EquipSubType : String, CaseIterable, Codable {
     case PRIMARY_WEAPON = "0"
     case SENCONDARY_WEAPON = "1"
     case JACKET = "2"

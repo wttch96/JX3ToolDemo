@@ -227,7 +227,7 @@ struct EquipEditorSelectView: View {
             ScrollView {
                 ForEach(strengthedEquip.equip?.diamondAttributes ?? [], content: { attr in
                     VStack {
-                        Text("第\(attr.id)孔位: \(attr.label) \(Int(attr.embedValue(level: diamounds[attr] ?? 6)))")
+                        Text("第\(attr.id)孔位: \(attr.label) \(Int(attr.embedValue(stoneLevel: diamounds[attr] ?? 6)))")
                         LazyVGrid(columns: Array(repeating: GridItem(.flexible()), count: 9), content: {
                             ForEach(0..<9, id: \.self, content: { stoneLevel in
                                 Image("Embedding\(stoneLevel)")

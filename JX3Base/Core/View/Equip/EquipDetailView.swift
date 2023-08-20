@@ -286,7 +286,7 @@ struct EquipDetailView: View {
                         .resizable()
                         .frame(width: iconSize, height: iconSize)
                 }
-                Text("镶嵌孔：\(attr.label) \(Int(attr.embedValue(level: diamondAttributeLevels[attr] ?? 0)))")
+                Text("镶嵌孔：\(attr.label) \(Int(attr.embedValue(stoneLevel: diamondAttributeLevels[attr] ?? 0)))")
                     .foregroundColor( diamondAttributeLevels[attr, default: 0] == 0 ? .gray : .theme.textGreen)
                 Spacer()
             }

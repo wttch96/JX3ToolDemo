@@ -400,8 +400,8 @@ extension EquipDTO {
     private static func loadDiamondAttribute(from decoder: Decoder) throws -> [DiamondAttribute] {
         var diamondAttributes: [DiamondAttribute] = []
         for i in 0..<3 {
-            if let da = try DiamondAttribute(from: decoder, index: i + 1) {
-                diamondAttributes.append(da)
+            if let da = try DiamondAttributeDTO(from: decoder, index: i + 1) {
+                diamondAttributes.append(da.toEntity())
             }
         }
         return diamondAttributes

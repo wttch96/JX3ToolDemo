@@ -147,8 +147,8 @@ class EquipProgrammeAttributeSet: Identifiable, Equatable {
     private func addEquipEmbeddingAttributes(_ strengthedEquip: StrengthedEquip) {
         for attr in strengthedEquip.embeddingStone.keys {
             if let level = strengthedEquip.embeddingStone[attr] {
-                let type = attr.attr
-                let value = attr.embedValue(level: level)
+                let type = attr.type
+                let value = attr.embedValue(stoneLevel: level)
                 addAttribute(type, value)
                 logger.debug("\(strengthedEquip.equip?.name ?? "nil") 五行石属性: \(type) \(value)")
             }
