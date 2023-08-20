@@ -11,7 +11,7 @@ struct EquipSelectPositionView: View {
     let kungfu: Mount
     let position: EquipPosition
     
-    @Binding var selectedEquip: EquipDTO?
+    @Binding var selectedEquip: Equip?
     
     private let size: CGFloat = 54
     

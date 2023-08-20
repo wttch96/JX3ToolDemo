@@ -15,14 +15,14 @@ struct EquipSelectlListView: View {
     let otherFilters: [OtherFilter]
     let pvType: PvType
     
-    @Binding var selection: EquipDTO?
+    @Binding var selection: Equip?
     
     @State private var searchText: String = ""
     @StateObject private var vm: EquipPickerViewModel
     
     @Environment(\.dismiss) var dismiss
     
-    init(kungfu: Mount, position: EquipPosition, attrItems: [EquipAttribute], level: ClosedRange<CGFloat>, otherFilters: [OtherFilter], pvType: PvType, selection: Binding<EquipDTO?>) {
+    init(kungfu: Mount, position: EquipPosition, attrItems: [EquipAttribute], level: ClosedRange<CGFloat>, otherFilters: [OtherFilter], pvType: PvType, selection: Binding<Equip?>) {
         self.kungfu = kungfu
         self.position = position
         self.attrItems = attrItems

@@ -29,7 +29,7 @@ class EquipPickerModel: ObservableObject {
     @Published var loading: Bool = false
     
     // 搜索结果
-    @Published var equips: [EquipDTO] = []
+    @Published var equips: [Equip] = []
     // 是否有更多数据
     @Published var haveMoreEquip: Bool = false
     
@@ -41,10 +41,11 @@ class EquipPickerModel: ObservableObject {
             .sink(receiveValue: { [weak self] ret in
                 if let ret = ret {
                     self?.loading = false
-                    if self?.haveMoreEquip ?? false {
-                        self?.equips.append(contentsOf: ret.list)
-                    } else {
-                        self?.equips = ret.list
+                    if !(self?.haveMoreEquip ?? false) {
+                        self?.equips = []
+                    }
+                    ret.list.forEach { dto in
+                        self?.equips.append(dto.toEntity())
                     }
                     self?.haveMoreEquip = ret.page < ret.pages
                     print("搜索结果:\(self?.equips.count ?? 0)条装备")

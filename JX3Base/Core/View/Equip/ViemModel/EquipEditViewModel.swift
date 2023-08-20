@@ -9,6 +9,6 @@ import Foundation
 
 
 class EquipEditViewModel: ObservableObject {
-    @Published var seletedEquip: [EquipPosition: EquipDTO?] = [:]
-    @Published var selectedEquip: EquipDTO? = nil
+    @Published var seletedEquip: [EquipPosition: Equip?] = [:]
+    @Published var selectedEquip: Equip? = nil
 }

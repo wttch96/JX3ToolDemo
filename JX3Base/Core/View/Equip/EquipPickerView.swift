@@ -51,7 +51,7 @@ struct EquipPickerView: View {
     let kungfu: Mount
     let position: EquipPosition
     
-    @Binding var selected: EquipDTO?
+    @Binding var selected: Equip?
     
     @State private var attrItems: [EquipAttribute] = []
     @State private var level: ClosedRange<CGFloat> = 9000...12000
@@ -73,7 +73,7 @@ struct EquipPickerView: View {
     
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     
-    init(kungfu: Mount, position: EquipPosition, selected: Binding<EquipDTO?>) {
+    init(kungfu: Mount, position: EquipPosition, selected: Binding<Equip?>) {
         self.kungfu = kungfu
         self.position = position
         if let equip = selected.wrappedValue {

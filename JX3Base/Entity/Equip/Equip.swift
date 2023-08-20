@@ -206,7 +206,7 @@ struct EquipDTO: Decodable {
     // 基础属性，主要是攻击力
     let baseTypes: [EquipBaseAttribute]
     // 装备的其他属性
-    let magicTypes : [EquipMagicAttribute]
+    let magicTypes : [EquipMagicAttributeDTO]
     
     let detailTypeValue : String?
     let subType: EquipSubType
@@ -277,61 +277,13 @@ struct EquipDTO: Decodable {
         case setId = "SetID"
         case setData = "_SetData"
     }
-}
-
-
-// MARK: 扩展属性
-extension EquipDTO {
-    // 是否为精简
-    var isSimp: Bool {
-        return belongSchool == "精简" || hasEffect
-    }
-    // 是否为特效武器
-    var hasEffect: Bool {
-        return skillId != nil || attrType.contains("atSetEquipmentRecipe") || attrType.contains("atSkillEventHandler")
-    }
-    // 最大精炼等级
-    var maxStrengthLevel: Int {
-        guard let maxStrengthLevelValue = self.maxStrengthLevelValue,
-              let level = Int(maxStrengthLevelValue) else { return 6 }
-        
-        return level
-    }
-    // 是否为武器
-    var isWepaon: Bool {
-        return subType == .PRIMARY_WEAPON || subType == .SENCONDARY_WEAPON
-    }
-    // 武器描述
-    var detailType: String {
-        return AssetJsonDataManager.shared.weaponType[detailTypeValue ?? "", default: "未知武器: \(detailTypeValue ?? "")"]
-    }
-}
-
-// MARK: 武器伤害计算
-extension EquipDTO {
-    // 获取武器攻击速度属性
-    var weaponSpeed: EquipBaseAttribute? {
-        return baseTypes.first(where: { $0.isWeaponSpeed })
-    }
-    // 获取武器攻击力范围属性
-    var weaponRand: EquipBaseAttribute? {
-        return baseTypes.first { $0.isWeaponRand }
-    }
-    // 获取武器基础攻击力属性
-    var weaponBase: EquipBaseAttribute? {
-        return baseTypes.first(where: { $0.isWeaponBase })
-    }
-}
-
-// MARK: 装分
-extension EquipDTO {
-    // 装备基础装分
-    var equipScore: Int {
-        return ScoreUtil.getEquipScore(level: level, quality: quality.rawValue, position: subType.rawValue)
-    }
-    // 精炼品质分
-    func strengthLevelScore(strengthLevel: Int) -> Int {
-        return ScoreUtil.getGsStrengthScore(base: level, strengthLevel: strengthLevel)
+    
+    func toEntity() -> Equip {
+        return Equip(id: id, attrs: attrs, attrType: attrType, belongSchool: belongSchool, name: name, uuid: uuid, representId: representId, iconId: iconId, level: level, maxStrengthLevelValue: maxStrengthLevelValue, quality: quality, skillId: skillId, baseTypes: baseTypes, magicTypes: magicTypes.reduce(into: [], { partialResult, dto in
+            if let entity = dto.toAttribute() {
+                partialResult.append(entity)
+            }
+        }), detailTypeValue: detailTypeValue, subType: subType, diamondAttributes: diamondAttributes, requireTypes: requireTypes, maxDurability: maxDurability, getType: getType, duty: duty, setId: setId, setData: setData)
     }
 }
 
@@ -348,10 +300,10 @@ extension EquipDTO {
         return baseTypes
     }
     // 从 json 中加载其他属性
-    private static func loadMagicTypes(from decoder: Decoder) throws -> [EquipMagicAttribute] {
-        var magicTypes: [EquipMagicAttribute] = []
+    private static func loadMagicTypes(from decoder: Decoder) throws -> [EquipMagicAttributeDTO] {
+        var magicTypes: [EquipMagicAttributeDTO] = []
         for i in 0..<12 {
-            if let mt = try EquipMagicAttributeDTO(decoder: decoder, index: i + 1)?.toAttribute() {
+            if let mt = try EquipMagicAttributeDTO(decoder: decoder, index: i + 1) {
                 magicTypes.append(mt)
             }
         }
@@ -395,20 +347,6 @@ extension EquipDTO {
         return newSetData
     }
 }
-// MARK: Hash, Id
-extension EquipDTO: Hashable, Identifiable, Equatable {
-    func hash(into hasher: inout Hasher) {
-        hasher.combine(id)
-    }
-    
-    var hashValue: Int {
-        return id.hashValue
-    }
-    
-    static func ==(lhs: EquipDTO, rhs: EquipDTO) -> Bool {
-        return lhs.id == rhs.id
-    }
-}
 
 struct Equip {
     let id: Int
@@ -436,7 +374,7 @@ struct Equip {
     // 五行石镶嵌
     let diamondAttributes: [DiamondAttribute]
     // 装备需求
-    private let requireTypes: [EquipRequireType]
+    let requireTypes: [EquipRequireType]
     // 最大耐久度
     let maxDurability: String?
     // 来源
@@ -447,4 +385,74 @@ struct Equip {
     let setId: String?
     // 套装属性
     let setData: [Int: [EquipMagicAttribute]]
+}
+
+// MARK: 扩展属性
+extension Equip {
+    // 是否为精简
+    var isSimp: Bool {
+        return belongSchool == "精简" || hasEffect
+    }
+    // 是否为特效武器
+    var hasEffect: Bool {
+        return skillId != nil || attrType.contains("atSetEquipmentRecipe") || attrType.contains("atSkillEventHandler")
+    }
+    // 最大精炼等级
+    var maxStrengthLevel: Int {
+        guard let maxStrengthLevelValue = self.maxStrengthLevelValue,
+              let level = Int(maxStrengthLevelValue) else { return 6 }
+        
+        return level
+    }
+    // 是否为武器
+    var isWepaon: Bool {
+        return subType == .PRIMARY_WEAPON || subType == .SENCONDARY_WEAPON
+    }
+    // 武器描述
+    var detailType: String {
+        return AssetJsonDataManager.shared.weaponType[detailTypeValue ?? "", default: "未知武器: \(detailTypeValue ?? "")"]
+    }
+}
+
+// MARK: 武器伤害计算
+extension Equip {
+    // 获取武器攻击速度属性
+    var weaponSpeed: EquipBaseAttribute? {
+        return baseTypes.first(where: { $0.isWeaponSpeed })
+    }
+    // 获取武器攻击力范围属性
+    var weaponRand: EquipBaseAttribute? {
+        return baseTypes.first { $0.isWeaponRand }
+    }
+    // 获取武器基础攻击力属性
+    var weaponBase: EquipBaseAttribute? {
+        return baseTypes.first(where: { $0.isWeaponBase })
+    }
+}
+
+// MARK: 装分
+extension Equip {
+    // 装备基础装分
+    var equipScore: Int {
+        return ScoreUtil.getEquipScore(level: level, quality: quality.rawValue, position: subType.rawValue)
+    }
+    // 精炼品质分
+    func strengthLevelScore(strengthLevel: Int) -> Int {
+        return ScoreUtil.getGsStrengthScore(base: level, strengthLevel: strengthLevel)
+    }
+}
+
+// MARK: Hash, Id
+extension Equip: Hashable, Identifiable, Equatable {
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(id)
+    }
+    
+    var hashValue: Int {
+        return id.hashValue
+    }
+    
+    static func ==(lhs: Equip, rhs: Equip) -> Bool {
+        return lhs.id == rhs.id
+    }
 }

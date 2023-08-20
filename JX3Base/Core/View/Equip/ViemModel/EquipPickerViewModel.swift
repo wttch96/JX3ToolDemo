@@ -17,7 +17,7 @@ class EquipPickerViewModel: ObservableObject {
     let pvType: PvType
     
     
-    @Published var equips: [EquipDTO] = []
+    @Published var equips: [Equip] = []
     @Published var searchText: String = ""
     
     private var service = EquipSearchService()

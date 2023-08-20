@@ -16,7 +16,7 @@ struct EquipDetailView: View {
     @StateObject private var equipSetVm = EquipSetViewModel()
     
     @available(*, deprecated, message: "弃用")
-    init(equip: EquipDTO, strengthLevel: Int, diamondAttributeLevels: [DiamondAttribute : Int], enhance: Enchant?, enchant: Enchant?) {
+    init(equip: Equip, strengthLevel: Int, diamondAttributeLevels: [DiamondAttribute : Int], enhance: Enchant?, enchant: Enchant?) {
         self.strengthEquip = StrengthedEquip()
         self.equipProgramme = EquipProgramme(mount: Mount("问水诀")!)
     }
@@ -29,7 +29,7 @@ struct EquipDetailView: View {
     // 图标大小
     private let iconSize: CGFloat = 16
     
-    var equip: EquipDTO { return strengthEquip.equip! }
+    var equip: Equip { return strengthEquip.equip! }
     var enchance: Enchant? { return strengthEquip.enchance }
     var enchant: Enchant? { return strengthEquip.enchant }
     var diamondAttributeLevels: [DiamondAttribute: Int] { return strengthEquip.embeddingStone }

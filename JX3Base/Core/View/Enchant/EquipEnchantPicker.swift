@@ -12,12 +12,12 @@ struct EquipEnchantPicker: View {
     let position: EquipPosition
     let subType: EnchantSubType
     @Binding var enchant: Enchant?
-    let equip: EquipDTO?
+    let equip: Equip?
     
     @StateObject private var vm = EquipEnchantPickerViewModel()
     @Environment(\.dismiss) private var dismiss
     
-    init(position: EquipPosition, subType: EnchantSubType = .enchance, enchant: Binding<Enchant?>, equip: EquipDTO? = nil) {
+    init(position: EquipPosition, subType: EnchantSubType = .enchance, enchant: Binding<Enchant?>, equip: Equip? = nil) {
         self.equip = equip
         self.position = position
         self.subType = subType

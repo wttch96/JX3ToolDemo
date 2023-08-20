@@ -8,7 +8,7 @@
 import Foundation
 
 class StrengthedEquip: ObservableObject {
-    @Published var equip: EquipDTO? = nil {
+    @Published var equip: Equip? = nil {
         didSet {
             if let equip = equip {
                 self.embeddingStone =  equip.diamondAttributes.reduce(into: [:] as [DiamondAttribute: Int], { partialResult, attr in

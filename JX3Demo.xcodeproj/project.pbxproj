@@ -132,8 +132,8 @@
 		495FD6662A3E231700A17FB0 /* EquipQuality.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495FD6642A3E231700A17FB0 /* EquipQuality.swift */; };
 		495FD66B2A3F581100A17FB0 /* equipAttrDesc.json in Resources */ = {isa = PBXBuildFile; fileRef = 495FD66A2A3F581100A17FB0 /* equipAttrDesc.json */; };
 		495FD66C2A3F581100A17FB0 /* equipAttrDesc.json in Resources */ = {isa = PBXBuildFile; fileRef = 495FD66A2A3F581100A17FB0 /* equipAttrDesc.json */; };
-		495FD66E2A3F593300A17FB0 /* EquipDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495FD66D2A3F593300A17FB0 /* EquipDTO.swift */; };
-		495FD66F2A3F593300A17FB0 /* EquipDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495FD66D2A3F593300A17FB0 /* EquipDTO.swift */; };
+		495FD66E2A3F593300A17FB0 /* Equip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495FD66D2A3F593300A17FB0 /* Equip.swift */; };
+		495FD66F2A3F593300A17FB0 /* Equip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495FD66D2A3F593300A17FB0 /* Equip.swift */; };
 		495FD6722A40308D00A17FB0 /* equip1.json in Resources */ = {isa = PBXBuildFile; fileRef = 495FD6712A40308D00A17FB0 /* equip1.json */; };
 		495FD6732A40308D00A17FB0 /* equip1.json in Resources */ = {isa = PBXBuildFile; fileRef = 495FD6712A40308D00A17FB0 /* equip1.json */; };
 		495FD6752A4030A900A17FB0 /* equip2.json in Resources */ = {isa = PBXBuildFile; fileRef = 495FD6742A4030A900A17FB0 /* equip2.json */; };
@@ -459,7 +459,7 @@
 		495FD6612A3DF8C100A17FB0 /* MountEquip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MountEquip.swift; sourceTree = "<group>"; };
 		495FD6642A3E231700A17FB0 /* EquipQuality.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipQuality.swift; sourceTree = "<group>"; };
 		495FD66A2A3F581100A17FB0 /* equipAttrDesc.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = equipAttrDesc.json; sourceTree = "<group>"; };
-		495FD66D2A3F593300A17FB0 /* EquipDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipDTO.swift; sourceTree = "<group>"; };
+		495FD66D2A3F593300A17FB0 /* Equip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Equip.swift; sourceTree = "<group>"; };
 		495FD6712A40308D00A17FB0 /* equip1.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = equip1.json; sourceTree = "<group>"; };
 		495FD6742A4030A900A17FB0 /* equip2.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = equip2.json; sourceTree = "<group>"; };
 		495FD6772A40336900A17FB0 /* EquipPickerOptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipPickerOptionView.swift; sourceTree = "<group>"; };
@@ -695,7 +695,7 @@
 			children = (
 				494795CA2A6BEA3B006AA88F /* StrengthedEquip.swift */,
 				499A2FC02A666FE200F10732 /* StrengthEquip.swift */,
-				495FD66D2A3F593300A17FB0 /* EquipDTO.swift */,
+				495FD66D2A3F593300A17FB0 /* Equip.swift */,
 				49504D9B2A42D46C00B93E90 /* EquipBaseAttribute.swift */,
 				49504D9E2A44B45600B93E90 /* EquipMagicAttribute.swift */,
 				49504DAA2A4763D600B93E90 /* DiamondAttribute.swift */,
@@ -1610,7 +1610,7 @@
 				49504D8F2A42CD2F00B93E90 /* EquipDetailView.swift in Sources */,
 				4992D1762A2303F6007EEFC2 /* ServerStateViewModel.swift in Sources */,
 				49504D9F2A44B45600B93E90 /* EquipMagicAttribute.swift in Sources */,
-				495FD66E2A3F593300A17FB0 /* EquipDTO.swift in Sources */,
+				495FD66E2A3F593300A17FB0 /* Equip.swift in Sources */,
 				495625D22A5C4DDD008D7F63 /* WebView.swift in Sources */,
 				49FBA5BE2A57FCF90031F9B5 /* CustomTabBarView.swift in Sources */,
 				495FD6782A40336900A17FB0 /* EquipPickerOptionView.swift in Sources */,
@@ -1811,7 +1811,7 @@
 				49842DAC2A76553000F06B11 /* MixValue.swift in Sources */,
 				49504D932A42CED200B93E90 /* EquipSubType.swift in Sources */,
 				4965BA492A2616EF001D7E1B /* TalentPicker.swift in Sources */,
-				495FD66F2A3F593300A17FB0 /* EquipDTO.swift in Sources */,
+				495FD66F2A3F593300A17FB0 /* Equip.swift in Sources */,
 				491B89582A764BEC006EFAF7 /* LuaConvertValue.swift in Sources */,
 				491DB8352A26667700A40051 /* KungfuIcon.swift in Sources */,
 				49536A262A31C47E004FBBB1 /* EquipPickerViewModel.swift in Sources */,

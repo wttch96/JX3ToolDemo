@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct EquipPickerOptionView: View {
-    let equip: EquipDTO
+    let equip: Equip
     
     var body: some View {
         HStack {

@@ -13,7 +13,7 @@ struct EquipEditorPositionView: View {
     
     let selectedEquip: StrengthedEquip
     
-    var equip: EquipDTO? {
+    var equip: Equip? {
         return selectedEquip.equip
     }
     

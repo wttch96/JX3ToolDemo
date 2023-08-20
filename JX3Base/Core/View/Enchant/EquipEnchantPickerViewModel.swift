@@ -34,7 +34,7 @@ class EquipEnchantPickerViewModel: ObservableObject {
         service.loadEnchant(position: position, searchText: searchText, subType: subType)
     }
     
-    func loadEnchant(_ text: String, position: EquipPosition, subType: EnchantSubType, equip: EquipDTO?) {
+    func loadEnchant(_ text: String, position: EquipPosition, subType: EnchantSubType, equip: Equip?) {
         service.loadEnchant(position: position, searchText: text, subType: subType, equip: equip)
     }
 }

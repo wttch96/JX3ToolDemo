@@ -17,7 +17,7 @@ class EnchantService {
     
     // subType = 1 小附魔
     // subType = 2 大附魔
-    func loadEnchant(position: EquipPosition, searchText: String, subType: EnchantSubType, equip: EquipDTO? = nil) {
+    func loadEnchant(position: EquipPosition, searchText: String, subType: EnchantSubType, equip: Equip? = nil) {
         let urlString = "https://node.jx3box.com/enchant/primary"
         var url = URLComponents(string: urlString)
         
@@ -73,7 +73,7 @@ class EnchantService {
         }
     }
     
-    private func equipDuty(_ equip: EquipDTO) -> String {
+    private func equipDuty(_ equip: Equip) -> String {
         if let equipDuty = equip.duty {
             switch equipDuty {
             case "1": fallthrough
