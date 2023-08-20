@@ -328,16 +328,16 @@ struct EquipDetailView: View {
     
     @ViewBuilder
     var requireTypeView: some View {
-        if let requireLevel = equip.requireLevel {
+        if let requireLevel = equip.requireTypes.requireLevel {
             Text("需求等级 \(requireLevel)")
         }
-        if let requireSchool = equip.requireSchool {
+        if let requireSchool = equip.requireTypes.requireSchool {
             Text("需要门派 \(requireSchool.name ?? "")")
         }
-        if let requireGender = equip.requireGender {
+        if let requireGender = equip.requireTypes.requireGender {
             Text("仅 \(requireGender ? "男性" : "女性") 可穿戴")
         }
-        if let camp = equip.requireCamp {
+        if let camp = equip.requireTypes.requireCamp {
             Text("需要 \(camp)")
         }
     }

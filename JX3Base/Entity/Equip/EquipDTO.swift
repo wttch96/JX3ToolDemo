@@ -213,7 +213,7 @@ struct EquipDTO: Decodable {
     // 五行石镶嵌
     let diamondAttributes: [DiamondAttribute]
     // 装备需求
-    private let requireTypes: [EquipRequireType]
+    let requireTypes: [EquipRequireType]
     // 最大耐久度
     let maxDurability: String?
     // 来源
@@ -323,45 +323,6 @@ extension EquipDTO {
     }
 }
 
-// MARK: 装备需求
-extension EquipDTO {
-    // 需求等级
-    var requireLevel: Int? {
-        if let rt = requireTypes.first( where: { $0.type == "5" }) {
-            return Int(rt.value)
-        }
-        return nil
-    }
-    // 需求门派
-    var requireSchool: School? {
-        if let rt = requireTypes.first( where: { $0.type == "6" }) {
-            return School(forceId: Int(rt.value))
-        }
-        return nil
-    }
-    // 需求性别
-    var requireGender: Bool? {
-        if let rt = requireTypes.first( where: { $0.type == "7" }) {
-            return rt.value == "1"
-        }
-        return nil
-    }
-    // 需求阵营
-    var requireCamp: String? {
-        if let rt = requireTypes.first(where: { $0.type == "100" }) {
-            switch rt.value {
-            case "1": return "中立";
-            case "2": fallthrough
-            case "3": return "浩气盟";
-            case "4": fallthrough
-            case "5": return "恶人谷"
-            case "6": return "浩气盟，或恶人谷"
-            default: return nil
-            }
-        }
-        return nil
-    }
-}
 // MARK: 装分
 extension EquipDTO {
     // 装备基础装分
