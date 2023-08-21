@@ -54,7 +54,7 @@ import Foundation
 //"_Attrs": null,
 //"_quality": null,
 //"_latest_enhance": null
-struct Enchant: Identifiable, Decodable {
+struct EnchantDTO: Decodable {
     let id: Int
     let name: String
     private let _quality: Int?
@@ -96,16 +96,33 @@ struct Enchant: Identifiable, Decodable {
         value2 = try container1.decodeIfPresent(String.self, forKey: CustomKey(stringValue: "Attribute1Value2"))
     }
     
+    
+    func toEntity() -> Enchant {
+        var eq: EquipQuality? = nil
+        if let quality = _quality {
+            eq =  EquipQuality.allCases.first(where: { $0.rawValue == "\(quality)"})
+        }
+        
+        return Enchant(id: id, name: name, quality: eq, attriName: attriName, boxAttriName: boxAttriName, score: score, attrs: attrs, attribute1: attribute1, value1: value1, value2: value2)
+    }
+    
 }
 
-extension Enchant: Hashable {
+struct Enchant {
+    let id: Int
+    let name: String
+    let quality: EquipQuality?
+    let attriName: String?
+    let boxAttriName: String?
+    let score: Int
+    let attrs: [[String?]]?
     
-    var quality: EquipQuality? {
-        if let quality = _quality {
-            return EquipQuality.allCases.first(where: { $0.rawValue == "\(quality)"})
-        }
-        return nil
-    }
+    let attribute1: String?
+    let value1: String?
+    let value2: String?
+}
+
+extension Enchant: Hashable, Identifiable, Codable {
     
     var hashValue: Int {
         return id.hashValue
@@ -115,7 +132,7 @@ extension Enchant: Hashable {
         hasher.combine(id)
     }
     
-    /// 将属性转换为属性 Map
+    /// 将属性转换为属性 Map，属性-值的映射。可以直接在配装属性统计时进行遍历添加。
     var attrMap: [String: Float] {
         var ret: [String: Float] = [:]
         for attr in attrs ?? [] {

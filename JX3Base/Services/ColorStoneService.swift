@@ -10,7 +10,7 @@ import Combine
 
 
 class ColorStoneService {
-    @Published var resp: BoxResponsePgaeStr<ColorStone>? = nil
+    @Published var resp: BoxResponsePgaeStr<ColorStoneDTO>? = nil
     
     var loadSubscriber: AnyCancellable? = nil
     
@@ -27,7 +27,7 @@ class ColorStoneService {
             URLQueryItem(name: "per", value: "20")
         ]
         if let url = urlComponent?.url {
-            loadSubscriber = NetworkManager.downloadJsonData(url: url, type: BoxResponsePgaeStr<ColorStone>?.self)
+            loadSubscriber = NetworkManager.downloadJsonData(url: url, type: BoxResponsePgaeStr<ColorStoneDTO>?.self)
                 .sink(receiveCompletion: NetworkManager.handleCompletion(completion:)) { newValue in
                     self.resp = newValue
                     logger("下载五彩石完成:\(newValue?.list.count ?? 0)")

@@ -59,7 +59,7 @@ import SwiftUI
 //],
 //"_quality": null,
 //"_latest_enhance": null
-struct ColorStone: Decodable, Identifiable {
+struct ColorStoneDTO: Decodable {
     let id: Int
     let name: String
     let icon: String
@@ -89,9 +89,22 @@ struct ColorStone: Decodable, Identifiable {
         case icon = "icon"
         case level = "stone_level"
     }
+    
+    func toEntity() -> ColorStone {
+        return ColorStone(id: id, name: name, icon: icon, level: level, attributes: attributes)
+    }
 }
 
-extension ColorStone: Equatable {
+struct ColorStone: Codable {
+    let id: Int
+    let name: String
+    let icon: String
+    let level: String
+    
+    let attributes: [ColorStoneAttribute]
+}
+
+extension ColorStone: Equatable, Identifiable {
     var color: Color {
         return EquipQuality(rawValue: "\(((Int(level) ?? 0) + 1) / 2 + 1)")?.color ?? .gray
     }
@@ -105,7 +118,7 @@ extension ColorStone: Equatable {
     }
 }
 
-struct ColorStoneAttribute: Identifiable {
+struct ColorStoneAttribute: Identifiable, Codable {
     let id: String
     let value1: String
     let value2: String

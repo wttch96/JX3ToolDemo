@@ -36,6 +36,31 @@ class StrengthedEquip: ObservableObject {
     // 五彩石
     @Published var colorStone: ColorStone? = nil
     
+    func toDAO() -> StrengthedEquipDAO {
+        return StrengthedEquipDAO(equip: equip, strengthLevel: strengthLevel, embeddingStone: embeddingStone, enchance: enchance, enchant: enchant, colorStone: colorStone)
+    }
+}
+
+struct StrengthedEquipDAO: Codable {
+    let equip: Equip?
+    let strengthLevel: Int
+    let embeddingStone: [DiamondAttribute: Int]
+    let enchance: Enchant?
+    let enchant: Enchant?
+    let colorStone: ColorStone?
+}
+
+extension StrengthedEquip: Equatable {
+    static func ==(lhs: StrengthedEquip, rhs: StrengthedEquip) -> Bool {
+        return lhs.equip == rhs.equip
+        && lhs.strengthLevel == rhs.strengthLevel
+        && lhs.embeddingStone == rhs.embeddingStone
+        && lhs.enchance == rhs.enchance
+        && lhs.enchant == rhs.enchant
+        && lhs.colorStone == rhs.colorStone
+    }
+    
+    
     var totalScore: Int {
         return (equip?.equipScore ?? 0) + strengthScore + extraScore
     }
@@ -55,16 +80,5 @@ class StrengthedEquip: ObservableObject {
             return ScoreUtil.stoneScore(embeddingStone) + ScoreUtil.colorStoneScore(colorStone) + (enchance?.score ?? 0) + (enchant?.score ?? 0)
         }
         return 0
-    }
-}
-
-extension StrengthedEquip: Equatable {
-    static func ==(lhs: StrengthedEquip, rhs: StrengthedEquip) -> Bool {
-        return lhs.equip == rhs.equip
-        && lhs.strengthLevel == rhs.strengthLevel
-        && lhs.embeddingStone == rhs.embeddingStone
-        && lhs.enchance == rhs.enchance
-        && lhs.enchant == rhs.enchant
-        && lhs.colorStone == rhs.colorStone
     }
 }

@@ -29,7 +29,7 @@ class ColorStonePickerViewModel: ObservableObject {
     
     init() {
         service.$resp.sink { newValue in
-            self.colorStones = newValue?.list ?? []
+            self.colorStones = newValue?.list.map({ $0.toEntity() }) ?? []
         }
         .store(in: &anyCancelles)
         

@@ -39,11 +39,11 @@ class EnchantService {
         }
         
         if let url = url?.url {
-            anyCancellable = NetworkManager.downloadJsonData(url: url, type: [Enchant].self)
+            anyCancellable = NetworkManager.downloadJsonData(url: url, type: [EnchantDTO].self)
                 .sink(receiveCompletion: NetworkManager.handleCompletion, receiveValue: { [weak self] data in
                     if let self = self {
                         if subType == .enchant, let equip = equip {
-                            self.enchants = data.filter({ enchant in
+                            self.enchants = data.map({ $0.toEntity() }).filter({ enchant in
                                 if enchant.name.contains(self.equipDuty(equip)) {
                                     // 装备职责对应
                                     var name: String? = nil
@@ -64,7 +64,7 @@ class EnchantService {
                             })
                             // 大附魔过滤
                         } else {
-                            self.enchants = data
+                            self.enchants = data.map({ $0.toEntity() })
                         }
                         self.anyCancellable?.cancel()
                     }

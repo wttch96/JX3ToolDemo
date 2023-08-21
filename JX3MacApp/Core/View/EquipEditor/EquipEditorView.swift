@@ -23,13 +23,26 @@ struct EquipEditorView: View {
     init(mount: Mount, record: EquipProgrammeRecord? = nil) {
         self.mount = mount
         self.record = record
-        self._equipProgramme = StateObject(wrappedValue: EquipProgramme(mount: mount))
+        let ep = EquipProgramme(mount: mount)
+        
         
         if let jsonData = record?.jsonData, !jsonData.isEmpty,
-           let jsonData = jsonData.data(using: .utf8) {
-           //let equips = try? JSONDecoder().decode([EquipPosition: StrengthedEquip].self, from: jsonData) {
-            // self.equipProgramme.equips = equips
+            let jsonData = jsonData.data(using: .utf8) {
+            if let equips = try? JSONDecoder().decode([EquipPosition: StrengthedEquipDAO].self, from: jsonData) {
+                
+                for (k, v) in equips {
+                    let se = ep.equips[k]
+                    se?.equip = v.equip
+                    se?.strengthLevel = v.strengthLevel
+                    se?.embeddingStone = v.embeddingStone
+                    se?.enchance = v.enchance
+                    se?.enchant = v.enchant
+                    se?.colorStone = v.colorStone
+                }
+            }
         }
+        
+        self._equipProgramme = StateObject(wrappedValue: ep)
     }
     
    
@@ -59,6 +72,12 @@ struct EquipEditorView: View {
             ToolbarItem {
                 Button("保存") {
                     if let record = record {
+                        var equips: [EquipPosition: StrengthedEquipDAO] = [:]
+                        for (k, v) in equipProgramme.equips {
+                            equips[k] = v.toDAO()
+                        }
+                        record.jsonData = String(bytes: (try? JSONEncoder().encode(equips)) ?? Data(), encoding: .utf8)
+                        service.save(record)
                     }
                 }
             }

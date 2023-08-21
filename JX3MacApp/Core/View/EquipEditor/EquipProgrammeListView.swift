@@ -37,6 +37,9 @@ struct EquipProgrammeListView: View {
                 TableColumn("名称") { record in
                     Text(record.name ?? "")
                 }
+                TableColumn("详细") { record in
+                    Text(record.jsonData ?? "无")
+                }
                 TableColumn("操作") { record in
                     HStack {
                         Button(action: {

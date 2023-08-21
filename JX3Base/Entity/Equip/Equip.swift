@@ -442,8 +442,8 @@ extension Equip {
     }
 }
 
-// MARK: Hash, Id
-extension Equip: Hashable, Identifiable, Equatable {
+// MARK: 协议扩展
+extension Equip: Codable, Hashable, Identifiable, Equatable {
     func hash(into hasher: inout Hasher) {
         hasher.combine(id)
     }

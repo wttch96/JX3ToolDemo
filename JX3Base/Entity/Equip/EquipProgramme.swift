@@ -16,13 +16,15 @@ class EquipProgramme: ObservableObject {
     
     @Published var useHeary: Bool = false
     
-    
     var publisher = PassthroughSubject<EquipProgrammeAttributeSet, Never>()
     
     var equipSet: Set<EquipSet> = Set()
     
     init(mount: Mount) {
         self.mount = mount
+        for position in EquipPosition.allCases {
+            equips[position] = StrengthedEquip()
+        }
     }
     
     func calcAttributes() {

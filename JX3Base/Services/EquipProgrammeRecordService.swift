@@ -59,4 +59,12 @@ class EquipProgrammeRecordService {
             logger.error("删除配装记录失败: \(error.localizedDescription)")
         }
     }
+    
+    func save(_ record: EquipProgrammeRecord) {
+        do {
+            try manager.context.save()
+        } catch let error {
+            logger.error("保存配装失败: \(error.localizedDescription)")
+        }
+    }
 }

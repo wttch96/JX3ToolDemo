@@ -19,7 +19,7 @@ import Foundation
 //    RING_2: `${EquipType.RING}_2`,          // 戒指2
 //    MELEE_WEAPON: EquipType.MELEE_WEAPON,   // 近身武器
 //    RANGE_WEAPON: EquipType.RANGE_WEAPON,   // 远程武器
-enum EquipPosition: String, CaseIterable {
+enum EquipPosition: String, CaseIterable, Codable {
     case helm
     case chest
     case waist
