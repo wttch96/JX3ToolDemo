@@ -16,9 +16,9 @@ struct EquipEditorSelectView: View {
     // 配装位置
     let position: EquipPosition
     
-    @Binding private var strengthedEquip: StrengthedEquip
+    @Binding private var strengthedEquip: StrengthedEquipViewModel
     
-    @ObservedObject private var equipProgramme: EquipProgramme
+    @ObservedObject private var equipProgramme: EquipProgrammeViewModel
     
     @StateObject private var vm = EquipPickerModel()
     // sheet 选择
@@ -29,13 +29,13 @@ struct EquipEditorSelectView: View {
     @FocusState private var textFieldFocus: Bool
     @State private var showPop: Bool = false
     
-    init(kungfu: Mount, position: EquipPosition, selected: EquipProgramme) {
+    init(kungfu: Mount, position: EquipPosition, selected: EquipProgrammeViewModel) {
         self.mount = kungfu
         self.position = position
         self._equipProgramme = ObservedObject(wrappedValue: selected)
         self._strengthedEquip = .init(
             get: {
-                return selected.equips[position, default: StrengthedEquip()]
+                return selected.equips[position, default: StrengthedEquipViewModel()]
             },
             set: { newValue in
                 selected.equips[position] = newValue
@@ -283,14 +283,14 @@ struct EquipEditorSelectView: View {
                 VStack {
                     Text("无")
                         .onTapGesture {
-                            strengthedEquip = StrengthedEquip()
+                            strengthedEquip = StrengthedEquipViewModel()
                             strengthedEquip.equip = nil
                             showEquipPopover.toggle()
                         }
                     ForEach(vm.equips) { equip in
                         EquipPickerOptionView(equip: equip)
                             .onTapGesture {
-                                strengthedEquip = StrengthedEquip()
+                                strengthedEquip = StrengthedEquipViewModel()
                                 strengthedEquip.equip = equip
                                 showEquipPopover.toggle()
                             }
@@ -323,6 +323,6 @@ struct EquipEditorSelectView: View {
 
 struct EquipEditorPickerView_Previews: PreviewProvider {
     static var previews: some View {
-        EquipEditorSelectView(kungfu: dev.mount1, position: .amulet, selected: EquipProgramme(mount: dev.mount1))
+        EquipEditorSelectView(kungfu: dev.mount1, position: .amulet, selected: EquipProgrammeViewModel(mount: dev.mount1))
     }
 }

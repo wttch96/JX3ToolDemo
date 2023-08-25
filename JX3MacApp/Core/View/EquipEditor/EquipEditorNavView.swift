@@ -11,11 +11,11 @@ struct EquipEditorNavView: View {
     let mount: Mount
     @Binding var selectedPosition: EquipPosition?
     
-    @ObservedObject var equipProgramme: EquipProgramme
+    @ObservedObject var equipProgramme: EquipProgrammeViewModel
     
     @State private var attributes: EquipProgrammeAttributeSet
     
-    init(mount: Mount, selectedPosition: Binding<EquipPosition?>, equipProgramme: EquipProgramme) {
+    init(mount: Mount, selectedPosition: Binding<EquipPosition?>, equipProgramme: EquipProgrammeViewModel) {
         self.mount = mount
         self._selectedPosition = selectedPosition
         self._equipProgramme = ObservedObject(wrappedValue: equipProgramme)
@@ -120,13 +120,13 @@ struct EquipEditorNavView: View {
             }
     }
     
-    private func positionBinding(_ position: EquipPosition) -> StrengthedEquip {
-        return equipProgramme.equips[position, default: StrengthedEquip()]
+    private func positionBinding(_ position: EquipPosition) -> StrengthedEquipViewModel {
+        return equipProgramme.equips[position, default: StrengthedEquipViewModel()]
     }
 }
 
 struct EquipEditorNavView_Previews: PreviewProvider {
     static var previews: some View {
-        EquipEditorNavView(mount: dev.mount1, selectedPosition: .constant(.amulet), equipProgramme: EquipProgramme(mount: dev.mount1))
+        EquipEditorNavView(mount: dev.mount1, selectedPosition: .constant(.amulet), equipProgramme: EquipProgrammeViewModel(mount: dev.mount1))
     }
 }

@@ -9,19 +9,19 @@ import SwiftUI
 
 struct EquipDetailView: View {
     // 一定要用 ObservedObject 不然不会刷新子视图
-    @ObservedObject private var strengthEquip: StrengthedEquip
+    @ObservedObject private var strengthEquip: StrengthedEquipViewModel
     
-    @ObservedObject var equipProgramme: EquipProgramme
+    @ObservedObject var equipProgramme: EquipProgrammeViewModel
     
     @StateObject private var equipSetVm = EquipSetViewModel()
     
     @available(*, deprecated, message: "弃用")
     init(equip: Equip, strengthLevel: Int, diamondAttributeLevels: [DiamondAttribute : Int], enhance: Enchant?, enchant: Enchant?) {
-        self.strengthEquip = StrengthedEquip()
-        self.equipProgramme = EquipProgramme(mount: Mount("问水诀")!)
+        self.strengthEquip = StrengthedEquipViewModel()
+        self.equipProgramme = EquipProgrammeViewModel(mount: Mount("问水诀")!)
     }
     
-    init(strengthEquip: StrengthedEquip, equipProgramme: EquipProgramme) {
+    init(strengthEquip: StrengthedEquipViewModel, equipProgramme: EquipProgrammeViewModel) {
         self.strengthEquip = strengthEquip
         self.equipProgramme = equipProgramme
     }
@@ -33,7 +33,7 @@ struct EquipDetailView: View {
     var enchance: Enchant? { return strengthEquip.enchance }
     var enchant: Enchant? { return strengthEquip.enchant }
     var diamondAttributeLevels: [DiamondAttribute: Int] { return strengthEquip.embeddingStone }
-    var selectedEquips: [EquipPosition: StrengthedEquip] { return equipProgramme.equips }
+    var selectedEquips: [EquipPosition: StrengthedEquipViewModel] { return equipProgramme.equips }
     
     var body: some View {
         VStack(alignment: .leading, spacing: 4) {

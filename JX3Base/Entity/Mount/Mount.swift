@@ -21,7 +21,7 @@ struct Mount: Identifiable {
 
 
 // MARK: 扩展协议
-extension Mount: Comparable, Equatable, Hashable, Decodable {
+extension Mount: Comparable, Equatable, Hashable, Codable {
     static let common = Mount(id: 0)!
     
     static func <(lhs: Mount, rhs: Mount) -> Bool {

@@ -10,7 +10,7 @@ import Foundation
 // 配装方案属性计算
 class EquipProgrammeAttributeSet: Identifiable, Equatable {
     let id = UUID().uuidString
-    let equipProgramme: EquipProgramme
+    let equipProgramme: EquipProgrammeViewModel
     // 使用重剑
     let useHeavy: Bool
     
@@ -29,7 +29,7 @@ class EquipProgrammeAttributeSet: Identifiable, Equatable {
     
     private let levelConst = AssetJsonDataManager.shared.levelConst
     
-    init(equipProgramme: EquipProgramme, useHeavy: Bool = false) {
+    init(equipProgramme: EquipProgrammeViewModel, useHeavy: Bool = false) {
         self.equipProgramme = equipProgramme
         self.useHeavy = useHeavy
         statistics()
@@ -144,7 +144,7 @@ class EquipProgrammeAttributeSet: Identifiable, Equatable {
     }
     
     /// 五行石镶嵌属性
-    private func addEquipEmbeddingAttributes(_ strengthedEquip: StrengthedEquip) {
+    private func addEquipEmbeddingAttributes(_ strengthedEquip: StrengthedEquipViewModel) {
         for attr in strengthedEquip.embeddingStone.keys {
             if let level = strengthedEquip.embeddingStone[attr] {
                 let type = attr.type
@@ -156,7 +156,7 @@ class EquipProgrammeAttributeSet: Identifiable, Equatable {
     }
     
     /// 添加装备小附魔属性
-    private func addEquipEnchanceAttributes(_ strengthedEquip: StrengthedEquip) {
+    private func addEquipEnchanceAttributes(_ strengthedEquip: StrengthedEquipViewModel) {
         if let enchant = strengthedEquip.enchance {
             for attr in enchant.attrMap.keys {
                 if let value = enchant.attrMap[attr] {
@@ -168,7 +168,7 @@ class EquipProgrammeAttributeSet: Identifiable, Equatable {
     }
     
     /// 添加装备大附魔属性
-    private func addEquipEnchantAttributes(_ strengthedEquip: StrengthedEquip) {
+    private func addEquipEnchantAttributes(_ strengthedEquip: StrengthedEquipViewModel) {
         if let enchant = strengthedEquip.enchant {
             for attr in enchant.attrMap.keys {
                 if let value = enchant.attrMap[attr] {
@@ -218,7 +218,7 @@ class EquipProgrammeAttributeSet: Identifiable, Equatable {
     }
     
     /// 属性基础属性
-    private func addEquipBaseAttribute(_ strengthedEquip: StrengthedEquip) {
+    private func addEquipBaseAttribute(_ strengthedEquip: StrengthedEquipViewModel) {
         if let equip = strengthedEquip.equip {
             equip.baseTypes.forEach { baseType in
                 addAttribute(baseType.type, Float(baseType.baseMin))

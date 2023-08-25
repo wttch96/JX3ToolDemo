@@ -8,10 +8,19 @@
 import Foundation
 import Combine
 
-// 配装方案
-class EquipProgramme: ObservableObject {
+/// 配装方案
+struct EquipProgramme: Codable {
+    let mount: Mount
+    let equips: [EquipPosition: StrengthedEquip]
+    let talents: [Talent]
+    let useHeary: Bool
+}
+
+// MARK: ViewModel
+/// 配装方案 ViewModel
+class EquipProgrammeViewModel: ObservableObject {
     @Published var mount: Mount
-    @Published var equips: [EquipPosition: StrengthedEquip] = [:]
+    @Published var equips: [EquipPosition: StrengthedEquipViewModel] = [:]
     @Published var talents: [Talent] = []
     
     @Published var useHeary: Bool = false
@@ -22,9 +31,6 @@ class EquipProgramme: ObservableObject {
     
     init(mount: Mount) {
         self.mount = mount
-        for position in EquipPosition.allCases {
-            equips[position] = StrengthedEquip()
-        }
     }
     
     func calcAttributes() {
@@ -36,9 +42,19 @@ class EquipProgramme: ObservableObject {
         logger.info("⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️计算配装属性完成✅")
     }
     
+    
+    /// 将ViewModel转换为可以 Codable 的实体对象
+    /// - Returns: 可以 Codable 的 Entity 实体对象
+    func toEntity() -> EquipProgramme {
+        return EquipProgramme(mount: mount, equips: equips.mapValues({ $0.toEntity() }), talents: talents, useHeary: useHeary)
+    }
 }
 
-extension EquipProgramme {
+extension EquipProgrammeViewModel {
+//    init(dao: EquipProgrammeDAO) {
+//        
+//    }
+    
     // 配装方案总五行石数量
     var stoneCount: Int {
         return stoneCount(false)
@@ -64,9 +80,9 @@ extension EquipProgramme {
         }
     }
     
-    private func equips(_ useHeary: Bool) -> [StrengthedEquip] {
+    private func equips(_ useHeary: Bool) -> [StrengthedEquipViewModel] {
         if mount.isWenShui {
-            var ret: [StrengthedEquip] = []
+            var ret: [StrengthedEquipViewModel] = []
             for pos in equips.keys {
                 if let strengthedEquip = equips[pos] {
                     // 处理藏剑

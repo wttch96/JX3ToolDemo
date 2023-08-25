@@ -11,7 +11,7 @@ struct EquipEditorPositionView: View {
     let mount: Mount
     let position: EquipPosition
     
-    let selectedEquip: StrengthedEquip
+    let selectedEquip: StrengthedEquipViewModel
     
     var equip: Equip? {
         return selectedEquip.equip
@@ -50,8 +50,8 @@ struct EquipEditorPositionView: View {
 
 struct EquipEditorPositionView_Previews: PreviewProvider {
     
-    static var equip: StrengthedEquip {
-        let ret = StrengthedEquip()
+    static var equip: StrengthedEquipViewModel {
+        let ret = StrengthedEquipViewModel()
         ret.equip = dev.equip1
         return ret
     }
