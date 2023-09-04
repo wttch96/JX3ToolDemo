@@ -10,8 +10,8 @@ import SwiftUI
 struct EquipEditorPositionView: View {
     let mount: Mount
     let position: EquipPosition
-    
-    let selectedEquip: StrengthedEquipViewModel
+    // 为了保证外围更新可以更新到改视图
+    @ObservedObject var selectedEquip: StrengthedEquipViewModel
     
     var equip: Equip? {
         return selectedEquip.equip
@@ -24,14 +24,13 @@ struct EquipEditorPositionView: View {
             if let equip = self.equip,
                let iconId = Int(equip.iconId ?? "0") {
                 ZStack {
-                    Color.black
                     JX3BoxIcon(id: iconId)
-                    RoundedRectangle(cornerRadius: 2)
-                        .stroke(equip.quality.color.opacity(0.8), lineWidth: 3)
-                        .padding(3)
+                    Image("equip_border_level_\(selectedEquip.strengthLevel == selectedEquip.equip?.maxStrengthLevel ? "max" : "0")")
+                        .resizable()
+                        .scaledToFill()
                 }
                 .frame(width: size, height: size)
-                Text("\(equip.name) - \(selectedEquip.strengthLevel)")
+                Text("\(equip.name)")
                     .frame(maxWidth: 60)
                     .foregroundColor(.gray)
                     .font(.caption)

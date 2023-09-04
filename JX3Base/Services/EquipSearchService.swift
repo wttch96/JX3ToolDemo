@@ -34,6 +34,7 @@ class EquipSearchService {
         pageSize: Int,
         client: String
     ) {
+        equips = BoxResponse(total: 0, per: 0, pages: 1, page: 1, list: [])
         logger("搜索装备:\(position.label) \(name ?? "nil") 品质:\(minLevel)-\(maxLevel) 属性:\(attrs)")
         var type = ""
         switch position.aucGenre {
