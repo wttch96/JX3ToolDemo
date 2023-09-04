@@ -8,12 +8,36 @@
 import Foundation
 import Combine
 
+// MARK: Entity
 /// 配装方案
 struct EquipProgramme: Codable {
     let mount: Mount
     let equips: [EquipPosition: StrengthedEquip]
     let talents: [Talent]
     let useHeary: Bool
+}
+
+// MARK: DAO 扩展
+extension EquipProgrammeRecord {
+    
+    /// 将 CoreData 存储的实体对象转换为 ViewModel
+    /// - Parameter mount: 心法
+    /// - Returns: CoreData 保存的json 反序列化后转换的 ViewModel
+    func toViewModel(mount: Mount) -> EquipProgrammeViewModel {
+        let ep = EquipProgrammeViewModel(mount: mount)
+        
+        if let jsonData = self.jsonData, !jsonData.isEmpty,
+            let jsonData = jsonData.data(using: .utf8) {
+            // 解析附加的 json 数据，配装信息就保存在这里
+            if let equipProgramme = try? JSONDecoder().decode(EquipProgramme.self, from: jsonData) {
+                ep.equips = equipProgramme.equips.mapValues({ StrengthedEquipViewModel(entity: $0) })
+                ep.talents = equipProgramme.talents
+                ep.useHeary = equipProgramme.useHeary
+            }
+        }
+        
+        return ep
+    }
 }
 
 // MARK: ViewModel
@@ -51,9 +75,6 @@ class EquipProgrammeViewModel: ObservableObject {
 }
 
 extension EquipProgrammeViewModel {
-//    init(dao: EquipProgrammeDAO) {
-//        
-//    }
     
     // 配装方案总五行石数量
     var stoneCount: Int {

@@ -43,6 +43,19 @@ class StrengthedEquipViewModel: ObservableObject {
     /// 五彩石
     @Published var colorStone: ColorStone? = nil
     
+    init() {
+        
+    }
+    
+    init(entity: StrengthedEquip) {
+        self.equip = entity.equip
+        self.strengthLevel = entity.strengthLevel
+        self.embeddingStone = entity.embeddingStone
+        self.enchance = entity.enchance
+        self.enchant = entity.enchant
+        self.colorStone = entity.colorStone
+    }
+    
     /// 将实体转换为 实现 Codable 的实体类型对象
     /// - Returns: 实现 codable 可以序列化的对象
     func toEntity() -> StrengthedEquip {

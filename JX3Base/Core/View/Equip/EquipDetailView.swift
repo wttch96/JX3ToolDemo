@@ -36,51 +36,59 @@ struct EquipDetailView: View {
     var selectedEquips: [EquipPosition: StrengthedEquipViewModel] { return equipProgramme.equips }
     
     var body: some View {
-        VStack(alignment: .leading, spacing: 4) {
-            header
-            baseInfoView
-            magicInfoView
-            embedding
-            // 五彩石
-            colorStoneDetailView
-            
-            requireTypeView
-            
-            if let maxDurability = equip.maxDurability, maxDurability != "0" {
-                Text("耐久度：\(maxDurability)/\(maxDurability)")
+        if let _ =  strengthEquip.equip {
+            VStack(alignment: .leading, spacing: 4) {
+                header
+                baseInfoView
+                magicInfoView
+                embedding
+                // 五彩石
+                colorStoneDetailView
+                
+                requireTypeView
+                
+                if let maxDurability = equip.maxDurability, maxDurability != "0" {
+                    Text("耐久度：\(maxDurability)/\(maxDurability)")
+                }
+                
+                // 大小附魔
+                enchantView
+                
+                // 套装
+                equipSetView
+                
+                extraView
+                
+                //            if let getType = equip.getType {
+                //                Text("装备来源：\(getType)")
+                //            }
             }
-            
-            // 大小附魔
-            enchantView
-            
-            // 套装
-            equipSetView
-            
-            extraView
-            
-//            if let getType = equip.getType {
-//                Text("装备来源：\(getType)")
-//            }
-        }
-        .foregroundColor(.white)
-        .font(.headline)
-        .padding()
-        .background(Color.theme.panel)
-        .navigationTitle(equip.name)
-        .onAppear {
-            if let setId = strengthEquip.equip?.setId {
-                equipSetVm.loadEquipSet(setId)
+            .foregroundColor(.white)
+            .font(.headline)
+            .padding()
+            .background(Color.theme.panel)
+            .navigationTitle(equip.name)
+            .onAppear {
+                if let setId = strengthEquip.equip?.setId {
+                    equipSetVm.loadEquipSet(setId)
+                }
             }
-        }
-        .onChange(of: strengthEquip.equip) { newValue in
-            if let setId = newValue?.setId {
-                equipSetVm.loadEquipSet(setId)
+            .onChange(of: strengthEquip.equip) { newValue in
+                if let setId = newValue?.setId {
+                    equipSetVm.loadEquipSet(setId)
+                }
             }
-        }
-        .onChange(of: equipSetVm.set) { newValue in
-            if let set = newValue {
-                // 添加套装
-                self.equipProgramme.equipSet.insert(set)
+            .onChange(of: equipSetVm.set) { newValue in
+                if let set = newValue {
+                    // 添加套装
+                    self.equipProgramme.equipSet.insert(set)
+                }
+            }
+        } else {
+            VStack {
+                Text("请在右侧选择装备!!!")
+                    .font(.largeTitle)
+                Spacer()
             }
         }
     }

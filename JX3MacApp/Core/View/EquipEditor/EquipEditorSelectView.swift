@@ -152,8 +152,8 @@ struct EquipEditorSelectView: View {
                             Text("卸下")
                                 .foregroundColor(Color.accentColor)
                                 .onTapGesture(perform: {
-                                    strengthedEquip.equip = nil
-                                    presentationMode.wrappedValue.dismiss()
+                                    /// 重置
+                                    strengthedEquip = StrengthedEquipViewModel()
                                 })
                         }
                     }

@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+/// 配装方案展示
 struct EquipProgrammeListView: View {
     @State private var mount: Mount = .common
     
@@ -36,6 +37,9 @@ struct EquipProgrammeListView: View {
                 }
                 TableColumn("名称") { record in
                     Text(record.name ?? "")
+                }
+                TableColumn("装分") { record in
+                    Text("\(record.score)")
                 }
                 TableColumn("详细") { record in
                     Text(record.jsonData ?? "无")

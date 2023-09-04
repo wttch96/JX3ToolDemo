@@ -23,28 +23,8 @@ struct EquipEditorView: View {
     init(mount: Mount, record: EquipProgrammeRecord? = nil) {
         self.mount = mount
         self.record = record
-        let ep = EquipProgrammeViewModel(mount: mount)
         
-        if let jsonData = record?.jsonData, !jsonData.isEmpty,
-            let jsonData = jsonData.data(using: .utf8) {
-            
-            if let equipProgramme = try? JSONDecoder().decode(EquipProgramme.self, from: jsonData) {
-                for (k, v) in equipProgramme.equips {
-                    let se = ep.equips[k, default: StrengthedEquipViewModel()]
-                    se.equip = v.equip
-                    se.strengthLevel = v.strengthLevel
-                    se.embeddingStone = v.embeddingStone
-                    se.enchance = v.enchance
-                    se.enchant = v.enchant
-                    se.colorStone = v.colorStone
-                    ep.equips[k] = se
-                }
-                ep.talents = equipProgramme.talents
-                ep.useHeary = equipProgramme.useHeary
-            }
-        }
-        
-        self._equipProgramme = StateObject(wrappedValue: ep)
+        self._equipProgramme = StateObject(wrappedValue: record?.toViewModel(mount: mount) ?? EquipProgrammeViewModel(mount: mount))
     }
     
    
@@ -75,6 +55,7 @@ struct EquipEditorView: View {
                 ToolbarItem {
                     Button("保存") {
                         if let record = record {
+                            record.score = Int64(equipProgramme.totalScore)
                             record.jsonData = String(bytes: (try? JSONEncoder().encode(equipProgramme.toEntity())) ?? Data(), encoding: .utf8)
                             service.save(record)
                         }
